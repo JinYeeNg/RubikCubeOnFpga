@@ -1,6 +1,6 @@
 The user guide will show how to use the code and components given in my github space in order to generate and use the Rubik's Cube solver hardware block. In order to enable users with different board able to implement the block on their board, the user guide will be provided in 3 stages:
 
-This user guide is for user who would like to modify the design or use different board from pynq board. Other user can directlt uses the bitstream in __system/pynq__ directory.
+This user guide is for user who would like to modify the design or use different board from pynq board. Other user can directly uses the bitstream in __system/pynq__ directory.
 ## HLS 
 1. Vivado HLS tool to open up the project which is the folder with name __kociembaHls__, all the source code in c++ language will be reside in this folder. Any chance in the source code like add functionality  can be done at this stage.
 2. You can configure the Vivado HLS tool to point to your board by using __Solution__ -> __Solution Settings__ -> __Synthesis__ -> __Part__
