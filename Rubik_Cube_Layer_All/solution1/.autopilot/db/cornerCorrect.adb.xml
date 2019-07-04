@@ -1,0 +1,1234 @@
+<stg><name>cornerCorrect</name>
+
+
+<trans_list>
+
+<trans id="73" from="1" to="2">
+<condition id="9">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="74" from="2" to="3">
+<condition id="10">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="75" from="3" to="4">
+<condition id="11">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="76" from="4" to="5">
+<condition id="12">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="77" from="5" to="6">
+<condition id="13">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="78" from="6" to="7">
+<condition id="14">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="79" from="7" to="8">
+<condition id="15">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="80" from="8" to="9">
+<condition id="16">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+</trans_list>
+
+
+
+<state_list>
+
+<state id="1" st_id="1">
+
+<operation id="10" st_id="1" stage="2" lat="2">
+<core>RAM</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="0">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="3" bw="3" op_0_bw="3">
+<![CDATA[
+_ifconv:1  %cubieColor_V_load = load i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 4), align 4
+
+]]></Node>
+<StgValue><ssdm name="cubieColor_V_load"/></StgValue>
+</operation>
+
+<operation id="11" st_id="1" stage="2" lat="2">
+<core>RAM</core>
+<MemPortIdVec>1 </MemPortIdVec>
+<condition id="0">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="4" bw="3" op_0_bw="3">
+<![CDATA[
+_ifconv:2  %cubieColor_V_load_151 = load i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 6), align 2
+
+]]></Node>
+<StgValue><ssdm name="cubieColor_V_load_151"/></StgValue>
+</operation>
+</state>
+
+<state id="2" st_id="2">
+
+<operation id="12" st_id="2" stage="1" lat="2">
+<core>RAM</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="3" bw="3" op_0_bw="3">
+<![CDATA[
+_ifconv:1  %cubieColor_V_load = load i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 4), align 4
+
+]]></Node>
+<StgValue><ssdm name="cubieColor_V_load"/></StgValue>
+</operation>
+
+<operation id="13" st_id="2" stage="1" lat="2">
+<core>RAM</core>
+<MemPortIdVec>1 </MemPortIdVec>
+<condition id="1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="4" bw="3" op_0_bw="3">
+<![CDATA[
+_ifconv:2  %cubieColor_V_load_151 = load i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 6), align 2
+
+]]></Node>
+<StgValue><ssdm name="cubieColor_V_load_151"/></StgValue>
+</operation>
+
+<operation id="14" st_id="2" stage="1" lat="1">
+<core>Cmp</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="5" bw="1" op_0_bw="3" op_1_bw="3">
+<![CDATA[
+_ifconv:3  %tmp_s = icmp eq i3 %cubieColor_V_load, %cubieColor_V_load_151
+
+]]></Node>
+<StgValue><ssdm name="tmp_s"/></StgValue>
+</operation>
+
+<operation id="15" st_id="2" stage="2" lat="2">
+<core>RAM</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="6" bw="3" op_0_bw="3">
+<![CDATA[
+_ifconv:4  %cubieColor_V_load_152 = load i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 0), align 16
+
+]]></Node>
+<StgValue><ssdm name="cubieColor_V_load_152"/></StgValue>
+</operation>
+
+<operation id="16" st_id="2" stage="2" lat="2">
+<core>RAM</core>
+<MemPortIdVec>1 </MemPortIdVec>
+<condition id="1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="8" bw="3" op_0_bw="3">
+<![CDATA[
+_ifconv:6  %cubieColor_V_load_153 = load i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 2), align 2
+
+]]></Node>
+<StgValue><ssdm name="cubieColor_V_load_153"/></StgValue>
+</operation>
+</state>
+
+<state id="3" st_id="3">
+
+<operation id="17" st_id="3" stage="1" lat="2">
+<core>RAM</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="2">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="6" bw="3" op_0_bw="3">
+<![CDATA[
+_ifconv:4  %cubieColor_V_load_152 = load i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 0), align 16
+
+]]></Node>
+<StgValue><ssdm name="cubieColor_V_load_152"/></StgValue>
+</operation>
+
+<operation id="18" st_id="3" stage="1" lat="1">
+<core>Cmp</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="2">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="7" bw="1" op_0_bw="3" op_1_bw="3">
+<![CDATA[
+_ifconv:5  %tmp_216 = icmp eq i3 %cubieColor_V_load, %cubieColor_V_load_152
+
+]]></Node>
+<StgValue><ssdm name="tmp_216"/></StgValue>
+</operation>
+
+<operation id="19" st_id="3" stage="1" lat="2">
+<core>RAM</core>
+<MemPortIdVec>1 </MemPortIdVec>
+<condition id="2">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="8" bw="3" op_0_bw="3">
+<![CDATA[
+_ifconv:6  %cubieColor_V_load_153 = load i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 2), align 2
+
+]]></Node>
+<StgValue><ssdm name="cubieColor_V_load_153"/></StgValue>
+</operation>
+
+<operation id="20" st_id="3" stage="1" lat="1">
+<core>Cmp</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="2">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="9" bw="1" op_0_bw="3" op_1_bw="3">
+<![CDATA[
+_ifconv:7  %tmp_217 = icmp eq i3 %cubieColor_V_load, %cubieColor_V_load_153
+
+]]></Node>
+<StgValue><ssdm name="tmp_217"/></StgValue>
+</operation>
+
+<operation id="21" st_id="3" stage="2" lat="2">
+<core>RAM</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="2">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="10" bw="3" op_0_bw="3">
+<![CDATA[
+_ifconv:8  %cubieColor_V_load_154 = load i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 8), align 8
+
+]]></Node>
+<StgValue><ssdm name="cubieColor_V_load_154"/></StgValue>
+</operation>
+
+<operation id="22" st_id="3" stage="2" lat="2">
+<core>RAM</core>
+<MemPortIdVec>1 </MemPortIdVec>
+<condition id="2">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="12" bw="3" op_0_bw="3">
+<![CDATA[
+_ifconv:10  %cubieColor_V_load_155 = load i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 31), align 1
+
+]]></Node>
+<StgValue><ssdm name="cubieColor_V_load_155"/></StgValue>
+</operation>
+</state>
+
+<state id="4" st_id="4">
+
+<operation id="23" st_id="4" stage="1" lat="2">
+<core>RAM</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="3">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="10" bw="3" op_0_bw="3">
+<![CDATA[
+_ifconv:8  %cubieColor_V_load_154 = load i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 8), align 8
+
+]]></Node>
+<StgValue><ssdm name="cubieColor_V_load_154"/></StgValue>
+</operation>
+
+<operation id="24" st_id="4" stage="1" lat="1">
+<core>Cmp</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="3">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="11" bw="1" op_0_bw="3" op_1_bw="3">
+<![CDATA[
+_ifconv:9  %tmp_218 = icmp eq i3 %cubieColor_V_load, %cubieColor_V_load_154
+
+]]></Node>
+<StgValue><ssdm name="tmp_218"/></StgValue>
+</operation>
+
+<operation id="25" st_id="4" stage="1" lat="2">
+<core>RAM</core>
+<MemPortIdVec>1 </MemPortIdVec>
+<condition id="3">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="12" bw="3" op_0_bw="3">
+<![CDATA[
+_ifconv:10  %cubieColor_V_load_155 = load i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 31), align 1
+
+]]></Node>
+<StgValue><ssdm name="cubieColor_V_load_155"/></StgValue>
+</operation>
+
+<operation id="26" st_id="4" stage="2" lat="2">
+<core>RAM</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="3">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="13" bw="3" op_0_bw="3">
+<![CDATA[
+_ifconv:11  %cubieColor_V_load_156 = load i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 27), align 1
+
+]]></Node>
+<StgValue><ssdm name="cubieColor_V_load_156"/></StgValue>
+</operation>
+
+<operation id="27" st_id="4" stage="2" lat="2">
+<core>RAM</core>
+<MemPortIdVec>1 </MemPortIdVec>
+<condition id="3">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="15" bw="3" op_0_bw="3">
+<![CDATA[
+_ifconv:13  %cubieColor_V_load_157 = load i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 22), align 2
+
+]]></Node>
+<StgValue><ssdm name="cubieColor_V_load_157"/></StgValue>
+</operation>
+</state>
+
+<state id="5" st_id="5">
+
+<operation id="28" st_id="5" stage="1" lat="2">
+<core>RAM</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="4">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="13" bw="3" op_0_bw="3">
+<![CDATA[
+_ifconv:11  %cubieColor_V_load_156 = load i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 27), align 1
+
+]]></Node>
+<StgValue><ssdm name="cubieColor_V_load_156"/></StgValue>
+</operation>
+
+<operation id="29" st_id="5" stage="1" lat="1">
+<core>Cmp</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="4">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="14" bw="1" op_0_bw="3" op_1_bw="3">
+<![CDATA[
+_ifconv:12  %tmp_219 = icmp eq i3 %cubieColor_V_load_155, %cubieColor_V_load_156
+
+]]></Node>
+<StgValue><ssdm name="tmp_219"/></StgValue>
+</operation>
+
+<operation id="30" st_id="5" stage="1" lat="2">
+<core>RAM</core>
+<MemPortIdVec>1 </MemPortIdVec>
+<condition id="4">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="15" bw="3" op_0_bw="3">
+<![CDATA[
+_ifconv:13  %cubieColor_V_load_157 = load i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 22), align 2
+
+]]></Node>
+<StgValue><ssdm name="cubieColor_V_load_157"/></StgValue>
+</operation>
+
+<operation id="31" st_id="5" stage="2" lat="2">
+<core>RAM</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="4">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="16" bw="3" op_0_bw="3">
+<![CDATA[
+_ifconv:14  %cubieColor_V_load_158 = load i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 20), align 4
+
+]]></Node>
+<StgValue><ssdm name="cubieColor_V_load_158"/></StgValue>
+</operation>
+
+<operation id="32" st_id="5" stage="2" lat="2">
+<core>RAM</core>
+<MemPortIdVec>1 </MemPortIdVec>
+<condition id="4">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="18" bw="3" op_0_bw="3">
+<![CDATA[
+_ifconv:16  %cubieColor_V_load_159 = load i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 18), align 2
+
+]]></Node>
+<StgValue><ssdm name="cubieColor_V_load_159"/></StgValue>
+</operation>
+</state>
+
+<state id="6" st_id="6">
+
+<operation id="33" st_id="6" stage="1" lat="2">
+<core>RAM</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="5">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="16" bw="3" op_0_bw="3">
+<![CDATA[
+_ifconv:14  %cubieColor_V_load_158 = load i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 20), align 4
+
+]]></Node>
+<StgValue><ssdm name="cubieColor_V_load_158"/></StgValue>
+</operation>
+
+<operation id="34" st_id="6" stage="1" lat="1">
+<core>Cmp</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="5">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="17" bw="1" op_0_bw="3" op_1_bw="3">
+<![CDATA[
+_ifconv:15  %tmp_220 = icmp eq i3 %cubieColor_V_load_157, %cubieColor_V_load_158
+
+]]></Node>
+<StgValue><ssdm name="tmp_220"/></StgValue>
+</operation>
+
+<operation id="35" st_id="6" stage="1" lat="2">
+<core>RAM</core>
+<MemPortIdVec>1 </MemPortIdVec>
+<condition id="5">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="18" bw="3" op_0_bw="3">
+<![CDATA[
+_ifconv:16  %cubieColor_V_load_159 = load i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 18), align 2
+
+]]></Node>
+<StgValue><ssdm name="cubieColor_V_load_159"/></StgValue>
+</operation>
+
+<operation id="36" st_id="6" stage="1" lat="1">
+<core>Cmp</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="5">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="19" bw="1" op_0_bw="3" op_1_bw="3">
+<![CDATA[
+_ifconv:17  %tmp_221 = icmp eq i3 %cubieColor_V_load_157, %cubieColor_V_load_159
+
+]]></Node>
+<StgValue><ssdm name="tmp_221"/></StgValue>
+</operation>
+
+<operation id="37" st_id="6" stage="2" lat="2">
+<core>RAM</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="5">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="20" bw="3" op_0_bw="3">
+<![CDATA[
+_ifconv:18  %cubieColor_V_load_160 = load i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 29), align 1
+
+]]></Node>
+<StgValue><ssdm name="cubieColor_V_load_160"/></StgValue>
+</operation>
+
+<operation id="38" st_id="6" stage="2" lat="2">
+<core>RAM</core>
+<MemPortIdVec>1 </MemPortIdVec>
+<condition id="5">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="22" bw="3" op_0_bw="3">
+<![CDATA[
+_ifconv:20  %cubieColor_V_load_161 = load i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 40), align 8
+
+]]></Node>
+<StgValue><ssdm name="cubieColor_V_load_161"/></StgValue>
+</operation>
+</state>
+
+<state id="7" st_id="7">
+
+<operation id="39" st_id="7" stage="1" lat="2">
+<core>RAM</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="6">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="20" bw="3" op_0_bw="3">
+<![CDATA[
+_ifconv:18  %cubieColor_V_load_160 = load i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 29), align 1
+
+]]></Node>
+<StgValue><ssdm name="cubieColor_V_load_160"/></StgValue>
+</operation>
+
+<operation id="40" st_id="7" stage="1" lat="1">
+<core>Cmp</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="6">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="21" bw="1" op_0_bw="3" op_1_bw="3">
+<![CDATA[
+_ifconv:19  %tmp_222 = icmp eq i3 %cubieColor_V_load_155, %cubieColor_V_load_160
+
+]]></Node>
+<StgValue><ssdm name="tmp_222"/></StgValue>
+</operation>
+
+<operation id="41" st_id="7" stage="1" lat="2">
+<core>RAM</core>
+<MemPortIdVec>1 </MemPortIdVec>
+<condition id="6">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="22" bw="3" op_0_bw="3">
+<![CDATA[
+_ifconv:20  %cubieColor_V_load_161 = load i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 40), align 8
+
+]]></Node>
+<StgValue><ssdm name="cubieColor_V_load_161"/></StgValue>
+</operation>
+
+<operation id="42" st_id="7" stage="2" lat="2">
+<core>RAM</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="6">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="23" bw="3" op_0_bw="3">
+<![CDATA[
+_ifconv:21  %cubieColor_V_load_162 = load i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 38), align 2
+
+]]></Node>
+<StgValue><ssdm name="cubieColor_V_load_162"/></StgValue>
+</operation>
+
+<operation id="43" st_id="7" stage="2" lat="2">
+<core>RAM</core>
+<MemPortIdVec>1 </MemPortIdVec>
+<condition id="6">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="25" bw="3" op_0_bw="3">
+<![CDATA[
+_ifconv:23  %cubieColor_V_load_163 = load i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 49), align 1
+
+]]></Node>
+<StgValue><ssdm name="cubieColor_V_load_163"/></StgValue>
+</operation>
+</state>
+
+<state id="8" st_id="8">
+
+<operation id="44" st_id="8" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="7">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="2" bw="3" op_0_bw="3" op_1_bw="3">
+<![CDATA[
+_ifconv:0  %corner_V_read = call i3 @_ssdm_op_Read.ap_auto.i3(i3 %corner_V)
+
+]]></Node>
+<StgValue><ssdm name="corner_V_read"/></StgValue>
+</operation>
+
+<operation id="45" st_id="8" stage="1" lat="2">
+<core>RAM</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="7">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="23" bw="3" op_0_bw="3">
+<![CDATA[
+_ifconv:21  %cubieColor_V_load_162 = load i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 38), align 2
+
+]]></Node>
+<StgValue><ssdm name="cubieColor_V_load_162"/></StgValue>
+</operation>
+
+<operation id="46" st_id="8" stage="1" lat="1">
+<core>Cmp</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="7">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="24" bw="1" op_0_bw="3" op_1_bw="3">
+<![CDATA[
+_ifconv:22  %tmp_223 = icmp eq i3 %cubieColor_V_load_161, %cubieColor_V_load_162
+
+]]></Node>
+<StgValue><ssdm name="tmp_223"/></StgValue>
+</operation>
+
+<operation id="47" st_id="8" stage="1" lat="2">
+<core>RAM</core>
+<MemPortIdVec>1 </MemPortIdVec>
+<condition id="7">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="25" bw="3" op_0_bw="3">
+<![CDATA[
+_ifconv:23  %cubieColor_V_load_163 = load i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 49), align 1
+
+]]></Node>
+<StgValue><ssdm name="cubieColor_V_load_163"/></StgValue>
+</operation>
+
+<operation id="48" st_id="8" stage="2" lat="2">
+<core>RAM</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="7">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="26" bw="3" op_0_bw="3">
+<![CDATA[
+_ifconv:24  %cubieColor_V_load_164 = load i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 47), align 1
+
+]]></Node>
+<StgValue><ssdm name="cubieColor_V_load_164"/></StgValue>
+</operation>
+
+<operation id="49" st_id="8" stage="2" lat="2">
+<core>RAM</core>
+<MemPortIdVec>1 </MemPortIdVec>
+<condition id="7">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="28" bw="3" op_0_bw="3">
+<![CDATA[
+_ifconv:26  %cubieColor_V_load_165 = load i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 45), align 1
+
+]]></Node>
+<StgValue><ssdm name="cubieColor_V_load_165"/></StgValue>
+</operation>
+
+<operation id="50" st_id="8" stage="1" lat="1">
+<core>Cmp</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="7">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="30" bw="1" op_0_bw="3" op_1_bw="3">
+<![CDATA[
+_ifconv:28  %sel_tmp = icmp eq i3 %corner_V_read, 1
+
+]]></Node>
+<StgValue><ssdm name="sel_tmp"/></StgValue>
+</operation>
+
+<operation id="51" st_id="8" stage="1" lat="1">
+<core>LogicGate</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="7">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="31" bw="1" op_0_bw="1" op_1_bw="1">
+<![CDATA[
+_ifconv:29  %tmp = and i1 %sel_tmp, %tmp_s
+
+]]></Node>
+<StgValue><ssdm name="tmp"/></StgValue>
+</operation>
+
+<operation id="52" st_id="8" stage="1" lat="1">
+<core>LogicGate</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="7">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="32" bw="1" op_0_bw="1" op_1_bw="1">
+<![CDATA[
+_ifconv:30  %tmp19 = and i1 %tmp_219, %tmp_223
+
+]]></Node>
+<StgValue><ssdm name="tmp19"/></StgValue>
+</operation>
+
+<operation id="53" st_id="8" stage="1" lat="1">
+<core>LogicGate</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="7">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="33" bw="1" op_0_bw="1" op_1_bw="1">
+<![CDATA[
+_ifconv:31  %sel_tmp3 = and i1 %tmp19, %tmp
+
+]]></Node>
+<StgValue><ssdm name="sel_tmp3"/></StgValue>
+</operation>
+
+<operation id="54" st_id="8" stage="1" lat="1">
+<core>Cmp</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="7">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="34" bw="1" op_0_bw="3" op_1_bw="3">
+<![CDATA[
+_ifconv:32  %sel_tmp5 = icmp eq i3 %corner_V_read, 3
+
+]]></Node>
+<StgValue><ssdm name="sel_tmp5"/></StgValue>
+</operation>
+
+<operation id="55" st_id="8" stage="1" lat="1">
+<core>Cmp</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="7">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="38" bw="1" op_0_bw="3" op_1_bw="3">
+<![CDATA[
+_ifconv:36  %sel_tmp10 = icmp eq i3 %corner_V_read, -4
+
+]]></Node>
+<StgValue><ssdm name="sel_tmp10"/></StgValue>
+</operation>
+
+<operation id="56" st_id="8" stage="1" lat="1">
+<core>Cmp</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="7">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="42" bw="1" op_0_bw="3" op_1_bw="3">
+<![CDATA[
+_ifconv:40  %sel_tmp15 = icmp eq i3 %corner_V_read, 2
+
+]]></Node>
+<StgValue><ssdm name="sel_tmp15"/></StgValue>
+</operation>
+
+<operation id="57" st_id="8" stage="1" lat="1">
+<core>LogicGate</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="7">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="43" bw="1" op_0_bw="1" op_1_bw="1">
+<![CDATA[
+_ifconv:41  %tmp24 = and i1 %tmp_216, %tmp_220
+
+]]></Node>
+<StgValue><ssdm name="tmp24"/></StgValue>
+</operation>
+
+<operation id="58" st_id="8" stage="1" lat="1">
+<core>LogicGate</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="7">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="44" bw="1" op_0_bw="1" op_1_bw="1">
+<![CDATA[
+_ifconv:42  %sel_tmp17 = and i1 %tmp24, %sel_tmp15
+
+]]></Node>
+<StgValue><ssdm name="sel_tmp17"/></StgValue>
+</operation>
+</state>
+
+<state id="9" st_id="9">
+
+<operation id="59" st_id="9" stage="1" lat="2">
+<core>RAM</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="8">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="26" bw="3" op_0_bw="3">
+<![CDATA[
+_ifconv:24  %cubieColor_V_load_164 = load i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 47), align 1
+
+]]></Node>
+<StgValue><ssdm name="cubieColor_V_load_164"/></StgValue>
+</operation>
+
+<operation id="60" st_id="9" stage="1" lat="1">
+<core>Cmp</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="8">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="27" bw="1" op_0_bw="3" op_1_bw="3">
+<![CDATA[
+_ifconv:25  %tmp_224 = icmp eq i3 %cubieColor_V_load_163, %cubieColor_V_load_164
+
+]]></Node>
+<StgValue><ssdm name="tmp_224"/></StgValue>
+</operation>
+
+<operation id="61" st_id="9" stage="1" lat="2">
+<core>RAM</core>
+<MemPortIdVec>1 </MemPortIdVec>
+<condition id="8">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="28" bw="3" op_0_bw="3">
+<![CDATA[
+_ifconv:26  %cubieColor_V_load_165 = load i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 45), align 1
+
+]]></Node>
+<StgValue><ssdm name="cubieColor_V_load_165"/></StgValue>
+</operation>
+
+<operation id="62" st_id="9" stage="1" lat="1">
+<core>Cmp</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="8">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="29" bw="1" op_0_bw="3" op_1_bw="3">
+<![CDATA[
+_ifconv:27  %tmp_225 = icmp eq i3 %cubieColor_V_load_163, %cubieColor_V_load_165
+
+]]></Node>
+<StgValue><ssdm name="tmp_225"/></StgValue>
+</operation>
+
+<operation id="63" st_id="9" stage="1" lat="1">
+<core>LogicGate</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="8">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="35" bw="1" op_0_bw="1" op_1_bw="1">
+<![CDATA[
+_ifconv:33  %tmp20 = and i1 %sel_tmp5, %tmp_217
+
+]]></Node>
+<StgValue><ssdm name="tmp20"/></StgValue>
+</operation>
+
+<operation id="64" st_id="9" stage="1" lat="1">
+<core>LogicGate</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="8">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="36" bw="1" op_0_bw="1" op_1_bw="1">
+<![CDATA[
+_ifconv:34  %tmp21 = and i1 %tmp_221, %tmp_224
+
+]]></Node>
+<StgValue><ssdm name="tmp21"/></StgValue>
+</operation>
+
+<operation id="65" st_id="9" stage="1" lat="1">
+<core>LogicGate</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="8">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="37" bw="1" op_0_bw="1" op_1_bw="1">
+<![CDATA[
+_ifconv:35  %sel_tmp8 = and i1 %tmp21, %tmp20
+
+]]></Node>
+<StgValue><ssdm name="sel_tmp8"/></StgValue>
+</operation>
+
+<operation id="66" st_id="9" stage="1" lat="1">
+<core>LogicGate</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="8">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="39" bw="1" op_0_bw="1" op_1_bw="1">
+<![CDATA[
+_ifconv:37  %tmp22 = and i1 %sel_tmp10, %tmp_218
+
+]]></Node>
+<StgValue><ssdm name="tmp22"/></StgValue>
+</operation>
+
+<operation id="67" st_id="9" stage="1" lat="1">
+<core>LogicGate</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="8">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="40" bw="1" op_0_bw="1" op_1_bw="1">
+<![CDATA[
+_ifconv:38  %tmp23 = and i1 %tmp_222, %tmp_225
+
+]]></Node>
+<StgValue><ssdm name="tmp23"/></StgValue>
+</operation>
+
+<operation id="68" st_id="9" stage="1" lat="1">
+<core>LogicGate</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="8">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="41" bw="1" op_0_bw="1" op_1_bw="1">
+<![CDATA[
+_ifconv:39  %sel_tmp13 = and i1 %tmp23, %tmp22
+
+]]></Node>
+<StgValue><ssdm name="sel_tmp13"/></StgValue>
+</operation>
+
+<operation id="69" st_id="9" stage="1" lat="1">
+<core>LogicGate</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="8">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="45" bw="1" op_0_bw="1" op_1_bw="1">
+<![CDATA[
+_ifconv:43  %tmp25 = or i1 %sel_tmp8, %sel_tmp3
+
+]]></Node>
+<StgValue><ssdm name="tmp25"/></StgValue>
+</operation>
+
+<operation id="70" st_id="9" stage="1" lat="1">
+<core>LogicGate</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="8">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="46" bw="1" op_0_bw="1" op_1_bw="1">
+<![CDATA[
+_ifconv:44  %tmp26 = or i1 %sel_tmp13, %sel_tmp17
+
+]]></Node>
+<StgValue><ssdm name="tmp26"/></StgValue>
+</operation>
+
+<operation id="71" st_id="9" stage="1" lat="1">
+<core>LogicGate</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="8">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="47" bw="1" op_0_bw="1" op_1_bw="1">
+<![CDATA[
+_ifconv:45  %agg_result_V = or i1 %tmp26, %tmp25
+
+]]></Node>
+<StgValue><ssdm name="agg_result_V"/></StgValue>
+</operation>
+
+<operation id="72" st_id="9" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="8">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="48" bw="0" op_0_bw="1">
+<![CDATA[
+_ifconv:46  ret i1 %agg_result_V
+
+]]></Node>
+<StgValue><ssdm name=""/></StgValue>
+</operation>
+</state>
+</state_list>
+
+
+<ports>
+<port id="81" name="corner_V" dir="0" iftype="0">
+<core>NULL</core><StgValue><ssdm name="corner_V"/></StgValue>
+</port>
+<port id="82" name="cubieColor_V" dir="0" iftype="1">
+<core>RAM</core><StgValue><ssdm name="cubieColor_V"/><MemPortTyVec>1 1 </MemPortTyVec>
+</StgValue>
+</port>
+</ports>
+
+
+<dataflows>
+<dataflow id="84" from="StgValue_83" to="cubieColor_V_load" fromId="83" toId="10">
+</dataflow>
+<dataflow id="86" from="StgValue_85" to="cubieColor_V_load_151" fromId="85" toId="11">
+</dataflow>
+<dataflow id="87" from="StgValue_83" to="cubieColor_V_load" fromId="83" toId="12">
+</dataflow>
+<dataflow id="88" from="StgValue_85" to="cubieColor_V_load_151" fromId="85" toId="13">
+</dataflow>
+<dataflow id="89" from="cubieColor_V_load" to="tmp_s" fromId="12" toId="14">
+</dataflow>
+<dataflow id="90" from="cubieColor_V_load_151" to="tmp_s" fromId="13" toId="14">
+</dataflow>
+<dataflow id="92" from="StgValue_91" to="cubieColor_V_load_152" fromId="91" toId="15">
+</dataflow>
+<dataflow id="94" from="StgValue_93" to="cubieColor_V_load_153" fromId="93" toId="16">
+</dataflow>
+<dataflow id="95" from="StgValue_91" to="cubieColor_V_load_152" fromId="91" toId="17">
+</dataflow>
+<dataflow id="96" from="cubieColor_V_load" to="tmp_216" fromId="12" toId="18">
+</dataflow>
+<dataflow id="97" from="cubieColor_V_load_152" to="tmp_216" fromId="17" toId="18">
+</dataflow>
+<dataflow id="98" from="StgValue_93" to="cubieColor_V_load_153" fromId="93" toId="19">
+</dataflow>
+<dataflow id="99" from="cubieColor_V_load" to="tmp_217" fromId="12" toId="20">
+</dataflow>
+<dataflow id="100" from="cubieColor_V_load_153" to="tmp_217" fromId="19" toId="20">
+</dataflow>
+<dataflow id="102" from="StgValue_101" to="cubieColor_V_load_154" fromId="101" toId="21">
+</dataflow>
+<dataflow id="104" from="StgValue_103" to="cubieColor_V_load_155" fromId="103" toId="22">
+</dataflow>
+<dataflow id="105" from="StgValue_101" to="cubieColor_V_load_154" fromId="101" toId="23">
+</dataflow>
+<dataflow id="106" from="cubieColor_V_load" to="tmp_218" fromId="12" toId="24">
+</dataflow>
+<dataflow id="107" from="cubieColor_V_load_154" to="tmp_218" fromId="23" toId="24">
+</dataflow>
+<dataflow id="108" from="StgValue_103" to="cubieColor_V_load_155" fromId="103" toId="25">
+</dataflow>
+<dataflow id="110" from="StgValue_109" to="cubieColor_V_load_156" fromId="109" toId="26">
+</dataflow>
+<dataflow id="112" from="StgValue_111" to="cubieColor_V_load_157" fromId="111" toId="27">
+</dataflow>
+<dataflow id="113" from="StgValue_109" to="cubieColor_V_load_156" fromId="109" toId="28">
+</dataflow>
+<dataflow id="114" from="cubieColor_V_load_155" to="tmp_219" fromId="25" toId="29">
+</dataflow>
+<dataflow id="115" from="cubieColor_V_load_156" to="tmp_219" fromId="28" toId="29">
+</dataflow>
+<dataflow id="116" from="StgValue_111" to="cubieColor_V_load_157" fromId="111" toId="30">
+</dataflow>
+<dataflow id="118" from="StgValue_117" to="cubieColor_V_load_158" fromId="117" toId="31">
+</dataflow>
+<dataflow id="120" from="StgValue_119" to="cubieColor_V_load_159" fromId="119" toId="32">
+</dataflow>
+<dataflow id="121" from="StgValue_117" to="cubieColor_V_load_158" fromId="117" toId="33">
+</dataflow>
+<dataflow id="122" from="cubieColor_V_load_157" to="tmp_220" fromId="30" toId="34">
+</dataflow>
+<dataflow id="123" from="cubieColor_V_load_158" to="tmp_220" fromId="33" toId="34">
+</dataflow>
+<dataflow id="124" from="StgValue_119" to="cubieColor_V_load_159" fromId="119" toId="35">
+</dataflow>
+<dataflow id="125" from="cubieColor_V_load_157" to="tmp_221" fromId="30" toId="36">
+</dataflow>
+<dataflow id="126" from="cubieColor_V_load_159" to="tmp_221" fromId="35" toId="36">
+</dataflow>
+<dataflow id="128" from="StgValue_127" to="cubieColor_V_load_160" fromId="127" toId="37">
+</dataflow>
+<dataflow id="130" from="StgValue_129" to="cubieColor_V_load_161" fromId="129" toId="38">
+</dataflow>
+<dataflow id="131" from="StgValue_127" to="cubieColor_V_load_160" fromId="127" toId="39">
+</dataflow>
+<dataflow id="132" from="cubieColor_V_load_155" to="tmp_222" fromId="25" toId="40">
+</dataflow>
+<dataflow id="133" from="cubieColor_V_load_160" to="tmp_222" fromId="39" toId="40">
+</dataflow>
+<dataflow id="134" from="StgValue_129" to="cubieColor_V_load_161" fromId="129" toId="41">
+</dataflow>
+<dataflow id="136" from="StgValue_135" to="cubieColor_V_load_162" fromId="135" toId="42">
+</dataflow>
+<dataflow id="138" from="StgValue_137" to="cubieColor_V_load_163" fromId="137" toId="43">
+</dataflow>
+<dataflow id="140" from="_ssdm_op_Read.ap_auto.i3" to="corner_V_read" fromId="139" toId="44">
+</dataflow>
+<dataflow id="141" from="corner_V" to="corner_V_read" fromId="81" toId="44">
+</dataflow>
+<dataflow id="142" from="StgValue_135" to="cubieColor_V_load_162" fromId="135" toId="45">
+</dataflow>
+<dataflow id="143" from="cubieColor_V_load_161" to="tmp_223" fromId="41" toId="46">
+</dataflow>
+<dataflow id="144" from="cubieColor_V_load_162" to="tmp_223" fromId="45" toId="46">
+</dataflow>
+<dataflow id="145" from="StgValue_137" to="cubieColor_V_load_163" fromId="137" toId="47">
+</dataflow>
+<dataflow id="147" from="StgValue_146" to="cubieColor_V_load_164" fromId="146" toId="48">
+</dataflow>
+<dataflow id="149" from="StgValue_148" to="cubieColor_V_load_165" fromId="148" toId="49">
+</dataflow>
+<dataflow id="150" from="corner_V_read" to="sel_tmp" fromId="44" toId="50">
+</dataflow>
+<dataflow id="152" from="StgValue_151" to="sel_tmp" fromId="151" toId="50">
+</dataflow>
+<dataflow id="153" from="sel_tmp" to="tmp" fromId="50" toId="51">
+</dataflow>
+<dataflow id="154" from="tmp_s" to="tmp" fromId="14" toId="51">
+</dataflow>
+<dataflow id="155" from="tmp_219" to="tmp19" fromId="29" toId="52">
+</dataflow>
+<dataflow id="156" from="tmp_223" to="tmp19" fromId="46" toId="52">
+</dataflow>
+<dataflow id="157" from="tmp19" to="sel_tmp3" fromId="52" toId="53">
+</dataflow>
+<dataflow id="158" from="tmp" to="sel_tmp3" fromId="51" toId="53">
+</dataflow>
+<dataflow id="159" from="corner_V_read" to="sel_tmp5" fromId="44" toId="54">
+</dataflow>
+<dataflow id="161" from="StgValue_160" to="sel_tmp5" fromId="160" toId="54">
+</dataflow>
+<dataflow id="162" from="corner_V_read" to="sel_tmp10" fromId="44" toId="55">
+</dataflow>
+<dataflow id="164" from="StgValue_163" to="sel_tmp10" fromId="163" toId="55">
+</dataflow>
+<dataflow id="165" from="corner_V_read" to="sel_tmp15" fromId="44" toId="56">
+</dataflow>
+<dataflow id="167" from="StgValue_166" to="sel_tmp15" fromId="166" toId="56">
+</dataflow>
+<dataflow id="168" from="tmp_216" to="tmp24" fromId="18" toId="57">
+</dataflow>
+<dataflow id="169" from="tmp_220" to="tmp24" fromId="34" toId="57">
+</dataflow>
+<dataflow id="170" from="tmp24" to="sel_tmp17" fromId="57" toId="58">
+</dataflow>
+<dataflow id="171" from="sel_tmp15" to="sel_tmp17" fromId="56" toId="58">
+</dataflow>
+<dataflow id="172" from="StgValue_146" to="cubieColor_V_load_164" fromId="146" toId="59">
+</dataflow>
+<dataflow id="173" from="cubieColor_V_load_163" to="tmp_224" fromId="47" toId="60">
+</dataflow>
+<dataflow id="174" from="cubieColor_V_load_164" to="tmp_224" fromId="59" toId="60">
+</dataflow>
+<dataflow id="175" from="StgValue_148" to="cubieColor_V_load_165" fromId="148" toId="61">
+</dataflow>
+<dataflow id="176" from="cubieColor_V_load_163" to="tmp_225" fromId="47" toId="62">
+</dataflow>
+<dataflow id="177" from="cubieColor_V_load_165" to="tmp_225" fromId="61" toId="62">
+</dataflow>
+<dataflow id="178" from="sel_tmp5" to="tmp20" fromId="54" toId="63">
+</dataflow>
+<dataflow id="179" from="tmp_217" to="tmp20" fromId="20" toId="63">
+</dataflow>
+<dataflow id="180" from="tmp_221" to="tmp21" fromId="36" toId="64">
+</dataflow>
+<dataflow id="181" from="tmp_224" to="tmp21" fromId="60" toId="64">
+</dataflow>
+<dataflow id="182" from="tmp21" to="sel_tmp8" fromId="64" toId="65">
+</dataflow>
+<dataflow id="183" from="tmp20" to="sel_tmp8" fromId="63" toId="65">
+</dataflow>
+<dataflow id="184" from="sel_tmp10" to="tmp22" fromId="55" toId="66">
+</dataflow>
+<dataflow id="185" from="tmp_218" to="tmp22" fromId="24" toId="66">
+</dataflow>
+<dataflow id="186" from="tmp_222" to="tmp23" fromId="40" toId="67">
+</dataflow>
+<dataflow id="187" from="tmp_225" to="tmp23" fromId="62" toId="67">
+</dataflow>
+<dataflow id="188" from="tmp23" to="sel_tmp13" fromId="67" toId="68">
+</dataflow>
+<dataflow id="189" from="tmp22" to="sel_tmp13" fromId="66" toId="68">
+</dataflow>
+<dataflow id="190" from="sel_tmp8" to="tmp25" fromId="65" toId="69">
+</dataflow>
+<dataflow id="191" from="sel_tmp3" to="tmp25" fromId="53" toId="69">
+</dataflow>
+<dataflow id="192" from="sel_tmp13" to="tmp26" fromId="68" toId="70">
+</dataflow>
+<dataflow id="193" from="sel_tmp17" to="tmp26" fromId="58" toId="70">
+</dataflow>
+<dataflow id="194" from="tmp26" to="agg_result_V" fromId="70" toId="71">
+</dataflow>
+<dataflow id="195" from="tmp25" to="agg_result_V" fromId="69" toId="71">
+</dataflow>
+<dataflow id="196" from="agg_result_V" to="StgValue_72" fromId="71" toId="72">
+</dataflow>
+</dataflows>
+
+
+</stg>

@@ -1,0 +1,173 @@
+
+
+================================================================
+== Vivado HLS Report for 'solveStage3'
+================================================================
+* Date:           Fri Jan  4 20:12:57 2019
+
+* Version:        2018.2 (Build 2258646 on Thu Jun 14 20:25:20 MDT 2018)
+* Project:        Rubik_Cube_Layer_All
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  12.00|     9.736|        1.50|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |    ?|    ?|    ?|    ?|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        +-------------------------+---------------+-----+------+-----+------+---------+
+        |                         |               |   Latency  |  Interval  | Pipeline|
+        |         Instance        |     Module    | min |  max | min |  max |   Type  |
+        +-------------------------+---------------+-----+------+-----+------+---------+
+        |grp_stage3Prepare_fu_32  |stage3Prepare  |   14|  1685|   14|  1685|   none  |
+        |grp_solveStage3a_fu_44   |solveStage3a   |    ?|     ?|    ?|     ?|   none  |
+        |grp_findEdge_fu_54       |findEdge       |   12|    12|   12|    12|   none  |
+        +-------------------------+---------------+-----+------+-----+------+---------+
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+-------+
+|       Name      | BRAM_18K| DSP48E|   FF   |  LUT  |
++-----------------+---------+-------+--------+-------+
+|DSP              |        -|      -|       -|      -|
+|Expression       |        -|      -|       0|      9|
+|FIFO             |        -|      -|       -|      -|
+|Instance         |        0|      -|     531|   5359|
+|Memory           |        -|      -|       -|      -|
+|Multiplexer      |        -|      -|       -|    278|
+|Register         |        -|      -|      11|      -|
++-----------------+---------+-------+--------+-------+
+|Total            |        0|      0|     542|   5646|
++-----------------+---------+-------+--------+-------+
+|Available        |      280|    220|  106400|  53200|
++-----------------+---------+-------+--------+-------+
+|Utilization (%)  |        0|      0|   ~0   |     10|
++-----------------+---------+-------+--------+-------+
+
++ Detail: 
+    * Instance: 
+    +-------------------------+---------------+---------+-------+-----+------+
+    |         Instance        |     Module    | BRAM_18K| DSP48E|  FF |  LUT |
+    +-------------------------+---------------+---------+-------+-----+------+
+    |grp_findEdge_fu_54       |findEdge       |        0|      0|   53|   382|
+    |grp_solveStage3a_fu_44   |solveStage3a   |        0|      0|  259|  2203|
+    |grp_stage3Prepare_fu_32  |stage3Prepare  |        0|      0|  219|  2774|
+    +-------------------------+---------------+---------+-------+-----+------+
+    |Total                    |               |        0|      0|  531|  5359|
+    +-------------------------+---------------+---------+-------+-----+------+
+
+    * DSP48: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +--------------+----------+-------+---+----+------------+------------+
+    | Variable Name| Operation| DSP48E| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +--------------+----------+-------+---+----+------------+------------+
+    |tmp_fu_64_p2  |   icmp   |      0|  0|   9|           4|           3|
+    +--------------+----------+-------+---+----+------------+------------+
+    |Total         |          |      0|  0|   9|           4|           3|
+    +--------------+----------+-------+---+----+------------+------------+
+
+    * Multiplexer: 
+    +------------------------+----+-----------+-----+-----------+
+    |          Name          | LUT| Input Size| Bits| Total Bits|
+    +------------------------+----+-----------+-----+-----------+
+    |ap_NS_fsm               |  44|          9|    1|          9|
+    |cubieColor_V_address0   |  21|          4|    6|         24|
+    |cubieColor_V_address1   |  21|          4|    6|         24|
+    |cubieColor_V_ce0        |  21|          4|    1|          4|
+    |cubieColor_V_ce1        |  21|          4|    1|          4|
+    |cubieColor_V_d0         |  15|          3|    3|          9|
+    |cubieColor_V_d1         |  15|          3|    3|          9|
+    |cubieColor_V_we0        |  15|          3|    1|          3|
+    |cubieColor_V_we1        |  15|          3|    1|          3|
+    |moveCounter_V_o         |  15|          3|    8|         24|
+    |moveCounter_V_o_ap_vld  |  15|          3|    1|          3|
+    |moves_V_address0        |  15|          3|    8|         24|
+    |moves_V_ce0             |  15|          3|    1|          3|
+    |moves_V_d0              |  15|          3|    4|         12|
+    |moves_V_we0             |  15|          3|    1|          3|
+    +------------------------+----+-----------+-----+-----------+
+    |Total                   | 278|         55|   46|        158|
+    +------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +--------------------------------------+---+----+-----+-----------+
+    |                 Name                 | FF| LUT| Bits| Const Bits|
+    +--------------------------------------+---+----+-----+-----------+
+    |ap_CS_fsm                             |  8|   0|    8|          0|
+    |grp_findEdge_fu_54_ap_start_reg       |  1|   0|    1|          0|
+    |grp_solveStage3a_fu_44_ap_start_reg   |  1|   0|    1|          0|
+    |grp_stage3Prepare_fu_32_ap_start_reg  |  1|   0|    1|          0|
+    +--------------------------------------+---+----+-----+-----------+
+    |Total                                 | 11|   0|   11|          0|
+    +--------------------------------------+---+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++------------------------+-----+-----+------------+---------------+--------------+
+|        RTL Ports       | Dir | Bits|  Protocol  | Source Object |    C Type    |
++------------------------+-----+-----+------------+---------------+--------------+
+|ap_clk                  |  in |    1| ap_ctrl_hs |  solveStage3  | return value |
+|ap_rst                  |  in |    1| ap_ctrl_hs |  solveStage3  | return value |
+|ap_start                |  in |    1| ap_ctrl_hs |  solveStage3  | return value |
+|ap_done                 | out |    1| ap_ctrl_hs |  solveStage3  | return value |
+|ap_idle                 | out |    1| ap_ctrl_hs |  solveStage3  | return value |
+|ap_ready                | out |    1| ap_ctrl_hs |  solveStage3  | return value |
+|fC_V                    |  in |    3|   ap_none  |      fC_V     |    scalar    |
+|sC_V                    |  in |    3|   ap_none  |      sC_V     |    scalar    |
+|moveCounter_V_i         |  in |    8|   ap_ovld  | moveCounter_V |    pointer   |
+|moveCounter_V_o         | out |    8|   ap_ovld  | moveCounter_V |    pointer   |
+|moveCounter_V_o_ap_vld  | out |    1|   ap_ovld  | moveCounter_V |    pointer   |
+|moves_V_address0        | out |    8|  ap_memory |    moves_V    |     array    |
+|moves_V_ce0             | out |    1|  ap_memory |    moves_V    |     array    |
+|moves_V_we0             | out |    1|  ap_memory |    moves_V    |     array    |
+|moves_V_d0              | out |    4|  ap_memory |    moves_V    |     array    |
+|cubieColor_V_address0   | out |    6|  ap_memory |  cubieColor_V |     array    |
+|cubieColor_V_ce0        | out |    1|  ap_memory |  cubieColor_V |     array    |
+|cubieColor_V_we0        | out |    1|  ap_memory |  cubieColor_V |     array    |
+|cubieColor_V_d0         | out |    3|  ap_memory |  cubieColor_V |     array    |
+|cubieColor_V_q0         |  in |    3|  ap_memory |  cubieColor_V |     array    |
+|cubieColor_V_address1   | out |    6|  ap_memory |  cubieColor_V |     array    |
+|cubieColor_V_ce1        | out |    1|  ap_memory |  cubieColor_V |     array    |
+|cubieColor_V_we1        | out |    1|  ap_memory |  cubieColor_V |     array    |
+|cubieColor_V_d1         | out |    3|  ap_memory |  cubieColor_V |     array    |
+|cubieColor_V_q1         |  in |    3|  ap_memory |  cubieColor_V |     array    |
++------------------------+-----+-----+------------+---------------+--------------+
+

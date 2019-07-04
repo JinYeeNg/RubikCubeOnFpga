@@ -1,0 +1,353 @@
+
+
+================================================================
+== Vivado HLS Report for 'get_coordcube'
+================================================================
+* Date:           Thu Jul  4 02:07:05 2019
+
+* Version:        2018.2 (Build 2258646 on Thu Jun 14 20:25:20 MDT 2018)
+* Project:        kociembaHls
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|     8.510|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-------+-----+-------+---------+
+    |   Latency   |   Interval  | Pipeline|
+    | min |  max  | min |  max  |   Type  |
+    +-----+-------+-----+-------+---------+
+    |  276|  17792|  276|  17792|   none  |
+    +-----+-------+-----+-------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-------------+-----+-----+----------+-----------+-----------+-------+----------+
+        |             |  Latency  | Iteration|  Initiation Interval  |  Trip |          |
+        |  Loop Name  | min | max |  Latency |  achieved |   target  | Count | Pipelined|
+        +-------------+-----+-----+----------+-----------+-----------+-------+----------+
+        |- Loop 1     |   14|   14|         2|          -|          -|      7|    no    |
+        |- Loop 2     |   22|   22|         2|          -|          -|     11|    no    |
+        |- Loop 3     |   35|  119|  5 ~ 17  |          -|          -|      7|    no    |
+        | + Loop 3.1  |    2|   14|         2|          -|          -| 1 ~ 7 |    no    |
+        +-------------+-----+-----+----------+-----------+-----------+-------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 16
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / (!exitcond_i)
+	4  / (exitcond_i)
+3 --> 
+	2  / true
+4 --> 
+	5  / (!exitcond_i3)
+	6  / (exitcond_i3)
+5 --> 
+	4  / true
+6 --> 
+	7  / (!tmp_i7)
+	10  / (tmp_i7)
+7 --> 
+	8  / true
+8 --> 
+	9  / (tmp_285_i)
+	6  / (!tmp_285_i)
+9 --> 
+	8  / true
+10 --> 
+	11  / true
+11 --> 
+	12  / true
+12 --> 
+	13  / true
+13 --> 
+	14  / true
+14 --> 
+	15  / true
+15 --> 
+	16  / true
+16 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.76>
+ST_1 : Operation 17 [1/1] (1.76ns)   --->   "br label %1" [cubiecube.cpp:374->search.cpp:85]   --->   Operation 17 'br' <Predicate = true> <Delay = 1.76>
+
+State 2 <SV = 1> <Delay = 2.32>
+ST_2 : Operation 18 [1/1] (0.00ns)   --->   "%ret_i = phi i16 [ 0, %0 ], [ %ret, %2 ]"   --->   Operation 18 'phi' 'ret_i' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 19 [1/1] (0.00ns)   --->   "%i_i = phi i3 [ 0, %0 ], [ %i, %2 ]"   --->   Operation 19 'phi' 'i_i' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 20 [1/1] (1.13ns)   --->   "%exitcond_i = icmp eq i3 %i_i, -1" [cubiecube.cpp:374->search.cpp:85]   --->   Operation 20 'icmp' 'exitcond_i' <Predicate = true> <Delay = 1.13> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.13> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 21 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopTripCount(i64 7, i64 7, i64 7)"   --->   Operation 21 'speclooptripcount' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 22 [1/1] (1.65ns)   --->   "%i = add i3 %i_i, 1" [cubiecube.cpp:374->search.cpp:85]   --->   Operation 22 'add' 'i' <Predicate = true> <Delay = 1.65> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.07> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 23 [1/1] (0.00ns)   --->   "br i1 %exitcond_i, label %getTwist.exit, label %2" [cubiecube.cpp:374->search.cpp:85]   --->   Operation 23 'br' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 24 [1/1] (0.00ns)   --->   "%tmp_i_36 = zext i3 %i_i to i64" [cubiecube.cpp:375->search.cpp:85]   --->   Operation 24 'zext' 'tmp_i_36' <Predicate = (!exitcond_i)> <Delay = 0.00>
+ST_2 : Operation 25 [1/1] (0.00ns)   --->   "%cubiecube_0_co_addr = getelementptr [8 x i2]* %cubiecube_0_co, i64 0, i64 %tmp_i_36" [cubiecube.cpp:375->search.cpp:85]   --->   Operation 25 'getelementptr' 'cubiecube_0_co_addr' <Predicate = (!exitcond_i)> <Delay = 0.00>
+ST_2 : Operation 26 [2/2] (2.32ns)   --->   "%cubiecube_0_co_load = load i2* %cubiecube_0_co_addr, align 1" [cubiecube.cpp:375->search.cpp:85]   --->   Operation 26 'load' 'cubiecube_0_co_load' <Predicate = (!exitcond_i)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 8> <RAM>
+ST_2 : Operation 27 [1/1] (0.00ns)   --->   "store i16 %ret_i, i16* @result_twist_0, align 16" [search.cpp:85]   --->   Operation 27 'store' <Predicate = (exitcond_i)> <Delay = 0.00>
+ST_2 : Operation 28 [1/1] (1.76ns)   --->   "br label %3" [cubiecube.cpp:394->search.cpp:86]   --->   Operation 28 'br' <Predicate = (exitcond_i)> <Delay = 1.76>
+
+State 3 <SV = 2> <Delay = 6.22>
+ST_3 : Operation 29 [1/1] (0.00ns)   --->   "%tmp = shl i16 %ret_i, 2" [cubiecube.cpp:375->search.cpp:85]   --->   Operation 29 'shl' 'tmp' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 30 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%tmp_i = sub i16 %tmp, %ret_i" [cubiecube.cpp:375->search.cpp:85]   --->   Operation 30 'sub' 'tmp_i' <Predicate = true> <Delay = 0.00> <Core = "TAddSub">   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.95> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 31 [1/2] (2.32ns)   --->   "%cubiecube_0_co_load = load i2* %cubiecube_0_co_addr, align 1" [cubiecube.cpp:375->search.cpp:85]   --->   Operation 31 'load' 'cubiecube_0_co_load' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 8> <RAM>
+ST_3 : Operation 32 [1/1] (0.00ns)   --->   "%tmp_256_i = zext i2 %cubiecube_0_co_load to i16" [cubiecube.cpp:375->search.cpp:85]   --->   Operation 32 'zext' 'tmp_256_i' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 33 [1/1] (3.90ns) (root node of TernaryAdder)   --->   "%ret = add i16 %tmp_256_i, %tmp_i" [cubiecube.cpp:375->search.cpp:85]   --->   Operation 33 'add' 'ret' <Predicate = true> <Delay = 3.90> <Core = "TAddSub">   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.95> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 34 [1/1] (0.00ns)   --->   "br label %1" [cubiecube.cpp:374->search.cpp:85]   --->   Operation 34 'br' <Predicate = true> <Delay = 0.00>
+
+State 4 <SV = 2> <Delay = 2.32>
+ST_4 : Operation 35 [1/1] (0.00ns)   --->   "%i_i1 = phi i4 [ 0, %getTwist.exit ], [ %i_22, %4 ]"   --->   Operation 35 'phi' 'i_i1' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 36 [1/1] (0.00ns)   --->   "%ret_i2 = phi i16 [ 0, %getTwist.exit ], [ %ret_1, %4 ]"   --->   Operation 36 'phi' 'ret_i2' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 37 [1/1] (1.30ns)   --->   "%exitcond_i3 = icmp eq i4 %i_i1, -5" [cubiecube.cpp:394->search.cpp:86]   --->   Operation 37 'icmp' 'exitcond_i3' <Predicate = true> <Delay = 1.30> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.13> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 38 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopTripCount(i64 11, i64 11, i64 11)"   --->   Operation 38 'speclooptripcount' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 39 [1/1] (1.73ns)   --->   "%i_22 = add i4 %i_i1, 1" [cubiecube.cpp:394->search.cpp:86]   --->   Operation 39 'add' 'i_22' <Predicate = true> <Delay = 1.73> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.07> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 40 [1/1] (0.00ns)   --->   "br i1 %exitcond_i3, label %getFlip.exit, label %4" [cubiecube.cpp:394->search.cpp:86]   --->   Operation 40 'br' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 41 [1/1] (0.00ns)   --->   "%tmp_i5 = zext i4 %i_i1 to i64" [cubiecube.cpp:395->search.cpp:86]   --->   Operation 41 'zext' 'tmp_i5' <Predicate = (!exitcond_i3)> <Delay = 0.00>
+ST_4 : Operation 42 [1/1] (0.00ns)   --->   "%cubiecube_0_eo_addr = getelementptr [12 x i1]* %cubiecube_0_eo, i64 0, i64 %tmp_i5" [cubiecube.cpp:395->search.cpp:86]   --->   Operation 42 'getelementptr' 'cubiecube_0_eo_addr' <Predicate = (!exitcond_i3)> <Delay = 0.00>
+ST_4 : Operation 43 [2/2] (2.32ns)   --->   "%cubiecube_0_eo_load = load i1* %cubiecube_0_eo_addr, align 1" [cubiecube.cpp:395->search.cpp:86]   --->   Operation 43 'load' 'cubiecube_0_eo_load' <Predicate = (!exitcond_i3)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 8> <RAM>
+ST_4 : Operation 44 [1/1] (0.00ns)   --->   "%tmp_113 = trunc i16 %ret_i2 to i15" [cubiecube.cpp:395->search.cpp:86]   --->   Operation 44 'trunc' 'tmp_113' <Predicate = (!exitcond_i3)> <Delay = 0.00>
+ST_4 : Operation 45 [1/1] (0.00ns)   --->   "%s_i = alloca i32"   --->   Operation 45 'alloca' 's_i' <Predicate = (exitcond_i3)> <Delay = 0.00>
+ST_4 : Operation 46 [1/1] (0.00ns)   --->   "store i16 %ret_i2, i16* @result_flip_0, align 2" [search.cpp:86]   --->   Operation 46 'store' <Predicate = (exitcond_i3)> <Delay = 0.00>
+ST_4 : Operation 47 [1/1] (1.76ns)   --->   "store i32 0, i32* %s_i"   --->   Operation 47 'store' <Predicate = (exitcond_i3)> <Delay = 1.76>
+ST_4 : Operation 48 [1/1] (1.76ns)   --->   "br label %5" [cubiecube.cpp:414->search.cpp:87]   --->   Operation 48 'br' <Predicate = (exitcond_i3)> <Delay = 1.76>
+
+State 5 <SV = 3> <Delay = 2.32>
+ST_5 : Operation 49 [1/2] (2.32ns)   --->   "%cubiecube_0_eo_load = load i1* %cubiecube_0_eo_addr, align 1" [cubiecube.cpp:395->search.cpp:86]   --->   Operation 49 'load' 'cubiecube_0_eo_load' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 8> <RAM>
+ST_5 : Operation 50 [1/1] (0.00ns)   --->   "%ret_1 = call i16 @_ssdm_op_BitConcatenate.i16.i15.i1(i15 %tmp_113, i1 %cubiecube_0_eo_load)" [cubiecube.cpp:395->search.cpp:86]   --->   Operation 50 'bitconcatenate' 'ret_1' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 51 [1/1] (0.00ns)   --->   "br label %3" [cubiecube.cpp:394->search.cpp:86]   --->   Operation 51 'br' <Predicate = true> <Delay = 0.00>
+
+State 6 <SV = 3> <Delay = 2.32>
+ST_6 : Operation 52 [1/1] (0.00ns)   --->   "%i_i6 = phi i3 [ -1, %getFlip.exit ], [ %i_23, %7 ]"   --->   Operation 52 'phi' 'i_i6' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 53 [1/1] (0.00ns)   --->   "%i_i6_cast = zext i3 %i_i6 to i4" [cubiecube.cpp:414->search.cpp:87]   --->   Operation 53 'zext' 'i_i6_cast' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 54 [1/1] (1.13ns)   --->   "%tmp_i7 = icmp eq i3 %i_i6, 0" [cubiecube.cpp:414->search.cpp:87]   --->   Operation 54 'icmp' 'tmp_i7' <Predicate = true> <Delay = 1.13> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.13> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 55 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopTripCount(i64 7, i64 7, i64 7)"   --->   Operation 55 'speclooptripcount' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 56 [1/1] (0.00ns)   --->   "br i1 %tmp_i7, label %cornerParity.exit, label %.preheader.preheader.i" [cubiecube.cpp:414->search.cpp:87]   --->   Operation 56 'br' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 57 [1/1] (0.00ns)   --->   "%tmp_i8 = zext i3 %i_i6 to i64" [cubiecube.cpp:416->search.cpp:87]   --->   Operation 57 'zext' 'tmp_i8' <Predicate = (!tmp_i7)> <Delay = 0.00>
+ST_6 : Operation 58 [1/1] (0.00ns)   --->   "%cubiecube_0_cp_addr = getelementptr [8 x i3]* %cubiecube_0_cp, i64 0, i64 %tmp_i8" [cubiecube.cpp:416->search.cpp:87]   --->   Operation 58 'getelementptr' 'cubiecube_0_cp_addr' <Predicate = (!tmp_i7)> <Delay = 0.00>
+ST_6 : Operation 59 [2/2] (2.32ns)   --->   "%cubiecube_0_cp_load = load i3* %cubiecube_0_cp_addr, align 1" [cubiecube.cpp:416->search.cpp:87]   --->   Operation 59 'load' 'cubiecube_0_cp_load' <Predicate = (!tmp_i7)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 8> <RAM>
+ST_6 : Operation 60 [2/2] (0.00ns)   --->   "%tmp_52 = call fastcc i16 @getFRtoBR([12 x i4]* %cubiecube_0_ep)" [search.cpp:88]   --->   Operation 60 'call' 'tmp_52' <Predicate = (tmp_i7)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_6 : Operation 61 [2/2] (0.00ns)   --->   "%tmp_53 = call fastcc i16 @getURFtoDLF([8 x i3]* %cubiecube_0_cp)" [search.cpp:89]   --->   Operation 61 'call' 'tmp_53' <Predicate = (tmp_i7)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 7 <SV = 4> <Delay = 2.32>
+ST_7 : Operation 62 [1/2] (2.32ns)   --->   "%cubiecube_0_cp_load = load i3* %cubiecube_0_cp_addr, align 1" [cubiecube.cpp:416->search.cpp:87]   --->   Operation 62 'load' 'cubiecube_0_cp_load' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 8> <RAM>
+ST_7 : Operation 63 [1/1] (1.76ns)   --->   "br label %.preheader.i" [cubiecube.cpp:415->search.cpp:87]   --->   Operation 63 'br' <Predicate = true> <Delay = 1.76>
+
+State 8 <SV = 5> <Delay = 4.05>
+ST_8 : Operation 64 [1/1] (0.00ns)   --->   "%j_0_in_i = phi i4 [ %j, %6 ], [ %i_i6_cast, %.preheader.preheader.i ]"   --->   Operation 64 'phi' 'j_0_in_i' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 65 [1/1] (1.73ns)   --->   "%j = add i4 %j_0_in_i, -1" [cubiecube.cpp:415->search.cpp:87]   --->   Operation 65 'add' 'j' <Predicate = true> <Delay = 1.73> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.07> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 66 [1/1] (0.00ns)   --->   "%j_cast = sext i4 %j to i32" [cubiecube.cpp:415->search.cpp:87]   --->   Operation 66 'sext' 'j_cast' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 67 [1/1] (1.30ns)   --->   "%tmp_285_i = icmp sgt i4 %j_0_in_i, 0" [cubiecube.cpp:415->search.cpp:87]   --->   Operation 67 'icmp' 'tmp_285_i' <Predicate = true> <Delay = 1.30> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.13> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 68 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopTripCount(i64 1, i64 7, i64 0)"   --->   Operation 68 'speclooptripcount' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 69 [1/1] (0.00ns)   --->   "br i1 %tmp_285_i, label %6, label %7" [cubiecube.cpp:415->search.cpp:87]   --->   Operation 69 'br' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 70 [1/1] (0.00ns)   --->   "%tmp_286_i = zext i32 %j_cast to i64" [cubiecube.cpp:416->search.cpp:87]   --->   Operation 70 'zext' 'tmp_286_i' <Predicate = (tmp_285_i)> <Delay = 0.00>
+ST_8 : Operation 71 [1/1] (0.00ns)   --->   "%cubiecube_0_cp_addr_3 = getelementptr [8 x i3]* %cubiecube_0_cp, i64 0, i64 %tmp_286_i" [cubiecube.cpp:416->search.cpp:87]   --->   Operation 71 'getelementptr' 'cubiecube_0_cp_addr_3' <Predicate = (tmp_285_i)> <Delay = 0.00>
+ST_8 : Operation 72 [2/2] (2.32ns)   --->   "%cubiecube_0_cp_load_3 = load i3* %cubiecube_0_cp_addr_3, align 1" [cubiecube.cpp:416->search.cpp:87]   --->   Operation 72 'load' 'cubiecube_0_cp_load_3' <Predicate = (tmp_285_i)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 8> <RAM>
+ST_8 : Operation 73 [1/1] (1.65ns)   --->   "%i_23 = add i3 %i_i6, -1" [cubiecube.cpp:414->search.cpp:87]   --->   Operation 73 'add' 'i_23' <Predicate = (!tmp_285_i)> <Delay = 1.65> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.07> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 74 [1/1] (0.00ns)   --->   "br label %5" [cubiecube.cpp:414->search.cpp:87]   --->   Operation 74 'br' <Predicate = (!tmp_285_i)> <Delay = 0.00>
+
+State 9 <SV = 6> <Delay = 5.91>
+ST_9 : Operation 75 [1/1] (0.00ns)   --->   "%s_i_load_2 = load i32* %s_i" [cubiecube.cpp:417->search.cpp:87]   --->   Operation 75 'load' 's_i_load_2' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 76 [1/2] (2.32ns)   --->   "%cubiecube_0_cp_load_3 = load i3* %cubiecube_0_cp_addr_3, align 1" [cubiecube.cpp:416->search.cpp:87]   --->   Operation 76 'load' 'cubiecube_0_cp_load_3' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 8> <RAM>
+ST_9 : Operation 77 [1/1] (1.13ns)   --->   "%tmp_287_i = icmp ugt i3 %cubiecube_0_cp_load_3, %cubiecube_0_cp_load" [cubiecube.cpp:416->search.cpp:87]   --->   Operation 77 'icmp' 'tmp_287_i' <Predicate = true> <Delay = 1.13> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.13> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 78 [1/1] (2.55ns)   --->   "%s = add nsw i32 %s_i_load_2, 1" [cubiecube.cpp:417->search.cpp:87]   --->   Operation 78 'add' 's' <Predicate = true> <Delay = 2.55> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.07> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 79 [1/1] (0.69ns)   --->   "%p_s_1_i = select i1 %tmp_287_i, i32 %s, i32 %s_i_load_2" [cubiecube.cpp:416->search.cpp:87]   --->   Operation 79 'select' 'p_s_1_i' <Predicate = true> <Delay = 0.69> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_9 : Operation 80 [1/1] (1.76ns)   --->   "store i32 %p_s_1_i, i32* %s_i" [cubiecube.cpp:416->search.cpp:87]   --->   Operation 80 'store' <Predicate = true> <Delay = 1.76>
+ST_9 : Operation 81 [1/1] (0.00ns)   --->   "br label %.preheader.i" [cubiecube.cpp:415->search.cpp:87]   --->   Operation 81 'br' <Predicate = true> <Delay = 0.00>
+
+State 10 <SV = 4> <Delay = 4.62>
+ST_10 : Operation 82 [1/2] (4.62ns)   --->   "%tmp_52 = call fastcc i16 @getFRtoBR([12 x i4]* %cubiecube_0_ep)" [search.cpp:88]   --->   Operation 82 'call' 'tmp_52' <Predicate = true> <Delay = 4.62> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_10 : Operation 83 [1/1] (0.00ns)   --->   "store i16 %tmp_52, i16* @result_FRtoBR_0, align 2" [search.cpp:88]   --->   Operation 83 'store' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 84 [1/2] (2.55ns)   --->   "%tmp_53 = call fastcc i16 @getURFtoDLF([8 x i3]* %cubiecube_0_cp)" [search.cpp:89]   --->   Operation 84 'call' 'tmp_53' <Predicate = true> <Delay = 2.55> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_10 : Operation 85 [1/1] (0.00ns)   --->   "store i16 %tmp_53, i16* @result_URFtoDLF_0, align 8" [search.cpp:89]   --->   Operation 85 'store' <Predicate = true> <Delay = 0.00>
+
+State 11 <SV = 5> <Delay = 0.00>
+ST_11 : Operation 86 [2/2] (0.00ns)   --->   "%tmp_54 = call fastcc i16 @getURtoUL([12 x i4]* %cubiecube_0_ep)" [search.cpp:90]   --->   Operation 86 'call' 'tmp_54' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 12 <SV = 6> <Delay = 4.62>
+ST_12 : Operation 87 [1/2] (4.62ns)   --->   "%tmp_54 = call fastcc i16 @getURtoUL([12 x i4]* %cubiecube_0_ep)" [search.cpp:90]   --->   Operation 87 'call' 'tmp_54' <Predicate = true> <Delay = 4.62> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_12 : Operation 88 [1/1] (0.00ns)   --->   "store i16 %tmp_54, i16* @result_URtoUL_0, align 2" [search.cpp:90]   --->   Operation 88 'store' <Predicate = true> <Delay = 0.00>
+
+State 13 <SV = 7> <Delay = 0.00>
+ST_13 : Operation 89 [2/2] (0.00ns)   --->   "%tmp_55 = call fastcc i16 @getUBtoDF([12 x i4]* %cubiecube_0_ep)" [search.cpp:91]   --->   Operation 89 'call' 'tmp_55' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 14 <SV = 8> <Delay = 4.62>
+ST_14 : Operation 90 [1/2] (4.62ns)   --->   "%tmp_55 = call fastcc i16 @getUBtoDF([12 x i4]* %cubiecube_0_ep)" [search.cpp:91]   --->   Operation 90 'call' 'tmp_55' <Predicate = true> <Delay = 4.62> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_14 : Operation 91 [1/1] (0.00ns)   --->   "store i16 %tmp_55, i16* @result_UBtoDF_0, align 4" [search.cpp:91]   --->   Operation 91 'store' <Predicate = true> <Delay = 0.00>
+
+State 15 <SV = 9> <Delay = 0.00>
+ST_15 : Operation 92 [2/2] (0.00ns)   --->   "call fastcc void @getURtoDF([12 x i4]* %cubiecube_0_ep)" [search.cpp:92]   --->   Operation 92 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 16 <SV = 10> <Delay = 2.88>
+ST_16 : Operation 93 [1/1] (0.00ns)   --->   "%s_i_load = load i32* %s_i" [cubiecube.cpp:418->search.cpp:87]   --->   Operation 93 'load' 's_i_load' <Predicate = true> <Delay = 0.00>
+ST_16 : Operation 94 [1/1] (0.00ns)   --->   "%tmp_114 = call i1 @_ssdm_op_BitSelect.i1.i32.i32(i32 %s_i_load, i32 31)" [cubiecube.cpp:418->search.cpp:87]   --->   Operation 94 'bitselect' 'tmp_114' <Predicate = true> <Delay = 0.00>
+ST_16 : Operation 95 [1/1] (0.00ns)   --->   "%tmp_115 = trunc i32 %s_i_load to i1" [cubiecube.cpp:418->search.cpp:87]   --->   Operation 95 'trunc' 'tmp_115' <Predicate = true> <Delay = 0.00>
+ST_16 : Operation 96 [1/1] (0.00ns)   --->   "%tmp_116 = trunc i32 %s_i_load to i1" [cubiecube.cpp:418->search.cpp:87]   --->   Operation 96 'trunc' 'tmp_116' <Predicate = true> <Delay = 0.00>
+ST_16 : Operation 97 [1/1] (0.00ns)   --->   "%tmp_117 = call i16 @_ssdm_op_BitConcatenate.i16.i15.i1(i15 0, i1 %tmp_116)" [cubiecube.cpp:418->search.cpp:87]   --->   Operation 97 'bitconcatenate' 'tmp_117' <Predicate = true> <Delay = 0.00>
+ST_16 : Operation 98 [1/1] (2.07ns)   --->   "%tmp_118 = sub i16 0, %tmp_117" [cubiecube.cpp:418->search.cpp:87]   --->   Operation 98 'sub' 'tmp_118' <Predicate = true> <Delay = 2.07> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.07> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_16 : Operation 99 [1/1] (0.00ns)   --->   "%tmp_s = call i16 @_ssdm_op_BitConcatenate.i16.i15.i1(i15 0, i1 %tmp_115)" [cubiecube.cpp:418->search.cpp:87]   --->   Operation 99 'bitconcatenate' 'tmp_s' <Predicate = true> <Delay = 0.00>
+ST_16 : Operation 100 [1/1] (0.80ns)   --->   "%tmp_162 = select i1 %tmp_114, i16 %tmp_118, i16 %tmp_s" [cubiecube.cpp:418->search.cpp:87]   --->   Operation 100 'select' 'tmp_162' <Predicate = true> <Delay = 0.80> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_16 : Operation 101 [1/1] (0.00ns)   --->   "store i16 %tmp_162, i16* @result_parity_0, align 4" [search.cpp:87]   --->   Operation 101 'store' <Predicate = true> <Delay = 0.00>
+ST_16 : Operation 102 [1/2] (0.00ns)   --->   "call fastcc void @getURtoDF([12 x i4]* %cubiecube_0_ep)" [search.cpp:92]   --->   Operation 102 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_16 : Operation 103 [1/1] (0.00ns)   --->   "ret void"   --->   Operation 103 'ret' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ <State 1>: 1.77ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('ret') with incoming values : ('ret', cubiecube.cpp:375->search.cpp:85) [14]  (1.77 ns)
+
+ <State 2>: 2.32ns
+The critical path consists of the following:
+	'phi' operation ('i') with incoming values : ('i', cubiecube.cpp:374->search.cpp:85) [15]  (0 ns)
+	'getelementptr' operation ('cubiecube_0_co_addr', cubiecube.cpp:375->search.cpp:85) [24]  (0 ns)
+	'load' operation ('cubiecube_0_co_load', cubiecube.cpp:375->search.cpp:85) on array 'cubiecube_0_co' [25]  (2.32 ns)
+
+ <State 3>: 6.22ns
+The critical path consists of the following:
+	'load' operation ('cubiecube_0_co_load', cubiecube.cpp:375->search.cpp:85) on array 'cubiecube_0_co' [25]  (2.32 ns)
+	'add' operation ('ret', cubiecube.cpp:375->search.cpp:85) [27]  (3.9 ns)
+
+ <State 4>: 2.32ns
+The critical path consists of the following:
+	'phi' operation ('i') with incoming values : ('i', cubiecube.cpp:394->search.cpp:86) [33]  (0 ns)
+	'getelementptr' operation ('cubiecube_0_eo_addr', cubiecube.cpp:395->search.cpp:86) [41]  (0 ns)
+	'load' operation ('cubiecube_0_eo_load', cubiecube.cpp:395->search.cpp:86) on array 'cubiecube_0_eo' [42]  (2.32 ns)
+
+ <State 5>: 2.32ns
+The critical path consists of the following:
+	'load' operation ('cubiecube_0_eo_load', cubiecube.cpp:395->search.cpp:86) on array 'cubiecube_0_eo' [42]  (2.32 ns)
+
+ <State 6>: 2.32ns
+The critical path consists of the following:
+	'phi' operation ('i') with incoming values : ('i', cubiecube.cpp:414->search.cpp:87) [52]  (0 ns)
+	'getelementptr' operation ('cubiecube_0_cp_addr', cubiecube.cpp:416->search.cpp:87) [59]  (0 ns)
+	'load' operation ('cubiecube_0_cp_load', cubiecube.cpp:416->search.cpp:87) on array 'cubiecube_0_cp' [60]  (2.32 ns)
+
+ <State 7>: 2.32ns
+The critical path consists of the following:
+	'load' operation ('cubiecube_0_cp_load', cubiecube.cpp:416->search.cpp:87) on array 'cubiecube_0_cp' [60]  (2.32 ns)
+
+ <State 8>: 4.06ns
+The critical path consists of the following:
+	'phi' operation ('j') with incoming values : ('i_i6_cast', cubiecube.cpp:414->search.cpp:87) ('j', cubiecube.cpp:415->search.cpp:87) [63]  (0 ns)
+	'add' operation ('j', cubiecube.cpp:415->search.cpp:87) [64]  (1.74 ns)
+	'getelementptr' operation ('cubiecube_0_cp_addr_3', cubiecube.cpp:416->search.cpp:87) [72]  (0 ns)
+	'load' operation ('cubiecube_0_cp_load_3', cubiecube.cpp:416->search.cpp:87) on array 'cubiecube_0_cp' [73]  (2.32 ns)
+
+ <State 9>: 5.92ns
+The critical path consists of the following:
+	'load' operation ('cubiecube_0_cp_load_3', cubiecube.cpp:416->search.cpp:87) on array 'cubiecube_0_cp' [73]  (2.32 ns)
+	'icmp' operation ('tmp_287_i', cubiecube.cpp:416->search.cpp:87) [74]  (1.13 ns)
+	'select' operation ('p_s_1_i', cubiecube.cpp:416->search.cpp:87) [76]  (0.698 ns)
+	'store' operation (cubiecube.cpp:416->search.cpp:87) of variable 'p_s_1_i', cubiecube.cpp:416->search.cpp:87 on local variable 's_i' [77]  (1.77 ns)
+
+ <State 10>: 4.63ns
+The critical path consists of the following:
+	'call' operation ('tmp_52', search.cpp:88) to 'getFRtoBR' [92]  (4.63 ns)
+	'store' operation (search.cpp:88) of variable 'tmp_52', search.cpp:88 on static variable 'result_FRtoBR_0' [93]  (0 ns)
+
+ <State 11>: 0ns
+The critical path consists of the following:
+
+ <State 12>: 4.63ns
+The critical path consists of the following:
+	'call' operation ('tmp_54', search.cpp:90) to 'getURtoUL' [96]  (4.63 ns)
+	'store' operation (search.cpp:90) of variable 'tmp_54', search.cpp:90 on static variable 'result_URtoUL_0' [97]  (0 ns)
+
+ <State 13>: 0ns
+The critical path consists of the following:
+
+ <State 14>: 4.63ns
+The critical path consists of the following:
+	'call' operation ('tmp_55', search.cpp:91) to 'getUBtoDF' [98]  (4.63 ns)
+	'store' operation (search.cpp:91) of variable 'tmp_55', search.cpp:91 on static variable 'result_UBtoDF_0' [99]  (0 ns)
+
+ <State 15>: 0ns
+The critical path consists of the following:
+
+ <State 16>: 2.88ns
+The critical path consists of the following:
+	'load' operation ('s_i_load', cubiecube.cpp:418->search.cpp:87) on local variable 's_i' [83]  (0 ns)
+	'sub' operation ('tmp_118', cubiecube.cpp:418->search.cpp:87) [88]  (2.08 ns)
+	'select' operation ('tmp_162', cubiecube.cpp:418->search.cpp:87) [90]  (0.805 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

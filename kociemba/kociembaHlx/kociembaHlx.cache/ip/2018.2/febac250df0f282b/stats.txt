@@ -1,0 +1,4 @@
+NumberHits:0
+Timestamp: Thu Jul 04 08:38:35 UTC 2019
+VLNV: xilinx.com:ip:xlconstant:1.1
+SynthRuntime: 67

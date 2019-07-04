@@ -1,0 +1,174 @@
+
+
+================================================================
+== Vivado HLS Report for 'cornerCorrect'
+================================================================
+* Date:           Fri Jan  4 20:12:44 2019
+
+* Version:        2018.2 (Build 2258646 on Thu Jun 14 20:25:20 MDT 2018)
+* Project:        Rubik_Cube_Layer_All
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  12.00|     5.409|        1.50|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |    8|    8|    8|    8|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+-------+
+|       Name      | BRAM_18K| DSP48E|   FF   |  LUT  |
++-----------------+---------+-------+--------+-------+
+|DSP              |        -|      -|       -|      -|
+|Expression       |        -|      -|       0|    127|
+|FIFO             |        -|      -|       -|      -|
+|Instance         |        -|      -|       -|      -|
+|Memory           |        -|      -|       -|      -|
+|Multiplexer      |        -|      -|       -|    168|
+|Register         |        -|      -|      28|      -|
++-----------------+---------+-------+--------+-------+
+|Total            |        0|      0|      28|    295|
++-----------------+---------+-------+--------+-------+
+|Available        |      280|    220|  106400|  53200|
++-----------------+---------+-------+--------+-------+
+|Utilization (%)  |        0|      0|   ~0   |   ~0  |
++-----------------+---------+-------+--------+-------+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * DSP48: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +------------------------+----------+-------+---+----+------------+------------+
+    |      Variable Name     | Operation| DSP48E| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +------------------------+----------+-------+---+----+------------+------------+
+    |sel_tmp13_fu_197_p2     |    and   |      0|  0|   2|           1|           1|
+    |sel_tmp17_fu_161_p2     |    and   |      0|  0|   2|           1|           1|
+    |sel_tmp3_fu_133_p2      |    and   |      0|  0|   2|           1|           1|
+    |sel_tmp8_fu_182_p2      |    and   |      0|  0|   2|           1|           1|
+    |tmp19_fu_128_p2         |    and   |      0|  0|   2|           1|           1|
+    |tmp20_fu_173_p2         |    and   |      0|  0|   2|           1|           1|
+    |tmp21_fu_177_p2         |    and   |      0|  0|   2|           1|           1|
+    |tmp22_fu_188_p2         |    and   |      0|  0|   2|           1|           1|
+    |tmp23_fu_192_p2         |    and   |      0|  0|   2|           1|           1|
+    |tmp24_fu_157_p2         |    and   |      0|  0|   2|           1|           1|
+    |tmp_fu_123_p2           |    and   |      0|  0|   2|           1|           1|
+    |grp_fu_101_p2           |   icmp   |      0|  0|   9|           3|           3|
+    |grp_fu_77_p2            |   icmp   |      0|  0|   9|           3|           3|
+    |grp_fu_83_p2            |   icmp   |      0|  0|   9|           3|           3|
+    |grp_fu_88_p2            |   icmp   |      0|  0|   9|           3|           3|
+    |sel_tmp10_fu_145_p2     |   icmp   |      0|  0|   9|           3|           4|
+    |sel_tmp15_fu_151_p2     |   icmp   |      0|  0|   9|           3|           2|
+    |sel_tmp5_fu_139_p2      |   icmp   |      0|  0|   9|           3|           2|
+    |sel_tmp_fu_117_p2       |   icmp   |      0|  0|   9|           3|           1|
+    |tmp_220_fu_107_p2       |   icmp   |      0|  0|   9|           3|           3|
+    |tmp_221_fu_112_p2       |   icmp   |      0|  0|   9|           3|           3|
+    |tmp_225_fu_167_p2       |   icmp   |      0|  0|   9|           3|           3|
+    |agg_result_V_fu_213_p2  |    or    |      0|  0|   2|           1|           1|
+    |tmp25_fu_203_p2         |    or    |      0|  0|   2|           1|           1|
+    |tmp26_fu_208_p2         |    or    |      0|  0|   2|           1|           1|
+    +------------------------+----------+-------+---+----+------------+------------+
+    |Total                   |          |      0|  0| 127|          47|          44|
+    +------------------------+----------+-------+---+----+------------+------------+
+
+    * Multiplexer: 
+    +-----------------------+----+-----------+-----+-----------+
+    |          Name         | LUT| Input Size| Bits| Total Bits|
+    +-----------------------+----+-----------+-----+-----------+
+    |ap_NS_fsm              |  47|         10|    1|         10|
+    |ap_return              |   9|          2|    1|          2|
+    |cubieColor_V_address0  |  44|          9|    6|         54|
+    |cubieColor_V_address1  |  44|          9|    6|         54|
+    |grp_fu_77_p0           |  15|          3|    3|          9|
+    |reg_93                 |   9|          2|    3|          6|
+    +-----------------------+----+-----------+-----+-----------+
+    |Total                  | 168|         35|   20|        135|
+    +-----------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +-------------------------------+---+----+-----+-----------+
+    |              Name             | FF| LUT| Bits| Const Bits|
+    +-------------------------------+---+----+-----+-----------+
+    |ap_CS_fsm                      |  9|   0|    9|          0|
+    |ap_return_preg                 |  1|   0|    1|          0|
+    |cubieColor_V_load_157_reg_244  |  3|   0|    3|          0|
+    |reg_93                         |  3|   0|    3|          0|
+    |sel_tmp10_reg_275              |  1|   0|    1|          0|
+    |sel_tmp17_reg_280              |  1|   0|    1|          0|
+    |sel_tmp3_reg_265               |  1|   0|    1|          0|
+    |sel_tmp5_reg_270               |  1|   0|    1|          0|
+    |tmp_216_reg_224                |  1|   0|    1|          0|
+    |tmp_217_reg_229                |  1|   0|    1|          0|
+    |tmp_218_reg_234                |  1|   0|    1|          0|
+    |tmp_219_reg_239                |  1|   0|    1|          0|
+    |tmp_220_reg_250                |  1|   0|    1|          0|
+    |tmp_221_reg_255                |  1|   0|    1|          0|
+    |tmp_222_reg_260                |  1|   0|    1|          0|
+    |tmp_s_reg_219                  |  1|   0|    1|          0|
+    +-------------------------------+---+----+-----+-----------+
+    |Total                          | 28|   0|   28|          0|
+    +-------------------------------+---+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++-----------------------+-----+-----+------------+---------------+--------------+
+|       RTL Ports       | Dir | Bits|  Protocol  | Source Object |    C Type    |
++-----------------------+-----+-----+------------+---------------+--------------+
+|ap_clk                 |  in |    1| ap_ctrl_hs | cornerCorrect | return value |
+|ap_rst                 |  in |    1| ap_ctrl_hs | cornerCorrect | return value |
+|ap_start               |  in |    1| ap_ctrl_hs | cornerCorrect | return value |
+|ap_done                | out |    1| ap_ctrl_hs | cornerCorrect | return value |
+|ap_idle                | out |    1| ap_ctrl_hs | cornerCorrect | return value |
+|ap_ready               | out |    1| ap_ctrl_hs | cornerCorrect | return value |
+|ap_return              | out |    1| ap_ctrl_hs | cornerCorrect | return value |
+|corner_V               |  in |    3|   ap_none  |    corner_V   |    scalar    |
+|cubieColor_V_address0  | out |    6|  ap_memory |  cubieColor_V |     array    |
+|cubieColor_V_ce0       | out |    1|  ap_memory |  cubieColor_V |     array    |
+|cubieColor_V_q0        |  in |    3|  ap_memory |  cubieColor_V |     array    |
+|cubieColor_V_address1  | out |    6|  ap_memory |  cubieColor_V |     array    |
+|cubieColor_V_ce1       | out |    1|  ap_memory |  cubieColor_V |     array    |
+|cubieColor_V_q1        |  in |    3|  ap_memory |  cubieColor_V |     array    |
++-----------------------+-----+-----+------------+---------------+--------------+
+

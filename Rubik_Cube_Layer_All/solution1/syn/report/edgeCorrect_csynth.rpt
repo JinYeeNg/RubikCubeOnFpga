@@ -1,0 +1,192 @@
+
+
+================================================================
+== Vivado HLS Report for 'edgeCorrect'
+================================================================
+* Date:           Fri Jan  4 20:12:34 2019
+
+* Version:        2018.2 (Build 2258646 on Thu Jun 14 20:25:20 MDT 2018)
+* Project:        Rubik_Cube_Layer_All
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  12.00|     5.409|        1.50|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |   11|   11|   11|   11|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+-------+
+|       Name      | BRAM_18K| DSP48E|   FF   |  LUT  |
++-----------------+---------+-------+--------+-------+
+|DSP              |        -|      -|       -|      -|
+|Expression       |        -|      -|       0|    192|
+|FIFO             |        -|      -|       -|      -|
+|Instance         |        -|      -|       -|      -|
+|Memory           |        -|      -|       -|      -|
+|Multiplexer      |        -|      -|       -|    192|
+|Register         |        -|      -|      37|      -|
++-----------------+---------+-------+--------+-------+
+|Total            |        0|      0|      37|    384|
++-----------------+---------+-------+--------+-------+
+|Available        |      280|    220|  106400|  53200|
++-----------------+---------+-------+--------+-------+
+|Utilization (%)  |        0|      0|   ~0   |   ~0  |
++-----------------+---------+-------+--------+-------+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * DSP48: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +------------------------+----------+-------+---+----+------------+------------+
+    |      Variable Name     | Operation| DSP48E| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +------------------------+----------+-------+---+----+------------+------------+
+    |sel_tmp10_fu_189_p2     |    and   |      0|  0|   2|           1|           1|
+    |sel_tmp14_fu_206_p2     |    and   |      0|  0|   2|           1|           1|
+    |sel_tmp17_fu_240_p2     |    and   |      0|  0|   2|           1|           1|
+    |sel_tmp19_fu_256_p2     |    and   |      0|  0|   2|           1|           1|
+    |sel_tmp21_fu_283_p2     |    and   |      0|  0|   2|           1|           1|
+    |sel_tmp23_fu_293_p2     |    and   |      0|  0|   2|           1|           1|
+    |sel_tmp2_fu_156_p2      |    and   |      0|  0|   2|           1|           1|
+    |sel_tmp6_fu_172_p2      |    and   |      0|  0|   2|           1|           1|
+    |tmp25_fu_168_p2         |    and   |      0|  0|   2|           1|           1|
+    |tmp26_fu_184_p2         |    and   |      0|  0|   2|           1|           1|
+    |tmp27_fu_201_p2         |    and   |      0|  0|   2|           1|           1|
+    |tmp28_fu_235_p2         |    and   |      0|  0|   2|           1|           1|
+    |tmp29_fu_251_p2         |    and   |      0|  0|   2|           1|           1|
+    |tmp30_fu_278_p2         |    and   |      0|  0|   2|           1|           1|
+    |tmp31_fu_288_p2         |    and   |      0|  0|   2|           1|           1|
+    |tmp_fu_152_p2           |    and   |      0|  0|   2|           1|           1|
+    |grp_fu_100_p2           |   icmp   |      0|  0|   9|           3|           3|
+    |grp_fu_105_p2           |   icmp   |      0|  0|   9|           3|           3|
+    |grp_fu_110_p2           |   icmp   |      0|  0|   9|           3|           3|
+    |grp_fu_116_p2           |   icmp   |      0|  0|   9|           3|           3|
+    |grp_fu_121_p2           |   icmp   |      0|  0|   9|           3|           3|
+    |grp_fu_126_p2           |   icmp   |      0|  0|   9|           3|           3|
+    |sel_tmp12_fu_195_p2     |   icmp   |      0|  0|   9|           4|           3|
+    |sel_tmp16_fu_230_p2     |   icmp   |      0|  0|   9|           4|           3|
+    |sel_tmp18_fu_246_p2     |   icmp   |      0|  0|   9|           4|           3|
+    |sel_tmp20_fu_262_p2     |   icmp   |      0|  0|   9|           4|           3|
+    |sel_tmp22_fu_267_p2     |   icmp   |      0|  0|  11|           4|           5|
+    |sel_tmp4_fu_162_p2      |   icmp   |      0|  0|   9|           4|           2|
+    |sel_tmp8_fu_178_p2      |   icmp   |      0|  0|   9|           4|           2|
+    |sel_tmp_fu_146_p2       |   icmp   |      0|  0|   9|           4|           1|
+    |tmp_207_fu_140_p2       |   icmp   |      0|  0|   9|           3|           3|
+    |tmp_213_fu_224_p2       |   icmp   |      0|  0|   9|           3|           3|
+    |agg_result_V_fu_313_p2  |    or    |      0|  0|   2|           1|           1|
+    |tmp32_fu_212_p2         |    or    |      0|  0|   2|           1|           1|
+    |tmp33_fu_218_p2         |    or    |      0|  0|   2|           1|           1|
+    |tmp34_fu_298_p2         |    or    |      0|  0|   2|           1|           1|
+    |tmp35_fu_272_p2         |    or    |      0|  0|   2|           1|           1|
+    |tmp36_fu_302_p2         |    or    |      0|  0|   2|           1|           1|
+    |tmp37_fu_308_p2         |    or    |      0|  0|   2|           1|           1|
+    +------------------------+----------+-------+---+----+------------+------------+
+    |Total                   |          |      0|  0| 192|          79|          69|
+    +------------------------+----------+-------+---+----+------------+------------+
+
+    * Multiplexer: 
+    +-----------------------+----+-----------+-----+-----------+
+    |          Name         | LUT| Input Size| Bits| Total Bits|
+    +-----------------------+----+-----------+-----+-----------+
+    |ap_NS_fsm              |  56|         13|    1|         13|
+    |ap_return              |   9|          2|    1|          2|
+    |cubieColor_V_address0  |  53|         12|    6|         72|
+    |cubieColor_V_address1  |  50|         11|    6|         66|
+    |grp_fu_110_p0          |  15|          3|    3|          9|
+    |reg_131                |   9|          2|    3|          6|
+    +-----------------------+----+-----------+-----+-----------+
+    |Total                  | 192|         43|   20|        168|
+    +-----------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +-------------------------------+----+----+-----+-----------+
+    |              Name             | FF | LUT| Bits| Const Bits|
+    +-------------------------------+----+----+-----+-----------+
+    |ap_CS_fsm                      |  12|   0|   12|          0|
+    |ap_return_preg                 |   1|   0|    1|          0|
+    |cubieColor_V_load_137_reg_344  |   3|   0|    3|          0|
+    |cubieColor_V_load_139_reg_354  |   3|   0|    3|          0|
+    |reg_131                        |   3|   0|    3|          0|
+    |sel_tmp20_reg_397              |   1|   0|    1|          0|
+    |sel_tmp22_reg_402              |   1|   0|    1|          0|
+    |tmp32_reg_387                  |   1|   0|    1|          0|
+    |tmp33_reg_392                  |   1|   0|    1|          0|
+    |tmp35_reg_407                  |   1|   0|    1|          0|
+    |tmp_201_reg_324                |   1|   0|    1|          0|
+    |tmp_202_reg_329                |   1|   0|    1|          0|
+    |tmp_203_reg_334                |   1|   0|    1|          0|
+    |tmp_204_reg_339                |   1|   0|    1|          0|
+    |tmp_205_reg_349                |   1|   0|    1|          0|
+    |tmp_206_reg_359                |   1|   0|    1|          0|
+    |tmp_207_reg_364                |   1|   0|    1|          0|
+    |tmp_208_reg_369                |   1|   0|    1|          0|
+    |tmp_209_reg_374                |   1|   0|    1|          0|
+    |tmp_s_reg_319                  |   1|   0|    1|          0|
+    +-------------------------------+----+----+-----+-----------+
+    |Total                          |  37|   0|   37|          0|
+    +-------------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++-----------------------+-----+-----+------------+--------------+--------------+
+|       RTL Ports       | Dir | Bits|  Protocol  | Source Object|    C Type    |
++-----------------------+-----+-----+------------+--------------+--------------+
+|ap_clk                 |  in |    1| ap_ctrl_hs |  edgeCorrect | return value |
+|ap_rst                 |  in |    1| ap_ctrl_hs |  edgeCorrect | return value |
+|ap_start               |  in |    1| ap_ctrl_hs |  edgeCorrect | return value |
+|ap_done                | out |    1| ap_ctrl_hs |  edgeCorrect | return value |
+|ap_idle                | out |    1| ap_ctrl_hs |  edgeCorrect | return value |
+|ap_ready               | out |    1| ap_ctrl_hs |  edgeCorrect | return value |
+|ap_return              | out |    1| ap_ctrl_hs |  edgeCorrect | return value |
+|edge_V                 |  in |    4|   ap_none  |    edge_V    |    scalar    |
+|cubieColor_V_address0  | out |    6|  ap_memory | cubieColor_V |     array    |
+|cubieColor_V_ce0       | out |    1|  ap_memory | cubieColor_V |     array    |
+|cubieColor_V_q0        |  in |    3|  ap_memory | cubieColor_V |     array    |
+|cubieColor_V_address1  | out |    6|  ap_memory | cubieColor_V |     array    |
+|cubieColor_V_ce1       | out |    1|  ap_memory | cubieColor_V |     array    |
+|cubieColor_V_q1        |  in |    3|  ap_memory | cubieColor_V |     array    |
++-----------------------+-----+-----+------------+--------------+--------------+
+

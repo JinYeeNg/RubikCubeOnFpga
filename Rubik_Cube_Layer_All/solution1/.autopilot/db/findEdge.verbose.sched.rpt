@@ -1,0 +1,401 @@
+
+
+================================================================
+== Vivado HLS Report for 'findEdge'
+================================================================
+* Date:           Fri Jan  4 20:12:03 2019
+
+* Version:        2018.2 (Build 2258646 on Thu Jun 14 20:25:20 MDT 2018)
+* Project:        Rubik_Cube_Layer_All
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  12.00|     8.434|        1.50|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |   12|   12|   12|   12|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 13
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / true
+3 --> 
+	4  / true
+4 --> 
+	5  / true
+5 --> 
+	6  / true
+6 --> 
+	7  / true
+7 --> 
+	8  / true
+8 --> 
+	9  / true
+9 --> 
+	10  / true
+10 --> 
+	11  / true
+11 --> 
+	12  / true
+12 --> 
+	13  / true
+13 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 2.32>
+ST_1 : Operation 14 [2/2] (2.32ns)   --->   "%cubieColor_V_load = load i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 7), align 1" [Rubik_Cube_Layer_All/layerAll.cpp:81]   --->   Operation 14 'load' 'cubieColor_V_load' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_1 : Operation 15 [2/2] (2.32ns)   --->   "%cubieColor_V_load_85 = load i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 28), align 4" [Rubik_Cube_Layer_All/layerAll.cpp:81]   --->   Operation 15 'load' 'cubieColor_V_load_85' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+
+State 2 <SV = 1> <Delay = 2.32>
+ST_2 : Operation 16 [1/2] (2.32ns)   --->   "%cubieColor_V_load = load i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 7), align 1" [Rubik_Cube_Layer_All/layerAll.cpp:81]   --->   Operation 16 'load' 'cubieColor_V_load' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_2 : Operation 17 [1/2] (2.32ns)   --->   "%cubieColor_V_load_85 = load i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 28), align 4" [Rubik_Cube_Layer_All/layerAll.cpp:81]   --->   Operation 17 'load' 'cubieColor_V_load_85' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_2 : Operation 18 [2/2] (2.32ns)   --->   "%cubieColor_V_load_86 = load i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 3), align 1" [Rubik_Cube_Layer_All/layerAll.cpp:86]   --->   Operation 18 'load' 'cubieColor_V_load_86' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_2 : Operation 19 [2/2] (2.32ns)   --->   "%cubieColor_V_load_87 = load i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 37), align 1" [Rubik_Cube_Layer_All/layerAll.cpp:86]   --->   Operation 19 'load' 'cubieColor_V_load_87' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+
+State 3 <SV = 2> <Delay = 4.44>
+ST_3 : Operation 20 [1/1] (0.00ns)   --->   "%sEC_V_read = call i3 @_ssdm_op_Read.ap_auto.i3(i3 %sEC_V)"   --->   Operation 20 'read' 'sEC_V_read' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 21 [1/1] (0.00ns)   --->   "%fEC_V_read = call i3 @_ssdm_op_Read.ap_auto.i3(i3 %fEC_V)"   --->   Operation 21 'read' 'fEC_V_read' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 22 [1/1] (1.13ns)   --->   "%tmp = icmp eq i3 %cubieColor_V_load, %fEC_V_read" [Rubik_Cube_Layer_All/layerAll.cpp:81]   --->   Operation 22 'icmp' 'tmp' <Predicate = true> <Delay = 1.13> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.13> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 23 [1/1] (1.13ns)   --->   "%tmp_s = icmp eq i3 %cubieColor_V_load_85, %sEC_V_read" [Rubik_Cube_Layer_All/layerAll.cpp:81]   --->   Operation 23 'icmp' 'tmp_s' <Predicate = true> <Delay = 1.13> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.13> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 24 [1/1] (0.00ns) (grouped into LUT with out node sel_tmp)   --->   "%or_cond_11 = and i1 %tmp, %tmp_s" [Rubik_Cube_Layer_All/layerAll.cpp:81]   --->   Operation 24 'and' 'or_cond_11' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 25 [1/1] (1.13ns)   --->   "%tmp_85 = icmp eq i3 %cubieColor_V_load, %sEC_V_read" [Rubik_Cube_Layer_All/layerAll.cpp:82]   --->   Operation 25 'icmp' 'tmp_85' <Predicate = true> <Delay = 1.13> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.13> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 26 [1/1] (1.13ns)   --->   "%tmp_86 = icmp eq i3 %cubieColor_V_load_85, %fEC_V_read" [Rubik_Cube_Layer_All/layerAll.cpp:82]   --->   Operation 26 'icmp' 'tmp_86' <Predicate = true> <Delay = 1.13> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.13> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 27 [1/1] (0.00ns) (grouped into LUT with out node sel_tmp)   --->   "%or_cond2_12 = and i1 %tmp_85, %tmp_86" [Rubik_Cube_Layer_All/layerAll.cpp:82]   --->   Operation 27 'and' 'or_cond2_12' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 28 [1/1] (0.97ns) (out node of the LUT)   --->   "%sel_tmp = or i1 %or_cond_11, %or_cond2_12" [Rubik_Cube_Layer_All/layerAll.cpp:81]   --->   Operation 28 'or' 'sel_tmp' <Predicate = true> <Delay = 0.97> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 29 [1/1] (0.00ns) (grouped into LUT with out node newSel4)   --->   "%agg_result_V_cast = zext i1 %sel_tmp to i2" [Rubik_Cube_Layer_All/layerAll.cpp:86]   --->   Operation 29 'zext' 'agg_result_V_cast' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 30 [1/2] (2.32ns)   --->   "%cubieColor_V_load_86 = load i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 3), align 1" [Rubik_Cube_Layer_All/layerAll.cpp:86]   --->   Operation 30 'load' 'cubieColor_V_load_86' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_3 : Operation 31 [1/1] (1.13ns)   --->   "%tmp_87 = icmp eq i3 %cubieColor_V_load_86, %fEC_V_read" [Rubik_Cube_Layer_All/layerAll.cpp:86]   --->   Operation 31 'icmp' 'tmp_87' <Predicate = true> <Delay = 1.13> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.13> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 32 [1/2] (2.32ns)   --->   "%cubieColor_V_load_87 = load i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 37), align 1" [Rubik_Cube_Layer_All/layerAll.cpp:86]   --->   Operation 32 'load' 'cubieColor_V_load_87' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_3 : Operation 33 [1/1] (1.13ns)   --->   "%tmp_88 = icmp eq i3 %cubieColor_V_load_87, %sEC_V_read" [Rubik_Cube_Layer_All/layerAll.cpp:86]   --->   Operation 33 'icmp' 'tmp_88' <Predicate = true> <Delay = 1.13> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.13> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 34 [1/1] (0.00ns) (grouped into LUT with out node newSel4)   --->   "%or_cond3_13 = and i1 %tmp_87, %tmp_88" [Rubik_Cube_Layer_All/layerAll.cpp:86]   --->   Operation 34 'and' 'or_cond3_13' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 35 [1/1] (1.13ns)   --->   "%tmp_89 = icmp eq i3 %cubieColor_V_load_86, %sEC_V_read" [Rubik_Cube_Layer_All/layerAll.cpp:87]   --->   Operation 35 'icmp' 'tmp_89' <Predicate = true> <Delay = 1.13> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.13> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 36 [1/1] (1.13ns)   --->   "%tmp_90 = icmp eq i3 %cubieColor_V_load_87, %fEC_V_read" [Rubik_Cube_Layer_All/layerAll.cpp:87]   --->   Operation 36 'icmp' 'tmp_90' <Predicate = true> <Delay = 1.13> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.13> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 37 [1/1] (0.00ns) (grouped into LUT with out node newSel4)   --->   "%or_cond4_14 = and i1 %tmp_89, %tmp_90" [Rubik_Cube_Layer_All/layerAll.cpp:87]   --->   Operation 37 'and' 'or_cond4_14' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 38 [1/1] (0.00ns) (grouped into LUT with out node newSel4)   --->   "%sel_tmp2 = or i1 %or_cond3_13, %or_cond4_14" [Rubik_Cube_Layer_All/layerAll.cpp:86]   --->   Operation 38 'or' 'sel_tmp2' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 39 [2/2] (2.32ns)   --->   "%cubieColor_V_load_88 = load i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 1), align 1" [Rubik_Cube_Layer_All/layerAll.cpp:91]   --->   Operation 39 'load' 'cubieColor_V_load_88' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_3 : Operation 40 [2/2] (2.32ns)   --->   "%cubieColor_V_load_89 = load i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 19), align 1" [Rubik_Cube_Layer_All/layerAll.cpp:91]   --->   Operation 40 'load' 'cubieColor_V_load_89' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_3 : Operation 41 [1/1] (0.99ns) (out node of the LUT)   --->   "%newSel4 = select i1 %sel_tmp2, i2 -2, i2 %agg_result_V_cast" [Rubik_Cube_Layer_All/layerAll.cpp:86]   --->   Operation 41 'select' 'newSel4' <Predicate = true> <Delay = 0.99> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.02> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+
+State 4 <SV = 3> <Delay = 3.45>
+ST_4 : Operation 42 [1/2] (2.32ns)   --->   "%cubieColor_V_load_88 = load i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 1), align 1" [Rubik_Cube_Layer_All/layerAll.cpp:91]   --->   Operation 42 'load' 'cubieColor_V_load_88' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_4 : Operation 43 [1/1] (1.13ns)   --->   "%tmp_91 = icmp eq i3 %cubieColor_V_load_88, %fEC_V_read" [Rubik_Cube_Layer_All/layerAll.cpp:91]   --->   Operation 43 'icmp' 'tmp_91' <Predicate = true> <Delay = 1.13> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.13> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 44 [1/2] (2.32ns)   --->   "%cubieColor_V_load_89 = load i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 19), align 1" [Rubik_Cube_Layer_All/layerAll.cpp:91]   --->   Operation 44 'load' 'cubieColor_V_load_89' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_4 : Operation 45 [1/1] (1.13ns)   --->   "%tmp_92 = icmp eq i3 %cubieColor_V_load_89, %sEC_V_read" [Rubik_Cube_Layer_All/layerAll.cpp:91]   --->   Operation 45 'icmp' 'tmp_92' <Predicate = true> <Delay = 1.13> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.13> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 46 [1/1] (1.13ns)   --->   "%tmp_93 = icmp eq i3 %cubieColor_V_load_88, %sEC_V_read" [Rubik_Cube_Layer_All/layerAll.cpp:92]   --->   Operation 46 'icmp' 'tmp_93' <Predicate = true> <Delay = 1.13> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.13> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 47 [1/1] (1.13ns)   --->   "%tmp_94 = icmp eq i3 %cubieColor_V_load_89, %fEC_V_read" [Rubik_Cube_Layer_All/layerAll.cpp:92]   --->   Operation 47 'icmp' 'tmp_94' <Predicate = true> <Delay = 1.13> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.13> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 48 [2/2] (2.32ns)   --->   "%cubieColor_V_load_90 = load i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 5), align 1" [Rubik_Cube_Layer_All/layerAll.cpp:96]   --->   Operation 48 'load' 'cubieColor_V_load_90' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_4 : Operation 49 [2/2] (2.32ns)   --->   "%cubieColor_V_load_91 = load i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 46), align 2" [Rubik_Cube_Layer_All/layerAll.cpp:96]   --->   Operation 49 'load' 'cubieColor_V_load_91' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+
+State 5 <SV = 4> <Delay = 6.38>
+ST_5 : Operation 50 [1/1] (0.00ns) (grouped into LUT with out node or_cond4)   --->   "%or_cond5_15 = and i1 %tmp_91, %tmp_92" [Rubik_Cube_Layer_All/layerAll.cpp:91]   --->   Operation 50 'and' 'or_cond5_15' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 51 [1/1] (0.00ns) (grouped into LUT with out node or_cond4)   --->   "%or_cond6_16 = and i1 %tmp_93, %tmp_94" [Rubik_Cube_Layer_All/layerAll.cpp:92]   --->   Operation 51 'and' 'or_cond6_16' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 52 [1/1] (0.00ns) (grouped into LUT with out node or_cond4)   --->   "%sel_tmp4 = or i1 %or_cond5_15, %or_cond6_16" [Rubik_Cube_Layer_All/layerAll.cpp:91]   --->   Operation 52 'or' 'sel_tmp4' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 53 [1/2] (2.32ns)   --->   "%cubieColor_V_load_90 = load i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 5), align 1" [Rubik_Cube_Layer_All/layerAll.cpp:96]   --->   Operation 53 'load' 'cubieColor_V_load_90' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_5 : Operation 54 [1/1] (1.13ns)   --->   "%tmp_95 = icmp eq i3 %cubieColor_V_load_90, %fEC_V_read" [Rubik_Cube_Layer_All/layerAll.cpp:96]   --->   Operation 54 'icmp' 'tmp_95' <Predicate = true> <Delay = 1.13> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.13> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 55 [1/2] (2.32ns)   --->   "%cubieColor_V_load_91 = load i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 46), align 2" [Rubik_Cube_Layer_All/layerAll.cpp:96]   --->   Operation 55 'load' 'cubieColor_V_load_91' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_5 : Operation 56 [1/1] (1.13ns)   --->   "%tmp_96 = icmp eq i3 %cubieColor_V_load_91, %sEC_V_read" [Rubik_Cube_Layer_All/layerAll.cpp:96]   --->   Operation 56 'icmp' 'tmp_96' <Predicate = true> <Delay = 1.13> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.13> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 57 [1/1] (0.00ns) (grouped into LUT with out node sel_tmp6)   --->   "%or_cond7_17 = and i1 %tmp_95, %tmp_96" [Rubik_Cube_Layer_All/layerAll.cpp:96]   --->   Operation 57 'and' 'or_cond7_17' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 58 [1/1] (1.13ns)   --->   "%tmp_97 = icmp eq i3 %cubieColor_V_load_90, %sEC_V_read" [Rubik_Cube_Layer_All/layerAll.cpp:97]   --->   Operation 58 'icmp' 'tmp_97' <Predicate = true> <Delay = 1.13> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.13> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 59 [1/1] (1.13ns)   --->   "%tmp_98 = icmp eq i3 %cubieColor_V_load_91, %fEC_V_read" [Rubik_Cube_Layer_All/layerAll.cpp:97]   --->   Operation 59 'icmp' 'tmp_98' <Predicate = true> <Delay = 1.13> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.13> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 60 [1/1] (0.00ns) (grouped into LUT with out node sel_tmp6)   --->   "%or_cond8 = and i1 %tmp_97, %tmp_98" [Rubik_Cube_Layer_All/layerAll.cpp:97]   --->   Operation 60 'and' 'or_cond8' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 61 [1/1] (0.97ns) (out node of the LUT)   --->   "%sel_tmp6 = or i1 %or_cond7_17, %or_cond8" [Rubik_Cube_Layer_All/layerAll.cpp:96]   --->   Operation 61 'or' 'sel_tmp6' <Predicate = true> <Delay = 0.97> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 62 [2/2] (2.32ns)   --->   "%cubieColor_V_load_92 = load i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 30), align 2" [Rubik_Cube_Layer_All/layerAll.cpp:102]   --->   Operation 62 'load' 'cubieColor_V_load_92' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_5 : Operation 63 [2/2] (2.32ns)   --->   "%cubieColor_V_load_93 = load i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 41), align 1" [Rubik_Cube_Layer_All/layerAll.cpp:102]   --->   Operation 63 'load' 'cubieColor_V_load_93' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_5 : Operation 64 [1/1] (0.00ns) (grouped into LUT with out node newSel7)   --->   "%newSel3 = select i1 %sel_tmp6, i3 -4, i3 3" [Rubik_Cube_Layer_All/layerAll.cpp:96]   --->   Operation 64 'select' 'newSel3' <Predicate = true> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.02> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_5 : Operation 65 [1/1] (0.97ns) (out node of the LUT)   --->   "%or_cond4 = or i1 %sel_tmp6, %sel_tmp4" [Rubik_Cube_Layer_All/layerAll.cpp:96]   --->   Operation 65 'or' 'or_cond4' <Predicate = true> <Delay = 0.97> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 66 [1/1] (0.00ns) (grouped into LUT with out node newSel7)   --->   "%newSel32_cast = zext i2 %newSel4 to i3" [Rubik_Cube_Layer_All/layerAll.cpp:86]   --->   Operation 66 'zext' 'newSel32_cast' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 67 [1/1] (0.98ns) (out node of the LUT)   --->   "%newSel7 = select i1 %or_cond4, i3 %newSel3, i3 %newSel32_cast" [Rubik_Cube_Layer_All/layerAll.cpp:96]   --->   Operation 67 'select' 'newSel7' <Predicate = true> <Delay = 0.98> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.02> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+
+State 6 <SV = 5> <Delay = 3.45>
+ST_6 : Operation 68 [1/2] (2.32ns)   --->   "%cubieColor_V_load_92 = load i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 30), align 2" [Rubik_Cube_Layer_All/layerAll.cpp:102]   --->   Operation 68 'load' 'cubieColor_V_load_92' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_6 : Operation 69 [1/1] (1.13ns)   --->   "%tmp_99 = icmp eq i3 %cubieColor_V_load_92, %fEC_V_read" [Rubik_Cube_Layer_All/layerAll.cpp:102]   --->   Operation 69 'icmp' 'tmp_99' <Predicate = true> <Delay = 1.13> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.13> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 70 [1/2] (2.32ns)   --->   "%cubieColor_V_load_93 = load i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 41), align 1" [Rubik_Cube_Layer_All/layerAll.cpp:102]   --->   Operation 70 'load' 'cubieColor_V_load_93' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_6 : Operation 71 [1/1] (1.13ns)   --->   "%tmp_100 = icmp eq i3 %cubieColor_V_load_93, %sEC_V_read" [Rubik_Cube_Layer_All/layerAll.cpp:102]   --->   Operation 71 'icmp' 'tmp_100' <Predicate = true> <Delay = 1.13> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.13> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 72 [1/1] (1.13ns)   --->   "%tmp_101 = icmp eq i3 %cubieColor_V_load_92, %sEC_V_read" [Rubik_Cube_Layer_All/layerAll.cpp:103]   --->   Operation 72 'icmp' 'tmp_101' <Predicate = true> <Delay = 1.13> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.13> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 73 [1/1] (1.13ns)   --->   "%tmp_102 = icmp eq i3 %cubieColor_V_load_93, %fEC_V_read" [Rubik_Cube_Layer_All/layerAll.cpp:103]   --->   Operation 73 'icmp' 'tmp_102' <Predicate = true> <Delay = 1.13> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.13> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 74 [2/2] (2.32ns)   --->   "%cubieColor_V_load_94 = load i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 39), align 1" [Rubik_Cube_Layer_All/layerAll.cpp:107]   --->   Operation 74 'load' 'cubieColor_V_load_94' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_6 : Operation 75 [2/2] (2.32ns)   --->   "%cubieColor_V_load_95 = load i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 23), align 1" [Rubik_Cube_Layer_All/layerAll.cpp:107]   --->   Operation 75 'load' 'cubieColor_V_load_95' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+
+State 7 <SV = 6> <Delay = 4.43>
+ST_7 : Operation 76 [1/2] (2.32ns)   --->   "%cubieColor_V_load_94 = load i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 39), align 1" [Rubik_Cube_Layer_All/layerAll.cpp:107]   --->   Operation 76 'load' 'cubieColor_V_load_94' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_7 : Operation 77 [1/1] (1.13ns)   --->   "%tmp_103 = icmp eq i3 %cubieColor_V_load_94, %fEC_V_read" [Rubik_Cube_Layer_All/layerAll.cpp:107]   --->   Operation 77 'icmp' 'tmp_103' <Predicate = true> <Delay = 1.13> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.13> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 78 [1/2] (2.32ns)   --->   "%cubieColor_V_load_95 = load i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 23), align 1" [Rubik_Cube_Layer_All/layerAll.cpp:107]   --->   Operation 78 'load' 'cubieColor_V_load_95' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_7 : Operation 79 [1/1] (1.13ns)   --->   "%tmp_104 = icmp eq i3 %cubieColor_V_load_95, %sEC_V_read" [Rubik_Cube_Layer_All/layerAll.cpp:107]   --->   Operation 79 'icmp' 'tmp_104' <Predicate = true> <Delay = 1.13> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.13> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 80 [1/1] (0.00ns) (grouped into LUT with out node sel_tmp1)   --->   "%or_cond10 = and i1 %tmp_103, %tmp_104" [Rubik_Cube_Layer_All/layerAll.cpp:107]   --->   Operation 80 'and' 'or_cond10' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 81 [1/1] (1.13ns)   --->   "%tmp_105 = icmp eq i3 %cubieColor_V_load_94, %sEC_V_read" [Rubik_Cube_Layer_All/layerAll.cpp:108]   --->   Operation 81 'icmp' 'tmp_105' <Predicate = true> <Delay = 1.13> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.13> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 82 [1/1] (1.13ns)   --->   "%tmp_106 = icmp eq i3 %cubieColor_V_load_95, %fEC_V_read" [Rubik_Cube_Layer_All/layerAll.cpp:108]   --->   Operation 82 'icmp' 'tmp_106' <Predicate = true> <Delay = 1.13> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.13> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 83 [1/1] (0.00ns) (grouped into LUT with out node sel_tmp1)   --->   "%or_cond11 = and i1 %tmp_105, %tmp_106" [Rubik_Cube_Layer_All/layerAll.cpp:108]   --->   Operation 83 'and' 'or_cond11' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 84 [1/1] (0.97ns) (out node of the LUT)   --->   "%sel_tmp1 = or i1 %or_cond10, %or_cond11" [Rubik_Cube_Layer_All/layerAll.cpp:107]   --->   Operation 84 'or' 'sel_tmp1' <Predicate = true> <Delay = 0.97> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 85 [2/2] (2.32ns)   --->   "%cubieColor_V_load_96 = load i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 50), align 2" [Rubik_Cube_Layer_All/layerAll.cpp:112]   --->   Operation 85 'load' 'cubieColor_V_load_96' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_7 : Operation 86 [2/2] (2.32ns)   --->   "%cubieColor_V_load_97 = load i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 21), align 1" [Rubik_Cube_Layer_All/layerAll.cpp:112]   --->   Operation 86 'load' 'cubieColor_V_load_97' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+
+State 8 <SV = 7> <Delay = 3.45>
+ST_8 : Operation 87 [1/2] (2.32ns)   --->   "%cubieColor_V_load_96 = load i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 50), align 2" [Rubik_Cube_Layer_All/layerAll.cpp:112]   --->   Operation 87 'load' 'cubieColor_V_load_96' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_8 : Operation 88 [1/1] (1.13ns)   --->   "%tmp_107 = icmp eq i3 %cubieColor_V_load_96, %fEC_V_read" [Rubik_Cube_Layer_All/layerAll.cpp:112]   --->   Operation 88 'icmp' 'tmp_107' <Predicate = true> <Delay = 1.13> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.13> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 89 [1/2] (2.32ns)   --->   "%cubieColor_V_load_97 = load i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 21), align 1" [Rubik_Cube_Layer_All/layerAll.cpp:112]   --->   Operation 89 'load' 'cubieColor_V_load_97' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_8 : Operation 90 [1/1] (1.13ns)   --->   "%tmp_108 = icmp eq i3 %cubieColor_V_load_97, %sEC_V_read" [Rubik_Cube_Layer_All/layerAll.cpp:112]   --->   Operation 90 'icmp' 'tmp_108' <Predicate = true> <Delay = 1.13> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.13> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 91 [1/1] (1.13ns)   --->   "%tmp_109 = icmp eq i3 %cubieColor_V_load_96, %sEC_V_read" [Rubik_Cube_Layer_All/layerAll.cpp:113]   --->   Operation 91 'icmp' 'tmp_109' <Predicate = true> <Delay = 1.13> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.13> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 92 [1/1] (1.13ns)   --->   "%tmp_110 = icmp eq i3 %cubieColor_V_load_97, %fEC_V_read" [Rubik_Cube_Layer_All/layerAll.cpp:113]   --->   Operation 92 'icmp' 'tmp_110' <Predicate = true> <Delay = 1.13> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.13> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 93 [2/2] (2.32ns)   --->   "%cubieColor_V_load_98 = load i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 32), align 16" [Rubik_Cube_Layer_All/layerAll.cpp:117]   --->   Operation 93 'load' 'cubieColor_V_load_98' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_8 : Operation 94 [2/2] (2.32ns)   --->   "%cubieColor_V_load_99 = load i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 48), align 16" [Rubik_Cube_Layer_All/layerAll.cpp:117]   --->   Operation 94 'load' 'cubieColor_V_load_99' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+
+State 9 <SV = 8> <Delay = 6.38>
+ST_9 : Operation 95 [1/1] (0.00ns) (grouped into LUT with out node or_cond6)   --->   "%or_cond9 = and i1 %tmp_99, %tmp_100" [Rubik_Cube_Layer_All/layerAll.cpp:102]   --->   Operation 95 'and' 'or_cond9' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 96 [1/1] (0.00ns) (grouped into LUT with out node or_cond6)   --->   "%or_cond1_18 = and i1 %tmp_101, %tmp_102" [Rubik_Cube_Layer_All/layerAll.cpp:103]   --->   Operation 96 'and' 'or_cond1_18' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 97 [1/1] (0.00ns) (grouped into LUT with out node or_cond6)   --->   "%sel_tmp8 = or i1 %or_cond9, %or_cond1_18" [Rubik_Cube_Layer_All/layerAll.cpp:102]   --->   Operation 97 'or' 'sel_tmp8' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 98 [1/1] (0.00ns) (grouped into LUT with out node or_cond2)   --->   "%or_cond12 = and i1 %tmp_107, %tmp_108" [Rubik_Cube_Layer_All/layerAll.cpp:112]   --->   Operation 98 'and' 'or_cond12' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 99 [1/1] (0.00ns) (grouped into LUT with out node or_cond2)   --->   "%or_cond13 = and i1 %tmp_109, %tmp_110" [Rubik_Cube_Layer_All/layerAll.cpp:113]   --->   Operation 99 'and' 'or_cond13' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 100 [1/1] (0.00ns) (grouped into LUT with out node or_cond2)   --->   "%sel_tmp3 = or i1 %or_cond12, %or_cond13" [Rubik_Cube_Layer_All/layerAll.cpp:112]   --->   Operation 100 'or' 'sel_tmp3' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 101 [1/2] (2.32ns)   --->   "%cubieColor_V_load_98 = load i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 32), align 16" [Rubik_Cube_Layer_All/layerAll.cpp:117]   --->   Operation 101 'load' 'cubieColor_V_load_98' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_9 : Operation 102 [1/1] (1.13ns)   --->   "%tmp_111 = icmp eq i3 %cubieColor_V_load_98, %fEC_V_read" [Rubik_Cube_Layer_All/layerAll.cpp:117]   --->   Operation 102 'icmp' 'tmp_111' <Predicate = true> <Delay = 1.13> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.13> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 103 [1/2] (2.32ns)   --->   "%cubieColor_V_load_99 = load i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 48), align 16" [Rubik_Cube_Layer_All/layerAll.cpp:117]   --->   Operation 103 'load' 'cubieColor_V_load_99' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_9 : Operation 104 [1/1] (1.13ns)   --->   "%tmp_112 = icmp eq i3 %cubieColor_V_load_99, %sEC_V_read" [Rubik_Cube_Layer_All/layerAll.cpp:117]   --->   Operation 104 'icmp' 'tmp_112' <Predicate = true> <Delay = 1.13> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.13> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 105 [1/1] (0.00ns) (grouped into LUT with out node sel_tmp5)   --->   "%or_cond14 = and i1 %tmp_111, %tmp_112" [Rubik_Cube_Layer_All/layerAll.cpp:117]   --->   Operation 105 'and' 'or_cond14' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 106 [1/1] (1.13ns)   --->   "%tmp_113 = icmp eq i3 %cubieColor_V_load_98, %sEC_V_read" [Rubik_Cube_Layer_All/layerAll.cpp:118]   --->   Operation 106 'icmp' 'tmp_113' <Predicate = true> <Delay = 1.13> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.13> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 107 [1/1] (1.13ns)   --->   "%tmp_114 = icmp eq i3 %cubieColor_V_load_99, %fEC_V_read" [Rubik_Cube_Layer_All/layerAll.cpp:118]   --->   Operation 107 'icmp' 'tmp_114' <Predicate = true> <Delay = 1.13> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.13> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 108 [1/1] (0.00ns) (grouped into LUT with out node sel_tmp5)   --->   "%or_cond15 = and i1 %tmp_113, %tmp_114" [Rubik_Cube_Layer_All/layerAll.cpp:118]   --->   Operation 108 'and' 'or_cond15' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 109 [1/1] (0.97ns) (out node of the LUT)   --->   "%sel_tmp5 = or i1 %or_cond14, %or_cond15" [Rubik_Cube_Layer_All/layerAll.cpp:117]   --->   Operation 109 'or' 'sel_tmp5' <Predicate = true> <Delay = 0.97> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 110 [2/2] (2.32ns)   --->   "%cubieColor_V_load_100 = load i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 10), align 2" [Rubik_Cube_Layer_All/layerAll.cpp:122]   --->   Operation 110 'load' 'cubieColor_V_load_100' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_9 : Operation 111 [2/2] (2.32ns)   --->   "%cubieColor_V_load_101 = load i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 34), align 2" [Rubik_Cube_Layer_All/layerAll.cpp:122]   --->   Operation 111 'load' 'cubieColor_V_load_101' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_9 : Operation 112 [1/1] (0.97ns) (out node of the LUT)   --->   "%or_cond2 = or i1 %sel_tmp5, %sel_tmp3" [Rubik_Cube_Layer_All/layerAll.cpp:117]   --->   Operation 112 'or' 'or_cond2' <Predicate = true> <Delay = 0.97> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 113 [1/1] (0.00ns) (grouped into LUT with out node or_cond6)   --->   "%or_cond3 = or i1 %sel_tmp1, %sel_tmp8" [Rubik_Cube_Layer_All/layerAll.cpp:107]   --->   Operation 113 'or' 'or_cond3' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 114 [1/1] (0.97ns) (out node of the LUT)   --->   "%or_cond6 = or i1 %or_cond2, %or_cond3" [Rubik_Cube_Layer_All/layerAll.cpp:117]   --->   Operation 114 'or' 'or_cond6' <Predicate = true> <Delay = 0.97> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+
+State 10 <SV = 9> <Delay = 3.45>
+ST_10 : Operation 115 [1/2] (2.32ns)   --->   "%cubieColor_V_load_100 = load i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 10), align 2" [Rubik_Cube_Layer_All/layerAll.cpp:122]   --->   Operation 115 'load' 'cubieColor_V_load_100' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_10 : Operation 116 [1/1] (1.13ns)   --->   "%tmp_115 = icmp eq i3 %cubieColor_V_load_100, %fEC_V_read" [Rubik_Cube_Layer_All/layerAll.cpp:122]   --->   Operation 116 'icmp' 'tmp_115' <Predicate = true> <Delay = 1.13> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.13> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 117 [1/2] (2.32ns)   --->   "%cubieColor_V_load_101 = load i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 34), align 2" [Rubik_Cube_Layer_All/layerAll.cpp:122]   --->   Operation 117 'load' 'cubieColor_V_load_101' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_10 : Operation 118 [1/1] (1.13ns)   --->   "%tmp_116 = icmp eq i3 %cubieColor_V_load_101, %sEC_V_read" [Rubik_Cube_Layer_All/layerAll.cpp:122]   --->   Operation 118 'icmp' 'tmp_116' <Predicate = true> <Delay = 1.13> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.13> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 119 [1/1] (1.13ns)   --->   "%tmp_117 = icmp eq i3 %cubieColor_V_load_100, %sEC_V_read" [Rubik_Cube_Layer_All/layerAll.cpp:123]   --->   Operation 119 'icmp' 'tmp_117' <Predicate = true> <Delay = 1.13> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.13> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 120 [1/1] (1.13ns)   --->   "%tmp_118 = icmp eq i3 %cubieColor_V_load_101, %fEC_V_read" [Rubik_Cube_Layer_All/layerAll.cpp:123]   --->   Operation 120 'icmp' 'tmp_118' <Predicate = true> <Delay = 1.13> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.13> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 121 [2/2] (2.32ns)   --->   "%cubieColor_V_load_102 = load i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 12), align 4" [Rubik_Cube_Layer_All/layerAll.cpp:127]   --->   Operation 121 'load' 'cubieColor_V_load_102' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_10 : Operation 122 [2/2] (2.32ns)   --->   "%cubieColor_V_load_103 = load i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 43), align 1" [Rubik_Cube_Layer_All/layerAll.cpp:127]   --->   Operation 122 'load' 'cubieColor_V_load_103' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+
+State 11 <SV = 10> <Delay = 4.43>
+ST_11 : Operation 123 [1/2] (2.32ns)   --->   "%cubieColor_V_load_102 = load i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 12), align 4" [Rubik_Cube_Layer_All/layerAll.cpp:127]   --->   Operation 123 'load' 'cubieColor_V_load_102' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_11 : Operation 124 [1/1] (1.13ns)   --->   "%tmp_119 = icmp eq i3 %cubieColor_V_load_102, %fEC_V_read" [Rubik_Cube_Layer_All/layerAll.cpp:127]   --->   Operation 124 'icmp' 'tmp_119' <Predicate = true> <Delay = 1.13> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.13> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 125 [1/2] (2.32ns)   --->   "%cubieColor_V_load_103 = load i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 43), align 1" [Rubik_Cube_Layer_All/layerAll.cpp:127]   --->   Operation 125 'load' 'cubieColor_V_load_103' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_11 : Operation 126 [1/1] (1.13ns)   --->   "%tmp_120 = icmp eq i3 %cubieColor_V_load_103, %sEC_V_read" [Rubik_Cube_Layer_All/layerAll.cpp:127]   --->   Operation 126 'icmp' 'tmp_120' <Predicate = true> <Delay = 1.13> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.13> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 127 [1/1] (0.00ns) (grouped into LUT with out node sel_tmp9)   --->   "%or_cond18 = and i1 %tmp_119, %tmp_120" [Rubik_Cube_Layer_All/layerAll.cpp:127]   --->   Operation 127 'and' 'or_cond18' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 128 [1/1] (1.13ns)   --->   "%tmp_121 = icmp eq i3 %cubieColor_V_load_102, %sEC_V_read" [Rubik_Cube_Layer_All/layerAll.cpp:128]   --->   Operation 128 'icmp' 'tmp_121' <Predicate = true> <Delay = 1.13> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.13> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 129 [1/1] (1.13ns)   --->   "%tmp_122 = icmp eq i3 %cubieColor_V_load_103, %fEC_V_read" [Rubik_Cube_Layer_All/layerAll.cpp:128]   --->   Operation 129 'icmp' 'tmp_122' <Predicate = true> <Delay = 1.13> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.13> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 130 [1/1] (0.00ns) (grouped into LUT with out node sel_tmp9)   --->   "%or_cond19 = and i1 %tmp_121, %tmp_122" [Rubik_Cube_Layer_All/layerAll.cpp:128]   --->   Operation 130 'and' 'or_cond19' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 131 [1/1] (0.97ns) (out node of the LUT)   --->   "%sel_tmp9 = or i1 %or_cond18, %or_cond19" [Rubik_Cube_Layer_All/layerAll.cpp:127]   --->   Operation 131 'or' 'sel_tmp9' <Predicate = true> <Delay = 0.97> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 132 [2/2] (2.32ns)   --->   "%cubieColor_V_load_104 = load i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 16), align 16" [Rubik_Cube_Layer_All/layerAll.cpp:132]   --->   Operation 132 'load' 'cubieColor_V_load_104' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_11 : Operation 133 [2/2] (2.32ns)   --->   "%cubieColor_V_load_105 = load i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 25), align 1" [Rubik_Cube_Layer_All/layerAll.cpp:132]   --->   Operation 133 'load' 'cubieColor_V_load_105' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+
+State 12 <SV = 11> <Delay = 3.45>
+ST_12 : Operation 134 [1/2] (2.32ns)   --->   "%cubieColor_V_load_104 = load i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 16), align 16" [Rubik_Cube_Layer_All/layerAll.cpp:132]   --->   Operation 134 'load' 'cubieColor_V_load_104' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_12 : Operation 135 [1/1] (1.13ns)   --->   "%tmp_123 = icmp eq i3 %cubieColor_V_load_104, %fEC_V_read" [Rubik_Cube_Layer_All/layerAll.cpp:132]   --->   Operation 135 'icmp' 'tmp_123' <Predicate = true> <Delay = 1.13> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.13> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_12 : Operation 136 [1/2] (2.32ns)   --->   "%cubieColor_V_load_105 = load i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 25), align 1" [Rubik_Cube_Layer_All/layerAll.cpp:132]   --->   Operation 136 'load' 'cubieColor_V_load_105' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_12 : Operation 137 [1/1] (1.13ns)   --->   "%tmp_124 = icmp eq i3 %cubieColor_V_load_105, %sEC_V_read" [Rubik_Cube_Layer_All/layerAll.cpp:132]   --->   Operation 137 'icmp' 'tmp_124' <Predicate = true> <Delay = 1.13> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.13> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_12 : Operation 138 [1/1] (1.13ns)   --->   "%tmp_125 = icmp eq i3 %cubieColor_V_load_104, %sEC_V_read" [Rubik_Cube_Layer_All/layerAll.cpp:133]   --->   Operation 138 'icmp' 'tmp_125' <Predicate = true> <Delay = 1.13> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.13> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_12 : Operation 139 [1/1] (1.13ns)   --->   "%tmp_126 = icmp eq i3 %cubieColor_V_load_105, %fEC_V_read" [Rubik_Cube_Layer_All/layerAll.cpp:133]   --->   Operation 139 'icmp' 'tmp_126' <Predicate = true> <Delay = 1.13> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.13> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_12 : Operation 140 [2/2] (2.32ns)   --->   "%cubieColor_V_load_106 = load i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 14), align 2" [Rubik_Cube_Layer_All/layerAll.cpp:137]   --->   Operation 140 'load' 'cubieColor_V_load_106' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_12 : Operation 141 [2/2] (2.32ns)   --->   "%cubieColor_V_load_107 = load i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 52), align 4" [Rubik_Cube_Layer_All/layerAll.cpp:137]   --->   Operation 141 'load' 'cubieColor_V_load_107' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+
+State 13 <SV = 12> <Delay = 8.43>
+ST_13 : Operation 142 [1/1] (0.00ns) (grouped into LUT with out node or_cond5)   --->   "%or_cond16 = and i1 %tmp_115, %tmp_116" [Rubik_Cube_Layer_All/layerAll.cpp:122]   --->   Operation 142 'and' 'or_cond16' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_13 : Operation 143 [1/1] (0.00ns) (grouped into LUT with out node or_cond5)   --->   "%or_cond17 = and i1 %tmp_117, %tmp_118" [Rubik_Cube_Layer_All/layerAll.cpp:123]   --->   Operation 143 'and' 'or_cond17' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_13 : Operation 144 [1/1] (0.00ns) (grouped into LUT with out node or_cond5)   --->   "%sel_tmp7 = or i1 %or_cond16, %or_cond17" [Rubik_Cube_Layer_All/layerAll.cpp:122]   --->   Operation 144 'or' 'sel_tmp7' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_13 : Operation 145 [1/1] (0.00ns) (grouped into LUT with out node or_cond)   --->   "%or_cond20 = and i1 %tmp_123, %tmp_124" [Rubik_Cube_Layer_All/layerAll.cpp:132]   --->   Operation 145 'and' 'or_cond20' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_13 : Operation 146 [1/1] (0.00ns) (grouped into LUT with out node or_cond)   --->   "%or_cond21 = and i1 %tmp_125, %tmp_126" [Rubik_Cube_Layer_All/layerAll.cpp:133]   --->   Operation 146 'and' 'or_cond21' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_13 : Operation 147 [1/1] (0.00ns) (grouped into LUT with out node or_cond)   --->   "%sel_tmp10 = or i1 %or_cond20, %or_cond21" [Rubik_Cube_Layer_All/layerAll.cpp:132]   --->   Operation 147 'or' 'sel_tmp10' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_13 : Operation 148 [1/2] (2.32ns)   --->   "%cubieColor_V_load_106 = load i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 14), align 2" [Rubik_Cube_Layer_All/layerAll.cpp:137]   --->   Operation 148 'load' 'cubieColor_V_load_106' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_13 : Operation 149 [1/1] (1.13ns)   --->   "%tmp_127 = icmp eq i3 %cubieColor_V_load_106, %fEC_V_read" [Rubik_Cube_Layer_All/layerAll.cpp:137]   --->   Operation 149 'icmp' 'tmp_127' <Predicate = true> <Delay = 1.13> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.13> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_13 : Operation 150 [1/2] (2.32ns)   --->   "%cubieColor_V_load_107 = load i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 52), align 4" [Rubik_Cube_Layer_All/layerAll.cpp:137]   --->   Operation 150 'load' 'cubieColor_V_load_107' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_13 : Operation 151 [1/1] (1.13ns)   --->   "%tmp_128 = icmp eq i3 %cubieColor_V_load_107, %sEC_V_read" [Rubik_Cube_Layer_All/layerAll.cpp:137]   --->   Operation 151 'icmp' 'tmp_128' <Predicate = true> <Delay = 1.13> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.13> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_13 : Operation 152 [1/1] (0.00ns) (grouped into LUT with out node sel_tmp11)   --->   "%or_cond22 = and i1 %tmp_127, %tmp_128" [Rubik_Cube_Layer_All/layerAll.cpp:137]   --->   Operation 152 'and' 'or_cond22' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_13 : Operation 153 [1/1] (1.13ns)   --->   "%tmp_129 = icmp eq i3 %cubieColor_V_load_106, %sEC_V_read" [Rubik_Cube_Layer_All/layerAll.cpp:138]   --->   Operation 153 'icmp' 'tmp_129' <Predicate = true> <Delay = 1.13> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.13> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_13 : Operation 154 [1/1] (1.13ns)   --->   "%tmp_130 = icmp eq i3 %cubieColor_V_load_107, %fEC_V_read" [Rubik_Cube_Layer_All/layerAll.cpp:138]   --->   Operation 154 'icmp' 'tmp_130' <Predicate = true> <Delay = 1.13> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.13> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_13 : Operation 155 [1/1] (0.00ns) (grouped into LUT with out node sel_tmp11)   --->   "%or_cond23 = and i1 %tmp_129, %tmp_130" [Rubik_Cube_Layer_All/layerAll.cpp:138]   --->   Operation 155 'and' 'or_cond23' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_13 : Operation 156 [1/1] (0.97ns) (out node of the LUT)   --->   "%sel_tmp11 = or i1 %or_cond22, %or_cond23" [Rubik_Cube_Layer_All/layerAll.cpp:137]   --->   Operation 156 'or' 'sel_tmp11' <Predicate = true> <Delay = 0.97> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_13 : Operation 157 [1/1] (0.00ns) (grouped into LUT with out node newSel8)   --->   "%newSel = select i1 %sel_tmp11, i4 -4, i4 -5" [Rubik_Cube_Layer_All/layerAll.cpp:137]   --->   Operation 157 'select' 'newSel' <Predicate = true> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.02> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_13 : Operation 158 [1/1] (0.97ns) (out node of the LUT)   --->   "%or_cond = or i1 %sel_tmp11, %sel_tmp10" [Rubik_Cube_Layer_All/layerAll.cpp:137]   --->   Operation 158 'or' 'or_cond' <Predicate = true> <Delay = 0.97> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_13 : Operation 159 [1/1] (0.00ns) (grouped into LUT with out node newSel8)   --->   "%newSel1 = select i1 %sel_tmp9, i4 -6, i4 -7" [Rubik_Cube_Layer_All/layerAll.cpp:127]   --->   Operation 159 'select' 'newSel1' <Predicate = true> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.02> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_13 : Operation 160 [1/1] (0.00ns) (grouped into LUT with out node or_cond5)   --->   "%or_cond1 = or i1 %sel_tmp9, %sel_tmp7" [Rubik_Cube_Layer_All/layerAll.cpp:127]   --->   Operation 160 'or' 'or_cond1' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_13 : Operation 161 [1/1] (0.00ns) (grouped into LUT with out node newSel6)   --->   "%newSel2 = select i1 %sel_tmp5, i4 -8, i4 7" [Rubik_Cube_Layer_All/layerAll.cpp:117]   --->   Operation 161 'select' 'newSel2' <Predicate = (or_cond2)> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.02> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_13 : Operation 162 [1/1] (0.00ns) (grouped into LUT with out node newSel6)   --->   "%newSel28_cast_cast = select i1 %sel_tmp1, i4 6, i4 5" [Rubik_Cube_Layer_All/layerAll.cpp:107]   --->   Operation 162 'select' 'newSel28_cast_cast' <Predicate = (!or_cond2)> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.02> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_13 : Operation 163 [1/1] (0.00ns) (grouped into LUT with out node newSel8)   --->   "%newSel5 = select i1 %or_cond, i4 %newSel, i4 %newSel1" [Rubik_Cube_Layer_All/layerAll.cpp:137]   --->   Operation 163 'select' 'newSel5' <Predicate = true> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.02> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_13 : Operation 164 [1/1] (0.97ns) (out node of the LUT)   --->   "%or_cond5 = or i1 %or_cond, %or_cond1" [Rubik_Cube_Layer_All/layerAll.cpp:137]   --->   Operation 164 'or' 'or_cond5' <Predicate = true> <Delay = 0.97> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_13 : Operation 165 [1/1] (1.02ns) (out node of the LUT)   --->   "%newSel6 = select i1 %or_cond2, i4 %newSel2, i4 %newSel28_cast_cast" [Rubik_Cube_Layer_All/layerAll.cpp:117]   --->   Operation 165 'select' 'newSel6' <Predicate = true> <Delay = 1.02> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.02> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_13 : Operation 166 [1/1] (0.00ns) (grouped into LUT with out node newSel9)   --->   "%newSel38_cast = zext i3 %newSel7 to i4" [Rubik_Cube_Layer_All/layerAll.cpp:96]   --->   Operation 166 'zext' 'newSel38_cast' <Predicate = true> <Delay = 0.00>
+ST_13 : Operation 167 [1/1] (1.02ns) (out node of the LUT)   --->   "%newSel8 = select i1 %or_cond5, i4 %newSel5, i4 %newSel6" [Rubik_Cube_Layer_All/layerAll.cpp:137]   --->   Operation 167 'select' 'newSel8' <Predicate = true> <Delay = 1.02> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.02> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_13 : Operation 168 [1/1] (0.00ns) (grouped into LUT with out node newSel9)   --->   "%or_cond7 = or i1 %or_cond5, %or_cond6" [Rubik_Cube_Layer_All/layerAll.cpp:137]   --->   Operation 168 'or' 'or_cond7' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_13 : Operation 169 [1/1] (1.02ns) (out node of the LUT)   --->   "%newSel9 = select i1 %or_cond7, i4 %newSel8, i4 %newSel38_cast" [Rubik_Cube_Layer_All/layerAll.cpp:137]   --->   Operation 169 'select' 'newSel9' <Predicate = true> <Delay = 1.02> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.02> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_13 : Operation 170 [1/1] (0.00ns)   --->   "ret i4 %newSel9" [Rubik_Cube_Layer_All/layerAll.cpp:143]   --->   Operation 170 'ret' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 12ns, clock uncertainty: 1.5ns.
+
+ <State 1>: 2.32ns
+The critical path consists of the following:
+	'load' operation ('cubieColor_V_load', Rubik_Cube_Layer_All/layerAll.cpp:81) on array 'cubieColor_V' [5]  (2.32 ns)
+
+ <State 2>: 2.32ns
+The critical path consists of the following:
+	'load' operation ('cubieColor_V_load', Rubik_Cube_Layer_All/layerAll.cpp:81) on array 'cubieColor_V' [5]  (2.32 ns)
+
+ <State 3>: 4.45ns
+The critical path consists of the following:
+	'load' operation ('cubieColor_V_load_86', Rubik_Cube_Layer_All/layerAll.cpp:86) on array 'cubieColor_V' [15]  (2.32 ns)
+	'icmp' operation ('tmp_89', Rubik_Cube_Layer_All/layerAll.cpp:87) [20]  (1.13 ns)
+	'and' operation ('or_cond4_14', Rubik_Cube_Layer_All/layerAll.cpp:87) [22]  (0 ns)
+	'or' operation ('sel_tmp2', Rubik_Cube_Layer_All/layerAll.cpp:86) [23]  (0 ns)
+	'select' operation ('newSel4', Rubik_Cube_Layer_All/layerAll.cpp:86) [124]  (0.993 ns)
+
+ <State 4>: 3.45ns
+The critical path consists of the following:
+	'load' operation ('cubieColor_V_load_88', Rubik_Cube_Layer_All/layerAll.cpp:91) on array 'cubieColor_V' [24]  (2.32 ns)
+	'icmp' operation ('tmp_91', Rubik_Cube_Layer_All/layerAll.cpp:91) [25]  (1.13 ns)
+
+ <State 5>: 6.39ns
+The critical path consists of the following:
+	'load' operation ('cubieColor_V_load_90', Rubik_Cube_Layer_All/layerAll.cpp:96) on array 'cubieColor_V' [33]  (2.32 ns)
+	'icmp' operation ('tmp_97', Rubik_Cube_Layer_All/layerAll.cpp:97) [38]  (1.13 ns)
+	'and' operation ('or_cond8', Rubik_Cube_Layer_All/layerAll.cpp:97) [40]  (0 ns)
+	'or' operation ('sel_tmp6', Rubik_Cube_Layer_All/layerAll.cpp:96) [41]  (0.978 ns)
+	'or' operation ('or_cond4', Rubik_Cube_Layer_All/layerAll.cpp:96) [123]  (0.978 ns)
+	'select' operation ('newSel7', Rubik_Cube_Layer_All/layerAll.cpp:96) [130]  (0.98 ns)
+
+ <State 6>: 3.45ns
+The critical path consists of the following:
+	'load' operation ('cubieColor_V_load_92', Rubik_Cube_Layer_All/layerAll.cpp:102) on array 'cubieColor_V' [42]  (2.32 ns)
+	'icmp' operation ('tmp_101', Rubik_Cube_Layer_All/layerAll.cpp:103) [47]  (1.13 ns)
+
+ <State 7>: 4.43ns
+The critical path consists of the following:
+	'load' operation ('cubieColor_V_load_94', Rubik_Cube_Layer_All/layerAll.cpp:107) on array 'cubieColor_V' [51]  (2.32 ns)
+	'icmp' operation ('tmp_105', Rubik_Cube_Layer_All/layerAll.cpp:108) [56]  (1.13 ns)
+	'and' operation ('or_cond11', Rubik_Cube_Layer_All/layerAll.cpp:108) [58]  (0 ns)
+	'or' operation ('sel_tmp1', Rubik_Cube_Layer_All/layerAll.cpp:107) [59]  (0.978 ns)
+
+ <State 8>: 3.45ns
+The critical path consists of the following:
+	'load' operation ('cubieColor_V_load_96', Rubik_Cube_Layer_All/layerAll.cpp:112) on array 'cubieColor_V' [60]  (2.32 ns)
+	'icmp' operation ('tmp_109', Rubik_Cube_Layer_All/layerAll.cpp:113) [65]  (1.13 ns)
+
+ <State 9>: 6.39ns
+The critical path consists of the following:
+	'load' operation ('cubieColor_V_load_98', Rubik_Cube_Layer_All/layerAll.cpp:117) on array 'cubieColor_V' [69]  (2.32 ns)
+	'icmp' operation ('tmp_113', Rubik_Cube_Layer_All/layerAll.cpp:118) [74]  (1.13 ns)
+	'and' operation ('or_cond15', Rubik_Cube_Layer_All/layerAll.cpp:118) [76]  (0 ns)
+	'or' operation ('sel_tmp5', Rubik_Cube_Layer_All/layerAll.cpp:117) [77]  (0.978 ns)
+	'or' operation ('or_cond2', Rubik_Cube_Layer_All/layerAll.cpp:117) [119]  (0.978 ns)
+	'or' operation ('or_cond6', Rubik_Cube_Layer_All/layerAll.cpp:117) [129]  (0.978 ns)
+
+ <State 10>: 3.45ns
+The critical path consists of the following:
+	'load' operation ('cubieColor_V_load_100', Rubik_Cube_Layer_All/layerAll.cpp:122) on array 'cubieColor_V' [78]  (2.32 ns)
+	'icmp' operation ('tmp_115', Rubik_Cube_Layer_All/layerAll.cpp:122) [79]  (1.13 ns)
+
+ <State 11>: 4.43ns
+The critical path consists of the following:
+	'load' operation ('cubieColor_V_load_102', Rubik_Cube_Layer_All/layerAll.cpp:127) on array 'cubieColor_V' [87]  (2.32 ns)
+	'icmp' operation ('tmp_119', Rubik_Cube_Layer_All/layerAll.cpp:127) [88]  (1.13 ns)
+	'and' operation ('or_cond18', Rubik_Cube_Layer_All/layerAll.cpp:127) [91]  (0 ns)
+	'or' operation ('sel_tmp9', Rubik_Cube_Layer_All/layerAll.cpp:127) [95]  (0.978 ns)
+
+ <State 12>: 3.45ns
+The critical path consists of the following:
+	'load' operation ('cubieColor_V_load_104', Rubik_Cube_Layer_All/layerAll.cpp:132) on array 'cubieColor_V' [96]  (2.32 ns)
+	'icmp' operation ('tmp_125', Rubik_Cube_Layer_All/layerAll.cpp:133) [101]  (1.13 ns)
+
+ <State 13>: 8.43ns
+The critical path consists of the following:
+	'load' operation ('cubieColor_V_load_106', Rubik_Cube_Layer_All/layerAll.cpp:137) on array 'cubieColor_V' [105]  (2.32 ns)
+	'icmp' operation ('tmp_129', Rubik_Cube_Layer_All/layerAll.cpp:138) [110]  (1.13 ns)
+	'and' operation ('or_cond23', Rubik_Cube_Layer_All/layerAll.cpp:138) [112]  (0 ns)
+	'or' operation ('sel_tmp11', Rubik_Cube_Layer_All/layerAll.cpp:137) [113]  (0.978 ns)
+	'or' operation ('or_cond', Rubik_Cube_Layer_All/layerAll.cpp:137) [115]  (0.978 ns)
+	'or' operation ('or_cond5', Rubik_Cube_Layer_All/layerAll.cpp:137) [127]  (0.978 ns)
+	'select' operation ('newSel8', Rubik_Cube_Layer_All/layerAll.cpp:137) [132]  (1.02 ns)
+	'select' operation ('newSel9', Rubik_Cube_Layer_All/layerAll.cpp:137) [134]  (1.02 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

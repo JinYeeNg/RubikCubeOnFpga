@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:02:38 MDT 2018
+# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+# Start of session at: Thu Jul  4 02:11:01 2019
+# Process ID: 17712
+# Current directory: /home/jinyeeng/Downloads/RubikCube-af660b02594911b39652037663f50280ce7ec755/kociemba/kociembaHls/solution1/impl/verilog/project.runs/synth_1
+# Command line: vivado -log solution.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source solution.tcl
+# Log file: /home/jinyeeng/Downloads/RubikCube-af660b02594911b39652037663f50280ce7ec755/kociemba/kociembaHls/solution1/impl/verilog/project.runs/synth_1/solution.vds
+# Journal file: /home/jinyeeng/Downloads/RubikCube-af660b02594911b39652037663f50280ce7ec755/kociemba/kociembaHls/solution1/impl/verilog/project.runs/synth_1/vivado.jou
+#-----------------------------------------------------------
+source solution.tcl -notrace

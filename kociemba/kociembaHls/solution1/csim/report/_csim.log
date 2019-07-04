@@ -1,0 +1,12 @@
+INFO: [SIM 2] *************** CSIM start ***************
+INFO: [SIM 4] CSIM will launch GCC as the compiler.
+   Compiling ../../../../solve.cpp in debug mode
+   Compiling ../../../../coordcube.cpp in debug mode
+   Compiling ../../../../cubiecube.cpp in debug mode
+   Compiling ../../../../facecube.cpp in debug mode
+   Compiling ../../../../prunetable_helpers.cpp in debug mode
+   Compiling ../../../../search.cpp in debug mode
+   Generating csim.exe
+D2 R' D' F2 B D R2 D2 R' F2 D' F2 U' B2 L2 U2 D R2 U 
+INFO: [SIM 1] CSim done with 0 errors.
+INFO: [SIM 3] *************** CSIM finish ***************

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="layerAll.h" path="C:\Users\jinyee\RubikCube\Rubik_Cube_Layer_All\layerAll.h"/>
+    <originFiles name="layerAll.cpp" path="C:\Users\jinyee\RubikCube\Rubik_Cube_Layer_All\layerAll.cpp"/>
+  </source>
+  <testbench>
+    <originFiles name="layerAll_tb.cpp" path="C:\Users\jinyee\RubikCube\Rubik_Cube_Layer_All\layerAll_tb.cpp"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>

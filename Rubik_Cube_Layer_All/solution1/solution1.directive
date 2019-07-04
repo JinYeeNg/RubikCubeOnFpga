@@ -1,0 +1,33 @@
+<AutoPilot:ProjectResources xmlns:AutoPilot="com.autoesl.autopilot.ui.directiveView">
+    <sourceFile name="">
+        <directive functionName="solveCube" label="" functionLabel="">
+            <pragma name="INTERFACE">
+                <option name="s_axilite" value="" positionalBoolean="mode"/>
+                <option name="port" value="return" positionalBoolean="4"/>
+                <option name="bundle" value="add_io"/>
+            </pragma>
+        </directive>
+        <directive functionName="solveCube" label="" functionLabel="">
+            <pragma name="INTERFACE">
+                <option name="s_axilite" value="" positionalBoolean="mode"/>
+                <option name="port" value="cubieColor_tb" positionalBoolean="4"/>
+                <option name="bundle" value="add_io"/>
+            </pragma>
+        </directive>
+        <directive functionName="solveCube" label="" functionLabel="">
+            <pragma name="INTERFACE">
+                <option name="s_axilite" value="" positionalBoolean="mode"/>
+                <option name="port" value="rMoves" positionalBoolean="4"/>
+                <option name="bundle" value="add_io"/>
+            </pragma>
+        </directive>
+        <directive functionName="solveCube" label="" functionLabel="">
+            <pragma name="INTERFACE">
+                <option name="s_axilite" value="" positionalBoolean="mode"/>
+                <option name="port" value="order" positionalBoolean="4"/>
+                <option name="bundle" value="add_io"/>
+            </pragma>
+        </directive>
+    </sourceFile>
+</AutoPilot:ProjectResources>
+

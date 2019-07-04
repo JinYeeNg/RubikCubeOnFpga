@@ -1,0 +1,599 @@
+
+
+================================================================
+== Vivado HLS Report for 'blockP1'
+================================================================
+* Date:           Thu Jul  4 02:09:06 2019
+
+* Version:        2018.2 (Build 2258646 on Thu Jun 14 20:25:20 MDT 2018)
+* Project:        kociembaHls
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|     8.902|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----------------+-----+-----------------+---------+
+    |        Latency        |        Interval       | Pipeline|
+    | min |       max       | min |       max       |   Type  |
+    +-----+-----------------+-----+-----------------+---------+
+    |    5|  303944237568077|    5|  303944237568077|   none  |
+    +-----+-----------------+-----+-----------------+---------+
+
+    + Detail: 
+        * Instance: 
+        +-------------------------+-------------+-----+------------+-----+------------+---------+
+        |                         |             |      Latency     |     Interval     | Pipeline|
+        |         Instance        |    Module   | min |     max    | min |     max    |   Type  |
+        +-------------------------+-------------+-----+------------+-----+------------+---------+
+        |grp_blockP2_fu_1316      |blockP2      |    6|  2110722008|    6|  2110722008|   none  |
+        |grp_parallel_v2_fu_1456  |parallel_v2  |   68|        1859|   68|        1859|   none  |
+        +-------------------------+-------------+-----+------------+-----+------------+---------+
+
+        * Loop: 
+        +-------------+-----+-----------------+--------------------+-----------+-----------+----------+----------+
+        |             |        Latency        |      Iteration     |  Initiation Interval  |   Trip   |          |
+        |  Loop Name  | min |       max       |       Latency      |  achieved |   target  |   Count  | Pipelined|
+        +-------------+-----+-----------------+--------------------+-----------+-----------+----------+----------+
+        |- Loop 1     |    4|  303944237568075| 4 ~ 16885790976004 |          -|          -|  1 ~ 18  |    no    |
+        | + Loop 1.1  |    0|   16885790976000|   72 ~ 2110723872  |          -|          -| 0 ~ 8000 |    no    |
+        +-------------+-----+-----------------+--------------------+-----------+-----------+----------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+-------+
+|       Name      | BRAM_18K| DSP48E|   FF   |  LUT  |
++-----------------+---------+-------+--------+-------+
+|DSP              |        -|      -|       -|      -|
+|Expression       |        -|      -|       0|    186|
+|FIFO             |       40|      -|    1764|   3204|
+|Instance         |        1|      5|    4602|  10240|
+|Memory           |        0|      -|       5|      2|
+|Multiplexer      |        -|      -|       -|   1787|
+|Register         |        -|      -|     162|      -|
++-----------------+---------+-------+--------+-------+
+|Total            |       41|      5|    6533|  15419|
++-----------------+---------+-------+--------+-------+
+|Available        |      280|    220|  106400|  53200|
++-----------------+---------+-------+--------+-------+
+|Utilization (%)  |       14|      2|       6|     28|
++-----------------+---------+-------+--------+-------+
+
++ Detail: 
+    * Instance: 
+    +-------------------------+-------------+---------+-------+------+------+
+    |         Instance        |    Module   | BRAM_18K| DSP48E|  FF  |  LUT |
+    +-------------------------+-------------+---------+-------+------+------+
+    |grp_blockP2_fu_1316      |blockP2      |        1|      1|  3229|  7181|
+    |grp_parallel_v2_fu_1456  |parallel_v2  |        0|      4|  1373|  3059|
+    +-------------------------+-------------+---------+-------+------+------+
+    |Total                    |             |        1|      5|  4602| 10240|
+    +-------------------------+-------------+---------+-------+------+------+
+
+    * DSP48: 
+    N/A
+
+    * Memory: 
+    +-----------+---------------------+---------+---+----+------+-----+------+-------------+
+    |   Memory  |        Module       | BRAM_18K| FF| LUT| Words| Bits| Banks| W*Bits*Banks|
+    +-----------+---------------------+---------+---+----+------+-----+------+-------------+
+    |label_0_U  |parallel_v2_label_0  |        0|  3|   1|    18|    3|     1|           54|
+    |label_1_U  |parallel_v2_label_1  |        0|  2|   1|    18|    2|     1|           36|
+    +-----------+---------------------+---------+---+----+------+-----+------+-------------+
+    |Total      |                     |        0|  5|   2|    36|    5|     2|           90|
+    +-----------+---------------------+---------+---+----+------+-----+------+-------------+
+
+    * FIFO: 
+    +-----------------------------+---------+----+----+------+-----+---------+
+    |             Name            | BRAM_18K| FF | LUT| Depth| Bits| Size:D*B|
+    +-----------------------------+---------+----+----+------+-----+---------+
+    |P2Buffer_V_FRtoBR_fifo_U     |        1|  51|  87|  1000|   16|    16000|
+    |P2Buffer_V_URFtoDLF_fifo_U   |        1|  51|  87|  1000|   16|    16000|
+    |P2Buffer_V_URtoDF_fifo_U     |        1|  51|  87|  1000|   16|    16000|
+    |P2Buffer_V_depthPhas_fifo_U  |        1|  43|  79|  1000|    8|     8000|
+    |P2Buffer_V_flip_fifo_U       |        1|  51|  87|  1000|   16|    16000|
+    |P2Buffer_V_i_0_fifo_U        |        1|  43|  79|  1000|    8|     8000|
+    |P2Buffer_V_i_10_fifo_U       |        1|  43|  79|  1000|    8|     8000|
+    |P2Buffer_V_i_11_fifo_U       |        1|  43|  79|  1000|    8|     8000|
+    |P2Buffer_V_i_12_fifo_U       |        1|  43|  79|  1000|    8|     8000|
+    |P2Buffer_V_i_13_fifo_U       |        1|  43|  79|  1000|    8|     8000|
+    |P2Buffer_V_i_14_fifo_U       |        1|  43|  79|  1000|    8|     8000|
+    |P2Buffer_V_i_15_fifo_U       |        1|  43|  79|  1000|    8|     8000|
+    |P2Buffer_V_i_16_fifo_U       |        1|  43|  79|  1000|    8|     8000|
+    |P2Buffer_V_i_17_fifo_U       |        1|  43|  79|  1000|    8|     8000|
+    |P2Buffer_V_i_18_fifo_U       |        1|  43|  79|  1000|    8|     8000|
+    |P2Buffer_V_i_19_fifo_U       |        1|  43|  79|  1000|    8|     8000|
+    |P2Buffer_V_i_1_fifo_U        |        1|  43|  79|  1000|    8|     8000|
+    |P2Buffer_V_i_20_fifo_U       |        1|  43|  79|  1000|    8|     8000|
+    |P2Buffer_V_i_21_fifo_U       |        1|  43|  79|  1000|    8|     8000|
+    |P2Buffer_V_i_22_fifo_U       |        1|  43|  79|  1000|    8|     8000|
+    |P2Buffer_V_i_23_fifo_U       |        1|  43|  79|  1000|    8|     8000|
+    |P2Buffer_V_i_24_fifo_U       |        1|  43|  79|  1000|    8|     8000|
+    |P2Buffer_V_i_25_fifo_U       |        1|  43|  79|  1000|    8|     8000|
+    |P2Buffer_V_i_26_fifo_U       |        1|  43|  79|  1000|    8|     8000|
+    |P2Buffer_V_i_27_fifo_U       |        1|  43|  79|  1000|    8|     8000|
+    |P2Buffer_V_i_28_fifo_U       |        1|  43|  79|  1000|    8|     8000|
+    |P2Buffer_V_i_29_fifo_U       |        1|  43|  79|  1000|    8|     8000|
+    |P2Buffer_V_i_2_fifo_U        |        1|  43|  79|  1000|    8|     8000|
+    |P2Buffer_V_i_30_fifo_U       |        1|  43|  79|  1000|    8|     8000|
+    |P2Buffer_V_i_3_fifo_U        |        1|  43|  79|  1000|    8|     8000|
+    |P2Buffer_V_i_4_fifo_U        |        1|  43|  79|  1000|    8|     8000|
+    |P2Buffer_V_i_5_fifo_U        |        1|  43|  79|  1000|    8|     8000|
+    |P2Buffer_V_i_6_fifo_U        |        1|  43|  79|  1000|    8|     8000|
+    |P2Buffer_V_i_7_fifo_U        |        1|  43|  79|  1000|    8|     8000|
+    |P2Buffer_V_i_8_fifo_U        |        1|  43|  79|  1000|    8|     8000|
+    |P2Buffer_V_i_9_fifo_U        |        1|  43|  79|  1000|    8|     8000|
+    |P2Buffer_V_n_fifo_U          |        1|  43|  79|  1000|    8|     8000|
+    |P2Buffer_V_parity_fifo_U     |        1|  39|  75|  1000|    1|     1000|
+    |P2Buffer_V_slice_fifo_U      |        1|  51|  87|  1000|   16|    16000|
+    |P2Buffer_V_twist_fifo_U      |        1|  51|  87|  1000|   16|    16000|
+    +-----------------------------+---------+----+----+------+-----+---------+
+    |Total                        |       40|1764|3204| 40000|  361|   361000|
+    +-----------------------------+---------+----+----+------+-----+---------+
+
+    * Expression: 
+    +---------------------------------+----------+-------+---+----+------------+------------+
+    |          Variable Name          | Operation| DSP48E| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +---------------------------------+----------+-------+---+----+------------+------------+
+    |P1End_1_fu_1664_p2               |     +    |      0|  0|  39|          32|           1|
+    |p_1_fu_1596_p2                   |     +    |      0|  0|  15|           5|           1|
+    |tmp1_fu_1631_p2                  |     +    |      0|  0|   8|           6|           2|
+    |tmp_222_fu_1637_p2               |     +    |      0|  0|   8|           6|           6|
+    |tmp_221_fu_1622_p2               |     -    |      0|  0|  15|           6|           6|
+    |ap_block_state9_on_subcall_done  |    and   |      0|  0|   2|           1|           1|
+    |tmp_2_nbreadreq_fu_1076_p42      |    and   |      0|  0|   2|           1|           1|
+    |tmp_223_fu_1648_p2               |   icmp   |      0|  0|  18|          32|          32|
+    |tmp_224_fu_1658_p2               |   icmp   |      0|  0|  18|          32|           3|
+    |tmp_225_fu_1670_p2               |   icmp   |      0|  0|  18|          32|          13|
+    |tmp_fu_1590_p2                   |   icmp   |      0|  0|  11|           5|           5|
+    |P1End_2_fu_1676_p3               |  select  |      0|  0|  32|           1|           1|
+    +---------------------------------+----------+-------+---+----+------------+------------+
+    |Total                            |          |      0|  0| 186|         159|          72|
+    +---------------------------------+----------+-------+---+----+------------+------------+
+
+    * Multiplexer: 
+    +------------------------------+----+-----------+-----+-----------+
+    |             Name             | LUT| Input Size| Bits| Total Bits|
+    +------------------------------+----+-----------+-----+-----------+
+    |P1Buffer_0_depthPha_address0  |  15|          3|   13|         39|
+    |P1Buffer_0_depthPha_ce0       |  15|          3|    1|          3|
+    |P1Buffer_0_depthPha_d0        |  15|          3|    8|         24|
+    |P1Buffer_0_depthPha_we0       |  15|          3|    1|          3|
+    |P1Buffer_0_flip_address0      |  15|          3|   13|         39|
+    |P1Buffer_0_flip_ce0           |  15|          3|    1|          3|
+    |P1Buffer_0_flip_d0            |  15|          3|   16|         48|
+    |P1Buffer_0_flip_we0           |  15|          3|    1|          3|
+    |P1Buffer_0_i_address0         |  15|          3|   18|         54|
+    |P1Buffer_0_i_ce0              |  15|          3|    1|          3|
+    |P1Buffer_0_i_d0               |  15|          3|    8|         24|
+    |P1Buffer_0_i_we0              |  15|          3|    1|          3|
+    |P1Buffer_0_n_address0         |  15|          3|   13|         39|
+    |P1Buffer_0_n_ce0              |  15|          3|    1|          3|
+    |P1Buffer_0_n_d0               |  15|          3|    8|         24|
+    |P1Buffer_0_n_we0              |  15|          3|    1|          3|
+    |P1Buffer_0_slice_address0     |  15|          3|   13|         39|
+    |P1Buffer_0_slice_ce0          |  15|          3|    1|          3|
+    |P1Buffer_0_slice_d0           |  15|          3|   16|         48|
+    |P1Buffer_0_slice_we0          |  15|          3|    1|          3|
+    |P1Buffer_0_twist_address0     |  15|          3|   13|         39|
+    |P1Buffer_0_twist_ce0          |  15|          3|    1|          3|
+    |P1Buffer_0_twist_d0           |  15|          3|   16|         48|
+    |P1Buffer_0_twist_we0          |  15|          3|    1|          3|
+    |P1End_reg_1278                |   9|          2|   32|         64|
+    |P1Start_reg_1290              |   9|          2|   32|         64|
+    |P2Buffer_V_FRtoBR_read        |   9|          2|    1|          2|
+    |P2Buffer_V_FRtoBR_write       |   9|          2|    1|          2|
+    |P2Buffer_V_URFtoDLF_read      |   9|          2|    1|          2|
+    |P2Buffer_V_URFtoDLF_write     |   9|          2|    1|          2|
+    |P2Buffer_V_URtoDF_read        |   9|          2|    1|          2|
+    |P2Buffer_V_URtoDF_write       |   9|          2|    1|          2|
+    |P2Buffer_V_depthPhas_read     |   9|          2|    1|          2|
+    |P2Buffer_V_depthPhas_write    |   9|          2|    1|          2|
+    |P2Buffer_V_flip_read          |   9|          2|    1|          2|
+    |P2Buffer_V_flip_write         |   9|          2|    1|          2|
+    |P2Buffer_V_i_0_read           |   9|          2|    1|          2|
+    |P2Buffer_V_i_0_write          |   9|          2|    1|          2|
+    |P2Buffer_V_i_10_read          |   9|          2|    1|          2|
+    |P2Buffer_V_i_10_write         |   9|          2|    1|          2|
+    |P2Buffer_V_i_11_read          |   9|          2|    1|          2|
+    |P2Buffer_V_i_11_write         |   9|          2|    1|          2|
+    |P2Buffer_V_i_12_read          |   9|          2|    1|          2|
+    |P2Buffer_V_i_12_write         |   9|          2|    1|          2|
+    |P2Buffer_V_i_13_read          |   9|          2|    1|          2|
+    |P2Buffer_V_i_13_write         |   9|          2|    1|          2|
+    |P2Buffer_V_i_14_read          |   9|          2|    1|          2|
+    |P2Buffer_V_i_14_write         |   9|          2|    1|          2|
+    |P2Buffer_V_i_15_read          |   9|          2|    1|          2|
+    |P2Buffer_V_i_15_write         |   9|          2|    1|          2|
+    |P2Buffer_V_i_16_read          |   9|          2|    1|          2|
+    |P2Buffer_V_i_16_write         |   9|          2|    1|          2|
+    |P2Buffer_V_i_17_read          |   9|          2|    1|          2|
+    |P2Buffer_V_i_17_write         |   9|          2|    1|          2|
+    |P2Buffer_V_i_18_read          |   9|          2|    1|          2|
+    |P2Buffer_V_i_18_write         |   9|          2|    1|          2|
+    |P2Buffer_V_i_19_read          |   9|          2|    1|          2|
+    |P2Buffer_V_i_19_write         |   9|          2|    1|          2|
+    |P2Buffer_V_i_1_read           |   9|          2|    1|          2|
+    |P2Buffer_V_i_1_write          |   9|          2|    1|          2|
+    |P2Buffer_V_i_20_read          |   9|          2|    1|          2|
+    |P2Buffer_V_i_20_write         |   9|          2|    1|          2|
+    |P2Buffer_V_i_21_read          |   9|          2|    1|          2|
+    |P2Buffer_V_i_21_write         |   9|          2|    1|          2|
+    |P2Buffer_V_i_22_read          |   9|          2|    1|          2|
+    |P2Buffer_V_i_22_write         |   9|          2|    1|          2|
+    |P2Buffer_V_i_23_read          |   9|          2|    1|          2|
+    |P2Buffer_V_i_23_write         |   9|          2|    1|          2|
+    |P2Buffer_V_i_24_read          |   9|          2|    1|          2|
+    |P2Buffer_V_i_24_write         |   9|          2|    1|          2|
+    |P2Buffer_V_i_25_read          |   9|          2|    1|          2|
+    |P2Buffer_V_i_25_write         |   9|          2|    1|          2|
+    |P2Buffer_V_i_26_read          |   9|          2|    1|          2|
+    |P2Buffer_V_i_26_write         |   9|          2|    1|          2|
+    |P2Buffer_V_i_27_read          |   9|          2|    1|          2|
+    |P2Buffer_V_i_27_write         |   9|          2|    1|          2|
+    |P2Buffer_V_i_28_read          |   9|          2|    1|          2|
+    |P2Buffer_V_i_28_write         |   9|          2|    1|          2|
+    |P2Buffer_V_i_29_read          |   9|          2|    1|          2|
+    |P2Buffer_V_i_29_write         |   9|          2|    1|          2|
+    |P2Buffer_V_i_2_read           |   9|          2|    1|          2|
+    |P2Buffer_V_i_2_write          |   9|          2|    1|          2|
+    |P2Buffer_V_i_30_read          |   9|          2|    1|          2|
+    |P2Buffer_V_i_30_write         |   9|          2|    1|          2|
+    |P2Buffer_V_i_3_read           |   9|          2|    1|          2|
+    |P2Buffer_V_i_3_write          |   9|          2|    1|          2|
+    |P2Buffer_V_i_4_read           |   9|          2|    1|          2|
+    |P2Buffer_V_i_4_write          |   9|          2|    1|          2|
+    |P2Buffer_V_i_5_read           |   9|          2|    1|          2|
+    |P2Buffer_V_i_5_write          |   9|          2|    1|          2|
+    |P2Buffer_V_i_6_read           |   9|          2|    1|          2|
+    |P2Buffer_V_i_6_write          |   9|          2|    1|          2|
+    |P2Buffer_V_i_7_read           |   9|          2|    1|          2|
+    |P2Buffer_V_i_7_write          |   9|          2|    1|          2|
+    |P2Buffer_V_i_8_read           |   9|          2|    1|          2|
+    |P2Buffer_V_i_8_write          |   9|          2|    1|          2|
+    |P2Buffer_V_i_9_read           |   9|          2|    1|          2|
+    |P2Buffer_V_i_9_write          |   9|          2|    1|          2|
+    |P2Buffer_V_n_read             |   9|          2|    1|          2|
+    |P2Buffer_V_n_write            |   9|          2|    1|          2|
+    |P2Buffer_V_parity_read        |   9|          2|    1|          2|
+    |P2Buffer_V_parity_write       |   9|          2|    1|          2|
+    |P2Buffer_V_slice_read         |   9|          2|    1|          2|
+    |P2Buffer_V_slice_write        |   9|          2|    1|          2|
+    |P2Buffer_V_twist_read         |   9|          2|    1|          2|
+    |P2Buffer_V_twist_write        |   9|          2|    1|          2|
+    |a_o                           |   9|          2|   32|         64|
+    |a_o_ap_vld                    |   9|          2|    1|          2|
+    |ap_NS_fsm                     |  47|         10|    1|         10|
+    |label_0_address0              |  15|          3|    5|         15|
+    |label_1_address0              |  15|          3|    5|         15|
+    |m_axi_FRtoBR_Move2_ARADDR     |  15|          3|   32|         96|
+    |m_axi_FRtoBR_Move2_ARBURST    |  15|          3|    2|          6|
+    |m_axi_FRtoBR_Move2_ARCACHE    |  15|          3|    4|         12|
+    |m_axi_FRtoBR_Move2_ARID       |  15|          3|    1|          3|
+    |m_axi_FRtoBR_Move2_ARLEN      |  15|          3|   32|         96|
+    |m_axi_FRtoBR_Move2_ARLOCK     |  15|          3|    2|          6|
+    |m_axi_FRtoBR_Move2_ARPROT     |  15|          3|    3|          9|
+    |m_axi_FRtoBR_Move2_ARQOS      |  15|          3|    4|         12|
+    |m_axi_FRtoBR_Move2_ARREGION   |  15|          3|    4|         12|
+    |m_axi_FRtoBR_Move2_ARSIZE     |  15|          3|    3|          9|
+    |m_axi_FRtoBR_Move2_ARUSER     |  15|          3|    1|          3|
+    |m_axi_FRtoBR_Move2_ARVALID    |  15|          3|    1|          3|
+    |m_axi_FRtoBR_Move2_RREADY     |  15|          3|    1|          3|
+    |m_axi_flipMove2_ARADDR        |  15|          3|   32|         96|
+    |m_axi_flipMove2_ARBURST       |  15|          3|    2|          6|
+    |m_axi_flipMove2_ARCACHE       |  15|          3|    4|         12|
+    |m_axi_flipMove2_ARID          |  15|          3|    1|          3|
+    |m_axi_flipMove2_ARLEN         |  15|          3|   32|         96|
+    |m_axi_flipMove2_ARLOCK        |  15|          3|    2|          6|
+    |m_axi_flipMove2_ARPROT        |  15|          3|    3|          9|
+    |m_axi_flipMove2_ARQOS         |  15|          3|    4|         12|
+    |m_axi_flipMove2_ARREGION      |  15|          3|    4|         12|
+    |m_axi_flipMove2_ARSIZE        |  15|          3|    3|          9|
+    |m_axi_flipMove2_ARUSER        |  15|          3|    1|          3|
+    |m_axi_flipMove2_ARVALID       |  15|          3|    1|          3|
+    |m_axi_flipMove2_RREADY        |  15|          3|    1|          3|
+    |m_axi_twistMove2_ARADDR       |  15|          3|   32|         96|
+    |m_axi_twistMove2_ARBURST      |  15|          3|    2|          6|
+    |m_axi_twistMove2_ARCACHE      |  15|          3|    4|         12|
+    |m_axi_twistMove2_ARID         |  15|          3|    1|          3|
+    |m_axi_twistMove2_ARLEN        |  15|          3|   32|         96|
+    |m_axi_twistMove2_ARLOCK       |  15|          3|    2|          6|
+    |m_axi_twistMove2_ARPROT       |  15|          3|    3|          9|
+    |m_axi_twistMove2_ARQOS        |  15|          3|    4|         12|
+    |m_axi_twistMove2_ARREGION     |  15|          3|    4|         12|
+    |m_axi_twistMove2_ARSIZE       |  15|          3|    3|          9|
+    |m_axi_twistMove2_ARUSER       |  15|          3|    1|          3|
+    |m_axi_twistMove2_ARVALID      |  15|          3|    1|          3|
+    |m_axi_twistMove2_RREADY       |  15|          3|    1|          3|
+    |p_reg_1267                    |   9|          2|    5|         10|
+    +------------------------------+----+-----------+-----+-----------+
+    |Total                         |1787|        375|  630|       1715|
+    +------------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +--------------------------------------+----+----+-----+-----------+
+    |                 Name                 | FF | LUT| Bits| Const Bits|
+    +--------------------------------------+----+----+-----+-----------+
+    |P1End_2_reg_1866                      |  32|   0|   32|          0|
+    |P1End_reg_1278                        |  32|   0|   32|          0|
+    |P1Start_1_reg_1871                    |  32|   0|   32|          0|
+    |P1Start_reg_1290                      |  32|   0|   32|          0|
+    |ap_CS_fsm                             |   9|   0|    9|          0|
+    |depthPhase1_cast1_reg_1800            |   5|   0|    8|          3|
+    |first_reg_1302                        |   1|   0|    1|          0|
+    |grp_blockP2_fu_1316_ap_start_reg      |   1|   0|    1|          0|
+    |grp_parallel_v2_fu_1456_ap_start_reg  |   1|   0|    1|          0|
+    |label_0_load_reg_1849                 |   3|   0|    3|          0|
+    |label_1_load_reg_1855                 |   2|   0|    2|          0|
+    |p_1_reg_1834                          |   5|   0|    5|          0|
+    |p_reg_1267                            |   5|   0|    5|          0|
+    |tmp_2_reg_1876                        |   1|   0|    1|          0|
+    |tmp_reg_1830                          |   1|   0|    1|          0|
+    +--------------------------------------+----+----+-----+-----------+
+    |Total                                 | 162|   0|  165|          3|
+    +--------------------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++------------------------------------+-----+-----+------------+------------------------------------+--------------+
+|              RTL Ports             | Dir | Bits|  Protocol  |            Source Object           |    C Type    |
++------------------------------------+-----+-----+------------+------------------------------------+--------------+
+|ap_clk                              |  in |    1| ap_ctrl_hs |               blockP1              | return value |
+|ap_rst                              |  in |    1| ap_ctrl_hs |               blockP1              | return value |
+|ap_start                            |  in |    1| ap_ctrl_hs |               blockP1              | return value |
+|ap_done                             | out |    1| ap_ctrl_hs |               blockP1              | return value |
+|ap_idle                             | out |    1| ap_ctrl_hs |               blockP1              | return value |
+|ap_ready                            | out |    1| ap_ctrl_hs |               blockP1              | return value |
+|flip                                |  in |   16|   ap_none  |                flip                |    scalar    |
+|twist                               |  in |   16|   ap_none  |                twist               |    scalar    |
+|slice                               |  in |   16|   ap_none  |                slice               |    scalar    |
+|P1Buffer_0_flip_address0            | out |   13|  ap_memory |           P1Buffer_0_flip          |     array    |
+|P1Buffer_0_flip_ce0                 | out |    1|  ap_memory |           P1Buffer_0_flip          |     array    |
+|P1Buffer_0_flip_we0                 | out |    1|  ap_memory |           P1Buffer_0_flip          |     array    |
+|P1Buffer_0_flip_d0                  | out |   16|  ap_memory |           P1Buffer_0_flip          |     array    |
+|P1Buffer_0_flip_q0                  |  in |   16|  ap_memory |           P1Buffer_0_flip          |     array    |
+|P1Buffer_0_twist_address0           | out |   13|  ap_memory |          P1Buffer_0_twist          |     array    |
+|P1Buffer_0_twist_ce0                | out |    1|  ap_memory |          P1Buffer_0_twist          |     array    |
+|P1Buffer_0_twist_we0                | out |    1|  ap_memory |          P1Buffer_0_twist          |     array    |
+|P1Buffer_0_twist_d0                 | out |   16|  ap_memory |          P1Buffer_0_twist          |     array    |
+|P1Buffer_0_twist_q0                 |  in |   16|  ap_memory |          P1Buffer_0_twist          |     array    |
+|P1Buffer_0_slice_address0           | out |   13|  ap_memory |          P1Buffer_0_slice          |     array    |
+|P1Buffer_0_slice_ce0                | out |    1|  ap_memory |          P1Buffer_0_slice          |     array    |
+|P1Buffer_0_slice_we0                | out |    1|  ap_memory |          P1Buffer_0_slice          |     array    |
+|P1Buffer_0_slice_d0                 | out |   16|  ap_memory |          P1Buffer_0_slice          |     array    |
+|P1Buffer_0_slice_q0                 |  in |   16|  ap_memory |          P1Buffer_0_slice          |     array    |
+|P1Buffer_0_depthPha_address0        | out |   13|  ap_memory |         P1Buffer_0_depthPha        |     array    |
+|P1Buffer_0_depthPha_ce0             | out |    1|  ap_memory |         P1Buffer_0_depthPha        |     array    |
+|P1Buffer_0_depthPha_we0             | out |    1|  ap_memory |         P1Buffer_0_depthPha        |     array    |
+|P1Buffer_0_depthPha_d0              | out |    8|  ap_memory |         P1Buffer_0_depthPha        |     array    |
+|P1Buffer_0_depthPha_q0              |  in |    8|  ap_memory |         P1Buffer_0_depthPha        |     array    |
+|P1Buffer_0_n_address0               | out |   13|  ap_memory |            P1Buffer_0_n            |     array    |
+|P1Buffer_0_n_ce0                    | out |    1|  ap_memory |            P1Buffer_0_n            |     array    |
+|P1Buffer_0_n_we0                    | out |    1|  ap_memory |            P1Buffer_0_n            |     array    |
+|P1Buffer_0_n_d0                     | out |    8|  ap_memory |            P1Buffer_0_n            |     array    |
+|P1Buffer_0_n_q0                     |  in |    8|  ap_memory |            P1Buffer_0_n            |     array    |
+|P1Buffer_0_i_address0               | out |   18|  ap_memory |            P1Buffer_0_i            |     array    |
+|P1Buffer_0_i_ce0                    | out |    1|  ap_memory |            P1Buffer_0_i            |     array    |
+|P1Buffer_0_i_we0                    | out |    1|  ap_memory |            P1Buffer_0_i            |     array    |
+|P1Buffer_0_i_d0                     | out |    8|  ap_memory |            P1Buffer_0_i            |     array    |
+|P1Buffer_0_i_q0                     |  in |    8|  ap_memory |            P1Buffer_0_i            |     array    |
+|depthPhase1                         |  in |    5|   ap_none  |             depthPhase1            |    scalar    |
+|maxDepth                            |  in |    8|   ap_none  |              maxDepth              |    scalar    |
+|URFtoDLF                            |  in |   16|   ap_none  |              URFtoDLF              |    scalar    |
+|FRtoBR                              |  in |   16|   ap_none  |               FRtoBR               |    scalar    |
+|parity                              |  in |    1|   ap_none  |               parity               |    scalar    |
+|URtoUL                              |  in |   16|   ap_none  |               URtoUL               |    scalar    |
+|UBtoDF                              |  in |   16|   ap_none  |               UBtoDF               |    scalar    |
+|P3Buffer_0_parity_address0          | out |   10|  ap_memory |          P3Buffer_0_parity         |     array    |
+|P3Buffer_0_parity_ce0               | out |    1|  ap_memory |          P3Buffer_0_parity         |     array    |
+|P3Buffer_0_parity_we0               | out |    1|  ap_memory |          P3Buffer_0_parity         |     array    |
+|P3Buffer_0_parity_d0                | out |    1|  ap_memory |          P3Buffer_0_parity         |     array    |
+|P3Buffer_0_parity_q0                |  in |    1|  ap_memory |          P3Buffer_0_parity         |     array    |
+|P3Buffer_0_URFtoDLF_address0        | out |   10|  ap_memory |         P3Buffer_0_URFtoDLF        |     array    |
+|P3Buffer_0_URFtoDLF_ce0             | out |    1|  ap_memory |         P3Buffer_0_URFtoDLF        |     array    |
+|P3Buffer_0_URFtoDLF_we0             | out |    1|  ap_memory |         P3Buffer_0_URFtoDLF        |     array    |
+|P3Buffer_0_URFtoDLF_d0              | out |   16|  ap_memory |         P3Buffer_0_URFtoDLF        |     array    |
+|P3Buffer_0_URFtoDLF_q0              |  in |   16|  ap_memory |         P3Buffer_0_URFtoDLF        |     array    |
+|P3Buffer_0_FRtoBR_address0          | out |   10|  ap_memory |          P3Buffer_0_FRtoBR         |     array    |
+|P3Buffer_0_FRtoBR_ce0               | out |    1|  ap_memory |          P3Buffer_0_FRtoBR         |     array    |
+|P3Buffer_0_FRtoBR_we0               | out |    1|  ap_memory |          P3Buffer_0_FRtoBR         |     array    |
+|P3Buffer_0_FRtoBR_d0                | out |   16|  ap_memory |          P3Buffer_0_FRtoBR         |     array    |
+|P3Buffer_0_FRtoBR_q0                |  in |   16|  ap_memory |          P3Buffer_0_FRtoBR         |     array    |
+|P3Buffer_0_URtoDF_address0          | out |   10|  ap_memory |          P3Buffer_0_URtoDF         |     array    |
+|P3Buffer_0_URtoDF_ce0               | out |    1|  ap_memory |          P3Buffer_0_URtoDF         |     array    |
+|P3Buffer_0_URtoDF_we0               | out |    1|  ap_memory |          P3Buffer_0_URtoDF         |     array    |
+|P3Buffer_0_URtoDF_d0                | out |   16|  ap_memory |          P3Buffer_0_URtoDF         |     array    |
+|P3Buffer_0_URtoDF_q0                |  in |   16|  ap_memory |          P3Buffer_0_URtoDF         |     array    |
+|P3Buffer_0_n_address0               | out |   10|  ap_memory |            P3Buffer_0_n            |     array    |
+|P3Buffer_0_n_ce0                    | out |    1|  ap_memory |            P3Buffer_0_n            |     array    |
+|P3Buffer_0_n_we0                    | out |    1|  ap_memory |            P3Buffer_0_n            |     array    |
+|P3Buffer_0_n_d0                     | out |    8|  ap_memory |            P3Buffer_0_n            |     array    |
+|P3Buffer_0_n_q0                     |  in |    8|  ap_memory |            P3Buffer_0_n            |     array    |
+|P3Buffer_0_i_address0               | out |   15|  ap_memory |            P3Buffer_0_i            |     array    |
+|P3Buffer_0_i_ce0                    | out |    1|  ap_memory |            P3Buffer_0_i            |     array    |
+|P3Buffer_0_i_we0                    | out |    1|  ap_memory |            P3Buffer_0_i            |     array    |
+|P3Buffer_0_i_d0                     | out |    8|  ap_memory |            P3Buffer_0_i            |     array    |
+|P3Buffer_0_i_q0                     |  in |    8|  ap_memory |            P3Buffer_0_i            |     array    |
+|P3Buffer_0_i_address1               | out |   15|  ap_memory |            P3Buffer_0_i            |     array    |
+|P3Buffer_0_i_ce1                    | out |    1|  ap_memory |            P3Buffer_0_i            |     array    |
+|P3Buffer_0_i_we1                    | out |    1|  ap_memory |            P3Buffer_0_i            |     array    |
+|P3Buffer_0_i_d1                     | out |    8|  ap_memory |            P3Buffer_0_i            |     array    |
+|P3Buffer_0_i_q1                     |  in |    8|  ap_memory |            P3Buffer_0_i            |     array    |
+|encode_length                       | out |    8|   ap_vld   |            encode_length           |    pointer   |
+|encode_length_ap_vld                | out |    1|   ap_vld   |            encode_length           |    pointer   |
+|encode_array_address0               | out |    5|  ap_memory |            encode_array            |     array    |
+|encode_array_ce0                    | out |    1|  ap_memory |            encode_array            |     array    |
+|encode_array_we0                    | out |    1|  ap_memory |            encode_array            |     array    |
+|encode_array_d0                     | out |    8|  ap_memory |            encode_array            |     array    |
+|m_axi_twistMove2_AWVALID            | out |    1|    m_axi   |             twistMove2             |    pointer   |
+|m_axi_twistMove2_AWREADY            |  in |    1|    m_axi   |             twistMove2             |    pointer   |
+|m_axi_twistMove2_AWADDR             | out |   32|    m_axi   |             twistMove2             |    pointer   |
+|m_axi_twistMove2_AWID               | out |    1|    m_axi   |             twistMove2             |    pointer   |
+|m_axi_twistMove2_AWLEN              | out |   32|    m_axi   |             twistMove2             |    pointer   |
+|m_axi_twistMove2_AWSIZE             | out |    3|    m_axi   |             twistMove2             |    pointer   |
+|m_axi_twistMove2_AWBURST            | out |    2|    m_axi   |             twistMove2             |    pointer   |
+|m_axi_twistMove2_AWLOCK             | out |    2|    m_axi   |             twistMove2             |    pointer   |
+|m_axi_twistMove2_AWCACHE            | out |    4|    m_axi   |             twistMove2             |    pointer   |
+|m_axi_twistMove2_AWPROT             | out |    3|    m_axi   |             twistMove2             |    pointer   |
+|m_axi_twistMove2_AWQOS              | out |    4|    m_axi   |             twistMove2             |    pointer   |
+|m_axi_twistMove2_AWREGION           | out |    4|    m_axi   |             twistMove2             |    pointer   |
+|m_axi_twistMove2_AWUSER             | out |    1|    m_axi   |             twistMove2             |    pointer   |
+|m_axi_twistMove2_WVALID             | out |    1|    m_axi   |             twistMove2             |    pointer   |
+|m_axi_twistMove2_WREADY             |  in |    1|    m_axi   |             twistMove2             |    pointer   |
+|m_axi_twistMove2_WDATA              | out |   16|    m_axi   |             twistMove2             |    pointer   |
+|m_axi_twistMove2_WSTRB              | out |    2|    m_axi   |             twistMove2             |    pointer   |
+|m_axi_twistMove2_WLAST              | out |    1|    m_axi   |             twistMove2             |    pointer   |
+|m_axi_twistMove2_WID                | out |    1|    m_axi   |             twistMove2             |    pointer   |
+|m_axi_twistMove2_WUSER              | out |    1|    m_axi   |             twistMove2             |    pointer   |
+|m_axi_twistMove2_ARVALID            | out |    1|    m_axi   |             twistMove2             |    pointer   |
+|m_axi_twistMove2_ARREADY            |  in |    1|    m_axi   |             twistMove2             |    pointer   |
+|m_axi_twistMove2_ARADDR             | out |   32|    m_axi   |             twistMove2             |    pointer   |
+|m_axi_twistMove2_ARID               | out |    1|    m_axi   |             twistMove2             |    pointer   |
+|m_axi_twistMove2_ARLEN              | out |   32|    m_axi   |             twistMove2             |    pointer   |
+|m_axi_twistMove2_ARSIZE             | out |    3|    m_axi   |             twistMove2             |    pointer   |
+|m_axi_twistMove2_ARBURST            | out |    2|    m_axi   |             twistMove2             |    pointer   |
+|m_axi_twistMove2_ARLOCK             | out |    2|    m_axi   |             twistMove2             |    pointer   |
+|m_axi_twistMove2_ARCACHE            | out |    4|    m_axi   |             twistMove2             |    pointer   |
+|m_axi_twistMove2_ARPROT             | out |    3|    m_axi   |             twistMove2             |    pointer   |
+|m_axi_twistMove2_ARQOS              | out |    4|    m_axi   |             twistMove2             |    pointer   |
+|m_axi_twistMove2_ARREGION           | out |    4|    m_axi   |             twistMove2             |    pointer   |
+|m_axi_twistMove2_ARUSER             | out |    1|    m_axi   |             twistMove2             |    pointer   |
+|m_axi_twistMove2_RVALID             |  in |    1|    m_axi   |             twistMove2             |    pointer   |
+|m_axi_twistMove2_RREADY             | out |    1|    m_axi   |             twistMove2             |    pointer   |
+|m_axi_twistMove2_RDATA              |  in |   16|    m_axi   |             twistMove2             |    pointer   |
+|m_axi_twistMove2_RLAST              |  in |    1|    m_axi   |             twistMove2             |    pointer   |
+|m_axi_twistMove2_RID                |  in |    1|    m_axi   |             twistMove2             |    pointer   |
+|m_axi_twistMove2_RUSER              |  in |    1|    m_axi   |             twistMove2             |    pointer   |
+|m_axi_twistMove2_RRESP              |  in |    2|    m_axi   |             twistMove2             |    pointer   |
+|m_axi_twistMove2_BVALID             |  in |    1|    m_axi   |             twistMove2             |    pointer   |
+|m_axi_twistMove2_BREADY             | out |    1|    m_axi   |             twistMove2             |    pointer   |
+|m_axi_twistMove2_BRESP              |  in |    2|    m_axi   |             twistMove2             |    pointer   |
+|m_axi_twistMove2_BID                |  in |    1|    m_axi   |             twistMove2             |    pointer   |
+|m_axi_twistMove2_BUSER              |  in |    1|    m_axi   |             twistMove2             |    pointer   |
+|twistMove2_offset                   |  in |   31|   ap_none  |          twistMove2_offset         |    scalar    |
+|m_axi_flipMove2_AWVALID             | out |    1|    m_axi   |              flipMove2             |    pointer   |
+|m_axi_flipMove2_AWREADY             |  in |    1|    m_axi   |              flipMove2             |    pointer   |
+|m_axi_flipMove2_AWADDR              | out |   32|    m_axi   |              flipMove2             |    pointer   |
+|m_axi_flipMove2_AWID                | out |    1|    m_axi   |              flipMove2             |    pointer   |
+|m_axi_flipMove2_AWLEN               | out |   32|    m_axi   |              flipMove2             |    pointer   |
+|m_axi_flipMove2_AWSIZE              | out |    3|    m_axi   |              flipMove2             |    pointer   |
+|m_axi_flipMove2_AWBURST             | out |    2|    m_axi   |              flipMove2             |    pointer   |
+|m_axi_flipMove2_AWLOCK              | out |    2|    m_axi   |              flipMove2             |    pointer   |
+|m_axi_flipMove2_AWCACHE             | out |    4|    m_axi   |              flipMove2             |    pointer   |
+|m_axi_flipMove2_AWPROT              | out |    3|    m_axi   |              flipMove2             |    pointer   |
+|m_axi_flipMove2_AWQOS               | out |    4|    m_axi   |              flipMove2             |    pointer   |
+|m_axi_flipMove2_AWREGION            | out |    4|    m_axi   |              flipMove2             |    pointer   |
+|m_axi_flipMove2_AWUSER              | out |    1|    m_axi   |              flipMove2             |    pointer   |
+|m_axi_flipMove2_WVALID              | out |    1|    m_axi   |              flipMove2             |    pointer   |
+|m_axi_flipMove2_WREADY              |  in |    1|    m_axi   |              flipMove2             |    pointer   |
+|m_axi_flipMove2_WDATA               | out |   16|    m_axi   |              flipMove2             |    pointer   |
+|m_axi_flipMove2_WSTRB               | out |    2|    m_axi   |              flipMove2             |    pointer   |
+|m_axi_flipMove2_WLAST               | out |    1|    m_axi   |              flipMove2             |    pointer   |
+|m_axi_flipMove2_WID                 | out |    1|    m_axi   |              flipMove2             |    pointer   |
+|m_axi_flipMove2_WUSER               | out |    1|    m_axi   |              flipMove2             |    pointer   |
+|m_axi_flipMove2_ARVALID             | out |    1|    m_axi   |              flipMove2             |    pointer   |
+|m_axi_flipMove2_ARREADY             |  in |    1|    m_axi   |              flipMove2             |    pointer   |
+|m_axi_flipMove2_ARADDR              | out |   32|    m_axi   |              flipMove2             |    pointer   |
+|m_axi_flipMove2_ARID                | out |    1|    m_axi   |              flipMove2             |    pointer   |
+|m_axi_flipMove2_ARLEN               | out |   32|    m_axi   |              flipMove2             |    pointer   |
+|m_axi_flipMove2_ARSIZE              | out |    3|    m_axi   |              flipMove2             |    pointer   |
+|m_axi_flipMove2_ARBURST             | out |    2|    m_axi   |              flipMove2             |    pointer   |
+|m_axi_flipMove2_ARLOCK              | out |    2|    m_axi   |              flipMove2             |    pointer   |
+|m_axi_flipMove2_ARCACHE             | out |    4|    m_axi   |              flipMove2             |    pointer   |
+|m_axi_flipMove2_ARPROT              | out |    3|    m_axi   |              flipMove2             |    pointer   |
+|m_axi_flipMove2_ARQOS               | out |    4|    m_axi   |              flipMove2             |    pointer   |
+|m_axi_flipMove2_ARREGION            | out |    4|    m_axi   |              flipMove2             |    pointer   |
+|m_axi_flipMove2_ARUSER              | out |    1|    m_axi   |              flipMove2             |    pointer   |
+|m_axi_flipMove2_RVALID              |  in |    1|    m_axi   |              flipMove2             |    pointer   |
+|m_axi_flipMove2_RREADY              | out |    1|    m_axi   |              flipMove2             |    pointer   |
+|m_axi_flipMove2_RDATA               |  in |   16|    m_axi   |              flipMove2             |    pointer   |
+|m_axi_flipMove2_RLAST               |  in |    1|    m_axi   |              flipMove2             |    pointer   |
+|m_axi_flipMove2_RID                 |  in |    1|    m_axi   |              flipMove2             |    pointer   |
+|m_axi_flipMove2_RUSER               |  in |    1|    m_axi   |              flipMove2             |    pointer   |
+|m_axi_flipMove2_RRESP               |  in |    2|    m_axi   |              flipMove2             |    pointer   |
+|m_axi_flipMove2_BVALID              |  in |    1|    m_axi   |              flipMove2             |    pointer   |
+|m_axi_flipMove2_BREADY              | out |    1|    m_axi   |              flipMove2             |    pointer   |
+|m_axi_flipMove2_BRESP               |  in |    2|    m_axi   |              flipMove2             |    pointer   |
+|m_axi_flipMove2_BID                 |  in |    1|    m_axi   |              flipMove2             |    pointer   |
+|m_axi_flipMove2_BUSER               |  in |    1|    m_axi   |              flipMove2             |    pointer   |
+|flipMove2_offset                    |  in |   31|   ap_none  |          flipMove2_offset          |    scalar    |
+|m_axi_FRtoBR_Move2_AWVALID          | out |    1|    m_axi   |            FRtoBR_Move2            |    pointer   |
+|m_axi_FRtoBR_Move2_AWREADY          |  in |    1|    m_axi   |            FRtoBR_Move2            |    pointer   |
+|m_axi_FRtoBR_Move2_AWADDR           | out |   32|    m_axi   |            FRtoBR_Move2            |    pointer   |
+|m_axi_FRtoBR_Move2_AWID             | out |    1|    m_axi   |            FRtoBR_Move2            |    pointer   |
+|m_axi_FRtoBR_Move2_AWLEN            | out |   32|    m_axi   |            FRtoBR_Move2            |    pointer   |
+|m_axi_FRtoBR_Move2_AWSIZE           | out |    3|    m_axi   |            FRtoBR_Move2            |    pointer   |
+|m_axi_FRtoBR_Move2_AWBURST          | out |    2|    m_axi   |            FRtoBR_Move2            |    pointer   |
+|m_axi_FRtoBR_Move2_AWLOCK           | out |    2|    m_axi   |            FRtoBR_Move2            |    pointer   |
+|m_axi_FRtoBR_Move2_AWCACHE          | out |    4|    m_axi   |            FRtoBR_Move2            |    pointer   |
+|m_axi_FRtoBR_Move2_AWPROT           | out |    3|    m_axi   |            FRtoBR_Move2            |    pointer   |
+|m_axi_FRtoBR_Move2_AWQOS            | out |    4|    m_axi   |            FRtoBR_Move2            |    pointer   |
+|m_axi_FRtoBR_Move2_AWREGION         | out |    4|    m_axi   |            FRtoBR_Move2            |    pointer   |
+|m_axi_FRtoBR_Move2_AWUSER           | out |    1|    m_axi   |            FRtoBR_Move2            |    pointer   |
+|m_axi_FRtoBR_Move2_WVALID           | out |    1|    m_axi   |            FRtoBR_Move2            |    pointer   |
+|m_axi_FRtoBR_Move2_WREADY           |  in |    1|    m_axi   |            FRtoBR_Move2            |    pointer   |
+|m_axi_FRtoBR_Move2_WDATA            | out |   16|    m_axi   |            FRtoBR_Move2            |    pointer   |
+|m_axi_FRtoBR_Move2_WSTRB            | out |    2|    m_axi   |            FRtoBR_Move2            |    pointer   |
+|m_axi_FRtoBR_Move2_WLAST            | out |    1|    m_axi   |            FRtoBR_Move2            |    pointer   |
+|m_axi_FRtoBR_Move2_WID              | out |    1|    m_axi   |            FRtoBR_Move2            |    pointer   |
+|m_axi_FRtoBR_Move2_WUSER            | out |    1|    m_axi   |            FRtoBR_Move2            |    pointer   |
+|m_axi_FRtoBR_Move2_ARVALID          | out |    1|    m_axi   |            FRtoBR_Move2            |    pointer   |
+|m_axi_FRtoBR_Move2_ARREADY          |  in |    1|    m_axi   |            FRtoBR_Move2            |    pointer   |
+|m_axi_FRtoBR_Move2_ARADDR           | out |   32|    m_axi   |            FRtoBR_Move2            |    pointer   |
+|m_axi_FRtoBR_Move2_ARID             | out |    1|    m_axi   |            FRtoBR_Move2            |    pointer   |
+|m_axi_FRtoBR_Move2_ARLEN            | out |   32|    m_axi   |            FRtoBR_Move2            |    pointer   |
+|m_axi_FRtoBR_Move2_ARSIZE           | out |    3|    m_axi   |            FRtoBR_Move2            |    pointer   |
+|m_axi_FRtoBR_Move2_ARBURST          | out |    2|    m_axi   |            FRtoBR_Move2            |    pointer   |
+|m_axi_FRtoBR_Move2_ARLOCK           | out |    2|    m_axi   |            FRtoBR_Move2            |    pointer   |
+|m_axi_FRtoBR_Move2_ARCACHE          | out |    4|    m_axi   |            FRtoBR_Move2            |    pointer   |
+|m_axi_FRtoBR_Move2_ARPROT           | out |    3|    m_axi   |            FRtoBR_Move2            |    pointer   |
+|m_axi_FRtoBR_Move2_ARQOS            | out |    4|    m_axi   |            FRtoBR_Move2            |    pointer   |
+|m_axi_FRtoBR_Move2_ARREGION         | out |    4|    m_axi   |            FRtoBR_Move2            |    pointer   |
+|m_axi_FRtoBR_Move2_ARUSER           | out |    1|    m_axi   |            FRtoBR_Move2            |    pointer   |
+|m_axi_FRtoBR_Move2_RVALID           |  in |    1|    m_axi   |            FRtoBR_Move2            |    pointer   |
+|m_axi_FRtoBR_Move2_RREADY           | out |    1|    m_axi   |            FRtoBR_Move2            |    pointer   |
+|m_axi_FRtoBR_Move2_RDATA            |  in |   16|    m_axi   |            FRtoBR_Move2            |    pointer   |
+|m_axi_FRtoBR_Move2_RLAST            |  in |    1|    m_axi   |            FRtoBR_Move2            |    pointer   |
+|m_axi_FRtoBR_Move2_RID              |  in |    1|    m_axi   |            FRtoBR_Move2            |    pointer   |
+|m_axi_FRtoBR_Move2_RUSER            |  in |    1|    m_axi   |            FRtoBR_Move2            |    pointer   |
+|m_axi_FRtoBR_Move2_RRESP            |  in |    2|    m_axi   |            FRtoBR_Move2            |    pointer   |
+|m_axi_FRtoBR_Move2_BVALID           |  in |    1|    m_axi   |            FRtoBR_Move2            |    pointer   |
+|m_axi_FRtoBR_Move2_BREADY           | out |    1|    m_axi   |            FRtoBR_Move2            |    pointer   |
+|m_axi_FRtoBR_Move2_BRESP            |  in |    2|    m_axi   |            FRtoBR_Move2            |    pointer   |
+|m_axi_FRtoBR_Move2_BID              |  in |    1|    m_axi   |            FRtoBR_Move2            |    pointer   |
+|m_axi_FRtoBR_Move2_BUSER            |  in |    1|    m_axi   |            FRtoBR_Move2            |    pointer   |
+|FRtoBR_Move2_offset                 |  in |   31|   ap_none  |         FRtoBR_Move2_offset        |    scalar    |
+|Slice_Twist_Prun2_offset            |  in |   31|   ap_none  |      Slice_Twist_Prun2_offset      |    scalar    |
+|Slice_Flip_Prun2_offset             |  in |   31|   ap_none  |       Slice_Flip_Prun2_offset      |    scalar    |
+|URFtoDLF_Move2_offset               |  in |   31|   ap_none  |        URFtoDLF_Move2_offset       |    scalar    |
+|URtoDF_Move2_offset                 |  in |   31|   ap_none  |         URtoDF_Move2_offset        |    scalar    |
+|URtoUL_Move2_offset                 |  in |   31|   ap_none  |         URtoUL_Move2_offset        |    scalar    |
+|UBtoDF_Move2_offset                 |  in |   31|   ap_none  |         UBtoDF_Move2_offset        |    scalar    |
+|MergeURtoULandUBtoDF2_offset        |  in |   31|   ap_none  |    MergeURtoULandUBtoDF2_offset    |    scalar    |
+|Slice_URFtoDLF_Parity_Prun2_offset  |  in |   31|   ap_none  | Slice_URFtoDLF_Parity_Prun2_offset |    scalar    |
+|Slice_URtoDF_Parity_Prun2_offset    |  in |   31|   ap_none  |  Slice_URtoDF_Parity_Prun2_offset  |    scalar    |
+|a_i                                 |  in |   32|   ap_ovld  |                  a                 |    pointer   |
+|a_o                                 | out |   32|   ap_ovld  |                  a                 |    pointer   |
+|a_o_ap_vld                          | out |    1|   ap_ovld  |                  a                 |    pointer   |
++------------------------------------+-----+-----+------------+------------------------------------+--------------+
+

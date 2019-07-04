@@ -1,0 +1,396 @@
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+-------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version     : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
+| Date             : Fri Jan  4 20:40:03 2019
+| Host             : NGJINYEE running 64-bit major release  (build 9200)
+| Command          : report_power -file solveCube_power_routed.rpt -pb solveCube_power_summary_routed.pb -rpx solveCube_power_routed.rpx
+| Design           : solveCube
+| Device           : xc7z020clg400-1
+| Design State     : routed
+| Grade            : commercial
+| Process          : typical
+| Characterization : Production
+-------------------------------------------------------------------------------------------------------------------------------------------------
+
+Power Report
+
+Table of Contents
+-----------------
+1. Summary
+1.1 On-Chip Components
+1.2 Power Supply Summary
+1.3 Confidence Level
+2. Settings
+2.1 Environment
+2.2 Clock Constraints
+3. Detailed Reports
+3.1 By Hierarchy
+
+1. Summary
+----------
+
++--------------------------+--------------+
+| Total On-Chip Power (W)  | 0.151        |
+| Design Power Budget (W)  | Unspecified* |
+| Power Budget Margin (W)  | NA           |
+| Dynamic (W)              | 0.048        |
+| Device Static (W)        | 0.103        |
+| Effective TJA (C/W)      | 11.5         |
+| Max Ambient (C)          | 83.3         |
+| Junction Temperature (C) | 26.7         |
+| Confidence Level         | Medium       |
+| Setting File             | ---          |
+| Simulation Activity File | ---          |
+| Design Nets Matched      | NA           |
++--------------------------+--------------+
+* Specify Design Power Budget using, set_operating_conditions -design_power_budget <value in Watts>
+
+
+1.1 On-Chip Components
+----------------------
+
++--------------------------+-----------+----------+-----------+-----------------+
+| On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
++--------------------------+-----------+----------+-----------+-----------------+
+| Clocks                   |     0.014 |        3 |       --- |             --- |
+| Slice Logic              |     0.013 |     9861 |       --- |             --- |
+|   LUT as Logic           |     0.009 |     5559 |     53200 |           10.45 |
+|   LUT as Distributed RAM |     0.003 |      220 |     17400 |            1.26 |
+|   Register               |    <0.001 |     2416 |    106400 |            2.27 |
+|   F7/F8 Muxes            |    <0.001 |       10 |     53200 |            0.02 |
+|   CARRY4                 |    <0.001 |        1 |     13300 |           <0.01 |
+|   Others                 |     0.000 |      124 |       --- |             --- |
+| Signals                  |     0.013 |     8314 |       --- |             --- |
+| Block RAM                |     0.008 |      2.5 |       140 |            1.79 |
+| Static Power             |     0.103 |          |           |                 |
+| Total                    |     0.151 |          |           |                 |
++--------------------------+-----------+----------+-----------+-----------------+
+
+
+1.2 Power Supply Summary
+------------------------
+
++-----------+-------------+-----------+-------------+------------+
+| Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
++-----------+-------------+-----------+-------------+------------+
+| Vccint    |       1.000 |     0.055 |       0.047 |      0.008 |
+| Vccaux    |       1.800 |     0.010 |       0.000 |      0.010 |
+| Vcco33    |       3.300 |     0.000 |       0.000 |      0.000 |
+| Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
+| Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
+| Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
+| Vcco135   |       1.350 |     0.000 |       0.000 |      0.000 |
+| Vcco12    |       1.200 |     0.000 |       0.000 |      0.000 |
+| Vccaux_io |       1.800 |     0.000 |       0.000 |      0.000 |
+| Vccbram   |       1.000 |     0.001 |       0.001 |      0.001 |
+| MGTAVcc   |       1.000 |     0.000 |       0.000 |      0.000 |
+| MGTAVtt   |       1.200 |     0.000 |       0.000 |      0.000 |
+| MGTVccaux |       1.800 |     0.000 |       0.000 |      0.000 |
+| Vccpint   |       1.000 |     0.017 |       0.000 |      0.017 |
+| Vccpaux   |       1.800 |     0.010 |       0.000 |      0.010 |
+| Vccpll    |       1.800 |     0.003 |       0.000 |      0.003 |
+| Vcco_ddr  |       1.500 |     0.000 |       0.000 |      0.000 |
+| Vcco_mio0 |       1.800 |     0.000 |       0.000 |      0.000 |
+| Vcco_mio1 |       1.800 |     0.000 |       0.000 |      0.000 |
+| Vccadc    |       1.800 |     0.020 |       0.000 |      0.020 |
++-----------+-------------+-----------+-------------+------------+
+
+
+1.3 Confidence Level
+--------------------
+
++-----------------------------+------------+------------------------------------------------+------------------------------------------------------------------------------------------------------------+
+| User Input Data             | Confidence | Details                                        | Action                                                                                                     |
++-----------------------------+------------+------------------------------------------------+------------------------------------------------------------------------------------------------------------+
+| Design implementation state | High       | Design is routed                               |                                                                                                            |
+| Clock nodes activity        | High       | User specified more than 95% of clocks         |                                                                                                            |
+| I/O nodes activity          | High       | User specified more than 95% of inputs         |                                                                                                            |
+| Internal nodes activity     | Medium     | User specified less than 25% of internal nodes | Provide missing internal nodes activity with simulation results or by editing the "By Resource Type" views |
+| Device models               | High       | Device models are Production                   |                                                                                                            |
+|                             |            |                                                |                                                                                                            |
+| Overall confidence level    | Medium     |                                                |                                                                                                            |
++-----------------------------+------------+------------------------------------------------+------------------------------------------------------------------------------------------------------------+
+
+
+2. Settings
+-----------
+
+2.1 Environment
+---------------
+
++-----------------------+------------------------+
+| Ambient Temp (C)      | 25.0                   |
+| ThetaJA (C/W)         | 11.5                   |
+| Airflow (LFM)         | 250                    |
+| Heat Sink             | none                   |
+| ThetaSA (C/W)         | 0.0                    |
+| Board Selection       | medium (10"x10")       |
+| # of Board Layers     | 8to11 (8 to 11 Layers) |
+| Board Temperature (C) | 25.0                   |
++-----------------------+------------------------+
+
+
+2.2 Clock Constraints
+---------------------
+
++--------+--------+-----------------+
+| Clock  | Domain | Constraint (ns) |
++--------+--------+-----------------+
+| ap_clk | ap_clk |            12.0 |
++--------+--------+-----------------+
+
+
+3. Detailed Reports
+-------------------
+
+3.1 By Hierarchy
+----------------
+
++--------------------------------------------------------------------------------------+-----------+
+| Name                                                                                 | Power (W) |
++--------------------------------------------------------------------------------------+-----------+
+| solveCube                                                                            |     0.048 |
+|   cubieColor_V_U                                                                     |     0.004 |
+|     solveCube_cubieCoeOg_ram_U                                                       |     0.004 |
+|   grp_cornerCorrect_fu_400                                                           |    <0.001 |
+|   grp_edgeCorrect_fu_385                                                             |    <0.001 |
+|   grp_findEdge_fu_372                                                                |    <0.001 |
+|   grp_optimizeCube_fu_363                                                            |     0.001 |
+|   grp_rotateCubeHorizontal_fu_343                                                    |     0.002 |
+|     cubieTemp_V_U                                                                    |    <0.001 |
+|       turnCube_cubieTembkb_ram_U                                                     |    <0.001 |
+|         ram_reg_0_15_0_0                                                             |    <0.001 |
+|         ram_reg_0_15_0_0__0                                                          |    <0.001 |
+|         ram_reg_0_15_0_0__1                                                          |    <0.001 |
+|         ram_reg_0_15_0_0__2                                                          |    <0.001 |
+|         ram_reg_0_15_0_0__3                                                          |    <0.001 |
+|         ram_reg_0_15_0_0__4                                                          |    <0.001 |
+|         ram_reg_0_31_0_0                                                             |    <0.001 |
+|         ram_reg_0_31_0_0__0                                                          |    <0.001 |
+|         ram_reg_0_31_0_0__1                                                          |    <0.001 |
+|   grp_rotateCubeVertical_fu_353                                                      |     0.001 |
+|     cubieTemp_V_U                                                                    |    <0.001 |
+|       turnCube_cubieTembkb_ram_U                                                     |    <0.001 |
+|         ram_reg_0_15_0_0                                                             |    <0.001 |
+|         ram_reg_0_15_0_0__0                                                          |    <0.001 |
+|         ram_reg_0_15_0_0__1                                                          |    <0.001 |
+|         ram_reg_0_15_0_0__2                                                          |    <0.001 |
+|         ram_reg_0_15_0_0__3                                                          |    <0.001 |
+|         ram_reg_0_15_0_0__4                                                          |    <0.001 |
+|         ram_reg_0_31_0_0                                                             |    <0.001 |
+|         ram_reg_0_31_0_0__0                                                          |    <0.001 |
+|         ram_reg_0_31_0_0__1                                                          |    <0.001 |
+|   grp_solveStage1_fu_332                                                             |     0.002 |
+|     grp_turnCube_fu_60                                                               |     0.001 |
+|       cubieTemp_V_U                                                                  |    <0.001 |
+|         turnCube_cubieTembkb_ram_U                                                   |    <0.001 |
+|   grp_solveStage2_fu_262                                                             |     0.003 |
+|     grp_findCorner_fu_100                                                            |    <0.001 |
+|     grp_rotateCubeHorizontal_fu_90                                                   |     0.001 |
+|       cubieTemp_V_U                                                                  |    <0.001 |
+|         turnCube_cubieTembkb_ram_U                                                   |    <0.001 |
+|           ram_reg_0_15_0_0                                                           |    <0.001 |
+|           ram_reg_0_15_0_0__0                                                        |    <0.001 |
+|           ram_reg_0_15_0_0__1                                                        |    <0.001 |
+|           ram_reg_0_15_0_0__2                                                        |    <0.001 |
+|           ram_reg_0_15_0_0__3                                                        |    <0.001 |
+|           ram_reg_0_15_0_0__4                                                        |    <0.001 |
+|           ram_reg_0_31_0_0                                                           |    <0.001 |
+|           ram_reg_0_31_0_0__0                                                        |    <0.001 |
+|           ram_reg_0_31_0_0__1                                                        |    <0.001 |
+|     grp_turnCube_fu_75                                                               |    <0.001 |
+|       cubieTemp_V_U                                                                  |    <0.001 |
+|         turnCube_cubieTembkb_ram_U                                                   |    <0.001 |
+|   grp_solveStage3_fu_242                                                             |     0.006 |
+|     grp_findEdge_fu_54                                                               |    <0.001 |
+|     grp_solveStage3a_fu_44                                                           |     0.003 |
+|       grp_turnCube_fu_72                                                             |     0.001 |
+|         cubieTemp_V_U                                                                |    <0.001 |
+|           turnCube_cubieTembkb_ram_U                                                 |    <0.001 |
+|     grp_stage3Prepare_fu_32                                                          |     0.003 |
+|       grp_findEdge_fu_88                                                             |    <0.001 |
+|       grp_rotateCubeHorizontal_fu_78                                                 |     0.001 |
+|         cubieTemp_V_U                                                                |    <0.001 |
+|           turnCube_cubieTembkb_ram_U                                                 |    <0.001 |
+|             ram_reg_0_15_0_0                                                         |    <0.001 |
+|             ram_reg_0_15_0_0__0                                                      |    <0.001 |
+|             ram_reg_0_15_0_0__1                                                      |    <0.001 |
+|             ram_reg_0_15_0_0__2                                                      |    <0.001 |
+|             ram_reg_0_15_0_0__3                                                      |    <0.001 |
+|             ram_reg_0_15_0_0__4                                                      |    <0.001 |
+|             ram_reg_0_31_0_0                                                         |    <0.001 |
+|             ram_reg_0_31_0_0__0                                                      |    <0.001 |
+|             ram_reg_0_31_0_0__1                                                      |    <0.001 |
+|       grp_turnCube_fu_61                                                             |     0.001 |
+|         cubieTemp_V_U                                                                |    <0.001 |
+|           turnCube_cubieTembkb_ram_U                                                 |    <0.001 |
+|   grp_solveStage4a_fu_300                                                            |     0.003 |
+|     grp_rotateCubeHorizontal_fu_78                                                   |     0.002 |
+|       cubieTemp_V_U                                                                  |    <0.001 |
+|         turnCube_cubieTembkb_ram_U                                                   |    <0.001 |
+|           ram_reg_0_15_0_0                                                           |    <0.001 |
+|           ram_reg_0_15_0_0__0                                                        |    <0.001 |
+|           ram_reg_0_15_0_0__1                                                        |    <0.001 |
+|           ram_reg_0_15_0_0__2                                                        |    <0.001 |
+|           ram_reg_0_15_0_0__3                                                        |    <0.001 |
+|           ram_reg_0_15_0_0__4                                                        |    <0.001 |
+|           ram_reg_0_31_0_0                                                           |    <0.001 |
+|           ram_reg_0_31_0_0__0                                                        |    <0.001 |
+|           ram_reg_0_31_0_0__1                                                        |    <0.001 |
+|     grp_turnCube_fu_61                                                               |     0.001 |
+|       cubieTemp_V_U                                                                  |    <0.001 |
+|         turnCube_cubieTembkb_ram_U                                                   |    <0.001 |
+|   grp_solveStage4b_fu_310                                                            |     0.003 |
+|     grp_rotateCubeHorizontal_fu_85                                                   |     0.001 |
+|       cubieTemp_V_U                                                                  |    <0.001 |
+|         turnCube_cubieTembkb_ram_U                                                   |    <0.001 |
+|           ram_reg_0_15_0_0                                                           |    <0.001 |
+|           ram_reg_0_15_0_0__0                                                        |    <0.001 |
+|           ram_reg_0_15_0_0__1                                                        |    <0.001 |
+|           ram_reg_0_15_0_0__2                                                        |    <0.001 |
+|           ram_reg_0_15_0_0__3                                                        |    <0.001 |
+|           ram_reg_0_15_0_0__4                                                        |    <0.001 |
+|           ram_reg_0_31_0_0                                                           |    <0.001 |
+|           ram_reg_0_31_0_0__0                                                        |    <0.001 |
+|           ram_reg_0_31_0_0__1                                                        |    <0.001 |
+|     grp_turnCube_fu_71                                                               |     0.001 |
+|       cubieTemp_V_U                                                                  |    <0.001 |
+|         turnCube_cubieTembkb_ram_U                                                   |    <0.001 |
+|   grp_solveStage5a_fu_290                                                            |     0.003 |
+|     grp_cornerCorrect_fu_59                                                          |    <0.001 |
+|     grp_rotateCubeHorizontal_fu_49                                                   |     0.001 |
+|       cubieTemp_V_U                                                                  |    <0.001 |
+|         turnCube_cubieTembkb_ram_U                                                   |    <0.001 |
+|           ram_reg_0_15_0_0                                                           |    <0.001 |
+|           ram_reg_0_15_0_0__0                                                        |    <0.001 |
+|           ram_reg_0_15_0_0__1                                                        |    <0.001 |
+|           ram_reg_0_15_0_0__2                                                        |    <0.001 |
+|           ram_reg_0_15_0_0__3                                                        |    <0.001 |
+|           ram_reg_0_15_0_0__4                                                        |    <0.001 |
+|           ram_reg_0_31_0_0                                                           |    <0.001 |
+|           ram_reg_0_31_0_0__0                                                        |    <0.001 |
+|           ram_reg_0_31_0_0__1                                                        |    <0.001 |
+|     grp_turnCube_fu_32                                                               |     0.001 |
+|       cubieTemp_V_U                                                                  |    <0.001 |
+|         turnCube_cubieTembkb_ram_U                                                   |    <0.001 |
+|   grp_solveStage5b_fu_280                                                            |     0.003 |
+|     grp_edgeCorrect_fu_75                                                            |    <0.001 |
+|     grp_rotateCubeHorizontal_fu_65                                                   |     0.001 |
+|       cubieTemp_V_U                                                                  |    <0.001 |
+|         turnCube_cubieTembkb_ram_U                                                   |    <0.001 |
+|           ram_reg_0_15_0_0                                                           |    <0.001 |
+|           ram_reg_0_15_0_0__0                                                        |    <0.001 |
+|           ram_reg_0_15_0_0__1                                                        |    <0.001 |
+|           ram_reg_0_15_0_0__2                                                        |    <0.001 |
+|           ram_reg_0_15_0_0__3                                                        |    <0.001 |
+|           ram_reg_0_15_0_0__4                                                        |    <0.001 |
+|           ram_reg_0_31_0_0                                                           |    <0.001 |
+|           ram_reg_0_31_0_0__0                                                        |    <0.001 |
+|           ram_reg_0_31_0_0__1                                                        |    <0.001 |
+|     grp_turnCube_fu_47                                                               |     0.001 |
+|       cubieTemp_V_U                                                                  |    <0.001 |
+|         turnCube_cubieTembkb_ram_U                                                   |    <0.001 |
+|   grp_turnCube_fu_32/cubieTemp_V_U/turnCube_cubieTembkb_ram_U/ram_reg_0_15_0_0       |    <0.001 |
+|   grp_turnCube_fu_32/cubieTemp_V_U/turnCube_cubieTembkb_ram_U/ram_reg_0_15_0_0__0    |    <0.001 |
+|   grp_turnCube_fu_32/cubieTemp_V_U/turnCube_cubieTembkb_ram_U/ram_reg_0_15_0_0__1    |    <0.001 |
+|   grp_turnCube_fu_32/cubieTemp_V_U/turnCube_cubieTembkb_ram_U/ram_reg_0_15_0_0__2    |    <0.001 |
+|   grp_turnCube_fu_32/cubieTemp_V_U/turnCube_cubieTembkb_ram_U/ram_reg_0_15_0_0__3    |    <0.001 |
+|   grp_turnCube_fu_32/cubieTemp_V_U/turnCube_cubieTembkb_ram_U/ram_reg_0_15_0_0__4    |    <0.001 |
+|   grp_turnCube_fu_32/cubieTemp_V_U/turnCube_cubieTembkb_ram_U/ram_reg_0_31_0_0       |    <0.001 |
+|   grp_turnCube_fu_32/cubieTemp_V_U/turnCube_cubieTembkb_ram_U/ram_reg_0_31_0_0__0    |    <0.001 |
+|   grp_turnCube_fu_32/cubieTemp_V_U/turnCube_cubieTembkb_ram_U/ram_reg_0_31_0_0__1    |    <0.001 |
+|   grp_turnCube_fu_320                                                                |     0.001 |
+|     cubieTemp_V_U                                                                    |    <0.001 |
+|       turnCube_cubieTembkb_ram_U                                                     |    <0.001 |
+|         ram_reg_0_15_0_0                                                             |    <0.001 |
+|         ram_reg_0_15_0_0__0                                                          |    <0.001 |
+|         ram_reg_0_15_0_0__1                                                          |    <0.001 |
+|         ram_reg_0_15_0_0__2                                                          |    <0.001 |
+|         ram_reg_0_15_0_0__3                                                          |    <0.001 |
+|         ram_reg_0_15_0_0__4                                                          |    <0.001 |
+|         ram_reg_0_31_0_0                                                             |    <0.001 |
+|         ram_reg_0_31_0_0__0                                                          |    <0.001 |
+|         ram_reg_0_31_0_0__1                                                          |    <0.001 |
+|   grp_turnCube_fu_47/cubieTemp_V_U/turnCube_cubieTembkb_ram_U/ram_reg_0_15_0_0       |    <0.001 |
+|   grp_turnCube_fu_47/cubieTemp_V_U/turnCube_cubieTembkb_ram_U/ram_reg_0_15_0_0__0    |    <0.001 |
+|   grp_turnCube_fu_47/cubieTemp_V_U/turnCube_cubieTembkb_ram_U/ram_reg_0_15_0_0__1    |    <0.001 |
+|   grp_turnCube_fu_47/cubieTemp_V_U/turnCube_cubieTembkb_ram_U/ram_reg_0_15_0_0__2    |    <0.001 |
+|   grp_turnCube_fu_47/cubieTemp_V_U/turnCube_cubieTembkb_ram_U/ram_reg_0_15_0_0__3    |    <0.001 |
+|   grp_turnCube_fu_47/cubieTemp_V_U/turnCube_cubieTembkb_ram_U/ram_reg_0_15_0_0__4    |    <0.001 |
+|   grp_turnCube_fu_47/cubieTemp_V_U/turnCube_cubieTembkb_ram_U/ram_reg_0_31_0_0       |    <0.001 |
+|   grp_turnCube_fu_47/cubieTemp_V_U/turnCube_cubieTembkb_ram_U/ram_reg_0_31_0_0__0    |    <0.001 |
+|   grp_turnCube_fu_47/cubieTemp_V_U/turnCube_cubieTembkb_ram_U/ram_reg_0_31_0_0__1    |    <0.001 |
+|   grp_turnCube_fu_60/cubieTemp_V_U/turnCube_cubieTembkb_ram_U/ram_reg_0_15_0_0       |    <0.001 |
+|   grp_turnCube_fu_60/cubieTemp_V_U/turnCube_cubieTembkb_ram_U/ram_reg_0_15_0_0__0    |    <0.001 |
+|   grp_turnCube_fu_60/cubieTemp_V_U/turnCube_cubieTembkb_ram_U/ram_reg_0_15_0_0__1    |    <0.001 |
+|   grp_turnCube_fu_60/cubieTemp_V_U/turnCube_cubieTembkb_ram_U/ram_reg_0_15_0_0__2    |    <0.001 |
+|   grp_turnCube_fu_60/cubieTemp_V_U/turnCube_cubieTembkb_ram_U/ram_reg_0_15_0_0__3    |    <0.001 |
+|   grp_turnCube_fu_60/cubieTemp_V_U/turnCube_cubieTembkb_ram_U/ram_reg_0_15_0_0__4    |    <0.001 |
+|   grp_turnCube_fu_60/cubieTemp_V_U/turnCube_cubieTembkb_ram_U/ram_reg_0_31_0_0       |    <0.001 |
+|   grp_turnCube_fu_60/cubieTemp_V_U/turnCube_cubieTembkb_ram_U/ram_reg_0_31_0_0__0    |    <0.001 |
+|   grp_turnCube_fu_60/cubieTemp_V_U/turnCube_cubieTembkb_ram_U/ram_reg_0_31_0_0__1    |    <0.001 |
+|   grp_turnCube_fu_61/cubieTemp_V_U/turnCube_cubieTembkb_ram_U/ram_reg_0_15_0_0       |    <0.001 |
+|   grp_turnCube_fu_61/cubieTemp_V_U/turnCube_cubieTembkb_ram_U/ram_reg_0_15_0_0__0    |    <0.001 |
+|   grp_turnCube_fu_61/cubieTemp_V_U/turnCube_cubieTembkb_ram_U/ram_reg_0_15_0_0__0__0 |    <0.001 |
+|   grp_turnCube_fu_61/cubieTemp_V_U/turnCube_cubieTembkb_ram_U/ram_reg_0_15_0_0__1    |    <0.001 |
+|   grp_turnCube_fu_61/cubieTemp_V_U/turnCube_cubieTembkb_ram_U/ram_reg_0_15_0_0__1__0 |    <0.001 |
+|   grp_turnCube_fu_61/cubieTemp_V_U/turnCube_cubieTembkb_ram_U/ram_reg_0_15_0_0__2    |    <0.001 |
+|   grp_turnCube_fu_61/cubieTemp_V_U/turnCube_cubieTembkb_ram_U/ram_reg_0_15_0_0__2__0 |    <0.001 |
+|   grp_turnCube_fu_61/cubieTemp_V_U/turnCube_cubieTembkb_ram_U/ram_reg_0_15_0_0__3    |    <0.001 |
+|   grp_turnCube_fu_61/cubieTemp_V_U/turnCube_cubieTembkb_ram_U/ram_reg_0_15_0_0__3__0 |    <0.001 |
+|   grp_turnCube_fu_61/cubieTemp_V_U/turnCube_cubieTembkb_ram_U/ram_reg_0_15_0_0__4    |    <0.001 |
+|   grp_turnCube_fu_61/cubieTemp_V_U/turnCube_cubieTembkb_ram_U/ram_reg_0_15_0_0__4__0 |    <0.001 |
+|   grp_turnCube_fu_61/cubieTemp_V_U/turnCube_cubieTembkb_ram_U/ram_reg_0_15_0_0__5    |    <0.001 |
+|   grp_turnCube_fu_61/cubieTemp_V_U/turnCube_cubieTembkb_ram_U/ram_reg_0_31_0_0       |    <0.001 |
+|   grp_turnCube_fu_61/cubieTemp_V_U/turnCube_cubieTembkb_ram_U/ram_reg_0_31_0_0__0    |    <0.001 |
+|   grp_turnCube_fu_61/cubieTemp_V_U/turnCube_cubieTembkb_ram_U/ram_reg_0_31_0_0__0__0 |    <0.001 |
+|   grp_turnCube_fu_61/cubieTemp_V_U/turnCube_cubieTembkb_ram_U/ram_reg_0_31_0_0__1    |    <0.001 |
+|   grp_turnCube_fu_61/cubieTemp_V_U/turnCube_cubieTembkb_ram_U/ram_reg_0_31_0_0__1__0 |    <0.001 |
+|   grp_turnCube_fu_61/cubieTemp_V_U/turnCube_cubieTembkb_ram_U/ram_reg_0_31_0_0__2    |    <0.001 |
+|   grp_turnCube_fu_71/cubieTemp_V_U/turnCube_cubieTembkb_ram_U/ram_reg_0_15_0_0       |    <0.001 |
+|   grp_turnCube_fu_71/cubieTemp_V_U/turnCube_cubieTembkb_ram_U/ram_reg_0_15_0_0__0    |    <0.001 |
+|   grp_turnCube_fu_71/cubieTemp_V_U/turnCube_cubieTembkb_ram_U/ram_reg_0_15_0_0__1    |    <0.001 |
+|   grp_turnCube_fu_71/cubieTemp_V_U/turnCube_cubieTembkb_ram_U/ram_reg_0_15_0_0__2    |    <0.001 |
+|   grp_turnCube_fu_71/cubieTemp_V_U/turnCube_cubieTembkb_ram_U/ram_reg_0_15_0_0__3    |    <0.001 |
+|   grp_turnCube_fu_71/cubieTemp_V_U/turnCube_cubieTembkb_ram_U/ram_reg_0_15_0_0__4    |    <0.001 |
+|   grp_turnCube_fu_71/cubieTemp_V_U/turnCube_cubieTembkb_ram_U/ram_reg_0_31_0_0       |    <0.001 |
+|   grp_turnCube_fu_71/cubieTemp_V_U/turnCube_cubieTembkb_ram_U/ram_reg_0_31_0_0__0    |    <0.001 |
+|   grp_turnCube_fu_71/cubieTemp_V_U/turnCube_cubieTembkb_ram_U/ram_reg_0_31_0_0__1    |    <0.001 |
+|   grp_turnCube_fu_72/cubieTemp_V_U/turnCube_cubieTembkb_ram_U/ram_reg_0_15_0_0       |    <0.001 |
+|   grp_turnCube_fu_72/cubieTemp_V_U/turnCube_cubieTembkb_ram_U/ram_reg_0_15_0_0__0    |    <0.001 |
+|   grp_turnCube_fu_72/cubieTemp_V_U/turnCube_cubieTembkb_ram_U/ram_reg_0_15_0_0__1    |    <0.001 |
+|   grp_turnCube_fu_72/cubieTemp_V_U/turnCube_cubieTembkb_ram_U/ram_reg_0_15_0_0__2    |    <0.001 |
+|   grp_turnCube_fu_72/cubieTemp_V_U/turnCube_cubieTembkb_ram_U/ram_reg_0_15_0_0__3    |    <0.001 |
+|   grp_turnCube_fu_72/cubieTemp_V_U/turnCube_cubieTembkb_ram_U/ram_reg_0_15_0_0__4    |    <0.001 |
+|   grp_turnCube_fu_72/cubieTemp_V_U/turnCube_cubieTembkb_ram_U/ram_reg_0_31_0_0       |    <0.001 |
+|   grp_turnCube_fu_72/cubieTemp_V_U/turnCube_cubieTembkb_ram_U/ram_reg_0_31_0_0__0    |    <0.001 |
+|   grp_turnCube_fu_72/cubieTemp_V_U/turnCube_cubieTembkb_ram_U/ram_reg_0_31_0_0__1    |    <0.001 |
+|   grp_turnCube_fu_75/cubieTemp_V_U/turnCube_cubieTembkb_ram_U/ram_reg_0_15_0_0       |    <0.001 |
+|   grp_turnCube_fu_75/cubieTemp_V_U/turnCube_cubieTembkb_ram_U/ram_reg_0_15_0_0__0    |    <0.001 |
+|   grp_turnCube_fu_75/cubieTemp_V_U/turnCube_cubieTembkb_ram_U/ram_reg_0_15_0_0__1    |    <0.001 |
+|   grp_turnCube_fu_75/cubieTemp_V_U/turnCube_cubieTembkb_ram_U/ram_reg_0_15_0_0__2    |    <0.001 |
+|   grp_turnCube_fu_75/cubieTemp_V_U/turnCube_cubieTembkb_ram_U/ram_reg_0_15_0_0__3    |    <0.001 |
+|   grp_turnCube_fu_75/cubieTemp_V_U/turnCube_cubieTembkb_ram_U/ram_reg_0_15_0_0__4    |    <0.001 |
+|   grp_turnCube_fu_75/cubieTemp_V_U/turnCube_cubieTembkb_ram_U/ram_reg_0_31_0_0       |    <0.001 |
+|   grp_turnCube_fu_75/cubieTemp_V_U/turnCube_cubieTembkb_ram_U/ram_reg_0_31_0_0__0    |    <0.001 |
+|   grp_turnCube_fu_75/cubieTemp_V_U/turnCube_cubieTembkb_ram_U/ram_reg_0_31_0_0__1    |    <0.001 |
+|   moves_V_U                                                                          |    <0.001 |
+|     solveCube_moves_V_ram_U                                                          |    <0.001 |
+|       ram_reg_0_127_0_0                                                              |    <0.001 |
+|       ram_reg_0_127_0_0__0                                                           |    <0.001 |
+|       ram_reg_0_127_0_0__1                                                           |    <0.001 |
+|       ram_reg_0_127_0_0__2                                                           |    <0.001 |
+|       ram_reg_0_15_0_0                                                               |    <0.001 |
+|       ram_reg_0_15_0_0__0                                                            |    <0.001 |
+|       ram_reg_0_15_0_0__1                                                            |    <0.001 |
+|       ram_reg_0_15_0_0__2                                                            |    <0.001 |
+|       ram_reg_0_63_0_0                                                               |    <0.001 |
+|       ram_reg_0_63_0_0__0                                                            |    <0.001 |
+|       ram_reg_0_63_0_0__1                                                            |    <0.001 |
+|       ram_reg_0_63_0_0__2                                                            |    <0.001 |
+|   solveCube_add_io_s_axi_U                                                           |     0.008 |
+|     int_cubieColor_tb_V                                                              |     0.004 |
+|     int_rMoves_V                                                                     |     0.003 |
++--------------------------------------------------------------------------------------+-----------+
+
+

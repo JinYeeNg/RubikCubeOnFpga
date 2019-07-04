@@ -1,0 +1,989 @@
+
+
+================================================================
+== Vivado HLS Report for 'parallel_v2'
+================================================================
+* Date:           Thu Jul  4 02:07:08 2019
+
+* Version:        2018.2 (Build 2258646 on Thu Jun 14 20:25:20 MDT 2018)
+* Project:        kociembaHls
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|     8.750|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+------+-----+------+---------+
+    |   Latency  |  Interval  | Pipeline|
+    | min |  max | min |  max |   Type  |
+    +-----+------+-----+------+---------+
+    |   68|  1859|   68|  1859|   none  |
+    +-----+------+-----+------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-------------+-----+------+----------+-----------+-----------+--------+----------+
+        |             |   Latency  | Iteration|  Initiation Interval  |  Trip  |          |
+        |  Loop Name  | min |  max |  Latency |  achieved |   target  |  Count | Pipelined|
+        +-------------+-----+------+----------+-----------+-----------+--------+----------+
+        |- Loop 1     |   62|    62|         2|          -|          -|      31|    no    |
+        |- Loop 2     |   19|    19|         3|          1|          1|      18|    yes   |
+        |- Loop 3     |    0|  1764|  2 ~ 98  |          -|          -| 0 ~ 18 |    no    |
+        | + Loop 3.1  |   62|    62|         2|          -|          -|      31|    no    |
+        +-------------+-----+------+----------+-----------+-----------+--------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 1, depth = 3
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 44
+* Pipeline : 1
+  Pipeline-0 : II = 1, D = 3, States = { 14 15 16 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / true
+3 --> 
+	4  / (!exitcond_i)
+	5  / (exitcond_i)
+4 --> 
+	3  / true
+5 --> 
+	6  / true
+6 --> 
+	7  / (!or_cond2)
+	17  / (or_cond2)
+7 --> 
+	8  / true
+8 --> 
+	9  / true
+9 --> 
+	10  / true
+10 --> 
+	11  / true
+11 --> 
+	12  / true
+12 --> 
+	13  / true
+13 --> 
+	14  / true
+14 --> 
+	17  / (exitcond)
+	15  / (!exitcond)
+15 --> 
+	16  / true
+16 --> 
+	14  / true
+17 --> 
+	18  / true
+18 --> 
+	19  / (tmp_139 & !zero_load)
+	44  / (tmp_139 & zero_load)
+19 --> 
+	20  / true
+20 --> 
+	21  / (!or_cond & demorgan)
+	44  / (or_cond) | (!demorgan)
+21 --> 
+	22  / true
+22 --> 
+	23  / true
+23 --> 
+	24  / true
+24 --> 
+	25  / true
+25 --> 
+	26  / (!brmerge1)
+	41  / (brmerge1)
+26 --> 
+	27  / true
+27 --> 
+	28  / true
+28 --> 
+	29  / true
+29 --> 
+	30  / true
+30 --> 
+	31  / true
+31 --> 
+	32  / true
+32 --> 
+	33  / true
+33 --> 
+	34  / true
+34 --> 
+	35  / true
+35 --> 
+	36  / true
+36 --> 
+	37  / true
+37 --> 
+	38  / true
+38 --> 
+	39  / true
+39 --> 
+	40  / true
+40 --> 
+	41  / true
+41 --> 
+	44  / (!tmp_154)
+	42  / (tmp_154)
+42 --> 
+	43  / (!exitcond_i2)
+	44  / (exitcond_i2)
+43 --> 
+	42  / true
+44 --> 
+	18  / true
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 3.25>
+ST_1 : Operation 45 [1/1] (0.00ns)   --->   "%P1End_read_1 = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %P1End_read)"   --->   Operation 45 'read' 'P1End_read_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 46 [1/1] (0.00ns)   --->   "%search_new_0_i = alloca [31 x i8], align 1" [search.cpp:421]   --->   Operation 46 'alloca' 'search_new_0_i' <Predicate = true> <Delay = 0.00> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 8000> <RAM>
+ST_1 : Operation 47 [1/1] (0.00ns)   --->   "%tmp = sext i32 %P1End_read_1 to i64" [search.cpp:422]   --->   Operation 47 'sext' 'tmp' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 48 [1/1] (0.00ns)   --->   "%tmp_99 = trunc i32 %P1End_read_1 to i19"   --->   Operation 48 'trunc' 'tmp_99' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 49 [1/1] (0.00ns)   --->   "%tmp_100 = trunc i32 %P1End_read_1 to i14"   --->   Operation 49 'trunc' 'tmp_100' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 50 [1/1] (0.00ns)   --->   "%p_shl12_cast = call i19 @_ssdm_op_BitConcatenate.i19.i14.i5(i14 %tmp_100, i5 0)" [search.cpp:118->search.cpp:422]   --->   Operation 50 'bitconcatenate' 'p_shl12_cast' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 51 [1/1] (2.16ns)   --->   "%tmp_119 = sub i19 %p_shl12_cast, %tmp_99" [search.cpp:118->search.cpp:422]   --->   Operation 51 'sub' 'tmp_119' <Predicate = true> <Delay = 2.16> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.91> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 52 [1/1] (0.00ns)   --->   "%P1Buffer_0_flip_add = getelementptr [8000 x i16]* %P1Buffer_0_flip, i64 0, i64 %tmp" [search.cpp:422]   --->   Operation 52 'getelementptr' 'P1Buffer_0_flip_add' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 53 [1/1] (0.00ns)   --->   "%P1Buffer_0_twist_ad = getelementptr [8000 x i16]* %P1Buffer_0_twist, i64 0, i64 %tmp" [search.cpp:422]   --->   Operation 53 'getelementptr' 'P1Buffer_0_twist_ad' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 54 [1/1] (0.00ns)   --->   "%P1Buffer_0_slice_ad = getelementptr [8000 x i16]* %P1Buffer_0_slice, i64 0, i64 %tmp" [search.cpp:422]   --->   Operation 54 'getelementptr' 'P1Buffer_0_slice_ad' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 55 [1/1] (0.00ns)   --->   "%P1Buffer_0_depthPha_1 = getelementptr [8000 x i8]* %P1Buffer_0_depthPha, i64 0, i64 %tmp" [search.cpp:422]   --->   Operation 55 'getelementptr' 'P1Buffer_0_depthPha_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 56 [1/1] (0.00ns)   --->   "%P1Buffer_0_n_addr = getelementptr [8000 x i8]* %P1Buffer_0_n, i64 0, i64 %tmp" [search.cpp:422]   --->   Operation 56 'getelementptr' 'P1Buffer_0_n_addr' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 57 [2/2] (3.25ns)   --->   "%b = load i16* %P1Buffer_0_flip_add, align 2" [search.cpp:422]   --->   Operation 57 'load' 'b' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 8000> <RAM>
+ST_1 : Operation 58 [2/2] (3.25ns)   --->   "%a_1 = load i16* %P1Buffer_0_twist_ad, align 2" [search.cpp:422]   --->   Operation 58 'load' 'a_1' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 8000> <RAM>
+ST_1 : Operation 59 [2/2] (3.25ns)   --->   "%c = load i16* %P1Buffer_0_slice_ad, align 2" [search.cpp:422]   --->   Operation 59 'load' 'c' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 8000> <RAM>
+ST_1 : Operation 60 [2/2] (3.25ns)   --->   "%search_new_0_depthP = load i8* %P1Buffer_0_depthPha_1, align 1" [search.cpp:422]   --->   Operation 60 'load' 'search_new_0_depthP' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 8000> <RAM>
+ST_1 : Operation 61 [2/2] (3.25ns)   --->   "%n_2 = load i8* %P1Buffer_0_n_addr, align 1" [search.cpp:422]   --->   Operation 61 'load' 'n_2' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 8000> <RAM>
+
+State 2 <SV = 1> <Delay = 3.25>
+ST_2 : Operation 62 [1/1] (0.00ns)   --->   "%Slice_Flip_Prun2_off = call i31 @_ssdm_op_Read.ap_auto.i31(i31 %Slice_Flip_Prun2_offset)"   --->   Operation 62 'read' 'Slice_Flip_Prun2_off' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 63 [1/1] (0.00ns)   --->   "%Slice_Twist_Prun2_of = call i31 @_ssdm_op_Read.ap_auto.i31(i31 %Slice_Twist_Prun2_offset)"   --->   Operation 63 'read' 'Slice_Twist_Prun2_of' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 64 [1/1] (0.00ns)   --->   "%FRtoBR_Move2_offset_s = call i31 @_ssdm_op_Read.ap_auto.i31(i31 %FRtoBR_Move2_offset)"   --->   Operation 64 'read' 'FRtoBR_Move2_offset_s' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 65 [1/1] (0.00ns)   --->   "%flipMove2_offset_rea = call i31 @_ssdm_op_Read.ap_auto.i31(i31 %flipMove2_offset)"   --->   Operation 65 'read' 'flipMove2_offset_rea' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 66 [1/1] (0.00ns)   --->   "%twistMove2_offset_re = call i31 @_ssdm_op_Read.ap_auto.i31(i31 %twistMove2_offset)"   --->   Operation 66 'read' 'twistMove2_offset_re' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 67 [1/1] (0.00ns)   --->   "%depthPhase1_read = call i5 @_ssdm_op_Read.ap_auto.i5(i5 %depthPhase1)"   --->   Operation 67 'read' 'depthPhase1_read' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 68 [1/1] (0.00ns)   --->   "%first_read_1 = call i1 @_ssdm_op_Read.ap_auto.i1(i1 %first_read)"   --->   Operation 68 'read' 'first_read_1' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 69 [1/1] (0.00ns)   --->   "%P1Start_read_1 = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %P1Start_read)"   --->   Operation 69 'read' 'P1Start_read_1' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 70 [1/1] (0.00ns)   --->   "%depthPhase1_cast = zext i5 %depthPhase1_read to i8"   --->   Operation 70 'zext' 'depthPhase1_cast' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 71 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i16* @P2Buffer_V_twist, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str186, i32 0, i32 0, [1 x i8]* @p_str187, [1 x i8]* @p_str188, [1 x i8]* @p_str189, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str190, [1 x i8]* @p_str191)"   --->   Operation 71 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 72 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i16* @P2Buffer_V_slice, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str193, i32 0, i32 0, [1 x i8]* @p_str194, [1 x i8]* @p_str195, [1 x i8]* @p_str196, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str197, [1 x i8]* @p_str198)"   --->   Operation 72 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 73 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i1* @P2Buffer_V_parity, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str200, i32 0, i32 0, [1 x i8]* @p_str201, [1 x i8]* @p_str202, [1 x i8]* @p_str203, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str204, [1 x i8]* @p_str205)"   --->   Operation 73 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 74 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i8* @P2Buffer_V_n, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str207, i32 0, i32 0, [1 x i8]* @p_str208, [1 x i8]* @p_str209, [1 x i8]* @p_str210, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str211, [1 x i8]* @p_str212)"   --->   Operation 74 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 75 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i8* @P2Buffer_V_i_9, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str214, i32 0, i32 0, [1 x i8]* @p_str215, [1 x i8]* @p_str216, [1 x i8]* @p_str217, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str218, [1 x i8]* @p_str219)"   --->   Operation 75 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 76 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i8* @P2Buffer_V_i_8, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str221, i32 0, i32 0, [1 x i8]* @p_str222, [1 x i8]* @p_str223, [1 x i8]* @p_str224, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str225, [1 x i8]* @p_str226)"   --->   Operation 76 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 77 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i8* @P2Buffer_V_i_7, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str228, i32 0, i32 0, [1 x i8]* @p_str229, [1 x i8]* @p_str230, [1 x i8]* @p_str231, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str232, [1 x i8]* @p_str233)"   --->   Operation 77 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 78 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i8* @P2Buffer_V_i_6, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str235, i32 0, i32 0, [1 x i8]* @p_str236, [1 x i8]* @p_str237, [1 x i8]* @p_str238, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str239, [1 x i8]* @p_str240)"   --->   Operation 78 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 79 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i8* @P2Buffer_V_i_5, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str242, i32 0, i32 0, [1 x i8]* @p_str243, [1 x i8]* @p_str244, [1 x i8]* @p_str245, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str246, [1 x i8]* @p_str247)"   --->   Operation 79 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 80 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i8* @P2Buffer_V_i_4, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str249, i32 0, i32 0, [1 x i8]* @p_str250, [1 x i8]* @p_str251, [1 x i8]* @p_str252, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str253, [1 x i8]* @p_str254)"   --->   Operation 80 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 81 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i8* @P2Buffer_V_i_30, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str256, i32 0, i32 0, [1 x i8]* @p_str257, [1 x i8]* @p_str258, [1 x i8]* @p_str259, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str260, [1 x i8]* @p_str261)"   --->   Operation 81 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 82 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i8* @P2Buffer_V_i_3, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str263, i32 0, i32 0, [1 x i8]* @p_str264, [1 x i8]* @p_str265, [1 x i8]* @p_str266, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str267, [1 x i8]* @p_str268)"   --->   Operation 82 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 83 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i8* @P2Buffer_V_i_29, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str270, i32 0, i32 0, [1 x i8]* @p_str271, [1 x i8]* @p_str272, [1 x i8]* @p_str273, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str274, [1 x i8]* @p_str275)"   --->   Operation 83 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 84 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i8* @P2Buffer_V_i_28, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str277, i32 0, i32 0, [1 x i8]* @p_str278, [1 x i8]* @p_str279, [1 x i8]* @p_str280, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str281, [1 x i8]* @p_str282)"   --->   Operation 84 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 85 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i8* @P2Buffer_V_i_27, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str284, i32 0, i32 0, [1 x i8]* @p_str285, [1 x i8]* @p_str286, [1 x i8]* @p_str287, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str288, [1 x i8]* @p_str289)"   --->   Operation 85 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 86 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i8* @P2Buffer_V_i_26, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str291, i32 0, i32 0, [1 x i8]* @p_str292, [1 x i8]* @p_str293, [1 x i8]* @p_str294, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str295, [1 x i8]* @p_str296)"   --->   Operation 86 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 87 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i8* @P2Buffer_V_i_25, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str298, i32 0, i32 0, [1 x i8]* @p_str299, [1 x i8]* @p_str300, [1 x i8]* @p_str301, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str302, [1 x i8]* @p_str303)"   --->   Operation 87 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 88 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i8* @P2Buffer_V_i_24, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str305, i32 0, i32 0, [1 x i8]* @p_str306, [1 x i8]* @p_str307, [1 x i8]* @p_str308, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str309, [1 x i8]* @p_str310)"   --->   Operation 88 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 89 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i8* @P2Buffer_V_i_23, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str312, i32 0, i32 0, [1 x i8]* @p_str313, [1 x i8]* @p_str314, [1 x i8]* @p_str315, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str316, [1 x i8]* @p_str317)"   --->   Operation 89 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 90 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i8* @P2Buffer_V_i_22, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str319, i32 0, i32 0, [1 x i8]* @p_str320, [1 x i8]* @p_str321, [1 x i8]* @p_str322, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str323, [1 x i8]* @p_str324)"   --->   Operation 90 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 91 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i8* @P2Buffer_V_i_21, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str326, i32 0, i32 0, [1 x i8]* @p_str327, [1 x i8]* @p_str328, [1 x i8]* @p_str329, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str330, [1 x i8]* @p_str331)"   --->   Operation 91 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 92 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i8* @P2Buffer_V_i_20, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str333, i32 0, i32 0, [1 x i8]* @p_str334, [1 x i8]* @p_str335, [1 x i8]* @p_str336, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str337, [1 x i8]* @p_str338)"   --->   Operation 92 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 93 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i8* @P2Buffer_V_i_2, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str340, i32 0, i32 0, [1 x i8]* @p_str341, [1 x i8]* @p_str342, [1 x i8]* @p_str343, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str344, [1 x i8]* @p_str345)"   --->   Operation 93 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 94 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i8* @P2Buffer_V_i_19, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str347, i32 0, i32 0, [1 x i8]* @p_str348, [1 x i8]* @p_str349, [1 x i8]* @p_str350, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str351, [1 x i8]* @p_str352)"   --->   Operation 94 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 95 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i8* @P2Buffer_V_i_18, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str354, i32 0, i32 0, [1 x i8]* @p_str355, [1 x i8]* @p_str356, [1 x i8]* @p_str357, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str358, [1 x i8]* @p_str359)"   --->   Operation 95 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 96 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i8* @P2Buffer_V_i_17, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str361, i32 0, i32 0, [1 x i8]* @p_str362, [1 x i8]* @p_str363, [1 x i8]* @p_str364, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str365, [1 x i8]* @p_str366)"   --->   Operation 96 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 97 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i8* @P2Buffer_V_i_16, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str368, i32 0, i32 0, [1 x i8]* @p_str369, [1 x i8]* @p_str370, [1 x i8]* @p_str371, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str372, [1 x i8]* @p_str373)"   --->   Operation 97 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 98 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i8* @P2Buffer_V_i_15, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str375, i32 0, i32 0, [1 x i8]* @p_str376, [1 x i8]* @p_str377, [1 x i8]* @p_str378, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str379, [1 x i8]* @p_str380)"   --->   Operation 98 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 99 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i8* @P2Buffer_V_i_14, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str382, i32 0, i32 0, [1 x i8]* @p_str383, [1 x i8]* @p_str384, [1 x i8]* @p_str385, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str386, [1 x i8]* @p_str387)"   --->   Operation 99 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 100 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i8* @P2Buffer_V_i_13, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str389, i32 0, i32 0, [1 x i8]* @p_str390, [1 x i8]* @p_str391, [1 x i8]* @p_str392, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str393, [1 x i8]* @p_str394)"   --->   Operation 100 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 101 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i8* @P2Buffer_V_i_12, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str396, i32 0, i32 0, [1 x i8]* @p_str397, [1 x i8]* @p_str398, [1 x i8]* @p_str399, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str400, [1 x i8]* @p_str401)"   --->   Operation 101 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 102 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i8* @P2Buffer_V_i_11, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str403, i32 0, i32 0, [1 x i8]* @p_str404, [1 x i8]* @p_str405, [1 x i8]* @p_str406, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str407, [1 x i8]* @p_str408)"   --->   Operation 102 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 103 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i8* @P2Buffer_V_i_10, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str410, i32 0, i32 0, [1 x i8]* @p_str411, [1 x i8]* @p_str412, [1 x i8]* @p_str413, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str414, [1 x i8]* @p_str415)"   --->   Operation 103 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 104 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i8* @P2Buffer_V_i_1, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str417, i32 0, i32 0, [1 x i8]* @p_str418, [1 x i8]* @p_str419, [1 x i8]* @p_str420, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str421, [1 x i8]* @p_str422)"   --->   Operation 104 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 105 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i8* @P2Buffer_V_i_0, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str424, i32 0, i32 0, [1 x i8]* @p_str425, [1 x i8]* @p_str426, [1 x i8]* @p_str427, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str428, [1 x i8]* @p_str429)"   --->   Operation 105 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 106 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i16* @P2Buffer_V_flip, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str431, i32 0, i32 0, [1 x i8]* @p_str432, [1 x i8]* @p_str433, [1 x i8]* @p_str435, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str436, [1 x i8]* @p_str437)"   --->   Operation 106 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 107 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i8* @P2Buffer_V_depthPhas, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str439, i32 0, i32 0, [1 x i8]* @p_str440, [1 x i8]* @p_str441, [1 x i8]* @p_str442, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str443, [1 x i8]* @p_str444)"   --->   Operation 107 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 108 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i16* @P2Buffer_V_URtoDF, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str446, i32 0, i32 0, [1 x i8]* @p_str447, [1 x i8]* @p_str448, [1 x i8]* @p_str449, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str450, [1 x i8]* @p_str451)"   --->   Operation 108 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 109 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i16* @P2Buffer_V_URFtoDLF, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str453, i32 0, i32 0, [1 x i8]* @p_str454, [1 x i8]* @p_str455, [1 x i8]* @p_str456, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str457, [1 x i8]* @p_str458)"   --->   Operation 109 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 110 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i16* @P2Buffer_V_FRtoBR, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str460, i32 0, i32 0, [1 x i8]* @p_str461, [1 x i8]* @p_str462, [1 x i8]* @p_str463, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str464, [1 x i8]* @p_str465)"   --->   Operation 110 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 111 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i16* %twistMove2, [6 x i8]* @p_str14, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 39366, [10 x i8]* @p_str15, [6 x i8]* @p_str16, [1 x i8]* @p_str1, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1)"   --->   Operation 111 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 112 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i16* %flipMove2, [6 x i8]* @p_str14, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 36864, [10 x i8]* @p_str17, [6 x i8]* @p_str16, [1 x i8]* @p_str1, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1)"   --->   Operation 112 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 113 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i16* %FRtoBR_Move2, [6 x i8]* @p_str14, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 213840, [10 x i8]* @p_str18, [6 x i8]* @p_str16, [1 x i8]* @p_str1, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1)"   --->   Operation 113 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 114 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i16* %twistMove2, [6 x i8]* @p_str14, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 541283, [10 x i8]* @p_str15, [6 x i8]* @p_str16, [1 x i8]* @p_str1, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1)"   --->   Operation 114 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 115 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i16* %flipMove2, [6 x i8]* @p_str14, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 506880, [10 x i8]* @p_str17, [6 x i8]* @p_str16, [1 x i8]* @p_str1, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1)"   --->   Operation 115 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 116 [1/2] (3.25ns)   --->   "%b = load i16* %P1Buffer_0_flip_add, align 2" [search.cpp:422]   --->   Operation 116 'load' 'b' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 8000> <RAM>
+ST_2 : Operation 117 [1/2] (3.25ns)   --->   "%a_1 = load i16* %P1Buffer_0_twist_ad, align 2" [search.cpp:422]   --->   Operation 117 'load' 'a_1' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 8000> <RAM>
+ST_2 : Operation 118 [1/2] (3.25ns)   --->   "%c = load i16* %P1Buffer_0_slice_ad, align 2" [search.cpp:422]   --->   Operation 118 'load' 'c' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 8000> <RAM>
+ST_2 : Operation 119 [1/2] (3.25ns)   --->   "%search_new_0_depthP = load i8* %P1Buffer_0_depthPha_1, align 1" [search.cpp:422]   --->   Operation 119 'load' 'search_new_0_depthP' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 8000> <RAM>
+ST_2 : Operation 120 [1/2] (3.25ns)   --->   "%n_2 = load i8* %P1Buffer_0_n_addr, align 1" [search.cpp:422]   --->   Operation 120 'load' 'n_2' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 8000> <RAM>
+ST_2 : Operation 121 [1/1] (1.76ns)   --->   "br label %1" [search.cpp:115->search.cpp:422]   --->   Operation 121 'br' <Predicate = true> <Delay = 1.76>
+
+State 3 <SV = 2> <Delay = 5.42>
+ST_3 : Operation 122 [1/1] (0.00ns)   --->   "%i_i = phi i5 [ 0, %0 ], [ %i_16, %2 ]"   --->   Operation 122 'phi' 'i_i' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 123 [1/1] (1.36ns)   --->   "%exitcond_i = icmp eq i5 %i_i, -1" [search.cpp:115->search.cpp:422]   --->   Operation 123 'icmp' 'exitcond_i' <Predicate = true> <Delay = 1.36> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 124 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopTripCount(i64 31, i64 31, i64 31)"   --->   Operation 124 'speclooptripcount' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 125 [1/1] (1.78ns)   --->   "%i_16 = add i5 %i_i, 1" [search.cpp:115->search.cpp:422]   --->   Operation 125 'add' 'i_16' <Predicate = true> <Delay = 1.78> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.91> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 126 [1/1] (0.00ns)   --->   "br i1 %exitcond_i, label %storeP1.1.exit, label %2" [search.cpp:115->search.cpp:422]   --->   Operation 126 'br' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 127 [1/1] (0.00ns)   --->   "%tmp_i_cast = zext i5 %i_i to i19" [search.cpp:118->search.cpp:422]   --->   Operation 127 'zext' 'tmp_i_cast' <Predicate = (!exitcond_i)> <Delay = 0.00>
+ST_3 : Operation 128 [1/1] (2.16ns)   --->   "%tmp_127 = add i19 %tmp_119, %tmp_i_cast" [search.cpp:118->search.cpp:422]   --->   Operation 128 'add' 'tmp_127' <Predicate = (!exitcond_i)> <Delay = 2.16> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.91> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 129 [1/1] (0.00ns)   --->   "%tmp_168_cast = sext i19 %tmp_127 to i64" [search.cpp:118->search.cpp:422]   --->   Operation 129 'sext' 'tmp_168_cast' <Predicate = (!exitcond_i)> <Delay = 0.00>
+ST_3 : Operation 130 [1/1] (0.00ns)   --->   "%P1Buffer_0_i_addr = getelementptr [248000 x i8]* %P1Buffer_0_i, i64 0, i64 %tmp_168_cast" [search.cpp:118->search.cpp:422]   --->   Operation 130 'getelementptr' 'P1Buffer_0_i_addr' <Predicate = (!exitcond_i)> <Delay = 0.00>
+ST_3 : Operation 131 [2/2] (3.25ns)   --->   "%P1Buffer_0_i_load = load i8* %P1Buffer_0_i_addr, align 1" [search.cpp:118->search.cpp:422]   --->   Operation 131 'load' 'P1Buffer_0_i_load' <Predicate = (!exitcond_i)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 8000> <RAM>
+ST_3 : Operation 132 [1/1] (0.00ns)   --->   "%tmp_s = sext i8 %n_2 to i64" [search.cpp:424]   --->   Operation 132 'sext' 'tmp_s' <Predicate = (exitcond_i)> <Delay = 0.00>
+ST_3 : Operation 133 [1/1] (0.00ns)   --->   "%search_new_0_i_addr = getelementptr [31 x i8]* %search_new_0_i, i64 0, i64 %tmp_s" [search.cpp:424]   --->   Operation 133 'getelementptr' 'search_new_0_i_addr' <Predicate = (exitcond_i)> <Delay = 0.00>
+ST_3 : Operation 134 [2/2] (2.32ns)   --->   "%i = load i8* %search_new_0_i_addr, align 1" [search.cpp:424]   --->   Operation 134 'load' 'i' <Predicate = (exitcond_i)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 8000> <RAM>
+
+State 4 <SV = 3> <Delay = 5.57>
+ST_4 : Operation 135 [1/1] (0.00ns)   --->   "%tmp_i = zext i5 %i_i to i64" [search.cpp:118->search.cpp:422]   --->   Operation 135 'zext' 'tmp_i' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 136 [1/2] (3.25ns)   --->   "%P1Buffer_0_i_load = load i8* %P1Buffer_0_i_addr, align 1" [search.cpp:118->search.cpp:422]   --->   Operation 136 'load' 'P1Buffer_0_i_load' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 8000> <RAM>
+ST_4 : Operation 137 [1/1] (0.00ns)   --->   "%search_new_0_i_addr_1 = getelementptr [31 x i8]* %search_new_0_i, i64 0, i64 %tmp_i" [search.cpp:118->search.cpp:422]   --->   Operation 137 'getelementptr' 'search_new_0_i_addr_1' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 138 [1/1] (2.32ns)   --->   "store i8 %P1Buffer_0_i_load, i8* %search_new_0_i_addr_1, align 1" [search.cpp:118->search.cpp:422]   --->   Operation 138 'store' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 8000> <RAM>
+ST_4 : Operation 139 [1/1] (0.00ns)   --->   "br label %1" [search.cpp:115->search.cpp:422]   --->   Operation 139 'br' <Predicate = true> <Delay = 0.00>
+
+State 5 <SV = 3> <Delay = 6.84>
+ST_5 : Operation 140 [1/2] (2.32ns)   --->   "%i = load i8* %search_new_0_i_addr, align 1" [search.cpp:424]   --->   Operation 140 'load' 'i' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 8000> <RAM>
+ST_5 : Operation 141 [1/1] (0.00ns)   --->   "%sext2_cast = sext i8 %i to i18" [search.cpp:424]   --->   Operation 141 'sext' 'sext2_cast' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 142 [1/1] (4.52ns)   --->   "%mul = mul i18 342, %sext2_cast" [search.cpp:424]   --->   Operation 142 'mul' 'mul' <Predicate = true> <Delay = 4.52> <Core = "Mul">   --->   Core 16 'Mul' <Latency = 0> <II = 1> <Delay = 4.52> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 143 [1/1] (0.00ns)   --->   "%tmp_101 = trunc i18 %mul to i17" [search.cpp:424]   --->   Operation 143 'trunc' 'tmp_101' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 144 [1/1] (0.00ns)   --->   "%tmp_102 = call i1 @_ssdm_op_BitSelect.i1.i8.i32(i8 %i, i32 7)" [search.cpp:424]   --->   Operation 144 'bitselect' 'tmp_102' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 145 [1/1] (0.00ns)   --->   "%tmp_104 = call i8 @_ssdm_op_PartSelect.i8.i18.i32.i32(i18 %mul, i32 10, i32 17)" [search.cpp:424]   --->   Operation 145 'partselect' 'tmp_104' <Predicate = true> <Delay = 0.00>
+
+State 6 <SV = 4> <Delay = 6.38>
+ST_6 : Operation 146 [1/1] (2.10ns)   --->   "%neg_mul = sub i17 0, %tmp_101" [search.cpp:424]   --->   Operation 146 'sub' 'neg_mul' <Predicate = (tmp_102)> <Delay = 2.10> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.91> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 147 [1/1] (0.00ns)   --->   "%tmp_103 = call i7 @_ssdm_op_PartSelect.i7.i17.i32.i32(i17 %neg_mul, i32 10, i32 16)" [search.cpp:424]   --->   Operation 147 'partselect' 'tmp_103' <Predicate = (tmp_102)> <Delay = 0.00>
+ST_6 : Operation 148 [1/1] (0.00ns)   --->   "%tmp_120 = sext i7 %tmp_103 to i9" [search.cpp:424]   --->   Operation 148 'sext' 'tmp_120' <Predicate = (tmp_102)> <Delay = 0.00>
+ST_6 : Operation 149 [1/1] (0.00ns)   --->   "%tmp_121 = sext i8 %tmp_104 to i9" [search.cpp:424]   --->   Operation 149 'sext' 'tmp_121' <Predicate = (!tmp_102)> <Delay = 0.00>
+ST_6 : Operation 150 [1/1] (1.24ns)   --->   "%p_v = select i1 %tmp_102, i9 %tmp_120, i9 %tmp_121" [search.cpp:424]   --->   Operation 150 'select' 'p_v' <Predicate = true> <Delay = 1.24> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_6 : Operation 151 [1/1] (0.00ns)   --->   "%tmp_105 = trunc i9 %p_v to i7" [search.cpp:424]   --->   Operation 151 'trunc' 'tmp_105' <Predicate = (tmp_102)> <Delay = 0.00>
+ST_6 : Operation 152 [1/1] (1.87ns)   --->   "%neg_ti = sub i7 0, %tmp_105" [search.cpp:424]   --->   Operation 152 'sub' 'neg_ti' <Predicate = (tmp_102)> <Delay = 1.87> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.91> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 153 [1/1] (0.00ns)   --->   "%tmp_106 = trunc i9 %p_v to i7" [search.cpp:424]   --->   Operation 153 'trunc' 'tmp_106' <Predicate = (!tmp_102)> <Delay = 0.00>
+ST_6 : Operation 154 [1/1] (0.99ns)   --->   "%tmp_126 = select i1 %tmp_102, i7 %neg_ti, i7 %tmp_106" [search.cpp:424]   --->   Operation 154 'select' 'tmp_126' <Predicate = true> <Delay = 0.99> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_6 : Operation 155 [1/1] (0.00ns)   --->   "%twistOld_load = load i16* @twistOld, align 2" [search.cpp:435]   --->   Operation 155 'load' 'twistOld_load' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 156 [1/1] (2.42ns)   --->   "%tmp_122 = icmp eq i16 %twistOld_load, %a_1" [search.cpp:435]   --->   Operation 156 'icmp' 'tmp_122' <Predicate = true> <Delay = 2.42> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 157 [1/1] (0.00ns)   --->   "%flipOld_load = load i16* @flipOld, align 2" [search.cpp:435]   --->   Operation 157 'load' 'flipOld_load' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 158 [1/1] (2.42ns)   --->   "%tmp_123 = icmp eq i16 %flipOld_load, %b" [search.cpp:435]   --->   Operation 158 'icmp' 'tmp_123' <Predicate = true> <Delay = 2.42> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 159 [1/1] (0.00ns)   --->   "%sliceOld_load = load i16* @sliceOld, align 2" [search.cpp:435]   --->   Operation 159 'load' 'sliceOld_load' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 160 [1/1] (2.42ns)   --->   "%tmp_124 = icmp eq i16 %sliceOld_load, %c" [search.cpp:435]   --->   Operation 160 'icmp' 'tmp_124' <Predicate = true> <Delay = 2.42> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 161 [1/1] (0.00ns) (grouped into LUT with out node or_cond2)   --->   "%tmp1 = and i1 %tmp_123, %tmp_124" [search.cpp:435]   --->   Operation 161 'and' 'tmp1' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 162 [1/1] (0.97ns) (out node of the LUT)   --->   "%or_cond2 = and i1 %tmp1, %tmp_122" [search.cpp:435]   --->   Operation 162 'and' 'or_cond2' <Predicate = true> <Delay = 0.97> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 163 [1/1] (0.00ns)   --->   "br i1 %or_cond2, label %._crit_edge2, label %._crit_edge" [search.cpp:435]   --->   Operation 163 'br' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 164 [1/1] (0.00ns)   --->   "%p_shl2 = call i20 @_ssdm_op_BitConcatenate.i20.i16.i4(i16 %a_1, i4 0)" [search.cpp:443]   --->   Operation 164 'bitconcatenate' 'p_shl2' <Predicate = (!or_cond2)> <Delay = 0.00>
+ST_6 : Operation 165 [1/1] (0.00ns)   --->   "%p_shl2_cast = sext i20 %p_shl2 to i21" [search.cpp:443]   --->   Operation 165 'sext' 'p_shl2_cast' <Predicate = (!or_cond2)> <Delay = 0.00>
+ST_6 : Operation 166 [1/1] (0.00ns)   --->   "%p_shl3 = call i17 @_ssdm_op_BitConcatenate.i17.i16.i1(i16 %a_1, i1 false)" [search.cpp:443]   --->   Operation 166 'bitconcatenate' 'p_shl3' <Predicate = (!or_cond2)> <Delay = 0.00>
+ST_6 : Operation 167 [1/1] (0.00ns)   --->   "%p_shl = call i20 @_ssdm_op_BitConcatenate.i20.i16.i4(i16 %b, i4 0)" [search.cpp:444]   --->   Operation 167 'bitconcatenate' 'p_shl' <Predicate = (!or_cond2)> <Delay = 0.00>
+ST_6 : Operation 168 [1/1] (0.00ns)   --->   "%p_shl_cast = sext i20 %p_shl to i21" [search.cpp:444]   --->   Operation 168 'sext' 'p_shl_cast' <Predicate = (!or_cond2)> <Delay = 0.00>
+ST_6 : Operation 169 [1/1] (0.00ns)   --->   "%p_shl1 = call i17 @_ssdm_op_BitConcatenate.i17.i16.i1(i16 %b, i1 false)" [search.cpp:444]   --->   Operation 169 'bitconcatenate' 'p_shl1' <Predicate = (!or_cond2)> <Delay = 0.00>
+ST_6 : Operation 170 [1/1] (0.00ns)   --->   "%tmp_151_cast = sext i16 %c to i25" [search.cpp:445]   --->   Operation 170 'sext' 'tmp_151_cast' <Predicate = (!or_cond2)> <Delay = 0.00>
+ST_6 : Operation 171 [1/1] (3.36ns)   --->   "%tmp_125 = mul i25 %tmp_151_cast, 432" [search.cpp:445]   --->   Operation 171 'mul' 'tmp_125' <Predicate = (!or_cond2)> <Delay = 3.36> <Core = "DSP48">   --->   Core 61 'DSP48' <Latency = 0> <II = 1> <Delay = 6.38> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_6 : Operation 172 [1/1] (0.00ns)   --->   "%tmp_26 = sext i17 %p_shl3 to i21" [search.cpp:443]   --->   Operation 172 'sext' 'tmp_26' <Predicate = (!or_cond2)> <Delay = 0.00>
+ST_6 : Operation 173 [1/1] (2.19ns)   --->   "%tmp_27 = add i21 %tmp_26, %p_shl2_cast" [search.cpp:443]   --->   Operation 173 'add' 'tmp_27' <Predicate = (!or_cond2)> <Delay = 2.19> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.91> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 174 [1/1] (0.00ns)   --->   "%tmp_28_cast = sext i21 %tmp_27 to i33" [search.cpp:444]   --->   Operation 174 'sext' 'tmp_28_cast' <Predicate = (!or_cond2)> <Delay = 0.00>
+ST_6 : Operation 175 [1/1] (0.00ns)   --->   "%tmp_31 = sext i17 %p_shl1 to i21" [search.cpp:444]   --->   Operation 175 'sext' 'tmp_31' <Predicate = (!or_cond2)> <Delay = 0.00>
+ST_6 : Operation 176 [1/1] (2.19ns)   --->   "%tmp_32 = add i21 %tmp_31, %p_shl_cast" [search.cpp:444]   --->   Operation 176 'add' 'tmp_32' <Predicate = (!or_cond2)> <Delay = 2.19> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.91> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 177 [1/1] (0.00ns)   --->   "%tmp_33_cast = sext i21 %tmp_32 to i33" [search.cpp:445]   --->   Operation 177 'sext' 'tmp_33_cast' <Predicate = (!or_cond2)> <Delay = 0.00>
+ST_6 : Operation 178 [1/1] (0.00ns)   --->   "%tmp_36_cast = sext i25 %tmp_125 to i33" [search.cpp:445]   --->   Operation 178 'sext' 'tmp_36_cast' <Predicate = (!or_cond2)> <Delay = 0.00>
+ST_6 : Operation 179 [1/1] (0.00ns)   --->   "%sext_cast = zext i31 %twistMove2_offset_re to i33"   --->   Operation 179 'zext' 'sext_cast' <Predicate = (!or_cond2)> <Delay = 0.00>
+ST_6 : Operation 180 [1/1] (2.52ns)   --->   "%sum = add i33 %tmp_28_cast, %sext_cast" [search.cpp:444]   --->   Operation 180 'add' 'sum' <Predicate = (!or_cond2)> <Delay = 2.52> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.91> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 181 [1/1] (0.00ns)   --->   "%sum_cast = sext i33 %sum to i64" [search.cpp:444]   --->   Operation 181 'sext' 'sum_cast' <Predicate = (!or_cond2)> <Delay = 0.00>
+ST_6 : Operation 182 [1/1] (0.00ns)   --->   "%Slice_Twist_Prun2_ad = getelementptr i16* %twistMove2, i64 %sum_cast" [search.cpp:444]   --->   Operation 182 'getelementptr' 'Slice_Twist_Prun2_ad' <Predicate = (!or_cond2)> <Delay = 0.00>
+ST_6 : Operation 183 [1/1] (0.00ns)   --->   "%sext4_cast = zext i31 %flipMove2_offset_rea to i33"   --->   Operation 183 'zext' 'sext4_cast' <Predicate = (!or_cond2)> <Delay = 0.00>
+ST_6 : Operation 184 [1/1] (2.52ns)   --->   "%sum5 = add i33 %tmp_33_cast, %sext4_cast" [search.cpp:445]   --->   Operation 184 'add' 'sum5' <Predicate = (!or_cond2)> <Delay = 2.52> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.91> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 185 [1/1] (0.00ns)   --->   "%sum5_cast = sext i33 %sum5 to i64" [search.cpp:445]   --->   Operation 185 'sext' 'sum5_cast' <Predicate = (!or_cond2)> <Delay = 0.00>
+ST_6 : Operation 186 [1/1] (0.00ns)   --->   "%Slice_Flip_Prun2_add = getelementptr i16* %flipMove2, i64 %sum5_cast" [search.cpp:445]   --->   Operation 186 'getelementptr' 'Slice_Flip_Prun2_add' <Predicate = (!or_cond2)> <Delay = 0.00>
+ST_6 : Operation 187 [1/1] (0.00ns)   --->   "%sext9_cast = zext i31 %FRtoBR_Move2_offset_s to i33"   --->   Operation 187 'zext' 'sext9_cast' <Predicate = (!or_cond2)> <Delay = 0.00>
+ST_6 : Operation 188 [1/1] (3.02ns)   --->   "%sum6 = add i33 %tmp_36_cast, %sext9_cast" [search.cpp:445]   --->   Operation 188 'add' 'sum6' <Predicate = (!or_cond2)> <Delay = 3.02> <Core = "DSP48">   --->   Core 61 'DSP48' <Latency = 0> <II = 1> <Delay = 6.38> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_6 : Operation 189 [1/1] (0.00ns)   --->   "%sum6_cast = sext i33 %sum6 to i64" [search.cpp:445]   --->   Operation 189 'sext' 'sum6_cast' <Predicate = (!or_cond2)> <Delay = 0.00>
+ST_6 : Operation 190 [1/1] (0.00ns)   --->   "%FRtoBR_Move2_addr = getelementptr i16* %FRtoBR_Move2, i64 %sum6_cast" [search.cpp:445]   --->   Operation 190 'getelementptr' 'FRtoBR_Move2_addr' <Predicate = (!or_cond2)> <Delay = 0.00>
+
+State 7 <SV = 5> <Delay = 8.75>
+ST_7 : Operation 191 [7/7] (8.75ns)   --->   "%Slice_Twist_Prun2_ad_1 = call i1 @_ssdm_op_ReadReq.m_axi.i16P(i16* %Slice_Twist_Prun2_ad, i32 18)" [search.cpp:443]   --->   Operation 191 'readreq' 'Slice_Twist_Prun2_ad_1' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_7 : Operation 192 [7/7] (8.75ns)   --->   "%Slice_Flip_Prun2_add_1 = call i1 @_ssdm_op_ReadReq.m_axi.i16P(i16* %Slice_Flip_Prun2_add, i32 18)" [search.cpp:444]   --->   Operation 192 'readreq' 'Slice_Flip_Prun2_add_1' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_7 : Operation 193 [7/7] (8.75ns)   --->   "%FRtoBR_Move2_addr_rd = call i1 @_ssdm_op_ReadReq.m_axi.i16P(i16* %FRtoBR_Move2_addr, i32 18)" [search.cpp:445]   --->   Operation 193 'readreq' 'FRtoBR_Move2_addr_rd' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 8 <SV = 6> <Delay = 8.75>
+ST_8 : Operation 194 [6/7] (8.75ns)   --->   "%Slice_Twist_Prun2_ad_1 = call i1 @_ssdm_op_ReadReq.m_axi.i16P(i16* %Slice_Twist_Prun2_ad, i32 18)" [search.cpp:443]   --->   Operation 194 'readreq' 'Slice_Twist_Prun2_ad_1' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_8 : Operation 195 [6/7] (8.75ns)   --->   "%Slice_Flip_Prun2_add_1 = call i1 @_ssdm_op_ReadReq.m_axi.i16P(i16* %Slice_Flip_Prun2_add, i32 18)" [search.cpp:444]   --->   Operation 195 'readreq' 'Slice_Flip_Prun2_add_1' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_8 : Operation 196 [6/7] (8.75ns)   --->   "%FRtoBR_Move2_addr_rd = call i1 @_ssdm_op_ReadReq.m_axi.i16P(i16* %FRtoBR_Move2_addr, i32 18)" [search.cpp:445]   --->   Operation 196 'readreq' 'FRtoBR_Move2_addr_rd' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 9 <SV = 7> <Delay = 8.75>
+ST_9 : Operation 197 [5/7] (8.75ns)   --->   "%Slice_Twist_Prun2_ad_1 = call i1 @_ssdm_op_ReadReq.m_axi.i16P(i16* %Slice_Twist_Prun2_ad, i32 18)" [search.cpp:443]   --->   Operation 197 'readreq' 'Slice_Twist_Prun2_ad_1' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_9 : Operation 198 [5/7] (8.75ns)   --->   "%Slice_Flip_Prun2_add_1 = call i1 @_ssdm_op_ReadReq.m_axi.i16P(i16* %Slice_Flip_Prun2_add, i32 18)" [search.cpp:444]   --->   Operation 198 'readreq' 'Slice_Flip_Prun2_add_1' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_9 : Operation 199 [5/7] (8.75ns)   --->   "%FRtoBR_Move2_addr_rd = call i1 @_ssdm_op_ReadReq.m_axi.i16P(i16* %FRtoBR_Move2_addr, i32 18)" [search.cpp:445]   --->   Operation 199 'readreq' 'FRtoBR_Move2_addr_rd' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 10 <SV = 8> <Delay = 8.75>
+ST_10 : Operation 200 [4/7] (8.75ns)   --->   "%Slice_Twist_Prun2_ad_1 = call i1 @_ssdm_op_ReadReq.m_axi.i16P(i16* %Slice_Twist_Prun2_ad, i32 18)" [search.cpp:443]   --->   Operation 200 'readreq' 'Slice_Twist_Prun2_ad_1' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_10 : Operation 201 [4/7] (8.75ns)   --->   "%Slice_Flip_Prun2_add_1 = call i1 @_ssdm_op_ReadReq.m_axi.i16P(i16* %Slice_Flip_Prun2_add, i32 18)" [search.cpp:444]   --->   Operation 201 'readreq' 'Slice_Flip_Prun2_add_1' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_10 : Operation 202 [4/7] (8.75ns)   --->   "%FRtoBR_Move2_addr_rd = call i1 @_ssdm_op_ReadReq.m_axi.i16P(i16* %FRtoBR_Move2_addr, i32 18)" [search.cpp:445]   --->   Operation 202 'readreq' 'FRtoBR_Move2_addr_rd' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 11 <SV = 9> <Delay = 8.75>
+ST_11 : Operation 203 [3/7] (8.75ns)   --->   "%Slice_Twist_Prun2_ad_1 = call i1 @_ssdm_op_ReadReq.m_axi.i16P(i16* %Slice_Twist_Prun2_ad, i32 18)" [search.cpp:443]   --->   Operation 203 'readreq' 'Slice_Twist_Prun2_ad_1' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_11 : Operation 204 [3/7] (8.75ns)   --->   "%Slice_Flip_Prun2_add_1 = call i1 @_ssdm_op_ReadReq.m_axi.i16P(i16* %Slice_Flip_Prun2_add, i32 18)" [search.cpp:444]   --->   Operation 204 'readreq' 'Slice_Flip_Prun2_add_1' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_11 : Operation 205 [3/7] (8.75ns)   --->   "%FRtoBR_Move2_addr_rd = call i1 @_ssdm_op_ReadReq.m_axi.i16P(i16* %FRtoBR_Move2_addr, i32 18)" [search.cpp:445]   --->   Operation 205 'readreq' 'FRtoBR_Move2_addr_rd' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 12 <SV = 10> <Delay = 8.75>
+ST_12 : Operation 206 [2/7] (8.75ns)   --->   "%Slice_Twist_Prun2_ad_1 = call i1 @_ssdm_op_ReadReq.m_axi.i16P(i16* %Slice_Twist_Prun2_ad, i32 18)" [search.cpp:443]   --->   Operation 206 'readreq' 'Slice_Twist_Prun2_ad_1' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_12 : Operation 207 [2/7] (8.75ns)   --->   "%Slice_Flip_Prun2_add_1 = call i1 @_ssdm_op_ReadReq.m_axi.i16P(i16* %Slice_Flip_Prun2_add, i32 18)" [search.cpp:444]   --->   Operation 207 'readreq' 'Slice_Flip_Prun2_add_1' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_12 : Operation 208 [2/7] (8.75ns)   --->   "%FRtoBR_Move2_addr_rd = call i1 @_ssdm_op_ReadReq.m_axi.i16P(i16* %FRtoBR_Move2_addr, i32 18)" [search.cpp:445]   --->   Operation 208 'readreq' 'FRtoBR_Move2_addr_rd' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 13 <SV = 11> <Delay = 8.75>
+ST_13 : Operation 209 [1/7] (8.75ns)   --->   "%Slice_Twist_Prun2_ad_1 = call i1 @_ssdm_op_ReadReq.m_axi.i16P(i16* %Slice_Twist_Prun2_ad, i32 18)" [search.cpp:443]   --->   Operation 209 'readreq' 'Slice_Twist_Prun2_ad_1' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_13 : Operation 210 [1/7] (8.75ns)   --->   "%Slice_Flip_Prun2_add_1 = call i1 @_ssdm_op_ReadReq.m_axi.i16P(i16* %Slice_Flip_Prun2_add, i32 18)" [search.cpp:444]   --->   Operation 210 'readreq' 'Slice_Flip_Prun2_add_1' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_13 : Operation 211 [1/7] (8.75ns)   --->   "%FRtoBR_Move2_addr_rd = call i1 @_ssdm_op_ReadReq.m_axi.i16P(i16* %FRtoBR_Move2_addr, i32 18)" [search.cpp:445]   --->   Operation 211 'readreq' 'FRtoBR_Move2_addr_rd' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_13 : Operation 212 [1/1] (1.76ns)   --->   "br label %3" [search.cpp:440]   --->   Operation 212 'br' <Predicate = true> <Delay = 1.76>
+
+State 14 <SV = 12> <Delay = 1.78>
+ST_14 : Operation 213 [1/1] (0.00ns)   --->   "%i17 = phi i5 [ 0, %._crit_edge ], [ %i_18, %4 ]"   --->   Operation 213 'phi' 'i17' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 214 [1/1] (1.36ns)   --->   "%exitcond = icmp eq i5 %i17, -14" [search.cpp:440]   --->   Operation 214 'icmp' 'exitcond' <Predicate = true> <Delay = 1.36> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_14 : Operation 215 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopTripCount(i64 18, i64 18, i64 18)"   --->   Operation 215 'speclooptripcount' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 216 [1/1] (1.78ns)   --->   "%i_18 = add i5 %i17, 1" [search.cpp:440]   --->   Operation 216 'add' 'i_18' <Predicate = true> <Delay = 1.78> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.91> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_14 : Operation 217 [1/1] (0.00ns)   --->   "br i1 %exitcond, label %5, label %4" [search.cpp:440]   --->   Operation 217 'br' <Predicate = true> <Delay = 0.00>
+
+State 15 <SV = 13> <Delay = 8.75>
+ST_15 : Operation 218 [1/1] (8.75ns)   --->   "%Slice_Twist_Prun2_ad_2 = call i16 @_ssdm_op_Read.m_axi.i16P(i16* %Slice_Twist_Prun2_ad)" [search.cpp:443]   --->   Operation 218 'read' 'Slice_Twist_Prun2_ad_2' <Predicate = (!exitcond)> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_15 : Operation 219 [1/1] (8.75ns)   --->   "%Slice_Flip_Prun2_add_2 = call i16 @_ssdm_op_Read.m_axi.i16P(i16* %Slice_Flip_Prun2_add)" [search.cpp:444]   --->   Operation 219 'read' 'Slice_Flip_Prun2_add_2' <Predicate = (!exitcond)> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_15 : Operation 220 [1/1] (8.75ns)   --->   "%FRtoBR_Move2_addr_re = call i16 @_ssdm_op_Read.m_axi.i16P(i16* %FRtoBR_Move2_addr)" [search.cpp:445]   --->   Operation 220 'read' 'FRtoBR_Move2_addr_re' <Predicate = (!exitcond)> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 16 <SV = 14> <Delay = 2.32>
+ST_16 : Operation 221 [1/1] (0.00ns)   --->   "%tmp_45 = call i32 (...)* @_ssdm_op_SpecRegionBegin([12 x i8]* @p_str8)" [search.cpp:441]   --->   Operation 221 'specregionbegin' 'tmp_45' <Predicate = (!exitcond)> <Delay = 0.00>
+ST_16 : Operation 222 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecPipeline(i32 -1, i32 1, i32 1, i32 0, [1 x i8]* @p_str1) nounwind" [search.cpp:442]   --->   Operation 222 'specpipeline' <Predicate = (!exitcond)> <Delay = 0.00>
+ST_16 : Operation 223 [1/1] (0.00ns)   --->   "%tmp_128 = zext i5 %i17 to i64" [search.cpp:443]   --->   Operation 223 'zext' 'tmp_128' <Predicate = (!exitcond)> <Delay = 0.00>
+ST_16 : Operation 224 [1/1] (0.00ns)   --->   "%twistMove3_addr = getelementptr inbounds [18 x i16]* @twistMove3, i64 0, i64 %tmp_128" [search.cpp:443]   --->   Operation 224 'getelementptr' 'twistMove3_addr' <Predicate = (!exitcond)> <Delay = 0.00>
+ST_16 : Operation 225 [1/1] (2.32ns)   --->   "store i16 %Slice_Twist_Prun2_ad_2, i16* %twistMove3_addr, align 2" [search.cpp:443]   --->   Operation 225 'store' <Predicate = (!exitcond)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 8000> <RAM>
+ST_16 : Operation 226 [1/1] (0.00ns)   --->   "%flipMove3_addr = getelementptr inbounds [18 x i16]* @flipMove3, i64 0, i64 %tmp_128" [search.cpp:444]   --->   Operation 226 'getelementptr' 'flipMove3_addr' <Predicate = (!exitcond)> <Delay = 0.00>
+ST_16 : Operation 227 [1/1] (2.32ns)   --->   "store i16 %Slice_Flip_Prun2_add_2, i16* %flipMove3_addr, align 2" [search.cpp:444]   --->   Operation 227 'store' <Predicate = (!exitcond)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 8000> <RAM>
+ST_16 : Operation 228 [1/1] (0.00ns)   --->   "%FRtoBR_Move3_addr = getelementptr inbounds [18 x i16]* @FRtoBR_Move3, i64 0, i64 %tmp_128" [search.cpp:445]   --->   Operation 228 'getelementptr' 'FRtoBR_Move3_addr' <Predicate = (!exitcond)> <Delay = 0.00>
+ST_16 : Operation 229 [1/1] (2.32ns)   --->   "store i16 %FRtoBR_Move2_addr_re, i16* %FRtoBR_Move3_addr, align 2" [search.cpp:445]   --->   Operation 229 'store' <Predicate = (!exitcond)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 8000> <RAM>
+ST_16 : Operation 230 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecRegionEnd([12 x i8]* @p_str8, i32 %tmp_45)" [search.cpp:446]   --->   Operation 230 'specregionend' 'empty' <Predicate = (!exitcond)> <Delay = 0.00>
+ST_16 : Operation 231 [1/1] (0.00ns)   --->   "br label %3" [search.cpp:440]   --->   Operation 231 'br' <Predicate = (!exitcond)> <Delay = 0.00>
+
+State 17 <SV = 13> <Delay = 5.74>
+ST_17 : Operation 232 [1/1] (0.00ns)   --->   "store i16 %c, i16* @sliceOld, align 2" [search.cpp:458]   --->   Operation 232 'store' <Predicate = (!or_cond2)> <Delay = 0.00>
+ST_17 : Operation 233 [1/1] (0.00ns)   --->   "store i16 %b, i16* @flipOld, align 2" [search.cpp:459]   --->   Operation 233 'store' <Predicate = (!or_cond2)> <Delay = 0.00>
+ST_17 : Operation 234 [1/1] (0.00ns)   --->   "store i16 %a_1, i16* @twistOld, align 2" [search.cpp:460]   --->   Operation 234 'store' <Predicate = (!or_cond2)> <Delay = 0.00>
+ST_17 : Operation 235 [1/1] (0.00ns)   --->   "br label %._crit_edge2" [search.cpp:462]   --->   Operation 235 'br' <Predicate = (!or_cond2)> <Delay = 0.00>
+ST_17 : Operation 236 [1/1] (0.00ns)   --->   "%P1Start = alloca i32"   --->   Operation 236 'alloca' 'P1Start' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 237 [1/1] (0.00ns)   --->   "%search_new_0_depthP_1 = alloca i8"   --->   Operation 237 'alloca' 'search_new_0_depthP_1' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 238 [1/1] (0.00ns)   --->   "%zero = alloca i1"   --->   Operation 238 'alloca' 'zero' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 239 [1/1] (1.91ns)   --->   "%n_1 = add i8 %n_2, -1" [search.cpp:493]   --->   Operation 239 'add' 'n_1' <Predicate = (first_read_1)> <Delay = 1.91> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.91> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_17 : Operation 240 [1/1] (0.00ns) (grouped into LUT with out node n)   --->   "%n_1_n = select i1 %first_read_1, i8 %n_1, i8 %n_2" [search.cpp:491]   --->   Operation 240 'select' 'n_1_n' <Predicate = true> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_17 : Operation 241 [1/1] (1.91ns) (out node of the LUT)   --->   "%n = add i8 %n_1_n, 1" [search.cpp:496]   --->   Operation 241 'add' 'n' <Predicate = true> <Delay = 1.91> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.91> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_17 : Operation 242 [1/1] (1.55ns)   --->   "%tmp_129 = icmp eq i8 %n, 0" [search.cpp:532]   --->   Operation 242 'icmp' 'tmp_129' <Predicate = true> <Delay = 1.55> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_17 : Operation 243 [1/1] (0.00ns)   --->   "%tmp_130 = sext i8 %n to i64" [search.cpp:526]   --->   Operation 243 'sext' 'tmp_130' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 244 [1/1] (0.00ns)   --->   "%search_new_0_i_addr_2 = getelementptr [31 x i8]* %search_new_0_i, i64 0, i64 %tmp_130" [search.cpp:526]   --->   Operation 244 'getelementptr' 'search_new_0_i_addr_2' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 245 [1/1] (1.55ns)   --->   "%tmp_131 = icmp ne i8 %n, 0" [search.cpp:532]   --->   Operation 245 'icmp' 'tmp_131' <Predicate = true> <Delay = 1.55> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_17 : Operation 246 [1/1] (0.00ns)   --->   "%tmp_163_cast = sext i8 %n to i9" [search.cpp:552]   --->   Operation 246 'sext' 'tmp_163_cast' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 247 [1/1] (0.00ns)   --->   "%tmp_164_cast = zext i5 %depthPhase1_read to i9" [search.cpp:552]   --->   Operation 247 'zext' 'tmp_164_cast' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 248 [1/1] (1.78ns)   --->   "%tmp_132 = add i5 %depthPhase1_read, -5" [search.cpp:552]   --->   Operation 248 'add' 'tmp_132' <Predicate = true> <Delay = 1.78> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.91> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_17 : Operation 249 [1/1] (0.00ns)   --->   "%tmp_165_cast = sext i5 %tmp_132 to i8" [search.cpp:552]   --->   Operation 249 'sext' 'tmp_165_cast' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 250 [1/1] (1.55ns)   --->   "%tmp_133 = icmp slt i8 %n, %tmp_165_cast" [search.cpp:552]   --->   Operation 250 'icmp' 'tmp_133' <Predicate = true> <Delay = 1.55> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_17 : Operation 251 [1/1] (1.78ns)   --->   "%tmp_134 = add i5 %depthPhase1_read, -1" [search.cpp:555]   --->   Operation 251 'add' 'tmp_134' <Predicate = true> <Delay = 1.78> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.91> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_17 : Operation 252 [1/1] (0.00ns)   --->   "%tmp_167_cast = zext i5 %tmp_134 to i8" [search.cpp:555]   --->   Operation 252 'zext' 'tmp_167_cast' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 253 [1/1] (0.00ns)   --->   "%search_new_0_i_addr_3 = getelementptr [31 x i8]* %search_new_0_i, i64 0, i64 0" [search.cpp:558]   --->   Operation 253 'getelementptr' 'search_new_0_i_addr_3' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 254 [1/1] (0.00ns)   --->   "%search_new_0_i_addr_4 = getelementptr [31 x i8]* %search_new_0_i, i64 0, i64 1" [search.cpp:558]   --->   Operation 254 'getelementptr' 'search_new_0_i_addr_4' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 255 [1/1] (0.00ns)   --->   "%search_new_0_i_addr_5 = getelementptr [31 x i8]* %search_new_0_i, i64 0, i64 2" [search.cpp:558]   --->   Operation 255 'getelementptr' 'search_new_0_i_addr_5' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 256 [1/1] (0.00ns)   --->   "%search_new_0_i_addr_6 = getelementptr [31 x i8]* %search_new_0_i, i64 0, i64 3" [search.cpp:558]   --->   Operation 256 'getelementptr' 'search_new_0_i_addr_6' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 257 [1/1] (0.00ns)   --->   "%search_new_0_i_addr_7 = getelementptr [31 x i8]* %search_new_0_i, i64 0, i64 4" [search.cpp:558]   --->   Operation 257 'getelementptr' 'search_new_0_i_addr_7' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 258 [1/1] (0.00ns)   --->   "%search_new_0_i_addr_8 = getelementptr [31 x i8]* %search_new_0_i, i64 0, i64 5" [search.cpp:558]   --->   Operation 258 'getelementptr' 'search_new_0_i_addr_8' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 259 [1/1] (0.00ns)   --->   "%search_new_0_i_addr_9 = getelementptr [31 x i8]* %search_new_0_i, i64 0, i64 6" [search.cpp:558]   --->   Operation 259 'getelementptr' 'search_new_0_i_addr_9' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 260 [1/1] (0.00ns)   --->   "%search_new_0_i_addr_10 = getelementptr [31 x i8]* %search_new_0_i, i64 0, i64 7" [search.cpp:558]   --->   Operation 260 'getelementptr' 'search_new_0_i_addr_10' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 261 [1/1] (0.00ns)   --->   "%search_new_0_i_addr_11 = getelementptr [31 x i8]* %search_new_0_i, i64 0, i64 8" [search.cpp:558]   --->   Operation 261 'getelementptr' 'search_new_0_i_addr_11' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 262 [1/1] (0.00ns)   --->   "%search_new_0_i_addr_12 = getelementptr [31 x i8]* %search_new_0_i, i64 0, i64 9" [search.cpp:558]   --->   Operation 262 'getelementptr' 'search_new_0_i_addr_12' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 263 [1/1] (0.00ns)   --->   "%search_new_0_i_addr_13 = getelementptr [31 x i8]* %search_new_0_i, i64 0, i64 10" [search.cpp:558]   --->   Operation 263 'getelementptr' 'search_new_0_i_addr_13' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 264 [1/1] (0.00ns)   --->   "%search_new_0_i_addr_14 = getelementptr [31 x i8]* %search_new_0_i, i64 0, i64 11" [search.cpp:558]   --->   Operation 264 'getelementptr' 'search_new_0_i_addr_14' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 265 [1/1] (0.00ns)   --->   "%search_new_0_i_addr_15 = getelementptr [31 x i8]* %search_new_0_i, i64 0, i64 12" [search.cpp:558]   --->   Operation 265 'getelementptr' 'search_new_0_i_addr_15' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 266 [1/1] (0.00ns)   --->   "%search_new_0_i_addr_16 = getelementptr [31 x i8]* %search_new_0_i, i64 0, i64 13" [search.cpp:558]   --->   Operation 266 'getelementptr' 'search_new_0_i_addr_16' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 267 [1/1] (0.00ns)   --->   "%search_new_0_i_addr_17 = getelementptr [31 x i8]* %search_new_0_i, i64 0, i64 14" [search.cpp:558]   --->   Operation 267 'getelementptr' 'search_new_0_i_addr_17' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 268 [1/1] (0.00ns)   --->   "%search_new_0_i_addr_18 = getelementptr [31 x i8]* %search_new_0_i, i64 0, i64 15" [search.cpp:558]   --->   Operation 268 'getelementptr' 'search_new_0_i_addr_18' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 269 [1/1] (0.00ns)   --->   "%search_new_0_i_addr_19 = getelementptr [31 x i8]* %search_new_0_i, i64 0, i64 16" [search.cpp:558]   --->   Operation 269 'getelementptr' 'search_new_0_i_addr_19' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 270 [1/1] (0.00ns)   --->   "%search_new_0_i_addr_20 = getelementptr [31 x i8]* %search_new_0_i, i64 0, i64 17" [search.cpp:558]   --->   Operation 270 'getelementptr' 'search_new_0_i_addr_20' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 271 [1/1] (0.00ns)   --->   "%search_new_0_i_addr_21 = getelementptr [31 x i8]* %search_new_0_i, i64 0, i64 18" [search.cpp:558]   --->   Operation 271 'getelementptr' 'search_new_0_i_addr_21' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 272 [1/1] (0.00ns)   --->   "%search_new_0_i_addr_22 = getelementptr [31 x i8]* %search_new_0_i, i64 0, i64 19" [search.cpp:558]   --->   Operation 272 'getelementptr' 'search_new_0_i_addr_22' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 273 [1/1] (0.00ns)   --->   "%search_new_0_i_addr_23 = getelementptr [31 x i8]* %search_new_0_i, i64 0, i64 20" [search.cpp:558]   --->   Operation 273 'getelementptr' 'search_new_0_i_addr_23' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 274 [1/1] (0.00ns)   --->   "%search_new_0_i_addr_24 = getelementptr [31 x i8]* %search_new_0_i, i64 0, i64 21" [search.cpp:558]   --->   Operation 274 'getelementptr' 'search_new_0_i_addr_24' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 275 [1/1] (0.00ns)   --->   "%search_new_0_i_addr_25 = getelementptr [31 x i8]* %search_new_0_i, i64 0, i64 22" [search.cpp:558]   --->   Operation 275 'getelementptr' 'search_new_0_i_addr_25' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 276 [1/1] (0.00ns)   --->   "%search_new_0_i_addr_26 = getelementptr [31 x i8]* %search_new_0_i, i64 0, i64 23" [search.cpp:558]   --->   Operation 276 'getelementptr' 'search_new_0_i_addr_26' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 277 [1/1] (0.00ns)   --->   "%search_new_0_i_addr_27 = getelementptr [31 x i8]* %search_new_0_i, i64 0, i64 24" [search.cpp:558]   --->   Operation 277 'getelementptr' 'search_new_0_i_addr_27' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 278 [1/1] (0.00ns)   --->   "%search_new_0_i_addr_28 = getelementptr [31 x i8]* %search_new_0_i, i64 0, i64 25" [search.cpp:558]   --->   Operation 278 'getelementptr' 'search_new_0_i_addr_28' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 279 [1/1] (0.00ns)   --->   "%search_new_0_i_addr_29 = getelementptr [31 x i8]* %search_new_0_i, i64 0, i64 26" [search.cpp:558]   --->   Operation 279 'getelementptr' 'search_new_0_i_addr_29' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 280 [1/1] (0.00ns)   --->   "%search_new_0_i_addr_30 = getelementptr [31 x i8]* %search_new_0_i, i64 0, i64 27" [search.cpp:558]   --->   Operation 280 'getelementptr' 'search_new_0_i_addr_30' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 281 [1/1] (0.00ns)   --->   "%search_new_0_i_addr_31 = getelementptr [31 x i8]* %search_new_0_i, i64 0, i64 28" [search.cpp:558]   --->   Operation 281 'getelementptr' 'search_new_0_i_addr_31' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 282 [1/1] (0.00ns)   --->   "%search_new_0_i_addr_32 = getelementptr [31 x i8]* %search_new_0_i, i64 0, i64 29" [search.cpp:558]   --->   Operation 282 'getelementptr' 'search_new_0_i_addr_32' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 283 [1/1] (0.00ns)   --->   "%search_new_0_i_addr_33 = getelementptr [31 x i8]* %search_new_0_i, i64 0, i64 30" [search.cpp:558]   --->   Operation 283 'getelementptr' 'search_new_0_i_addr_33' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 284 [1/1] (1.91ns)   --->   "%tmp_135 = sub i9 %tmp_164_cast, %tmp_163_cast" [search.cpp:579]   --->   Operation 284 'sub' 'tmp_135' <Predicate = true> <Delay = 1.91> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.91> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_17 : Operation 285 [1/1] (1.87ns)   --->   "%tmp_136 = add i7 %tmp_126, -3" [search.cpp:532]   --->   Operation 285 'add' 'tmp_136' <Predicate = true> <Delay = 1.87> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.91> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_17 : Operation 286 [1/1] (1.55ns)   --->   "%tmp_199_not = icmp ne i8 %n, %tmp_167_cast" [search.cpp:552]   --->   Operation 286 'icmp' 'tmp_199_not' <Predicate = true> <Delay = 1.55> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_17 : Operation 287 [1/1] (2.47ns)   --->   "%tmp_137 = icmp eq i32 %P1End_read_1, 0" [search.cpp:599]   --->   Operation 287 'icmp' 'tmp_137' <Predicate = true> <Delay = 2.47> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_17 : Operation 288 [1/1] (2.55ns)   --->   "%p_op = add i32 %P1End_read_1, -1" [search.cpp:603]   --->   Operation 288 'add' 'p_op' <Predicate = true> <Delay = 2.55> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.91> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_17 : Operation 289 [1/1] (0.69ns)   --->   "%tmp_138 = select i1 %tmp_137, i32 7999, i32 %p_op" [search.cpp:603]   --->   Operation 289 'select' 'tmp_138' <Predicate = true> <Delay = 0.69> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_17 : Operation 290 [1/1] (1.76ns)   --->   "store i1 false, i1* %zero"   --->   Operation 290 'store' <Predicate = true> <Delay = 1.76>
+ST_17 : Operation 291 [1/1] (1.76ns)   --->   "store i8 %search_new_0_depthP, i8* %search_new_0_depthP_1" [search.cpp:422]   --->   Operation 291 'store' <Predicate = true> <Delay = 1.76>
+ST_17 : Operation 292 [1/1] (1.76ns)   --->   "store i32 %P1Start_read_1, i32* %P1Start" [search.cpp:412]   --->   Operation 292 'store' <Predicate = true> <Delay = 1.76>
+ST_17 : Operation 293 [1/1] (1.76ns)   --->   "br label %6" [search.cpp:505]   --->   Operation 293 'br' <Predicate = true> <Delay = 1.76>
+
+State 18 <SV = 14> <Delay = 4.50>
+ST_18 : Operation 294 [1/1] (0.00ns)   --->   "%i1 = phi i8 [ 0, %._crit_edge2 ], [ %i_20, %._crit_edge5 ]"   --->   Operation 294 'phi' 'i1' <Predicate = true> <Delay = 0.00>
+ST_18 : Operation 295 [1/1] (1.55ns)   --->   "%tmp_139 = icmp slt i8 %i1, 18" [search.cpp:505]   --->   Operation 295 'icmp' 'tmp_139' <Predicate = true> <Delay = 1.55> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_18 : Operation 296 [1/1] (0.00ns)   --->   "br i1 %tmp_139, label %7, label %14" [search.cpp:505]   --->   Operation 296 'br' <Predicate = true> <Delay = 0.00>
+ST_18 : Operation 297 [1/1] (0.00ns)   --->   "%zero_load = load i1* %zero" [search.cpp:510]   --->   Operation 297 'load' 'zero_load' <Predicate = (tmp_139)> <Delay = 0.00>
+ST_18 : Operation 298 [1/1] (0.00ns)   --->   "%tmp_46 = call i32 (...)* @_ssdm_op_SpecRegionBegin([12 x i8]* @p_str9)" [search.cpp:506]   --->   Operation 298 'specregionbegin' 'tmp_46' <Predicate = (tmp_139)> <Delay = 0.00>
+ST_18 : Operation 299 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopTripCount(i32 0, i32 18, i32 9, [1 x i8]* @p_str1) nounwind" [search.cpp:507]   --->   Operation 299 'speclooptripcount' <Predicate = (tmp_139)> <Delay = 0.00>
+ST_18 : Operation 300 [1/1] (1.76ns)   --->   "br i1 %zero_load, label %._crit_edge5, label %8" [search.cpp:510]   --->   Operation 300 'br' <Predicate = (tmp_139)> <Delay = 1.76>
+ST_18 : Operation 301 [1/1] (1.24ns)   --->   "%p_i1 = select i1 %tmp_129, i8 %i, i8 %i1" [search.cpp:515]   --->   Operation 301 'select' 'p_i1' <Predicate = (tmp_139 & !zero_load)> <Delay = 1.24> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_18 : Operation 302 [1/1] (0.00ns)   --->   "%tmp_140 = sext i8 %p_i1 to i64" [search.cpp:524]   --->   Operation 302 'sext' 'tmp_140' <Predicate = (tmp_139 & !zero_load)> <Delay = 0.00>
+ST_18 : Operation 303 [1/1] (0.00ns)   --->   "%label_0_addr = getelementptr [18 x i3]* @label_0, i64 0, i64 %tmp_140" [search.cpp:524]   --->   Operation 303 'getelementptr' 'label_0_addr' <Predicate = (tmp_139 & !zero_load)> <Delay = 0.00>
+ST_18 : Operation 304 [2/2] (3.25ns)   --->   "%ax = load i3* %label_0_addr, align 1" [search.cpp:524]   --->   Operation 304 'load' 'ax' <Predicate = (tmp_139 & !zero_load)> <Delay = 3.25> <Core = "ROM_nP">   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 2> <Depth = 18> <ROM>
+ST_18 : Operation 305 [1/1] (0.00ns)   --->   "%label_1_addr = getelementptr [18 x i2]* @label_1, i64 0, i64 %tmp_140" [search.cpp:525]   --->   Operation 305 'getelementptr' 'label_1_addr' <Predicate = (tmp_139 & !zero_load)> <Delay = 0.00>
+ST_18 : Operation 306 [2/2] (3.25ns)   --->   "%po = load i2* %label_1_addr, align 1" [search.cpp:525]   --->   Operation 306 'load' 'po' <Predicate = (tmp_139 & !zero_load)> <Delay = 3.25> <Core = "ROM_nP">   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 2> <Depth = 18> <ROM>
+ST_18 : Operation 307 [1/1] (0.00ns)   --->   "%P1Start_load_1 = load i32* %P1Start"   --->   Operation 307 'load' 'P1Start_load_1' <Predicate = (!tmp_139)> <Delay = 0.00>
+ST_18 : Operation 308 [1/1] (0.00ns)   --->   "ret i32 %P1Start_load_1"   --->   Operation 308 'ret' <Predicate = (!tmp_139)> <Delay = 0.00>
+
+State 19 <SV = 15> <Delay = 3.25>
+ST_19 : Operation 309 [1/2] (3.25ns)   --->   "%ax = load i3* %label_0_addr, align 1" [search.cpp:524]   --->   Operation 309 'load' 'ax' <Predicate = true> <Delay = 3.25> <Core = "ROM_nP">   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 2> <Depth = 18> <ROM>
+ST_19 : Operation 310 [1/2] (3.25ns)   --->   "%po = load i2* %label_1_addr, align 1" [search.cpp:525]   --->   Operation 310 'load' 'po' <Predicate = true> <Delay = 3.25> <Core = "ROM_nP">   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 2> <Depth = 18> <ROM>
+
+State 20 <SV = 16> <Delay = 7.59>
+ST_20 : Operation 311 [1/1] (0.00ns)   --->   "%ax_cast7 = zext i3 %ax to i7" [search.cpp:524]   --->   Operation 311 'zext' 'ax_cast7' <Predicate = true> <Delay = 0.00>
+ST_20 : Operation 312 [1/1] (0.00ns)   --->   "%ax_cast6 = zext i3 %ax to i6" [search.cpp:524]   --->   Operation 312 'zext' 'ax_cast6' <Predicate = true> <Delay = 0.00>
+ST_20 : Operation 313 [1/1] (0.00ns)   --->   "%po_cast = zext i2 %po to i6" [search.cpp:525]   --->   Operation 313 'zext' 'po_cast' <Predicate = true> <Delay = 0.00>
+ST_20 : Operation 314 [1/1] (0.00ns)   --->   "%p_shl4 = call i5 @_ssdm_op_BitConcatenate.i5.i3.i2(i3 %ax, i2 0)" [search.cpp:526]   --->   Operation 314 'bitconcatenate' 'p_shl4' <Predicate = true> <Delay = 0.00>
+ST_20 : Operation 315 [1/1] (0.00ns)   --->   "%p_shl4_cast = zext i5 %p_shl4 to i6" [search.cpp:526]   --->   Operation 315 'zext' 'p_shl4_cast' <Predicate = true> <Delay = 0.00>
+ST_20 : Operation 316 [1/1] (1.78ns)   --->   "%tmp_141 = sub i6 %p_shl4_cast, %ax_cast6" [search.cpp:526]   --->   Operation 316 'sub' 'tmp_141' <Predicate = true> <Delay = 1.78> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.91> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_20 : Operation 317 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%tmp4 = add i6 %tmp_141, -1" [search.cpp:526]   --->   Operation 317 'add' 'tmp4' <Predicate = true> <Delay = 0.00> <Core = "TAddSub">   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.74> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_20 : Operation 318 [1/1] (3.49ns) (root node of TernaryAdder)   --->   "%mv = add i6 %po_cast, %tmp4" [search.cpp:526]   --->   Operation 318 'add' 'mv' <Predicate = true> <Delay = 3.49> <Core = "TAddSub">   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.74> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_20 : Operation 319 [1/1] (0.00ns)   --->   "%mv_cast = sext i6 %mv to i8" [search.cpp:526]   --->   Operation 319 'sext' 'mv_cast' <Predicate = true> <Delay = 0.00>
+ST_20 : Operation 320 [1/1] (2.32ns)   --->   "store i8 %mv_cast, i8* %search_new_0_i_addr_2, align 1" [search.cpp:526]   --->   Operation 320 'store' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 8000> <RAM>
+ST_20 : Operation 321 [1/1] (1.48ns)   --->   "%tmp_142 = icmp eq i7 %tmp_126, %ax_cast7" [search.cpp:532]   --->   Operation 321 'icmp' 'tmp_142' <Predicate = true> <Delay = 1.48> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_20 : Operation 322 [1/1] (0.97ns)   --->   "%or_cond = and i1 %tmp_131, %tmp_142" [search.cpp:532]   --->   Operation 322 'and' 'or_cond' <Predicate = true> <Delay = 0.97> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_20 : Operation 323 [1/1] (0.00ns)   --->   "br i1 %or_cond, label %._crit_edge6, label %9" [search.cpp:532]   --->   Operation 323 'br' <Predicate = true> <Delay = 0.00>
+ST_20 : Operation 324 [1/1] (1.48ns)   --->   "%tmp_143 = icmp ne i7 %tmp_136, %ax_cast7" [search.cpp:532]   --->   Operation 324 'icmp' 'tmp_143' <Predicate = (!or_cond)> <Delay = 1.48> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_20 : Operation 325 [1/1] (0.97ns)   --->   "%demorgan = or i1 %tmp_129, %tmp_143" [search.cpp:532]   --->   Operation 325 'or' 'demorgan' <Predicate = (!or_cond)> <Delay = 0.97> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_20 : Operation 326 [1/1] (0.00ns)   --->   "br i1 %demorgan, label %._crit_edge7, label %._crit_edge6" [search.cpp:532]   --->   Operation 326 'br' <Predicate = (!or_cond)> <Delay = 0.00>
+ST_20 : Operation 327 [1/1] (0.00ns)   --->   "%tmp_144 = sext i6 %mv to i64" [search.cpp:537]   --->   Operation 327 'sext' 'tmp_144' <Predicate = (!or_cond & demorgan)> <Delay = 0.00>
+ST_20 : Operation 328 [1/1] (0.00ns)   --->   "%twistMove3_addr_1 = getelementptr inbounds [18 x i16]* @twistMove3, i64 0, i64 %tmp_144" [search.cpp:537]   --->   Operation 328 'getelementptr' 'twistMove3_addr_1' <Predicate = (!or_cond & demorgan)> <Delay = 0.00>
+ST_20 : Operation 329 [2/2] (2.32ns)   --->   "%search_new_0_twist = load i16* %twistMove3_addr_1, align 2" [search.cpp:537]   --->   Operation 329 'load' 'search_new_0_twist' <Predicate = (!or_cond & demorgan)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 8000> <RAM>
+ST_20 : Operation 330 [1/1] (0.00ns)   --->   "%FRtoBR_Move3_addr_1 = getelementptr inbounds [18 x i16]* @FRtoBR_Move3, i64 0, i64 %tmp_144" [search.cpp:547]   --->   Operation 330 'getelementptr' 'FRtoBR_Move3_addr_1' <Predicate = (!or_cond & demorgan)> <Delay = 0.00>
+ST_20 : Operation 331 [2/2] (2.32ns)   --->   "%FRtoBR_Move3_load = load i16* %FRtoBR_Move3_addr_1, align 2" [search.cpp:547]   --->   Operation 331 'load' 'FRtoBR_Move3_load' <Predicate = (!or_cond & demorgan)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 8000> <RAM>
+ST_20 : Operation 332 [1/1] (0.00ns)   --->   "%flipMove3_addr_1 = getelementptr inbounds [18 x i16]* @flipMove3, i64 0, i64 %tmp_144" [search.cpp:548]   --->   Operation 332 'getelementptr' 'flipMove3_addr_1' <Predicate = (!or_cond & demorgan)> <Delay = 0.00>
+ST_20 : Operation 333 [2/2] (2.32ns)   --->   "%search_new_0_flip = load i16* %flipMove3_addr_1, align 2" [search.cpp:548]   --->   Operation 333 'load' 'search_new_0_flip' <Predicate = (!or_cond & demorgan)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 8000> <RAM>
+ST_20 : Operation 334 [1/1] (1.76ns)   --->   "store i1 %tmp_129, i1* %zero" [search.cpp:532]   --->   Operation 334 'store' <Predicate = (or_cond) | (!demorgan)> <Delay = 1.76>
+ST_20 : Operation 335 [1/1] (1.76ns)   --->   "br label %._crit_edge5" [search.cpp:534]   --->   Operation 335 'br' <Predicate = (or_cond) | (!demorgan)> <Delay = 1.76>
+
+State 21 <SV = 17> <Delay = 8.70>
+ST_21 : Operation 336 [1/2] (2.32ns)   --->   "%search_new_0_twist = load i16* %twistMove3_addr_1, align 2" [search.cpp:537]   --->   Operation 336 'load' 'search_new_0_twist' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 8000> <RAM>
+ST_21 : Operation 337 [1/2] (2.32ns)   --->   "%FRtoBR_Move3_load = load i16* %FRtoBR_Move3_addr_1, align 2" [search.cpp:547]   --->   Operation 337 'load' 'FRtoBR_Move3_load' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 8000> <RAM>
+ST_21 : Operation 338 [1/1] (0.00ns)   --->   "%sext3_cast = sext i16 %FRtoBR_Move3_load to i34" [search.cpp:547]   --->   Operation 338 'sext' 'sext3_cast' <Predicate = true> <Delay = 0.00>
+ST_21 : Operation 339 [1/1] (6.38ns)   --->   "%mul1 = mul i34 87382, %sext3_cast" [search.cpp:547]   --->   Operation 339 'mul' 'mul1' <Predicate = true> <Delay = 6.38> <Core = "DSP48">   --->   Core 61 'DSP48' <Latency = 0> <II = 1> <Delay = 6.38> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_21 : Operation 340 [1/1] (0.00ns)   --->   "%tmp_107 = trunc i34 %mul1 to i33" [search.cpp:547]   --->   Operation 340 'trunc' 'tmp_107' <Predicate = true> <Delay = 0.00>
+ST_21 : Operation 341 [1/1] (0.00ns)   --->   "%tmp_108 = call i1 @_ssdm_op_BitSelect.i1.i16.i32(i16 %FRtoBR_Move3_load, i32 15)" [search.cpp:547]   --->   Operation 341 'bitselect' 'tmp_108' <Predicate = true> <Delay = 0.00>
+ST_21 : Operation 342 [1/1] (0.00ns)   --->   "%tmp_110 = call i13 @_ssdm_op_PartSelect.i13.i34.i32.i32(i34 %mul1, i32 21, i32 33)" [search.cpp:547]   --->   Operation 342 'partselect' 'tmp_110' <Predicate = true> <Delay = 0.00>
+ST_21 : Operation 343 [1/2] (2.32ns)   --->   "%search_new_0_flip = load i16* %flipMove3_addr_1, align 2" [search.cpp:548]   --->   Operation 343 'load' 'search_new_0_flip' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 8000> <RAM>
+
+State 22 <SV = 18> <Delay = 8.04>
+ST_22 : Operation 344 [1/1] (2.59ns)   --->   "%neg_mul1 = sub i33 0, %tmp_107" [search.cpp:547]   --->   Operation 344 'sub' 'neg_mul1' <Predicate = (tmp_108)> <Delay = 2.59> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.91> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_22 : Operation 345 [1/1] (0.00ns) (grouped into LUT with out node neg_ti1)   --->   "%tmp_109 = call i12 @_ssdm_op_PartSelect.i12.i33.i32.i32(i33 %neg_mul1, i32 21, i32 32)" [search.cpp:547]   --->   Operation 345 'partselect' 'tmp_109' <Predicate = (tmp_108)> <Delay = 0.00>
+ST_22 : Operation 346 [1/1] (0.00ns) (grouped into LUT with out node neg_ti1)   --->   "%tmp_145 = sext i12 %tmp_109 to i16" [search.cpp:547]   --->   Operation 346 'sext' 'tmp_145' <Predicate = (tmp_108)> <Delay = 0.00>
+ST_22 : Operation 347 [1/1] (0.00ns)   --->   "%tmp_146 = sext i13 %tmp_110 to i16" [search.cpp:547]   --->   Operation 347 'sext' 'tmp_146' <Predicate = true> <Delay = 0.00>
+ST_22 : Operation 348 [1/1] (0.00ns) (grouped into LUT with out node neg_ti1)   --->   "%tmp_147 = select i1 %tmp_108, i16 %tmp_145, i16 %tmp_146" [search.cpp:547]   --->   Operation 348 'select' 'tmp_147' <Predicate = (tmp_108)> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_22 : Operation 349 [1/1] (1.67ns) (out node of the LUT)   --->   "%neg_ti1 = sub i16 0, %tmp_147" [search.cpp:547]   --->   Operation 349 'sub' 'neg_ti1' <Predicate = (tmp_108)> <Delay = 1.67> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.91> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_22 : Operation 350 [1/1] (0.75ns)   --->   "%search_new_0_slice = select i1 %tmp_108, i16 %neg_ti1, i16 %tmp_146" [search.cpp:547]   --->   Operation 350 'select' 'search_new_0_slice' <Predicate = true> <Delay = 0.75> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_22 : Operation 351 [1/1] (0.00ns)   --->   "%tmp_181_cast = sext i16 %search_new_0_flip to i25" [search.cpp:549]   --->   Operation 351 'sext' 'tmp_181_cast' <Predicate = true> <Delay = 0.00>
+ST_22 : Operation 352 [1/1] (3.36ns)   --->   "%tmp_148 = mul i25 495, %tmp_181_cast" [search.cpp:549]   --->   Operation 352 'mul' 'tmp_148' <Predicate = true> <Delay = 3.36> <Core = "DSP48">   --->   Core 61 'DSP48' <Latency = 0> <II = 1> <Delay = 6.38> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_22 : Operation 353 [1/1] (0.00ns)   --->   "%tmp_183_cast = sext i16 %search_new_0_slice to i25" [search.cpp:549]   --->   Operation 353 'sext' 'tmp_183_cast' <Predicate = true> <Delay = 0.00>
+ST_22 : Operation 354 [1/1] (3.02ns)   --->   "%tmp_149 = add i25 %tmp_183_cast, %tmp_148" [search.cpp:549]   --->   Operation 354 'add' 'tmp_149' <Predicate = true> <Delay = 3.02> <Core = "DSP48">   --->   Core 61 'DSP48' <Latency = 0> <II = 1> <Delay = 6.38> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_22 : Operation 355 [1/1] (0.00ns)   --->   "%tmp_185_cast = sext i16 %search_new_0_twist to i25" [search.cpp:549]   --->   Operation 355 'sext' 'tmp_185_cast' <Predicate = true> <Delay = 0.00>
+ST_22 : Operation 356 [1/1] (3.36ns)   --->   "%tmp_151 = mul i25 495, %tmp_185_cast" [search.cpp:549]   --->   Operation 356 'mul' 'tmp_151' <Predicate = true> <Delay = 3.36> <Core = "DSP48">   --->   Core 61 'DSP48' <Latency = 0> <II = 1> <Delay = 6.38> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_22 : Operation 357 [1/1] (3.02ns)   --->   "%tmp_152 = add i25 %tmp_183_cast, %tmp_151" [search.cpp:549]   --->   Operation 357 'add' 'tmp_152' <Predicate = true> <Delay = 3.02> <Core = "DSP48">   --->   Core 61 'DSP48' <Latency = 0> <II = 1> <Delay = 6.38> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+
+State 23 <SV = 19> <Delay = 5.56>
+ST_23 : Operation 358 [2/2] (5.56ns)   --->   "%tmp_150 = call fastcc i4 @getPruning.1(i16* %flipMove2, i31 %Slice_Flip_Prun2_off, i25 %tmp_149)" [search.cpp:549]   --->   Operation 358 'call' 'tmp_150' <Predicate = true> <Delay = 5.56> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_23 : Operation 359 [2/2] (5.56ns)   --->   "%tmp_159 = call fastcc i4 @getPruning(i16* %twistMove2, i31 %Slice_Twist_Prun2_of, i25 %tmp_152)" [search.cpp:549]   --->   Operation 359 'call' 'tmp_159' <Predicate = true> <Delay = 5.56> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 24 <SV = 20> <Delay = 7.33>
+ST_24 : Operation 360 [1/2] (5.01ns)   --->   "%tmp_150 = call fastcc i4 @getPruning.1(i16* %flipMove2, i31 %Slice_Flip_Prun2_off, i25 %tmp_149)" [search.cpp:549]   --->   Operation 360 'call' 'tmp_150' <Predicate = true> <Delay = 5.01> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_24 : Operation 361 [1/2] (5.01ns)   --->   "%tmp_159 = call fastcc i4 @getPruning(i16* %twistMove2, i31 %Slice_Twist_Prun2_of, i25 %tmp_152)" [search.cpp:549]   --->   Operation 361 'call' 'tmp_159' <Predicate = true> <Delay = 5.01> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_24 : Operation 362 [1/1] (1.30ns)   --->   "%tmp_153 = icmp ugt i4 %tmp_150, %tmp_159" [search.cpp:549]   --->   Operation 362 'icmp' 'tmp_153' <Predicate = true> <Delay = 1.30> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_24 : Operation 363 [1/1] (1.02ns)   --->   "%minDistPhase1 = select i1 %tmp_153, i4 %tmp_150, i4 %tmp_159" [search.cpp:549]   --->   Operation 363 'select' 'minDistPhase1' <Predicate = true> <Delay = 1.02> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+
+State 25 <SV = 21> <Delay = 5.02>
+ST_25 : Operation 364 [1/1] (1.30ns)   --->   "%p_not = icmp ne i4 %minDistPhase1, 0" [search.cpp:552]   --->   Operation 364 'icmp' 'p_not' <Predicate = true> <Delay = 1.30> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_25 : Operation 365 [1/1] (0.97ns)   --->   "%brmerge = or i1 %p_not, %tmp_133" [search.cpp:552]   --->   Operation 365 'or' 'brmerge' <Predicate = true> <Delay = 0.97> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_25 : Operation 366 [1/1] (0.97ns)   --->   "%brmerge1 = or i1 %brmerge, %tmp_199_not" [search.cpp:552]   --->   Operation 366 'or' 'brmerge1' <Predicate = true> <Delay = 0.97> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_25 : Operation 367 [1/1] (1.02ns)   --->   "%minDistPhase1_mux = select i1 %brmerge, i4 %minDistPhase1, i4 -6" [search.cpp:552]   --->   Operation 367 'select' 'minDistPhase1_mux' <Predicate = true> <Delay = 1.02> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_25 : Operation 368 [1/1] (1.76ns)   --->   "br i1 %brmerge1, label %._crit_edge10, label %10" [search.cpp:552]   --->   Operation 368 'br' <Predicate = true> <Delay = 1.76>
+ST_25 : Operation 369 [2/2] (2.32ns)   --->   "%tmp_i_0 = load i8* %search_new_0_i_addr_3, align 16" [search.cpp:558]   --->   Operation 369 'load' 'tmp_i_0' <Predicate = (!brmerge1)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 8000> <RAM>
+ST_25 : Operation 370 [1/1] (1.76ns)   --->   "store i8 %depthPhase1_cast, i8* %search_new_0_depthP_1"   --->   Operation 370 'store' <Predicate = (!brmerge1)> <Delay = 1.76>
+
+State 26 <SV = 22> <Delay = 2.32>
+ST_26 : Operation 371 [1/2] (2.32ns)   --->   "%tmp_i_0 = load i8* %search_new_0_i_addr_3, align 16" [search.cpp:558]   --->   Operation 371 'load' 'tmp_i_0' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 8000> <RAM>
+ST_26 : Operation 372 [2/2] (2.32ns)   --->   "%tmp_i_1 = load i8* %search_new_0_i_addr_4, align 1" [search.cpp:558]   --->   Operation 372 'load' 'tmp_i_1' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 8000> <RAM>
+ST_26 : Operation 373 [2/2] (2.32ns)   --->   "%tmp_i_2 = load i8* %search_new_0_i_addr_5, align 2" [search.cpp:558]   --->   Operation 373 'load' 'tmp_i_2' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 8000> <RAM>
+
+State 27 <SV = 23> <Delay = 2.32>
+ST_27 : Operation 374 [1/2] (2.32ns)   --->   "%tmp_i_1 = load i8* %search_new_0_i_addr_4, align 1" [search.cpp:558]   --->   Operation 374 'load' 'tmp_i_1' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 8000> <RAM>
+ST_27 : Operation 375 [1/2] (2.32ns)   --->   "%tmp_i_2 = load i8* %search_new_0_i_addr_5, align 2" [search.cpp:558]   --->   Operation 375 'load' 'tmp_i_2' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 8000> <RAM>
+ST_27 : Operation 376 [2/2] (2.32ns)   --->   "%tmp_i_3 = load i8* %search_new_0_i_addr_6, align 1" [search.cpp:558]   --->   Operation 376 'load' 'tmp_i_3' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 8000> <RAM>
+ST_27 : Operation 377 [2/2] (2.32ns)   --->   "%tmp_i_4 = load i8* %search_new_0_i_addr_7, align 4" [search.cpp:558]   --->   Operation 377 'load' 'tmp_i_4' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 8000> <RAM>
+
+State 28 <SV = 24> <Delay = 2.32>
+ST_28 : Operation 378 [1/2] (2.32ns)   --->   "%tmp_i_3 = load i8* %search_new_0_i_addr_6, align 1" [search.cpp:558]   --->   Operation 378 'load' 'tmp_i_3' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 8000> <RAM>
+ST_28 : Operation 379 [1/2] (2.32ns)   --->   "%tmp_i_4 = load i8* %search_new_0_i_addr_7, align 4" [search.cpp:558]   --->   Operation 379 'load' 'tmp_i_4' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 8000> <RAM>
+ST_28 : Operation 380 [2/2] (2.32ns)   --->   "%tmp_i_5 = load i8* %search_new_0_i_addr_8, align 1" [search.cpp:558]   --->   Operation 380 'load' 'tmp_i_5' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 8000> <RAM>
+ST_28 : Operation 381 [2/2] (2.32ns)   --->   "%tmp_i_6 = load i8* %search_new_0_i_addr_9, align 2" [search.cpp:558]   --->   Operation 381 'load' 'tmp_i_6' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 8000> <RAM>
+
+State 29 <SV = 25> <Delay = 2.32>
+ST_29 : Operation 382 [1/2] (2.32ns)   --->   "%tmp_i_5 = load i8* %search_new_0_i_addr_8, align 1" [search.cpp:558]   --->   Operation 382 'load' 'tmp_i_5' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 8000> <RAM>
+ST_29 : Operation 383 [1/2] (2.32ns)   --->   "%tmp_i_6 = load i8* %search_new_0_i_addr_9, align 2" [search.cpp:558]   --->   Operation 383 'load' 'tmp_i_6' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 8000> <RAM>
+ST_29 : Operation 384 [2/2] (2.32ns)   --->   "%tmp_i_7 = load i8* %search_new_0_i_addr_10, align 1" [search.cpp:558]   --->   Operation 384 'load' 'tmp_i_7' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 8000> <RAM>
+ST_29 : Operation 385 [2/2] (2.32ns)   --->   "%tmp_i_8 = load i8* %search_new_0_i_addr_11, align 8" [search.cpp:558]   --->   Operation 385 'load' 'tmp_i_8' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 8000> <RAM>
+
+State 30 <SV = 26> <Delay = 2.32>
+ST_30 : Operation 386 [1/2] (2.32ns)   --->   "%tmp_i_7 = load i8* %search_new_0_i_addr_10, align 1" [search.cpp:558]   --->   Operation 386 'load' 'tmp_i_7' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 8000> <RAM>
+ST_30 : Operation 387 [1/2] (2.32ns)   --->   "%tmp_i_8 = load i8* %search_new_0_i_addr_11, align 8" [search.cpp:558]   --->   Operation 387 'load' 'tmp_i_8' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 8000> <RAM>
+ST_30 : Operation 388 [2/2] (2.32ns)   --->   "%tmp_i_9 = load i8* %search_new_0_i_addr_12, align 1" [search.cpp:558]   --->   Operation 388 'load' 'tmp_i_9' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 8000> <RAM>
+ST_30 : Operation 389 [2/2] (2.32ns)   --->   "%tmp_i_10 = load i8* %search_new_0_i_addr_13, align 2" [search.cpp:558]   --->   Operation 389 'load' 'tmp_i_10' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 8000> <RAM>
+
+State 31 <SV = 27> <Delay = 2.32>
+ST_31 : Operation 390 [1/2] (2.32ns)   --->   "%tmp_i_9 = load i8* %search_new_0_i_addr_12, align 1" [search.cpp:558]   --->   Operation 390 'load' 'tmp_i_9' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 8000> <RAM>
+ST_31 : Operation 391 [1/2] (2.32ns)   --->   "%tmp_i_10 = load i8* %search_new_0_i_addr_13, align 2" [search.cpp:558]   --->   Operation 391 'load' 'tmp_i_10' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 8000> <RAM>
+ST_31 : Operation 392 [2/2] (2.32ns)   --->   "%tmp_i_11 = load i8* %search_new_0_i_addr_14, align 1" [search.cpp:558]   --->   Operation 392 'load' 'tmp_i_11' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 8000> <RAM>
+ST_31 : Operation 393 [2/2] (2.32ns)   --->   "%tmp_i_12 = load i8* %search_new_0_i_addr_15, align 4" [search.cpp:558]   --->   Operation 393 'load' 'tmp_i_12' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 8000> <RAM>
+
+State 32 <SV = 28> <Delay = 2.32>
+ST_32 : Operation 394 [1/2] (2.32ns)   --->   "%tmp_i_11 = load i8* %search_new_0_i_addr_14, align 1" [search.cpp:558]   --->   Operation 394 'load' 'tmp_i_11' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 8000> <RAM>
+ST_32 : Operation 395 [1/2] (2.32ns)   --->   "%tmp_i_12 = load i8* %search_new_0_i_addr_15, align 4" [search.cpp:558]   --->   Operation 395 'load' 'tmp_i_12' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 8000> <RAM>
+ST_32 : Operation 396 [2/2] (2.32ns)   --->   "%tmp_i_13 = load i8* %search_new_0_i_addr_16, align 1" [search.cpp:558]   --->   Operation 396 'load' 'tmp_i_13' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 8000> <RAM>
+ST_32 : Operation 397 [2/2] (2.32ns)   --->   "%tmp_i_14 = load i8* %search_new_0_i_addr_17, align 2" [search.cpp:558]   --->   Operation 397 'load' 'tmp_i_14' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 8000> <RAM>
+
+State 33 <SV = 29> <Delay = 2.32>
+ST_33 : Operation 398 [1/2] (2.32ns)   --->   "%tmp_i_13 = load i8* %search_new_0_i_addr_16, align 1" [search.cpp:558]   --->   Operation 398 'load' 'tmp_i_13' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 8000> <RAM>
+ST_33 : Operation 399 [1/2] (2.32ns)   --->   "%tmp_i_14 = load i8* %search_new_0_i_addr_17, align 2" [search.cpp:558]   --->   Operation 399 'load' 'tmp_i_14' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 8000> <RAM>
+ST_33 : Operation 400 [2/2] (2.32ns)   --->   "%tmp_i_15 = load i8* %search_new_0_i_addr_18, align 1" [search.cpp:558]   --->   Operation 400 'load' 'tmp_i_15' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 8000> <RAM>
+ST_33 : Operation 401 [2/2] (2.32ns)   --->   "%tmp_i_16 = load i8* %search_new_0_i_addr_19, align 16" [search.cpp:558]   --->   Operation 401 'load' 'tmp_i_16' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 8000> <RAM>
+
+State 34 <SV = 30> <Delay = 2.32>
+ST_34 : Operation 402 [1/2] (2.32ns)   --->   "%tmp_i_15 = load i8* %search_new_0_i_addr_18, align 1" [search.cpp:558]   --->   Operation 402 'load' 'tmp_i_15' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 8000> <RAM>
+ST_34 : Operation 403 [1/2] (2.32ns)   --->   "%tmp_i_16 = load i8* %search_new_0_i_addr_19, align 16" [search.cpp:558]   --->   Operation 403 'load' 'tmp_i_16' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 8000> <RAM>
+ST_34 : Operation 404 [2/2] (2.32ns)   --->   "%tmp_i_17 = load i8* %search_new_0_i_addr_20, align 1" [search.cpp:558]   --->   Operation 404 'load' 'tmp_i_17' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 8000> <RAM>
+ST_34 : Operation 405 [2/2] (2.32ns)   --->   "%tmp_i_18 = load i8* %search_new_0_i_addr_21, align 2" [search.cpp:558]   --->   Operation 405 'load' 'tmp_i_18' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 8000> <RAM>
+
+State 35 <SV = 31> <Delay = 2.32>
+ST_35 : Operation 406 [1/2] (2.32ns)   --->   "%tmp_i_17 = load i8* %search_new_0_i_addr_20, align 1" [search.cpp:558]   --->   Operation 406 'load' 'tmp_i_17' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 8000> <RAM>
+ST_35 : Operation 407 [1/2] (2.32ns)   --->   "%tmp_i_18 = load i8* %search_new_0_i_addr_21, align 2" [search.cpp:558]   --->   Operation 407 'load' 'tmp_i_18' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 8000> <RAM>
+ST_35 : Operation 408 [2/2] (2.32ns)   --->   "%tmp_i_19 = load i8* %search_new_0_i_addr_22, align 1" [search.cpp:558]   --->   Operation 408 'load' 'tmp_i_19' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 8000> <RAM>
+ST_35 : Operation 409 [2/2] (2.32ns)   --->   "%tmp_i_20 = load i8* %search_new_0_i_addr_23, align 4" [search.cpp:558]   --->   Operation 409 'load' 'tmp_i_20' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 8000> <RAM>
+
+State 36 <SV = 32> <Delay = 2.32>
+ST_36 : Operation 410 [1/2] (2.32ns)   --->   "%tmp_i_19 = load i8* %search_new_0_i_addr_22, align 1" [search.cpp:558]   --->   Operation 410 'load' 'tmp_i_19' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 8000> <RAM>
+ST_36 : Operation 411 [1/2] (2.32ns)   --->   "%tmp_i_20 = load i8* %search_new_0_i_addr_23, align 4" [search.cpp:558]   --->   Operation 411 'load' 'tmp_i_20' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 8000> <RAM>
+ST_36 : Operation 412 [2/2] (2.32ns)   --->   "%tmp_i_21 = load i8* %search_new_0_i_addr_24, align 1" [search.cpp:558]   --->   Operation 412 'load' 'tmp_i_21' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 8000> <RAM>
+ST_36 : Operation 413 [2/2] (2.32ns)   --->   "%tmp_i_22 = load i8* %search_new_0_i_addr_25, align 2" [search.cpp:558]   --->   Operation 413 'load' 'tmp_i_22' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 8000> <RAM>
+
+State 37 <SV = 33> <Delay = 2.32>
+ST_37 : Operation 414 [1/2] (2.32ns)   --->   "%tmp_i_21 = load i8* %search_new_0_i_addr_24, align 1" [search.cpp:558]   --->   Operation 414 'load' 'tmp_i_21' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 8000> <RAM>
+ST_37 : Operation 415 [1/2] (2.32ns)   --->   "%tmp_i_22 = load i8* %search_new_0_i_addr_25, align 2" [search.cpp:558]   --->   Operation 415 'load' 'tmp_i_22' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 8000> <RAM>
+ST_37 : Operation 416 [2/2] (2.32ns)   --->   "%tmp_i_23 = load i8* %search_new_0_i_addr_26, align 1" [search.cpp:558]   --->   Operation 416 'load' 'tmp_i_23' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 8000> <RAM>
+ST_37 : Operation 417 [2/2] (2.32ns)   --->   "%tmp_i_24 = load i8* %search_new_0_i_addr_27, align 8" [search.cpp:558]   --->   Operation 417 'load' 'tmp_i_24' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 8000> <RAM>
+
+State 38 <SV = 34> <Delay = 2.32>
+ST_38 : Operation 418 [1/2] (2.32ns)   --->   "%tmp_i_23 = load i8* %search_new_0_i_addr_26, align 1" [search.cpp:558]   --->   Operation 418 'load' 'tmp_i_23' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 8000> <RAM>
+ST_38 : Operation 419 [1/2] (2.32ns)   --->   "%tmp_i_24 = load i8* %search_new_0_i_addr_27, align 8" [search.cpp:558]   --->   Operation 419 'load' 'tmp_i_24' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 8000> <RAM>
+ST_38 : Operation 420 [2/2] (2.32ns)   --->   "%tmp_i_25 = load i8* %search_new_0_i_addr_28, align 1" [search.cpp:558]   --->   Operation 420 'load' 'tmp_i_25' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 8000> <RAM>
+ST_38 : Operation 421 [2/2] (2.32ns)   --->   "%tmp_i_26 = load i8* %search_new_0_i_addr_29, align 2" [search.cpp:558]   --->   Operation 421 'load' 'tmp_i_26' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 8000> <RAM>
+
+State 39 <SV = 35> <Delay = 2.32>
+ST_39 : Operation 422 [1/2] (2.32ns)   --->   "%tmp_i_25 = load i8* %search_new_0_i_addr_28, align 1" [search.cpp:558]   --->   Operation 422 'load' 'tmp_i_25' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 8000> <RAM>
+ST_39 : Operation 423 [1/2] (2.32ns)   --->   "%tmp_i_26 = load i8* %search_new_0_i_addr_29, align 2" [search.cpp:558]   --->   Operation 423 'load' 'tmp_i_26' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 8000> <RAM>
+ST_39 : Operation 424 [2/2] (2.32ns)   --->   "%tmp_i_27 = load i8* %search_new_0_i_addr_30, align 1" [search.cpp:558]   --->   Operation 424 'load' 'tmp_i_27' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 8000> <RAM>
+ST_39 : Operation 425 [2/2] (2.32ns)   --->   "%tmp_i_28 = load i8* %search_new_0_i_addr_31, align 4" [search.cpp:558]   --->   Operation 425 'load' 'tmp_i_28' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 8000> <RAM>
+
+State 40 <SV = 36> <Delay = 2.32>
+ST_40 : Operation 426 [1/2] (2.32ns)   --->   "%tmp_i_27 = load i8* %search_new_0_i_addr_30, align 1" [search.cpp:558]   --->   Operation 426 'load' 'tmp_i_27' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 8000> <RAM>
+ST_40 : Operation 427 [1/2] (2.32ns)   --->   "%tmp_i_28 = load i8* %search_new_0_i_addr_31, align 4" [search.cpp:558]   --->   Operation 427 'load' 'tmp_i_28' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 8000> <RAM>
+ST_40 : Operation 428 [2/2] (2.32ns)   --->   "%tmp_i_29 = load i8* %search_new_0_i_addr_32, align 1" [search.cpp:558]   --->   Operation 428 'load' 'tmp_i_29' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 8000> <RAM>
+ST_40 : Operation 429 [2/2] (2.32ns)   --->   "%tmp_i_30 = load i8* %search_new_0_i_addr_33, align 2" [search.cpp:558]   --->   Operation 429 'load' 'tmp_i_30' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 8000> <RAM>
+
+State 41 <SV = 37> <Delay = 5.95>
+ST_41 : Operation 430 [1/2] (2.32ns)   --->   "%tmp_i_29 = load i8* %search_new_0_i_addr_32, align 1" [search.cpp:558]   --->   Operation 430 'load' 'tmp_i_29' <Predicate = (!brmerge1)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 8000> <RAM>
+ST_41 : Operation 431 [1/2] (2.32ns)   --->   "%tmp_i_30 = load i8* %search_new_0_i_addr_33, align 2" [search.cpp:558]   --->   Operation 431 'load' 'tmp_i_30' <Predicate = (!brmerge1)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 8000> <RAM>
+ST_41 : Operation 432 [1/1] (3.63ns)   --->   "call void @_ssdm_op_Write.ap_fifo.volatile.i16P.i16P.i16P.i1P.i16P.i16P.i16P.i8P.i8P.i8P.i8P.i8P.i8P.i8P.i8P.i8P.i8P.i8P.i8P.i8P.i8P.i8P.i8P.i8P.i8P.i8P.i8P.i8P.i8P.i8P.i8P.i8P.i8P.i8P.i8P.i8P.i8P.i8P.i8P.i8P(i16* @P2Buffer_V_flip, i16* @P2Buffer_V_twist, i16* @P2Buffer_V_slice, i1* @P2Buffer_V_parity, i16* @P2Buffer_V_URFtoDLF, i16* @P2Buffer_V_FRtoBR, i16* @P2Buffer_V_URtoDF, i8* @P2Buffer_V_depthPhas, i8* @P2Buffer_V_n, i8* @P2Buffer_V_i_0, i8* @P2Buffer_V_i_1, i8* @P2Buffer_V_i_2, i8* @P2Buffer_V_i_3, i8* @P2Buffer_V_i_4, i8* @P2Buffer_V_i_5, i8* @P2Buffer_V_i_6, i8* @P2Buffer_V_i_7, i8* @P2Buffer_V_i_8, i8* @P2Buffer_V_i_9, i8* @P2Buffer_V_i_10, i8* @P2Buffer_V_i_11, i8* @P2Buffer_V_i_12, i8* @P2Buffer_V_i_13, i8* @P2Buffer_V_i_14, i8* @P2Buffer_V_i_15, i8* @P2Buffer_V_i_16, i8* @P2Buffer_V_i_17, i8* @P2Buffer_V_i_18, i8* @P2Buffer_V_i_19, i8* @P2Buffer_V_i_20, i8* @P2Buffer_V_i_21, i8* @P2Buffer_V_i_22, i8* @P2Buffer_V_i_23, i8* @P2Buffer_V_i_24, i8* @P2Buffer_V_i_25, i8* @P2Buffer_V_i_26, i8* @P2Buffer_V_i_27, i8* @P2Buffer_V_i_28, i8* @P2Buffer_V_i_29, i8* @P2Buffer_V_i_30, i16 %search_new_0_flip, i16 %search_new_0_twist, i16 %search_new_0_slice, i1 undef, i16 undef, i16 undef, i16 undef, i8 %depthPhase1_cast, i8 %n, i8 %tmp_i_0, i8 %tmp_i_1, i8 %tmp_i_2, i8 %tmp_i_3, i8 %tmp_i_4, i8 %tmp_i_5, i8 %tmp_i_6, i8 %tmp_i_7, i8 %tmp_i_8, i8 %tmp_i_9, i8 %tmp_i_10, i8 %tmp_i_11, i8 %tmp_i_12, i8 %tmp_i_13, i8 %tmp_i_14, i8 %tmp_i_15, i8 %tmp_i_16, i8 %tmp_i_17, i8 %tmp_i_18, i8 %tmp_i_19, i8 %tmp_i_20, i8 %tmp_i_21, i8 %tmp_i_22, i8 %tmp_i_23, i8 %tmp_i_24, i8 %tmp_i_25, i8 %tmp_i_26, i8 %tmp_i_27, i8 %tmp_i_28, i8 %tmp_i_29, i8 %tmp_i_30)" [search.cpp:558]   --->   Operation 432 'write' <Predicate = (!brmerge1)> <Delay = 3.63> <Core = "FIFO_SRL">   --->   Core 36 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 16> <Depth = 0> <FIFO>
+ST_41 : Operation 433 [1/1] (1.76ns)   --->   "br label %._crit_edge10" [search.cpp:571]   --->   Operation 433 'br' <Predicate = (!brmerge1)> <Delay = 1.76>
+ST_41 : Operation 434 [1/1] (0.00ns) (grouped into LUT with out node tmp_154)   --->   "%minDistPhase = phi i4 [ %minDistPhase1_mux, %._crit_edge7 ], [ -6, %10 ]" [search.cpp:552]   --->   Operation 434 'phi' 'minDistPhase' <Predicate = true> <Delay = 0.00>
+ST_41 : Operation 435 [1/1] (0.00ns) (grouped into LUT with out node tmp_154)   --->   "%tmp_189_cast = zext i4 %minDistPhase to i9" [search.cpp:579]   --->   Operation 435 'zext' 'tmp_189_cast' <Predicate = true> <Delay = 0.00>
+ST_41 : Operation 436 [1/1] (1.66ns) (out node of the LUT)   --->   "%tmp_154 = icmp sgt i9 %tmp_135, %tmp_189_cast" [search.cpp:579]   --->   Operation 436 'icmp' 'tmp_154' <Predicate = true> <Delay = 1.66> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_41 : Operation 437 [1/1] (0.00ns)   --->   "br i1 %tmp_154, label %11, label %._crit_edge12" [search.cpp:579]   --->   Operation 437 'br' <Predicate = true> <Delay = 0.00>
+ST_41 : Operation 438 [1/1] (0.00ns)   --->   "%P1Start_load_2 = load i32* %P1Start"   --->   Operation 438 'load' 'P1Start_load_2' <Predicate = (tmp_154)> <Delay = 0.00>
+ST_41 : Operation 439 [1/1] (0.00ns)   --->   "%tmp_155 = sext i32 %P1Start_load_2 to i64" [search.cpp:583]   --->   Operation 439 'sext' 'tmp_155' <Predicate = (tmp_154)> <Delay = 0.00>
+ST_41 : Operation 440 [1/1] (0.00ns)   --->   "%tmp_111 = trunc i32 %P1Start_load_2 to i19"   --->   Operation 440 'trunc' 'tmp_111' <Predicate = (tmp_154)> <Delay = 0.00>
+ST_41 : Operation 441 [1/1] (0.00ns)   --->   "%tmp_112 = trunc i32 %P1Start_load_2 to i14"   --->   Operation 441 'trunc' 'tmp_112' <Predicate = (tmp_154)> <Delay = 0.00>
+ST_41 : Operation 442 [1/1] (0.00ns)   --->   "%p_shl13_cast = call i19 @_ssdm_op_BitConcatenate.i19.i14.i5(i14 %tmp_112, i5 0)" [search.cpp:118->search.cpp:583]   --->   Operation 442 'bitconcatenate' 'p_shl13_cast' <Predicate = (tmp_154)> <Delay = 0.00>
+ST_41 : Operation 443 [1/1] (2.16ns)   --->   "%tmp_160 = sub i19 %p_shl13_cast, %tmp_111" [search.cpp:118->search.cpp:583]   --->   Operation 443 'sub' 'tmp_160' <Predicate = (tmp_154)> <Delay = 2.16> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.91> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_41 : Operation 444 [1/1] (0.00ns)   --->   "%P1Buffer_0_flip_add_1 = getelementptr [8000 x i16]* %P1Buffer_0_flip, i64 0, i64 %tmp_155" [search.cpp:583]   --->   Operation 444 'getelementptr' 'P1Buffer_0_flip_add_1' <Predicate = (tmp_154)> <Delay = 0.00>
+ST_41 : Operation 445 [1/1] (0.00ns)   --->   "%P1Buffer_0_twist_ad_1 = getelementptr [8000 x i16]* %P1Buffer_0_twist, i64 0, i64 %tmp_155" [search.cpp:583]   --->   Operation 445 'getelementptr' 'P1Buffer_0_twist_ad_1' <Predicate = (tmp_154)> <Delay = 0.00>
+ST_41 : Operation 446 [1/1] (0.00ns)   --->   "%P1Buffer_0_slice_ad_1 = getelementptr [8000 x i16]* %P1Buffer_0_slice, i64 0, i64 %tmp_155" [search.cpp:583]   --->   Operation 446 'getelementptr' 'P1Buffer_0_slice_ad_1' <Predicate = (tmp_154)> <Delay = 0.00>
+ST_41 : Operation 447 [1/1] (0.00ns)   --->   "%P1Buffer_0_depthPha_2 = getelementptr [8000 x i8]* %P1Buffer_0_depthPha, i64 0, i64 %tmp_155" [search.cpp:583]   --->   Operation 447 'getelementptr' 'P1Buffer_0_depthPha_2' <Predicate = (tmp_154)> <Delay = 0.00>
+ST_41 : Operation 448 [1/1] (0.00ns)   --->   "%P1Buffer_0_n_addr_1 = getelementptr [8000 x i8]* %P1Buffer_0_n, i64 0, i64 %tmp_155" [search.cpp:583]   --->   Operation 448 'getelementptr' 'P1Buffer_0_n_addr_1' <Predicate = (tmp_154)> <Delay = 0.00>
+ST_41 : Operation 449 [1/1] (1.76ns)   --->   "br label %12" [search.cpp:115->search.cpp:583]   --->   Operation 449 'br' <Predicate = (tmp_154)> <Delay = 1.76>
+
+State 42 <SV = 38> <Delay = 8.19>
+ST_42 : Operation 450 [1/1] (0.00ns)   --->   "%i_i1 = phi i5 [ 0, %11 ], [ %i_19, %13 ]"   --->   Operation 450 'phi' 'i_i1' <Predicate = true> <Delay = 0.00>
+ST_42 : Operation 451 [1/1] (1.36ns)   --->   "%exitcond_i2 = icmp eq i5 %i_i1, -1" [search.cpp:115->search.cpp:583]   --->   Operation 451 'icmp' 'exitcond_i2' <Predicate = true> <Delay = 1.36> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_42 : Operation 452 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopTripCount(i64 31, i64 31, i64 31)"   --->   Operation 452 'speclooptripcount' <Predicate = true> <Delay = 0.00>
+ST_42 : Operation 453 [1/1] (1.78ns)   --->   "%i_19 = add i5 %i_i1, 1" [search.cpp:115->search.cpp:583]   --->   Operation 453 'add' 'i_19' <Predicate = true> <Delay = 1.78> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.91> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_42 : Operation 454 [1/1] (0.00ns)   --->   "br i1 %exitcond_i2, label %storeP1.exit, label %13" [search.cpp:115->search.cpp:583]   --->   Operation 454 'br' <Predicate = true> <Delay = 0.00>
+ST_42 : Operation 455 [1/1] (0.00ns)   --->   "%tmp_i3 = zext i5 %i_i1 to i64" [search.cpp:118->search.cpp:583]   --->   Operation 455 'zext' 'tmp_i3' <Predicate = (!exitcond_i2)> <Delay = 0.00>
+ST_42 : Operation 456 [1/1] (0.00ns)   --->   "%tmp_i3_cast = zext i5 %i_i1 to i19" [search.cpp:118->search.cpp:583]   --->   Operation 456 'zext' 'tmp_i3_cast' <Predicate = (!exitcond_i2)> <Delay = 0.00>
+ST_42 : Operation 457 [1/1] (2.16ns)   --->   "%tmp_161 = add i19 %tmp_160, %tmp_i3_cast" [search.cpp:118->search.cpp:583]   --->   Operation 457 'add' 'tmp_161' <Predicate = (!exitcond_i2)> <Delay = 2.16> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.91> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_42 : Operation 458 [1/1] (0.00ns)   --->   "%search_new_0_i_addr_34 = getelementptr [31 x i8]* %search_new_0_i, i64 0, i64 %tmp_i3" [search.cpp:118->search.cpp:583]   --->   Operation 458 'getelementptr' 'search_new_0_i_addr_34' <Predicate = (!exitcond_i2)> <Delay = 0.00>
+ST_42 : Operation 459 [2/2] (2.32ns)   --->   "%search_new_0_i_load = load i8* %search_new_0_i_addr_34, align 1" [search.cpp:118->search.cpp:583]   --->   Operation 459 'load' 'search_new_0_i_load' <Predicate = (!exitcond_i2)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 8000> <RAM>
+ST_42 : Operation 460 [1/1] (0.00ns)   --->   "%P1Start_load = load i32* %P1Start" [search.cpp:591]   --->   Operation 460 'load' 'P1Start_load' <Predicate = (exitcond_i2)> <Delay = 0.00>
+ST_42 : Operation 461 [1/1] (0.00ns)   --->   "%search_new_0_depthP_2 = load i8* %search_new_0_depthP_1" [search.cpp:583]   --->   Operation 461 'load' 'search_new_0_depthP_2' <Predicate = (exitcond_i2)> <Delay = 0.00>
+ST_42 : Operation 462 [1/1] (3.25ns)   --->   "store i16 %search_new_0_flip, i16* %P1Buffer_0_flip_add_1, align 2" [search.cpp:583]   --->   Operation 462 'store' <Predicate = (exitcond_i2)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 8000> <RAM>
+ST_42 : Operation 463 [1/1] (3.25ns)   --->   "store i16 %search_new_0_twist, i16* %P1Buffer_0_twist_ad_1, align 2" [search.cpp:583]   --->   Operation 463 'store' <Predicate = (exitcond_i2)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 8000> <RAM>
+ST_42 : Operation 464 [1/1] (3.25ns)   --->   "store i16 %search_new_0_slice, i16* %P1Buffer_0_slice_ad_1, align 2" [search.cpp:583]   --->   Operation 464 'store' <Predicate = (exitcond_i2)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 8000> <RAM>
+ST_42 : Operation 465 [1/1] (3.25ns)   --->   "store i8 %search_new_0_depthP_2, i8* %P1Buffer_0_depthPha_2, align 1" [search.cpp:583]   --->   Operation 465 'store' <Predicate = (exitcond_i2)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 8000> <RAM>
+ST_42 : Operation 466 [1/1] (3.25ns)   --->   "store i8 %n, i8* %P1Buffer_0_n_addr_1, align 1" [search.cpp:583]   --->   Operation 466 'store' <Predicate = (exitcond_i2)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 8000> <RAM>
+ST_42 : Operation 467 [1/1] (2.55ns)   --->   "%tmp_156 = add nsw i32 %P1Start_load, 1" [search.cpp:591]   --->   Operation 467 'add' 'tmp_156' <Predicate = (exitcond_i2)> <Delay = 2.55> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.91> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_42 : Operation 468 [1/1] (2.47ns)   --->   "%tmp_157 = icmp eq i32 %tmp_156, 8000" [search.cpp:592]   --->   Operation 468 'icmp' 'tmp_157' <Predicate = (exitcond_i2)> <Delay = 2.47> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_42 : Operation 469 [1/1] (0.69ns)   --->   "%p_s = select i1 %tmp_157, i32 0, i32 %tmp_156" [search.cpp:592]   --->   Operation 469 'select' 'p_s' <Predicate = (exitcond_i2)> <Delay = 0.69> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_42 : Operation 470 [1/1] (2.47ns)   --->   "%tmp_158 = icmp eq i32 %p_s, %P1End_read_1" [search.cpp:596]   --->   Operation 470 'icmp' 'tmp_158' <Predicate = (exitcond_i2)> <Delay = 2.47> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+
+State 43 <SV = 39> <Delay = 5.57>
+ST_43 : Operation 471 [1/1] (0.00ns)   --->   "%tmp_176_cast = sext i19 %tmp_161 to i64" [search.cpp:118->search.cpp:583]   --->   Operation 471 'sext' 'tmp_176_cast' <Predicate = true> <Delay = 0.00>
+ST_43 : Operation 472 [1/1] (0.00ns)   --->   "%P1Buffer_0_i_addr_1 = getelementptr [248000 x i8]* %P1Buffer_0_i, i64 0, i64 %tmp_176_cast" [search.cpp:118->search.cpp:583]   --->   Operation 472 'getelementptr' 'P1Buffer_0_i_addr_1' <Predicate = true> <Delay = 0.00>
+ST_43 : Operation 473 [1/2] (2.32ns)   --->   "%search_new_0_i_load = load i8* %search_new_0_i_addr_34, align 1" [search.cpp:118->search.cpp:583]   --->   Operation 473 'load' 'search_new_0_i_load' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 8000> <RAM>
+ST_43 : Operation 474 [1/1] (3.25ns)   --->   "store i8 %search_new_0_i_load, i8* %P1Buffer_0_i_addr_1, align 1" [search.cpp:118->search.cpp:583]   --->   Operation 474 'store' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 8000> <RAM>
+ST_43 : Operation 475 [1/1] (0.00ns)   --->   "br label %12" [search.cpp:115->search.cpp:583]   --->   Operation 475 'br' <Predicate = true> <Delay = 0.00>
+
+State 44 <SV = 39> <Delay = 3.68>
+ST_44 : Operation 476 [1/1] (0.69ns)   --->   "%tmp_213_s = select i1 %tmp_158, i32 %tmp_138, i32 %p_s" [search.cpp:596]   --->   Operation 476 'select' 'tmp_213_s' <Predicate = (!zero_load & !or_cond & demorgan & tmp_154)> <Delay = 0.69> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_44 : Operation 477 [1/1] (1.76ns)   --->   "store i32 %tmp_213_s, i32* %P1Start" [search.cpp:596]   --->   Operation 477 'store' <Predicate = (!zero_load & !or_cond & demorgan & tmp_154)> <Delay = 1.76>
+ST_44 : Operation 478 [1/1] (0.00ns)   --->   "br label %._crit_edge12" [search.cpp:596]   --->   Operation 478 'br' <Predicate = (!zero_load & !or_cond & demorgan & tmp_154)> <Delay = 0.00>
+ST_44 : Operation 479 [1/1] (0.00ns)   --->   "%empty_35 = call i32 (...)* @_ssdm_op_SpecRegionEnd([12 x i8]* @p_str9, i32 %tmp_46)" [search.cpp:609]   --->   Operation 479 'specregionend' 'empty_35' <Predicate = (!zero_load & !or_cond & demorgan)> <Delay = 0.00>
+ST_44 : Operation 480 [1/1] (1.76ns)   --->   "store i1 %tmp_129, i1* %zero" [search.cpp:532]   --->   Operation 480 'store' <Predicate = (!zero_load & !or_cond & demorgan)> <Delay = 1.76>
+ST_44 : Operation 481 [1/1] (1.76ns)   --->   "br label %._crit_edge5" [search.cpp:609]   --->   Operation 481 'br' <Predicate = (!zero_load & !or_cond & demorgan)> <Delay = 1.76>
+ST_44 : Operation 482 [1/1] (0.00ns) (grouped into LUT with out node i_20)   --->   "%i1_2 = phi i8 [ 18, %7 ], [ %p_i1, %._crit_edge6 ], [ %p_i1, %._crit_edge12 ]" [search.cpp:515]   --->   Operation 482 'phi' 'i1_2' <Predicate = true> <Delay = 0.00>
+ST_44 : Operation 483 [1/1] (1.91ns) (out node of the LUT)   --->   "%i_20 = add i8 %i1_2, 1" [search.cpp:505]   --->   Operation 483 'add' 'i_20' <Predicate = true> <Delay = 1.91> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.91> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_44 : Operation 484 [1/1] (0.00ns)   --->   "br label %6" [search.cpp:505]   --->   Operation 484 'br' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ <State 1>: 3.25ns
+The critical path consists of the following:
+	wire read on port 'P1End_read' [74]  (0 ns)
+	'getelementptr' operation ('P1Buffer_0_n_addr', search.cpp:422) [132]  (0 ns)
+	'load' operation ('searchTo[0].n', search.cpp:422) on array 'P1Buffer_0_n' [137]  (3.25 ns)
+
+ <State 2>: 3.25ns
+The critical path consists of the following:
+	'load' operation ('searchTo[0].flip', search.cpp:422) on array 'P1Buffer_0_flip' [133]  (3.25 ns)
+
+ <State 3>: 5.42ns
+The critical path consists of the following:
+	'phi' operation ('i') with incoming values : ('i', search.cpp:115->search.cpp:422) [140]  (0 ns)
+	'add' operation ('tmp_127', search.cpp:118->search.cpp:422) [148]  (2.17 ns)
+	'getelementptr' operation ('P1Buffer_0_i_addr', search.cpp:118->search.cpp:422) [150]  (0 ns)
+	'load' operation ('P1Buffer_0_i_load', search.cpp:118->search.cpp:422) on array 'P1Buffer_0_i' [151]  (3.25 ns)
+
+ <State 4>: 5.58ns
+The critical path consists of the following:
+	'load' operation ('P1Buffer_0_i_load', search.cpp:118->search.cpp:422) on array 'P1Buffer_0_i' [151]  (3.25 ns)
+	'store' operation (search.cpp:118->search.cpp:422) of variable 'P1Buffer_0_i_load', search.cpp:118->search.cpp:422 on array 'search_new[0].i', search.cpp:421 [153]  (2.32 ns)
+
+ <State 5>: 6.84ns
+The critical path consists of the following:
+	'load' operation ('i', search.cpp:424) on array 'search_new[0].i', search.cpp:421 [158]  (2.32 ns)
+	'mul' operation ('mul', search.cpp:424) [160]  (4.52 ns)
+
+ <State 6>: 6.38ns
+The critical path consists of the following:
+	'mul' operation ('tmp_125', search.cpp:445) [190]  (3.36 ns)
+	'add' operation ('sum6', search.cpp:445) [207]  (3.02 ns)
+
+ <State 7>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'twistMove2' (search.cpp:443) [210]  (8.75 ns)
+
+ <State 8>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'twistMove2' (search.cpp:443) [210]  (8.75 ns)
+
+ <State 9>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'twistMove2' (search.cpp:443) [210]  (8.75 ns)
+
+ <State 10>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'twistMove2' (search.cpp:443) [210]  (8.75 ns)
+
+ <State 11>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'twistMove2' (search.cpp:443) [210]  (8.75 ns)
+
+ <State 12>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'twistMove2' (search.cpp:443) [210]  (8.75 ns)
+
+ <State 13>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'twistMove2' (search.cpp:443) [210]  (8.75 ns)
+
+ <State 14>: 1.78ns
+The critical path consists of the following:
+	'phi' operation ('i') with incoming values : ('i', search.cpp:440) [215]  (0 ns)
+	'add' operation ('i', search.cpp:440) [218]  (1.78 ns)
+
+ <State 15>: 8.75ns
+The critical path consists of the following:
+	bus read on port 'twistMove2' (search.cpp:443) [223]  (8.75 ns)
+
+ <State 16>: 2.32ns
+The critical path consists of the following:
+	'getelementptr' operation ('twistMove3_addr', search.cpp:443) [225]  (0 ns)
+	'store' operation (search.cpp:443) of variable 'Slice_Twist_Prun2_ad_2', search.cpp:443 on array 'twistMove3' [226]  (2.32 ns)
+
+ <State 17>: 5.75ns
+The critical path consists of the following:
+	'add' operation ('n', search.cpp:493) [244]  (1.92 ns)
+	'select' operation ('n_1_n', search.cpp:491) [245]  (0 ns)
+	'add' operation ('n', search.cpp:496) [246]  (1.92 ns)
+	'sub' operation ('tmp_135', search.cpp:579) [289]  (1.92 ns)
+
+ <State 18>: 4.5ns
+The critical path consists of the following:
+	'phi' operation ('i') with incoming values : ('i', search.cpp:505) [300]  (0 ns)
+	'select' operation ('p_i1', search.cpp:515) [309]  (1.25 ns)
+	'getelementptr' operation ('label_0_addr', search.cpp:524) [311]  (0 ns)
+	'load' operation ('ax', search.cpp:524) on array 'label_0' [312]  (3.25 ns)
+
+ <State 19>: 3.25ns
+The critical path consists of the following:
+	'load' operation ('ax', search.cpp:524) on array 'label_0' [312]  (3.25 ns)
+
+ <State 20>: 7.59ns
+The critical path consists of the following:
+	'sub' operation ('tmp_141', search.cpp:526) [320]  (1.78 ns)
+	'add' operation ('tmp4', search.cpp:526) [321]  (0 ns)
+	'add' operation ('mv', search.cpp:526) [322]  (3.49 ns)
+	'store' operation (search.cpp:526) of variable 'mv_cast', search.cpp:526 on array 'search_new[0].i', search.cpp:421 [324]  (2.32 ns)
+
+ <State 21>: 8.7ns
+The critical path consists of the following:
+	'load' operation ('FRtoBR_Move3_load', search.cpp:547) on array 'FRtoBR_Move3' [337]  (2.32 ns)
+	'mul' operation ('mul1', search.cpp:547) [339]  (6.38 ns)
+
+ <State 22>: 8.05ns
+The critical path consists of the following:
+	'sub' operation ('neg_mul1', search.cpp:547) [341]  (2.59 ns)
+	'select' operation ('tmp_147', search.cpp:547) [347]  (0 ns)
+	'sub' operation ('neg_ti1', search.cpp:547) [348]  (1.68 ns)
+	'select' operation ('search_new[0].slice', search.cpp:547) [349]  (0.754 ns)
+	'add' operation ('tmp_149', search.cpp:549) [355]  (3.02 ns)
+
+ <State 23>: 5.56ns
+The critical path consists of the following:
+	'call' operation ('tmp_150', search.cpp:549) to 'getPruning.1' [356]  (5.56 ns)
+
+ <State 24>: 7.34ns
+The critical path consists of the following:
+	'call' operation ('tmp_150', search.cpp:549) to 'getPruning.1' [356]  (5.01 ns)
+	'icmp' operation ('tmp_153', search.cpp:549) [361]  (1.3 ns)
+	'select' operation ('minDistPhase1', search.cpp:549) [362]  (1.02 ns)
+
+ <State 25>: 5.03ns
+The critical path consists of the following:
+	'icmp' operation ('p_not', search.cpp:552) [363]  (1.3 ns)
+	'or' operation ('brmerge', search.cpp:552) [364]  (0.978 ns)
+	'or' operation ('brmerge1', search.cpp:552) [365]  (0.978 ns)
+	multiplexor before 'phi' operation ('minDistPhase', search.cpp:552) with incoming values : ('minDistPhase1_mux', search.cpp:552) [404]  (1.77 ns)
+
+ <State 26>: 2.32ns
+The critical path consists of the following:
+	'load' operation ('tmp.i[0]', search.cpp:558) on array 'search_new[0].i', search.cpp:421 [369]  (2.32 ns)
+
+ <State 27>: 2.32ns
+The critical path consists of the following:
+	'load' operation ('tmp.i[1]', search.cpp:558) on array 'search_new[0].i', search.cpp:421 [370]  (2.32 ns)
+
+ <State 28>: 2.32ns
+The critical path consists of the following:
+	'load' operation ('tmp.i[3]', search.cpp:558) on array 'search_new[0].i', search.cpp:421 [372]  (2.32 ns)
+
+ <State 29>: 2.32ns
+The critical path consists of the following:
+	'load' operation ('tmp.i[5]', search.cpp:558) on array 'search_new[0].i', search.cpp:421 [374]  (2.32 ns)
+
+ <State 30>: 2.32ns
+The critical path consists of the following:
+	'load' operation ('tmp.i[7]', search.cpp:558) on array 'search_new[0].i', search.cpp:421 [376]  (2.32 ns)
+
+ <State 31>: 2.32ns
+The critical path consists of the following:
+	'load' operation ('tmp.i[9]', search.cpp:558) on array 'search_new[0].i', search.cpp:421 [378]  (2.32 ns)
+
+ <State 32>: 2.32ns
+The critical path consists of the following:
+	'load' operation ('tmp.i[11]', search.cpp:558) on array 'search_new[0].i', search.cpp:421 [380]  (2.32 ns)
+
+ <State 33>: 2.32ns
+The critical path consists of the following:
+	'load' operation ('tmp.i[13]', search.cpp:558) on array 'search_new[0].i', search.cpp:421 [382]  (2.32 ns)
+
+ <State 34>: 2.32ns
+The critical path consists of the following:
+	'load' operation ('tmp.i[15]', search.cpp:558) on array 'search_new[0].i', search.cpp:421 [384]  (2.32 ns)
+
+ <State 35>: 2.32ns
+The critical path consists of the following:
+	'load' operation ('tmp.i[17]', search.cpp:558) on array 'search_new[0].i', search.cpp:421 [386]  (2.32 ns)
+
+ <State 36>: 2.32ns
+The critical path consists of the following:
+	'load' operation ('tmp.i[19]', search.cpp:558) on array 'search_new[0].i', search.cpp:421 [388]  (2.32 ns)
+
+ <State 37>: 2.32ns
+The critical path consists of the following:
+	'load' operation ('tmp.i[21]', search.cpp:558) on array 'search_new[0].i', search.cpp:421 [390]  (2.32 ns)
+
+ <State 38>: 2.32ns
+The critical path consists of the following:
+	'load' operation ('tmp.i[23]', search.cpp:558) on array 'search_new[0].i', search.cpp:421 [392]  (2.32 ns)
+
+ <State 39>: 2.32ns
+The critical path consists of the following:
+	'load' operation ('tmp.i[25]', search.cpp:558) on array 'search_new[0].i', search.cpp:421 [394]  (2.32 ns)
+
+ <State 40>: 2.32ns
+The critical path consists of the following:
+	'load' operation ('tmp.i[27]', search.cpp:558) on array 'search_new[0].i', search.cpp:421 [396]  (2.32 ns)
+
+ <State 41>: 5.96ns
+The critical path consists of the following:
+	'load' operation ('tmp.i[29]', search.cpp:558) on array 'search_new[0].i', search.cpp:421 [398]  (2.32 ns)
+	fifo write on port 'P2Buffer_V_flip' (search.cpp:558) [400]  (3.63 ns)
+
+ <State 42>: 8.2ns
+The critical path consists of the following:
+	'load' operation ('P1Start_load', search.cpp:591) on local variable 'P1Start' [438]  (0 ns)
+	'add' operation ('tmp_156', search.cpp:591) [445]  (2.55 ns)
+	'icmp' operation ('tmp_157', search.cpp:592) [446]  (2.47 ns)
+	'select' operation ('p_s', search.cpp:592) [447]  (0.698 ns)
+	'icmp' operation ('tmp_158', search.cpp:596) [448]  (2.47 ns)
+
+ <State 43>: 5.58ns
+The critical path consists of the following:
+	'load' operation ('search_new_0_i_load', search.cpp:118->search.cpp:583) on array 'search_new[0].i', search.cpp:421 [434]  (2.32 ns)
+	'store' operation (search.cpp:118->search.cpp:583) of variable 'search_new_0_i_load', search.cpp:118->search.cpp:583 on array 'P1Buffer_0_i' [435]  (3.25 ns)
+
+ <State 44>: 3.68ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('i1_2', search.cpp:515) with incoming values : ('p_i1', search.cpp:515) [460]  (1.77 ns)
+	'phi' operation ('i1_2', search.cpp:515) with incoming values : ('p_i1', search.cpp:515) [460]  (0 ns)
+	'add' operation ('i', search.cpp:505) [461]  (1.92 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+	State 17
+	State 18
+	State 19
+	State 20
+	State 21
+	State 22
+	State 23
+	State 24
+	State 25
+	State 26
+	State 27
+	State 28
+	State 29
+	State 30
+	State 31
+	State 32
+	State 33
+	State 34
+	State 35
+	State 36
+	State 37
+	State 38
+	State 39
+	State 40
+	State 41
+	State 42
+	State 43
+	State 44
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

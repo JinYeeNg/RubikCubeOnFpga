@@ -1,0 +1,336 @@
+
+
+================================================================
+== Vivado HLS Report for 'optimizeCube'
+================================================================
+* Date:           Fri Jan  4 20:12:23 2019
+
+* Version:        2018.2 (Build 2258646 on Thu Jun 14 20:25:20 MDT 2018)
+* Project:        Rubik_Cube_Layer_All
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  12.00|     5.645|        1.50|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |    ?|    ?|    ?|    ?|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+        |          |  Latency  | Iteration|  Initiation Interval  | Trip |          |
+        | Loop Name| min | max |  Latency |  achieved |   target  | Count| Pipelined|
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+        |- Loop 1  |    ?|    ?|  6 ~ 10  |          -|          -|     ?|    no    |
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 11
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / (tmp)
+3 --> 
+	4  / (!r_V) | (!tmp_89_old)
+	5  / (r_V & tmp_89_old)
+4 --> 
+	5  / (!r_V & or_cond) | (r_V & !tmp_89_old) | (!r_V & tmp_93_old)
+	8  / (!r_V & !or_cond & !tmp_93_old)
+5 --> 
+	6  / (!r_V & or_cond) | (r_V & tmp_89_old) | (!r_V & tmp_93_old) | (r_V & or_cond2)
+	8  / (r_V & !tmp_89_old & !or_cond2)
+6 --> 
+	7  / (tmp_73)
+	8  / (!tmp_73)
+7 --> 
+	8  / true
+8 --> 
+	9  / (!r_V & !or_cond & !tmp_93_old) | (r_V & !tmp_89_old & !or_cond2) | (tmp_73 & tmp_75 & tmp_77)
+	11  / (!r_V & or_cond & !tmp_73) | (r_V & tmp_89_old & !tmp_73) | (!r_V & tmp_93_old & !tmp_73) | (!r_V & or_cond & !tmp_75) | (r_V & or_cond2 & !tmp_73) | (r_V & tmp_89_old & !tmp_75) | (!r_V & tmp_93_old & !tmp_75) | (!r_V & or_cond & !tmp_77) | (r_V & or_cond2 & !tmp_75) | (r_V & tmp_89_old & !tmp_77) | (!r_V & tmp_93_old & !tmp_77) | (r_V & or_cond2 & !tmp_77)
+9 --> 
+	10  / (tmp_80)
+	11  / (!tmp_80)
+10 --> 
+	11  / true
+11 --> 
+	2  / true
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.76>
+ST_1 : Operation 12 [1/1] (0.00ns)   --->   "%t_V = alloca i8"   --->   Operation 12 'alloca' 't_V' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 13 [1/1] (0.00ns)   --->   "%order_V_1 = alloca i8"   --->   Operation 13 'alloca' 'order_V_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 14 [1/1] (0.00ns)   --->   "%moveCounter_V_load = load i8* @moveCounter_V, align 1" [Rubik_Cube_Layer_All/layerAll.cpp:674]   --->   Operation 14 'load' 'moveCounter_V_load' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 15 [1/1] (1.76ns)   --->   "store i8 0, i8* %order_V_1"   --->   Operation 15 'store' <Predicate = true> <Delay = 1.76>
+ST_1 : Operation 16 [1/1] (1.76ns)   --->   "store i8 0, i8* %t_V"   --->   Operation 16 'store' <Predicate = true> <Delay = 1.76>
+ST_1 : Operation 17 [1/1] (1.76ns)   --->   "br label %1" [Rubik_Cube_Layer_All/layerAll.cpp:674]   --->   Operation 17 'br' <Predicate = true> <Delay = 1.76>
+
+State 2 <SV = 1> <Delay = 2.27>
+ST_2 : Operation 18 [1/1] (0.00ns)   --->   "%p_s = phi i8 [ 0, %0 ], [ %i_V_3, %11 ]"   --->   Operation 18 'phi' 'p_s' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 19 [1/1] (1.55ns)   --->   "%tmp = icmp ult i8 %p_s, %moveCounter_V_load" [Rubik_Cube_Layer_All/layerAll.cpp:674]   --->   Operation 19 'icmp' 'tmp' <Predicate = true> <Delay = 1.55> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.30> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 20 [1/1] (0.00ns)   --->   "br i1 %tmp, label %2, label %12" [Rubik_Cube_Layer_All/layerAll.cpp:674]   --->   Operation 20 'br' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 21 [1/1] (0.00ns)   --->   "%tmp_s = zext i8 %p_s to i64" [Rubik_Cube_Layer_All/layerAll.cpp:676]   --->   Operation 21 'zext' 'tmp_s' <Predicate = (tmp)> <Delay = 0.00>
+ST_2 : Operation 22 [1/1] (0.00ns)   --->   "%moves_V_addr = getelementptr [200 x i4]* @moves_V, i64 0, i64 %tmp_s" [Rubik_Cube_Layer_All/layerAll.cpp:676]   --->   Operation 22 'getelementptr' 'moves_V_addr' <Predicate = (tmp)> <Delay = 0.00>
+ST_2 : Operation 23 [2/2] (2.27ns)   --->   "%moves_V_load = load i4* %moves_V_addr, align 1" [Rubik_Cube_Layer_All/layerAll.cpp:676]   --->   Operation 23 'load' 'moves_V_load' <Predicate = (tmp)> <Delay = 2.27> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.27> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 4> <Depth = 200> <RAM>
+ST_2 : Operation 24 [1/1] (0.00ns)   --->   "%order_V_1_load = load i8* %order_V_1" [Rubik_Cube_Layer_All/layerAll.cpp:696]   --->   Operation 24 'load' 'order_V_1_load' <Predicate = (!tmp)> <Delay = 0.00>
+ST_2 : Operation 25 [1/1] (0.00ns)   --->   "ret i8 %order_V_1_load" [Rubik_Cube_Layer_All/layerAll.cpp:696]   --->   Operation 25 'ret' <Predicate = (!tmp)> <Delay = 0.00>
+
+State 3 <SV = 2> <Delay = 4.19>
+ST_3 : Operation 26 [1/2] (2.27ns)   --->   "%moves_V_load = load i4* %moves_V_addr, align 1" [Rubik_Cube_Layer_All/layerAll.cpp:676]   --->   Operation 26 'load' 'moves_V_load' <Predicate = true> <Delay = 2.27> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.27> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 4> <Depth = 200> <RAM>
+ST_3 : Operation 27 [1/1] (0.00ns)   --->   "%r_V = trunc i4 %moves_V_load to i1" [Rubik_Cube_Layer_All/layerAll.cpp:676]   --->   Operation 27 'trunc' 'r_V' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 28 [1/1] (0.00ns)   --->   "br i1 %r_V, label %._crit_edge, label %3" [Rubik_Cube_Layer_All/layerAll.cpp:676]   --->   Operation 28 'br' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 29 [1/1] (0.00ns)   --->   "%lhs_V_1_cast = zext i8 %p_s to i9" [Rubik_Cube_Layer_All/layerAll.cpp:676]   --->   Operation 29 'zext' 'lhs_V_1_cast' <Predicate = (!r_V)> <Delay = 0.00>
+ST_3 : Operation 30 [1/1] (1.91ns)   --->   "%r_V_2 = add i9 %lhs_V_1_cast, 1" [Rubik_Cube_Layer_All/layerAll.cpp:676]   --->   Operation 30 'add' 'r_V_2' <Predicate = (!r_V)> <Delay = 1.91> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.91> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 31 [1/1] (0.00ns)   --->   "%tmp_66 = zext i9 %r_V_2 to i64" [Rubik_Cube_Layer_All/layerAll.cpp:676]   --->   Operation 31 'zext' 'tmp_66' <Predicate = (!r_V)> <Delay = 0.00>
+ST_3 : Operation 32 [1/1] (0.00ns)   --->   "%moves_V_addr_1 = getelementptr [200 x i4]* @moves_V, i64 0, i64 %tmp_66" [Rubik_Cube_Layer_All/layerAll.cpp:676]   --->   Operation 32 'getelementptr' 'moves_V_addr_1' <Predicate = (!r_V)> <Delay = 0.00>
+ST_3 : Operation 33 [2/2] (2.27ns)   --->   "%moves_V_load_1 = load i4* %moves_V_addr_1, align 1" [Rubik_Cube_Layer_All/layerAll.cpp:676]   --->   Operation 33 'load' 'moves_V_load_1' <Predicate = (!r_V)> <Delay = 2.27> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.27> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 4> <Depth = 200> <RAM>
+ST_3 : Operation 34 [1/1] (1.30ns)   --->   "%tmp_89_old = icmp eq i4 %moves_V_load, -4" [Rubik_Cube_Layer_All/layerAll.cpp:676]   --->   Operation 34 'icmp' 'tmp_89_old' <Predicate = (r_V)> <Delay = 1.30> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.30> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 35 [1/1] (0.00ns)   --->   "br i1 %tmp_89_old, label %._crit_edge661, label %4" [Rubik_Cube_Layer_All/layerAll.cpp:676]   --->   Operation 35 'br' <Predicate = (r_V)> <Delay = 0.00>
+
+State 4 <SV = 3> <Delay = 4.61>
+ST_4 : Operation 36 [1/1] (0.00ns)   --->   "%lhs_V_cast = zext i4 %moves_V_load to i5" [Rubik_Cube_Layer_All/layerAll.cpp:676]   --->   Operation 36 'zext' 'lhs_V_cast' <Predicate = (!r_V)> <Delay = 0.00>
+ST_4 : Operation 37 [1/1] (1.73ns)   --->   "%r_V_1 = add i5 %lhs_V_cast, 1" [Rubik_Cube_Layer_All/layerAll.cpp:676]   --->   Operation 37 'add' 'r_V_1' <Predicate = (!r_V)> <Delay = 1.73> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.91> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 38 [1/1] (0.00ns)   --->   "%r_V_1_cast = zext i5 %r_V_1 to i6" [Rubik_Cube_Layer_All/layerAll.cpp:676]   --->   Operation 38 'zext' 'r_V_1_cast' <Predicate = (!r_V)> <Delay = 0.00>
+ST_4 : Operation 39 [1/2] (2.27ns)   --->   "%moves_V_load_1 = load i4* %moves_V_addr_1, align 1" [Rubik_Cube_Layer_All/layerAll.cpp:676]   --->   Operation 39 'load' 'moves_V_load_1' <Predicate = (!r_V)> <Delay = 2.27> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.27> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 4> <Depth = 200> <RAM>
+ST_4 : Operation 40 [1/1] (0.00ns)   --->   "%tmp_83_cast = zext i4 %moves_V_load_1 to i6" [Rubik_Cube_Layer_All/layerAll.cpp:676]   --->   Operation 40 'zext' 'tmp_83_cast' <Predicate = (!r_V)> <Delay = 0.00>
+ST_4 : Operation 41 [1/1] (1.36ns)   --->   "%tmp_67 = icmp ne i6 %r_V_1_cast, %tmp_83_cast" [Rubik_Cube_Layer_All/layerAll.cpp:676]   --->   Operation 41 'icmp' 'tmp_67' <Predicate = (!r_V)> <Delay = 1.36> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.30> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 42 [1/1] (1.30ns)   --->   "%tmp_68 = icmp eq i4 %moves_V_load, -4" [Rubik_Cube_Layer_All/layerAll.cpp:676]   --->   Operation 42 'icmp' 'tmp_68' <Predicate = (!r_V)> <Delay = 1.30> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.30> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 43 [1/1] (0.97ns)   --->   "%or_cond = or i1 %tmp_67, %tmp_68" [Rubik_Cube_Layer_All/layerAll.cpp:676]   --->   Operation 43 'or' 'or_cond' <Predicate = (!r_V)> <Delay = 0.97> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 44 [1/1] (0.00ns)   --->   "br i1 %or_cond, label %._crit_edge661, label %4" [Rubik_Cube_Layer_All/layerAll.cpp:676]   --->   Operation 44 'br' <Predicate = (!r_V)> <Delay = 0.00>
+ST_4 : Operation 45 [1/1] (0.00ns)   --->   "br i1 %r_V, label %5, label %._crit_edge663" [Rubik_Cube_Layer_All/layerAll.cpp:677]   --->   Operation 45 'br' <Predicate = (!r_V & !or_cond) | (r_V & !tmp_89_old)> <Delay = 0.00>
+ST_4 : Operation 46 [1/1] (1.30ns)   --->   "%tmp_93_old = icmp eq i4 %moves_V_load, -3" [Rubik_Cube_Layer_All/layerAll.cpp:677]   --->   Operation 46 'icmp' 'tmp_93_old' <Predicate = (!r_V & !or_cond)> <Delay = 1.30> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.30> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 47 [1/1] (0.00ns)   --->   "br i1 %tmp_93_old, label %._crit_edge661, label %._crit_edge667" [Rubik_Cube_Layer_All/layerAll.cpp:677]   --->   Operation 47 'br' <Predicate = (!r_V & !or_cond)> <Delay = 0.00>
+ST_4 : Operation 48 [1/1] (0.00ns)   --->   "%lhs_V_3_cast = zext i8 %p_s to i9" [Rubik_Cube_Layer_All/layerAll.cpp:677]   --->   Operation 48 'zext' 'lhs_V_3_cast' <Predicate = (r_V & !tmp_89_old)> <Delay = 0.00>
+ST_4 : Operation 49 [1/1] (1.91ns)   --->   "%r_V_4 = add i9 %lhs_V_3_cast, 1" [Rubik_Cube_Layer_All/layerAll.cpp:677]   --->   Operation 49 'add' 'r_V_4' <Predicate = (r_V & !tmp_89_old)> <Delay = 1.91> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.91> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 50 [1/1] (0.00ns)   --->   "%tmp_69 = zext i9 %r_V_4 to i64" [Rubik_Cube_Layer_All/layerAll.cpp:677]   --->   Operation 50 'zext' 'tmp_69' <Predicate = (r_V & !tmp_89_old)> <Delay = 0.00>
+ST_4 : Operation 51 [1/1] (0.00ns)   --->   "%moves_V_addr_2 = getelementptr [200 x i4]* @moves_V, i64 0, i64 %tmp_69" [Rubik_Cube_Layer_All/layerAll.cpp:677]   --->   Operation 51 'getelementptr' 'moves_V_addr_2' <Predicate = (r_V & !tmp_89_old)> <Delay = 0.00>
+ST_4 : Operation 52 [2/2] (2.27ns)   --->   "%moves_V_load_2 = load i4* %moves_V_addr_2, align 1" [Rubik_Cube_Layer_All/layerAll.cpp:677]   --->   Operation 52 'load' 'moves_V_load_2' <Predicate = (r_V & !tmp_89_old)> <Delay = 2.27> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.27> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 4> <Depth = 200> <RAM>
+
+State 5 <SV = 4> <Delay = 4.61>
+ST_5 : Operation 53 [1/1] (0.00ns)   --->   "%lhs_V_2_cast = zext i4 %moves_V_load to i5" [Rubik_Cube_Layer_All/layerAll.cpp:677]   --->   Operation 53 'zext' 'lhs_V_2_cast' <Predicate = (r_V & !tmp_89_old)> <Delay = 0.00>
+ST_5 : Operation 54 [1/1] (1.73ns)   --->   "%r_V_3 = add i5 %lhs_V_2_cast, -1" [Rubik_Cube_Layer_All/layerAll.cpp:677]   --->   Operation 54 'add' 'r_V_3' <Predicate = (r_V & !tmp_89_old)> <Delay = 1.73> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.91> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 55 [1/2] (2.27ns)   --->   "%moves_V_load_2 = load i4* %moves_V_addr_2, align 1" [Rubik_Cube_Layer_All/layerAll.cpp:677]   --->   Operation 55 'load' 'moves_V_load_2' <Predicate = (r_V & !tmp_89_old)> <Delay = 2.27> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.27> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 4> <Depth = 200> <RAM>
+ST_5 : Operation 56 [1/1] (0.00ns)   --->   "%tmp_87_cast = zext i4 %moves_V_load_2 to i5" [Rubik_Cube_Layer_All/layerAll.cpp:677]   --->   Operation 56 'zext' 'tmp_87_cast' <Predicate = (r_V & !tmp_89_old)> <Delay = 0.00>
+ST_5 : Operation 57 [1/1] (1.36ns)   --->   "%tmp_70 = icmp ne i5 %r_V_3, %tmp_87_cast" [Rubik_Cube_Layer_All/layerAll.cpp:677]   --->   Operation 57 'icmp' 'tmp_70' <Predicate = (r_V & !tmp_89_old)> <Delay = 1.36> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.30> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 58 [1/1] (1.30ns)   --->   "%tmp_71 = icmp eq i4 %moves_V_load, -3" [Rubik_Cube_Layer_All/layerAll.cpp:677]   --->   Operation 58 'icmp' 'tmp_71' <Predicate = (r_V & !tmp_89_old)> <Delay = 1.30> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.30> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 59 [1/1] (0.97ns)   --->   "%or_cond2 = or i1 %tmp_70, %tmp_71" [Rubik_Cube_Layer_All/layerAll.cpp:677]   --->   Operation 59 'or' 'or_cond2' <Predicate = (r_V & !tmp_89_old)> <Delay = 0.97> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 60 [1/1] (0.00ns)   --->   "br i1 %or_cond2, label %._crit_edge661, label %._crit_edge667" [Rubik_Cube_Layer_All/layerAll.cpp:677]   --->   Operation 60 'br' <Predicate = (r_V & !tmp_89_old)> <Delay = 0.00>
+ST_5 : Operation 61 [1/1] (0.00ns)   --->   "%lhs_V_4_cast = zext i8 %p_s to i9" [Rubik_Cube_Layer_All/layerAll.cpp:679]   --->   Operation 61 'zext' 'lhs_V_4_cast' <Predicate = (!r_V & or_cond) | (r_V & tmp_89_old) | (!r_V & tmp_93_old) | (r_V & or_cond2)> <Delay = 0.00>
+ST_5 : Operation 62 [1/1] (1.91ns)   --->   "%r_V_5 = add i9 %lhs_V_4_cast, 1" [Rubik_Cube_Layer_All/layerAll.cpp:679]   --->   Operation 62 'add' 'r_V_5' <Predicate = (!r_V & or_cond) | (r_V & tmp_89_old) | (!r_V & tmp_93_old) | (r_V & or_cond2)> <Delay = 1.91> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.91> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 63 [1/1] (0.00ns)   --->   "%tmp_72 = zext i9 %r_V_5 to i64" [Rubik_Cube_Layer_All/layerAll.cpp:679]   --->   Operation 63 'zext' 'tmp_72' <Predicate = (!r_V & or_cond) | (r_V & tmp_89_old) | (!r_V & tmp_93_old) | (r_V & or_cond2)> <Delay = 0.00>
+ST_5 : Operation 64 [1/1] (0.00ns)   --->   "%moves_V_addr_3 = getelementptr [200 x i4]* @moves_V, i64 0, i64 %tmp_72" [Rubik_Cube_Layer_All/layerAll.cpp:679]   --->   Operation 64 'getelementptr' 'moves_V_addr_3' <Predicate = (!r_V & or_cond) | (r_V & tmp_89_old) | (!r_V & tmp_93_old) | (r_V & or_cond2)> <Delay = 0.00>
+ST_5 : Operation 65 [2/2] (2.27ns)   --->   "%moves_V_load_3 = load i4* %moves_V_addr_3, align 1" [Rubik_Cube_Layer_All/layerAll.cpp:679]   --->   Operation 65 'load' 'moves_V_load_3' <Predicate = (!r_V & or_cond) | (r_V & tmp_89_old) | (!r_V & tmp_93_old) | (r_V & or_cond2)> <Delay = 2.27> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.27> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 4> <Depth = 200> <RAM>
+
+State 6 <SV = 5> <Delay = 4.19>
+ST_6 : Operation 66 [1/2] (2.27ns)   --->   "%moves_V_load_3 = load i4* %moves_V_addr_3, align 1" [Rubik_Cube_Layer_All/layerAll.cpp:679]   --->   Operation 66 'load' 'moves_V_load_3' <Predicate = true> <Delay = 2.27> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.27> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 4> <Depth = 200> <RAM>
+ST_6 : Operation 67 [1/1] (1.30ns)   --->   "%tmp_73 = icmp eq i4 %moves_V_load, %moves_V_load_3" [Rubik_Cube_Layer_All/layerAll.cpp:679]   --->   Operation 67 'icmp' 'tmp_73' <Predicate = true> <Delay = 1.30> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.30> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 68 [1/1] (0.00ns)   --->   "br i1 %tmp_73, label %6, label %._crit_edge668" [Rubik_Cube_Layer_All/layerAll.cpp:679]   --->   Operation 68 'br' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 69 [1/1] (1.91ns)   --->   "%r_V_6 = add i9 %lhs_V_4_cast, 2" [Rubik_Cube_Layer_All/layerAll.cpp:680]   --->   Operation 69 'add' 'r_V_6' <Predicate = (tmp_73)> <Delay = 1.91> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.91> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 70 [1/1] (0.00ns)   --->   "%tmp_74 = zext i9 %r_V_6 to i64" [Rubik_Cube_Layer_All/layerAll.cpp:680]   --->   Operation 70 'zext' 'tmp_74' <Predicate = (tmp_73)> <Delay = 0.00>
+ST_6 : Operation 71 [1/1] (0.00ns)   --->   "%moves_V_addr_4 = getelementptr [200 x i4]* @moves_V, i64 0, i64 %tmp_74" [Rubik_Cube_Layer_All/layerAll.cpp:680]   --->   Operation 71 'getelementptr' 'moves_V_addr_4' <Predicate = (tmp_73)> <Delay = 0.00>
+ST_6 : Operation 72 [2/2] (2.27ns)   --->   "%moves_V_load_4 = load i4* %moves_V_addr_4, align 1" [Rubik_Cube_Layer_All/layerAll.cpp:680]   --->   Operation 72 'load' 'moves_V_load_4' <Predicate = (tmp_73)> <Delay = 2.27> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.27> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 4> <Depth = 200> <RAM>
+
+State 7 <SV = 6> <Delay = 4.19>
+ST_7 : Operation 73 [1/2] (2.27ns)   --->   "%moves_V_load_4 = load i4* %moves_V_addr_4, align 1" [Rubik_Cube_Layer_All/layerAll.cpp:680]   --->   Operation 73 'load' 'moves_V_load_4' <Predicate = true> <Delay = 2.27> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.27> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 4> <Depth = 200> <RAM>
+ST_7 : Operation 74 [1/1] (1.30ns)   --->   "%tmp_75 = icmp eq i4 %moves_V_load, %moves_V_load_4" [Rubik_Cube_Layer_All/layerAll.cpp:680]   --->   Operation 74 'icmp' 'tmp_75' <Predicate = true> <Delay = 1.30> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.30> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 75 [1/1] (0.00ns)   --->   "br i1 %tmp_75, label %7, label %._crit_edge668" [Rubik_Cube_Layer_All/layerAll.cpp:680]   --->   Operation 75 'br' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 76 [1/1] (1.91ns)   --->   "%r_V_7 = add i9 %lhs_V_4_cast, 3" [Rubik_Cube_Layer_All/layerAll.cpp:681]   --->   Operation 76 'add' 'r_V_7' <Predicate = (tmp_75)> <Delay = 1.91> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.91> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 77 [1/1] (0.00ns)   --->   "%tmp_76 = zext i9 %r_V_7 to i64" [Rubik_Cube_Layer_All/layerAll.cpp:681]   --->   Operation 77 'zext' 'tmp_76' <Predicate = (tmp_75)> <Delay = 0.00>
+ST_7 : Operation 78 [1/1] (0.00ns)   --->   "%moves_V_addr_5 = getelementptr [200 x i4]* @moves_V, i64 0, i64 %tmp_76" [Rubik_Cube_Layer_All/layerAll.cpp:681]   --->   Operation 78 'getelementptr' 'moves_V_addr_5' <Predicate = (tmp_75)> <Delay = 0.00>
+ST_7 : Operation 79 [2/2] (2.27ns)   --->   "%moves_V_load_5 = load i4* %moves_V_addr_5, align 1" [Rubik_Cube_Layer_All/layerAll.cpp:681]   --->   Operation 79 'load' 'moves_V_load_5' <Predicate = (tmp_75)> <Delay = 2.27> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.27> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 4> <Depth = 200> <RAM>
+
+State 8 <SV = 7> <Delay = 4.19>
+ST_8 : Operation 80 [1/2] (2.27ns)   --->   "%moves_V_load_5 = load i4* %moves_V_addr_5, align 1" [Rubik_Cube_Layer_All/layerAll.cpp:681]   --->   Operation 80 'load' 'moves_V_load_5' <Predicate = (!r_V & or_cond & tmp_73 & tmp_75) | (r_V & tmp_89_old & tmp_73 & tmp_75) | (!r_V & tmp_93_old & tmp_73 & tmp_75) | (r_V & or_cond2 & tmp_73 & tmp_75)> <Delay = 2.27> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.27> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 4> <Depth = 200> <RAM>
+ST_8 : Operation 81 [1/1] (1.30ns)   --->   "%tmp_77 = icmp eq i4 %moves_V_load, %moves_V_load_5" [Rubik_Cube_Layer_All/layerAll.cpp:681]   --->   Operation 81 'icmp' 'tmp_77' <Predicate = (!r_V & or_cond & tmp_73 & tmp_75) | (r_V & tmp_89_old & tmp_73 & tmp_75) | (!r_V & tmp_93_old & tmp_73 & tmp_75) | (r_V & or_cond2 & tmp_73 & tmp_75)> <Delay = 1.30> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.30> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 82 [1/1] (0.00ns)   --->   "br i1 %tmp_77, label %._crit_edge667, label %._crit_edge668" [Rubik_Cube_Layer_All/layerAll.cpp:681]   --->   Operation 82 'br' <Predicate = (!r_V & or_cond & tmp_73 & tmp_75) | (r_V & tmp_89_old & tmp_73 & tmp_75) | (!r_V & tmp_93_old & tmp_73 & tmp_75) | (r_V & or_cond2 & tmp_73 & tmp_75)> <Delay = 0.00>
+ST_8 : Operation 83 [1/1] (0.00ns)   --->   "%t_V_load = load i8* %t_V" [Rubik_Cube_Layer_All/layerAll.cpp:683]   --->   Operation 83 'load' 't_V_load' <Predicate = (!r_V & or_cond & !tmp_73) | (r_V & tmp_89_old & !tmp_73) | (!r_V & tmp_93_old & !tmp_73) | (!r_V & or_cond & !tmp_75) | (r_V & or_cond2 & !tmp_73) | (r_V & tmp_89_old & !tmp_75) | (!r_V & tmp_93_old & !tmp_75) | (!r_V & or_cond & !tmp_77) | (r_V & or_cond2 & !tmp_75) | (r_V & tmp_89_old & !tmp_77) | (!r_V & tmp_93_old & !tmp_77) | (r_V & or_cond2 & !tmp_77)> <Delay = 0.00>
+ST_8 : Operation 84 [1/1] (1.91ns)   --->   "%order_V = add i8 %t_V_load, 1" [Rubik_Cube_Layer_All/layerAll.cpp:683]   --->   Operation 84 'add' 'order_V' <Predicate = (!r_V & or_cond & !tmp_73) | (r_V & tmp_89_old & !tmp_73) | (!r_V & tmp_93_old & !tmp_73) | (!r_V & or_cond & !tmp_75) | (r_V & or_cond2 & !tmp_73) | (r_V & tmp_89_old & !tmp_75) | (!r_V & tmp_93_old & !tmp_75) | (!r_V & or_cond & !tmp_77) | (r_V & or_cond2 & !tmp_75) | (r_V & tmp_89_old & !tmp_77) | (!r_V & tmp_93_old & !tmp_77) | (r_V & or_cond2 & !tmp_77)> <Delay = 1.91> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.91> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 85 [1/1] (0.00ns)   --->   "%tmp_78 = zext i8 %t_V_load to i64" [Rubik_Cube_Layer_All/layerAll.cpp:683]   --->   Operation 85 'zext' 'tmp_78' <Predicate = (!r_V & or_cond & !tmp_73) | (r_V & tmp_89_old & !tmp_73) | (!r_V & tmp_93_old & !tmp_73) | (!r_V & or_cond & !tmp_75) | (r_V & or_cond2 & !tmp_73) | (r_V & tmp_89_old & !tmp_75) | (!r_V & tmp_93_old & !tmp_75) | (!r_V & or_cond & !tmp_77) | (r_V & or_cond2 & !tmp_75) | (r_V & tmp_89_old & !tmp_77) | (!r_V & tmp_93_old & !tmp_77) | (r_V & or_cond2 & !tmp_77)> <Delay = 0.00>
+ST_8 : Operation 86 [1/1] (0.00ns)   --->   "%moves_V_addr_6 = getelementptr [200 x i4]* @moves_V, i64 0, i64 %tmp_78" [Rubik_Cube_Layer_All/layerAll.cpp:683]   --->   Operation 86 'getelementptr' 'moves_V_addr_6' <Predicate = (!r_V & or_cond & !tmp_73) | (r_V & tmp_89_old & !tmp_73) | (!r_V & tmp_93_old & !tmp_73) | (!r_V & or_cond & !tmp_75) | (r_V & or_cond2 & !tmp_73) | (r_V & tmp_89_old & !tmp_75) | (!r_V & tmp_93_old & !tmp_75) | (!r_V & or_cond & !tmp_77) | (r_V & or_cond2 & !tmp_75) | (r_V & tmp_89_old & !tmp_77) | (!r_V & tmp_93_old & !tmp_77) | (r_V & or_cond2 & !tmp_77)> <Delay = 0.00>
+ST_8 : Operation 87 [1/1] (2.27ns)   --->   "store i4 %moves_V_load, i4* %moves_V_addr_6, align 1" [Rubik_Cube_Layer_All/layerAll.cpp:683]   --->   Operation 87 'store' <Predicate = (!r_V & or_cond & !tmp_73) | (r_V & tmp_89_old & !tmp_73) | (!r_V & tmp_93_old & !tmp_73) | (!r_V & or_cond & !tmp_75) | (r_V & or_cond2 & !tmp_73) | (r_V & tmp_89_old & !tmp_75) | (!r_V & tmp_93_old & !tmp_75) | (!r_V & or_cond & !tmp_77) | (r_V & or_cond2 & !tmp_75) | (r_V & tmp_89_old & !tmp_77) | (!r_V & tmp_93_old & !tmp_77) | (r_V & or_cond2 & !tmp_77)> <Delay = 2.27> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.27> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 4> <Depth = 200> <RAM>
+ST_8 : Operation 88 [1/1] (1.76ns)   --->   "store i8 %order_V, i8* %order_V_1" [Rubik_Cube_Layer_All/layerAll.cpp:683]   --->   Operation 88 'store' <Predicate = (!r_V & or_cond & !tmp_73) | (r_V & tmp_89_old & !tmp_73) | (!r_V & tmp_93_old & !tmp_73) | (!r_V & or_cond & !tmp_75) | (r_V & or_cond2 & !tmp_73) | (r_V & tmp_89_old & !tmp_75) | (!r_V & tmp_93_old & !tmp_75) | (!r_V & or_cond & !tmp_77) | (r_V & or_cond2 & !tmp_75) | (r_V & tmp_89_old & !tmp_77) | (!r_V & tmp_93_old & !tmp_77) | (r_V & or_cond2 & !tmp_77)> <Delay = 1.76>
+ST_8 : Operation 89 [1/1] (1.76ns)   --->   "store i8 %order_V, i8* %t_V" [Rubik_Cube_Layer_All/layerAll.cpp:683]   --->   Operation 89 'store' <Predicate = (!r_V & or_cond & !tmp_73) | (r_V & tmp_89_old & !tmp_73) | (!r_V & tmp_93_old & !tmp_73) | (!r_V & or_cond & !tmp_75) | (r_V & or_cond2 & !tmp_73) | (r_V & tmp_89_old & !tmp_75) | (!r_V & tmp_93_old & !tmp_75) | (!r_V & or_cond & !tmp_77) | (r_V & or_cond2 & !tmp_75) | (r_V & tmp_89_old & !tmp_77) | (!r_V & tmp_93_old & !tmp_77) | (r_V & or_cond2 & !tmp_77)> <Delay = 1.76>
+ST_8 : Operation 90 [1/1] (1.81ns)   --->   "br label %11" [Rubik_Cube_Layer_All/layerAll.cpp:684]   --->   Operation 90 'br' <Predicate = (!r_V & or_cond & !tmp_73) | (r_V & tmp_89_old & !tmp_73) | (!r_V & tmp_93_old & !tmp_73) | (!r_V & or_cond & !tmp_75) | (r_V & or_cond2 & !tmp_73) | (r_V & tmp_89_old & !tmp_75) | (!r_V & tmp_93_old & !tmp_75) | (!r_V & or_cond & !tmp_77) | (r_V & or_cond2 & !tmp_75) | (r_V & tmp_89_old & !tmp_77) | (!r_V & tmp_93_old & !tmp_77) | (r_V & or_cond2 & !tmp_77)> <Delay = 1.81>
+ST_8 : Operation 91 [1/1] (0.00ns)   --->   "%lhs_V_5_cast = zext i8 %p_s to i9" [Rubik_Cube_Layer_All/layerAll.cpp:685]   --->   Operation 91 'zext' 'lhs_V_5_cast' <Predicate = (!r_V & !or_cond & !tmp_93_old) | (r_V & !tmp_89_old & !or_cond2) | (tmp_73 & tmp_75 & tmp_77)> <Delay = 0.00>
+ST_8 : Operation 92 [1/1] (1.91ns)   --->   "%r_V_8 = add i9 %lhs_V_5_cast, 1" [Rubik_Cube_Layer_All/layerAll.cpp:685]   --->   Operation 92 'add' 'r_V_8' <Predicate = (!r_V & !or_cond & !tmp_93_old) | (r_V & !tmp_89_old & !or_cond2) | (tmp_73 & tmp_75 & tmp_77)> <Delay = 1.91> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.91> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 93 [1/1] (0.00ns)   --->   "%tmp_79 = zext i9 %r_V_8 to i64" [Rubik_Cube_Layer_All/layerAll.cpp:685]   --->   Operation 93 'zext' 'tmp_79' <Predicate = (!r_V & !or_cond & !tmp_93_old) | (r_V & !tmp_89_old & !or_cond2) | (tmp_73 & tmp_75 & tmp_77)> <Delay = 0.00>
+ST_8 : Operation 94 [1/1] (0.00ns)   --->   "%moves_V_addr_7 = getelementptr [200 x i4]* @moves_V, i64 0, i64 %tmp_79" [Rubik_Cube_Layer_All/layerAll.cpp:685]   --->   Operation 94 'getelementptr' 'moves_V_addr_7' <Predicate = (!r_V & !or_cond & !tmp_93_old) | (r_V & !tmp_89_old & !or_cond2) | (tmp_73 & tmp_75 & tmp_77)> <Delay = 0.00>
+ST_8 : Operation 95 [2/2] (2.27ns)   --->   "%moves_V_load_6 = load i4* %moves_V_addr_7, align 1" [Rubik_Cube_Layer_All/layerAll.cpp:685]   --->   Operation 95 'load' 'moves_V_load_6' <Predicate = (!r_V & !or_cond & !tmp_93_old) | (r_V & !tmp_89_old & !or_cond2) | (tmp_73 & tmp_75 & tmp_77)> <Delay = 2.27> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.27> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 4> <Depth = 200> <RAM>
+
+State 9 <SV = 8> <Delay = 4.19>
+ST_9 : Operation 96 [1/2] (2.27ns)   --->   "%moves_V_load_6 = load i4* %moves_V_addr_7, align 1" [Rubik_Cube_Layer_All/layerAll.cpp:685]   --->   Operation 96 'load' 'moves_V_load_6' <Predicate = true> <Delay = 2.27> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.27> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 4> <Depth = 200> <RAM>
+ST_9 : Operation 97 [1/1] (1.30ns)   --->   "%tmp_80 = icmp eq i4 %moves_V_load, %moves_V_load_6" [Rubik_Cube_Layer_All/layerAll.cpp:685]   --->   Operation 97 'icmp' 'tmp_80' <Predicate = true> <Delay = 1.30> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.30> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 98 [1/1] (0.00ns)   --->   "br i1 %tmp_80, label %8, label %._crit_edge672" [Rubik_Cube_Layer_All/layerAll.cpp:685]   --->   Operation 98 'br' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 99 [1/1] (1.91ns)   --->   "%r_V_9 = add i9 %lhs_V_5_cast, 2" [Rubik_Cube_Layer_All/layerAll.cpp:686]   --->   Operation 99 'add' 'r_V_9' <Predicate = (tmp_80)> <Delay = 1.91> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.91> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 100 [1/1] (0.00ns)   --->   "%tmp_81 = zext i9 %r_V_9 to i64" [Rubik_Cube_Layer_All/layerAll.cpp:686]   --->   Operation 100 'zext' 'tmp_81' <Predicate = (tmp_80)> <Delay = 0.00>
+ST_9 : Operation 101 [1/1] (0.00ns)   --->   "%moves_V_addr_8 = getelementptr [200 x i4]* @moves_V, i64 0, i64 %tmp_81" [Rubik_Cube_Layer_All/layerAll.cpp:686]   --->   Operation 101 'getelementptr' 'moves_V_addr_8' <Predicate = (tmp_80)> <Delay = 0.00>
+ST_9 : Operation 102 [2/2] (2.27ns)   --->   "%moves_V_load_7 = load i4* %moves_V_addr_8, align 1" [Rubik_Cube_Layer_All/layerAll.cpp:686]   --->   Operation 102 'load' 'moves_V_load_7' <Predicate = (tmp_80)> <Delay = 2.27> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.27> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 4> <Depth = 200> <RAM>
+
+State 10 <SV = 9> <Delay = 4.19>
+ST_10 : Operation 103 [1/2] (2.27ns)   --->   "%moves_V_load_7 = load i4* %moves_V_addr_8, align 1" [Rubik_Cube_Layer_All/layerAll.cpp:686]   --->   Operation 103 'load' 'moves_V_load_7' <Predicate = true> <Delay = 2.27> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.27> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 4> <Depth = 200> <RAM>
+ST_10 : Operation 104 [1/1] (1.30ns)   --->   "%tmp_82 = icmp eq i4 %moves_V_load, %moves_V_load_7" [Rubik_Cube_Layer_All/layerAll.cpp:686]   --->   Operation 104 'icmp' 'tmp_82' <Predicate = true> <Delay = 1.30> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.30> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 105 [1/1] (0.00ns)   --->   "br i1 %tmp_82, label %9, label %._crit_edge672" [Rubik_Cube_Layer_All/layerAll.cpp:686]   --->   Operation 105 'br' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 106 [1/1] (1.91ns)   --->   "%r_V_10 = add i9 %lhs_V_5_cast, 3" [Rubik_Cube_Layer_All/layerAll.cpp:687]   --->   Operation 106 'add' 'r_V_10' <Predicate = (tmp_82)> <Delay = 1.91> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.91> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 107 [1/1] (0.00ns)   --->   "%tmp_83 = zext i9 %r_V_10 to i64" [Rubik_Cube_Layer_All/layerAll.cpp:687]   --->   Operation 107 'zext' 'tmp_83' <Predicate = (tmp_82)> <Delay = 0.00>
+ST_10 : Operation 108 [1/1] (0.00ns)   --->   "%moves_V_addr_9 = getelementptr [200 x i4]* @moves_V, i64 0, i64 %tmp_83" [Rubik_Cube_Layer_All/layerAll.cpp:687]   --->   Operation 108 'getelementptr' 'moves_V_addr_9' <Predicate = (tmp_82)> <Delay = 0.00>
+ST_10 : Operation 109 [2/2] (2.27ns)   --->   "%moves_V_load_8 = load i4* %moves_V_addr_9, align 1" [Rubik_Cube_Layer_All/layerAll.cpp:687]   --->   Operation 109 'load' 'moves_V_load_8' <Predicate = (tmp_82)> <Delay = 2.27> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.27> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 4> <Depth = 200> <RAM>
+
+State 11 <SV = 10> <Delay = 5.64>
+ST_11 : Operation 110 [1/2] (2.27ns)   --->   "%moves_V_load_8 = load i4* %moves_V_addr_9, align 1" [Rubik_Cube_Layer_All/layerAll.cpp:687]   --->   Operation 110 'load' 'moves_V_load_8' <Predicate = (!r_V & !or_cond & !tmp_93_old & tmp_80 & tmp_82) | (r_V & !tmp_89_old & !or_cond2 & tmp_80 & tmp_82) | (tmp_73 & tmp_75 & tmp_77 & tmp_80 & tmp_82)> <Delay = 2.27> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.27> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 4> <Depth = 200> <RAM>
+ST_11 : Operation 111 [1/1] (1.30ns)   --->   "%tmp_84 = icmp eq i4 %moves_V_load, %moves_V_load_8" [Rubik_Cube_Layer_All/layerAll.cpp:687]   --->   Operation 111 'icmp' 'tmp_84' <Predicate = (!r_V & !or_cond & !tmp_93_old & tmp_80 & tmp_82) | (r_V & !tmp_89_old & !or_cond2 & tmp_80 & tmp_82) | (tmp_73 & tmp_75 & tmp_77 & tmp_80 & tmp_82)> <Delay = 1.30> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.30> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 112 [1/1] (0.00ns)   --->   "br i1 %tmp_84, label %10, label %._crit_edge672" [Rubik_Cube_Layer_All/layerAll.cpp:687]   --->   Operation 112 'br' <Predicate = (!r_V & !or_cond & !tmp_93_old & tmp_80 & tmp_82) | (r_V & !tmp_89_old & !or_cond2 & tmp_80 & tmp_82) | (tmp_73 & tmp_75 & tmp_77 & tmp_80 & tmp_82)> <Delay = 0.00>
+ST_11 : Operation 113 [1/1] (1.91ns)   --->   "%i_V = add i8 %p_s, 1" [Rubik_Cube_Layer_All/layerAll.cpp:693]   --->   Operation 113 'add' 'i_V' <Predicate = (!r_V & !or_cond & !tmp_93_old & !tmp_80) | (r_V & !tmp_89_old & !or_cond2 & !tmp_80) | (!r_V & !or_cond & !tmp_93_old & !tmp_82) | (r_V & !tmp_89_old & !or_cond2 & !tmp_82) | (!r_V & !or_cond & !tmp_93_old & !tmp_84) | (tmp_73 & tmp_75 & tmp_77 & !tmp_80) | (r_V & !tmp_89_old & !or_cond2 & !tmp_84) | (tmp_73 & tmp_75 & tmp_77 & !tmp_82) | (tmp_73 & tmp_75 & tmp_77 & !tmp_84)> <Delay = 1.91> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.91> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 114 [1/1] (1.81ns)   --->   "br label %11"   --->   Operation 114 'br' <Predicate = (!r_V & !or_cond & !tmp_93_old & !tmp_80) | (r_V & !tmp_89_old & !or_cond2 & !tmp_80) | (!r_V & !or_cond & !tmp_93_old & !tmp_82) | (r_V & !tmp_89_old & !or_cond2 & !tmp_82) | (!r_V & !or_cond & !tmp_93_old & !tmp_84) | (tmp_73 & tmp_75 & tmp_77 & !tmp_80) | (r_V & !tmp_89_old & !or_cond2 & !tmp_84) | (tmp_73 & tmp_75 & tmp_77 & !tmp_82) | (tmp_73 & tmp_75 & tmp_77 & !tmp_84)> <Delay = 1.81>
+ST_11 : Operation 115 [1/1] (1.91ns)   --->   "%i_V_2 = add i8 %p_s, 3" [Rubik_Cube_Layer_All/layerAll.cpp:689]   --->   Operation 115 'add' 'i_V_2' <Predicate = (!r_V & !or_cond & !tmp_93_old & tmp_80 & tmp_82 & tmp_84) | (r_V & !tmp_89_old & !or_cond2 & tmp_80 & tmp_82 & tmp_84) | (tmp_73 & tmp_75 & tmp_77 & tmp_80 & tmp_82 & tmp_84)> <Delay = 1.91> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.91> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 116 [1/1] (1.81ns)   --->   "br label %11" [Rubik_Cube_Layer_All/layerAll.cpp:690]   --->   Operation 116 'br' <Predicate = (!r_V & !or_cond & !tmp_93_old & tmp_80 & tmp_82 & tmp_84) | (r_V & !tmp_89_old & !or_cond2 & tmp_80 & tmp_82 & tmp_84) | (tmp_73 & tmp_75 & tmp_77 & tmp_80 & tmp_82 & tmp_84)> <Delay = 1.81>
+ST_11 : Operation 117 [1/1] (0.00ns)   --->   "%t_V_1 = phi i8 [ %i_V_2, %10 ], [ %i_V, %._crit_edge672 ], [ %p_s, %._crit_edge668 ]"   --->   Operation 117 'phi' 't_V_1' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 118 [1/1] (1.91ns)   --->   "%i_V_3 = add i8 %t_V_1, 1" [Rubik_Cube_Layer_All/layerAll.cpp:674]   --->   Operation 118 'add' 'i_V_3' <Predicate = true> <Delay = 1.91> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.91> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 119 [1/1] (0.00ns)   --->   "br label %1" [Rubik_Cube_Layer_All/layerAll.cpp:674]   --->   Operation 119 'br' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 12ns, clock uncertainty: 1.5ns.
+
+ <State 1>: 1.77ns
+The critical path consists of the following:
+	'alloca' operation ('t.V') [3]  (0 ns)
+	'store' operation of constant 0 on local variable 't.V' [7]  (1.77 ns)
+
+ <State 2>: 2.28ns
+The critical path consists of the following:
+	'phi' operation ('i.V') with incoming values : ('i.V', Rubik_Cube_Layer_All/layerAll.cpp:674) [10]  (0 ns)
+	'getelementptr' operation ('moves_V_addr', Rubik_Cube_Layer_All/layerAll.cpp:676) [15]  (0 ns)
+	'load' operation ('moves_V_load', Rubik_Cube_Layer_All/layerAll.cpp:676) on array 'moves_V' [16]  (2.28 ns)
+
+ <State 3>: 4.19ns
+The critical path consists of the following:
+	'add' operation ('r.V', Rubik_Cube_Layer_All/layerAll.cpp:676) [24]  (1.92 ns)
+	'getelementptr' operation ('moves_V_addr_1', Rubik_Cube_Layer_All/layerAll.cpp:676) [26]  (0 ns)
+	'load' operation ('moves_V_load_1', Rubik_Cube_Layer_All/layerAll.cpp:676) on array 'moves_V' [27]  (2.28 ns)
+
+ <State 4>: 4.62ns
+The critical path consists of the following:
+	'load' operation ('moves_V_load_1', Rubik_Cube_Layer_All/layerAll.cpp:676) on array 'moves_V' [27]  (2.28 ns)
+	'icmp' operation ('tmp_67', Rubik_Cube_Layer_All/layerAll.cpp:676) [29]  (1.36 ns)
+	'or' operation ('or_cond', Rubik_Cube_Layer_All/layerAll.cpp:676) [31]  (0.978 ns)
+
+ <State 5>: 4.62ns
+The critical path consists of the following:
+	'load' operation ('moves_V_load_2', Rubik_Cube_Layer_All/layerAll.cpp:677) on array 'moves_V' [48]  (2.28 ns)
+	'icmp' operation ('tmp_70', Rubik_Cube_Layer_All/layerAll.cpp:677) [50]  (1.36 ns)
+	'or' operation ('or_cond2', Rubik_Cube_Layer_All/layerAll.cpp:677) [52]  (0.978 ns)
+
+ <State 6>: 4.19ns
+The critical path consists of the following:
+	'add' operation ('r.V', Rubik_Cube_Layer_All/layerAll.cpp:680) [63]  (1.92 ns)
+	'getelementptr' operation ('moves_V_addr_4', Rubik_Cube_Layer_All/layerAll.cpp:680) [65]  (0 ns)
+	'load' operation ('moves_V_load_4', Rubik_Cube_Layer_All/layerAll.cpp:680) on array 'moves_V' [66]  (2.28 ns)
+
+ <State 7>: 4.19ns
+The critical path consists of the following:
+	'add' operation ('r.V', Rubik_Cube_Layer_All/layerAll.cpp:681) [70]  (1.92 ns)
+	'getelementptr' operation ('moves_V_addr_5', Rubik_Cube_Layer_All/layerAll.cpp:681) [72]  (0 ns)
+	'load' operation ('moves_V_load_5', Rubik_Cube_Layer_All/layerAll.cpp:681) on array 'moves_V' [73]  (2.28 ns)
+
+ <State 8>: 4.19ns
+The critical path consists of the following:
+	'add' operation ('r.V', Rubik_Cube_Layer_All/layerAll.cpp:685) [87]  (1.92 ns)
+	'getelementptr' operation ('moves_V_addr_7', Rubik_Cube_Layer_All/layerAll.cpp:685) [89]  (0 ns)
+	'load' operation ('moves_V_load_6', Rubik_Cube_Layer_All/layerAll.cpp:685) on array 'moves_V' [90]  (2.28 ns)
+
+ <State 9>: 4.19ns
+The critical path consists of the following:
+	'add' operation ('r.V', Rubik_Cube_Layer_All/layerAll.cpp:686) [94]  (1.92 ns)
+	'getelementptr' operation ('moves_V_addr_8', Rubik_Cube_Layer_All/layerAll.cpp:686) [96]  (0 ns)
+	'load' operation ('moves_V_load_7', Rubik_Cube_Layer_All/layerAll.cpp:686) on array 'moves_V' [97]  (2.28 ns)
+
+ <State 10>: 4.19ns
+The critical path consists of the following:
+	'add' operation ('r.V', Rubik_Cube_Layer_All/layerAll.cpp:687) [101]  (1.92 ns)
+	'getelementptr' operation ('moves_V_addr_9', Rubik_Cube_Layer_All/layerAll.cpp:687) [103]  (0 ns)
+	'load' operation ('moves_V_load_8', Rubik_Cube_Layer_All/layerAll.cpp:687) on array 'moves_V' [104]  (2.28 ns)
+
+ <State 11>: 5.64ns
+The critical path consists of the following:
+	'add' operation ('i.V', Rubik_Cube_Layer_All/layerAll.cpp:693) [108]  (1.92 ns)
+	multiplexor before 'phi' operation ('i.V') with incoming values : ('i.V', Rubik_Cube_Layer_All/layerAll.cpp:693) ('i.V', Rubik_Cube_Layer_All/layerAll.cpp:689) ('i.V', Rubik_Cube_Layer_All/layerAll.cpp:674) [114]  (1.81 ns)
+	'phi' operation ('i.V') with incoming values : ('i.V', Rubik_Cube_Layer_All/layerAll.cpp:693) ('i.V', Rubik_Cube_Layer_All/layerAll.cpp:689) ('i.V', Rubik_Cube_Layer_All/layerAll.cpp:674) [114]  (0 ns)
+	'add' operation ('i.V', Rubik_Cube_Layer_All/layerAll.cpp:674) [115]  (1.92 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

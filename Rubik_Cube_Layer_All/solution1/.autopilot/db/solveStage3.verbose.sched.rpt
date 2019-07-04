@@ -1,0 +1,180 @@
+
+
+================================================================
+== Vivado HLS Report for 'solveStage3'
+================================================================
+* Date:           Fri Jan  4 20:12:17 2019
+
+* Version:        2018.2 (Build 2258646 on Thu Jun 14 20:25:20 MDT 2018)
+* Project:        Rubik_Cube_Layer_All
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  12.00|     9.736|        1.50|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |    ?|    ?|    ?|    ?|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 8
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / true
+3 --> 
+	4  / true
+4 --> 
+	5  / (tmp)
+	7  / (!tmp)
+5 --> 
+	6  / true
+6 --> 
+	7  / true
+7 --> 
+	8  / true
+8 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.76>
+ST_1 : Operation 9 [2/2] (1.76ns)   --->   "call fastcc void @solveStage3a()" [Rubik_Cube_Layer_All/layerAll.cpp:1093]   --->   Operation 9 'call' <Predicate = true> <Delay = 1.76> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 2 <SV = 1> <Delay = 0.00>
+ST_2 : Operation 10 [1/2] (0.00ns)   --->   "call fastcc void @solveStage3a()" [Rubik_Cube_Layer_All/layerAll.cpp:1093]   --->   Operation 10 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 3 <SV = 2> <Delay = 3.10>
+ST_3 : Operation 11 [1/1] (0.00ns)   --->   "%sC_V_read = call i3 @_ssdm_op_Read.ap_auto.i3(i3 %sC_V)"   --->   Operation 11 'read' 'sC_V_read' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 12 [1/1] (0.00ns)   --->   "%fC_V_read = call i3 @_ssdm_op_Read.ap_auto.i3(i3 %fC_V)"   --->   Operation 12 'read' 'fC_V_read' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 13 [2/2] (3.10ns)   --->   "%p_0 = call fastcc i4 @findEdge(i3 %fC_V_read, i3 %sC_V_read)" [Rubik_Cube_Layer_All/layerAll.cpp:1095]   --->   Operation 13 'call' 'p_0' <Predicate = true> <Delay = 3.10> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 4 <SV = 3> <Delay = 9.73>
+ST_4 : Operation 14 [1/2] (8.43ns)   --->   "%p_0 = call fastcc i4 @findEdge(i3 %fC_V_read, i3 %sC_V_read)" [Rubik_Cube_Layer_All/layerAll.cpp:1095]   --->   Operation 14 'call' 'p_0' <Predicate = true> <Delay = 8.43> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_4 : Operation 15 [1/1] (1.30ns)   --->   "%tmp = icmp ugt i4 %p_0, 4" [Rubik_Cube_Layer_All/layerAll.cpp:1095]   --->   Operation 15 'icmp' 'tmp' <Predicate = true> <Delay = 1.30> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.30> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 16 [1/1] (0.00ns)   --->   "br i1 %tmp, label %1, label %._crit_edge" [Rubik_Cube_Layer_All/layerAll.cpp:1095]   --->   Operation 16 'br' <Predicate = true> <Delay = 0.00>
+
+State 5 <SV = 4> <Delay = 0.00>
+ST_5 : Operation 17 [2/2] (0.00ns)   --->   "call fastcc void @stage3Prepare(i3 %fC_V_read, i3 %sC_V_read)" [Rubik_Cube_Layer_All/layerAll.cpp:1097]   --->   Operation 17 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 6 <SV = 5> <Delay = 0.00>
+ST_6 : Operation 18 [1/2] (0.00ns)   --->   "call fastcc void @stage3Prepare(i3 %fC_V_read, i3 %sC_V_read)" [Rubik_Cube_Layer_All/layerAll.cpp:1097]   --->   Operation 18 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_6 : Operation 19 [1/1] (0.00ns)   --->   "br label %._crit_edge" [Rubik_Cube_Layer_All/layerAll.cpp:1098]   --->   Operation 19 'br' <Predicate = true> <Delay = 0.00>
+
+State 7 <SV = 6> <Delay = 1.76>
+ST_7 : Operation 20 [2/2] (1.76ns)   --->   "call fastcc void @solveStage3a()" [Rubik_Cube_Layer_All/layerAll.cpp:1099]   --->   Operation 20 'call' <Predicate = true> <Delay = 1.76> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 8 <SV = 7> <Delay = 0.00>
+ST_8 : Operation 21 [1/2] (0.00ns)   --->   "call fastcc void @solveStage3a()" [Rubik_Cube_Layer_All/layerAll.cpp:1099]   --->   Operation 21 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_8 : Operation 22 [1/1] (0.00ns)   --->   "ret void" [Rubik_Cube_Layer_All/layerAll.cpp:1100]   --->   Operation 22 'ret' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 12ns, clock uncertainty: 1.5ns.
+
+ <State 1>: 1.77ns
+The critical path consists of the following:
+	'call' operation (Rubik_Cube_Layer_All/layerAll.cpp:1093) to 'solveStage3a' [8]  (1.77 ns)
+
+ <State 2>: 0ns
+The critical path consists of the following:
+
+ <State 3>: 3.1ns
+The critical path consists of the following:
+	wire read on port 'sC_V' [6]  (0 ns)
+	'call' operation ('p_0', Rubik_Cube_Layer_All/layerAll.cpp:1095) to 'findEdge' [9]  (3.1 ns)
+
+ <State 4>: 9.74ns
+The critical path consists of the following:
+	'call' operation ('p_0', Rubik_Cube_Layer_All/layerAll.cpp:1095) to 'findEdge' [9]  (8.43 ns)
+	'icmp' operation ('tmp', Rubik_Cube_Layer_All/layerAll.cpp:1095) [10]  (1.3 ns)
+
+ <State 5>: 0ns
+The critical path consists of the following:
+
+ <State 6>: 0ns
+The critical path consists of the following:
+
+ <State 7>: 1.77ns
+The critical path consists of the following:
+	'call' operation (Rubik_Cube_Layer_All/layerAll.cpp:1099) to 'solveStage3a' [16]  (1.77 ns)
+
+ <State 8>: 0ns
+The critical path consists of the following:
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

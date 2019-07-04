@@ -1,0 +1,2158 @@
+INFO-FLOW: Workspace C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1 opened at Fri Jan 04 20:10:56 +0000 2019
+Execute     config_clock -quiet -name default -period 12 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 12ns.
+Execute     open_platform DefaultPlatform 
+Execute     import_lib C:/Xilinx/Vivado/2018.2/common/technology/xilinx/zynq/zynq 
+Execute       source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/xilinx.lib 
+Execute         source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/xilinx_interface.lib 
+Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/plb46.lib 
+Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/fsl.lib 
+Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/axi4.lib 
+Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/maxi.lib 
+Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/saxilite.lib 
+Execute         source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/dsp48.lib 
+Execute         source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/ip/dds_compiler.lib 
+Execute         source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/ip/xfft.lib 
+Execute         source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/ip/xfir.lib 
+Command       ap_source done; 0.135 sec.
+Execute       source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/xilinx_old.lib 
+Execute       source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/xilinx_vivado.lib 
+Execute       source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/xilinx.hlp 
+Execute         source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/target_info.tcl 
+Execute         source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/maxi.hlp 
+Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/dsp48.hlp 
+Command       ap_source done; 0.121 sec.
+Execute       source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/zynq/dsp48e1.hlp 
+Execute       get_default_platform 
+Execute       config_chip_info -quiet -resource  {SLICE 13300}  {LUT 53200}     {FF 106400} {DSP48E 220}   {BRAM 280}  
+Execute       config_chip_info -quiet -speed medium 
+Execute       source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/xilinx.hlp 
+Execute         source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/target_info.tcl 
+Execute         source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/maxi.hlp 
+Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/dsp48.hlp 
+Command     import_lib done; 0.423 sec.
+Execute     source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/zynq/zynq.gen 
+Execute       source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/virtex.gen 
+Execute         source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/xilinx.gen 
+Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/plb46.gen 
+Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/fsl.gen 
+Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/axi4.gen 
+Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute             source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/saxilite.gen 
+Execute             source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/maxi.gen 
+Command             ap_source done; 0.131 sec.
+Command           ap_source done; 0.157 sec.
+Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Command           ap_source done; 0.165 sec.
+Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Command           ap_source done; 0.124 sec.
+Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/ip/util.gen 
+Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/ip/xfft.gen 
+Command           ap_source done; 0.208 sec.
+Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/ip/xfir.gen 
+Command         ap_source done; 0.84 sec.
+Execute         source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/dsp48.gen 
+Command       ap_source done; 0.925 sec.
+Command     ap_source done; 0.927 sec.
+Execute     set_part xc7z020clg400-1 
+Execute       add_library xilinx/zynq/zynq:xc7z020:clg400:-1 
+Execute         get_default_platform 
+Execute         license_isbetapart xc7z020 
+Command         license_isbetapart done; error code: 1; 0.193 sec.
+Execute         get_default_platform 
+Execute         config_chip_info -quiet -resource  {SLICE 13300}  {LUT 53200}     {FF 106400} {DSP48E 220}   {BRAM 280}  
+Execute         config_chip_info -quiet -speed slow 
+Command       add_library done; 0.223 sec.
+Execute       add_library xilinx/zynq/zynq_fpv6 
+Execute         get_default_platform 
+Execute         open_platform DefaultPlatform 
+Execute         import_lib C:/Xilinx/Vivado/2018.2/common/technology/xilinx/zynq/zynq_fpv6 
+Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/xilinx_fpv7.lib 
+Execute             source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/xilinx_hp.lib 
+Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/xilinx_fpv.hlp 
+Execute             source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/xilinx.hlp 
+Execute               source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/target_info.tcl 
+Execute               source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute                 source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/maxi.hlp 
+Execute                 source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/saxilite.hlp 
+Execute               source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/dsp48.hlp 
+Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/zynq/zynq_hp.hlp 
+Command         import_lib done; 0.151 sec.
+Execute         source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/zynq/zynq_fpv6.gen 
+Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/xilinx_fpv6.gen 
+Command       add_library done; 0.222 sec.
+INFO: [HLS 200-10] Setting target device to 'xc7z020clg400-1'
+Execute       get_default_platform 
+Command     set_part done; 0.546 sec.
+Execute     get_default_platform 
+Execute     config_chip_info -quiet -resource  {SLICE 13300}  {LUT 53200}     {FF 106400} {DSP48E 220}   {BRAM 280}  
+Execute     config_chip_info -quiet -speed slow 
+Command   open_solution done; 2.031 sec.
+Execute   set_part xc7z020clg400-1 -tool vivado 
+Execute     add_library xilinx/zynq/zynq:xc7z020:clg400:-1 
+Execute       get_default_platform 
+Execute       license_isbetapart xc7z020 
+Command       license_isbetapart done; error code: 1; 
+Execute       get_default_platform 
+Execute       config_chip_info -quiet -resource  {SLICE 13300}  {LUT 53200}     {FF 106400} {DSP48E 220}   {BRAM 280}  
+Execute       config_chip_info -quiet -speed slow 
+Execute     add_library xilinx/zynq/zynq_fpv6 
+Execute       get_default_platform 
+Execute       open_platform DefaultPlatform 
+Execute       import_lib C:/Xilinx/Vivado/2018.2/common/technology/xilinx/zynq/zynq_fpv6 
+Execute         source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/xilinx_fpv7.lib 
+Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/xilinx_hp.lib 
+Execute         source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/xilinx_fpv.hlp 
+Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/xilinx.hlp 
+Execute             source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/target_info.tcl 
+Execute             source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute               source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/maxi.hlp 
+Execute               source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/saxilite.hlp 
+Execute             source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/dsp48.hlp 
+Execute         source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/zynq/zynq_hp.hlp 
+Execute       source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/zynq/zynq_fpv6.gen 
+Execute         source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/xilinx_fpv6.gen 
+Execute     get_default_platform 
+Command   set_part done; 0.111 sec.
+Execute   create_clock -period 12 -name default 
+Execute     config_clock -quiet -name default -period 12 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 12ns.
+Execute   source ./Rubik_Cube_Layer_All/solution1/directives.tcl 
+Execute     set_directive_interface -mode s_axilite -bundle add_io solveCube 
+INFO-FLOW: Setting directive 'INTERFACE' s_axilite=positionBoolean0mode port=positionBooleanTextRequiredreturn bundle=add_io 
+Execute     set_directive_interface -mode s_axilite -bundle add_io solveCube cubieColor_tb 
+INFO-FLOW: Setting directive 'INTERFACE' s_axilite=positionBoolean0mode port=positionBooleanTextRequiredreturn bundle=add_io 
+INFO-FLOW: Setting directive 'INTERFACE' s_axilite=positionBoolean0mode port=positionBooleanTextRequiredcubieColor_tb bundle=add_io 
+Execute     set_directive_interface -mode s_axilite -bundle add_io solveCube rMoves 
+INFO-FLOW: Setting directive 'INTERFACE' s_axilite=positionBoolean0mode port=positionBooleanTextRequiredreturn bundle=add_io 
+INFO-FLOW: Setting directive 'INTERFACE' s_axilite=positionBoolean0mode port=positionBooleanTextRequiredcubieColor_tb bundle=add_io 
+INFO-FLOW: Setting directive 'INTERFACE' s_axilite=positionBoolean0mode port=positionBooleanTextRequiredrMoves bundle=add_io 
+Execute     set_directive_interface -mode s_axilite -bundle add_io solveCube order 
+INFO-FLOW: Setting directive 'INTERFACE' s_axilite=positionBoolean0mode port=positionBooleanTextRequiredreturn bundle=add_io 
+INFO-FLOW: Setting directive 'INTERFACE' s_axilite=positionBoolean0mode port=positionBooleanTextRequiredcubieColor_tb bundle=add_io 
+INFO-FLOW: Setting directive 'INTERFACE' s_axilite=positionBoolean0mode port=positionBooleanTextRequiredrMoves bundle=add_io 
+INFO-FLOW: Setting directive 'INTERFACE' s_axilite=positionBoolean0mode port=positionBooleanTextRequiredorder bundle=add_io 
+Execute   csynth_design 
+Execute     get_config_compile -effort 
+Execute     get_config_compile -enable_clang39 
+Execute     get_config_compile -g 
+Execute     get_config_compile -lm 
+Execute     get_config_compile -ng 
+Execute     get_config_compile -opt_fp 
+Execute     get_config_compile -skip_cdt 
+Execute     get_config_compile -skip_syncheck 
+Execute     get_config_compile -skip_transform 
+Execute     get_config_compile -keep_printf 
+Execute     elaborate -effort=medium -skip_syncheck=0 -keep_printf=0 -lm=0 -skip_cdt=0 -skip_transform=0 -ng=0 -g=0 -opt_fp=0 -from_csynth_design=1 
+Execute       get_config_schedule -relax_ii_for_timing 
+Execute       get_config_schedule -suppress_dependence_error_break 
+INFO: [HLS 200-10] Analyzing design file 'Rubik_Cube_Layer_All/layerAll.cpp' ... 
+INFO-FLOW: Compiling one TU...
+Execute       is_m_axi_addr64 
+INFO-FLOW: Handling Rubik_Cube_Layer_All/layerAll.cpp as C++
+Execute       get_default_platform 
+Execute       is_encrypted Rubik_Cube_Layer_All/layerAll.cpp 
+Execute       get_default_platform 
+INFO-FLOW: Source preprocessing
+Execute       clang  -fno-limit-debug-info -gcc-toolchain "C:/Xilinx/Vivado/2018.2/msys" -hls  -fno-exceptions  -D__llvm__  -E "Rubik_Cube_Layer_All/layerAll.cpp"     -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -D__cdecl= -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "C:/Xilinx/Vivado/2018.2/common/technology/autopilot" -I "C:/Xilinx/Vivado/2018.2/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__  -o "C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/layerAll.pp.0.cpp" 
+INFO-FLOW: exec C:/Xilinx/Vivado/2018.2/win64/tools/clang/bin/clang -fno-limit-debug-info -gcc-toolchain C:/Xilinx/Vivado/2018.2/msys -hls -fno-exceptions -D__llvm__ -E Rubik_Cube_Layer_All/layerAll.cpp -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -D__cdecl= -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I C:/Xilinx/Vivado/2018.2/common/technology/autopilot -I C:/Xilinx/Vivado/2018.2/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/layerAll.pp.0.cpp
+Command       clang done; 10.527 sec.
+INFO-FLOW: Syntax Checking before pre-processing...
+Execute       clang  -fno-limit-debug-info -gcc-toolchain "C:/Xilinx/Vivado/2018.2/msys" -hls    -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -D__cdecl= -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "C:/Xilinx/Vivado/2018.2/common/technology/autopilot" -I "C:/Xilinx/Vivado/2018.2/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__  "C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/layerAll.pp.0.cpp"  -o "C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/useless.bc"  
+INFO-FLOW: exec C:/Xilinx/Vivado/2018.2/win64/tools/clang/bin/clang -fno-limit-debug-info -gcc-toolchain C:/Xilinx/Vivado/2018.2/msys -hls -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -D__cdecl= -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I C:/Xilinx/Vivado/2018.2/common/technology/autopilot -I C:/Xilinx/Vivado/2018.2/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/layerAll.pp.0.cpp -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/useless.bc
+Command       clang done; 5.121 sec.
+INFO-FLOW: GCC PP time: 15 seconds per iteration
+INFO-FLOW: Setting directive 'INTERFACE' s_axilite=positionBoolean0mode port=positionBooleanTextRequiredreturn bundle=add_io 
+INFO-FLOW: Setting directive 'INTERFACE' s_axilite=positionBoolean0mode port=positionBooleanTextRequiredcubieColor_tb bundle=add_io 
+INFO-FLOW: Setting directive 'INTERFACE' s_axilite=positionBoolean0mode port=positionBooleanTextRequiredrMoves bundle=add_io 
+INFO-FLOW: Setting directive 'INTERFACE' s_axilite=positionBoolean0mode port=positionBooleanTextRequiredorder bundle=add_io 
+INFO-FLOW: Setting directive 'INTERFACE' s_axilite=positionBoolean0mode port=positionBooleanTextRequiredreturn bundle=add_io 
+INFO-FLOW: Setting directive 'INTERFACE' s_axilite=positionBoolean0mode port=positionBooleanTextRequiredcubieColor_tb bundle=add_io 
+INFO-FLOW: Setting directive 'INTERFACE' s_axilite=positionBoolean0mode port=positionBooleanTextRequiredrMoves bundle=add_io 
+INFO-FLOW: Setting directive 'INTERFACE' s_axilite=positionBoolean0mode port=positionBooleanTextRequiredorder bundle=add_io 
+Execute       list_core -type functional_unit 
+Execute       tidy_31 xilinx-systemc-detector C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/layerAll.pp.0.cpp std=gnu++98 -directive=C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/.systemc_flag 
+INFO-FLOW: exec C:/Xilinx/Vivado/2018.2/win64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* --checks=-*,xilinx-systemc-detector -import-directive=C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/.systemc_flag -quiet -fix-errors C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/layerAll.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0
+Command       tidy_31 done; 6.746 sec.
+INFO-FLOW: CDT Preprocessing with tidy-3.1...
+Execute       tidy_31 xilinx-directive2pragma C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/layerAll.pp.0.cpp std=gnu++98 -directive=C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/solution1.json 
+INFO-FLOW: exec C:/Xilinx/Vivado/2018.2/win64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* --checks=-*,xilinx-directive2pragma -import-directive=C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/solution1.json -quiet -fix-errors C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/layerAll.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0
+Command       tidy_31 done; 3.394 sec.
+Execute       get_config_dataflow -strict_mode 
+Execute       ap_eval exec -ignorestderr C:/Xilinx/Vivado/2018.2/win64/tools/clang-3.9-csynth/bin/xilinx-dataflow-lawyer -export-fixes=C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/xilinx-dataflow-lawyer.layerAll.pp.0.cpp.diag.yml C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/layerAll.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0 -fstrict-dataflow > C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/xilinx-dataflow-lawyer.layerAll.pp.0.cpp.out.log 2> C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/xilinx-dataflow-lawyer.layerAll.pp.0.cpp.err.log 
+Command       ap_eval done; 2.625 sec.
+Execute       tidy_31 -errorcheck xilinx-constantarray-param,xilinx-resource-pragma-transformer C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/layerAll.pp.0.cpp std=gnu++98 
+INFO-FLOW: exec C:/Xilinx/Vivado/2018.2/win64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* --checks=-*,xilinx-constantarray-param,xilinx-resource-pragma-transformer -quiet -fix-errors C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/layerAll.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0
+INFO-FLOW: exec C:/Xilinx/Vivado/2018.2/win64/tools/clang-3.9-csynth/bin/xilinx-legacy-rewriter C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/layerAll.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0
+Command       tidy_31 done; 4.85 sec.
+INFO-FLOW: tidy-3.1 time 10 seconds per iteration
+INFO-FLOW: Pragma Handling...
+Execute       tidy_31 xilinx-ssdm-intrinsics-arguments C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/layerAll.pragma.1.cpp std=gnu++98 
+INFO-FLOW: exec C:/Xilinx/Vivado/2018.2/win64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* --checks=-*,xilinx-ssdm-intrinsics-arguments -quiet -fix-errors C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/layerAll.pragma.1.cpp -- -std=gnu++98 -fhls -ferror-limit=0
+Command       tidy_31 done; 2.469 sec.
+INFO-FLOW: Source preprocessing
+Execute       clang  -fno-limit-debug-info -gcc-toolchain "C:/Xilinx/Vivado/2018.2/msys" -hls  -fno-exceptions  -D__llvm__  -E "C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/layerAll.pragma.1.cpp"     -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -D__cdecl= -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "C:/Xilinx/Vivado/2018.2/common/technology/autopilot" -I "C:/Xilinx/Vivado/2018.2/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__  -o "C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/layerAll.pragma.2.cpp" 
+INFO-FLOW: exec C:/Xilinx/Vivado/2018.2/win64/tools/clang/bin/clang -fno-limit-debug-info -gcc-toolchain C:/Xilinx/Vivado/2018.2/msys -hls -fno-exceptions -D__llvm__ -E C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/layerAll.pragma.1.cpp -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -D__cdecl= -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I C:/Xilinx/Vivado/2018.2/common/technology/autopilot -I C:/Xilinx/Vivado/2018.2/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/layerAll.pragma.2.cpp
+Command       clang done; 1.766 sec.
+Execute       get_default_platform 
+INFO-FLOW: Processing labels
+Execute       clang -src C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/layerAll.pragma.2.cpp  -fno-limit-debug-info -gcc-toolchain C:/Xilinx/Vivado/2018.2/msys -hls -hls-analyze-label -hls-analyze-pragma -fno-exceptions  -D__llvm__  -w  "C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/layerAll.pragma.2.cpp"    -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "C:/Xilinx/Vivado/2018.2/common/technology/autopilot" -I "C:/Xilinx/Vivado/2018.2/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -g -o "C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/layerAll.bc" 
+INFO-FLOW: exec C:/Xilinx/Vivado/2018.2/win64/tools/clang/bin/clang -fno-limit-debug-info -gcc-toolchain C:/Xilinx/Vivado/2018.2/msys -hls -hls-analyze-label -hls-analyze-pragma -fno-exceptions -D__llvm__ -w C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/layerAll.pragma.2.cpp -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I C:/Xilinx/Vivado/2018.2/common/technology/autopilot -I C:/Xilinx/Vivado/2018.2/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -g -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/layerAll.bc
+Command       clang done; 3.504 sec.
+INFO-FLOW: Linking Debug ...
+Execute       llvm-ld C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/layerAll.g.bc -hls-opt -except-internalize solveCube -LC:/Xilinx/Vivado/2018.2/win64/lib -lhlsm -lhlsmc++ -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/a.g 
+Command       llvm-ld done; 10.664 sec.
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:01 ; elapsed = 00:01:03 . Memory (MB): peak = 103.629 ; gain = 46.156
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:01 ; elapsed = 00:01:03 . Memory (MB): peak = 103.629 ; gain = 46.156
+Execute       ::config_rtl 
+Execute       opt_and_import_c a -opt_level=2 -skip_syncheck=0 -ng=0 -keep_printf=0 
+Execute         cleanup_all_models 
+INFO: [HLS 200-10] Starting code transformations ...
+Execute         transform -promote-dbg-pointer C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/a.pp.bc -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/a.pp.0.bc -f 
+Execute         llvm-ld C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/a.pp.0.bc -disable-opt -LC:/Xilinx/Vivado/2018.2/win64/lib -lfloatconversion -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/a.g.0 
+Command         llvm-ld done; 1.006 sec.
+INFO-FLOW: Running Standard Transforms...
+Execute         transform -hls -share-std-xform -demangle-name -inline-byval-memcpy -always-inline -promote-dbg-pointer -interface-preproc -scalarrepl -mem2reg -keep-read-access -instcombine -dce -promote-dbg-pointer -bitop-raise -loop-simplify -indvarspre -indvars -loop-simplify -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -basicaa -simplifycfg -mem2reg -globalopt -global-constprop -deadargelim -instcombine -simplifycfg -prune-eh -simplifycfg -scalarrepl -instcombine -reassociate -licm -simplifycfg -loop-simplify -indvars -instcombine -simplifycfg -mem2reg -loop-simplify -indvars -instcombine -gvn -gvn -instcombine -adce -break-crit-edges -simplifycfg -loop-delete -global-array-opt -dce -dse -adce -find-syn-modules -top solveCube -deadargelim -mem2reg -instcombine -dce -presyn-prepare -auto-rom-infer -interface-preproc -syn-check -check-rec-only -find-region -simplifycfg -func-extr -function-inline -globaldce -mem2reg -instcombine -dce -gvn -globaldce -adce -adse -constprop -instcombine -bit-constprop -instcombine -dce -simplifycfg -bitop-raise -simplifycfg -dce -loop-delete -reassociate -globalopt -global-privatize -mem2reg -dce -global-constprop -pointer-simplify -constprop -dce -func-inst -deadargelim -auto-shift-reg-idiom -promote-dbg-pointer -norm-name C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/a.g.0.bc -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/a.g.1.bc -f -phase std-opt 
+Command         transform done; 1.003 sec.
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:02 ; elapsed = 00:01:06 . Memory (MB): peak = 121.375 ; gain = 63.902
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO-FLOW: Checking Synthesizability 1/2..
+Execute         transform -hls -syn-check -check-rec-only -disaggr -scalarrepl -norm-name -dce -mem2reg -instcombine -function-uniquify -directive-preproc -mem2reg -dse -dce -auto-rom-infer -dce -array-normalize -instcombine -dce -warn-fifo-pointer -array-seg-normalize -instcombine -dce -array-flatten -instcombine -dce -array-burst -dce -deadargelim -promote-global-argument -simplifycfg -mem2reg -globaldce -resolve-double-ptr -dce -deadargelim -dce -instcombine -function-inline -globaldce -dce -doublePtrSimplify -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer -dce -scalarrepl -dse -adse -instcombine -ptrLegalization -simplifycfg -dce -instcombine -pointer-simplify -ptrArgReplace -dce -instcombine -disaggr -scalarrepl -norm-name -dce -mem2reg -instcombine -ptrLegalization -simplifycfg -deadargelim -instcombine -dce -inst-simplify -function-uniquify -directive-preproc -mem2reg -dse -dce -globaldce C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/a.g.1.bc -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/a.g.2.prechk.bc -f 
+INFO: [XFORM 203-602] Inlining function 'moveCornerCubieD' into 'solveStage2' (Rubik_Cube_Layer_All/layerAll.cpp:822) automatically.
+INFO: [XFORM 203-602] Inlining function 'solveCorner' into 'solveStage2' (Rubik_Cube_Layer_All/layerAll.cpp:867) automatically.
+INFO: [XFORM 203-602] Inlining function 'stage3Movea' into 'solveStage3a' (Rubik_Cube_Layer_All/layerAll.cpp:1006) automatically.
+INFO: [XFORM 203-602] Inlining function 'stage3Moveb' into 'solveStage3a' (Rubik_Cube_Layer_All/layerAll.cpp:1012) automatically.
+INFO: [XFORM 203-602] Inlining function 'stage3Movea' into 'stage3Prepare' (Rubik_Cube_Layer_All/layerAll.cpp:1065) automatically.
+INFO: [XFORM 203-602] Inlining function 'stage4sequence' into 'solveStage4b' (Rubik_Cube_Layer_All/layerAll.cpp:1222) automatically.
+INFO: [XFORM 203-602] Inlining function 'stage5sequence1' into 'solveStage5a' (Rubik_Cube_Layer_All/layerAll.cpp:1319) automatically.
+INFO: [XFORM 203-602] Inlining function 'stage5sequence2' into 'solveStage5b' (Rubik_Cube_Layer_All/layerAll.cpp:1328) automatically.
+INFO: [XFORM 203-602] Inlining function 'stage5sequence3' into 'solveStage5b' (Rubik_Cube_Layer_All/layerAll.cpp:1359) automatically.
+Command         transform done; 0.915 sec.
+INFO-FLOW: Checking Synthesizability 2/2..
+Execute         transform -syn-check C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/a.g.2.prechk.bc -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/a.g.2.bc -f -phase syn-check 
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:03 ; elapsed = 00:01:07 . Memory (MB): peak = 127.215 ; gain = 69.742
+INFO-FLOW: Compiler optimizing ...
+INFO-FLOW: Share syncheck's 1.bc for syn flow: copy C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/a.g.1.bc to C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/a.o.1.bc
+INFO-FLOW: Presyn 1...
+Execute         transform -hls -tmp C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db -interface-port-rename -type-info -function-uniquify -directive-preproc -mem2reg -dse -dce -disaggr -scalarrepl -norm-name -deadargelim -mem2reg -instcombine -dce -simplifycfg -auto-rom-infer -dce -function-uniquify -resource-proc -simplifycfg -mem2reg -globaldce -resolve-double-ptr -dce -deadargelim -dce -instcombine -clib-intrinsic-prepare -dce -func-buffer -dce -array-normalize -func-legal -instcombine -gvn -constprop -dce -ptrArgReplace -mem2reg -instcombine -dce -array-seg-normalize -deadargelim -instcombine -dce -pointer-simplify -dce -port-alignment -dce -interface-preproc -data-pack -instcombine -dce -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -loop-simplify -indvars -instcombine -gvn -loop-simplify -mem2reg -dce -find-region -instcombine -auto-loop-pipeline -inst-simplify -interface-preproc -cfgopt -instcombine -indvars -auto-loop-unroll -loop-simplify -loop-bound -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -clean-region -attach-range -gvn -inst-simplify -constprop -simplifycfg -dce -pointer-simplify -dce -globalopt -constprop -dce -array-promote -constprop -instcombine -dce -ptrArgReplace -mem2reg -instcombine -simplifycfg -dce -auto-par -instcombine -dce -array-transform-check -array-reshape -instcombine -simplifycfg -dce -ptrArgReplace -deadargelim -mem2reg -instcombine -simplifycfg -dce -indvars -loop-simplify -loop-bound -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -duplicate-dataflow-processes -globaldce -instcombine -array-partition -instcombine -simplifycfg -dce -ptrArgReplace -global-constprop -deadargelim -mem2reg -func-legal -instcombine -dce -global-constprop -deadargelim -mem2reg -instcombine -simplifycfg -dce -merge-param -deadargelim -globalopt -constprop -dce -array-promote -constprop -instcombine -dce -ptrArgReplace -mem2reg -instcombine -simplifycfg -dce -mem-intrinsic-preproc -dce -global-internalize -global-privatize -mem2reg -globaldce -promote-global-argument -ptrArgReplace -mem2reg -instcombine -dce -globalopt -mergereturn -simplify-global-access -mem2reg -dce -pointer-simplify -dce -functionattrs -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -inst-simplify -dce -norm-name -function-inline -globaldce -func-inst -constprop -instcombine -simplifycfg -dce -func-legal -dce -loop-bound -arraycheck -bitwidthmin -on-by-dataflow -loop-delete -instcombine -simplifycfg -globaldce -dce -gvn -deadargelim -dce -loop-simplify -clean-region -simplifycfg -propagate-stable-arguments -loop-stream -instcombine -simplifycfg -dce -globaldce -duplicate-dataflow-processes -stream-intrinsic-preproc -dce -check-ap-stream -loop-simplify -eliminate-keepreads -extract-dataflow-in-loop -loop-simplify -dce -gvn -deadargelim -dse -check-dataflow-syntax -legalize-stream-variable -legalize-global -extract-subproc -dce -dead-channel-elimination -canonicalize-gep -globaldce -dce -gvn -deadargelim -annotate-dataflow-channels -scalar-propagation -deadargelim -globaldce -mem2reg -check-dataflow-channels -function-stream -dce -globaldce -prop-fifo-spec -internal-stream-gen -canonicalize-gep -globaldce -dce -gvn -deadargelim -mergereturn -indvars -loop-simplify -instcombine -array-stream -array-seg-normalize -array-partition -func-legal -instcombine -simplifycfg -dce -bundle-memfifo-ops -deadargelim -function-uniquify -directive-preproc -mem2reg -dse -dce -group-axi-access -licm -simplifycfg -dce -loop-delete -norm-name C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/a.o.1.bc -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/a.o.1.tmp.bc -f 
+INFO: [XFORM 203-602] Inlining function 'moveCornerCubieD' into 'solveStage2' (Rubik_Cube_Layer_All/layerAll.cpp:822) automatically.
+INFO: [XFORM 203-602] Inlining function 'solveCorner' into 'solveStage2' (Rubik_Cube_Layer_All/layerAll.cpp:867) automatically.
+INFO: [XFORM 203-602] Inlining function 'stage3Movea' into 'solveStage3a' (Rubik_Cube_Layer_All/layerAll.cpp:1006) automatically.
+INFO: [XFORM 203-602] Inlining function 'stage3Moveb' into 'solveStage3a' (Rubik_Cube_Layer_All/layerAll.cpp:1012) automatically.
+INFO: [XFORM 203-602] Inlining function 'stage3Movea' into 'stage3Prepare' (Rubik_Cube_Layer_All/layerAll.cpp:1065) automatically.
+INFO: [XFORM 203-602] Inlining function 'stage4sequence' into 'solveStage4b' (Rubik_Cube_Layer_All/layerAll.cpp:1222) automatically.
+INFO: [XFORM 203-602] Inlining function 'stage5sequence1' into 'solveStage5a' (Rubik_Cube_Layer_All/layerAll.cpp:1319) automatically.
+INFO: [XFORM 203-602] Inlining function 'stage5sequence2' into 'solveStage5b' (Rubik_Cube_Layer_All/layerAll.cpp:1328) automatically.
+INFO: [XFORM 203-602] Inlining function 'stage5sequence3' into 'solveStage5b' (Rubik_Cube_Layer_All/layerAll.cpp:1359) automatically.
+Command         transform done; 2.511 sec.
+INFO-FLOW: Presyn 2...
+Execute         transform -hls -keep-callgraph -scalarrepl -mem2reg -port-alignment -attach-range -dce -pipe-mux-gen -indvars -loop-bound -inst-simplify -instcombine -dce -merge-array-access -mem2reg -dce -clean-region -mergereturn -if-conv -instcombine -dce -constprop -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -scalarrepl -mem2reg -global-constprop -deadargelim -deadargelim -instcombine -dce -simplifycfg -ptrArgReplace -mem2reg -function-inline -globaldce -mem2reg -instcombine -dce -expr-balance -instcombine -dce -bitwidthmin -interface-preproc -directive-preproc -inst-rectify -instcombine -dce -functionattrs -constprop -instcombine -bit-constprop -simplify-global-access -globalopt -globaldce -inst-simplify -instcombine -elimdeaddata -dce -loop-delete -simplifycfg -loop-simplify -auto-burst -norm-name C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/a.o.1.tmp.bc -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/a.o.2.bc -f -phase presyn 
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (Rubik_Cube_Layer_All/layerAll.cpp:81:8) to (Rubik_Cube_Layer_All/layerAll.cpp:143:2) in function 'findEdge'... converting 37 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock to (Rubik_Cube_Layer_All/layerAll.cpp:792:2) in function 'findCorner'... converting 26 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (Rubik_Cube_Layer_All/layerAll.cpp:15:10) to (Rubik_Cube_Layer_All/layerAll.cpp:75:1) in function 'edgeCorrect'... converting 27 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (Rubik_Cube_Layer_All/layerAll.cpp:701:10) to (Rubik_Cube_Layer_All/layerAll.cpp:737:1) in function 'cornerCorrect'... converting 18 basic blocks.
+INFO: [XFORM 203-11] Balancing expressions in function 'solveStage4a' (Rubik_Cube_Layer_All/layerAll.cpp:1105:3)...6 expression(s) balanced.
+INFO: [XFORM 203-11] Balancing expressions in function 'solveCube' (Rubik_Cube_Layer_All/layerAll.cpp:1441)...6 expression(s) balanced.
+INFO: [XFORM 203-11] Balancing expressions in function 'edgeCorrect' (Rubik_Cube_Layer_All/layerAll.cpp:18:1)...7 expression(s) balanced.
+INFO: [XFORM 203-11] Balancing expressions in function 'cornerCorrect' (Rubik_Cube_Layer_All/layerAll.cpp:704:1)...12 expression(s) balanced.
+Command         transform done; 1.17 sec.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:07 ; elapsed = 00:01:10 . Memory (MB): peak = 154.766 ; gain = 97.293
+INFO-FLOW: Building ssdm...
+Execute         transform -hls -function-uniquify -auto-function-inline -globaldce -ptrArgReplace -mem2reg -instcombine -dce -reset-lda -loop-simplify -indvars -licm -loop-dep -loop-bound -licm -loop-simplify -flattenloopnest -array-flatten -gvn -instcombine -dce -array-map -dce -func-legal -gvn -adce -instcombine -cfgopt -simplifycfg -loop-simplify -array-burst -promote-global-argument -dce -axi4-lower -array-seg-normalize -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -gvn -gvn -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -dse -adse -adce -licm -inst-simplify -dce -globaldce -instcombine -array-stream -eliminate-keepreads -instcombine -dce -deadargelim -doublePtrSimplify -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer -dce -scalarrepl -mem2reg -disaggr -norm-name -mem2reg -instcombine -dse -adse -adce -ptrLegalization -dce -auto-rom-infer -array-flatten -dce -instcombine -check-doubleptr -loop-rot -constprop -cfgopt -simplifycfg -loop-simplify -indvars -pointer-simplify -dce -loop-bound -loop-simplify -loop-preproc -constprop -global-constprop -gvn -mem2reg -instcombine -dce -loop-bound -loop-merge -dce -bitwidthmin -deadargelim -dce -canonicalize-dataflow -dce -scalar-propagation -deadargelim -globaldce -mem2reg -read-loop-dep -interface-preproc -directive-preproc -interface-gen -bram-byte-enable -deadargelim -inst-simplify -dce -gvn -mem2reg -instcombine -dce -adse -loop-bound -instcombine -cfgopt -simplifycfg -loop-simplify -clean-region -io-protocol -find-region -mem2reg -bitop-raise -inst-simplify -inst-rectify -instcombine -adce -deadargelim -loop-simplify -phi-opt -bitop-raise -cfgopt -simplifycfg -strip-dead-prototypes -interface-lower -bitop-lower -intrinsic-lower -auto-function-inline -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -inst-simplify -simplifycfg -loop-simplify -mergereturn -inst-simplify -inst-rectify -dce -load-elim -bitop-lower -loop-rewind -pointer-simplify -dce -cfgopt -dce -bitwidth -loop-dep -read-loop-dep -dce -check-stream -norm-name -legalize -validate-dataflow -dead-allocation-elimination -cdfg-build C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/a.o.2.bc -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/a.o.3.bc -f -phase build-ssdm 
+Command         transform done; 2.664 sec.
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:09 ; elapsed = 00:01:13 . Memory (MB): peak = 351.379 ; gain = 293.906
+INFO-FLOW: Finish building internal data model.
+Command       opt_and_import_c done; 9.561 sec.
+Command     elaborate done; 62.928 sec.
+Execute     autosyn -from_csynth_design=1 
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO-FLOW: Synthesizing C/C++ design ...
+INFO: [HLS 200-10] Synthesizing 'solveCube' ...
+Execute       ap_set_top_model solveCube 
+Execute       get_model_list solveCube -filter all-wo-channel -topdown 
+Execute       preproc_iomode -model solveCube 
+Execute       preproc_iomode -model optimizeCube 
+Execute       preproc_iomode -model solveStage5b 
+Execute       preproc_iomode -model solveStage5a 
+Execute       preproc_iomode -model solveStage4b 
+Execute       preproc_iomode -model solveStage4a 
+Execute       preproc_iomode -model solveStage3 
+Execute       preproc_iomode -model stage3Prepare 
+Execute       preproc_iomode -model solveStage3a 
+Execute       preproc_iomode -model rotateCubeVertical 
+Execute       preproc_iomode -model solveStage2 
+Execute       preproc_iomode -model findCorner 
+Execute       preproc_iomode -model cornerCorrect 
+Execute       preproc_iomode -model rotateCubeHorizontal 
+Execute       preproc_iomode -model solveStage1 
+Execute       preproc_iomode -model turnCube 
+Execute       preproc_iomode -model findEdge 
+Execute       preproc_iomode -model edgeCorrect 
+Execute       get_model_list solveCube -filter all-wo-channel 
+INFO-FLOW: Model list for configure: edgeCorrect findEdge turnCube solveStage1 rotateCubeHorizontal cornerCorrect findCorner solveStage2 rotateCubeVertical solveStage3a stage3Prepare solveStage3 solveStage4a solveStage4b solveStage5a solveStage5b optimizeCube solveCube
+INFO-FLOW: Configuring Module : edgeCorrect ...
+Execute       set_default_model edgeCorrect 
+Execute       apply_spec_resource_limit edgeCorrect 
+INFO-FLOW: Configuring Module : findEdge ...
+Execute       set_default_model findEdge 
+Execute       apply_spec_resource_limit findEdge 
+INFO-FLOW: Configuring Module : turnCube ...
+Execute       set_default_model turnCube 
+Execute       apply_spec_resource_limit turnCube 
+INFO-FLOW: Configuring Module : solveStage1 ...
+Execute       set_default_model solveStage1 
+Execute       apply_spec_resource_limit solveStage1 
+INFO-FLOW: Configuring Module : rotateCubeHorizontal ...
+Execute       set_default_model rotateCubeHorizontal 
+Execute       apply_spec_resource_limit rotateCubeHorizontal 
+INFO-FLOW: Configuring Module : cornerCorrect ...
+Execute       set_default_model cornerCorrect 
+Execute       apply_spec_resource_limit cornerCorrect 
+INFO-FLOW: Configuring Module : findCorner ...
+Execute       set_default_model findCorner 
+Execute       apply_spec_resource_limit findCorner 
+INFO-FLOW: Configuring Module : solveStage2 ...
+Execute       set_default_model solveStage2 
+Execute       apply_spec_resource_limit solveStage2 
+INFO-FLOW: Configuring Module : rotateCubeVertical ...
+Execute       set_default_model rotateCubeVertical 
+Execute       apply_spec_resource_limit rotateCubeVertical 
+INFO-FLOW: Configuring Module : solveStage3a ...
+Execute       set_default_model solveStage3a 
+Execute       apply_spec_resource_limit solveStage3a 
+INFO-FLOW: Configuring Module : stage3Prepare ...
+Execute       set_default_model stage3Prepare 
+Execute       apply_spec_resource_limit stage3Prepare 
+INFO-FLOW: Configuring Module : solveStage3 ...
+Execute       set_default_model solveStage3 
+Execute       apply_spec_resource_limit solveStage3 
+INFO-FLOW: Configuring Module : solveStage4a ...
+Execute       set_default_model solveStage4a 
+Execute       apply_spec_resource_limit solveStage4a 
+INFO-FLOW: Configuring Module : solveStage4b ...
+Execute       set_default_model solveStage4b 
+Execute       apply_spec_resource_limit solveStage4b 
+INFO-FLOW: Configuring Module : solveStage5a ...
+Execute       set_default_model solveStage5a 
+Execute       apply_spec_resource_limit solveStage5a 
+INFO-FLOW: Configuring Module : solveStage5b ...
+Execute       set_default_model solveStage5b 
+Execute       apply_spec_resource_limit solveStage5b 
+INFO-FLOW: Configuring Module : optimizeCube ...
+Execute       set_default_model optimizeCube 
+Execute       apply_spec_resource_limit optimizeCube 
+INFO-FLOW: Configuring Module : solveCube ...
+Execute       set_default_model solveCube 
+Execute       apply_spec_resource_limit solveCube 
+INFO-FLOW: Model list for preprocess: edgeCorrect findEdge turnCube solveStage1 rotateCubeHorizontal cornerCorrect findCorner solveStage2 rotateCubeVertical solveStage3a stage3Prepare solveStage3 solveStage4a solveStage4b solveStage5a solveStage5b optimizeCube solveCube
+INFO-FLOW: Preprocessing Module: edgeCorrect ...
+Execute       set_default_model edgeCorrect 
+Execute       cdfg_preprocess -model edgeCorrect 
+Execute       rtl_gen_preprocess edgeCorrect 
+INFO-FLOW: Preprocessing Module: findEdge ...
+Execute       set_default_model findEdge 
+Execute       cdfg_preprocess -model findEdge 
+Execute       rtl_gen_preprocess findEdge 
+INFO-FLOW: Preprocessing Module: turnCube ...
+Execute       set_default_model turnCube 
+Execute       cdfg_preprocess -model turnCube 
+Execute       rtl_gen_preprocess turnCube 
+INFO-FLOW: Preprocessing Module: solveStage1 ...
+Execute       set_default_model solveStage1 
+Execute       cdfg_preprocess -model solveStage1 
+Execute       rtl_gen_preprocess solveStage1 
+INFO-FLOW: Preprocessing Module: rotateCubeHorizontal ...
+Execute       set_default_model rotateCubeHorizontal 
+Execute       cdfg_preprocess -model rotateCubeHorizontal 
+Execute       rtl_gen_preprocess rotateCubeHorizontal 
+INFO-FLOW: Preprocessing Module: cornerCorrect ...
+Execute       set_default_model cornerCorrect 
+Execute       cdfg_preprocess -model cornerCorrect 
+Execute       rtl_gen_preprocess cornerCorrect 
+INFO-FLOW: Preprocessing Module: findCorner ...
+Execute       set_default_model findCorner 
+Execute       cdfg_preprocess -model findCorner 
+Execute       rtl_gen_preprocess findCorner 
+INFO-FLOW: Preprocessing Module: solveStage2 ...
+Execute       set_default_model solveStage2 
+Execute       cdfg_preprocess -model solveStage2 
+Execute       rtl_gen_preprocess solveStage2 
+INFO-FLOW: Preprocessing Module: rotateCubeVertical ...
+Execute       set_default_model rotateCubeVertical 
+Execute       cdfg_preprocess -model rotateCubeVertical 
+Execute       rtl_gen_preprocess rotateCubeVertical 
+INFO-FLOW: Preprocessing Module: solveStage3a ...
+Execute       set_default_model solveStage3a 
+Execute       cdfg_preprocess -model solveStage3a 
+Execute       rtl_gen_preprocess solveStage3a 
+INFO-FLOW: Preprocessing Module: stage3Prepare ...
+Execute       set_default_model stage3Prepare 
+Execute       cdfg_preprocess -model stage3Prepare 
+Execute       rtl_gen_preprocess stage3Prepare 
+INFO-FLOW: Preprocessing Module: solveStage3 ...
+Execute       set_default_model solveStage3 
+Execute       cdfg_preprocess -model solveStage3 
+Execute       rtl_gen_preprocess solveStage3 
+INFO-FLOW: Preprocessing Module: solveStage4a ...
+Execute       set_default_model solveStage4a 
+Execute       cdfg_preprocess -model solveStage4a 
+Execute       rtl_gen_preprocess solveStage4a 
+INFO-FLOW: Preprocessing Module: solveStage4b ...
+Execute       set_default_model solveStage4b 
+Execute       cdfg_preprocess -model solveStage4b 
+Execute       rtl_gen_preprocess solveStage4b 
+INFO-FLOW: Preprocessing Module: solveStage5a ...
+Execute       set_default_model solveStage5a 
+Execute       cdfg_preprocess -model solveStage5a 
+Execute       rtl_gen_preprocess solveStage5a 
+INFO-FLOW: Preprocessing Module: solveStage5b ...
+Execute       set_default_model solveStage5b 
+Execute       cdfg_preprocess -model solveStage5b 
+Execute       rtl_gen_preprocess solveStage5b 
+INFO-FLOW: Preprocessing Module: optimizeCube ...
+Execute       set_default_model optimizeCube 
+Execute       cdfg_preprocess -model optimizeCube 
+Execute       rtl_gen_preprocess optimizeCube 
+INFO-FLOW: Preprocessing Module: solveCube ...
+Execute       set_default_model solveCube 
+Execute       cdfg_preprocess -model solveCube 
+Execute       rtl_gen_preprocess solveCube 
+INFO-FLOW: Model list for synthesis: edgeCorrect findEdge turnCube solveStage1 rotateCubeHorizontal cornerCorrect findCorner solveStage2 rotateCubeVertical solveStage3a stage3Prepare solveStage3 solveStage4a solveStage4b solveStage5a solveStage5b optimizeCube solveCube
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'edgeCorrect' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model edgeCorrect 
+Execute       schedule -model edgeCorrect 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule done; 0.174 sec.
+INFO: [HLS 200-111]  Elapsed time: 73.464 seconds; current allocated memory: 312.500 MB.
+Execute       report -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/edgeCorrect.verbose.sched.rpt -verbose -f 
+Execute       db_write -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/edgeCorrect.sched.adb -f 
+INFO-FLOW: Finish scheduling edgeCorrect.
+Execute       set_default_model edgeCorrect 
+Execute       bind -model edgeCorrect 
+BIND OPTION: fu_weight=[ 0.0 -- 1.0 ]
+BIND OPTION: model=edgeCorrect
+BIND OPTION: reg_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+Command       bind done; 0.119 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.309 seconds; current allocated memory: 312.700 MB.
+Execute       report -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/edgeCorrect.verbose.bind.rpt -verbose -f 
+Command       report done; 0.374 sec.
+Execute       db_write -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/edgeCorrect.bind.adb -f 
+INFO-FLOW: Finish binding edgeCorrect.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'findEdge' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model findEdge 
+Execute       schedule -model findEdge 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule done; 0.114 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.626 seconds; current allocated memory: 313.117 MB.
+Execute       report -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/findEdge.verbose.sched.rpt -verbose -f 
+Command       report done; 0.133 sec.
+Execute       db_write -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/findEdge.sched.adb -f 
+INFO-FLOW: Finish scheduling findEdge.
+Execute       set_default_model findEdge 
+Execute       bind -model findEdge 
+BIND OPTION: fu_weight=[ 0.0 -- 1.0 ]
+BIND OPTION: model=findEdge
+BIND OPTION: reg_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.351 seconds; current allocated memory: 313.481 MB.
+Execute       report -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/findEdge.verbose.bind.rpt -verbose -f 
+Command       report done; 0.2 sec.
+Execute       db_write -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/findEdge.bind.adb -f 
+INFO-FLOW: Finish binding findEdge.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'turnCube' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model turnCube 
+Execute       schedule -model turnCube 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule done; 0.751 sec.
+INFO: [HLS 200-111]  Elapsed time: 1.126 seconds; current allocated memory: 315.320 MB.
+Execute       report -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/turnCube.verbose.sched.rpt -verbose -f 
+INFO: [HLS 200-434] Only 0 loops out of a total 2 loops have been pipelined in this design.
+Command       report done; 0.918 sec.
+Execute       db_write -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/turnCube.sched.adb -f 
+Command       db_write done; 0.259 sec.
+INFO-FLOW: Finish scheduling turnCube.
+Execute       set_default_model turnCube 
+Execute       bind -model turnCube 
+BIND OPTION: fu_weight=[ 0.0 -- 1.0 ]
+BIND OPTION: model=turnCube
+BIND OPTION: reg_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+Command       bind done; 0.213 sec.
+INFO: [HLS 200-111]  Elapsed time: 1.464 seconds; current allocated memory: 316.612 MB.
+Execute       report -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/turnCube.verbose.bind.rpt -verbose -f 
+Command       report done; 0.716 sec.
+Execute       db_write -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/turnCube.bind.adb -f 
+Command       db_write done; 0.316 sec.
+INFO-FLOW: Finish binding turnCube.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'solveStage1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model solveStage1 
+Execute       schedule -model solveStage1 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule done; 0.115 sec.
+INFO: [HLS 200-111]  Elapsed time: 1.25 seconds; current allocated memory: 317.164 MB.
+Execute       report -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveStage1.verbose.sched.rpt -verbose -f 
+Execute       db_write -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveStage1.sched.adb -f 
+INFO-FLOW: Finish scheduling solveStage1.
+Execute       set_default_model solveStage1 
+Execute       bind -model solveStage1 
+BIND OPTION: fu_weight=[ 0.0 -- 1.0 ]
+BIND OPTION: model=solveStage1
+BIND OPTION: reg_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+Command       bind done; 0.137 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.342 seconds; current allocated memory: 317.450 MB.
+Execute       report -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveStage1.verbose.bind.rpt -verbose -f 
+Execute       db_write -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveStage1.bind.adb -f 
+INFO-FLOW: Finish binding solveStage1.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'rotateCubeHorizontal' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model rotateCubeHorizontal 
+Execute       schedule -model rotateCubeHorizontal 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule done; 0.232 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.518 seconds; current allocated memory: 318.052 MB.
+Execute       report -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/rotateCubeHorizontal.verbose.sched.rpt -verbose -f 
+Command       report done; 0.179 sec.
+Execute       db_write -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/rotateCubeHorizontal.sched.adb -f 
+INFO-FLOW: Finish scheduling rotateCubeHorizontal.
+Execute       set_default_model rotateCubeHorizontal 
+Execute       bind -model rotateCubeHorizontal 
+BIND OPTION: fu_weight=[ 0.0 -- 1.0 ]
+BIND OPTION: model=rotateCubeHorizontal
+BIND OPTION: reg_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.435 seconds; current allocated memory: 318.609 MB.
+Execute       report -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/rotateCubeHorizontal.verbose.bind.rpt -verbose -f 
+Command       report done; 0.286 sec.
+Execute       db_write -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/rotateCubeHorizontal.bind.adb -f 
+Command       db_write done; 0.103 sec.
+INFO-FLOW: Finish binding rotateCubeHorizontal.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'cornerCorrect' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model cornerCorrect 
+Execute       schedule -model cornerCorrect 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.549 seconds; current allocated memory: 318.800 MB.
+Execute       report -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/cornerCorrect.verbose.sched.rpt -verbose -f 
+Execute       db_write -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/cornerCorrect.sched.adb -f 
+INFO-FLOW: Finish scheduling cornerCorrect.
+Execute       set_default_model cornerCorrect 
+Execute       bind -model cornerCorrect 
+BIND OPTION: fu_weight=[ 0.0 -- 1.0 ]
+BIND OPTION: model=cornerCorrect
+BIND OPTION: reg_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.231 seconds; current allocated memory: 318.939 MB.
+Execute       report -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/cornerCorrect.verbose.bind.rpt -verbose -f 
+Execute       db_write -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/cornerCorrect.bind.adb -f 
+INFO-FLOW: Finish binding cornerCorrect.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'findCorner' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model findCorner 
+Execute       schedule -model findCorner 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule done; 0.136 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.367 seconds; current allocated memory: 319.417 MB.
+Execute       report -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/findCorner.verbose.sched.rpt -verbose -f 
+Command       report done; 0.139 sec.
+Execute       db_write -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/findCorner.sched.adb -f 
+INFO-FLOW: Finish scheduling findCorner.
+Execute       set_default_model findCorner 
+Execute       bind -model findCorner 
+BIND OPTION: fu_weight=[ 0.0 -- 1.0 ]
+BIND OPTION: model=findCorner
+BIND OPTION: reg_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+Command       bind done; 0.101 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.387 seconds; current allocated memory: 319.823 MB.
+Execute       report -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/findCorner.verbose.bind.rpt -verbose -f 
+Command       report done; 0.25 sec.
+Execute       db_write -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/findCorner.bind.adb -f 
+Command       db_write done; 0.218 sec.
+INFO-FLOW: Finish binding findCorner.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'solveStage2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model solveStage2 
+Execute       schedule -model solveStage2 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule done; 0.112 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.687 seconds; current allocated memory: 320.381 MB.
+Execute       report -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveStage2.verbose.sched.rpt -verbose -f 
+Execute       db_write -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveStage2.sched.adb -f 
+Command       db_write done; 0.457 sec.
+INFO-FLOW: Finish scheduling solveStage2.
+Execute       set_default_model solveStage2 
+Execute       bind -model solveStage2 
+BIND OPTION: fu_weight=[ 0.0 -- 1.0 ]
+BIND OPTION: model=solveStage2
+BIND OPTION: reg_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+Command       bind done; 0.315 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.942 seconds; current allocated memory: 320.700 MB.
+Execute       report -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveStage2.verbose.bind.rpt -verbose -f 
+Command       report done; 0.242 sec.
+Execute       db_write -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveStage2.bind.adb -f 
+Command       db_write done; 0.236 sec.
+INFO-FLOW: Finish binding solveStage2.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'rotateCubeVertical' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model rotateCubeVertical 
+Execute       schedule -model rotateCubeVertical 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule done; 0.206 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.787 seconds; current allocated memory: 321.435 MB.
+Execute       report -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/rotateCubeVertical.verbose.sched.rpt -verbose -f 
+Command       report done; 0.188 sec.
+Execute       db_write -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/rotateCubeVertical.sched.adb -f 
+Command       db_write done; 0.316 sec.
+INFO-FLOW: Finish scheduling rotateCubeVertical.
+Execute       set_default_model rotateCubeVertical 
+Execute       bind -model rotateCubeVertical 
+BIND OPTION: fu_weight=[ 0.0 -- 1.0 ]
+BIND OPTION: model=rotateCubeVertical
+BIND OPTION: reg_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.68 seconds; current allocated memory: 321.986 MB.
+Execute       report -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/rotateCubeVertical.verbose.bind.rpt -verbose -f 
+Command       report done; 0.209 sec.
+Execute       db_write -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/rotateCubeVertical.bind.adb -f 
+Command       db_write done; 0.167 sec.
+INFO-FLOW: Finish binding rotateCubeVertical.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'solveStage3a' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model solveStage3a 
+Execute       schedule -model solveStage3a 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule done; 0.431 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.921 seconds; current allocated memory: 323.311 MB.
+Execute       report -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveStage3a.verbose.sched.rpt -verbose -f 
+Command       report done; 0.182 sec.
+Execute       db_write -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveStage3a.sched.adb -f 
+Command       db_write done; 0.383 sec.
+INFO-FLOW: Finish scheduling solveStage3a.
+Execute       set_default_model solveStage3a 
+Execute       bind -model solveStage3a 
+BIND OPTION: fu_weight=[ 0.0 -- 1.0 ]
+BIND OPTION: model=solveStage3a
+BIND OPTION: reg_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+Command       bind done; 0.212 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.861 seconds; current allocated memory: 323.967 MB.
+Execute       report -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveStage3a.verbose.bind.rpt -verbose -f 
+Command       report done; 0.229 sec.
+Execute       db_write -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveStage3a.bind.adb -f 
+Command       db_write done; 0.447 sec.
+INFO-FLOW: Finish binding solveStage3a.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'stage3Prepare' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model stage3Prepare 
+Execute       schedule -model stage3Prepare 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule done; 0.116 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.913 seconds; current allocated memory: 324.436 MB.
+Execute       report -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/stage3Prepare.verbose.sched.rpt -verbose -f 
+Execute       db_write -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/stage3Prepare.sched.adb -f 
+Command       db_write done; 0.159 sec.
+INFO-FLOW: Finish scheduling stage3Prepare.
+Execute       set_default_model stage3Prepare 
+Execute       bind -model stage3Prepare 
+BIND OPTION: fu_weight=[ 0.0 -- 1.0 ]
+BIND OPTION: model=stage3Prepare
+BIND OPTION: reg_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+Command       bind done; 0.279 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.575 seconds; current allocated memory: 324.779 MB.
+Execute       report -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/stage3Prepare.verbose.bind.rpt -verbose -f 
+Command       report done; 0.196 sec.
+Execute       db_write -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/stage3Prepare.bind.adb -f 
+Command       db_write done; 0.183 sec.
+INFO-FLOW: Finish binding stage3Prepare.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'solveStage3' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model solveStage3 
+Execute       schedule -model solveStage3 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.533 seconds; current allocated memory: 324.937 MB.
+Execute       report -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveStage3.verbose.sched.rpt -verbose -f 
+Execute       db_write -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveStage3.sched.adb -f 
+Command       db_write done; 0.127 sec.
+INFO-FLOW: Finish scheduling solveStage3.
+Execute       set_default_model solveStage3 
+Execute       bind -model solveStage3 
+BIND OPTION: fu_weight=[ 0.0 -- 1.0 ]
+BIND OPTION: model=solveStage3
+BIND OPTION: reg_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+Command       bind done; 0.396 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.634 seconds; current allocated memory: 325.098 MB.
+Execute       report -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveStage3.verbose.bind.rpt -verbose -f 
+Command       report done; 0.332 sec.
+Execute       db_write -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveStage3.bind.adb -f 
+INFO-FLOW: Finish binding solveStage3.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'solveStage4a' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model solveStage4a 
+Execute       schedule -model solveStage4a 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule done; 0.121 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.637 seconds; current allocated memory: 325.767 MB.
+Execute       report -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveStage4a.verbose.sched.rpt -verbose -f 
+Execute       db_write -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveStage4a.sched.adb -f 
+Command       db_write done; 0.24 sec.
+INFO-FLOW: Finish scheduling solveStage4a.
+Execute       set_default_model solveStage4a 
+Execute       bind -model solveStage4a 
+BIND OPTION: fu_weight=[ 0.0 -- 1.0 ]
+BIND OPTION: model=solveStage4a
+BIND OPTION: reg_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+Command       bind done; 0.157 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.558 seconds; current allocated memory: 326.082 MB.
+Execute       report -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveStage4a.verbose.bind.rpt -verbose -f 
+Command       report done; 0.176 sec.
+Execute       db_write -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveStage4a.bind.adb -f 
+Command       db_write done; 0.147 sec.
+INFO-FLOW: Finish binding solveStage4a.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'solveStage4b' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model solveStage4b 
+Execute       schedule -model solveStage4b 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule done; 0.13 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.583 seconds; current allocated memory: 326.640 MB.
+Execute       report -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveStage4b.verbose.sched.rpt -verbose -f 
+Execute       db_write -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveStage4b.sched.adb -f 
+INFO-FLOW: Finish scheduling solveStage4b.
+Execute       set_default_model solveStage4b 
+Execute       bind -model solveStage4b 
+BIND OPTION: fu_weight=[ 0.0 -- 1.0 ]
+BIND OPTION: model=solveStage4b
+BIND OPTION: reg_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+Command       bind done; 0.149 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.377 seconds; current allocated memory: 326.979 MB.
+Execute       report -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveStage4b.verbose.bind.rpt -verbose -f 
+Command       report done; 0.154 sec.
+Execute       db_write -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveStage4b.bind.adb -f 
+Command       db_write done; 0.224 sec.
+INFO-FLOW: Finish binding solveStage4b.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'solveStage5a' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model solveStage5a 
+Execute       schedule -model solveStage5a 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.584 seconds; current allocated memory: 327.324 MB.
+Execute       report -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveStage5a.verbose.sched.rpt -verbose -f 
+Execute       db_write -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveStage5a.sched.adb -f 
+INFO-FLOW: Finish scheduling solveStage5a.
+Execute       set_default_model solveStage5a 
+Execute       bind -model solveStage5a 
+BIND OPTION: fu_weight=[ 0.0 -- 1.0 ]
+BIND OPTION: model=solveStage5a
+BIND OPTION: reg_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+Command       bind done; 0.172 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.376 seconds; current allocated memory: 327.539 MB.
+Execute       report -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveStage5a.verbose.bind.rpt -verbose -f 
+Command       report done; 0.172 sec.
+Execute       db_write -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveStage5a.bind.adb -f 
+Command       db_write done; 0.104 sec.
+INFO-FLOW: Finish binding solveStage5a.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'solveStage5b' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model solveStage5b 
+Execute       schedule -model solveStage5b 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule done; 0.12 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.521 seconds; current allocated memory: 328.159 MB.
+Execute       report -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveStage5b.verbose.sched.rpt -verbose -f 
+Execute       db_write -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveStage5b.sched.adb -f 
+Command       db_write done; 0.464 sec.
+INFO-FLOW: Finish scheduling solveStage5b.
+Execute       set_default_model solveStage5b 
+Execute       bind -model solveStage5b 
+BIND OPTION: fu_weight=[ 0.0 -- 1.0 ]
+BIND OPTION: model=solveStage5b
+BIND OPTION: reg_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+Command       bind done; 0.291 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.899 seconds; current allocated memory: 328.520 MB.
+Execute       report -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveStage5b.verbose.bind.rpt -verbose -f 
+Command       report done; 0.155 sec.
+Execute       db_write -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveStage5b.bind.adb -f 
+Command       db_write done; 0.107 sec.
+INFO-FLOW: Finish binding solveStage5b.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'optimizeCube' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model optimizeCube 
+Execute       schedule -model optimizeCube 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule done; 0.101 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.489 seconds; current allocated memory: 328.878 MB.
+Execute       report -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/optimizeCube.verbose.sched.rpt -verbose -f 
+Execute       db_write -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/optimizeCube.sched.adb -f 
+Command       db_write done; 0.322 sec.
+INFO-FLOW: Finish scheduling optimizeCube.
+Execute       set_default_model optimizeCube 
+Execute       bind -model optimizeCube 
+BIND OPTION: fu_weight=[ 0.0 -- 1.0 ]
+BIND OPTION: model=optimizeCube
+BIND OPTION: reg_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.566 seconds; current allocated memory: 329.142 MB.
+Execute       report -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/optimizeCube.verbose.bind.rpt -verbose -f 
+Execute       db_write -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/optimizeCube.bind.adb -f 
+Command       db_write done; 0.128 sec.
+INFO-FLOW: Finish binding optimizeCube.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'solveCube' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model solveCube 
+Execute       schedule -model solveCube 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule done; 0.228 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.593 seconds; current allocated memory: 330.265 MB.
+Execute       report -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveCube.verbose.sched.rpt -verbose -f 
+Command       report done; 0.127 sec.
+Execute       db_write -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveCube.sched.adb -f 
+Command       db_write done; 0.368 sec.
+INFO-FLOW: Finish scheduling solveCube.
+Execute       set_default_model solveCube 
+Execute       bind -model solveCube 
+BIND OPTION: fu_weight=[ 0.0 -- 1.0 ]
+BIND OPTION: model=solveCube
+BIND OPTION: reg_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+Command       bind done; 4.075 sec.
+INFO: [HLS 200-111]  Elapsed time: 4.668 seconds; current allocated memory: 332.893 MB.
+Execute       report -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveCube.verbose.bind.rpt -verbose -f 
+Command       report done; 1.351 sec.
+Execute       db_write -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveCube.bind.adb -f 
+Command       db_write done; 0.296 sec.
+INFO-FLOW: Finish binding solveCube.
+Execute       get_model_list solveCube -filter all-wo-channel 
+INFO-FLOW: Preprocessing for RTLGen ...
+Execute       rtl_gen_preprocess edgeCorrect 
+Execute       rtl_gen_preprocess findEdge 
+Execute       rtl_gen_preprocess turnCube 
+Execute       rtl_gen_preprocess solveStage1 
+Execute       rtl_gen_preprocess rotateCubeHorizontal 
+Execute       rtl_gen_preprocess cornerCorrect 
+Execute       rtl_gen_preprocess findCorner 
+Execute       rtl_gen_preprocess solveStage2 
+Execute       rtl_gen_preprocess rotateCubeVertical 
+Execute       rtl_gen_preprocess solveStage3a 
+Execute       rtl_gen_preprocess stage3Prepare 
+Execute       rtl_gen_preprocess solveStage3 
+Execute       rtl_gen_preprocess solveStage4a 
+Execute       rtl_gen_preprocess solveStage4b 
+Execute       rtl_gen_preprocess solveStage5a 
+Execute       rtl_gen_preprocess solveStage5b 
+Execute       rtl_gen_preprocess optimizeCube 
+Execute       rtl_gen_preprocess solveCube 
+INFO-FLOW: Model list for RTL generation: edgeCorrect findEdge turnCube solveStage1 rotateCubeHorizontal cornerCorrect findCorner solveStage2 rotateCubeVertical solveStage3a stage3Prepare solveStage3 solveStage4a solveStage4b solveStage5a solveStage5b optimizeCube solveCube
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'edgeCorrect' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -prefix 
+Execute       get_config_rtl -auto_prefix 
+Execute       create_rtl_model edgeCorrect -vendor xilinx -mg_file C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/edgeCorrect.compgen.tcl 
+INFO: [RTGEN 206-100] Finished creating RTL model for 'edgeCorrect'.
+Command       create_rtl_model done; 2.632 sec.
+INFO: [HLS 200-111]  Elapsed time: 4.474 seconds; current allocated memory: 333.944 MB.
+Execute       source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveCube.rtl_wrap.cfg.tcl 
+Execute       gen_rtl edgeCorrect -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/syn/systemc/edgeCorrect -synmodules edgeCorrect findEdge turnCube solveStage1 rotateCubeHorizontal cornerCorrect findCorner solveStage2 rotateCubeVertical solveStage3a stage3Prepare solveStage3 solveStage4a solveStage4b solveStage5a solveStage5b optimizeCube solveCube 
+Command       gen_rtl done; 0.251 sec.
+Execute       gen_rtl edgeCorrect -style xilinx -f -lang vhdl -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/syn/vhdl/edgeCorrect 
+Command       gen_rtl done; 0.249 sec.
+Execute       gen_rtl edgeCorrect -style xilinx -f -lang vlog -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/syn/verilog/edgeCorrect 
+Execute       gen_tb_info edgeCorrect -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/edgeCorrect -p C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db 
+Command       gen_tb_info done; 0.196 sec.
+Execute       report -model edgeCorrect -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/syn/report/edgeCorrect_csynth.rpt -f 
+Command       report done; 0.306 sec.
+Execute       report -model edgeCorrect -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/syn/report/edgeCorrect_csynth.xml -f -x 
+Execute       report -model edgeCorrect -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/edgeCorrect.verbose.rpt -verbose -f 
+Command       report done; 0.43 sec.
+Execute       db_write -model edgeCorrect -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/edgeCorrect.adb -f 
+Command       db_write done; 0.143 sec.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'findEdge' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -prefix 
+Execute       get_config_rtl -auto_prefix 
+Execute       create_rtl_model findEdge -vendor xilinx -mg_file C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/findEdge.compgen.tcl 
+INFO: [RTGEN 206-100] Finished creating RTL model for 'findEdge'.
+Command       create_rtl_model done; 0.123 sec.
+INFO: [HLS 200-111]  Elapsed time: 2.126 seconds; current allocated memory: 334.807 MB.
+Execute       source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveCube.rtl_wrap.cfg.tcl 
+Execute       gen_rtl findEdge -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/syn/systemc/findEdge -synmodules edgeCorrect findEdge turnCube solveStage1 rotateCubeHorizontal cornerCorrect findCorner solveStage2 rotateCubeVertical solveStage3a stage3Prepare solveStage3 solveStage4a solveStage4b solveStage5a solveStage5b optimizeCube solveCube 
+Execute       gen_rtl findEdge -style xilinx -f -lang vhdl -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/syn/vhdl/findEdge 
+Execute       gen_rtl findEdge -style xilinx -f -lang vlog -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/syn/verilog/findEdge 
+Execute       gen_tb_info findEdge -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/findEdge -p C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db 
+Execute       report -model findEdge -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/syn/report/findEdge_csynth.rpt -f 
+Execute       report -model findEdge -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/syn/report/findEdge_csynth.xml -f -x 
+Execute       report -model findEdge -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/findEdge.verbose.rpt -verbose -f 
+Command       report done; 0.229 sec.
+Execute       db_write -model findEdge -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/findEdge.adb -f 
+Command       db_write done; 0.177 sec.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'turnCube' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -prefix 
+Execute       get_config_rtl -auto_prefix 
+Execute       create_rtl_model turnCube -vendor xilinx -mg_file C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/turnCube.compgen.tcl 
+INFO: [SYN 201-210] Renamed object name 'turnCube_cubieTemp_V' to 'turnCube_cubieTembkb' due to the length limit 20
+INFO: [RTGEN 206-100] Finished creating RTL model for 'turnCube'.
+Command       create_rtl_model done; 0.867 sec.
+INFO: [HLS 200-111]  Elapsed time: 1.954 seconds; current allocated memory: 337.853 MB.
+Execute       source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveCube.rtl_wrap.cfg.tcl 
+Execute       gen_rtl turnCube -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/syn/systemc/turnCube -synmodules edgeCorrect findEdge turnCube solveStage1 rotateCubeHorizontal cornerCorrect findCorner solveStage2 rotateCubeVertical solveStage3a stage3Prepare solveStage3 solveStage4a solveStage4b solveStage5a solveStage5b optimizeCube solveCube 
+Execute       gen_rtl turnCube -style xilinx -f -lang vhdl -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/syn/vhdl/turnCube 
+Execute       gen_rtl turnCube -style xilinx -f -lang vlog -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/syn/verilog/turnCube 
+Execute       gen_tb_info turnCube -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/turnCube -p C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db 
+Command       gen_tb_info done; 0.131 sec.
+Execute       report -model turnCube -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/syn/report/turnCube_csynth.rpt -f 
+Execute       report -model turnCube -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/syn/report/turnCube_csynth.xml -f -x 
+Execute       report -model turnCube -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/turnCube.verbose.rpt -verbose -f 
+Command       report done; 0.955 sec.
+Execute       db_write -model turnCube -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/turnCube.adb -f 
+Command       db_write done; 0.377 sec.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'solveStage1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -prefix 
+Execute       get_config_rtl -auto_prefix 
+Execute       create_rtl_model solveStage1 -vendor xilinx -mg_file C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveStage1.compgen.tcl 
+INFO: [RTGEN 206-100] Finished creating RTL model for 'solveStage1'.
+Command       create_rtl_model done; 0.39 sec.
+INFO: [HLS 200-111]  Elapsed time: 2.98 seconds; current allocated memory: 339.457 MB.
+Execute       source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveCube.rtl_wrap.cfg.tcl 
+Execute       gen_rtl solveStage1 -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/syn/systemc/solveStage1 -synmodules edgeCorrect findEdge turnCube solveStage1 rotateCubeHorizontal cornerCorrect findCorner solveStage2 rotateCubeVertical solveStage3a stage3Prepare solveStage3 solveStage4a solveStage4b solveStage5a solveStage5b optimizeCube solveCube 
+Execute       gen_rtl solveStage1 -style xilinx -f -lang vhdl -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/syn/vhdl/solveStage1 
+Execute       gen_rtl solveStage1 -style xilinx -f -lang vlog -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/syn/verilog/solveStage1 
+Execute       gen_tb_info solveStage1 -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveStage1 -p C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db 
+Execute       report -model solveStage1 -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/syn/report/solveStage1_csynth.rpt -f 
+Execute       report -model solveStage1 -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/syn/report/solveStage1_csynth.xml -f -x 
+Execute       report -model solveStage1 -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveStage1.verbose.rpt -verbose -f 
+Command       report done; 1.135 sec.
+Execute       db_write -model solveStage1 -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveStage1.adb -f 
+Command       db_write done; 0.124 sec.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'rotateCubeHorizontal' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -prefix 
+Execute       get_config_rtl -auto_prefix 
+Execute       create_rtl_model rotateCubeHorizontal -vendor xilinx -mg_file C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/rotateCubeHorizontal.compgen.tcl 
+INFO: [SYN 201-210] Renamed object name 'rotateCubeHorizontal_cubieTemp_V' to 'rotateCubeHorizoncud' due to the length limit 20
+INFO: [RTGEN 206-100] Finished creating RTL model for 'rotateCubeHorizontal'.
+Command       create_rtl_model done; 0.158 sec.
+INFO: [HLS 200-111]  Elapsed time: 1.826 seconds; current allocated memory: 340.269 MB.
+Execute       source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveCube.rtl_wrap.cfg.tcl 
+Execute       gen_rtl rotateCubeHorizontal -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/syn/systemc/rotateCubeHorizontal -synmodules edgeCorrect findEdge turnCube solveStage1 rotateCubeHorizontal cornerCorrect findCorner solveStage2 rotateCubeVertical solveStage3a stage3Prepare solveStage3 solveStage4a solveStage4b solveStage5a solveStage5b optimizeCube solveCube 
+Execute       gen_rtl rotateCubeHorizontal -style xilinx -f -lang vhdl -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/syn/vhdl/rotateCubeHorizontal 
+Execute       gen_rtl rotateCubeHorizontal -style xilinx -f -lang vlog -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/syn/verilog/rotateCubeHorizontal 
+Execute       gen_tb_info rotateCubeHorizontal -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/rotateCubeHorizontal -p C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db 
+Execute       report -model rotateCubeHorizontal -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/syn/report/rotateCubeHorizontal_csynth.rpt -f 
+Command       report done; 0.312 sec.
+Execute       report -model rotateCubeHorizontal -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/syn/report/rotateCubeHorizontal_csynth.xml -f -x 
+Execute       report -model rotateCubeHorizontal -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/rotateCubeHorizontal.verbose.rpt -verbose -f 
+Command       report done; 0.192 sec.
+Execute       db_write -model rotateCubeHorizontal -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/rotateCubeHorizontal.adb -f 
+Command       db_write done; 0.16 sec.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'cornerCorrect' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -prefix 
+Execute       get_config_rtl -auto_prefix 
+Execute       create_rtl_model cornerCorrect -vendor xilinx -mg_file C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/cornerCorrect.compgen.tcl 
+INFO: [RTGEN 206-100] Finished creating RTL model for 'cornerCorrect'.
+INFO: [HLS 200-111]  Elapsed time: 1.268 seconds; current allocated memory: 340.673 MB.
+Execute       source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveCube.rtl_wrap.cfg.tcl 
+Execute       gen_rtl cornerCorrect -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/syn/systemc/cornerCorrect -synmodules edgeCorrect findEdge turnCube solveStage1 rotateCubeHorizontal cornerCorrect findCorner solveStage2 rotateCubeVertical solveStage3a stage3Prepare solveStage3 solveStage4a solveStage4b solveStage5a solveStage5b optimizeCube solveCube 
+Command       gen_rtl done; 0.296 sec.
+Execute       gen_rtl cornerCorrect -style xilinx -f -lang vhdl -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/syn/vhdl/cornerCorrect 
+Command       gen_rtl done; 0.127 sec.
+Execute       gen_rtl cornerCorrect -style xilinx -f -lang vlog -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/syn/verilog/cornerCorrect 
+Execute       gen_tb_info cornerCorrect -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/cornerCorrect -p C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db 
+Execute       report -model cornerCorrect -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/syn/report/cornerCorrect_csynth.rpt -f 
+Execute       report -model cornerCorrect -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/syn/report/cornerCorrect_csynth.xml -f -x 
+Execute       report -model cornerCorrect -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/cornerCorrect.verbose.rpt -verbose -f 
+Command       report done; 0.115 sec.
+Execute       db_write -model cornerCorrect -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/cornerCorrect.adb -f 
+Command       db_write done; 0.168 sec.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'findCorner' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -prefix 
+Execute       get_config_rtl -auto_prefix 
+Execute       create_rtl_model findCorner -vendor xilinx -mg_file C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/findCorner.compgen.tcl 
+INFO: [RTGEN 206-100] Finished creating RTL model for 'findCorner'.
+Command       create_rtl_model done; 0.128 sec.
+INFO: [HLS 200-111]  Elapsed time: 1.214 seconds; current allocated memory: 341.489 MB.
+Execute       source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveCube.rtl_wrap.cfg.tcl 
+Execute       gen_rtl findCorner -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/syn/systemc/findCorner -synmodules edgeCorrect findEdge turnCube solveStage1 rotateCubeHorizontal cornerCorrect findCorner solveStage2 rotateCubeVertical solveStage3a stage3Prepare solveStage3 solveStage4a solveStage4b solveStage5a solveStage5b optimizeCube solveCube 
+Execute       gen_rtl findCorner -style xilinx -f -lang vhdl -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/syn/vhdl/findCorner 
+Execute       gen_rtl findCorner -style xilinx -f -lang vlog -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/syn/verilog/findCorner 
+Execute       gen_tb_info findCorner -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/findCorner -p C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db 
+Execute       report -model findCorner -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/syn/report/findCorner_csynth.rpt -f 
+Command       report done; 0.289 sec.
+Execute       report -model findCorner -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/syn/report/findCorner_csynth.xml -f -x 
+Execute       report -model findCorner -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/findCorner.verbose.rpt -verbose -f 
+Command       report done; 0.307 sec.
+Execute       db_write -model findCorner -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/findCorner.adb -f 
+Command       db_write done; 0.216 sec.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'solveStage2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -prefix 
+Execute       get_config_rtl -auto_prefix 
+Execute       create_rtl_model solveStage2 -vendor xilinx -mg_file C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveStage2.compgen.tcl 
+INFO: [RTGEN 206-100] Finished creating RTL model for 'solveStage2'.
+Command       create_rtl_model done; 0.217 sec.
+INFO: [HLS 200-111]  Elapsed time: 1.596 seconds; current allocated memory: 342.800 MB.
+Execute       source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveCube.rtl_wrap.cfg.tcl 
+Execute       gen_rtl solveStage2 -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/syn/systemc/solveStage2 -synmodules edgeCorrect findEdge turnCube solveStage1 rotateCubeHorizontal cornerCorrect findCorner solveStage2 rotateCubeVertical solveStage3a stage3Prepare solveStage3 solveStage4a solveStage4b solveStage5a solveStage5b optimizeCube solveCube 
+Execute       gen_rtl solveStage2 -style xilinx -f -lang vhdl -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/syn/vhdl/solveStage2 
+Execute       gen_rtl solveStage2 -style xilinx -f -lang vlog -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/syn/verilog/solveStage2 
+Execute       gen_tb_info solveStage2 -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveStage2 -p C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db 
+Command       gen_tb_info done; 0.13 sec.
+Execute       report -model solveStage2 -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/syn/report/solveStage2_csynth.rpt -f 
+Execute       report -model solveStage2 -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/syn/report/solveStage2_csynth.xml -f -x 
+Execute       report -model solveStage2 -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveStage2.verbose.rpt -verbose -f 
+Command       report done; 0.3 sec.
+Execute       db_write -model solveStage2 -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveStage2.adb -f 
+Command       db_write done; 1.094 sec.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'rotateCubeVertical' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -prefix 
+Execute       get_config_rtl -auto_prefix 
+Execute       create_rtl_model rotateCubeVertical -vendor xilinx -mg_file C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/rotateCubeVertical.compgen.tcl 
+INFO: [SYN 201-210] Renamed object name 'rotateCubeVertical_cubieTemp_V' to 'rotateCubeVerticadEe' due to the length limit 20
+INFO: [RTGEN 206-100] Finished creating RTL model for 'rotateCubeVertical'.
+Command       create_rtl_model done; 0.16 sec.
+INFO: [HLS 200-111]  Elapsed time: 2.151 seconds; current allocated memory: 343.758 MB.
+Execute       source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveCube.rtl_wrap.cfg.tcl 
+Execute       gen_rtl rotateCubeVertical -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/syn/systemc/rotateCubeVertical -synmodules edgeCorrect findEdge turnCube solveStage1 rotateCubeHorizontal cornerCorrect findCorner solveStage2 rotateCubeVertical solveStage3a stage3Prepare solveStage3 solveStage4a solveStage4b solveStage5a solveStage5b optimizeCube solveCube 
+Execute       gen_rtl rotateCubeVertical -style xilinx -f -lang vhdl -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/syn/vhdl/rotateCubeVertical 
+Command       gen_rtl done; 0.117 sec.
+Execute       gen_rtl rotateCubeVertical -style xilinx -f -lang vlog -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/syn/verilog/rotateCubeVertical 
+Execute       gen_tb_info rotateCubeVertical -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/rotateCubeVertical -p C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db 
+Execute       report -model rotateCubeVertical -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/syn/report/rotateCubeVertical_csynth.rpt -f 
+Command       report done; 1.219 sec.
+Execute       report -model rotateCubeVertical -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/syn/report/rotateCubeVertical_csynth.xml -f -x 
+Execute       report -model rotateCubeVertical -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/rotateCubeVertical.verbose.rpt -verbose -f 
+Command       report done; 0.428 sec.
+Execute       db_write -model rotateCubeVertical -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/rotateCubeVertical.adb -f 
+Command       db_write done; 0.506 sec.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'solveStage3a' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -prefix 
+Execute       get_config_rtl -auto_prefix 
+Execute       create_rtl_model solveStage3a -vendor xilinx -mg_file C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveStage3a.compgen.tcl 
+INFO: [RTGEN 206-100] Finished creating RTL model for 'solveStage3a'.
+Command       create_rtl_model done; 0.611 sec.
+INFO: [HLS 200-111]  Elapsed time: 3.521 seconds; current allocated memory: 346.473 MB.
+Execute       source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveCube.rtl_wrap.cfg.tcl 
+Execute       gen_rtl solveStage3a -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/syn/systemc/solveStage3a -synmodules edgeCorrect findEdge turnCube solveStage1 rotateCubeHorizontal cornerCorrect findCorner solveStage2 rotateCubeVertical solveStage3a stage3Prepare solveStage3 solveStage4a solveStage4b solveStage5a solveStage5b optimizeCube solveCube 
+Execute       gen_rtl solveStage3a -style xilinx -f -lang vhdl -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/syn/vhdl/solveStage3a 
+Command       gen_rtl done; 0.105 sec.
+Execute       gen_rtl solveStage3a -style xilinx -f -lang vlog -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/syn/verilog/solveStage3a 
+Command       gen_rtl done; 0.127 sec.
+Execute       gen_tb_info solveStage3a -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveStage3a -p C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db 
+Execute       report -model solveStage3a -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/syn/report/solveStage3a_csynth.rpt -f 
+Execute       report -model solveStage3a -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/syn/report/solveStage3a_csynth.xml -f -x 
+Execute       report -model solveStage3a -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveStage3a.verbose.rpt -verbose -f 
+Command       report done; 0.348 sec.
+Execute       db_write -model solveStage3a -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveStage3a.adb -f 
+Command       db_write done; 0.485 sec.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'stage3Prepare' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -prefix 
+Execute       get_config_rtl -auto_prefix 
+Execute       create_rtl_model stage3Prepare -vendor xilinx -mg_file C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/stage3Prepare.compgen.tcl 
+INFO: [RTGEN 206-100] Finished creating RTL model for 'stage3Prepare'.
+Command       create_rtl_model done; 0.291 sec.
+INFO: [HLS 200-111]  Elapsed time: 2.319 seconds; current allocated memory: 347.504 MB.
+Execute       source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveCube.rtl_wrap.cfg.tcl 
+Execute       gen_rtl stage3Prepare -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/syn/systemc/stage3Prepare -synmodules edgeCorrect findEdge turnCube solveStage1 rotateCubeHorizontal cornerCorrect findCorner solveStage2 rotateCubeVertical solveStage3a stage3Prepare solveStage3 solveStage4a solveStage4b solveStage5a solveStage5b optimizeCube solveCube 
+Execute       gen_rtl stage3Prepare -style xilinx -f -lang vhdl -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/syn/vhdl/stage3Prepare 
+Execute       gen_rtl stage3Prepare -style xilinx -f -lang vlog -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/syn/verilog/stage3Prepare 
+Execute       gen_tb_info stage3Prepare -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/stage3Prepare -p C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db 
+Command       gen_tb_info done; 0.536 sec.
+Execute       report -model stage3Prepare -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/syn/report/stage3Prepare_csynth.rpt -f 
+Execute       report -model stage3Prepare -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/syn/report/stage3Prepare_csynth.xml -f -x 
+Execute       report -model stage3Prepare -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/stage3Prepare.verbose.rpt -verbose -f 
+Command       report done; 0.552 sec.
+Execute       db_write -model stage3Prepare -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/stage3Prepare.adb -f 
+Command       db_write done; 0.239 sec.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'solveStage3' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -prefix 
+Execute       get_config_rtl -auto_prefix 
+Execute       create_rtl_model solveStage3 -vendor xilinx -mg_file C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveStage3.compgen.tcl 
+INFO: [RTGEN 206-100] Finished creating RTL model for 'solveStage3'.
+Command       create_rtl_model done; 0.15 sec.
+INFO: [HLS 200-111]  Elapsed time: 2.059 seconds; current allocated memory: 347.971 MB.
+Execute       source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveCube.rtl_wrap.cfg.tcl 
+Execute       gen_rtl solveStage3 -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/syn/systemc/solveStage3 -synmodules edgeCorrect findEdge turnCube solveStage1 rotateCubeHorizontal cornerCorrect findCorner solveStage2 rotateCubeVertical solveStage3a stage3Prepare solveStage3 solveStage4a solveStage4b solveStage5a solveStage5b optimizeCube solveCube 
+Execute       gen_rtl solveStage3 -style xilinx -f -lang vhdl -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/syn/vhdl/solveStage3 
+Command       gen_rtl done; 0.118 sec.
+Execute       gen_rtl solveStage3 -style xilinx -f -lang vlog -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/syn/verilog/solveStage3 
+Execute       gen_tb_info solveStage3 -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveStage3 -p C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db 
+Command       gen_tb_info done; 0.319 sec.
+Execute       report -model solveStage3 -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/syn/report/solveStage3_csynth.rpt -f 
+Execute       report -model solveStage3 -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/syn/report/solveStage3_csynth.xml -f -x 
+Command       report done; 0.147 sec.
+Execute       report -model solveStage3 -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveStage3.verbose.rpt -verbose -f 
+Command       report done; 0.379 sec.
+Execute       db_write -model solveStage3 -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveStage3.adb -f 
+Command       db_write done; 0.226 sec.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'solveStage4a' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -prefix 
+Execute       get_config_rtl -auto_prefix 
+Execute       create_rtl_model solveStage4a -vendor xilinx -mg_file C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveStage4a.compgen.tcl 
+INFO: [RTGEN 206-100] Finished creating RTL model for 'solveStage4a'.
+Command       create_rtl_model done; 0.197 sec.
+INFO: [HLS 200-111]  Elapsed time: 1.72 seconds; current allocated memory: 349.342 MB.
+Execute       source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveCube.rtl_wrap.cfg.tcl 
+Execute       gen_rtl solveStage4a -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/syn/systemc/solveStage4a -synmodules edgeCorrect findEdge turnCube solveStage1 rotateCubeHorizontal cornerCorrect findCorner solveStage2 rotateCubeVertical solveStage3a stage3Prepare solveStage3 solveStage4a solveStage4b solveStage5a solveStage5b optimizeCube solveCube 
+Execute       gen_rtl solveStage4a -style xilinx -f -lang vhdl -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/syn/vhdl/solveStage4a 
+Command       gen_rtl done; 1.974 sec.
+Execute       gen_rtl solveStage4a -style xilinx -f -lang vlog -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/syn/verilog/solveStage4a 
+Execute       gen_tb_info solveStage4a -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveStage4a -p C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db 
+Command       gen_tb_info done; 0.29 sec.
+Execute       report -model solveStage4a -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/syn/report/solveStage4a_csynth.rpt -f 
+Command       report done; 1.18 sec.
+Execute       report -model solveStage4a -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/syn/report/solveStage4a_csynth.xml -f -x 
+Execute       report -model solveStage4a -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveStage4a.verbose.rpt -verbose -f 
+Command       report done; 1.999 sec.
+Execute       db_write -model solveStage4a -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveStage4a.adb -f 
+Command       db_write done; 0.462 sec.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'solveStage4b' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -prefix 
+Execute       get_config_rtl -auto_prefix 
+Execute       create_rtl_model solveStage4b -vendor xilinx -mg_file C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveStage4b.compgen.tcl 
+INFO: [RTGEN 206-100] Finished creating RTL model for 'solveStage4b'.
+Command       create_rtl_model done; 0.208 sec.
+INFO: [HLS 200-111]  Elapsed time: 6.836 seconds; current allocated memory: 350.569 MB.
+Execute       source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveCube.rtl_wrap.cfg.tcl 
+Execute       gen_rtl solveStage4b -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/syn/systemc/solveStage4b -synmodules edgeCorrect findEdge turnCube solveStage1 rotateCubeHorizontal cornerCorrect findCorner solveStage2 rotateCubeVertical solveStage3a stage3Prepare solveStage3 solveStage4a solveStage4b solveStage5a solveStage5b optimizeCube solveCube 
+Execute       gen_rtl solveStage4b -style xilinx -f -lang vhdl -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/syn/vhdl/solveStage4b 
+Execute       gen_rtl solveStage4b -style xilinx -f -lang vlog -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/syn/verilog/solveStage4b 
+Execute       gen_tb_info solveStage4b -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveStage4b -p C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db 
+Execute       report -model solveStage4b -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/syn/report/solveStage4b_csynth.rpt -f 
+Execute       report -model solveStage4b -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/syn/report/solveStage4b_csynth.xml -f -x 
+Execute       report -model solveStage4b -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveStage4b.verbose.rpt -verbose -f 
+Command       report done; 0.16 sec.
+Execute       db_write -model solveStage4b -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveStage4b.adb -f 
+Command       db_write done; 0.267 sec.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'solveStage5a' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -prefix 
+Execute       get_config_rtl -auto_prefix 
+Execute       create_rtl_model solveStage5a -vendor xilinx -mg_file C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveStage5a.compgen.tcl 
+INFO: [RTGEN 206-100] Finished creating RTL model for 'solveStage5a'.
+Command       create_rtl_model done; 0.169 sec.
+INFO: [HLS 200-111]  Elapsed time: 1.075 seconds; current allocated memory: 351.465 MB.
+Execute       source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveCube.rtl_wrap.cfg.tcl 
+Execute       gen_rtl solveStage5a -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/syn/systemc/solveStage5a -synmodules edgeCorrect findEdge turnCube solveStage1 rotateCubeHorizontal cornerCorrect findCorner solveStage2 rotateCubeVertical solveStage3a stage3Prepare solveStage3 solveStage4a solveStage4b solveStage5a solveStage5b optimizeCube solveCube 
+Execute       gen_rtl solveStage5a -style xilinx -f -lang vhdl -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/syn/vhdl/solveStage5a 
+Execute       gen_rtl solveStage5a -style xilinx -f -lang vlog -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/syn/verilog/solveStage5a 
+Execute       gen_tb_info solveStage5a -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveStage5a -p C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db 
+Execute       report -model solveStage5a -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/syn/report/solveStage5a_csynth.rpt -f 
+Execute       report -model solveStage5a -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/syn/report/solveStage5a_csynth.xml -f -x 
+Execute       report -model solveStage5a -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveStage5a.verbose.rpt -verbose -f 
+Command       report done; 0.328 sec.
+Execute       db_write -model solveStage5a -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveStage5a.adb -f 
+Command       db_write done; 0.274 sec.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'solveStage5b' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -prefix 
+Execute       get_config_rtl -auto_prefix 
+Execute       create_rtl_model solveStage5b -vendor xilinx -mg_file C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveStage5b.compgen.tcl 
+INFO: [RTGEN 206-100] Finished creating RTL model for 'solveStage5b'.
+Command       create_rtl_model done; 0.316 sec.
+INFO: [HLS 200-111]  Elapsed time: 1.308 seconds; current allocated memory: 352.883 MB.
+Execute       source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveCube.rtl_wrap.cfg.tcl 
+Execute       gen_rtl solveStage5b -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/syn/systemc/solveStage5b -synmodules edgeCorrect findEdge turnCube solveStage1 rotateCubeHorizontal cornerCorrect findCorner solveStage2 rotateCubeVertical solveStage3a stage3Prepare solveStage3 solveStage4a solveStage4b solveStage5a solveStage5b optimizeCube solveCube 
+Execute       gen_rtl solveStage5b -style xilinx -f -lang vhdl -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/syn/vhdl/solveStage5b 
+Execute       gen_rtl solveStage5b -style xilinx -f -lang vlog -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/syn/verilog/solveStage5b 
+Command       gen_rtl done; 1.144 sec.
+Execute       gen_tb_info solveStage5b -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveStage5b -p C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db 
+Command       gen_tb_info done; 0.436 sec.
+Execute       report -model solveStage5b -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/syn/report/solveStage5b_csynth.rpt -f 
+Execute       report -model solveStage5b -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/syn/report/solveStage5b_csynth.xml -f -x 
+Execute       report -model solveStage5b -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveStage5b.verbose.rpt -verbose -f 
+Command       report done; 0.351 sec.
+Execute       db_write -model solveStage5b -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveStage5b.adb -f 
+Command       db_write done; 1.421 sec.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'optimizeCube' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -prefix 
+Execute       get_config_rtl -auto_prefix 
+Execute       create_rtl_model optimizeCube -vendor xilinx -mg_file C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/optimizeCube.compgen.tcl 
+INFO: [RTGEN 206-100] Finished creating RTL model for 'optimizeCube'.
+Command       create_rtl_model done; 0.121 sec.
+INFO: [HLS 200-111]  Elapsed time: 3.861 seconds; current allocated memory: 353.746 MB.
+Execute       source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveCube.rtl_wrap.cfg.tcl 
+Execute       gen_rtl optimizeCube -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/syn/systemc/optimizeCube -synmodules edgeCorrect findEdge turnCube solveStage1 rotateCubeHorizontal cornerCorrect findCorner solveStage2 rotateCubeVertical solveStage3a stage3Prepare solveStage3 solveStage4a solveStage4b solveStage5a solveStage5b optimizeCube solveCube 
+Execute       gen_rtl optimizeCube -style xilinx -f -lang vhdl -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/syn/vhdl/optimizeCube 
+Execute       gen_rtl optimizeCube -style xilinx -f -lang vlog -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/syn/verilog/optimizeCube 
+Command       gen_rtl done; 0.61 sec.
+Execute       gen_tb_info optimizeCube -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/optimizeCube -p C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db 
+Command       gen_tb_info done; 0.295 sec.
+Execute       report -model optimizeCube -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/syn/report/optimizeCube_csynth.rpt -f 
+Execute       report -model optimizeCube -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/syn/report/optimizeCube_csynth.xml -f -x 
+Execute       report -model optimizeCube -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/optimizeCube.verbose.rpt -verbose -f 
+Execute       db_write -model optimizeCube -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/optimizeCube.adb -f 
+Command       db_write done; 1.054 sec.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'solveCube' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -prefix 
+Execute       get_config_rtl -auto_prefix 
+Execute       create_rtl_model solveCube -vendor xilinx -mg_file C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveCube.compgen.tcl 
+INFO: [RTGEN 206-500] Setting interface mode on port 'solveCube/cubieColor_tb_V' to 's_axilite & ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'solveCube/rMoves_V' to 's_axilite & ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'solveCube/order_V' to 's_axilite & ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'solveCube' to 's_axilite & ap_ctrl_hs'.
+INFO: [SYN 201-210] Renamed object name 'solveCube_cubieColor_V' to 'solveCube_cubieCoeOg' due to the length limit 20
+WARNING: [RTGEN 206-101] Register 'moveCounter_V' is power-on initialization.
+INFO: [RTGEN 206-100] Bundling port 'return', 'cubieColor_tb_V', 'rMoves_V' and 'order_V' to AXI-Lite port add_io.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'solveCube'.
+Command       create_rtl_model done; 4.113 sec.
+INFO: [HLS 200-111]  Elapsed time: 6.687 seconds; current allocated memory: 356.592 MB.
+Execute       source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveCube.rtl_wrap.cfg.tcl 
+Execute       gen_rtl solveCube -istop -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/syn/systemc/solveCube -synmodules edgeCorrect findEdge turnCube solveStage1 rotateCubeHorizontal cornerCorrect findCorner solveStage2 rotateCubeVertical solveStage3a stage3Prepare solveStage3 solveStage4a solveStage4b solveStage5a solveStage5b optimizeCube solveCube 
+Execute       gen_rtl solveCube -istop -style xilinx -f -lang vhdl -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/syn/vhdl/solveCube 
+Command       gen_rtl done; 0.161 sec.
+Execute       gen_rtl solveCube -istop -style xilinx -f -lang vlog -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/syn/verilog/solveCube 
+Command       gen_rtl done; 0.272 sec.
+Execute       export_constraint_db -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveCube.constraint.tcl -f -tool general 
+Execute       report -model solveCube -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveCube.design.xml -verbose -f -dv 
+Command       report done; 0.556 sec.
+Execute       report -model solveCube -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveCube.sdaccel.xml -verbose -f -sdaccel 
+Command       report done; 0.137 sec.
+Execute       gen_tb_info solveCube -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveCube -p C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db 
+Command       gen_tb_info done; 0.655 sec.
+Execute       report -model solveCube -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/syn/report/solveCube_csynth.rpt -f 
+Execute       report -model solveCube -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/syn/report/solveCube_csynth.xml -f -x 
+Command       report done; 0.424 sec.
+Execute       report -model solveCube -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveCube.verbose.rpt -verbose -f 
+Command       report done; 1.54 sec.
+Execute       db_write -model solveCube -o C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveCube.adb -f 
+Command       db_write done; 94.619 sec.
+Execute       sc_get_clocks solveCube 
+Execute       sc_get_portdomain solveCube 
+INFO-FLOW: Model list for RTL component generation: edgeCorrect findEdge turnCube solveStage1 rotateCubeHorizontal cornerCorrect findCorner solveStage2 rotateCubeVertical solveStage3a stage3Prepare solveStage3 solveStage4a solveStage4b solveStage5a solveStage5b optimizeCube solveCube
+INFO-FLOW: Handling components in module [edgeCorrect] ... 
+Execute       source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/edgeCorrect.compgen.tcl 
+INFO-FLOW: Handling components in module [findEdge] ... 
+Execute       source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/findEdge.compgen.tcl 
+Command       ap_source done; 0.125 sec.
+INFO-FLOW: Handling components in module [turnCube] ... 
+Execute       source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/turnCube.compgen.tcl 
+INFO-FLOW: Found component turnCube_cubieTembkb.
+INFO-FLOW: Append model turnCube_cubieTembkb
+INFO-FLOW: Handling components in module [solveStage1] ... 
+Execute       source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveStage1.compgen.tcl 
+INFO-FLOW: Handling components in module [rotateCubeHorizontal] ... 
+Execute       source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/rotateCubeHorizontal.compgen.tcl 
+Command       ap_source done; 0.124 sec.
+INFO-FLOW: Handling components in module [cornerCorrect] ... 
+Execute       source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/cornerCorrect.compgen.tcl 
+INFO-FLOW: Handling components in module [findCorner] ... 
+Execute       source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/findCorner.compgen.tcl 
+INFO-FLOW: Handling components in module [solveStage2] ... 
+Execute       source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveStage2.compgen.tcl 
+INFO-FLOW: Handling components in module [rotateCubeVertical] ... 
+Execute       source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/rotateCubeVertical.compgen.tcl 
+Command       ap_source done; 0.222 sec.
+INFO-FLOW: Handling components in module [solveStage3a] ... 
+Execute       source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveStage3a.compgen.tcl 
+INFO-FLOW: Handling components in module [stage3Prepare] ... 
+Execute       source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/stage3Prepare.compgen.tcl 
+INFO-FLOW: Handling components in module [solveStage3] ... 
+Execute       source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveStage3.compgen.tcl 
+INFO-FLOW: Handling components in module [solveStage4a] ... 
+Execute       source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveStage4a.compgen.tcl 
+INFO-FLOW: Handling components in module [solveStage4b] ... 
+Execute       source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveStage4b.compgen.tcl 
+INFO-FLOW: Handling components in module [solveStage5a] ... 
+Execute       source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveStage5a.compgen.tcl 
+INFO-FLOW: Handling components in module [solveStage5b] ... 
+Execute       source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveStage5b.compgen.tcl 
+INFO-FLOW: Handling components in module [optimizeCube] ... 
+Execute       source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/optimizeCube.compgen.tcl 
+INFO-FLOW: Handling components in module [solveCube] ... 
+Execute       source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveCube.compgen.tcl 
+INFO-FLOW: Found component solveCube_cubieCoeOg.
+INFO-FLOW: Append model solveCube_cubieCoeOg
+INFO-FLOW: Found component solveCube_moves_V.
+INFO-FLOW: Append model solveCube_moves_V
+INFO-FLOW: Found component solveCube_add_io_s_axi.
+INFO-FLOW: Append model solveCube_add_io_s_axi
+INFO-FLOW: Append model edgeCorrect
+INFO-FLOW: Append model findEdge
+INFO-FLOW: Append model turnCube
+INFO-FLOW: Append model solveStage1
+INFO-FLOW: Append model rotateCubeHorizontal
+INFO-FLOW: Append model cornerCorrect
+INFO-FLOW: Append model findCorner
+INFO-FLOW: Append model solveStage2
+INFO-FLOW: Append model rotateCubeVertical
+INFO-FLOW: Append model solveStage3a
+INFO-FLOW: Append model stage3Prepare
+INFO-FLOW: Append model solveStage3
+INFO-FLOW: Append model solveStage4a
+INFO-FLOW: Append model solveStage4b
+INFO-FLOW: Append model solveStage5a
+INFO-FLOW: Append model solveStage5b
+INFO-FLOW: Append model optimizeCube
+INFO-FLOW: Append model solveCube
+INFO-FLOW: Generating RTL model list ...
+INFO-FLOW: All models in this session: turnCube_cubieTembkb solveCube_cubieCoeOg solveCube_moves_V solveCube_add_io_s_axi edgeCorrect findEdge turnCube solveStage1 rotateCubeHorizontal cornerCorrect findCorner solveStage2 rotateCubeVertical solveStage3a stage3Prepare solveStage3 solveStage4a solveStage4b solveStage5a solveStage5b optimizeCube solveCube
+INFO-FLOW: To file: write model turnCube_cubieTembkb
+INFO-FLOW: To file: write model solveCube_cubieCoeOg
+INFO-FLOW: To file: write model solveCube_moves_V
+INFO-FLOW: To file: write model solveCube_add_io_s_axi
+INFO-FLOW: To file: write model edgeCorrect
+INFO-FLOW: To file: write model findEdge
+INFO-FLOW: To file: write model turnCube
+INFO-FLOW: To file: write model solveStage1
+INFO-FLOW: To file: write model rotateCubeHorizontal
+INFO-FLOW: To file: write model cornerCorrect
+INFO-FLOW: To file: write model findCorner
+INFO-FLOW: To file: write model solveStage2
+INFO-FLOW: To file: write model rotateCubeVertical
+INFO-FLOW: To file: write model solveStage3a
+INFO-FLOW: To file: write model stage3Prepare
+INFO-FLOW: To file: write model solveStage3
+INFO-FLOW: To file: write model solveStage4a
+INFO-FLOW: To file: write model solveStage4b
+INFO-FLOW: To file: write model solveStage5a
+INFO-FLOW: To file: write model solveStage5b
+INFO-FLOW: To file: write model optimizeCube
+INFO-FLOW: To file: write model solveCube
+INFO-FLOW: Finished generating RTL model list.
+
+
+INFO-FLOW: RTL Generation done.
+INFO-FLOW: CAS Generation done.
+INFO-FLOW: CBC Generation done.
+Execute       get_config_sdx -target 
+Execute       source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/global.setting.tcl 
+Execute       source C:/Xilinx/Vivado/2018.2/common/technology/generic/autopilot/common.gen 
+Execute         source C:/Xilinx/Vivado/2018.2/common/technology/generic/autopilot/APCoreGen.gen 
+Execute       source C:/Xilinx/Vivado/2018.2/common/technology/generic/autopilot/op.gen 
+Execute       source C:/Xilinx/Vivado/2018.2/common/technology/generic/autopilot/op_simcore.gen 
+Execute       source C:/Xilinx/Vivado/2018.2/common/technology/generic/autopilot/interface.gen 
+Execute       source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/global.setting.tcl 
+Execute       source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/zynq/zynq.gen 
+Execute         source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/virtex.gen 
+Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/xilinx.gen 
+Execute             source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/plb46.gen 
+Execute             source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/fsl.gen 
+Execute             source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/axi4.gen 
+Execute             source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute               source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/saxilite.gen 
+Execute               source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/maxi.gen 
+Execute             source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute             source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute             source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute             source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/ip/util.gen 
+Execute             source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/ip/xfft.gen 
+Command             ap_source done; 0.136 sec.
+Execute             source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/ip/xfir.gen 
+Command           ap_source done; 0.195 sec.
+Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/dsp48.gen 
+Command         ap_source done; 0.198 sec.
+Command       ap_source done; 0.198 sec.
+Execute       source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/zynq/zynq_fpv6.gen 
+Execute         source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/xilinx_fpv6.gen 
+Execute       source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/global.setting.tcl 
+Execute       source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/global.setting.tcl 
+Execute       source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/global.setting.tcl 
+Execute       source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/edgeCorrect.compgen.tcl 
+Execute       source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/findEdge.compgen.tcl 
+Execute       source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/turnCube.compgen.tcl 
+INFO: [RTMG 210-278] Implementing memory 'turnCube_cubieTembkb_ram (RAM)' using distributed RAMs.
+Command       ap_source done; 0.664 sec.
+Execute       source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveStage1.compgen.tcl 
+Execute       source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/rotateCubeHorizontal.compgen.tcl 
+Execute       source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/cornerCorrect.compgen.tcl 
+Execute       source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/findCorner.compgen.tcl 
+Execute       source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveStage2.compgen.tcl 
+Execute       source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/rotateCubeVertical.compgen.tcl 
+Execute       source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveStage3a.compgen.tcl 
+Execute       source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/stage3Prepare.compgen.tcl 
+Execute       source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveStage3.compgen.tcl 
+Execute       source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveStage4a.compgen.tcl 
+Execute       source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveStage4b.compgen.tcl 
+Execute       source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveStage5a.compgen.tcl 
+Execute       source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveStage5b.compgen.tcl 
+Execute       source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/optimizeCube.compgen.tcl 
+Execute       source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveCube.compgen.tcl 
+INFO: [RTMG 210-278] Implementing memory 'solveCube_cubieCoeOg_ram (RAM)' using block RAMs with power-on initialization.
+INFO: [RTMG 210-278] Implementing memory 'solveCube_moves_V_ram (RAM)' using distributed RAMs with power-on initialization.
+Execute         source ./add_io.slave.tcl 
+Execute         is_m_axi_addr64 
+Command         is_m_axi_addr64 done; 0.124 sec.
+Command       ap_source done; 1.304 sec.
+Execute       get_config_sdx -target 
+Execute       source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/global.setting.tcl 
+Execute       source C:/Xilinx/Vivado/2018.2/common/technology/generic/autopilot/common.gen 
+Execute         source C:/Xilinx/Vivado/2018.2/common/technology/generic/autopilot/APCoreGen.gen 
+Execute       source C:/Xilinx/Vivado/2018.2/common/technology/generic/autopilot/op.gen 
+Execute       source C:/Xilinx/Vivado/2018.2/common/technology/generic/autopilot/op_simcore.gen 
+Execute       source C:/Xilinx/Vivado/2018.2/common/technology/generic/autopilot/interface.gen 
+Execute       source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/global.setting.tcl 
+Execute       source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/zynq/zynq.gen 
+Execute         source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/virtex.gen 
+Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/xilinx.gen 
+Execute             source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/plb46.gen 
+Execute             source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/fsl.gen 
+Execute             source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/axi4.gen 
+Execute             source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute               source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/saxilite.gen 
+Execute               source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/maxi.gen 
+Execute             source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute             source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute             source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute             source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/ip/util.gen 
+Execute             source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/ip/xfft.gen 
+Command             ap_source done; 0.132 sec.
+Execute             source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/ip/xfir.gen 
+Command           ap_source done; 0.189 sec.
+Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/dsp48.gen 
+Command         ap_source done; 0.192 sec.
+Command       ap_source done; 0.192 sec.
+Execute       source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/zynq/zynq_fpv6.gen 
+Execute         source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/xilinx_fpv6.gen 
+Execute       source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveCube.rtl_wrap.cfg.tcl 
+Execute       source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveCube.rtl_wrap.cfg.tcl 
+Execute       source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveCube.rtl_wrap.cfg.tcl 
+Execute       source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveCube.tbgen.tcl 
+Execute       source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveCube.tbgen.tcl 
+Execute       source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/global.setting.tcl 
+Execute       source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/edgeCorrect.compgen.tcl 
+Execute       source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/findEdge.compgen.tcl 
+Execute       source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/turnCube.compgen.tcl 
+Execute       source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveStage1.compgen.tcl 
+Execute       source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/rotateCubeHorizontal.compgen.tcl 
+Execute       source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/cornerCorrect.compgen.tcl 
+Execute       source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/findCorner.compgen.tcl 
+Execute       source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveStage2.compgen.tcl 
+Execute       source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/rotateCubeVertical.compgen.tcl 
+Execute       source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveStage3a.compgen.tcl 
+Execute       source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/stage3Prepare.compgen.tcl 
+Execute       source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveStage3.compgen.tcl 
+Execute       source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveStage4a.compgen.tcl 
+Execute       source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveStage4b.compgen.tcl 
+Execute       source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveStage5a.compgen.tcl 
+Execute       source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveStage5b.compgen.tcl 
+Execute       source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/optimizeCube.compgen.tcl 
+Execute       source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveCube.compgen.tcl 
+Execute       source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/global.setting.tcl 
+Execute       source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/edgeCorrect.compgen.tcl 
+Execute       source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/findEdge.compgen.tcl 
+Execute       source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/turnCube.compgen.tcl 
+Execute       source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveStage1.compgen.tcl 
+Execute       source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/rotateCubeHorizontal.compgen.tcl 
+Execute       source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/cornerCorrect.compgen.tcl 
+Execute       source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/findCorner.compgen.tcl 
+Execute       source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveStage2.compgen.tcl 
+Execute       source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/rotateCubeVertical.compgen.tcl 
+Execute       source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveStage3a.compgen.tcl 
+Execute       source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/stage3Prepare.compgen.tcl 
+Execute       source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveStage3.compgen.tcl 
+Execute       source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveStage4a.compgen.tcl 
+Execute       source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveStage4b.compgen.tcl 
+Execute       source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveStage5a.compgen.tcl 
+Execute       source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveStage5b.compgen.tcl 
+Execute       source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/optimizeCube.compgen.tcl 
+Execute       source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveCube.compgen.tcl 
+Execute       source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/global.setting.tcl 
+Execute       source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/edgeCorrect.compgen.tcl 
+Execute       source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/findEdge.compgen.tcl 
+Execute       source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/turnCube.compgen.tcl 
+Execute       source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveStage1.compgen.tcl 
+Execute       source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/rotateCubeHorizontal.compgen.tcl 
+Execute       source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/cornerCorrect.compgen.tcl 
+Execute       source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/findCorner.compgen.tcl 
+Execute       source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveStage2.compgen.tcl 
+Execute       source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/rotateCubeVertical.compgen.tcl 
+Execute       source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveStage3a.compgen.tcl 
+Execute       source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/stage3Prepare.compgen.tcl 
+Execute       source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveStage3.compgen.tcl 
+Execute       source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveStage4a.compgen.tcl 
+Execute       source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveStage4b.compgen.tcl 
+Execute       source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveStage5a.compgen.tcl 
+Execute       source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveStage5b.compgen.tcl 
+Execute       source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/optimizeCube.compgen.tcl 
+Execute       source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveCube.compgen.tcl 
+Execute       source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/global.setting.tcl 
+Execute       source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveCube.constraint.tcl 
+Execute       source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveCube.tbgen.tcl 
+Execute       source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/global.setting.tcl 
+Execute       source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/global.setting.tcl 
+Execute       source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/global.setting.tcl 
+Execute       source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveCube.tbgen.tcl 
+Execute       source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveCube.tbgen.tcl 
+Execute       source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/global.setting.tcl 
+Execute       source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveCube.constraint.tcl 
+Execute       sc_get_clocks solveCube 
+Execute       source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/global.setting.tcl 
+Execute       get_config_sdx -target 
+Execute       get_config_sdx -profile 
+Execute       ::config_rtl 
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:49 ; elapsed = 00:04:27 . Memory (MB): peak = 467.605 ; gain = 410.133
+INFO: [SYSC 207-301] Generating SystemC RTL for solveCube.
+INFO: [VHDL 208-304] Generating VHDL RTL for solveCube.
+INFO: [VLOG 209-307] Generating Verilog RTL for solveCube.
+Command     autosyn done; 194.538 sec.
+Command   csynth_design done; 257.474 sec.
+Command ap_source done; 259.855 sec.
+Execute cleanup_all 
+Command cleanup_all done; 5.659 sec.
+INFO-FLOW: Workspace C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1 opened at Fri Jan 04 20:16:22 +0000 2019
+Execute     config_clock -quiet -name default -period 12 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 12ns.
+Execute     open_platform DefaultPlatform 
+Execute     import_lib C:/Xilinx/Vivado/2018.2/common/technology/xilinx/zynq/zynq 
+Execute       source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/xilinx.lib 
+Execute         source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/xilinx_interface.lib 
+Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/plb46.lib 
+Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/fsl.lib 
+Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/axi4.lib 
+Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/maxi.lib 
+Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/saxilite.lib 
+Execute         source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/dsp48.lib 
+Execute         source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/ip/dds_compiler.lib 
+Execute         source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/ip/xfft.lib 
+Execute         source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/ip/xfir.lib 
+Command       ap_source done; 0.171 sec.
+Execute       source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/xilinx_old.lib 
+Execute       source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/xilinx_vivado.lib 
+Execute       source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/xilinx.hlp 
+Execute         source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/target_info.tcl 
+Execute         source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/maxi.hlp 
+Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/dsp48.hlp 
+Command       ap_source done; 0.288 sec.
+Execute       source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/zynq/dsp48e1.hlp 
+Execute       get_default_platform 
+Execute       config_chip_info -quiet -resource  {SLICE 13300}  {LUT 53200}     {FF 106400} {DSP48E 220}   {BRAM 280}  
+Execute       config_chip_info -quiet -speed medium 
+Execute       source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/xilinx.hlp 
+Execute         source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/target_info.tcl 
+Execute         source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/maxi.hlp 
+Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/dsp48.hlp 
+Command     import_lib done; 0.623 sec.
+Execute     source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/zynq/zynq.gen 
+Execute       source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/virtex.gen 
+Execute         source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/xilinx.gen 
+Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/plb46.gen 
+Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/fsl.gen 
+Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/axi4.gen 
+Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute             source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/saxilite.gen 
+Execute             source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/maxi.gen 
+Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/ip/util.gen 
+Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/ip/xfft.gen 
+Command           ap_source done; 0.146 sec.
+Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/ip/xfir.gen 
+Command         ap_source done; 0.208 sec.
+Execute         source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/dsp48.gen 
+Command       ap_source done; 0.212 sec.
+Command     ap_source done; 0.213 sec.
+Execute     set_part xc7z020clg400-1 
+Execute       add_library xilinx/zynq/zynq:xc7z020:clg400:-1 
+Execute         get_default_platform 
+Execute         license_isbetapart xc7z020 
+Command         license_isbetapart done; error code: 1; 0.394 sec.
+Execute         get_default_platform 
+Execute         config_chip_info -quiet -resource  {SLICE 13300}  {LUT 53200}     {FF 106400} {DSP48E 220}   {BRAM 280}  
+Execute         config_chip_info -quiet -speed slow 
+Command       add_library done; 0.406 sec.
+Execute       add_library xilinx/zynq/zynq_fpv6 
+Execute         get_default_platform 
+Execute         open_platform DefaultPlatform 
+Execute         import_lib C:/Xilinx/Vivado/2018.2/common/technology/xilinx/zynq/zynq_fpv6 
+Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/xilinx_fpv7.lib 
+Execute             source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/xilinx_hp.lib 
+Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/xilinx_fpv.hlp 
+Execute             source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/xilinx.hlp 
+Execute               source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/target_info.tcl 
+Execute               source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute                 source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/maxi.hlp 
+Execute                 source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/saxilite.hlp 
+Execute               source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/dsp48.hlp 
+Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/zynq/zynq_hp.hlp 
+Command         import_lib done; 0.267 sec.
+Execute         source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/zynq/zynq_fpv6.gen 
+Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/xilinx_fpv6.gen 
+Command       add_library done; 0.279 sec.
+INFO: [HLS 200-10] Setting target device to 'xc7z020clg400-1'
+Execute       get_default_platform 
+Command     set_part done; 0.833 sec.
+Execute     get_default_platform 
+Execute     config_chip_info -quiet -resource  {SLICE 13300}  {LUT 53200}     {FF 106400} {DSP48E 220}   {BRAM 280}  
+Execute     config_chip_info -quiet -speed slow 
+Command   open_solution done; 1.696 sec.
+Execute   export_design -flow impl -rtl verilog -format ip_catalog 
+Execute     source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/global.setting.tcl 
+Execute     source C:/Xilinx/Vivado/2018.2/common/technology/generic/autopilot/common.gen 
+Execute       source C:/Xilinx/Vivado/2018.2/common/technology/generic/autopilot/APCoreGen.gen 
+Execute     source C:/Xilinx/Vivado/2018.2/common/technology/generic/autopilot/op.gen 
+Execute     source C:/Xilinx/Vivado/2018.2/common/technology/generic/autopilot/op_simcore.gen 
+Execute     source C:/Xilinx/Vivado/2018.2/common/technology/generic/autopilot/interface.gen 
+Execute     source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/global.setting.tcl 
+Execute     source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/zynq/zynq.gen 
+Execute       source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/virtex.gen 
+Execute         source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/xilinx.gen 
+Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/plb46.gen 
+Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/fsl.gen 
+Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/axi4.gen 
+Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute             source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/saxilite.gen 
+Execute             source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/maxi.gen 
+Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/ip/util.gen 
+Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/ip/xfft.gen 
+Command           ap_source done; 0.132 sec.
+Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/ip/xfir.gen 
+Command         ap_source done; 0.188 sec.
+Execute         source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/dsp48.gen 
+Command       ap_source done; 0.193 sec.
+Command     ap_source done; 0.193 sec.
+Execute     source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/zynq/zynq_fpv6.gen 
+Execute       source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/xilinx_fpv6.gen 
+Execute     source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/global.setting.tcl 
+INFO: [IMPL 213-8] Exporting RTL as a Vivado IP.
+Execute     source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/global.setting.tcl 
+Execute     get_config_sdx -target 
+Execute     source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/global.setting.tcl 
+Execute     source C:/Xilinx/Vivado/2018.2/common/technology/generic/autopilot/common.gen 
+Execute       source C:/Xilinx/Vivado/2018.2/common/technology/generic/autopilot/APCoreGen.gen 
+Execute     source C:/Xilinx/Vivado/2018.2/common/technology/generic/autopilot/op.gen 
+Execute     source C:/Xilinx/Vivado/2018.2/common/technology/generic/autopilot/op_simcore.gen 
+Execute     source C:/Xilinx/Vivado/2018.2/common/technology/generic/autopilot/interface.gen 
+Execute     source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/global.setting.tcl 
+Execute     source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/zynq/zynq.gen 
+Execute       source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/virtex.gen 
+Execute         source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/xilinx.gen 
+Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/plb46.gen 
+Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/fsl.gen 
+Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/axi4.gen 
+Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute             source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/saxilite.gen 
+Execute             source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/maxi.gen 
+Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/ip/util.gen 
+Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/ip/xfft.gen 
+Command           ap_source done; 0.139 sec.
+Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/ip/xfir.gen 
+Command         ap_source done; 0.193 sec.
+Execute         source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/dsp48.gen 
+Command       ap_source done; 0.197 sec.
+Command     ap_source done; 0.197 sec.
+Execute     source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/zynq/zynq_fpv6.gen 
+Execute       source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/xilinx_fpv6.gen 
+Execute     source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveCube.rtl_wrap.cfg.tcl 
+Execute     source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveCube.rtl_wrap.cfg.tcl 
+Execute     source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveCube.rtl_wrap.cfg.tcl 
+Execute     source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveCube.tbgen.tcl 
+Execute     source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveCube.tbgen.tcl 
+Execute     source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/global.setting.tcl 
+Execute     source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/edgeCorrect.compgen.tcl 
+Execute     source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/findEdge.compgen.tcl 
+Execute     source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/turnCube.compgen.tcl 
+Execute     source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveStage1.compgen.tcl 
+Execute     source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/rotateCubeHorizontal.compgen.tcl 
+Execute     source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/cornerCorrect.compgen.tcl 
+Execute     source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/findCorner.compgen.tcl 
+Execute     source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveStage2.compgen.tcl 
+Execute     source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/rotateCubeVertical.compgen.tcl 
+Execute     source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveStage3a.compgen.tcl 
+Execute     source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/stage3Prepare.compgen.tcl 
+Execute     source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveStage3.compgen.tcl 
+Execute     source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveStage4a.compgen.tcl 
+Execute     source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveStage4b.compgen.tcl 
+Execute     source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveStage5a.compgen.tcl 
+Execute     source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveStage5b.compgen.tcl 
+Execute     source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/optimizeCube.compgen.tcl 
+Execute     source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveCube.compgen.tcl 
+Execute     source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/global.setting.tcl 
+Execute     source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/edgeCorrect.compgen.tcl 
+Execute     source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/findEdge.compgen.tcl 
+Execute     source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/turnCube.compgen.tcl 
+Execute     source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveStage1.compgen.tcl 
+Execute     source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/rotateCubeHorizontal.compgen.tcl 
+Execute     source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/cornerCorrect.compgen.tcl 
+Execute     source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/findCorner.compgen.tcl 
+Execute     source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveStage2.compgen.tcl 
+Execute     source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/rotateCubeVertical.compgen.tcl 
+Execute     source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveStage3a.compgen.tcl 
+Execute     source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/stage3Prepare.compgen.tcl 
+Execute     source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveStage3.compgen.tcl 
+Execute     source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveStage4a.compgen.tcl 
+Execute     source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveStage4b.compgen.tcl 
+Execute     source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveStage5a.compgen.tcl 
+Execute     source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveStage5b.compgen.tcl 
+Execute     source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/optimizeCube.compgen.tcl 
+Execute     source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveCube.compgen.tcl 
+Execute     source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/global.setting.tcl 
+Execute     source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/edgeCorrect.compgen.tcl 
+Execute     source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/findEdge.compgen.tcl 
+Execute     source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/turnCube.compgen.tcl 
+Execute     source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveStage1.compgen.tcl 
+Execute     source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/rotateCubeHorizontal.compgen.tcl 
+Execute     source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/cornerCorrect.compgen.tcl 
+Execute     source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/findCorner.compgen.tcl 
+Execute     source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveStage2.compgen.tcl 
+Execute     source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/rotateCubeVertical.compgen.tcl 
+Execute     source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveStage3a.compgen.tcl 
+Execute     source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/stage3Prepare.compgen.tcl 
+Execute     source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveStage3.compgen.tcl 
+Execute     source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveStage4a.compgen.tcl 
+Execute     source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveStage4b.compgen.tcl 
+Execute     source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveStage5a.compgen.tcl 
+Execute     source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveStage5b.compgen.tcl 
+Execute     source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/optimizeCube.compgen.tcl 
+Execute     source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveCube.compgen.tcl 
+Execute     source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/global.setting.tcl 
+Execute     source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveCube.constraint.tcl 
+Execute     source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveCube.tbgen.tcl 
+Execute     source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/global.setting.tcl 
+Execute     source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveCube.tbgen.tcl 
+Execute     source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveCube.tbgen.tcl 
+Execute     source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/global.setting.tcl 
+Execute     source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/global.setting.tcl 
+Execute     source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveCube.rtl_wrap.cfg.tcl 
+Execute     source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveCube.rtl_wrap.cfg.tcl 
+Execute     source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveCube.rtl_wrap.cfg.tcl 
+Execute     source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveCube.tbgen.tcl 
+Execute     source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveCube.tbgen.tcl 
+Execute     source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveCube.tbgen.tcl 
+Execute     source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveCube.rtl_wrap.cfg.tcl 
+Execute     source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveCube.rtl_wrap.cfg.tcl 
+Execute     source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveCube.rtl_wrap.cfg.tcl 
+Execute     source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveCube.tbgen.tcl 
+Execute     source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveCube.tbgen.tcl 
+Execute     source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/global.setting.tcl 
+Execute     source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveCube.tbgen.tcl 
+Execute     source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/global.setting.tcl 
+Execute     source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveCube.constraint.tcl 
+Execute     source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/global.setting.tcl 
+Execute     source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/global.setting.tcl 
+Execute     source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveCube.constraint.tcl 
+Execute     source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveCube.tbgen.tcl 
+Execute     source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/global.setting.tcl 
+Execute     source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveCube.constraint.tcl 
+Execute     source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveCube.tbgen.tcl 
+Execute     source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/global.setting.tcl 
+Execute     source C:/Xilinx/Vivado/2018.2/common/technology/generic/autopilot/common.gen 
+Execute       source C:/Xilinx/Vivado/2018.2/common/technology/generic/autopilot/APCoreGen.gen 
+Execute     source C:/Xilinx/Vivado/2018.2/common/technology/generic/autopilot/op.gen 
+Execute     source C:/Xilinx/Vivado/2018.2/common/technology/generic/autopilot/op_simcore.gen 
+Execute     source C:/Xilinx/Vivado/2018.2/common/technology/generic/autopilot/interface.gen 
+Execute     source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/global.setting.tcl 
+Execute     source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/zynq/zynq.gen 
+Execute       source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/virtex.gen 
+Execute         source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/xilinx.gen 
+Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/plb46.gen 
+Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/fsl.gen 
+Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/axi4.gen 
+Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute             source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/saxilite.gen 
+Execute             source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/maxi.gen 
+Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/ip/util.gen 
+Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/ip/xfft.gen 
+Command           ap_source done; 0.141 sec.
+Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/ip/xfir.gen 
+Command         ap_source done; 0.199 sec.
+Execute         source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/dsp48.gen 
+Command       ap_source done; 0.203 sec.
+Command     ap_source done; 0.204 sec.
+Execute     source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/zynq/zynq_fpv6.gen 
+Execute       source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/xilinx_fpv6.gen 
+Execute     source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/global.setting.tcl 
+Execute     source C:/Xilinx/Vivado/2018.2/common/technology/generic/autopilot/common.gen 
+Execute       source C:/Xilinx/Vivado/2018.2/common/technology/generic/autopilot/APCoreGen.gen 
+Execute     source C:/Xilinx/Vivado/2018.2/common/technology/generic/autopilot/op.gen 
+Execute     source C:/Xilinx/Vivado/2018.2/common/technology/generic/autopilot/op_simcore.gen 
+Execute     source C:/Xilinx/Vivado/2018.2/common/technology/generic/autopilot/interface.gen 
+Execute     source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/global.setting.tcl 
+Execute     source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/zynq/zynq.gen 
+Execute       source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/virtex.gen 
+Execute         source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/xilinx.gen 
+Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/plb46.gen 
+Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/fsl.gen 
+Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/axi4.gen 
+Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute             source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/saxilite.gen 
+Execute             source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/maxi.gen 
+Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Command           ap_source done; 0.115 sec.
+Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/ip/util.gen 
+Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/ip/xfft.gen 
+Command           ap_source done; 0.159 sec.
+Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/ip/xfir.gen 
+Command         ap_source done; 0.507 sec.
+Execute         source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/dsp48.gen 
+Command       ap_source done; 0.551 sec.
+Command     ap_source done; 0.551 sec.
+Execute     source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/zynq/zynq_fpv6.gen 
+Execute       source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/xilinx_fpv6.gen 
+Execute     source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/global.setting.tcl 
+Execute     source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/global.setting.tcl 
+Execute     get_config_sdx -target 
+Execute     source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/global.setting.tcl 
+Execute     source C:/Xilinx/Vivado/2018.2/common/technology/generic/autopilot/common.gen 
+Execute       source C:/Xilinx/Vivado/2018.2/common/technology/generic/autopilot/APCoreGen.gen 
+Execute     source C:/Xilinx/Vivado/2018.2/common/technology/generic/autopilot/op.gen 
+Execute     source C:/Xilinx/Vivado/2018.2/common/technology/generic/autopilot/op_simcore.gen 
+Execute     source C:/Xilinx/Vivado/2018.2/common/technology/generic/autopilot/interface.gen 
+Execute     source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/global.setting.tcl 
+Execute     source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/zynq/zynq.gen 
+Execute       source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/virtex.gen 
+Execute         source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/xilinx.gen 
+Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/plb46.gen 
+Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/fsl.gen 
+Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/axi4.gen 
+Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute             source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/saxilite.gen 
+Execute             source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/maxi.gen 
+Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/ip/util.gen 
+Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/ip/xfft.gen 
+Command           ap_source done; 0.139 sec.
+Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/ip/xfir.gen 
+Command         ap_source done; 0.201 sec.
+Execute         source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/dsp48.gen 
+Command       ap_source done; 0.205 sec.
+Command     ap_source done; 0.206 sec.
+Execute     source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/zynq/zynq_fpv6.gen 
+Execute       source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/xilinx_fpv6.gen 
+Execute     source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/global.setting.tcl 
+Execute     source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/edgeCorrect.compgen.tcl 
+Execute     source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/findEdge.compgen.tcl 
+Execute     source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/turnCube.compgen.tcl 
+Execute     source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveStage1.compgen.tcl 
+Execute     source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/rotateCubeHorizontal.compgen.tcl 
+Execute     source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/cornerCorrect.compgen.tcl 
+Execute     source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/findCorner.compgen.tcl 
+Execute     source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveStage2.compgen.tcl 
+Execute     source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/rotateCubeVertical.compgen.tcl 
+Execute     source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveStage3a.compgen.tcl 
+Execute     source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/stage3Prepare.compgen.tcl 
+Execute     source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveStage3.compgen.tcl 
+Execute     source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveStage4a.compgen.tcl 
+Execute     source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveStage4b.compgen.tcl 
+Execute     source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveStage5a.compgen.tcl 
+Execute     source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveStage5b.compgen.tcl 
+Execute     source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/optimizeCube.compgen.tcl 
+Execute     source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveCube.compgen.tcl 
+Execute     source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/global.setting.tcl 
+Execute     source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveCube.constraint.tcl 
+Execute     source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/solveCube.tbgen.tcl 
+Execute     source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/global.setting.tcl 
+Execute     source C:/Xilinx/Vivado/2018.2/common/technology/generic/autopilot/common.gen 
+Execute       source C:/Xilinx/Vivado/2018.2/common/technology/generic/autopilot/APCoreGen.gen 
+Execute     source C:/Xilinx/Vivado/2018.2/common/technology/generic/autopilot/op.gen 
+Execute     source C:/Xilinx/Vivado/2018.2/common/technology/generic/autopilot/op_simcore.gen 
+Execute     source C:/Xilinx/Vivado/2018.2/common/technology/generic/autopilot/interface.gen 
+Execute     source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/global.setting.tcl 
+Execute     source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/zynq/zynq.gen 
+Execute       source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/virtex.gen 
+Execute         source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/xilinx.gen 
+Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/plb46.gen 
+Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/fsl.gen 
+Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/axi4.gen 
+Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute             source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/saxilite.gen 
+Execute             source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/maxi.gen 
+Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/ip/util.gen 
+Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/ip/xfft.gen 
+Command           ap_source done; 0.146 sec.
+Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/ip/xfir.gen 
+Command         ap_source done; 0.204 sec.
+Execute         source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/dsp48.gen 
+Command       ap_source done; 0.208 sec.
+Command     ap_source done; 0.208 sec.
+Execute     source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/zynq/zynq_fpv6.gen 
+Execute       source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/xilinx_fpv6.gen 
+Execute     get_config_rtl -vivado_synth_design_args 
+Execute     source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/global.setting.tcl 
+Execute     get_config_rtl -vivado_synth_strategy 
+Execute     get_config_rtl -vivado_synth_strategy 
+Execute     get_config_rtl -vivado_phys_opt 
+Command   export_design done; 1451.44 sec.
+Command ap_source done; 1453.2 sec.
+Execute cleanup_all 
+Command cleanup_all done; 0.135 sec.
+INFO-FLOW: Workspace C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1 opened at Mon Jan 07 21:02:20 +0000 2019
+Execute     config_clock -quiet -name default -period 12 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 12ns.
+Execute     open_platform DefaultPlatform 
+Command     open_platform done; 0.113 sec.
+Execute     import_lib C:/Xilinx/Vivado/2018.2/common/technology/xilinx/zynq/zynq 
+Execute       source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/xilinx.lib 
+Execute         source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/xilinx_interface.lib 
+Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/plb46.lib 
+Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/fsl.lib 
+Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/axi4.lib 
+Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/maxi.lib 
+Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/saxilite.lib 
+Command         ap_source done; 0.122 sec.
+Execute         source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/dsp48.lib 
+Execute         source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/ip/dds_compiler.lib 
+Execute         source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/ip/xfft.lib 
+Execute         source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/ip/xfir.lib 
+Command       ap_source done; 0.325 sec.
+Execute       source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/xilinx_old.lib 
+Execute       source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/xilinx_vivado.lib 
+Execute       source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/xilinx.hlp 
+Execute         source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/target_info.tcl 
+Execute         source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/maxi.hlp 
+Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/dsp48.hlp 
+Command       ap_source done; 0.361 sec.
+Execute       source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/zynq/dsp48e1.hlp 
+Execute       get_default_platform 
+Execute       config_chip_info -quiet -resource  {SLICE 13300}  {LUT 53200}     {FF 106400} {DSP48E 220}   {BRAM 280}  
+Execute       config_chip_info -quiet -speed medium 
+Execute       source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/xilinx.hlp 
+Execute         source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/target_info.tcl 
+Execute         source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/maxi.hlp 
+Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/dsp48.hlp 
+Command     import_lib done; 0.967 sec.
+Execute     source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/zynq/zynq.gen 
+Execute       source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/virtex.gen 
+Execute         source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/xilinx.gen 
+Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/plb46.gen 
+Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/fsl.gen 
+Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/axi4.gen 
+Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute             source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/saxilite.gen 
+Execute             source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/maxi.gen 
+Command             ap_source done; 0.106 sec.
+Command           ap_source done; 0.213 sec.
+Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Command           ap_source done; 0.255 sec.
+Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/ip/util.gen 
+Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/ip/xfft.gen 
+Command           ap_source done; 0.445 sec.
+Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/ip/xfir.gen 
+Command         ap_source done; 1.205 sec.
+Execute         source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/dsp48.gen 
+Command       ap_source done; 1.263 sec.
+Command     ap_source done; 1.274 sec.
+Execute     open_platform DefaultPlatform 
+Execute     import_lib C:/Xilinx/Vivado/2018.2/common/technology/xilinx/zynq/zynq_fpv6 
+Execute       source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/xilinx_fpv7.lib 
+Execute         source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/xilinx_hp.lib 
+Execute       source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/xilinx_fpv.hlp 
+Execute         source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/xilinx.hlp 
+Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/target_info.tcl 
+Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute             source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/maxi.hlp 
+Execute             source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/saxilite.hlp 
+Execute           source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/dsp48.hlp 
+Execute       source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/zynq/zynq_hp.hlp 
+Command     import_lib done; 0.24 sec.
+Execute     source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/zynq/zynq_fpv6.gen 
+Execute       source C:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/xilinx_fpv6.gen 
+Command       ap_source done; 0.174 sec.
+Command     ap_source done; 0.176 sec.
+Execute     set_part xc7z020clg400-1 
+Execute       add_library xilinx/zynq/zynq:xc7z020:clg400:-1 
+Execute         get_default_platform 
+Execute         license_isbetapart xc7z020 
+Command         license_isbetapart done; error code: 1; 0.26 sec.
+Execute         get_default_platform 
+Execute         config_chip_info -quiet -resource  {SLICE 13300}  {LUT 53200}     {FF 106400} {DSP48E 220}   {BRAM 280}  
+Execute         config_chip_info -quiet -speed slow 
+Command       add_library done; 0.304 sec.
+Execute       add_library xilinx/zynq/zynq_fpv6 
+Execute         get_default_platform 
+INFO: [HLS 200-10] Setting target device to 'xc7z020clg400-1'
+Execute       get_default_platform 
+Command     set_part done; 0.531 sec.
+Execute     get_default_platform 
+Execute     config_chip_info -quiet -resource  {SLICE 13300}  {LUT 53200}     {FF 106400} {DSP48E 220}   {BRAM 280}  
+Execute     config_chip_info -quiet -speed slow 
+Command   open_solution done; 3.685 sec.
+Execute   csim_design -clean -quiet 
+Execute     source C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/solution1/.autopilot/db/global.setting.tcl 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+Execute     source csim/.lst_opt.tcl 
+Execute     is_encrypted C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/layerAll_tb.cpp 
+Execute     is_xip C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/layerAll_tb.cpp 
+Execute     is_encrypted C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/layerAll.h 
+Execute     is_xip C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/layerAll.h 
+Execute     is_encrypted C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/layerAll.cpp 
+Execute     is_xip C:/Users/jinyee/RubikCube/Rubik_Cube_Layer_All/layerAll.cpp 
+Execute     get_default_platform 
+Execute     source run_sim.tcl 
+Command     ap_source done; 0.75 sec.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+Command   csim_design done; 45.004 sec.
+Command ap_source done; 48.753 sec.
+Execute cleanup_all 

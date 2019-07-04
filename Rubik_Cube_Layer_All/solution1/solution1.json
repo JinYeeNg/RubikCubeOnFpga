@@ -1,0 +1,101 @@
+{"sourceFile": [{
+      "name": "",
+      "directive": [
+        {
+          "functionName": "solveCube",
+          "label": "",
+          "functionLabel": "",
+          "pragma": {
+            "name": "INTERFACE",
+            "option": [
+              {
+                "name": "s_axilite",
+                "value": "",
+                "positionalBoolean": "mode"
+              },
+              {
+                "name": "port",
+                "value": "return",
+                "positionalBoolean": "4"
+              },
+              {
+                "name": "bundle",
+                "value": "add_io"
+              }
+            ]
+          }
+        },
+        {
+          "functionName": "solveCube",
+          "label": "",
+          "functionLabel": "",
+          "pragma": {
+            "name": "INTERFACE",
+            "option": [
+              {
+                "name": "s_axilite",
+                "value": "",
+                "positionalBoolean": "mode"
+              },
+              {
+                "name": "port",
+                "value": "cubieColor_tb",
+                "positionalBoolean": "4"
+              },
+              {
+                "name": "bundle",
+                "value": "add_io"
+              }
+            ]
+          }
+        },
+        {
+          "functionName": "solveCube",
+          "label": "",
+          "functionLabel": "",
+          "pragma": {
+            "name": "INTERFACE",
+            "option": [
+              {
+                "name": "s_axilite",
+                "value": "",
+                "positionalBoolean": "mode"
+              },
+              {
+                "name": "port",
+                "value": "rMoves",
+                "positionalBoolean": "4"
+              },
+              {
+                "name": "bundle",
+                "value": "add_io"
+              }
+            ]
+          }
+        },
+        {
+          "functionName": "solveCube",
+          "label": "",
+          "functionLabel": "",
+          "pragma": {
+            "name": "INTERFACE",
+            "option": [
+              {
+                "name": "s_axilite",
+                "value": "",
+                "positionalBoolean": "mode"
+              },
+              {
+                "name": "port",
+                "value": "order",
+                "positionalBoolean": "4"
+              },
+              {
+                "name": "bundle",
+                "value": "add_io"
+              }
+            ]
+          }
+        }
+      ]
+    }]}

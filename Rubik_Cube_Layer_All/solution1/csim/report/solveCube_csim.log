@@ -1,0 +1,13 @@
+INFO: [SIM 2] *************** CSIM start ***************
+INFO: [SIM 4] CSIM will launch GCC as the compiler.
+   Compiling ../../../layerAll_tb.cpp in debug mode
+   Compiling ../../../layerAll.cpp in debug mode
+   Generating csim.exe
+New Total Moves: 165
+
+New Total Moves(Without Rotations): 145
+
+Moves:
+F' D R R F R' U F' U' H R R H B B D' R R H D D R R R' D' R H D D R' D' R D R' D' R D R' D' R D H H H R' D' R H H D' R' D' R D R' D' R D R' D' R D H R' D' R D H D' R' D' R D H V V H U' L' U L U F U' F' H U' U' L' U L U F U' F' H U L' U L U F U' F' H L' U L U F U' F' H F R U R' U' F' R U R' U R U U R' R' F R' B B R F' R' B B R R H R' F R' B B R F' R' B B R R U' F F U' L R' F F L' R U' F F 
+INFO: [SIM 1] CSim done with 0 errors.
+INFO: [SIM 3] *************** CSIM finish ***************

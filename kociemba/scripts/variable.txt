@@ -1,0 +1,12 @@
+short twistMove2[39366],
+short flipMove2[36864],
+short FRtoBR_Move2[213840],
+short URFtoDLF_Move2[362880],
+short URtoDF_Move2[362880],
+short URtoUL_Move2[23760] ,
+short UBtoDF_Move2[23760] ,
+short MergeURtoULandUBtoDF2[112896],
+signed char Slice_URFtoDLF_Parity_Prun2[483840] ,
+signed char Slice_URtoDF_Parity_Prun2[483840],
+signed char Slice_Twist_Prun2[541283] ,
+signed char Slice_Flip_Prun2[506880] 

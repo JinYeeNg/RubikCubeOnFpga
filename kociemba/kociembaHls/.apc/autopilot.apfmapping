@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="coordcube.cpp" path="/home/jinyeeng/Downloads/RubikCube-af660b02594911b39652037663f50280ce7ec755/kociemba/coordcube.cpp"/>
+    <originFiles name="cubiecube.cpp" path="/home/jinyeeng/Downloads/RubikCube-af660b02594911b39652037663f50280ce7ec755/kociemba/cubiecube.cpp"/>
+    <originFiles name="facecube.cpp" path="/home/jinyeeng/Downloads/RubikCube-af660b02594911b39652037663f50280ce7ec755/kociemba/facecube.cpp"/>
+    <originFiles name="prunetable_helpers.cpp" path="/home/jinyeeng/Downloads/RubikCube-af660b02594911b39652037663f50280ce7ec755/kociemba/prunetable_helpers.cpp"/>
+    <originFiles name="search.cpp" path="/home/jinyeeng/Downloads/RubikCube-af660b02594911b39652037663f50280ce7ec755/kociemba/search.cpp"/>
+  </source>
+  <testbench>
+    <originFiles name="solve.cpp" path="/home/jinyeeng/Downloads/RubikCube-af660b02594911b39652037663f50280ce7ec755/kociemba/solve.cpp"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>

@@ -1,0 +1,956 @@
+
+
+================================================================
+== Vivado HLS Report for 'stage3Prepare'
+================================================================
+* Date:           Fri Jan  4 20:12:17 2019
+
+* Version:        2018.2 (Build 2258646 on Thu Jun 14 20:25:20 MDT 2018)
+* Project:        Rubik_Cube_Layer_All
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  12.00|     9.736|        1.50|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+------+-----+------+---------+
+    |   Latency  |  Interval  | Pipeline|
+    | min |  max | min |  max |   Type  |
+    +-----+------+-----+------+---------+
+    |   14|  1685|   14|  1685|   none  |
+    +-----+------+-----+------+---------+
+
+    + Detail: 
+        * Instance: 
+        +--------------------------------+----------------------+-----+-----+-----+-----+---------+
+        |                                |                      |  Latency  |  Interval | Pipeline|
+        |            Instance            |        Module        | min | max | min | max |   Type  |
+        +--------------------------------+----------------------+-----+-----+-----+-----+---------+
+        |grp_turnCube_fu_61              |turnCube              |  122|  132|  122|  132|   none  |
+        |grp_rotateCubeHorizontal_fu_78  |rotateCubeHorizontal  |  148|  148|  148|  148|   none  |
+        |grp_findEdge_fu_88              |findEdge              |   12|   12|   12|   12|   none  |
+        +--------------------------------+----------------------+-----+-----+-----+-----+---------+
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 44
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / (p_0 == 8)
+	21  / (p_0 == 5) | (p_0 == 6) | (p_0 == 7)
+	44  / (p_0 != 5 & p_0 != 6 & p_0 != 7 & p_0 != 8)
+3 --> 
+	4  / true
+4 --> 
+	5  / (!tmp_s)
+	20  / (tmp_s)
+5 --> 
+	6  / true
+6 --> 
+	7  / true
+7 --> 
+	8  / true
+8 --> 
+	9  / true
+9 --> 
+	10  / true
+10 --> 
+	11  / true
+11 --> 
+	12  / true
+12 --> 
+	13  / true
+13 --> 
+	14  / true
+14 --> 
+	15  / true
+15 --> 
+	16  / true
+16 --> 
+	17  / true
+17 --> 
+	18  / true
+18 --> 
+	19  / true
+19 --> 
+	20  / true
+20 --> 
+	44  / true
+21 --> 
+	22  / (p_0 == 5) | (p_0 == 6) | (p_0 == 7)
+22 --> 
+	23  / (p_0 == 5) | (p_0 == 6) | (p_0 == 7)
+23 --> 
+	24  / (p_0 == 5) | (p_0 == 6) | (p_0 == 7)
+24 --> 
+	25  / (p_0 == 5) | (p_0 == 6) | (p_0 == 7)
+25 --> 
+	26  / (p_0 == 5) | (p_0 == 6) | (p_0 == 7)
+26 --> 
+	27  / (p_0 == 5) | (p_0 == 6) | (p_0 == 7)
+27 --> 
+	28  / (p_0 == 5) | (p_0 == 6) | (p_0 == 7)
+28 --> 
+	29  / (p_0 == 5) | (p_0 == 6) | (p_0 == 7)
+29 --> 
+	30  / (p_0 == 5) | (p_0 == 6) | (p_0 == 7)
+30 --> 
+	31  / (p_0 == 5) | (p_0 == 6) | (p_0 == 7)
+31 --> 
+	32  / (p_0 == 5) | (p_0 == 6) | (p_0 == 7)
+32 --> 
+	33  / (p_0 == 5) | (p_0 == 6) | (p_0 == 7)
+33 --> 
+	34  / (p_0 == 5) | (p_0 == 6) | (p_0 == 7)
+34 --> 
+	35  / (p_0 == 5) | (p_0 == 6) | (p_0 == 7)
+35 --> 
+	36  / (p_0 == 5) | (p_0 == 6) | (p_0 == 7)
+36 --> 
+	37  / (p_0 == 5) | (p_0 == 6) | (p_0 == 7)
+37 --> 
+	38  / (p_0 == 5) | (p_0 == 6) | (p_0 == 7)
+38 --> 
+	39  / (p_0 == 5) | (p_0 == 6) | (p_0 == 7)
+39 --> 
+	40  / (p_0 == 5) | (p_0 == 6) | (p_0 == 7)
+40 --> 
+	41  / (p_0 == 5) | (p_0 == 6) | (p_0 == 7)
+41 --> 
+	42  / (p_0 == 5) | (p_0 == 6) | (p_0 == 7)
+42 --> 
+	43  / (p_0 == 5) | (p_0 == 6) | (p_0 == 7)
+43 --> 
+	44  / (p_0 == 5) | (p_0 == 6) | (p_0 == 7)
+44 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 3.10>
+ST_1 : Operation 45 [1/1] (0.00ns)   --->   "%sC_V_read = call i3 @_ssdm_op_Read.ap_auto.i3(i3 %sC_V)"   --->   Operation 45 'read' 'sC_V_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 46 [1/1] (0.00ns)   --->   "%fC_V_read = call i3 @_ssdm_op_Read.ap_auto.i3(i3 %fC_V)"   --->   Operation 46 'read' 'fC_V_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 47 [2/2] (3.10ns)   --->   "%p_0 = call fastcc i4 @findEdge(i3 %fC_V_read, i3 %sC_V_read)" [Rubik_Cube_Layer_All/layerAll.cpp:1059]   --->   Operation 47 'call' 'p_0' <Predicate = true> <Delay = 3.10> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 2 <SV = 1> <Delay = 9.73>
+ST_2 : Operation 48 [1/2] (8.43ns)   --->   "%p_0 = call fastcc i4 @findEdge(i3 %fC_V_read, i3 %sC_V_read)" [Rubik_Cube_Layer_All/layerAll.cpp:1059]   --->   Operation 48 'call' 'p_0' <Predicate = true> <Delay = 8.43> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_2 : Operation 49 [1/1] (1.30ns)   --->   "switch i4 %p_0, label %._crit_edge [
+    i4 5, label %1
+    i4 6, label %2
+    i4 7, label %3
+    i4 -8, label %4
+  ]" [Rubik_Cube_Layer_All/layerAll.cpp:1059]   --->   Operation 49 'switch' <Predicate = true> <Delay = 1.30>
+
+State 3 <SV = 2> <Delay = 2.32>
+ST_3 : Operation 50 [2/2] (2.32ns)   --->   "%cubieColor_V_load = load i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 31), align 1" [Rubik_Cube_Layer_All/layerAll.cpp:1083]   --->   Operation 50 'load' 'cubieColor_V_load' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_3 : Operation 51 [2/2] (2.32ns)   --->   "%cubieColor_V_load_1 = load i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 32), align 16" [Rubik_Cube_Layer_All/layerAll.cpp:1083]   --->   Operation 51 'load' 'cubieColor_V_load_1' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+
+State 4 <SV = 3> <Delay = 3.45>
+ST_4 : Operation 52 [1/2] (2.32ns)   --->   "%cubieColor_V_load = load i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 31), align 1" [Rubik_Cube_Layer_All/layerAll.cpp:1083]   --->   Operation 52 'load' 'cubieColor_V_load' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_4 : Operation 53 [1/2] (2.32ns)   --->   "%cubieColor_V_load_1 = load i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 32), align 16" [Rubik_Cube_Layer_All/layerAll.cpp:1083]   --->   Operation 53 'load' 'cubieColor_V_load_1' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_4 : Operation 54 [1/1] (1.13ns)   --->   "%tmp_s = icmp eq i3 %cubieColor_V_load, %cubieColor_V_load_1" [Rubik_Cube_Layer_All/layerAll.cpp:1083]   --->   Operation 54 'icmp' 'tmp_s' <Predicate = true> <Delay = 1.13> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.13> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 55 [1/1] (0.00ns)   --->   "br i1 %tmp_s, label %._crit_edge1, label %5" [Rubik_Cube_Layer_All/layerAll.cpp:1083]   --->   Operation 55 'br' <Predicate = true> <Delay = 0.00>
+
+State 5 <SV = 4> <Delay = 6.12>
+ST_5 : Operation 56 [2/2] (6.12ns)   --->   "call fastcc void @turnCube(i4 0) nounwind" [Rubik_Cube_Layer_All/layerAll.cpp:959->Rubik_Cube_Layer_All/layerAll.cpp:1085]   --->   Operation 56 'call' <Predicate = true> <Delay = 6.12> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 6 <SV = 5> <Delay = 0.00>
+ST_6 : Operation 57 [1/2] (0.00ns)   --->   "call fastcc void @turnCube(i4 0) nounwind" [Rubik_Cube_Layer_All/layerAll.cpp:959->Rubik_Cube_Layer_All/layerAll.cpp:1085]   --->   Operation 57 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 7 <SV = 6> <Delay = 6.12>
+ST_7 : Operation 58 [2/2] (6.12ns)   --->   "call fastcc void @turnCube(i4 -6) nounwind" [Rubik_Cube_Layer_All/layerAll.cpp:960->Rubik_Cube_Layer_All/layerAll.cpp:1085]   --->   Operation 58 'call' <Predicate = true> <Delay = 6.12> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 8 <SV = 7> <Delay = 0.00>
+ST_8 : Operation 59 [1/2] (0.00ns)   --->   "call fastcc void @turnCube(i4 -6) nounwind" [Rubik_Cube_Layer_All/layerAll.cpp:960->Rubik_Cube_Layer_All/layerAll.cpp:1085]   --->   Operation 59 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 9 <SV = 8> <Delay = 6.12>
+ST_9 : Operation 60 [2/2] (6.12ns)   --->   "call fastcc void @turnCube(i4 1) nounwind" [Rubik_Cube_Layer_All/layerAll.cpp:961->Rubik_Cube_Layer_All/layerAll.cpp:1085]   --->   Operation 60 'call' <Predicate = true> <Delay = 6.12> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 10 <SV = 9> <Delay = 0.00>
+ST_10 : Operation 61 [1/2] (0.00ns)   --->   "call fastcc void @turnCube(i4 1) nounwind" [Rubik_Cube_Layer_All/layerAll.cpp:961->Rubik_Cube_Layer_All/layerAll.cpp:1085]   --->   Operation 61 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 11 <SV = 10> <Delay = 6.12>
+ST_11 : Operation 62 [2/2] (6.12ns)   --->   "call fastcc void @turnCube(i4 -5) nounwind" [Rubik_Cube_Layer_All/layerAll.cpp:962->Rubik_Cube_Layer_All/layerAll.cpp:1085]   --->   Operation 62 'call' <Predicate = true> <Delay = 6.12> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 12 <SV = 11> <Delay = 0.00>
+ST_12 : Operation 63 [1/2] (0.00ns)   --->   "call fastcc void @turnCube(i4 -5) nounwind" [Rubik_Cube_Layer_All/layerAll.cpp:962->Rubik_Cube_Layer_All/layerAll.cpp:1085]   --->   Operation 63 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 13 <SV = 12> <Delay = 6.12>
+ST_13 : Operation 64 [2/2] (6.12ns)   --->   "call fastcc void @turnCube(i4 1) nounwind" [Rubik_Cube_Layer_All/layerAll.cpp:963->Rubik_Cube_Layer_All/layerAll.cpp:1085]   --->   Operation 64 'call' <Predicate = true> <Delay = 6.12> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 14 <SV = 13> <Delay = 0.00>
+ST_14 : Operation 65 [1/2] (0.00ns)   --->   "call fastcc void @turnCube(i4 1) nounwind" [Rubik_Cube_Layer_All/layerAll.cpp:963->Rubik_Cube_Layer_All/layerAll.cpp:1085]   --->   Operation 65 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 15 <SV = 14> <Delay = 6.12>
+ST_15 : Operation 66 [2/2] (6.12ns)   --->   "call fastcc void @turnCube(i4 7) nounwind" [Rubik_Cube_Layer_All/layerAll.cpp:964->Rubik_Cube_Layer_All/layerAll.cpp:1085]   --->   Operation 66 'call' <Predicate = true> <Delay = 6.12> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 16 <SV = 15> <Delay = 0.00>
+ST_16 : Operation 67 [1/2] (0.00ns)   --->   "call fastcc void @turnCube(i4 7) nounwind" [Rubik_Cube_Layer_All/layerAll.cpp:964->Rubik_Cube_Layer_All/layerAll.cpp:1085]   --->   Operation 67 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 17 <SV = 16> <Delay = 6.12>
+ST_17 : Operation 68 [2/2] (6.12ns)   --->   "call fastcc void @turnCube(i4 0) nounwind" [Rubik_Cube_Layer_All/layerAll.cpp:965->Rubik_Cube_Layer_All/layerAll.cpp:1085]   --->   Operation 68 'call' <Predicate = true> <Delay = 6.12> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 18 <SV = 17> <Delay = 0.00>
+ST_18 : Operation 69 [1/2] (0.00ns)   --->   "call fastcc void @turnCube(i4 0) nounwind" [Rubik_Cube_Layer_All/layerAll.cpp:965->Rubik_Cube_Layer_All/layerAll.cpp:1085]   --->   Operation 69 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 19 <SV = 18> <Delay = 6.12>
+ST_19 : Operation 70 [2/2] (6.12ns)   --->   "call fastcc void @turnCube(i4 6) nounwind" [Rubik_Cube_Layer_All/layerAll.cpp:966->Rubik_Cube_Layer_All/layerAll.cpp:1085]   --->   Operation 70 'call' <Predicate = true> <Delay = 6.12> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 20 <SV = 19> <Delay = 0.00>
+ST_20 : Operation 71 [1/2] (0.00ns)   --->   "call fastcc void @turnCube(i4 6) nounwind" [Rubik_Cube_Layer_All/layerAll.cpp:966->Rubik_Cube_Layer_All/layerAll.cpp:1085]   --->   Operation 71 'call' <Predicate = (!tmp_s)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_20 : Operation 72 [1/1] (0.00ns)   --->   "br label %._crit_edge1" [Rubik_Cube_Layer_All/layerAll.cpp:1086]   --->   Operation 72 'br' <Predicate = (!tmp_s)> <Delay = 0.00>
+ST_20 : Operation 73 [1/1] (0.00ns)   --->   "br label %._crit_edge" [Rubik_Cube_Layer_All/layerAll.cpp:1087]   --->   Operation 73 'br' <Predicate = true> <Delay = 0.00>
+
+State 21 <SV = 2> <Delay = 3.21>
+ST_21 : Operation 74 [2/2] (3.21ns)   --->   "call fastcc void @rotateCubeHorizontal()" [Rubik_Cube_Layer_All/layerAll.cpp:1076]   --->   Operation 74 'call' <Predicate = (p_0 == 7)> <Delay = 3.21> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_21 : Operation 75 [2/2] (3.21ns)   --->   "call fastcc void @rotateCubeHorizontal()" [Rubik_Cube_Layer_All/layerAll.cpp:1069]   --->   Operation 75 'call' <Predicate = (p_0 == 6)> <Delay = 3.21> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_21 : Operation 76 [2/2] (3.21ns)   --->   "call fastcc void @rotateCubeHorizontal()" [Rubik_Cube_Layer_All/layerAll.cpp:1062]   --->   Operation 76 'call' <Predicate = (p_0 == 5)> <Delay = 3.21> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 22 <SV = 3> <Delay = 0.00>
+ST_22 : Operation 77 [1/2] (0.00ns)   --->   "call fastcc void @rotateCubeHorizontal()" [Rubik_Cube_Layer_All/layerAll.cpp:1076]   --->   Operation 77 'call' <Predicate = (p_0 == 7)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_22 : Operation 78 [1/2] (0.00ns)   --->   "call fastcc void @rotateCubeHorizontal()" [Rubik_Cube_Layer_All/layerAll.cpp:1069]   --->   Operation 78 'call' <Predicate = (p_0 == 6)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_22 : Operation 79 [1/2] (0.00ns)   --->   "call fastcc void @rotateCubeHorizontal()" [Rubik_Cube_Layer_All/layerAll.cpp:1062]   --->   Operation 79 'call' <Predicate = (p_0 == 5)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 23 <SV = 4> <Delay = 6.12>
+ST_23 : Operation 80 [2/2] (6.12ns)   --->   "call fastcc void @turnCube(i4 0) nounwind" [Rubik_Cube_Layer_All/layerAll.cpp:959->Rubik_Cube_Layer_All/layerAll.cpp:1077]   --->   Operation 80 'call' <Predicate = (p_0 == 7)> <Delay = 6.12> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_23 : Operation 81 [2/2] (3.21ns)   --->   "call fastcc void @rotateCubeHorizontal()" [Rubik_Cube_Layer_All/layerAll.cpp:1070]   --->   Operation 81 'call' <Predicate = (p_0 == 6)> <Delay = 3.21> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_23 : Operation 82 [2/2] (3.21ns)   --->   "call fastcc void @rotateCubeHorizontal()" [Rubik_Cube_Layer_All/layerAll.cpp:1063]   --->   Operation 82 'call' <Predicate = (p_0 == 5)> <Delay = 3.21> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 24 <SV = 5> <Delay = 0.00>
+ST_24 : Operation 83 [1/2] (0.00ns)   --->   "call fastcc void @turnCube(i4 0) nounwind" [Rubik_Cube_Layer_All/layerAll.cpp:959->Rubik_Cube_Layer_All/layerAll.cpp:1077]   --->   Operation 83 'call' <Predicate = (p_0 == 7)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_24 : Operation 84 [1/2] (0.00ns)   --->   "call fastcc void @rotateCubeHorizontal()" [Rubik_Cube_Layer_All/layerAll.cpp:1070]   --->   Operation 84 'call' <Predicate = (p_0 == 6)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_24 : Operation 85 [1/2] (0.00ns)   --->   "call fastcc void @rotateCubeHorizontal()" [Rubik_Cube_Layer_All/layerAll.cpp:1063]   --->   Operation 85 'call' <Predicate = (p_0 == 5)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 25 <SV = 6> <Delay = 6.12>
+ST_25 : Operation 86 [2/2] (6.12ns)   --->   "call fastcc void @turnCube(i4 -6) nounwind" [Rubik_Cube_Layer_All/layerAll.cpp:960->Rubik_Cube_Layer_All/layerAll.cpp:1077]   --->   Operation 86 'call' <Predicate = (p_0 == 7)> <Delay = 6.12> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_25 : Operation 87 [2/2] (6.12ns)   --->   "call fastcc void @turnCube(i4 0) nounwind" [Rubik_Cube_Layer_All/layerAll.cpp:959->Rubik_Cube_Layer_All/layerAll.cpp:1071]   --->   Operation 87 'call' <Predicate = (p_0 == 6)> <Delay = 6.12> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_25 : Operation 88 [2/2] (3.21ns)   --->   "call fastcc void @rotateCubeHorizontal()" [Rubik_Cube_Layer_All/layerAll.cpp:1064]   --->   Operation 88 'call' <Predicate = (p_0 == 5)> <Delay = 3.21> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 26 <SV = 7> <Delay = 0.00>
+ST_26 : Operation 89 [1/2] (0.00ns)   --->   "call fastcc void @turnCube(i4 -6) nounwind" [Rubik_Cube_Layer_All/layerAll.cpp:960->Rubik_Cube_Layer_All/layerAll.cpp:1077]   --->   Operation 89 'call' <Predicate = (p_0 == 7)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_26 : Operation 90 [1/2] (0.00ns)   --->   "call fastcc void @turnCube(i4 0) nounwind" [Rubik_Cube_Layer_All/layerAll.cpp:959->Rubik_Cube_Layer_All/layerAll.cpp:1071]   --->   Operation 90 'call' <Predicate = (p_0 == 6)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_26 : Operation 91 [1/2] (0.00ns)   --->   "call fastcc void @rotateCubeHorizontal()" [Rubik_Cube_Layer_All/layerAll.cpp:1064]   --->   Operation 91 'call' <Predicate = (p_0 == 5)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 27 <SV = 8> <Delay = 6.12>
+ST_27 : Operation 92 [2/2] (6.12ns)   --->   "call fastcc void @turnCube(i4 1) nounwind" [Rubik_Cube_Layer_All/layerAll.cpp:961->Rubik_Cube_Layer_All/layerAll.cpp:1077]   --->   Operation 92 'call' <Predicate = (p_0 == 7)> <Delay = 6.12> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_27 : Operation 93 [2/2] (6.12ns)   --->   "call fastcc void @turnCube(i4 -6) nounwind" [Rubik_Cube_Layer_All/layerAll.cpp:960->Rubik_Cube_Layer_All/layerAll.cpp:1071]   --->   Operation 93 'call' <Predicate = (p_0 == 6)> <Delay = 6.12> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_27 : Operation 94 [2/2] (6.12ns)   --->   "call fastcc void @turnCube(i4 0) nounwind" [Rubik_Cube_Layer_All/layerAll.cpp:959->Rubik_Cube_Layer_All/layerAll.cpp:1065]   --->   Operation 94 'call' <Predicate = (p_0 == 5)> <Delay = 6.12> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 28 <SV = 9> <Delay = 0.00>
+ST_28 : Operation 95 [1/2] (0.00ns)   --->   "call fastcc void @turnCube(i4 1) nounwind" [Rubik_Cube_Layer_All/layerAll.cpp:961->Rubik_Cube_Layer_All/layerAll.cpp:1077]   --->   Operation 95 'call' <Predicate = (p_0 == 7)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_28 : Operation 96 [1/2] (0.00ns)   --->   "call fastcc void @turnCube(i4 -6) nounwind" [Rubik_Cube_Layer_All/layerAll.cpp:960->Rubik_Cube_Layer_All/layerAll.cpp:1071]   --->   Operation 96 'call' <Predicate = (p_0 == 6)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_28 : Operation 97 [1/2] (0.00ns)   --->   "call fastcc void @turnCube(i4 0) nounwind" [Rubik_Cube_Layer_All/layerAll.cpp:959->Rubik_Cube_Layer_All/layerAll.cpp:1065]   --->   Operation 97 'call' <Predicate = (p_0 == 5)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 29 <SV = 10> <Delay = 6.12>
+ST_29 : Operation 98 [2/2] (6.12ns)   --->   "call fastcc void @turnCube(i4 -5) nounwind" [Rubik_Cube_Layer_All/layerAll.cpp:962->Rubik_Cube_Layer_All/layerAll.cpp:1077]   --->   Operation 98 'call' <Predicate = (p_0 == 7)> <Delay = 6.12> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_29 : Operation 99 [2/2] (6.12ns)   --->   "call fastcc void @turnCube(i4 1) nounwind" [Rubik_Cube_Layer_All/layerAll.cpp:961->Rubik_Cube_Layer_All/layerAll.cpp:1071]   --->   Operation 99 'call' <Predicate = (p_0 == 6)> <Delay = 6.12> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_29 : Operation 100 [2/2] (6.12ns)   --->   "call fastcc void @turnCube(i4 -6) nounwind" [Rubik_Cube_Layer_All/layerAll.cpp:960->Rubik_Cube_Layer_All/layerAll.cpp:1065]   --->   Operation 100 'call' <Predicate = (p_0 == 5)> <Delay = 6.12> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 30 <SV = 11> <Delay = 0.00>
+ST_30 : Operation 101 [1/2] (0.00ns)   --->   "call fastcc void @turnCube(i4 -5) nounwind" [Rubik_Cube_Layer_All/layerAll.cpp:962->Rubik_Cube_Layer_All/layerAll.cpp:1077]   --->   Operation 101 'call' <Predicate = (p_0 == 7)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_30 : Operation 102 [1/2] (0.00ns)   --->   "call fastcc void @turnCube(i4 1) nounwind" [Rubik_Cube_Layer_All/layerAll.cpp:961->Rubik_Cube_Layer_All/layerAll.cpp:1071]   --->   Operation 102 'call' <Predicate = (p_0 == 6)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_30 : Operation 103 [1/2] (0.00ns)   --->   "call fastcc void @turnCube(i4 -6) nounwind" [Rubik_Cube_Layer_All/layerAll.cpp:960->Rubik_Cube_Layer_All/layerAll.cpp:1065]   --->   Operation 103 'call' <Predicate = (p_0 == 5)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 31 <SV = 12> <Delay = 6.12>
+ST_31 : Operation 104 [2/2] (6.12ns)   --->   "call fastcc void @turnCube(i4 1) nounwind" [Rubik_Cube_Layer_All/layerAll.cpp:963->Rubik_Cube_Layer_All/layerAll.cpp:1077]   --->   Operation 104 'call' <Predicate = (p_0 == 7)> <Delay = 6.12> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_31 : Operation 105 [2/2] (6.12ns)   --->   "call fastcc void @turnCube(i4 -5) nounwind" [Rubik_Cube_Layer_All/layerAll.cpp:962->Rubik_Cube_Layer_All/layerAll.cpp:1071]   --->   Operation 105 'call' <Predicate = (p_0 == 6)> <Delay = 6.12> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_31 : Operation 106 [2/2] (6.12ns)   --->   "call fastcc void @turnCube(i4 1) nounwind" [Rubik_Cube_Layer_All/layerAll.cpp:961->Rubik_Cube_Layer_All/layerAll.cpp:1065]   --->   Operation 106 'call' <Predicate = (p_0 == 5)> <Delay = 6.12> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 32 <SV = 13> <Delay = 0.00>
+ST_32 : Operation 107 [1/2] (0.00ns)   --->   "call fastcc void @turnCube(i4 1) nounwind" [Rubik_Cube_Layer_All/layerAll.cpp:963->Rubik_Cube_Layer_All/layerAll.cpp:1077]   --->   Operation 107 'call' <Predicate = (p_0 == 7)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_32 : Operation 108 [1/2] (0.00ns)   --->   "call fastcc void @turnCube(i4 -5) nounwind" [Rubik_Cube_Layer_All/layerAll.cpp:962->Rubik_Cube_Layer_All/layerAll.cpp:1071]   --->   Operation 108 'call' <Predicate = (p_0 == 6)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_32 : Operation 109 [1/2] (0.00ns)   --->   "call fastcc void @turnCube(i4 1) nounwind" [Rubik_Cube_Layer_All/layerAll.cpp:961->Rubik_Cube_Layer_All/layerAll.cpp:1065]   --->   Operation 109 'call' <Predicate = (p_0 == 5)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 33 <SV = 14> <Delay = 6.12>
+ST_33 : Operation 110 [2/2] (6.12ns)   --->   "call fastcc void @turnCube(i4 7) nounwind" [Rubik_Cube_Layer_All/layerAll.cpp:964->Rubik_Cube_Layer_All/layerAll.cpp:1077]   --->   Operation 110 'call' <Predicate = (p_0 == 7)> <Delay = 6.12> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_33 : Operation 111 [2/2] (6.12ns)   --->   "call fastcc void @turnCube(i4 1) nounwind" [Rubik_Cube_Layer_All/layerAll.cpp:963->Rubik_Cube_Layer_All/layerAll.cpp:1071]   --->   Operation 111 'call' <Predicate = (p_0 == 6)> <Delay = 6.12> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_33 : Operation 112 [2/2] (6.12ns)   --->   "call fastcc void @turnCube(i4 -5) nounwind" [Rubik_Cube_Layer_All/layerAll.cpp:962->Rubik_Cube_Layer_All/layerAll.cpp:1065]   --->   Operation 112 'call' <Predicate = (p_0 == 5)> <Delay = 6.12> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 34 <SV = 15> <Delay = 0.00>
+ST_34 : Operation 113 [1/2] (0.00ns)   --->   "call fastcc void @turnCube(i4 7) nounwind" [Rubik_Cube_Layer_All/layerAll.cpp:964->Rubik_Cube_Layer_All/layerAll.cpp:1077]   --->   Operation 113 'call' <Predicate = (p_0 == 7)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_34 : Operation 114 [1/2] (0.00ns)   --->   "call fastcc void @turnCube(i4 1) nounwind" [Rubik_Cube_Layer_All/layerAll.cpp:963->Rubik_Cube_Layer_All/layerAll.cpp:1071]   --->   Operation 114 'call' <Predicate = (p_0 == 6)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_34 : Operation 115 [1/2] (0.00ns)   --->   "call fastcc void @turnCube(i4 -5) nounwind" [Rubik_Cube_Layer_All/layerAll.cpp:962->Rubik_Cube_Layer_All/layerAll.cpp:1065]   --->   Operation 115 'call' <Predicate = (p_0 == 5)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 35 <SV = 16> <Delay = 6.12>
+ST_35 : Operation 116 [2/2] (6.12ns)   --->   "call fastcc void @turnCube(i4 0) nounwind" [Rubik_Cube_Layer_All/layerAll.cpp:965->Rubik_Cube_Layer_All/layerAll.cpp:1077]   --->   Operation 116 'call' <Predicate = (p_0 == 7)> <Delay = 6.12> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_35 : Operation 117 [2/2] (6.12ns)   --->   "call fastcc void @turnCube(i4 7) nounwind" [Rubik_Cube_Layer_All/layerAll.cpp:964->Rubik_Cube_Layer_All/layerAll.cpp:1071]   --->   Operation 117 'call' <Predicate = (p_0 == 6)> <Delay = 6.12> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_35 : Operation 118 [2/2] (6.12ns)   --->   "call fastcc void @turnCube(i4 1) nounwind" [Rubik_Cube_Layer_All/layerAll.cpp:963->Rubik_Cube_Layer_All/layerAll.cpp:1065]   --->   Operation 118 'call' <Predicate = (p_0 == 5)> <Delay = 6.12> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 36 <SV = 17> <Delay = 0.00>
+ST_36 : Operation 119 [1/2] (0.00ns)   --->   "call fastcc void @turnCube(i4 0) nounwind" [Rubik_Cube_Layer_All/layerAll.cpp:965->Rubik_Cube_Layer_All/layerAll.cpp:1077]   --->   Operation 119 'call' <Predicate = (p_0 == 7)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_36 : Operation 120 [1/2] (0.00ns)   --->   "call fastcc void @turnCube(i4 7) nounwind" [Rubik_Cube_Layer_All/layerAll.cpp:964->Rubik_Cube_Layer_All/layerAll.cpp:1071]   --->   Operation 120 'call' <Predicate = (p_0 == 6)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_36 : Operation 121 [1/2] (0.00ns)   --->   "call fastcc void @turnCube(i4 1) nounwind" [Rubik_Cube_Layer_All/layerAll.cpp:963->Rubik_Cube_Layer_All/layerAll.cpp:1065]   --->   Operation 121 'call' <Predicate = (p_0 == 5)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 37 <SV = 18> <Delay = 6.12>
+ST_37 : Operation 122 [2/2] (6.12ns)   --->   "call fastcc void @turnCube(i4 6) nounwind" [Rubik_Cube_Layer_All/layerAll.cpp:966->Rubik_Cube_Layer_All/layerAll.cpp:1077]   --->   Operation 122 'call' <Predicate = (p_0 == 7)> <Delay = 6.12> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_37 : Operation 123 [2/2] (6.12ns)   --->   "call fastcc void @turnCube(i4 0) nounwind" [Rubik_Cube_Layer_All/layerAll.cpp:965->Rubik_Cube_Layer_All/layerAll.cpp:1071]   --->   Operation 123 'call' <Predicate = (p_0 == 6)> <Delay = 6.12> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_37 : Operation 124 [2/2] (6.12ns)   --->   "call fastcc void @turnCube(i4 7) nounwind" [Rubik_Cube_Layer_All/layerAll.cpp:964->Rubik_Cube_Layer_All/layerAll.cpp:1065]   --->   Operation 124 'call' <Predicate = (p_0 == 5)> <Delay = 6.12> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 38 <SV = 19> <Delay = 0.00>
+ST_38 : Operation 125 [1/2] (0.00ns)   --->   "call fastcc void @turnCube(i4 6) nounwind" [Rubik_Cube_Layer_All/layerAll.cpp:966->Rubik_Cube_Layer_All/layerAll.cpp:1077]   --->   Operation 125 'call' <Predicate = (p_0 == 7)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_38 : Operation 126 [1/2] (0.00ns)   --->   "call fastcc void @turnCube(i4 0) nounwind" [Rubik_Cube_Layer_All/layerAll.cpp:965->Rubik_Cube_Layer_All/layerAll.cpp:1071]   --->   Operation 126 'call' <Predicate = (p_0 == 6)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_38 : Operation 127 [1/2] (0.00ns)   --->   "call fastcc void @turnCube(i4 7) nounwind" [Rubik_Cube_Layer_All/layerAll.cpp:964->Rubik_Cube_Layer_All/layerAll.cpp:1065]   --->   Operation 127 'call' <Predicate = (p_0 == 5)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 39 <SV = 20> <Delay = 6.12>
+ST_39 : Operation 128 [2/2] (3.21ns)   --->   "call fastcc void @rotateCubeHorizontal()" [Rubik_Cube_Layer_All/layerAll.cpp:1078]   --->   Operation 128 'call' <Predicate = (p_0 == 7)> <Delay = 3.21> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_39 : Operation 129 [2/2] (6.12ns)   --->   "call fastcc void @turnCube(i4 6) nounwind" [Rubik_Cube_Layer_All/layerAll.cpp:966->Rubik_Cube_Layer_All/layerAll.cpp:1071]   --->   Operation 129 'call' <Predicate = (p_0 == 6)> <Delay = 6.12> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_39 : Operation 130 [2/2] (6.12ns)   --->   "call fastcc void @turnCube(i4 0) nounwind" [Rubik_Cube_Layer_All/layerAll.cpp:965->Rubik_Cube_Layer_All/layerAll.cpp:1065]   --->   Operation 130 'call' <Predicate = (p_0 == 5)> <Delay = 6.12> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 40 <SV = 21> <Delay = 0.00>
+ST_40 : Operation 131 [1/2] (0.00ns)   --->   "call fastcc void @rotateCubeHorizontal()" [Rubik_Cube_Layer_All/layerAll.cpp:1078]   --->   Operation 131 'call' <Predicate = (p_0 == 7)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_40 : Operation 132 [1/2] (0.00ns)   --->   "call fastcc void @turnCube(i4 6) nounwind" [Rubik_Cube_Layer_All/layerAll.cpp:966->Rubik_Cube_Layer_All/layerAll.cpp:1071]   --->   Operation 132 'call' <Predicate = (p_0 == 6)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_40 : Operation 133 [1/2] (0.00ns)   --->   "call fastcc void @turnCube(i4 0) nounwind" [Rubik_Cube_Layer_All/layerAll.cpp:965->Rubik_Cube_Layer_All/layerAll.cpp:1065]   --->   Operation 133 'call' <Predicate = (p_0 == 5)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 41 <SV = 22> <Delay = 6.12>
+ST_41 : Operation 134 [2/2] (3.21ns)   --->   "call fastcc void @rotateCubeHorizontal()" [Rubik_Cube_Layer_All/layerAll.cpp:1079]   --->   Operation 134 'call' <Predicate = (p_0 == 7)> <Delay = 3.21> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_41 : Operation 135 [2/2] (3.21ns)   --->   "call fastcc void @rotateCubeHorizontal()" [Rubik_Cube_Layer_All/layerAll.cpp:1072]   --->   Operation 135 'call' <Predicate = (p_0 == 6)> <Delay = 3.21> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_41 : Operation 136 [2/2] (6.12ns)   --->   "call fastcc void @turnCube(i4 6) nounwind" [Rubik_Cube_Layer_All/layerAll.cpp:966->Rubik_Cube_Layer_All/layerAll.cpp:1065]   --->   Operation 136 'call' <Predicate = (p_0 == 5)> <Delay = 6.12> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 42 <SV = 23> <Delay = 0.00>
+ST_42 : Operation 137 [1/2] (0.00ns)   --->   "call fastcc void @rotateCubeHorizontal()" [Rubik_Cube_Layer_All/layerAll.cpp:1079]   --->   Operation 137 'call' <Predicate = (p_0 == 7)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_42 : Operation 138 [1/2] (0.00ns)   --->   "call fastcc void @rotateCubeHorizontal()" [Rubik_Cube_Layer_All/layerAll.cpp:1072]   --->   Operation 138 'call' <Predicate = (p_0 == 6)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_42 : Operation 139 [1/2] (0.00ns)   --->   "call fastcc void @turnCube(i4 6) nounwind" [Rubik_Cube_Layer_All/layerAll.cpp:966->Rubik_Cube_Layer_All/layerAll.cpp:1065]   --->   Operation 139 'call' <Predicate = (p_0 == 5)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 43 <SV = 24> <Delay = 3.21>
+ST_43 : Operation 140 [2/2] (3.21ns)   --->   "call fastcc void @rotateCubeHorizontal()" [Rubik_Cube_Layer_All/layerAll.cpp:1080]   --->   Operation 140 'call' <Predicate = (p_0 == 7)> <Delay = 3.21> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_43 : Operation 141 [2/2] (3.21ns)   --->   "call fastcc void @rotateCubeHorizontal()" [Rubik_Cube_Layer_All/layerAll.cpp:1073]   --->   Operation 141 'call' <Predicate = (p_0 == 6)> <Delay = 3.21> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_43 : Operation 142 [2/2] (3.21ns)   --->   "call fastcc void @rotateCubeHorizontal()" [Rubik_Cube_Layer_All/layerAll.cpp:1066]   --->   Operation 142 'call' <Predicate = (p_0 == 5)> <Delay = 3.21> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 44 <SV = 25> <Delay = 0.00>
+ST_44 : Operation 143 [1/2] (0.00ns)   --->   "call fastcc void @rotateCubeHorizontal()" [Rubik_Cube_Layer_All/layerAll.cpp:1080]   --->   Operation 143 'call' <Predicate = (p_0 == 7)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_44 : Operation 144 [1/1] (0.00ns)   --->   "br label %._crit_edge" [Rubik_Cube_Layer_All/layerAll.cpp:1081]   --->   Operation 144 'br' <Predicate = (p_0 == 7)> <Delay = 0.00>
+ST_44 : Operation 145 [1/2] (0.00ns)   --->   "call fastcc void @rotateCubeHorizontal()" [Rubik_Cube_Layer_All/layerAll.cpp:1073]   --->   Operation 145 'call' <Predicate = (p_0 == 6)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_44 : Operation 146 [1/1] (0.00ns)   --->   "br label %._crit_edge" [Rubik_Cube_Layer_All/layerAll.cpp:1074]   --->   Operation 146 'br' <Predicate = (p_0 == 6)> <Delay = 0.00>
+ST_44 : Operation 147 [1/2] (0.00ns)   --->   "call fastcc void @rotateCubeHorizontal()" [Rubik_Cube_Layer_All/layerAll.cpp:1066]   --->   Operation 147 'call' <Predicate = (p_0 == 5)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_44 : Operation 148 [1/1] (0.00ns)   --->   "br label %._crit_edge" [Rubik_Cube_Layer_All/layerAll.cpp:1067]   --->   Operation 148 'br' <Predicate = (p_0 == 5)> <Delay = 0.00>
+ST_44 : Operation 149 [1/1] (0.00ns)   --->   "ret void" [Rubik_Cube_Layer_All/layerAll.cpp:1089]   --->   Operation 149 'ret' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+STG Binding: 
+---------------- STG Properties BEGIN ----------------
+- Is combinational: 0
+- Is one-state seq: 0
+- Is datapath-only: 0
+- Is pipelined: 0
+- Is top level: 0
+Port [ Return ] is wired: 1; IO mode=ap_ctrl_hs:ce=0
+Port [ fC_V]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
+Port [ sC_V]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
+Port [ cubieColor_V]:  wired=1; compound=1; hidden=0; nouse=0; global=1; static=1; extern=0; dir=2; type=1; pingpong=0; private_global=0; linkage=7; visibility=0; MemPort=[22]; IO mode=ap_memory:ce=0
+Port [ moveCounter_V]:  wired=1; compound=0; hidden=0; nouse=0; global=1; static=1; extern=0; dir=2; type=0; pingpong=0; private_global=0; linkage=7; visibility=0; IO mode=ap_ovld:ce=0
+Port [ moves_V]:  wired=1; compound=1; hidden=0; nouse=0; global=1; static=1; extern=0; dir=1; type=1; pingpong=0; private_global=0; linkage=7; visibility=0; MemPort=[03]; IO mode=ap_memory:ce=0
+---------------- STG Properties END ------------------
+
+---------------- Datapath Model BEGIN ----------------
+
+<LifeTime>
+<method=bitvector/>
+sC_V_read           (read  ) [ 001000000000000000000000000000000000000000000]
+fC_V_read           (read  ) [ 001000000000000000000000000000000000000000000]
+p_0                 (call  ) [ 001111111111111111111111111111111111111111111]
+StgValue_49         (switch) [ 000000000000000000000000000000000000000000000]
+cubieColor_V_load   (load  ) [ 000000000000000000000000000000000000000000000]
+cubieColor_V_load_1 (load  ) [ 000000000000000000000000000000000000000000000]
+tmp_s               (icmp  ) [ 000011111111111111111000000000000000000000000]
+StgValue_55         (br    ) [ 000000000000000000000000000000000000000000000]
+StgValue_57         (call  ) [ 000000000000000000000000000000000000000000000]
+StgValue_59         (call  ) [ 000000000000000000000000000000000000000000000]
+StgValue_61         (call  ) [ 000000000000000000000000000000000000000000000]
+StgValue_63         (call  ) [ 000000000000000000000000000000000000000000000]
+StgValue_65         (call  ) [ 000000000000000000000000000000000000000000000]
+StgValue_67         (call  ) [ 000000000000000000000000000000000000000000000]
+StgValue_69         (call  ) [ 000000000000000000000000000000000000000000000]
+StgValue_71         (call  ) [ 000000000000000000000000000000000000000000000]
+StgValue_72         (br    ) [ 000000000000000000000000000000000000000000000]
+StgValue_73         (br    ) [ 000000000000000000000000000000000000000000000]
+StgValue_77         (call  ) [ 000000000000000000000000000000000000000000000]
+StgValue_78         (call  ) [ 000000000000000000000000000000000000000000000]
+StgValue_79         (call  ) [ 000000000000000000000000000000000000000000000]
+StgValue_83         (call  ) [ 000000000000000000000000000000000000000000000]
+StgValue_84         (call  ) [ 000000000000000000000000000000000000000000000]
+StgValue_85         (call  ) [ 000000000000000000000000000000000000000000000]
+StgValue_89         (call  ) [ 000000000000000000000000000000000000000000000]
+StgValue_90         (call  ) [ 000000000000000000000000000000000000000000000]
+StgValue_91         (call  ) [ 000000000000000000000000000000000000000000000]
+StgValue_95         (call  ) [ 000000000000000000000000000000000000000000000]
+StgValue_96         (call  ) [ 000000000000000000000000000000000000000000000]
+StgValue_97         (call  ) [ 000000000000000000000000000000000000000000000]
+StgValue_101        (call  ) [ 000000000000000000000000000000000000000000000]
+StgValue_102        (call  ) [ 000000000000000000000000000000000000000000000]
+StgValue_103        (call  ) [ 000000000000000000000000000000000000000000000]
+StgValue_107        (call  ) [ 000000000000000000000000000000000000000000000]
+StgValue_108        (call  ) [ 000000000000000000000000000000000000000000000]
+StgValue_109        (call  ) [ 000000000000000000000000000000000000000000000]
+StgValue_113        (call  ) [ 000000000000000000000000000000000000000000000]
+StgValue_114        (call  ) [ 000000000000000000000000000000000000000000000]
+StgValue_115        (call  ) [ 000000000000000000000000000000000000000000000]
+StgValue_119        (call  ) [ 000000000000000000000000000000000000000000000]
+StgValue_120        (call  ) [ 000000000000000000000000000000000000000000000]
+StgValue_121        (call  ) [ 000000000000000000000000000000000000000000000]
+StgValue_125        (call  ) [ 000000000000000000000000000000000000000000000]
+StgValue_126        (call  ) [ 000000000000000000000000000000000000000000000]
+StgValue_127        (call  ) [ 000000000000000000000000000000000000000000000]
+StgValue_131        (call  ) [ 000000000000000000000000000000000000000000000]
+StgValue_132        (call  ) [ 000000000000000000000000000000000000000000000]
+StgValue_133        (call  ) [ 000000000000000000000000000000000000000000000]
+StgValue_137        (call  ) [ 000000000000000000000000000000000000000000000]
+StgValue_138        (call  ) [ 000000000000000000000000000000000000000000000]
+StgValue_139        (call  ) [ 000000000000000000000000000000000000000000000]
+StgValue_143        (call  ) [ 000000000000000000000000000000000000000000000]
+StgValue_144        (br    ) [ 000000000000000000000000000000000000000000000]
+StgValue_145        (call  ) [ 000000000000000000000000000000000000000000000]
+StgValue_146        (br    ) [ 000000000000000000000000000000000000000000000]
+StgValue_147        (call  ) [ 000000000000000000000000000000000000000000000]
+StgValue_148        (br    ) [ 000000000000000000000000000000000000000000000]
+StgValue_149        (ret   ) [ 000000000000000000000000000000000000000000000]
+</LifeTime>
+
+<model>
+
+<comp_list>
+<comp id="0" class="1000" name="fC_V">
+<pin_list>
+<pin id="1" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="fC_V"/></StgValue>
+</bind>
+</comp>
+
+<comp id="2" class="1000" name="sC_V">
+<pin_list>
+<pin id="3" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="sC_V"/></StgValue>
+</bind>
+</comp>
+
+<comp id="4" class="1000" name="cubieColor_V">
+<pin_list>
+<pin id="5" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="cubieColor_V"/><MemPortTyVec>2 2 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="6" class="1000" name="moveCounter_V">
+<pin_list>
+<pin id="7" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="moveCounter_V"/></StgValue>
+</bind>
+</comp>
+
+<comp id="8" class="1000" name="moves_V">
+<pin_list>
+<pin id="9" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="moves_V"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="10" class="1001" name="const_10">
+<pin_list>
+<pin id="11" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_Read.ap_auto.i3"/></StgValue>
+</bind>
+</comp>
+
+<comp id="12" class="1001" name="const_12">
+<pin_list>
+<pin id="13" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="findEdge"/></StgValue>
+</bind>
+</comp>
+
+<comp id="14" class="1001" name="const_14">
+<pin_list>
+<pin id="15" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="16" class="1001" name="const_16">
+<pin_list>
+<pin id="17" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="18" class="1001" name="const_18">
+<pin_list>
+<pin id="19" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="20" class="1001" name="const_20">
+<pin_list>
+<pin id="21" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="22" class="1001" name="const_22">
+<pin_list>
+<pin id="23" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="24" class="1001" name="const_24">
+<pin_list>
+<pin id="25" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="26" class="1001" name="const_26">
+<pin_list>
+<pin id="27" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="turnCube"/></StgValue>
+</bind>
+</comp>
+
+<comp id="28" class="1001" name="const_28">
+<pin_list>
+<pin id="29" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="30" class="1001" name="const_30">
+<pin_list>
+<pin id="31" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="32" class="1001" name="const_32">
+<pin_list>
+<pin id="33" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="34" class="1001" name="const_34">
+<pin_list>
+<pin id="35" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="36" class="1001" name="const_36">
+<pin_list>
+<pin id="37" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="rotateCubeHorizontal"/></StgValue>
+</bind>
+</comp>
+
+<comp id="38" class="1004" name="sC_V_read_read_fu_38">
+<pin_list>
+<pin id="39" dir="0" index="0" bw="3" slack="0"/>
+<pin id="40" dir="0" index="1" bw="3" slack="0"/>
+<pin id="41" dir="1" index="2" bw="3" slack="0"/>
+</pin_list>
+<bind>
+<opcode="read(1150) " fcode="read"/>
+<opset="sC_V_read/1 "/>
+</bind>
+</comp>
+
+<comp id="44" class="1004" name="fC_V_read_read_fu_44">
+<pin_list>
+<pin id="45" dir="0" index="0" bw="3" slack="0"/>
+<pin id="46" dir="0" index="1" bw="3" slack="0"/>
+<pin id="47" dir="1" index="2" bw="3" slack="0"/>
+</pin_list>
+<bind>
+<opcode="read(1150) " fcode="read"/>
+<opset="fC_V_read/1 "/>
+</bind>
+</comp>
+
+<comp id="50" class="1004" name="grp_access_fu_50">
+<pin_list>
+<pin id="51" dir="0" index="0" bw="3" slack="0"/>
+<pin id="52" dir="0" index="1" bw="3" slack="2147483647"/>
+<pin id="53" dir="0" index="2" bw="0" slack="0"/>
+<pin id="56" dir="0" index="4" bw="3" slack="2147483647"/>
+<pin id="57" dir="0" index="5" bw="3" slack="2147483647"/>
+<pin id="58" dir="0" index="6" bw="0" slack="2147483647"/>
+<pin id="54" dir="1" index="3" bw="3" slack="0"/>
+<pin id="59" dir="1" index="7" bw="3" slack="0"/>
+</pin_list>
+<bind>
+<opcode="load(27) " fcode="load"/>
+<opset="cubieColor_V_load/3 cubieColor_V_load_1/3 "/>
+</bind>
+</comp>
+
+<comp id="61" class="1004" name="grp_turnCube_fu_61">
+<pin_list>
+<pin id="62" dir="0" index="0" bw="0" slack="0"/>
+<pin id="63" dir="0" index="1" bw="4" slack="0"/>
+<pin id="64" dir="0" index="2" bw="8" slack="0"/>
+<pin id="65" dir="0" index="3" bw="4" slack="0"/>
+<pin id="66" dir="0" index="4" bw="3" slack="0"/>
+<pin id="67" dir="1" index="5" bw="0" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="call(48) " fcode="call"/>
+<opset="StgValue_56/5 StgValue_58/7 StgValue_60/9 StgValue_62/11 StgValue_64/13 StgValue_66/15 StgValue_68/17 StgValue_70/19 StgValue_80/23 StgValue_86/25 StgValue_87/25 StgValue_92/27 StgValue_93/27 StgValue_94/27 StgValue_98/29 StgValue_99/29 StgValue_100/29 StgValue_104/31 StgValue_105/31 StgValue_106/31 StgValue_110/33 StgValue_111/33 StgValue_112/33 StgValue_116/35 StgValue_117/35 StgValue_118/35 StgValue_122/37 StgValue_123/37 StgValue_124/37 StgValue_129/39 StgValue_130/39 StgValue_136/41 "/>
+</bind>
+</comp>
+
+<comp id="78" class="1004" name="grp_rotateCubeHorizontal_fu_78">
+<pin_list>
+<pin id="79" dir="0" index="0" bw="0" slack="0"/>
+<pin id="80" dir="0" index="1" bw="8" slack="0"/>
+<pin id="81" dir="0" index="2" bw="4" slack="0"/>
+<pin id="82" dir="0" index="3" bw="3" slack="0"/>
+<pin id="83" dir="1" index="4" bw="0" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="call(48) " fcode="call"/>
+<opset="StgValue_74/21 StgValue_75/21 StgValue_76/21 StgValue_81/23 StgValue_82/23 StgValue_88/25 StgValue_128/39 StgValue_134/41 StgValue_135/41 StgValue_140/43 StgValue_141/43 StgValue_142/43 "/>
+</bind>
+</comp>
+
+<comp id="88" class="1004" name="grp_findEdge_fu_88">
+<pin_list>
+<pin id="89" dir="0" index="0" bw="4" slack="0"/>
+<pin id="90" dir="0" index="1" bw="3" slack="0"/>
+<pin id="91" dir="0" index="2" bw="3" slack="0"/>
+<pin id="92" dir="0" index="3" bw="3" slack="0"/>
+<pin id="93" dir="1" index="4" bw="4" slack="1"/>
+</pin_list>
+<bind>
+<opcode="call(48) " fcode="call"/>
+<opset="p_0/1 "/>
+</bind>
+</comp>
+
+<comp id="98" class="1004" name="tmp_s_fu_98">
+<pin_list>
+<pin id="99" dir="0" index="0" bw="3" slack="0"/>
+<pin id="100" dir="0" index="1" bw="3" slack="0"/>
+<pin id="101" dir="1" index="2" bw="1" slack="16"/>
+</pin_list>
+<bind>
+<opcode="icmp(45) " fcode="icmp"/>
+<opset="tmp_s/4 "/>
+</bind>
+</comp>
+
+<comp id="104" class="1005" name="sC_V_read_reg_104">
+<pin_list>
+<pin id="105" dir="0" index="0" bw="3" slack="1"/>
+<pin id="106" dir="1" index="1" bw="3" slack="1"/>
+</pin_list>
+<bind>
+<opset="sC_V_read "/>
+</bind>
+</comp>
+
+<comp id="109" class="1005" name="fC_V_read_reg_109">
+<pin_list>
+<pin id="110" dir="0" index="0" bw="3" slack="1"/>
+<pin id="111" dir="1" index="1" bw="3" slack="1"/>
+</pin_list>
+<bind>
+<opset="fC_V_read "/>
+</bind>
+</comp>
+
+<comp id="114" class="1005" name="p_0_reg_114">
+<pin_list>
+<pin id="115" dir="0" index="0" bw="4" slack="1"/>
+<pin id="116" dir="1" index="1" bw="4" slack="2147483647"/>
+</pin_list>
+<bind>
+<opset="p_0 "/>
+</bind>
+</comp>
+
+<comp id="118" class="1005" name="tmp_s_reg_118">
+<pin_list>
+<pin id="119" dir="0" index="0" bw="1" slack="16"/>
+<pin id="120" dir="1" index="1" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<opset="tmp_s "/>
+</bind>
+</comp>
+
+</comp_list>
+
+<net_list>
+<net id="42"><net_src comp="10" pin="0"/><net_sink comp="38" pin=0"/></net>
+
+<net id="43"><net_src comp="2" pin="0"/><net_sink comp="38" pin=1"/></net>
+
+<net id="48"><net_src comp="10" pin="0"/><net_sink comp="44" pin=0"/></net>
+
+<net id="49"><net_src comp="0" pin="0"/><net_sink comp="44" pin=1"/></net>
+
+<net id="55"><net_src comp="22" pin="0"/><net_sink comp="50" pin=0"/></net>
+
+<net id="60"><net_src comp="24" pin="0"/><net_sink comp="50" pin=2"/></net>
+
+<net id="68"><net_src comp="26" pin="0"/><net_sink comp="61" pin=0"/></net>
+
+<net id="69"><net_src comp="28" pin="0"/><net_sink comp="61" pin=1"/></net>
+
+<net id="70"><net_src comp="6" pin="0"/><net_sink comp="61" pin=2"/></net>
+
+<net id="71"><net_src comp="8" pin="0"/><net_sink comp="61" pin=3"/></net>
+
+<net id="72"><net_src comp="4" pin="0"/><net_sink comp="61" pin=4"/></net>
+
+<net id="73"><net_src comp="30" pin="0"/><net_sink comp="61" pin=1"/></net>
+
+<net id="74"><net_src comp="32" pin="0"/><net_sink comp="61" pin=1"/></net>
+
+<net id="75"><net_src comp="34" pin="0"/><net_sink comp="61" pin=1"/></net>
+
+<net id="76"><net_src comp="18" pin="0"/><net_sink comp="61" pin=1"/></net>
+
+<net id="77"><net_src comp="16" pin="0"/><net_sink comp="61" pin=1"/></net>
+
+<net id="84"><net_src comp="36" pin="0"/><net_sink comp="78" pin=0"/></net>
+
+<net id="85"><net_src comp="6" pin="0"/><net_sink comp="78" pin=1"/></net>
+
+<net id="86"><net_src comp="8" pin="0"/><net_sink comp="78" pin=2"/></net>
+
+<net id="87"><net_src comp="4" pin="0"/><net_sink comp="78" pin=3"/></net>
+
+<net id="94"><net_src comp="12" pin="0"/><net_sink comp="88" pin=0"/></net>
+
+<net id="95"><net_src comp="44" pin="2"/><net_sink comp="88" pin=1"/></net>
+
+<net id="96"><net_src comp="38" pin="2"/><net_sink comp="88" pin=2"/></net>
+
+<net id="97"><net_src comp="4" pin="0"/><net_sink comp="88" pin=3"/></net>
+
+<net id="102"><net_src comp="50" pin="3"/><net_sink comp="98" pin=0"/></net>
+
+<net id="103"><net_src comp="50" pin="7"/><net_sink comp="98" pin=1"/></net>
+
+<net id="107"><net_src comp="38" pin="2"/><net_sink comp="104" pin=0"/></net>
+
+<net id="108"><net_src comp="104" pin="1"/><net_sink comp="88" pin=2"/></net>
+
+<net id="112"><net_src comp="44" pin="2"/><net_sink comp="109" pin=0"/></net>
+
+<net id="113"><net_src comp="109" pin="1"/><net_sink comp="88" pin=1"/></net>
+
+<net id="117"><net_src comp="88" pin="4"/><net_sink comp="114" pin=0"/></net>
+
+<net id="121"><net_src comp="98" pin="2"/><net_sink comp="118" pin=0"/></net>
+
+</net_list>
+
+</model> 
+---------------- Datapath Model END ------------------
+
+* FSMD analyzer results:
+  - Output states:
+	Port: cubieColor_V | {5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 }
+	Port: moveCounter_V | {5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 }
+	Port: moves_V | {5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 }
+ - Input state : 
+	Port: stage3Prepare : fC_V | {1 }
+	Port: stage3Prepare : sC_V | {1 }
+	Port: stage3Prepare : cubieColor_V | {1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 }
+	Port: stage3Prepare : moveCounter_V | {5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 }
+  - Chain level:
+	State 1
+	State 2
+		StgValue_49 : 1
+	State 3
+	State 4
+		tmp_s : 1
+		StgValue_55 : 2
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+	State 17
+	State 18
+	State 19
+	State 20
+	State 21
+	State 22
+	State 23
+	State 24
+	State 25
+	State 26
+	State 27
+	State 28
+	State 29
+	State 30
+	State 31
+	State 32
+	State 33
+	State 34
+	State 35
+	State 36
+	State 37
+	State 38
+	State 39
+	State 40
+	State 41
+	State 42
+	State 43
+	State 44
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+
+* Functional unit list:
+|----------|--------------------------------|---------|---------|---------|---------|
+| Operation|         Functional Unit        |   BRAM  |  Delay  |    FF   |   LUT   |
+|----------|--------------------------------|---------|---------|---------|---------|
+|          |       grp_turnCube_fu_61       |    0    | 12.1615 |   425   |   706   |
+|   call   | grp_rotateCubeHorizontal_fu_78 |    0    | 10.3705 |   421   |   454   |
+|          |       grp_findEdge_fu_88       |    0    | 11.2764 |    42   |   278   |
+|----------|--------------------------------|---------|---------|---------|---------|
+|   icmp   |           tmp_s_fu_98          |    0    |    0    |    0    |    9    |
+|----------|--------------------------------|---------|---------|---------|---------|
+|   read   |      sC_V_read_read_fu_38      |    0    |    0    |    0    |    0    |
+|          |      fC_V_read_read_fu_44      |    0    |    0    |    0    |    0    |
+|----------|--------------------------------|---------|---------|---------|---------|
+|   Total  |                                |    0    | 33.8084 |   888   |   1447  |
+|----------|--------------------------------|---------|---------|---------|---------|
+
+Memories:
+N/A
+
+* Register list:
++-----------------+--------+
+|                 |   FF   |
++-----------------+--------+
+|fC_V_read_reg_109|    3   |
+|   p_0_reg_114   |    4   |
+|sC_V_read_reg_104|    3   |
+|  tmp_s_reg_118  |    1   |
++-----------------+--------+
+|      Total      |   11   |
++-----------------+--------+
+
+* Multiplexer (MUX) list: 
+|--------------------|------|------|------|--------||---------||---------|
+|        Comp        |  Pin | Size |  BW  | S x BW ||  Delay  ||   LUT   |
+|--------------------|------|------|------|--------||---------||---------|
+| grp_turnCube_fu_61 |  p1  |   6  |   4  |   24   ||    9    |
+| grp_findEdge_fu_88 |  p1  |   2  |   3  |    6   ||    9    |
+| grp_findEdge_fu_88 |  p2  |   2  |   3  |    6   ||    9    |
+|--------------------|------|------|------|--------||---------||---------|
+|        Total       |      |      |      |   36   ||   5.49  ||    27   |
+|--------------------|------|------|------|--------||---------||---------|
+
+
+
+* Summary:
++-----------+--------+--------+--------+--------+
+|           |  BRAM  |  Delay |   FF   |   LUT  |
++-----------+--------+--------+--------+--------+
+|  Function |    0   |   33   |   888  |  1447  |
+|   Memory  |    -   |    -   |    -   |    -   |
+|Multiplexer|    -   |    5   |    -   |   27   |
+|  Register |    -   |    -   |   11   |    -   |
++-----------+--------+--------+--------+--------+
+|   Total   |    0   |   39   |   899  |  1474  |
++-----------+--------+--------+--------+--------+

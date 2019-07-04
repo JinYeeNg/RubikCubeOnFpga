@@ -1,0 +1,1703 @@
+
+
+================================================================
+== Vivado HLS Report for 'edgeCorrect'
+================================================================
+* Date:           Fri Jan  4 20:12:02 2019
+
+* Version:        2018.2 (Build 2258646 on Thu Jun 14 20:25:20 MDT 2018)
+* Project:        Rubik_Cube_Layer_All
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  12.00|     5.409|        1.50|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |   11|   11|   11|   11|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 12
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / true
+3 --> 
+	4  / true
+4 --> 
+	5  / true
+5 --> 
+	6  / true
+6 --> 
+	7  / true
+7 --> 
+	8  / true
+8 --> 
+	9  / true
+9 --> 
+	10  / true
+10 --> 
+	11  / true
+11 --> 
+	12  / true
+12 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 2.32>
+ST_1 : Operation 13 [2/2] (2.32ns)   --->   "%cubieColor_V_load = load i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 4), align 4" [Rubik_Cube_Layer_All/layerAll.cpp:18]   --->   Operation 13 'load' 'cubieColor_V_load' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+
+State 2 <SV = 1> <Delay = 2.32>
+ST_2 : Operation 14 [1/2] (2.32ns)   --->   "%cubieColor_V_load = load i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 4), align 4" [Rubik_Cube_Layer_All/layerAll.cpp:18]   --->   Operation 14 'load' 'cubieColor_V_load' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_2 : Operation 15 [2/2] (2.32ns)   --->   "%cubieColor_V_load_131 = load i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 7), align 1" [Rubik_Cube_Layer_All/layerAll.cpp:18]   --->   Operation 15 'load' 'cubieColor_V_load_131' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_2 : Operation 16 [2/2] (2.32ns)   --->   "%cubieColor_V_load_132 = load i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 3), align 1" [Rubik_Cube_Layer_All/layerAll.cpp:25]   --->   Operation 16 'load' 'cubieColor_V_load_132' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+
+State 3 <SV = 2> <Delay = 3.45>
+ST_3 : Operation 17 [1/2] (2.32ns)   --->   "%cubieColor_V_load_131 = load i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 7), align 1" [Rubik_Cube_Layer_All/layerAll.cpp:18]   --->   Operation 17 'load' 'cubieColor_V_load_131' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_3 : Operation 18 [1/1] (1.13ns)   --->   "%tmp_s = icmp eq i3 %cubieColor_V_load, %cubieColor_V_load_131" [Rubik_Cube_Layer_All/layerAll.cpp:18]   --->   Operation 18 'icmp' 'tmp_s' <Predicate = true> <Delay = 1.13> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.30> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 19 [1/2] (2.32ns)   --->   "%cubieColor_V_load_132 = load i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 3), align 1" [Rubik_Cube_Layer_All/layerAll.cpp:25]   --->   Operation 19 'load' 'cubieColor_V_load_132' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_3 : Operation 20 [1/1] (1.13ns)   --->   "%tmp_201 = icmp eq i3 %cubieColor_V_load, %cubieColor_V_load_132" [Rubik_Cube_Layer_All/layerAll.cpp:25]   --->   Operation 20 'icmp' 'tmp_201' <Predicate = true> <Delay = 1.13> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.30> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 21 [2/2] (2.32ns)   --->   "%cubieColor_V_load_133 = load i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 1), align 1" [Rubik_Cube_Layer_All/layerAll.cpp:32]   --->   Operation 21 'load' 'cubieColor_V_load_133' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_3 : Operation 22 [2/2] (2.32ns)   --->   "%cubieColor_V_load_134 = load i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 5), align 1" [Rubik_Cube_Layer_All/layerAll.cpp:39]   --->   Operation 22 'load' 'cubieColor_V_load_134' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+
+State 4 <SV = 3> <Delay = 3.45>
+ST_4 : Operation 23 [1/2] (2.32ns)   --->   "%cubieColor_V_load_133 = load i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 1), align 1" [Rubik_Cube_Layer_All/layerAll.cpp:32]   --->   Operation 23 'load' 'cubieColor_V_load_133' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_4 : Operation 24 [1/1] (1.13ns)   --->   "%tmp_202 = icmp eq i3 %cubieColor_V_load, %cubieColor_V_load_133" [Rubik_Cube_Layer_All/layerAll.cpp:32]   --->   Operation 24 'icmp' 'tmp_202' <Predicate = true> <Delay = 1.13> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.30> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 25 [1/2] (2.32ns)   --->   "%cubieColor_V_load_134 = load i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 5), align 1" [Rubik_Cube_Layer_All/layerAll.cpp:39]   --->   Operation 25 'load' 'cubieColor_V_load_134' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_4 : Operation 26 [1/1] (1.13ns)   --->   "%tmp_203 = icmp eq i3 %cubieColor_V_load, %cubieColor_V_load_134" [Rubik_Cube_Layer_All/layerAll.cpp:39]   --->   Operation 26 'icmp' 'tmp_203' <Predicate = true> <Delay = 1.13> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.30> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 27 [2/2] (2.32ns)   --->   "%cubieColor_V_load_135 = load i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 31), align 1" [Rubik_Cube_Layer_All/layerAll.cpp:46]   --->   Operation 27 'load' 'cubieColor_V_load_135' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_4 : Operation 28 [2/2] (2.32ns)   --->   "%cubieColor_V_load_136 = load i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 30), align 2" [Rubik_Cube_Layer_All/layerAll.cpp:46]   --->   Operation 28 'load' 'cubieColor_V_load_136' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+
+State 5 <SV = 4> <Delay = 3.45>
+ST_5 : Operation 29 [1/2] (2.32ns)   --->   "%cubieColor_V_load_135 = load i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 31), align 1" [Rubik_Cube_Layer_All/layerAll.cpp:46]   --->   Operation 29 'load' 'cubieColor_V_load_135' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_5 : Operation 30 [1/2] (2.32ns)   --->   "%cubieColor_V_load_136 = load i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 30), align 2" [Rubik_Cube_Layer_All/layerAll.cpp:46]   --->   Operation 30 'load' 'cubieColor_V_load_136' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_5 : Operation 31 [1/1] (1.13ns)   --->   "%tmp_204 = icmp eq i3 %cubieColor_V_load_135, %cubieColor_V_load_136" [Rubik_Cube_Layer_All/layerAll.cpp:46]   --->   Operation 31 'icmp' 'tmp_204' <Predicate = true> <Delay = 1.13> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.30> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 32 [2/2] (2.32ns)   --->   "%cubieColor_V_load_137 = load i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 40), align 8" [Rubik_Cube_Layer_All/layerAll.cpp:53]   --->   Operation 32 'load' 'cubieColor_V_load_137' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_5 : Operation 33 [2/2] (2.32ns)   --->   "%cubieColor_V_load_138 = load i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 39), align 1" [Rubik_Cube_Layer_All/layerAll.cpp:53]   --->   Operation 33 'load' 'cubieColor_V_load_138' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+
+State 6 <SV = 5> <Delay = 3.45>
+ST_6 : Operation 34 [1/2] (2.32ns)   --->   "%cubieColor_V_load_137 = load i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 40), align 8" [Rubik_Cube_Layer_All/layerAll.cpp:53]   --->   Operation 34 'load' 'cubieColor_V_load_137' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_6 : Operation 35 [1/2] (2.32ns)   --->   "%cubieColor_V_load_138 = load i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 39), align 1" [Rubik_Cube_Layer_All/layerAll.cpp:53]   --->   Operation 35 'load' 'cubieColor_V_load_138' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_6 : Operation 36 [1/1] (1.13ns)   --->   "%tmp_205 = icmp eq i3 %cubieColor_V_load_137, %cubieColor_V_load_138" [Rubik_Cube_Layer_All/layerAll.cpp:53]   --->   Operation 36 'icmp' 'tmp_205' <Predicate = true> <Delay = 1.13> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.30> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 37 [2/2] (2.32ns)   --->   "%cubieColor_V_load_139 = load i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 49), align 1" [Rubik_Cube_Layer_All/layerAll.cpp:60]   --->   Operation 37 'load' 'cubieColor_V_load_139' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_6 : Operation 38 [2/2] (2.32ns)   --->   "%cubieColor_V_load_140 = load i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 50), align 2" [Rubik_Cube_Layer_All/layerAll.cpp:60]   --->   Operation 38 'load' 'cubieColor_V_load_140' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+
+State 7 <SV = 6> <Delay = 3.45>
+ST_7 : Operation 39 [1/2] (2.32ns)   --->   "%cubieColor_V_load_139 = load i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 49), align 1" [Rubik_Cube_Layer_All/layerAll.cpp:60]   --->   Operation 39 'load' 'cubieColor_V_load_139' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_7 : Operation 40 [1/2] (2.32ns)   --->   "%cubieColor_V_load_140 = load i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 50), align 2" [Rubik_Cube_Layer_All/layerAll.cpp:60]   --->   Operation 40 'load' 'cubieColor_V_load_140' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_7 : Operation 41 [1/1] (1.13ns)   --->   "%tmp_206 = icmp eq i3 %cubieColor_V_load_139, %cubieColor_V_load_140" [Rubik_Cube_Layer_All/layerAll.cpp:60]   --->   Operation 41 'icmp' 'tmp_206' <Predicate = true> <Delay = 1.13> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.30> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 42 [2/2] (2.32ns)   --->   "%cubieColor_V_load_141 = load i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 32), align 16" [Rubik_Cube_Layer_All/layerAll.cpp:67]   --->   Operation 42 'load' 'cubieColor_V_load_141' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_7 : Operation 43 [2/2] (2.32ns)   --->   "%cubieColor_V_load_142 = load i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 28), align 4" [Rubik_Cube_Layer_All/layerAll.cpp:19]   --->   Operation 43 'load' 'cubieColor_V_load_142' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+
+State 8 <SV = 7> <Delay = 3.45>
+ST_8 : Operation 44 [1/2] (2.32ns)   --->   "%cubieColor_V_load_141 = load i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 32), align 16" [Rubik_Cube_Layer_All/layerAll.cpp:67]   --->   Operation 44 'load' 'cubieColor_V_load_141' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_8 : Operation 45 [1/1] (1.13ns)   --->   "%tmp_207 = icmp eq i3 %cubieColor_V_load_135, %cubieColor_V_load_141" [Rubik_Cube_Layer_All/layerAll.cpp:67]   --->   Operation 45 'icmp' 'tmp_207' <Predicate = true> <Delay = 1.13> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.30> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 46 [1/2] (2.32ns)   --->   "%cubieColor_V_load_142 = load i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 28), align 4" [Rubik_Cube_Layer_All/layerAll.cpp:19]   --->   Operation 46 'load' 'cubieColor_V_load_142' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_8 : Operation 47 [1/1] (1.13ns)   --->   "%tmp_208 = icmp eq i3 %cubieColor_V_load_135, %cubieColor_V_load_142" [Rubik_Cube_Layer_All/layerAll.cpp:19]   --->   Operation 47 'icmp' 'tmp_208' <Predicate = true> <Delay = 1.13> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.30> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 48 [2/2] (2.32ns)   --->   "%cubieColor_V_load_143 = load i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 37), align 1" [Rubik_Cube_Layer_All/layerAll.cpp:26]   --->   Operation 48 'load' 'cubieColor_V_load_143' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_8 : Operation 49 [2/2] (2.32ns)   --->   "%cubieColor_V_load_144 = load i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 22), align 2" [Rubik_Cube_Layer_All/layerAll.cpp:33]   --->   Operation 49 'load' 'cubieColor_V_load_144' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+
+State 9 <SV = 8> <Delay = 3.45>
+ST_9 : Operation 50 [1/2] (2.32ns)   --->   "%cubieColor_V_load_143 = load i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 37), align 1" [Rubik_Cube_Layer_All/layerAll.cpp:26]   --->   Operation 50 'load' 'cubieColor_V_load_143' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_9 : Operation 51 [1/1] (1.13ns)   --->   "%tmp_209 = icmp eq i3 %cubieColor_V_load_137, %cubieColor_V_load_143" [Rubik_Cube_Layer_All/layerAll.cpp:26]   --->   Operation 51 'icmp' 'tmp_209' <Predicate = true> <Delay = 1.13> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.30> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 52 [1/2] (2.32ns)   --->   "%cubieColor_V_load_144 = load i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 22), align 2" [Rubik_Cube_Layer_All/layerAll.cpp:33]   --->   Operation 52 'load' 'cubieColor_V_load_144' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_9 : Operation 53 [2/2] (2.32ns)   --->   "%cubieColor_V_load_145 = load i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 19), align 1" [Rubik_Cube_Layer_All/layerAll.cpp:33]   --->   Operation 53 'load' 'cubieColor_V_load_145' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_9 : Operation 54 [2/2] (2.32ns)   --->   "%cubieColor_V_load_146 = load i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 46), align 2" [Rubik_Cube_Layer_All/layerAll.cpp:40]   --->   Operation 54 'load' 'cubieColor_V_load_146' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+
+State 10 <SV = 9> <Delay = 4.43>
+ST_10 : Operation 55 [1/1] (0.00ns)   --->   "%edge_V_read = call i4 @_ssdm_op_Read.ap_auto.i4(i4 %edge_V)"   --->   Operation 55 'read' 'edge_V_read' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 56 [1/2] (2.32ns)   --->   "%cubieColor_V_load_145 = load i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 19), align 1" [Rubik_Cube_Layer_All/layerAll.cpp:33]   --->   Operation 56 'load' 'cubieColor_V_load_145' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_10 : Operation 57 [1/1] (1.13ns)   --->   "%tmp_210 = icmp eq i3 %cubieColor_V_load_144, %cubieColor_V_load_145" [Rubik_Cube_Layer_All/layerAll.cpp:33]   --->   Operation 57 'icmp' 'tmp_210' <Predicate = true> <Delay = 1.13> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.30> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 58 [1/2] (2.32ns)   --->   "%cubieColor_V_load_146 = load i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 46), align 2" [Rubik_Cube_Layer_All/layerAll.cpp:40]   --->   Operation 58 'load' 'cubieColor_V_load_146' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_10 : Operation 59 [1/1] (1.13ns)   --->   "%tmp_211 = icmp eq i3 %cubieColor_V_load_139, %cubieColor_V_load_146" [Rubik_Cube_Layer_All/layerAll.cpp:40]   --->   Operation 59 'icmp' 'tmp_211' <Predicate = true> <Delay = 1.13> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.30> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 60 [2/2] (2.32ns)   --->   "%cubieColor_V_load_147 = load i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 41), align 1" [Rubik_Cube_Layer_All/layerAll.cpp:47]   --->   Operation 60 'load' 'cubieColor_V_load_147' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_10 : Operation 61 [2/2] (2.32ns)   --->   "%cubieColor_V_load_148 = load i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 23), align 1" [Rubik_Cube_Layer_All/layerAll.cpp:54]   --->   Operation 61 'load' 'cubieColor_V_load_148' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_10 : Operation 62 [1/1] (1.30ns)   --->   "%sel_tmp = icmp eq i4 %edge_V_read, 1"   --->   Operation 62 'icmp' 'sel_tmp' <Predicate = true> <Delay = 1.30> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.30> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 63 [1/1] (0.00ns) (grouped into LUT with out node tmp32)   --->   "%tmp = and i1 %tmp_s, %tmp_208" [Rubik_Cube_Layer_All/layerAll.cpp:18]   --->   Operation 63 'and' 'tmp' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 64 [1/1] (0.00ns) (grouped into LUT with out node tmp32)   --->   "%sel_tmp2 = and i1 %tmp, %sel_tmp" [Rubik_Cube_Layer_All/layerAll.cpp:18]   --->   Operation 64 'and' 'sel_tmp2' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 65 [1/1] (1.30ns)   --->   "%sel_tmp4 = icmp eq i4 %edge_V_read, 2"   --->   Operation 65 'icmp' 'sel_tmp4' <Predicate = true> <Delay = 1.30> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.30> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 66 [1/1] (0.00ns) (grouped into LUT with out node tmp32)   --->   "%tmp25 = and i1 %tmp_201, %tmp_209" [Rubik_Cube_Layer_All/layerAll.cpp:25]   --->   Operation 66 'and' 'tmp25' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 67 [1/1] (0.00ns) (grouped into LUT with out node tmp32)   --->   "%sel_tmp6 = and i1 %tmp25, %sel_tmp4" [Rubik_Cube_Layer_All/layerAll.cpp:25]   --->   Operation 67 'and' 'sel_tmp6' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 68 [1/1] (1.30ns)   --->   "%sel_tmp8 = icmp eq i4 %edge_V_read, 3"   --->   Operation 68 'icmp' 'sel_tmp8' <Predicate = true> <Delay = 1.30> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.30> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 69 [1/1] (0.00ns) (grouped into LUT with out node tmp33)   --->   "%tmp26 = and i1 %tmp_202, %tmp_210" [Rubik_Cube_Layer_All/layerAll.cpp:32]   --->   Operation 69 'and' 'tmp26' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 70 [1/1] (0.00ns) (grouped into LUT with out node tmp33)   --->   "%sel_tmp10 = and i1 %tmp26, %sel_tmp8" [Rubik_Cube_Layer_All/layerAll.cpp:32]   --->   Operation 70 'and' 'sel_tmp10' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 71 [1/1] (1.30ns)   --->   "%sel_tmp12 = icmp eq i4 %edge_V_read, 4"   --->   Operation 71 'icmp' 'sel_tmp12' <Predicate = true> <Delay = 1.30> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.30> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 72 [1/1] (0.00ns) (grouped into LUT with out node tmp33)   --->   "%tmp27 = and i1 %tmp_203, %tmp_211" [Rubik_Cube_Layer_All/layerAll.cpp:39]   --->   Operation 72 'and' 'tmp27' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 73 [1/1] (0.00ns) (grouped into LUT with out node tmp33)   --->   "%sel_tmp14 = and i1 %tmp27, %sel_tmp12" [Rubik_Cube_Layer_All/layerAll.cpp:39]   --->   Operation 73 'and' 'sel_tmp14' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 74 [1/1] (0.97ns) (out node of the LUT)   --->   "%tmp32 = or i1 %sel_tmp6, %sel_tmp2" [Rubik_Cube_Layer_All/layerAll.cpp:25]   --->   Operation 74 'or' 'tmp32' <Predicate = true> <Delay = 0.97> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 75 [1/1] (0.97ns) (out node of the LUT)   --->   "%tmp33 = or i1 %sel_tmp10, %sel_tmp14" [Rubik_Cube_Layer_All/layerAll.cpp:32]   --->   Operation 75 'or' 'tmp33' <Predicate = true> <Delay = 0.97> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+
+State 11 <SV = 10> <Delay = 4.43>
+ST_11 : Operation 76 [1/2] (2.32ns)   --->   "%cubieColor_V_load_147 = load i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 41), align 1" [Rubik_Cube_Layer_All/layerAll.cpp:47]   --->   Operation 76 'load' 'cubieColor_V_load_147' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_11 : Operation 77 [1/1] (1.13ns)   --->   "%tmp_212 = icmp eq i3 %cubieColor_V_load_137, %cubieColor_V_load_147" [Rubik_Cube_Layer_All/layerAll.cpp:47]   --->   Operation 77 'icmp' 'tmp_212' <Predicate = true> <Delay = 1.13> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.30> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 78 [1/2] (2.32ns)   --->   "%cubieColor_V_load_148 = load i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 23), align 1" [Rubik_Cube_Layer_All/layerAll.cpp:54]   --->   Operation 78 'load' 'cubieColor_V_load_148' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_11 : Operation 79 [1/1] (1.13ns)   --->   "%tmp_213 = icmp eq i3 %cubieColor_V_load_144, %cubieColor_V_load_148" [Rubik_Cube_Layer_All/layerAll.cpp:54]   --->   Operation 79 'icmp' 'tmp_213' <Predicate = true> <Delay = 1.13> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.30> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 80 [2/2] (2.32ns)   --->   "%cubieColor_V_load_149 = load i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 21), align 1" [Rubik_Cube_Layer_All/layerAll.cpp:61]   --->   Operation 80 'load' 'cubieColor_V_load_149' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_11 : Operation 81 [2/2] (2.32ns)   --->   "%cubieColor_V_load_150 = load i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 48), align 16" [Rubik_Cube_Layer_All/layerAll.cpp:68]   --->   Operation 81 'load' 'cubieColor_V_load_150' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_11 : Operation 82 [1/1] (1.30ns)   --->   "%sel_tmp16 = icmp eq i4 %edge_V_read, 5"   --->   Operation 82 'icmp' 'sel_tmp16' <Predicate = true> <Delay = 1.30> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.30> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 83 [1/1] (0.00ns) (grouped into LUT with out node tmp35)   --->   "%tmp28 = and i1 %tmp_204, %tmp_212" [Rubik_Cube_Layer_All/layerAll.cpp:46]   --->   Operation 83 'and' 'tmp28' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 84 [1/1] (0.00ns) (grouped into LUT with out node tmp35)   --->   "%sel_tmp17 = and i1 %tmp28, %sel_tmp16" [Rubik_Cube_Layer_All/layerAll.cpp:46]   --->   Operation 84 'and' 'sel_tmp17' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 85 [1/1] (1.30ns)   --->   "%sel_tmp18 = icmp eq i4 %edge_V_read, 6"   --->   Operation 85 'icmp' 'sel_tmp18' <Predicate = true> <Delay = 1.30> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.30> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 86 [1/1] (0.00ns) (grouped into LUT with out node tmp35)   --->   "%tmp29 = and i1 %tmp_205, %tmp_213" [Rubik_Cube_Layer_All/layerAll.cpp:53]   --->   Operation 86 'and' 'tmp29' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 87 [1/1] (0.00ns) (grouped into LUT with out node tmp35)   --->   "%sel_tmp19 = and i1 %tmp29, %sel_tmp18" [Rubik_Cube_Layer_All/layerAll.cpp:53]   --->   Operation 87 'and' 'sel_tmp19' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 88 [1/1] (1.30ns)   --->   "%sel_tmp20 = icmp eq i4 %edge_V_read, 7"   --->   Operation 88 'icmp' 'sel_tmp20' <Predicate = true> <Delay = 1.30> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.30> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 89 [1/1] (1.30ns)   --->   "%sel_tmp22 = icmp eq i4 %edge_V_read, -8"   --->   Operation 89 'icmp' 'sel_tmp22' <Predicate = true> <Delay = 1.30> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.30> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 90 [1/1] (0.97ns) (out node of the LUT)   --->   "%tmp35 = or i1 %sel_tmp17, %sel_tmp19" [Rubik_Cube_Layer_All/layerAll.cpp:46]   --->   Operation 90 'or' 'tmp35' <Predicate = true> <Delay = 0.97> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+
+State 12 <SV = 11> <Delay = 5.40>
+ST_12 : Operation 91 [1/2] (2.32ns)   --->   "%cubieColor_V_load_149 = load i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 21), align 1" [Rubik_Cube_Layer_All/layerAll.cpp:61]   --->   Operation 91 'load' 'cubieColor_V_load_149' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_12 : Operation 92 [1/1] (1.13ns)   --->   "%tmp_214 = icmp eq i3 %cubieColor_V_load_144, %cubieColor_V_load_149" [Rubik_Cube_Layer_All/layerAll.cpp:61]   --->   Operation 92 'icmp' 'tmp_214' <Predicate = true> <Delay = 1.13> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.30> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_12 : Operation 93 [1/2] (2.32ns)   --->   "%cubieColor_V_load_150 = load i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 48), align 16" [Rubik_Cube_Layer_All/layerAll.cpp:68]   --->   Operation 93 'load' 'cubieColor_V_load_150' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_12 : Operation 94 [1/1] (1.13ns)   --->   "%tmp_215 = icmp eq i3 %cubieColor_V_load_139, %cubieColor_V_load_150" [Rubik_Cube_Layer_All/layerAll.cpp:68]   --->   Operation 94 'icmp' 'tmp_215' <Predicate = true> <Delay = 1.13> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.30> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_12 : Operation 95 [1/1] (0.00ns) (grouped into LUT with out node tmp36)   --->   "%tmp30 = and i1 %tmp_206, %tmp_214" [Rubik_Cube_Layer_All/layerAll.cpp:60]   --->   Operation 95 'and' 'tmp30' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_12 : Operation 96 [1/1] (0.00ns) (grouped into LUT with out node tmp36)   --->   "%sel_tmp21 = and i1 %tmp30, %sel_tmp20" [Rubik_Cube_Layer_All/layerAll.cpp:60]   --->   Operation 96 'and' 'sel_tmp21' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_12 : Operation 97 [1/1] (0.00ns) (grouped into LUT with out node tmp36)   --->   "%tmp31 = and i1 %tmp_207, %tmp_215" [Rubik_Cube_Layer_All/layerAll.cpp:67]   --->   Operation 97 'and' 'tmp31' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_12 : Operation 98 [1/1] (0.00ns) (grouped into LUT with out node tmp36)   --->   "%sel_tmp23 = and i1 %tmp31, %sel_tmp22" [Rubik_Cube_Layer_All/layerAll.cpp:67]   --->   Operation 98 'and' 'sel_tmp23' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_12 : Operation 99 [1/1] (0.00ns) (grouped into LUT with out node agg_result_V)   --->   "%tmp34 = or i1 %tmp33, %tmp32" [Rubik_Cube_Layer_All/layerAll.cpp:32]   --->   Operation 99 'or' 'tmp34' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_12 : Operation 100 [1/1] (0.97ns) (out node of the LUT)   --->   "%tmp36 = or i1 %sel_tmp21, %sel_tmp23" [Rubik_Cube_Layer_All/layerAll.cpp:60]   --->   Operation 100 'or' 'tmp36' <Predicate = true> <Delay = 0.97> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_12 : Operation 101 [1/1] (0.00ns) (grouped into LUT with out node agg_result_V)   --->   "%tmp37 = or i1 %tmp36, %tmp35" [Rubik_Cube_Layer_All/layerAll.cpp:60]   --->   Operation 101 'or' 'tmp37' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_12 : Operation 102 [1/1] (0.97ns) (out node of the LUT)   --->   "%agg_result_V = or i1 %tmp37, %tmp34" [Rubik_Cube_Layer_All/layerAll.cpp:60]   --->   Operation 102 'or' 'agg_result_V' <Predicate = true> <Delay = 0.97> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_12 : Operation 103 [1/1] (0.00ns)   --->   "ret i1 %agg_result_V" [Rubik_Cube_Layer_All/layerAll.cpp:75]   --->   Operation 103 'ret' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+STG Binding: 
+---------------- STG Properties BEGIN ----------------
+- Is combinational: 0
+- Is one-state seq: 0
+- Is datapath-only: 0
+- Is pipelined: 0
+- Is top level: 0
+Port [ Return ] is wired: 1; IO mode=ap_ctrl_hs:ce=0
+Port [ edge_V]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
+Port [ cubieColor_V]:  wired=1; compound=1; hidden=0; nouse=0; global=1; static=1; extern=0; dir=0; type=1; pingpong=0; private_global=0; linkage=7; visibility=0; MemPort=[11]; IO mode=ap_memory:ce=0
+---------------- STG Properties END ------------------
+
+---------------- Datapath Model BEGIN ----------------
+
+<LifeTime>
+<method=bitvector/>
+cubieColor_V_load     (load) [ 0001100000000]
+cubieColor_V_load_131 (load) [ 0000000000000]
+tmp_s                 (icmp) [ 0000111111100]
+cubieColor_V_load_132 (load) [ 0000000000000]
+tmp_201               (icmp) [ 0000111111100]
+cubieColor_V_load_133 (load) [ 0000000000000]
+tmp_202               (icmp) [ 0000011111100]
+cubieColor_V_load_134 (load) [ 0000000000000]
+tmp_203               (icmp) [ 0000011111100]
+cubieColor_V_load_135 (load) [ 0000001110000]
+cubieColor_V_load_136 (load) [ 0000000000000]
+tmp_204               (icmp) [ 0000001111110]
+cubieColor_V_load_137 (load) [ 0000000111110]
+cubieColor_V_load_138 (load) [ 0000000000000]
+tmp_205               (icmp) [ 0000000111110]
+cubieColor_V_load_139 (load) [ 0000000011111]
+cubieColor_V_load_140 (load) [ 0000000000000]
+tmp_206               (icmp) [ 0000000011111]
+cubieColor_V_load_141 (load) [ 0000000000000]
+tmp_207               (icmp) [ 0000000001111]
+cubieColor_V_load_142 (load) [ 0000000000000]
+tmp_208               (icmp) [ 0000000001100]
+cubieColor_V_load_143 (load) [ 0000000000000]
+tmp_209               (icmp) [ 0000000000100]
+cubieColor_V_load_144 (load) [ 0000000000111]
+edge_V_read           (read) [ 0000000000010]
+cubieColor_V_load_145 (load) [ 0000000000000]
+tmp_210               (icmp) [ 0000000000000]
+cubieColor_V_load_146 (load) [ 0000000000000]
+tmp_211               (icmp) [ 0000000000000]
+sel_tmp               (icmp) [ 0000000000000]
+tmp                   (and ) [ 0000000000000]
+sel_tmp2              (and ) [ 0000000000000]
+sel_tmp4              (icmp) [ 0000000000000]
+tmp25                 (and ) [ 0000000000000]
+sel_tmp6              (and ) [ 0000000000000]
+sel_tmp8              (icmp) [ 0000000000000]
+tmp26                 (and ) [ 0000000000000]
+sel_tmp10             (and ) [ 0000000000000]
+sel_tmp12             (icmp) [ 0000000000000]
+tmp27                 (and ) [ 0000000000000]
+sel_tmp14             (and ) [ 0000000000000]
+tmp32                 (or  ) [ 0000000000011]
+tmp33                 (or  ) [ 0000000000011]
+cubieColor_V_load_147 (load) [ 0000000000000]
+tmp_212               (icmp) [ 0000000000000]
+cubieColor_V_load_148 (load) [ 0000000000000]
+tmp_213               (icmp) [ 0000000000000]
+sel_tmp16             (icmp) [ 0000000000000]
+tmp28                 (and ) [ 0000000000000]
+sel_tmp17             (and ) [ 0000000000000]
+sel_tmp18             (icmp) [ 0000000000000]
+tmp29                 (and ) [ 0000000000000]
+sel_tmp19             (and ) [ 0000000000000]
+sel_tmp20             (icmp) [ 0000000000001]
+sel_tmp22             (icmp) [ 0000000000001]
+tmp35                 (or  ) [ 0000000000001]
+cubieColor_V_load_149 (load) [ 0000000000000]
+tmp_214               (icmp) [ 0000000000000]
+cubieColor_V_load_150 (load) [ 0000000000000]
+tmp_215               (icmp) [ 0000000000000]
+tmp30                 (and ) [ 0000000000000]
+sel_tmp21             (and ) [ 0000000000000]
+tmp31                 (and ) [ 0000000000000]
+sel_tmp23             (and ) [ 0000000000000]
+tmp34                 (or  ) [ 0000000000000]
+tmp36                 (or  ) [ 0000000000000]
+tmp37                 (or  ) [ 0000000000000]
+agg_result_V          (or  ) [ 0000000000000]
+StgValue_103          (ret ) [ 0000000000000]
+</LifeTime>
+
+<model>
+
+<comp_list>
+<comp id="0" class="1000" name="edge_V">
+<pin_list>
+<pin id="1" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="edge_V"/></StgValue>
+</bind>
+</comp>
+
+<comp id="2" class="1000" name="cubieColor_V">
+<pin_list>
+<pin id="3" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="cubieColor_V"/><MemPortTyVec>1 1 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="4" class="1001" name="const_4">
+<pin_list>
+<pin id="5" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="6" class="1001" name="const_6">
+<pin_list>
+<pin id="7" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="8" class="1001" name="const_8">
+<pin_list>
+<pin id="9" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="10" class="1001" name="const_10">
+<pin_list>
+<pin id="11" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="12" class="1001" name="const_12">
+<pin_list>
+<pin id="13" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="14" class="1001" name="const_14">
+<pin_list>
+<pin id="15" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="16" class="1001" name="const_16">
+<pin_list>
+<pin id="17" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="18" class="1001" name="const_18">
+<pin_list>
+<pin id="19" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="20" class="1001" name="const_20">
+<pin_list>
+<pin id="21" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="22" class="1001" name="const_22">
+<pin_list>
+<pin id="23" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="24" class="1001" name="const_24">
+<pin_list>
+<pin id="25" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="26" class="1001" name="const_26">
+<pin_list>
+<pin id="27" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="28" class="1001" name="const_28">
+<pin_list>
+<pin id="29" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="30" class="1001" name="const_30">
+<pin_list>
+<pin id="31" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="32" class="1001" name="const_32">
+<pin_list>
+<pin id="33" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="34" class="1001" name="const_34">
+<pin_list>
+<pin id="35" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="36" class="1001" name="const_36">
+<pin_list>
+<pin id="37" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="38" class="1001" name="const_38">
+<pin_list>
+<pin id="39" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_Read.ap_auto.i4"/></StgValue>
+</bind>
+</comp>
+
+<comp id="40" class="1001" name="const_40">
+<pin_list>
+<pin id="41" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="42" class="1001" name="const_42">
+<pin_list>
+<pin id="43" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="44" class="1001" name="const_44">
+<pin_list>
+<pin id="45" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="46" class="1001" name="const_46">
+<pin_list>
+<pin id="47" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="48" class="1001" name="const_48">
+<pin_list>
+<pin id="49" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="50" class="1001" name="const_50">
+<pin_list>
+<pin id="51" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="52" class="1001" name="const_52">
+<pin_list>
+<pin id="53" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="54" class="1001" name="const_54">
+<pin_list>
+<pin id="55" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="56" class="1001" name="const_56">
+<pin_list>
+<pin id="57" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="58" class="1001" name="const_58">
+<pin_list>
+<pin id="59" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="60" class="1001" name="const_60">
+<pin_list>
+<pin id="61" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="62" class="1001" name="const_62">
+<pin_list>
+<pin id="63" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="64" class="1004" name="edge_V_read_read_fu_64">
+<pin_list>
+<pin id="65" dir="0" index="0" bw="4" slack="0"/>
+<pin id="66" dir="0" index="1" bw="4" slack="0"/>
+<pin id="67" dir="1" index="2" bw="4" slack="0"/>
+</pin_list>
+<bind>
+<opcode="read(1150) " fcode="read"/>
+<opset="edge_V_read/10 "/>
+</bind>
+</comp>
+
+<comp id="70" class="1004" name="grp_access_fu_70">
+<pin_list>
+<pin id="71" dir="0" index="0" bw="3" slack="0"/>
+<pin id="72" dir="0" index="1" bw="3" slack="2147483647"/>
+<pin id="73" dir="0" index="2" bw="0" slack="0"/>
+<pin id="77" dir="0" index="4" bw="3" slack="2147483647"/>
+<pin id="78" dir="0" index="5" bw="3" slack="2147483647"/>
+<pin id="79" dir="0" index="6" bw="0" slack="2147483647"/>
+<pin id="74" dir="1" index="3" bw="3" slack="0"/>
+<pin id="80" dir="1" index="7" bw="3" slack="0"/>
+</pin_list>
+<bind>
+<opcode="load(27) " fcode="load"/>
+<opset="cubieColor_V_load/1 cubieColor_V_load_131/2 cubieColor_V_load_132/2 cubieColor_V_load_133/3 cubieColor_V_load_134/3 cubieColor_V_load_135/4 cubieColor_V_load_136/4 cubieColor_V_load_137/5 cubieColor_V_load_138/5 cubieColor_V_load_139/6 cubieColor_V_load_140/6 cubieColor_V_load_141/7 cubieColor_V_load_142/7 cubieColor_V_load_143/8 cubieColor_V_load_144/8 cubieColor_V_load_145/9 cubieColor_V_load_146/9 cubieColor_V_load_147/10 cubieColor_V_load_148/10 cubieColor_V_load_149/11 cubieColor_V_load_150/11 "/>
+</bind>
+</comp>
+
+<comp id="100" class="1004" name="grp_fu_100">
+<pin_list>
+<pin id="101" dir="0" index="0" bw="3" slack="1"/>
+<pin id="102" dir="0" index="1" bw="3" slack="0"/>
+<pin id="103" dir="1" index="2" bw="1" slack="6"/>
+</pin_list>
+<bind>
+<opcode="icmp(45) " fcode="icmp"/>
+<opset="tmp_s/3 tmp_203/4 "/>
+</bind>
+</comp>
+
+<comp id="105" class="1004" name="grp_fu_105">
+<pin_list>
+<pin id="106" dir="0" index="0" bw="3" slack="1"/>
+<pin id="107" dir="0" index="1" bw="3" slack="0"/>
+<pin id="108" dir="1" index="2" bw="1" slack="6"/>
+</pin_list>
+<bind>
+<opcode="icmp(45) " fcode="icmp"/>
+<opset="tmp_201/3 tmp_202/4 "/>
+</bind>
+</comp>
+
+<comp id="110" class="1004" name="grp_fu_110">
+<pin_list>
+<pin id="111" dir="0" index="0" bw="3" slack="0"/>
+<pin id="112" dir="0" index="1" bw="3" slack="0"/>
+<pin id="113" dir="1" index="2" bw="1" slack="2"/>
+</pin_list>
+<bind>
+<opcode="icmp(45) " fcode="icmp"/>
+<opset="tmp_204/5 tmp_205/6 tmp_206/7 tmp_208/8 "/>
+</bind>
+</comp>
+
+<comp id="116" class="1004" name="grp_fu_116">
+<pin_list>
+<pin id="117" dir="0" index="0" bw="3" slack="3"/>
+<pin id="118" dir="0" index="1" bw="3" slack="0"/>
+<pin id="119" dir="1" index="2" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<opcode="icmp(45) " fcode="icmp"/>
+<opset="tmp_209/9 tmp_212/11 "/>
+</bind>
+</comp>
+
+<comp id="121" class="1004" name="grp_fu_121">
+<pin_list>
+<pin id="122" dir="0" index="0" bw="3" slack="1"/>
+<pin id="123" dir="0" index="1" bw="3" slack="0"/>
+<pin id="124" dir="1" index="2" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<opcode="icmp(45) " fcode="icmp"/>
+<opset="tmp_210/10 tmp_214/12 "/>
+</bind>
+</comp>
+
+<comp id="126" class="1004" name="grp_fu_126">
+<pin_list>
+<pin id="127" dir="0" index="0" bw="3" slack="3"/>
+<pin id="128" dir="0" index="1" bw="3" slack="0"/>
+<pin id="129" dir="1" index="2" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<opcode="icmp(45) " fcode="icmp"/>
+<opset="tmp_211/10 tmp_215/12 "/>
+</bind>
+</comp>
+
+<comp id="131" class="1005" name="reg_131">
+<pin_list>
+<pin id="132" dir="0" index="0" bw="3" slack="1"/>
+<pin id="133" dir="1" index="1" bw="3" slack="1"/>
+</pin_list>
+<bind>
+<opset="cubieColor_V_load cubieColor_V_load_135 cubieColor_V_load_144 "/>
+</bind>
+</comp>
+
+<comp id="140" class="1004" name="tmp_207_fu_140">
+<pin_list>
+<pin id="141" dir="0" index="0" bw="3" slack="3"/>
+<pin id="142" dir="0" index="1" bw="3" slack="0"/>
+<pin id="143" dir="1" index="2" bw="1" slack="4"/>
+</pin_list>
+<bind>
+<opcode="icmp(45) " fcode="icmp"/>
+<opset="tmp_207/8 "/>
+</bind>
+</comp>
+
+<comp id="146" class="1004" name="sel_tmp_fu_146">
+<pin_list>
+<pin id="147" dir="0" index="0" bw="4" slack="0"/>
+<pin id="148" dir="0" index="1" bw="1" slack="0"/>
+<pin id="149" dir="1" index="2" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<opcode="icmp(45) " fcode="icmp"/>
+<opset="sel_tmp/10 "/>
+</bind>
+</comp>
+
+<comp id="152" class="1004" name="tmp_fu_152">
+<pin_list>
+<pin id="153" dir="0" index="0" bw="1" slack="7"/>
+<pin id="154" dir="0" index="1" bw="1" slack="2"/>
+<pin id="155" dir="1" index="2" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<opcode="and(23) " fcode="and"/>
+<opset="tmp/10 "/>
+</bind>
+</comp>
+
+<comp id="156" class="1004" name="sel_tmp2_fu_156">
+<pin_list>
+<pin id="157" dir="0" index="0" bw="1" slack="0"/>
+<pin id="158" dir="0" index="1" bw="1" slack="0"/>
+<pin id="159" dir="1" index="2" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<opcode="and(23) " fcode="and"/>
+<opset="sel_tmp2/10 "/>
+</bind>
+</comp>
+
+<comp id="162" class="1004" name="sel_tmp4_fu_162">
+<pin_list>
+<pin id="163" dir="0" index="0" bw="4" slack="0"/>
+<pin id="164" dir="0" index="1" bw="3" slack="0"/>
+<pin id="165" dir="1" index="2" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<opcode="icmp(45) " fcode="icmp"/>
+<opset="sel_tmp4/10 "/>
+</bind>
+</comp>
+
+<comp id="168" class="1004" name="tmp25_fu_168">
+<pin_list>
+<pin id="169" dir="0" index="0" bw="1" slack="7"/>
+<pin id="170" dir="0" index="1" bw="1" slack="1"/>
+<pin id="171" dir="1" index="2" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<opcode="and(23) " fcode="and"/>
+<opset="tmp25/10 "/>
+</bind>
+</comp>
+
+<comp id="172" class="1004" name="sel_tmp6_fu_172">
+<pin_list>
+<pin id="173" dir="0" index="0" bw="1" slack="0"/>
+<pin id="174" dir="0" index="1" bw="1" slack="0"/>
+<pin id="175" dir="1" index="2" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<opcode="and(23) " fcode="and"/>
+<opset="sel_tmp6/10 "/>
+</bind>
+</comp>
+
+<comp id="178" class="1004" name="sel_tmp8_fu_178">
+<pin_list>
+<pin id="179" dir="0" index="0" bw="4" slack="0"/>
+<pin id="180" dir="0" index="1" bw="3" slack="0"/>
+<pin id="181" dir="1" index="2" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<opcode="icmp(45) " fcode="icmp"/>
+<opset="sel_tmp8/10 "/>
+</bind>
+</comp>
+
+<comp id="184" class="1004" name="tmp26_fu_184">
+<pin_list>
+<pin id="185" dir="0" index="0" bw="1" slack="6"/>
+<pin id="186" dir="0" index="1" bw="1" slack="0"/>
+<pin id="187" dir="1" index="2" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<opcode="and(23) " fcode="and"/>
+<opset="tmp26/10 "/>
+</bind>
+</comp>
+
+<comp id="189" class="1004" name="sel_tmp10_fu_189">
+<pin_list>
+<pin id="190" dir="0" index="0" bw="1" slack="0"/>
+<pin id="191" dir="0" index="1" bw="1" slack="0"/>
+<pin id="192" dir="1" index="2" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<opcode="and(23) " fcode="and"/>
+<opset="sel_tmp10/10 "/>
+</bind>
+</comp>
+
+<comp id="195" class="1004" name="sel_tmp12_fu_195">
+<pin_list>
+<pin id="196" dir="0" index="0" bw="4" slack="0"/>
+<pin id="197" dir="0" index="1" bw="4" slack="0"/>
+<pin id="198" dir="1" index="2" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<opcode="icmp(45) " fcode="icmp"/>
+<opset="sel_tmp12/10 "/>
+</bind>
+</comp>
+
+<comp id="201" class="1004" name="tmp27_fu_201">
+<pin_list>
+<pin id="202" dir="0" index="0" bw="1" slack="6"/>
+<pin id="203" dir="0" index="1" bw="1" slack="0"/>
+<pin id="204" dir="1" index="2" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<opcode="and(23) " fcode="and"/>
+<opset="tmp27/10 "/>
+</bind>
+</comp>
+
+<comp id="206" class="1004" name="sel_tmp14_fu_206">
+<pin_list>
+<pin id="207" dir="0" index="0" bw="1" slack="0"/>
+<pin id="208" dir="0" index="1" bw="1" slack="0"/>
+<pin id="209" dir="1" index="2" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<opcode="and(23) " fcode="and"/>
+<opset="sel_tmp14/10 "/>
+</bind>
+</comp>
+
+<comp id="212" class="1004" name="tmp32_fu_212">
+<pin_list>
+<pin id="213" dir="0" index="0" bw="1" slack="0"/>
+<pin id="214" dir="0" index="1" bw="1" slack="0"/>
+<pin id="215" dir="1" index="2" bw="1" slack="2"/>
+</pin_list>
+<bind>
+<opcode="or(24) " fcode="or"/>
+<opset="tmp32/10 "/>
+</bind>
+</comp>
+
+<comp id="218" class="1004" name="tmp33_fu_218">
+<pin_list>
+<pin id="219" dir="0" index="0" bw="1" slack="0"/>
+<pin id="220" dir="0" index="1" bw="1" slack="0"/>
+<pin id="221" dir="1" index="2" bw="1" slack="2"/>
+</pin_list>
+<bind>
+<opcode="or(24) " fcode="or"/>
+<opset="tmp33/10 "/>
+</bind>
+</comp>
+
+<comp id="224" class="1004" name="tmp_213_fu_224">
+<pin_list>
+<pin id="225" dir="0" index="0" bw="3" slack="2"/>
+<pin id="226" dir="0" index="1" bw="3" slack="0"/>
+<pin id="227" dir="1" index="2" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<opcode="icmp(45) " fcode="icmp"/>
+<opset="tmp_213/11 "/>
+</bind>
+</comp>
+
+<comp id="230" class="1004" name="sel_tmp16_fu_230">
+<pin_list>
+<pin id="231" dir="0" index="0" bw="4" slack="1"/>
+<pin id="232" dir="0" index="1" bw="4" slack="0"/>
+<pin id="233" dir="1" index="2" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<opcode="icmp(45) " fcode="icmp"/>
+<opset="sel_tmp16/11 "/>
+</bind>
+</comp>
+
+<comp id="235" class="1004" name="tmp28_fu_235">
+<pin_list>
+<pin id="236" dir="0" index="0" bw="1" slack="6"/>
+<pin id="237" dir="0" index="1" bw="1" slack="0"/>
+<pin id="238" dir="1" index="2" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<opcode="and(23) " fcode="and"/>
+<opset="tmp28/11 "/>
+</bind>
+</comp>
+
+<comp id="240" class="1004" name="sel_tmp17_fu_240">
+<pin_list>
+<pin id="241" dir="0" index="0" bw="1" slack="0"/>
+<pin id="242" dir="0" index="1" bw="1" slack="0"/>
+<pin id="243" dir="1" index="2" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<opcode="and(23) " fcode="and"/>
+<opset="sel_tmp17/11 "/>
+</bind>
+</comp>
+
+<comp id="246" class="1004" name="sel_tmp18_fu_246">
+<pin_list>
+<pin id="247" dir="0" index="0" bw="4" slack="1"/>
+<pin id="248" dir="0" index="1" bw="4" slack="0"/>
+<pin id="249" dir="1" index="2" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<opcode="icmp(45) " fcode="icmp"/>
+<opset="sel_tmp18/11 "/>
+</bind>
+</comp>
+
+<comp id="251" class="1004" name="tmp29_fu_251">
+<pin_list>
+<pin id="252" dir="0" index="0" bw="1" slack="5"/>
+<pin id="253" dir="0" index="1" bw="1" slack="0"/>
+<pin id="254" dir="1" index="2" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<opcode="and(23) " fcode="and"/>
+<opset="tmp29/11 "/>
+</bind>
+</comp>
+
+<comp id="256" class="1004" name="sel_tmp19_fu_256">
+<pin_list>
+<pin id="257" dir="0" index="0" bw="1" slack="0"/>
+<pin id="258" dir="0" index="1" bw="1" slack="0"/>
+<pin id="259" dir="1" index="2" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<opcode="and(23) " fcode="and"/>
+<opset="sel_tmp19/11 "/>
+</bind>
+</comp>
+
+<comp id="262" class="1004" name="sel_tmp20_fu_262">
+<pin_list>
+<pin id="263" dir="0" index="0" bw="4" slack="1"/>
+<pin id="264" dir="0" index="1" bw="4" slack="0"/>
+<pin id="265" dir="1" index="2" bw="1" slack="1"/>
+</pin_list>
+<bind>
+<opcode="icmp(45) " fcode="icmp"/>
+<opset="sel_tmp20/11 "/>
+</bind>
+</comp>
+
+<comp id="267" class="1004" name="sel_tmp22_fu_267">
+<pin_list>
+<pin id="268" dir="0" index="0" bw="4" slack="1"/>
+<pin id="269" dir="0" index="1" bw="4" slack="0"/>
+<pin id="270" dir="1" index="2" bw="1" slack="1"/>
+</pin_list>
+<bind>
+<opcode="icmp(45) " fcode="icmp"/>
+<opset="sel_tmp22/11 "/>
+</bind>
+</comp>
+
+<comp id="272" class="1004" name="tmp35_fu_272">
+<pin_list>
+<pin id="273" dir="0" index="0" bw="1" slack="0"/>
+<pin id="274" dir="0" index="1" bw="1" slack="0"/>
+<pin id="275" dir="1" index="2" bw="1" slack="1"/>
+</pin_list>
+<bind>
+<opcode="or(24) " fcode="or"/>
+<opset="tmp35/11 "/>
+</bind>
+</comp>
+
+<comp id="278" class="1004" name="tmp30_fu_278">
+<pin_list>
+<pin id="279" dir="0" index="0" bw="1" slack="5"/>
+<pin id="280" dir="0" index="1" bw="1" slack="0"/>
+<pin id="281" dir="1" index="2" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<opcode="and(23) " fcode="and"/>
+<opset="tmp30/12 "/>
+</bind>
+</comp>
+
+<comp id="283" class="1004" name="sel_tmp21_fu_283">
+<pin_list>
+<pin id="284" dir="0" index="0" bw="1" slack="0"/>
+<pin id="285" dir="0" index="1" bw="1" slack="1"/>
+<pin id="286" dir="1" index="2" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<opcode="and(23) " fcode="and"/>
+<opset="sel_tmp21/12 "/>
+</bind>
+</comp>
+
+<comp id="288" class="1004" name="tmp31_fu_288">
+<pin_list>
+<pin id="289" dir="0" index="0" bw="1" slack="4"/>
+<pin id="290" dir="0" index="1" bw="1" slack="0"/>
+<pin id="291" dir="1" index="2" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<opcode="and(23) " fcode="and"/>
+<opset="tmp31/12 "/>
+</bind>
+</comp>
+
+<comp id="293" class="1004" name="sel_tmp23_fu_293">
+<pin_list>
+<pin id="294" dir="0" index="0" bw="1" slack="0"/>
+<pin id="295" dir="0" index="1" bw="1" slack="1"/>
+<pin id="296" dir="1" index="2" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<opcode="and(23) " fcode="and"/>
+<opset="sel_tmp23/12 "/>
+</bind>
+</comp>
+
+<comp id="298" class="1004" name="tmp34_fu_298">
+<pin_list>
+<pin id="299" dir="0" index="0" bw="1" slack="2"/>
+<pin id="300" dir="0" index="1" bw="1" slack="2"/>
+<pin id="301" dir="1" index="2" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<opcode="or(24) " fcode="or"/>
+<opset="tmp34/12 "/>
+</bind>
+</comp>
+
+<comp id="302" class="1004" name="tmp36_fu_302">
+<pin_list>
+<pin id="303" dir="0" index="0" bw="1" slack="0"/>
+<pin id="304" dir="0" index="1" bw="1" slack="0"/>
+<pin id="305" dir="1" index="2" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<opcode="or(24) " fcode="or"/>
+<opset="tmp36/12 "/>
+</bind>
+</comp>
+
+<comp id="308" class="1004" name="tmp37_fu_308">
+<pin_list>
+<pin id="309" dir="0" index="0" bw="1" slack="0"/>
+<pin id="310" dir="0" index="1" bw="1" slack="1"/>
+<pin id="311" dir="1" index="2" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<opcode="or(24) " fcode="or"/>
+<opset="tmp37/12 "/>
+</bind>
+</comp>
+
+<comp id="313" class="1004" name="agg_result_V_fu_313">
+<pin_list>
+<pin id="314" dir="0" index="0" bw="1" slack="0"/>
+<pin id="315" dir="0" index="1" bw="1" slack="0"/>
+<pin id="316" dir="1" index="2" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="or(24) " fcode="or"/>
+<opset="agg_result_V/12 "/>
+</bind>
+</comp>
+
+<comp id="319" class="1005" name="tmp_s_reg_319">
+<pin_list>
+<pin id="320" dir="0" index="0" bw="1" slack="7"/>
+<pin id="321" dir="1" index="1" bw="1" slack="7"/>
+</pin_list>
+<bind>
+<opset="tmp_s "/>
+</bind>
+</comp>
+
+<comp id="324" class="1005" name="tmp_201_reg_324">
+<pin_list>
+<pin id="325" dir="0" index="0" bw="1" slack="7"/>
+<pin id="326" dir="1" index="1" bw="1" slack="7"/>
+</pin_list>
+<bind>
+<opset="tmp_201 "/>
+</bind>
+</comp>
+
+<comp id="329" class="1005" name="tmp_202_reg_329">
+<pin_list>
+<pin id="330" dir="0" index="0" bw="1" slack="6"/>
+<pin id="331" dir="1" index="1" bw="1" slack="6"/>
+</pin_list>
+<bind>
+<opset="tmp_202 "/>
+</bind>
+</comp>
+
+<comp id="334" class="1005" name="tmp_203_reg_334">
+<pin_list>
+<pin id="335" dir="0" index="0" bw="1" slack="6"/>
+<pin id="336" dir="1" index="1" bw="1" slack="6"/>
+</pin_list>
+<bind>
+<opset="tmp_203 "/>
+</bind>
+</comp>
+
+<comp id="339" class="1005" name="tmp_204_reg_339">
+<pin_list>
+<pin id="340" dir="0" index="0" bw="1" slack="6"/>
+<pin id="341" dir="1" index="1" bw="1" slack="6"/>
+</pin_list>
+<bind>
+<opset="tmp_204 "/>
+</bind>
+</comp>
+
+<comp id="344" class="1005" name="cubieColor_V_load_137_reg_344">
+<pin_list>
+<pin id="345" dir="0" index="0" bw="3" slack="3"/>
+<pin id="346" dir="1" index="1" bw="3" slack="3"/>
+</pin_list>
+<bind>
+<opset="cubieColor_V_load_137 "/>
+</bind>
+</comp>
+
+<comp id="349" class="1005" name="tmp_205_reg_349">
+<pin_list>
+<pin id="350" dir="0" index="0" bw="1" slack="5"/>
+<pin id="351" dir="1" index="1" bw="1" slack="5"/>
+</pin_list>
+<bind>
+<opset="tmp_205 "/>
+</bind>
+</comp>
+
+<comp id="354" class="1005" name="cubieColor_V_load_139_reg_354">
+<pin_list>
+<pin id="355" dir="0" index="0" bw="3" slack="3"/>
+<pin id="356" dir="1" index="1" bw="3" slack="3"/>
+</pin_list>
+<bind>
+<opset="cubieColor_V_load_139 "/>
+</bind>
+</comp>
+
+<comp id="359" class="1005" name="tmp_206_reg_359">
+<pin_list>
+<pin id="360" dir="0" index="0" bw="1" slack="5"/>
+<pin id="361" dir="1" index="1" bw="1" slack="5"/>
+</pin_list>
+<bind>
+<opset="tmp_206 "/>
+</bind>
+</comp>
+
+<comp id="364" class="1005" name="tmp_207_reg_364">
+<pin_list>
+<pin id="365" dir="0" index="0" bw="1" slack="4"/>
+<pin id="366" dir="1" index="1" bw="1" slack="4"/>
+</pin_list>
+<bind>
+<opset="tmp_207 "/>
+</bind>
+</comp>
+
+<comp id="369" class="1005" name="tmp_208_reg_369">
+<pin_list>
+<pin id="370" dir="0" index="0" bw="1" slack="2"/>
+<pin id="371" dir="1" index="1" bw="1" slack="2"/>
+</pin_list>
+<bind>
+<opset="tmp_208 "/>
+</bind>
+</comp>
+
+<comp id="374" class="1005" name="tmp_209_reg_374">
+<pin_list>
+<pin id="375" dir="0" index="0" bw="1" slack="1"/>
+<pin id="376" dir="1" index="1" bw="1" slack="1"/>
+</pin_list>
+<bind>
+<opset="tmp_209 "/>
+</bind>
+</comp>
+
+<comp id="379" class="1005" name="edge_V_read_reg_379">
+<pin_list>
+<pin id="380" dir="0" index="0" bw="4" slack="1"/>
+<pin id="381" dir="1" index="1" bw="4" slack="1"/>
+</pin_list>
+<bind>
+<opset="edge_V_read "/>
+</bind>
+</comp>
+
+<comp id="387" class="1005" name="tmp32_reg_387">
+<pin_list>
+<pin id="388" dir="0" index="0" bw="1" slack="2"/>
+<pin id="389" dir="1" index="1" bw="1" slack="2"/>
+</pin_list>
+<bind>
+<opset="tmp32 "/>
+</bind>
+</comp>
+
+<comp id="392" class="1005" name="tmp33_reg_392">
+<pin_list>
+<pin id="393" dir="0" index="0" bw="1" slack="2"/>
+<pin id="394" dir="1" index="1" bw="1" slack="2"/>
+</pin_list>
+<bind>
+<opset="tmp33 "/>
+</bind>
+</comp>
+
+<comp id="397" class="1005" name="sel_tmp20_reg_397">
+<pin_list>
+<pin id="398" dir="0" index="0" bw="1" slack="1"/>
+<pin id="399" dir="1" index="1" bw="1" slack="1"/>
+</pin_list>
+<bind>
+<opset="sel_tmp20 "/>
+</bind>
+</comp>
+
+<comp id="402" class="1005" name="sel_tmp22_reg_402">
+<pin_list>
+<pin id="403" dir="0" index="0" bw="1" slack="1"/>
+<pin id="404" dir="1" index="1" bw="1" slack="1"/>
+</pin_list>
+<bind>
+<opset="sel_tmp22 "/>
+</bind>
+</comp>
+
+<comp id="407" class="1005" name="tmp35_reg_407">
+<pin_list>
+<pin id="408" dir="0" index="0" bw="1" slack="1"/>
+<pin id="409" dir="1" index="1" bw="1" slack="1"/>
+</pin_list>
+<bind>
+<opset="tmp35 "/>
+</bind>
+</comp>
+
+</comp_list>
+
+<net_list>
+<net id="68"><net_src comp="38" pin="0"/><net_sink comp="64" pin=0"/></net>
+
+<net id="69"><net_src comp="0" pin="0"/><net_sink comp="64" pin=1"/></net>
+
+<net id="75"><net_src comp="4" pin="0"/><net_sink comp="70" pin=0"/></net>
+
+<net id="76"><net_src comp="6" pin="0"/><net_sink comp="70" pin=0"/></net>
+
+<net id="81"><net_src comp="8" pin="0"/><net_sink comp="70" pin=2"/></net>
+
+<net id="82"><net_src comp="10" pin="0"/><net_sink comp="70" pin=2"/></net>
+
+<net id="83"><net_src comp="12" pin="0"/><net_sink comp="70" pin=0"/></net>
+
+<net id="84"><net_src comp="14" pin="0"/><net_sink comp="70" pin=2"/></net>
+
+<net id="85"><net_src comp="16" pin="0"/><net_sink comp="70" pin=0"/></net>
+
+<net id="86"><net_src comp="18" pin="0"/><net_sink comp="70" pin=2"/></net>
+
+<net id="87"><net_src comp="20" pin="0"/><net_sink comp="70" pin=0"/></net>
+
+<net id="88"><net_src comp="22" pin="0"/><net_sink comp="70" pin=2"/></net>
+
+<net id="89"><net_src comp="24" pin="0"/><net_sink comp="70" pin=0"/></net>
+
+<net id="90"><net_src comp="26" pin="0"/><net_sink comp="70" pin=2"/></net>
+
+<net id="91"><net_src comp="28" pin="0"/><net_sink comp="70" pin=0"/></net>
+
+<net id="92"><net_src comp="30" pin="0"/><net_sink comp="70" pin=2"/></net>
+
+<net id="93"><net_src comp="32" pin="0"/><net_sink comp="70" pin=0"/></net>
+
+<net id="94"><net_src comp="34" pin="0"/><net_sink comp="70" pin=2"/></net>
+
+<net id="95"><net_src comp="36" pin="0"/><net_sink comp="70" pin=0"/></net>
+
+<net id="96"><net_src comp="40" pin="0"/><net_sink comp="70" pin=2"/></net>
+
+<net id="97"><net_src comp="42" pin="0"/><net_sink comp="70" pin=0"/></net>
+
+<net id="98"><net_src comp="52" pin="0"/><net_sink comp="70" pin=2"/></net>
+
+<net id="99"><net_src comp="54" pin="0"/><net_sink comp="70" pin=0"/></net>
+
+<net id="104"><net_src comp="70" pin="3"/><net_sink comp="100" pin=1"/></net>
+
+<net id="109"><net_src comp="70" pin="7"/><net_sink comp="105" pin=1"/></net>
+
+<net id="114"><net_src comp="70" pin="7"/><net_sink comp="110" pin=0"/></net>
+
+<net id="115"><net_src comp="70" pin="3"/><net_sink comp="110" pin=1"/></net>
+
+<net id="120"><net_src comp="70" pin="7"/><net_sink comp="116" pin=1"/></net>
+
+<net id="125"><net_src comp="70" pin="7"/><net_sink comp="121" pin=1"/></net>
+
+<net id="130"><net_src comp="70" pin="3"/><net_sink comp="126" pin=1"/></net>
+
+<net id="134"><net_src comp="70" pin="3"/><net_sink comp="131" pin=0"/></net>
+
+<net id="135"><net_src comp="131" pin="1"/><net_sink comp="100" pin=0"/></net>
+
+<net id="136"><net_src comp="131" pin="1"/><net_sink comp="105" pin=0"/></net>
+
+<net id="137"><net_src comp="70" pin="7"/><net_sink comp="131" pin=0"/></net>
+
+<net id="138"><net_src comp="131" pin="1"/><net_sink comp="110" pin=0"/></net>
+
+<net id="139"><net_src comp="131" pin="1"/><net_sink comp="121" pin=0"/></net>
+
+<net id="144"><net_src comp="131" pin="1"/><net_sink comp="140" pin=0"/></net>
+
+<net id="145"><net_src comp="70" pin="7"/><net_sink comp="140" pin=1"/></net>
+
+<net id="150"><net_src comp="64" pin="2"/><net_sink comp="146" pin=0"/></net>
+
+<net id="151"><net_src comp="44" pin="0"/><net_sink comp="146" pin=1"/></net>
+
+<net id="160"><net_src comp="152" pin="2"/><net_sink comp="156" pin=0"/></net>
+
+<net id="161"><net_src comp="146" pin="2"/><net_sink comp="156" pin=1"/></net>
+
+<net id="166"><net_src comp="64" pin="2"/><net_sink comp="162" pin=0"/></net>
+
+<net id="167"><net_src comp="46" pin="0"/><net_sink comp="162" pin=1"/></net>
+
+<net id="176"><net_src comp="168" pin="2"/><net_sink comp="172" pin=0"/></net>
+
+<net id="177"><net_src comp="162" pin="2"/><net_sink comp="172" pin=1"/></net>
+
+<net id="182"><net_src comp="64" pin="2"/><net_sink comp="178" pin=0"/></net>
+
+<net id="183"><net_src comp="48" pin="0"/><net_sink comp="178" pin=1"/></net>
+
+<net id="188"><net_src comp="121" pin="2"/><net_sink comp="184" pin=1"/></net>
+
+<net id="193"><net_src comp="184" pin="2"/><net_sink comp="189" pin=0"/></net>
+
+<net id="194"><net_src comp="178" pin="2"/><net_sink comp="189" pin=1"/></net>
+
+<net id="199"><net_src comp="64" pin="2"/><net_sink comp="195" pin=0"/></net>
+
+<net id="200"><net_src comp="50" pin="0"/><net_sink comp="195" pin=1"/></net>
+
+<net id="205"><net_src comp="126" pin="2"/><net_sink comp="201" pin=1"/></net>
+
+<net id="210"><net_src comp="201" pin="2"/><net_sink comp="206" pin=0"/></net>
+
+<net id="211"><net_src comp="195" pin="2"/><net_sink comp="206" pin=1"/></net>
+
+<net id="216"><net_src comp="172" pin="2"/><net_sink comp="212" pin=0"/></net>
+
+<net id="217"><net_src comp="156" pin="2"/><net_sink comp="212" pin=1"/></net>
+
+<net id="222"><net_src comp="189" pin="2"/><net_sink comp="218" pin=0"/></net>
+
+<net id="223"><net_src comp="206" pin="2"/><net_sink comp="218" pin=1"/></net>
+
+<net id="228"><net_src comp="131" pin="1"/><net_sink comp="224" pin=0"/></net>
+
+<net id="229"><net_src comp="70" pin="3"/><net_sink comp="224" pin=1"/></net>
+
+<net id="234"><net_src comp="56" pin="0"/><net_sink comp="230" pin=1"/></net>
+
+<net id="239"><net_src comp="116" pin="2"/><net_sink comp="235" pin=1"/></net>
+
+<net id="244"><net_src comp="235" pin="2"/><net_sink comp="240" pin=0"/></net>
+
+<net id="245"><net_src comp="230" pin="2"/><net_sink comp="240" pin=1"/></net>
+
+<net id="250"><net_src comp="58" pin="0"/><net_sink comp="246" pin=1"/></net>
+
+<net id="255"><net_src comp="224" pin="2"/><net_sink comp="251" pin=1"/></net>
+
+<net id="260"><net_src comp="251" pin="2"/><net_sink comp="256" pin=0"/></net>
+
+<net id="261"><net_src comp="246" pin="2"/><net_sink comp="256" pin=1"/></net>
+
+<net id="266"><net_src comp="60" pin="0"/><net_sink comp="262" pin=1"/></net>
+
+<net id="271"><net_src comp="62" pin="0"/><net_sink comp="267" pin=1"/></net>
+
+<net id="276"><net_src comp="240" pin="2"/><net_sink comp="272" pin=0"/></net>
+
+<net id="277"><net_src comp="256" pin="2"/><net_sink comp="272" pin=1"/></net>
+
+<net id="282"><net_src comp="121" pin="2"/><net_sink comp="278" pin=1"/></net>
+
+<net id="287"><net_src comp="278" pin="2"/><net_sink comp="283" pin=0"/></net>
+
+<net id="292"><net_src comp="126" pin="2"/><net_sink comp="288" pin=1"/></net>
+
+<net id="297"><net_src comp="288" pin="2"/><net_sink comp="293" pin=0"/></net>
+
+<net id="306"><net_src comp="283" pin="2"/><net_sink comp="302" pin=0"/></net>
+
+<net id="307"><net_src comp="293" pin="2"/><net_sink comp="302" pin=1"/></net>
+
+<net id="312"><net_src comp="302" pin="2"/><net_sink comp="308" pin=0"/></net>
+
+<net id="317"><net_src comp="308" pin="2"/><net_sink comp="313" pin=0"/></net>
+
+<net id="318"><net_src comp="298" pin="2"/><net_sink comp="313" pin=1"/></net>
+
+<net id="322"><net_src comp="100" pin="2"/><net_sink comp="319" pin=0"/></net>
+
+<net id="323"><net_src comp="319" pin="1"/><net_sink comp="152" pin=0"/></net>
+
+<net id="327"><net_src comp="105" pin="2"/><net_sink comp="324" pin=0"/></net>
+
+<net id="328"><net_src comp="324" pin="1"/><net_sink comp="168" pin=0"/></net>
+
+<net id="332"><net_src comp="105" pin="2"/><net_sink comp="329" pin=0"/></net>
+
+<net id="333"><net_src comp="329" pin="1"/><net_sink comp="184" pin=0"/></net>
+
+<net id="337"><net_src comp="100" pin="2"/><net_sink comp="334" pin=0"/></net>
+
+<net id="338"><net_src comp="334" pin="1"/><net_sink comp="201" pin=0"/></net>
+
+<net id="342"><net_src comp="110" pin="2"/><net_sink comp="339" pin=0"/></net>
+
+<net id="343"><net_src comp="339" pin="1"/><net_sink comp="235" pin=0"/></net>
+
+<net id="347"><net_src comp="70" pin="7"/><net_sink comp="344" pin=0"/></net>
+
+<net id="348"><net_src comp="344" pin="1"/><net_sink comp="116" pin=0"/></net>
+
+<net id="352"><net_src comp="110" pin="2"/><net_sink comp="349" pin=0"/></net>
+
+<net id="353"><net_src comp="349" pin="1"/><net_sink comp="251" pin=0"/></net>
+
+<net id="357"><net_src comp="70" pin="7"/><net_sink comp="354" pin=0"/></net>
+
+<net id="358"><net_src comp="354" pin="1"/><net_sink comp="126" pin=0"/></net>
+
+<net id="362"><net_src comp="110" pin="2"/><net_sink comp="359" pin=0"/></net>
+
+<net id="363"><net_src comp="359" pin="1"/><net_sink comp="278" pin=0"/></net>
+
+<net id="367"><net_src comp="140" pin="2"/><net_sink comp="364" pin=0"/></net>
+
+<net id="368"><net_src comp="364" pin="1"/><net_sink comp="288" pin=0"/></net>
+
+<net id="372"><net_src comp="110" pin="2"/><net_sink comp="369" pin=0"/></net>
+
+<net id="373"><net_src comp="369" pin="1"/><net_sink comp="152" pin=1"/></net>
+
+<net id="377"><net_src comp="116" pin="2"/><net_sink comp="374" pin=0"/></net>
+
+<net id="378"><net_src comp="374" pin="1"/><net_sink comp="168" pin=1"/></net>
+
+<net id="382"><net_src comp="64" pin="2"/><net_sink comp="379" pin=0"/></net>
+
+<net id="383"><net_src comp="379" pin="1"/><net_sink comp="230" pin=0"/></net>
+
+<net id="384"><net_src comp="379" pin="1"/><net_sink comp="246" pin=0"/></net>
+
+<net id="385"><net_src comp="379" pin="1"/><net_sink comp="262" pin=0"/></net>
+
+<net id="386"><net_src comp="379" pin="1"/><net_sink comp="267" pin=0"/></net>
+
+<net id="390"><net_src comp="212" pin="2"/><net_sink comp="387" pin=0"/></net>
+
+<net id="391"><net_src comp="387" pin="1"/><net_sink comp="298" pin=1"/></net>
+
+<net id="395"><net_src comp="218" pin="2"/><net_sink comp="392" pin=0"/></net>
+
+<net id="396"><net_src comp="392" pin="1"/><net_sink comp="298" pin=0"/></net>
+
+<net id="400"><net_src comp="262" pin="2"/><net_sink comp="397" pin=0"/></net>
+
+<net id="401"><net_src comp="397" pin="1"/><net_sink comp="283" pin=1"/></net>
+
+<net id="405"><net_src comp="267" pin="2"/><net_sink comp="402" pin=0"/></net>
+
+<net id="406"><net_src comp="402" pin="1"/><net_sink comp="293" pin=1"/></net>
+
+<net id="410"><net_src comp="272" pin="2"/><net_sink comp="407" pin=0"/></net>
+
+<net id="411"><net_src comp="407" pin="1"/><net_sink comp="308" pin=1"/></net>
+
+</net_list>
+
+</model> 
+---------------- Datapath Model END ------------------
+
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+	Port: edgeCorrect : edge_V | {10 }
+	Port: edgeCorrect : cubieColor_V | {1 2 3 4 5 6 7 8 9 10 11 12 }
+  - Chain level:
+	State 1
+	State 2
+	State 3
+		tmp_s : 1
+		tmp_201 : 1
+	State 4
+		tmp_202 : 1
+		tmp_203 : 1
+	State 5
+		tmp_204 : 1
+	State 6
+		tmp_205 : 1
+	State 7
+		tmp_206 : 1
+	State 8
+		tmp_207 : 1
+		tmp_208 : 1
+	State 9
+		tmp_209 : 1
+	State 10
+		tmp_210 : 1
+		tmp_211 : 1
+		sel_tmp2 : 1
+		sel_tmp6 : 1
+		tmp26 : 2
+		sel_tmp10 : 2
+		tmp27 : 2
+		sel_tmp14 : 2
+		tmp32 : 1
+		tmp33 : 2
+	State 11
+		tmp_212 : 1
+		tmp_213 : 1
+		tmp28 : 2
+		sel_tmp17 : 2
+		tmp29 : 2
+		sel_tmp19 : 2
+		tmp35 : 2
+	State 12
+		tmp_214 : 1
+		tmp_215 : 1
+		tmp30 : 2
+		sel_tmp21 : 2
+		tmp31 : 2
+		sel_tmp23 : 2
+		tmp36 : 2
+		tmp37 : 2
+		agg_result_V : 2
+		StgValue_103 : 2
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+
+* Functional unit list:
+|----------|------------------------|---------|---------|
+| Operation|     Functional Unit    |    FF   |   LUT   |
+|----------|------------------------|---------|---------|
+|          |       grp_fu_100       |    0    |    9    |
+|          |       grp_fu_105       |    0    |    9    |
+|          |       grp_fu_110       |    0    |    9    |
+|          |       grp_fu_116       |    0    |    9    |
+|          |       grp_fu_121       |    0    |    9    |
+|          |       grp_fu_126       |    0    |    9    |
+|          |     tmp_207_fu_140     |    0    |    9    |
+|   icmp   |     sel_tmp_fu_146     |    0    |    9    |
+|          |     sel_tmp4_fu_162    |    0    |    9    |
+|          |     sel_tmp8_fu_178    |    0    |    9    |
+|          |    sel_tmp12_fu_195    |    0    |    9    |
+|          |     tmp_213_fu_224     |    0    |    9    |
+|          |    sel_tmp16_fu_230    |    0    |    9    |
+|          |    sel_tmp18_fu_246    |    0    |    9    |
+|          |    sel_tmp20_fu_262    |    0    |    9    |
+|          |    sel_tmp22_fu_267    |    0    |    9    |
+|----------|------------------------|---------|---------|
+|          |       tmp_fu_152       |    0    |    2    |
+|          |     sel_tmp2_fu_156    |    0    |    2    |
+|          |      tmp25_fu_168      |    0    |    2    |
+|          |     sel_tmp6_fu_172    |    0    |    2    |
+|          |      tmp26_fu_184      |    0    |    2    |
+|          |    sel_tmp10_fu_189    |    0    |    2    |
+|          |      tmp27_fu_201      |    0    |    2    |
+|    and   |    sel_tmp14_fu_206    |    0    |    2    |
+|          |      tmp28_fu_235      |    0    |    2    |
+|          |    sel_tmp17_fu_240    |    0    |    2    |
+|          |      tmp29_fu_251      |    0    |    2    |
+|          |    sel_tmp19_fu_256    |    0    |    2    |
+|          |      tmp30_fu_278      |    0    |    2    |
+|          |    sel_tmp21_fu_283    |    0    |    2    |
+|          |      tmp31_fu_288      |    0    |    2    |
+|          |    sel_tmp23_fu_293    |    0    |    2    |
+|----------|------------------------|---------|---------|
+|          |      tmp32_fu_212      |    0    |    2    |
+|          |      tmp33_fu_218      |    0    |    2    |
+|          |      tmp35_fu_272      |    0    |    2    |
+|    or    |      tmp34_fu_298      |    0    |    2    |
+|          |      tmp36_fu_302      |    0    |    2    |
+|          |      tmp37_fu_308      |    0    |    2    |
+|          |   agg_result_V_fu_313  |    0    |    2    |
+|----------|------------------------|---------|---------|
+|   read   | edge_V_read_read_fu_64 |    0    |    0    |
+|----------|------------------------|---------|---------|
+|   Total  |                        |    0    |   190   |
+|----------|------------------------|---------|---------|
+
+Memories:
+N/A
+
+* Register list:
++-----------------------------+--------+
+|                             |   FF   |
++-----------------------------+--------+
+|cubieColor_V_load_137_reg_344|    3   |
+|cubieColor_V_load_139_reg_354|    3   |
+|     edge_V_read_reg_379     |    4   |
+|           reg_131           |    3   |
+|      sel_tmp20_reg_397      |    1   |
+|      sel_tmp22_reg_402      |    1   |
+|        tmp32_reg_387        |    1   |
+|        tmp33_reg_392        |    1   |
+|        tmp35_reg_407        |    1   |
+|       tmp_201_reg_324       |    1   |
+|       tmp_202_reg_329       |    1   |
+|       tmp_203_reg_334       |    1   |
+|       tmp_204_reg_339       |    1   |
+|       tmp_205_reg_349       |    1   |
+|       tmp_206_reg_359       |    1   |
+|       tmp_207_reg_364       |    1   |
+|       tmp_208_reg_369       |    1   |
+|       tmp_209_reg_374       |    1   |
+|        tmp_s_reg_319        |    1   |
++-----------------------------+--------+
+|            Total            |   28   |
++-----------------------------+--------+
+
+* Multiplexer (MUX) list: 
+|------------------|------|------|------|--------||---------||---------|
+|       Comp       |  Pin | Size |  BW  | S x BW ||  Delay  ||   LUT   |
+|------------------|------|------|------|--------||---------||---------|
+| grp_access_fu_70 |  p0  |  11  |   3  |   33   ||    21   |
+| grp_access_fu_70 |  p2  |  10  |   0  |    0   ||    21   |
+|    grp_fu_110    |  p0  |   2  |   3  |    6   ||    9    |
+|      reg_131     |  p0  |   2  |   3  |    6   ||    9    |
+|------------------|------|------|------|--------||---------||---------|
+|       Total      |      |      |      |   45   ||  7.6643 ||    60   |
+|------------------|------|------|------|--------||---------||---------|
+
+
+
+* Summary:
++-----------+--------+--------+--------+
+|           |  Delay |   FF   |   LUT  |
++-----------+--------+--------+--------+
+|  Function |    -   |    0   |   190  |
+|   Memory  |    -   |    -   |    -   |
+|Multiplexer|    7   |    -   |   60   |
+|  Register |    -   |   28   |    -   |
++-----------+--------+--------+--------+
+|   Total   |    7   |   28   |   250  |
++-----------+--------+--------+--------+

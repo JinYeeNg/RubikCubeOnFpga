@@ -1,0 +1,148 @@
+<profile>
+
+<section name = "Vivado HLS Report for 'rotateCubeHorizontal'" level="0">
+<item name = "Date">Fri Jan  4 20:12:43 2019
+</item>
+<item name = "Version">2018.2 (Build 2258646 on Thu Jun 14 20:25:20 MDT 2018)</item>
+<item name = "Project">Rubik_Cube_Layer_All</item>
+<item name = "Solution">solution1</item>
+<item name = "Product family">zynq</item>
+<item name = "Target device">xc7z020clg400-1</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing (ns)">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="4">Clock, Target, Estimated, Uncertainty</keys>
+<column name="ap_clk">12.00, 6.106, 1.50</column>
+</table>
+</item>
+</section>
+</item>
+<item name = "Latency (clock cycles)">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">, min, max, min, max, Type</keys>
+<column name="">148, 148, 148, 148, none</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="7">Instance, Module, min, max, min, max, Type</keys>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+<column name="- rotateCubeHorizontal_label1">120, 120, 20, -, -, 6, no</column>
+<column name=" + rotateCubeHorizontal_label1.1">18, 18, 2, -, -, 9, no</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Utilization Estimates" level="0">
+<item name = "Summary"><table name="" hasTotal="1">
+<keys size="5">Name, BRAM_18K, DSP48E, FF, LUT</keys>
+<column name="DSP">-, -, -, -</column>
+<column name="Expression">-, -, 0, 103</column>
+<column name="FIFO">-, -, -, -</column>
+<column name="Instance">-, -, -, -</column>
+<column name="Memory">0, -, 6, 3</column>
+<column name="Multiplexer">-, -, -, 696</column>
+<column name="Register">-, -, 59, -</column>
+<specialColumn name="Available">280, 220, 106400, 53200</specialColumn>
+<specialColumn name="Utilization (%)">0, 0, ~0, 1</specialColumn>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="1">
+<keys size="6">Instance, Module, BRAM_18K, DSP48E, FF, LUT</keys>
+</table>
+</item>
+<item name = "DSP48"><table name="" hasTotal="0">
+<keys size="3">Instance, Module, Expression</keys>
+</table>
+</item>
+<item name = "Memory"><table name="" hasTotal="1">
+<keys size="9">Memory, Module, BRAM_18K, FF, LUT, Words, Bits, Banks, W*Bits*Banks</keys>
+<column name="cubieTemp_V_U">turnCube_cubieTembkb, 0, 6, 3, 54, 3, 1, 162</column>
+</table>
+</item>
+<item name = "FIFO"><table name="" hasTotal="1">
+<keys size="7">Name, BRAM_18K, FF, LUT, Depth, Bits, Size:D*B</keys>
+</table>
+</item>
+<item name = "Expression"><table name="" hasTotal="1">
+<keys size="7">Variable Name, Operation, DSP48E, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
+<column name="i_V_fu_851_p2">+, 0, 0, 12, 3, 1</column>
+<column name="j_V_fu_885_p2">+, 0, 0, 13, 4, 1</column>
+<column name="moveCounter_V_assign_fu_818_p2">+, 0, 0, 15, 8, 1</column>
+<column name="r_V_fu_834_p2">+, 0, 0, 15, 9, 2</column>
+<column name="tmp_12_fu_873_p2">+, 0, 0, 15, 7, 7</column>
+<column name="tmp_13_fu_895_p2">+, 0, 0, 15, 7, 7</column>
+<column name="tmp_64_fu_845_p2">icmp, 0, 0, 9, 3, 3</column>
+<column name="tmp_65_fu_879_p2">icmp, 0, 0, 9, 4, 4</column>
+</table>
+</item>
+<item name = "Multiplexer"><table name="" hasTotal="1">
+<keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
+<column name="ap_NS_fsm">145, 32, 1, 32</column>
+<column name="cubieColor_V_address0">133, 29, 6, 174</column>
+<column name="cubieColor_V_address1">129, 28, 6, 168</column>
+<column name="cubieTemp_V_address0">133, 29, 6, 174</column>
+<column name="cubieTemp_V_address1">129, 28, 6, 168</column>
+<column name="moveCounter_V_o">9, 2, 8, 16</column>
+<column name="p_4_reg_803">9, 2, 4, 8</column>
+<column name="p_s_reg_792">9, 2, 3, 6</column>
+</table>
+</item>
+<item name = "Register"><table name="" hasTotal="1">
+<keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
+<column name="ap_CS_fsm">31, 0, 31, 0</column>
+<column name="i_V_reg_1178">3, 0, 3, 0</column>
+<column name="j_V_reg_1191">4, 0, 4, 0</column>
+<column name="p_4_reg_803">4, 0, 4, 0</column>
+<column name="p_s_reg_792">3, 0, 3, 0</column>
+<column name="tmp_12_reg_1183">7, 0, 7, 0</column>
+<column name="tmp_13_cast_reg_1196">7, 0, 64, 57</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Interface" level="0">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">RTL Ports, Dir, Bits, Protocol, Source Object, C Type</keys>
+<column name="ap_clk">in, 1, ap_ctrl_hs, rotateCubeHorizontal, return value</column>
+<column name="ap_rst">in, 1, ap_ctrl_hs, rotateCubeHorizontal, return value</column>
+<column name="ap_start">in, 1, ap_ctrl_hs, rotateCubeHorizontal, return value</column>
+<column name="ap_done">out, 1, ap_ctrl_hs, rotateCubeHorizontal, return value</column>
+<column name="ap_idle">out, 1, ap_ctrl_hs, rotateCubeHorizontal, return value</column>
+<column name="ap_ready">out, 1, ap_ctrl_hs, rotateCubeHorizontal, return value</column>
+<column name="moveCounter_V_i">in, 8, ap_ovld, moveCounter_V, pointer</column>
+<column name="moveCounter_V_o">out, 8, ap_ovld, moveCounter_V, pointer</column>
+<column name="moveCounter_V_o_ap_vld">out, 1, ap_ovld, moveCounter_V, pointer</column>
+<column name="moves_V_address0">out, 8, ap_memory, moves_V, array</column>
+<column name="moves_V_ce0">out, 1, ap_memory, moves_V, array</column>
+<column name="moves_V_we0">out, 1, ap_memory, moves_V, array</column>
+<column name="moves_V_d0">out, 4, ap_memory, moves_V, array</column>
+<column name="cubieColor_V_address0">out, 6, ap_memory, cubieColor_V, array</column>
+<column name="cubieColor_V_ce0">out, 1, ap_memory, cubieColor_V, array</column>
+<column name="cubieColor_V_we0">out, 1, ap_memory, cubieColor_V, array</column>
+<column name="cubieColor_V_d0">out, 3, ap_memory, cubieColor_V, array</column>
+<column name="cubieColor_V_q0">in, 3, ap_memory, cubieColor_V, array</column>
+<column name="cubieColor_V_address1">out, 6, ap_memory, cubieColor_V, array</column>
+<column name="cubieColor_V_ce1">out, 1, ap_memory, cubieColor_V, array</column>
+<column name="cubieColor_V_we1">out, 1, ap_memory, cubieColor_V, array</column>
+<column name="cubieColor_V_d1">out, 3, ap_memory, cubieColor_V, array</column>
+</table>
+</item>
+</section>
+</profile>

@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<Runs Version="1" Minor="0">
+	<Run Id="synth_1" LaunchDir="/home/jinyeeng/Downloads/RubikCube-af660b02594911b39652037663f50280ce7ec755/Rubik_Cube_Layer_All_hlx/Rubik_Cube_Layer_All_hlx.runs/synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="impl_1" LaunchDir="/home/jinyeeng/Downloads/RubikCube-af660b02594911b39652037663f50280ce7ec755/Rubik_Cube_Layer_All_hlx/Rubik_Cube_Layer_All_hlx.runs/impl_1" FlowId="Vivado_Implementation" FromStepId="init_design" ToStepId="write_bitstream">
+		<Parent Id="synth_1"/>
+	</Run>
+</Runs>
+

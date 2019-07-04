@@ -1,0 +1,20 @@
+
+
+Implementation tool: Xilinx Vivado v.2018.2
+Project:             Rubik_Cube_Layer_All
+Solution:            solution1
+Device target:       xc7z020clg400-1
+Report date:         Fri Jan 04 20:40:27 +0000 2019
+
+#=== Post-Implementation Resource usage ===
+SLICE:         1738
+LUT:           5779
+FF:            2416
+DSP:              0
+BRAM:             5
+SRL:              0
+#=== Final timing ===
+CP required:    12.000
+CP achieved post-synthesis:    12.013
+CP achieved post-implementation:    11.623
+Timing met

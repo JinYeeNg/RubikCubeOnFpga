@@ -1,0 +1,672 @@
+
+
+================================================================
+== Vivado HLS Report for 'rotateCubeHorizontal'
+================================================================
+* Date:           Fri Jan  4 20:12:08 2019
+
+* Version:        2018.2 (Build 2258646 on Thu Jun 14 20:25:20 MDT 2018)
+* Project:        Rubik_Cube_Layer_All
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  12.00|     6.106|        1.50|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |  148|  148|  148|  148|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +----------------------------------+-----+-----+----------+-----------+-----------+------+----------+
+        |                                  |  Latency  | Iteration|  Initiation Interval  | Trip |          |
+        |             Loop Name            | min | max |  Latency |  achieved |   target  | Count| Pipelined|
+        +----------------------------------+-----+-----+----------+-----------+-----------+------+----------+
+        |- rotateCubeHorizontal_label1     |  120|  120|        20|          -|          -|     6|    no    |
+        | + rotateCubeHorizontal_label1.1  |   18|   18|         2|          -|          -|     9|    no    |
+        +----------------------------------+-----+-----+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 31
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	5  / (tmp_64)
+	3  / (!tmp_64)
+3 --> 
+	4  / (!tmp_65)
+	2  / (tmp_65)
+4 --> 
+	3  / true
+5 --> 
+	6  / true
+6 --> 
+	7  / true
+7 --> 
+	8  / true
+8 --> 
+	9  / true
+9 --> 
+	10  / true
+10 --> 
+	11  / true
+11 --> 
+	12  / true
+12 --> 
+	13  / true
+13 --> 
+	14  / true
+14 --> 
+	15  / true
+15 --> 
+	16  / true
+16 --> 
+	17  / true
+17 --> 
+	18  / true
+18 --> 
+	19  / true
+19 --> 
+	20  / true
+20 --> 
+	21  / true
+21 --> 
+	22  / true
+22 --> 
+	23  / true
+23 --> 
+	24  / true
+24 --> 
+	25  / true
+25 --> 
+	26  / true
+26 --> 
+	27  / true
+27 --> 
+	28  / true
+28 --> 
+	29  / true
+29 --> 
+	30  / true
+30 --> 
+	31  / true
+31 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 6.10>
+ST_1 : Operation 32 [1/1] (0.00ns)   --->   "%cubieTemp_V = alloca [54 x i3], align 1" [Rubik_Cube_Layer_All/layerAll.cpp:597]   --->   Operation 32 'alloca' 'cubieTemp_V' <Predicate = true> <Delay = 0.00> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_1 : Operation 33 [1/1] (0.00ns)   --->   "%cubieTemp_V_addr = getelementptr [54 x i3]* %cubieTemp_V, i64 0, i64 6" [Rubik_Cube_Layer_All/layerAll.cpp:608]   --->   Operation 33 'getelementptr' 'cubieTemp_V_addr' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 34 [1/1] (0.00ns)   --->   "%cubieTemp_V_addr_109 = getelementptr [54 x i3]* %cubieTemp_V, i64 0, i64 3" [Rubik_Cube_Layer_All/layerAll.cpp:609]   --->   Operation 34 'getelementptr' 'cubieTemp_V_addr_109' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 35 [1/1] (0.00ns)   --->   "%cubieTemp_V_addr_110 = getelementptr [54 x i3]* %cubieTemp_V, i64 0, i64 0" [Rubik_Cube_Layer_All/layerAll.cpp:610]   --->   Operation 35 'getelementptr' 'cubieTemp_V_addr_110' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 36 [1/1] (0.00ns)   --->   "%cubieTemp_V_addr_111 = getelementptr [54 x i3]* %cubieTemp_V, i64 0, i64 7" [Rubik_Cube_Layer_All/layerAll.cpp:611]   --->   Operation 36 'getelementptr' 'cubieTemp_V_addr_111' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 37 [1/1] (0.00ns)   --->   "%cubieTemp_V_addr_112 = getelementptr [54 x i3]* %cubieTemp_V, i64 0, i64 4" [Rubik_Cube_Layer_All/layerAll.cpp:612]   --->   Operation 37 'getelementptr' 'cubieTemp_V_addr_112' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 38 [1/1] (0.00ns)   --->   "%cubieTemp_V_addr_113 = getelementptr [54 x i3]* %cubieTemp_V, i64 0, i64 1" [Rubik_Cube_Layer_All/layerAll.cpp:613]   --->   Operation 38 'getelementptr' 'cubieTemp_V_addr_113' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 39 [1/1] (0.00ns)   --->   "%cubieTemp_V_addr_114 = getelementptr [54 x i3]* %cubieTemp_V, i64 0, i64 8" [Rubik_Cube_Layer_All/layerAll.cpp:614]   --->   Operation 39 'getelementptr' 'cubieTemp_V_addr_114' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 40 [1/1] (0.00ns)   --->   "%cubieTemp_V_addr_115 = getelementptr [54 x i3]* %cubieTemp_V, i64 0, i64 5" [Rubik_Cube_Layer_All/layerAll.cpp:615]   --->   Operation 40 'getelementptr' 'cubieTemp_V_addr_115' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 41 [1/1] (0.00ns)   --->   "%cubieTemp_V_addr_116 = getelementptr [54 x i3]* %cubieTemp_V, i64 0, i64 2" [Rubik_Cube_Layer_All/layerAll.cpp:616]   --->   Operation 41 'getelementptr' 'cubieTemp_V_addr_116' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 42 [1/1] (0.00ns)   --->   "%cubieTemp_V_addr_117 = getelementptr [54 x i3]* %cubieTemp_V, i64 0, i64 11" [Rubik_Cube_Layer_All/layerAll.cpp:618]   --->   Operation 42 'getelementptr' 'cubieTemp_V_addr_117' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 43 [1/1] (0.00ns)   --->   "%cubieTemp_V_addr_118 = getelementptr [54 x i3]* %cubieTemp_V, i64 0, i64 14" [Rubik_Cube_Layer_All/layerAll.cpp:619]   --->   Operation 43 'getelementptr' 'cubieTemp_V_addr_118' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 44 [1/1] (0.00ns)   --->   "%cubieTemp_V_addr_119 = getelementptr [54 x i3]* %cubieTemp_V, i64 0, i64 17" [Rubik_Cube_Layer_All/layerAll.cpp:620]   --->   Operation 44 'getelementptr' 'cubieTemp_V_addr_119' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 45 [1/1] (0.00ns)   --->   "%cubieTemp_V_addr_120 = getelementptr [54 x i3]* %cubieTemp_V, i64 0, i64 10" [Rubik_Cube_Layer_All/layerAll.cpp:621]   --->   Operation 45 'getelementptr' 'cubieTemp_V_addr_120' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 46 [1/1] (0.00ns)   --->   "%cubieTemp_V_addr_121 = getelementptr [54 x i3]* %cubieTemp_V, i64 0, i64 13" [Rubik_Cube_Layer_All/layerAll.cpp:622]   --->   Operation 46 'getelementptr' 'cubieTemp_V_addr_121' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 47 [1/1] (0.00ns)   --->   "%cubieTemp_V_addr_122 = getelementptr [54 x i3]* %cubieTemp_V, i64 0, i64 16" [Rubik_Cube_Layer_All/layerAll.cpp:623]   --->   Operation 47 'getelementptr' 'cubieTemp_V_addr_122' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 48 [1/1] (0.00ns)   --->   "%cubieTemp_V_addr_123 = getelementptr [54 x i3]* %cubieTemp_V, i64 0, i64 9" [Rubik_Cube_Layer_All/layerAll.cpp:624]   --->   Operation 48 'getelementptr' 'cubieTemp_V_addr_123' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 49 [1/1] (0.00ns)   --->   "%cubieTemp_V_addr_124 = getelementptr [54 x i3]* %cubieTemp_V, i64 0, i64 12" [Rubik_Cube_Layer_All/layerAll.cpp:625]   --->   Operation 49 'getelementptr' 'cubieTemp_V_addr_124' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 50 [1/1] (0.00ns)   --->   "%cubieTemp_V_addr_125 = getelementptr [54 x i3]* %cubieTemp_V, i64 0, i64 15" [Rubik_Cube_Layer_All/layerAll.cpp:626]   --->   Operation 50 'getelementptr' 'cubieTemp_V_addr_125' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 51 [1/1] (0.00ns)   --->   "%cubieTemp_V_addr_126 = getelementptr [54 x i3]* %cubieTemp_V, i64 0, i64 36" [Rubik_Cube_Layer_All/layerAll.cpp:628]   --->   Operation 51 'getelementptr' 'cubieTemp_V_addr_126' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 52 [1/1] (0.00ns)   --->   "%cubieTemp_V_addr_127 = getelementptr [54 x i3]* %cubieTemp_V, i64 0, i64 37" [Rubik_Cube_Layer_All/layerAll.cpp:629]   --->   Operation 52 'getelementptr' 'cubieTemp_V_addr_127' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 53 [1/1] (0.00ns)   --->   "%cubieTemp_V_addr_128 = getelementptr [54 x i3]* %cubieTemp_V, i64 0, i64 38" [Rubik_Cube_Layer_All/layerAll.cpp:630]   --->   Operation 53 'getelementptr' 'cubieTemp_V_addr_128' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 54 [1/1] (0.00ns)   --->   "%cubieTemp_V_addr_129 = getelementptr [54 x i3]* %cubieTemp_V, i64 0, i64 39" [Rubik_Cube_Layer_All/layerAll.cpp:631]   --->   Operation 54 'getelementptr' 'cubieTemp_V_addr_129' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 55 [1/1] (0.00ns)   --->   "%cubieTemp_V_addr_130 = getelementptr [54 x i3]* %cubieTemp_V, i64 0, i64 40" [Rubik_Cube_Layer_All/layerAll.cpp:632]   --->   Operation 55 'getelementptr' 'cubieTemp_V_addr_130' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 56 [1/1] (0.00ns)   --->   "%cubieTemp_V_addr_131 = getelementptr [54 x i3]* %cubieTemp_V, i64 0, i64 41" [Rubik_Cube_Layer_All/layerAll.cpp:633]   --->   Operation 56 'getelementptr' 'cubieTemp_V_addr_131' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 57 [1/1] (0.00ns)   --->   "%cubieTemp_V_addr_132 = getelementptr [54 x i3]* %cubieTemp_V, i64 0, i64 42" [Rubik_Cube_Layer_All/layerAll.cpp:634]   --->   Operation 57 'getelementptr' 'cubieTemp_V_addr_132' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 58 [1/1] (0.00ns)   --->   "%cubieTemp_V_addr_133 = getelementptr [54 x i3]* %cubieTemp_V, i64 0, i64 43" [Rubik_Cube_Layer_All/layerAll.cpp:635]   --->   Operation 58 'getelementptr' 'cubieTemp_V_addr_133' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 59 [1/1] (0.00ns)   --->   "%cubieTemp_V_addr_134 = getelementptr [54 x i3]* %cubieTemp_V, i64 0, i64 44" [Rubik_Cube_Layer_All/layerAll.cpp:636]   --->   Operation 59 'getelementptr' 'cubieTemp_V_addr_134' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 60 [1/1] (0.00ns)   --->   "%cubieTemp_V_addr_135 = getelementptr [54 x i3]* %cubieTemp_V, i64 0, i64 45" [Rubik_Cube_Layer_All/layerAll.cpp:638]   --->   Operation 60 'getelementptr' 'cubieTemp_V_addr_135' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 61 [1/1] (0.00ns)   --->   "%cubieTemp_V_addr_136 = getelementptr [54 x i3]* %cubieTemp_V, i64 0, i64 46" [Rubik_Cube_Layer_All/layerAll.cpp:639]   --->   Operation 61 'getelementptr' 'cubieTemp_V_addr_136' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 62 [1/1] (0.00ns)   --->   "%cubieTemp_V_addr_137 = getelementptr [54 x i3]* %cubieTemp_V, i64 0, i64 47" [Rubik_Cube_Layer_All/layerAll.cpp:640]   --->   Operation 62 'getelementptr' 'cubieTemp_V_addr_137' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 63 [1/1] (0.00ns)   --->   "%cubieTemp_V_addr_138 = getelementptr [54 x i3]* %cubieTemp_V, i64 0, i64 48" [Rubik_Cube_Layer_All/layerAll.cpp:641]   --->   Operation 63 'getelementptr' 'cubieTemp_V_addr_138' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 64 [1/1] (0.00ns)   --->   "%cubieTemp_V_addr_139 = getelementptr [54 x i3]* %cubieTemp_V, i64 0, i64 49" [Rubik_Cube_Layer_All/layerAll.cpp:642]   --->   Operation 64 'getelementptr' 'cubieTemp_V_addr_139' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 65 [1/1] (0.00ns)   --->   "%cubieTemp_V_addr_140 = getelementptr [54 x i3]* %cubieTemp_V, i64 0, i64 50" [Rubik_Cube_Layer_All/layerAll.cpp:643]   --->   Operation 65 'getelementptr' 'cubieTemp_V_addr_140' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 66 [1/1] (0.00ns)   --->   "%cubieTemp_V_addr_141 = getelementptr [54 x i3]* %cubieTemp_V, i64 0, i64 51" [Rubik_Cube_Layer_All/layerAll.cpp:644]   --->   Operation 66 'getelementptr' 'cubieTemp_V_addr_141' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 67 [1/1] (0.00ns)   --->   "%cubieTemp_V_addr_142 = getelementptr [54 x i3]* %cubieTemp_V, i64 0, i64 52" [Rubik_Cube_Layer_All/layerAll.cpp:645]   --->   Operation 67 'getelementptr' 'cubieTemp_V_addr_142' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 68 [1/1] (0.00ns)   --->   "%cubieTemp_V_addr_143 = getelementptr [54 x i3]* %cubieTemp_V, i64 0, i64 53" [Rubik_Cube_Layer_All/layerAll.cpp:646]   --->   Operation 68 'getelementptr' 'cubieTemp_V_addr_143' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 69 [1/1] (0.00ns)   --->   "%cubieTemp_V_addr_144 = getelementptr [54 x i3]* %cubieTemp_V, i64 0, i64 27" [Rubik_Cube_Layer_All/layerAll.cpp:648]   --->   Operation 69 'getelementptr' 'cubieTemp_V_addr_144' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 70 [1/1] (0.00ns)   --->   "%cubieTemp_V_addr_145 = getelementptr [54 x i3]* %cubieTemp_V, i64 0, i64 28" [Rubik_Cube_Layer_All/layerAll.cpp:649]   --->   Operation 70 'getelementptr' 'cubieTemp_V_addr_145' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 71 [1/1] (0.00ns)   --->   "%cubieTemp_V_addr_146 = getelementptr [54 x i3]* %cubieTemp_V, i64 0, i64 29" [Rubik_Cube_Layer_All/layerAll.cpp:650]   --->   Operation 71 'getelementptr' 'cubieTemp_V_addr_146' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 72 [1/1] (0.00ns)   --->   "%cubieTemp_V_addr_147 = getelementptr [54 x i3]* %cubieTemp_V, i64 0, i64 30" [Rubik_Cube_Layer_All/layerAll.cpp:651]   --->   Operation 72 'getelementptr' 'cubieTemp_V_addr_147' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 73 [1/1] (0.00ns)   --->   "%cubieTemp_V_addr_148 = getelementptr [54 x i3]* %cubieTemp_V, i64 0, i64 31" [Rubik_Cube_Layer_All/layerAll.cpp:652]   --->   Operation 73 'getelementptr' 'cubieTemp_V_addr_148' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 74 [1/1] (0.00ns)   --->   "%cubieTemp_V_addr_149 = getelementptr [54 x i3]* %cubieTemp_V, i64 0, i64 32" [Rubik_Cube_Layer_All/layerAll.cpp:653]   --->   Operation 74 'getelementptr' 'cubieTemp_V_addr_149' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 75 [1/1] (0.00ns)   --->   "%cubieTemp_V_addr_150 = getelementptr [54 x i3]* %cubieTemp_V, i64 0, i64 33" [Rubik_Cube_Layer_All/layerAll.cpp:654]   --->   Operation 75 'getelementptr' 'cubieTemp_V_addr_150' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 76 [1/1] (0.00ns)   --->   "%cubieTemp_V_addr_151 = getelementptr [54 x i3]* %cubieTemp_V, i64 0, i64 34" [Rubik_Cube_Layer_All/layerAll.cpp:655]   --->   Operation 76 'getelementptr' 'cubieTemp_V_addr_151' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 77 [1/1] (0.00ns)   --->   "%cubieTemp_V_addr_152 = getelementptr [54 x i3]* %cubieTemp_V, i64 0, i64 35" [Rubik_Cube_Layer_All/layerAll.cpp:656]   --->   Operation 77 'getelementptr' 'cubieTemp_V_addr_152' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 78 [1/1] (0.00ns)   --->   "%cubieTemp_V_addr_153 = getelementptr [54 x i3]* %cubieTemp_V, i64 0, i64 18" [Rubik_Cube_Layer_All/layerAll.cpp:658]   --->   Operation 78 'getelementptr' 'cubieTemp_V_addr_153' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 79 [1/1] (0.00ns)   --->   "%cubieTemp_V_addr_154 = getelementptr [54 x i3]* %cubieTemp_V, i64 0, i64 19" [Rubik_Cube_Layer_All/layerAll.cpp:659]   --->   Operation 79 'getelementptr' 'cubieTemp_V_addr_154' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 80 [1/1] (0.00ns)   --->   "%cubieTemp_V_addr_155 = getelementptr [54 x i3]* %cubieTemp_V, i64 0, i64 20" [Rubik_Cube_Layer_All/layerAll.cpp:660]   --->   Operation 80 'getelementptr' 'cubieTemp_V_addr_155' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 81 [1/1] (0.00ns)   --->   "%cubieTemp_V_addr_156 = getelementptr [54 x i3]* %cubieTemp_V, i64 0, i64 21" [Rubik_Cube_Layer_All/layerAll.cpp:661]   --->   Operation 81 'getelementptr' 'cubieTemp_V_addr_156' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 82 [1/1] (0.00ns)   --->   "%cubieTemp_V_addr_157 = getelementptr [54 x i3]* %cubieTemp_V, i64 0, i64 22" [Rubik_Cube_Layer_All/layerAll.cpp:662]   --->   Operation 82 'getelementptr' 'cubieTemp_V_addr_157' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 83 [1/1] (0.00ns)   --->   "%cubieTemp_V_addr_158 = getelementptr [54 x i3]* %cubieTemp_V, i64 0, i64 23" [Rubik_Cube_Layer_All/layerAll.cpp:663]   --->   Operation 83 'getelementptr' 'cubieTemp_V_addr_158' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 84 [1/1] (0.00ns)   --->   "%cubieTemp_V_addr_159 = getelementptr [54 x i3]* %cubieTemp_V, i64 0, i64 24" [Rubik_Cube_Layer_All/layerAll.cpp:664]   --->   Operation 84 'getelementptr' 'cubieTemp_V_addr_159' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 85 [1/1] (0.00ns)   --->   "%cubieTemp_V_addr_160 = getelementptr [54 x i3]* %cubieTemp_V, i64 0, i64 25" [Rubik_Cube_Layer_All/layerAll.cpp:665]   --->   Operation 85 'getelementptr' 'cubieTemp_V_addr_160' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 86 [1/1] (0.00ns)   --->   "%cubieTemp_V_addr_161 = getelementptr [54 x i3]* %cubieTemp_V, i64 0, i64 26" [Rubik_Cube_Layer_All/layerAll.cpp:666]   --->   Operation 86 'getelementptr' 'cubieTemp_V_addr_161' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 87 [1/1] (0.00ns)   --->   "%t_V = load i8* @moveCounter_V, align 1" [Rubik_Cube_Layer_All/layerAll.cpp:586]   --->   Operation 87 'load' 't_V' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 88 [1/1] (1.91ns)   --->   "%moveCounter_V_assign = add i8 %t_V, 1" [Rubik_Cube_Layer_All/layerAll.cpp:586]   --->   Operation 88 'add' 'moveCounter_V_assign' <Predicate = true> <Delay = 1.91> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.87> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 89 [1/1] (0.00ns)   --->   "store i8 %moveCounter_V_assign, i8* @moveCounter_V, align 1" [Rubik_Cube_Layer_All/layerAll.cpp:586]   --->   Operation 89 'store' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 90 [1/1] (0.00ns)   --->   "%lhs_V_cast = zext i8 %moveCounter_V_assign to i9" [Rubik_Cube_Layer_All/layerAll.cpp:590]   --->   Operation 90 'zext' 'lhs_V_cast' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 91 [1/1] (1.91ns)   --->   "%r_V = add i9 %lhs_V_cast, -1" [Rubik_Cube_Layer_All/layerAll.cpp:590]   --->   Operation 91 'add' 'r_V' <Predicate = true> <Delay = 1.91> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.87> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 92 [1/1] (0.00ns)   --->   "%tmp_s = sext i9 %r_V to i64" [Rubik_Cube_Layer_All/layerAll.cpp:590]   --->   Operation 92 'sext' 'tmp_s' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 93 [1/1] (0.00ns)   --->   "%moves_V_addr = getelementptr [200 x i4]* @moves_V, i64 0, i64 %tmp_s" [Rubik_Cube_Layer_All/layerAll.cpp:590]   --->   Operation 93 'getelementptr' 'moves_V_addr' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 94 [1/1] (2.27ns)   --->   "store i4 -4, i4* %moves_V_addr, align 1" [Rubik_Cube_Layer_All/layerAll.cpp:590]   --->   Operation 94 'store' <Predicate = true> <Delay = 2.27> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_1 : Operation 95 [1/1] (1.76ns)   --->   "br label %.preheader" [Rubik_Cube_Layer_All/layerAll.cpp:600]   --->   Operation 95 'br' <Predicate = true> <Delay = 1.76>
+
+State 2 <SV = 1> <Delay = 2.32>
+ST_2 : Operation 96 [1/1] (0.00ns)   --->   "%p_s = phi i3 [ %i_V, %3 ], [ 0, %.preheader.preheader ]"   --->   Operation 96 'phi' 'p_s' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 97 [1/1] (1.13ns)   --->   "%tmp_64 = icmp eq i3 %p_s, -2" [Rubik_Cube_Layer_All/layerAll.cpp:600]   --->   Operation 97 'icmp' 'tmp_64' <Predicate = true> <Delay = 1.13> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.30> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 98 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 6, i64 6, i64 6) nounwind"   --->   Operation 98 'speclooptripcount' 'empty' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 99 [1/1] (1.65ns)   --->   "%i_V = add i3 %p_s, 1" [Rubik_Cube_Layer_All/layerAll.cpp:600]   --->   Operation 99 'add' 'i_V' <Predicate = true> <Delay = 1.65> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.87> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 100 [1/1] (0.00ns)   --->   "br i1 %tmp_64, label %4, label %0" [Rubik_Cube_Layer_All/layerAll.cpp:600]   --->   Operation 100 'br' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 101 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([28 x i8]* @p_str4) nounwind" [Rubik_Cube_Layer_All/layerAll.cpp:601]   --->   Operation 101 'specloopname' <Predicate = (!tmp_64)> <Delay = 0.00>
+ST_2 : Operation 102 [1/1] (0.00ns)   --->   "%tmp = call i32 (...)* @_ssdm_op_SpecRegionBegin([28 x i8]* @p_str4) nounwind" [Rubik_Cube_Layer_All/layerAll.cpp:601]   --->   Operation 102 'specregionbegin' 'tmp' <Predicate = (!tmp_64)> <Delay = 0.00>
+ST_2 : Operation 103 [1/1] (0.00ns)   --->   "%tmp_69_cast = zext i3 %p_s to i7" [Rubik_Cube_Layer_All/layerAll.cpp:600]   --->   Operation 103 'zext' 'tmp_69_cast' <Predicate = (!tmp_64)> <Delay = 0.00>
+ST_2 : Operation 104 [1/1] (0.00ns)   --->   "%tmp_11 = call i6 @_ssdm_op_BitConcatenate.i6.i3.i3(i3 %p_s, i3 0)" [Rubik_Cube_Layer_All/layerAll.cpp:600]   --->   Operation 104 'bitconcatenate' 'tmp_11' <Predicate = (!tmp_64)> <Delay = 0.00>
+ST_2 : Operation 105 [1/1] (0.00ns)   --->   "%p_shl_cast = zext i6 %tmp_11 to i7" [Rubik_Cube_Layer_All/layerAll.cpp:604]   --->   Operation 105 'zext' 'p_shl_cast' <Predicate = (!tmp_64)> <Delay = 0.00>
+ST_2 : Operation 106 [1/1] (1.82ns)   --->   "%tmp_12 = add i7 %tmp_69_cast, %p_shl_cast" [Rubik_Cube_Layer_All/layerAll.cpp:604]   --->   Operation 106 'add' 'tmp_12' <Predicate = (!tmp_64)> <Delay = 1.82> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.87> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 107 [1/1] (1.76ns)   --->   "br label %1" [Rubik_Cube_Layer_All/layerAll.cpp:602]   --->   Operation 107 'br' <Predicate = (!tmp_64)> <Delay = 1.76>
+ST_2 : Operation 108 [2/2] (2.32ns)   --->   "%cubieTemp_V_load = load i3* %cubieTemp_V_addr, align 2" [Rubik_Cube_Layer_All/layerAll.cpp:608]   --->   Operation 108 'load' 'cubieTemp_V_load' <Predicate = (tmp_64)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_2 : Operation 109 [2/2] (2.32ns)   --->   "%cubieTemp_V_load_305 = load i3* %cubieTemp_V_addr_109, align 1" [Rubik_Cube_Layer_All/layerAll.cpp:609]   --->   Operation 109 'load' 'cubieTemp_V_load_305' <Predicate = (tmp_64)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+
+State 3 <SV = 2> <Delay = 4.19>
+ST_3 : Operation 110 [1/1] (0.00ns)   --->   "%p_4 = phi i4 [ 0, %0 ], [ %j_V, %2 ]"   --->   Operation 110 'phi' 'p_4' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 111 [1/1] (1.30ns)   --->   "%tmp_65 = icmp eq i4 %p_4, -7" [Rubik_Cube_Layer_All/layerAll.cpp:602]   --->   Operation 111 'icmp' 'tmp_65' <Predicate = true> <Delay = 1.30> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.30> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 112 [1/1] (0.00ns)   --->   "%empty_9 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 9, i64 9, i64 9) nounwind"   --->   Operation 112 'speclooptripcount' 'empty_9' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 113 [1/1] (1.73ns)   --->   "%j_V = add i4 %p_4, 1" [Rubik_Cube_Layer_All/layerAll.cpp:602]   --->   Operation 113 'add' 'j_V' <Predicate = true> <Delay = 1.73> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.87> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 114 [1/1] (0.00ns)   --->   "br i1 %tmp_65, label %3, label %2" [Rubik_Cube_Layer_All/layerAll.cpp:602]   --->   Operation 114 'br' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 115 [1/1] (0.00ns)   --->   "%tmp_71_cast = zext i4 %p_4 to i7" [Rubik_Cube_Layer_All/layerAll.cpp:604]   --->   Operation 115 'zext' 'tmp_71_cast' <Predicate = (!tmp_65)> <Delay = 0.00>
+ST_3 : Operation 116 [1/1] (1.87ns)   --->   "%tmp_13 = add i7 %tmp_12, %tmp_71_cast" [Rubik_Cube_Layer_All/layerAll.cpp:604]   --->   Operation 116 'add' 'tmp_13' <Predicate = (!tmp_65)> <Delay = 1.87> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.87> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 117 [1/1] (0.00ns)   --->   "%tmp_13_cast = zext i7 %tmp_13 to i64" [Rubik_Cube_Layer_All/layerAll.cpp:604]   --->   Operation 117 'zext' 'tmp_13_cast' <Predicate = (!tmp_65)> <Delay = 0.00>
+ST_3 : Operation 118 [1/1] (0.00ns)   --->   "%cubieColor_V_addr = getelementptr [54 x i3]* @cubieColor_V, i64 0, i64 %tmp_13_cast" [Rubik_Cube_Layer_All/layerAll.cpp:604]   --->   Operation 118 'getelementptr' 'cubieColor_V_addr' <Predicate = (!tmp_65)> <Delay = 0.00>
+ST_3 : Operation 119 [2/2] (2.32ns)   --->   "%cubieColor_V_load = load i3* %cubieColor_V_addr, align 1" [Rubik_Cube_Layer_All/layerAll.cpp:604]   --->   Operation 119 'load' 'cubieColor_V_load' <Predicate = (!tmp_65)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_3 : Operation 120 [1/1] (0.00ns)   --->   "%empty_10 = call i32 (...)* @_ssdm_op_SpecRegionEnd([28 x i8]* @p_str4, i32 %tmp) nounwind" [Rubik_Cube_Layer_All/layerAll.cpp:606]   --->   Operation 120 'specregionend' 'empty_10' <Predicate = (tmp_65)> <Delay = 0.00>
+ST_3 : Operation 121 [1/1] (0.00ns)   --->   "br label %.preheader" [Rubik_Cube_Layer_All/layerAll.cpp:600]   --->   Operation 121 'br' <Predicate = (tmp_65)> <Delay = 0.00>
+
+State 4 <SV = 3> <Delay = 4.64>
+ST_4 : Operation 122 [1/1] (0.00ns)   --->   "%cubieTemp_V_addr_162 = getelementptr [54 x i3]* %cubieTemp_V, i64 0, i64 %tmp_13_cast" [Rubik_Cube_Layer_All/layerAll.cpp:604]   --->   Operation 122 'getelementptr' 'cubieTemp_V_addr_162' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 123 [1/2] (2.32ns)   --->   "%cubieColor_V_load = load i3* %cubieColor_V_addr, align 1" [Rubik_Cube_Layer_All/layerAll.cpp:604]   --->   Operation 123 'load' 'cubieColor_V_load' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_4 : Operation 124 [1/1] (2.32ns)   --->   "store i3 %cubieColor_V_load, i3* %cubieTemp_V_addr_162, align 1" [Rubik_Cube_Layer_All/layerAll.cpp:604]   --->   Operation 124 'store' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_4 : Operation 125 [1/1] (0.00ns)   --->   "br label %1" [Rubik_Cube_Layer_All/layerAll.cpp:602]   --->   Operation 125 'br' <Predicate = true> <Delay = 0.00>
+
+State 5 <SV = 2> <Delay = 4.64>
+ST_5 : Operation 126 [1/2] (2.32ns)   --->   "%cubieTemp_V_load = load i3* %cubieTemp_V_addr, align 2" [Rubik_Cube_Layer_All/layerAll.cpp:608]   --->   Operation 126 'load' 'cubieTemp_V_load' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_5 : Operation 127 [1/1] (2.32ns)   --->   "store i3 %cubieTemp_V_load, i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 0), align 16" [Rubik_Cube_Layer_All/layerAll.cpp:608]   --->   Operation 127 'store' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_5 : Operation 128 [1/2] (2.32ns)   --->   "%cubieTemp_V_load_305 = load i3* %cubieTemp_V_addr_109, align 1" [Rubik_Cube_Layer_All/layerAll.cpp:609]   --->   Operation 128 'load' 'cubieTemp_V_load_305' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_5 : Operation 129 [1/1] (2.32ns)   --->   "store i3 %cubieTemp_V_load_305, i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 1), align 1" [Rubik_Cube_Layer_All/layerAll.cpp:609]   --->   Operation 129 'store' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_5 : Operation 130 [2/2] (2.32ns)   --->   "%cubieTemp_V_load_306 = load i3* %cubieTemp_V_addr_110, align 16" [Rubik_Cube_Layer_All/layerAll.cpp:610]   --->   Operation 130 'load' 'cubieTemp_V_load_306' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_5 : Operation 131 [2/2] (2.32ns)   --->   "%cubieTemp_V_load_307 = load i3* %cubieTemp_V_addr_111, align 1" [Rubik_Cube_Layer_All/layerAll.cpp:611]   --->   Operation 131 'load' 'cubieTemp_V_load_307' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+
+State 6 <SV = 3> <Delay = 4.64>
+ST_6 : Operation 132 [1/2] (2.32ns)   --->   "%cubieTemp_V_load_306 = load i3* %cubieTemp_V_addr_110, align 16" [Rubik_Cube_Layer_All/layerAll.cpp:610]   --->   Operation 132 'load' 'cubieTemp_V_load_306' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_6 : Operation 133 [1/1] (2.32ns)   --->   "store i3 %cubieTemp_V_load_306, i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 2), align 2" [Rubik_Cube_Layer_All/layerAll.cpp:610]   --->   Operation 133 'store' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_6 : Operation 134 [1/2] (2.32ns)   --->   "%cubieTemp_V_load_307 = load i3* %cubieTemp_V_addr_111, align 1" [Rubik_Cube_Layer_All/layerAll.cpp:611]   --->   Operation 134 'load' 'cubieTemp_V_load_307' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_6 : Operation 135 [1/1] (2.32ns)   --->   "store i3 %cubieTemp_V_load_307, i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 3), align 1" [Rubik_Cube_Layer_All/layerAll.cpp:611]   --->   Operation 135 'store' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_6 : Operation 136 [2/2] (2.32ns)   --->   "%cubieTemp_V_load_308 = load i3* %cubieTemp_V_addr_112, align 4" [Rubik_Cube_Layer_All/layerAll.cpp:612]   --->   Operation 136 'load' 'cubieTemp_V_load_308' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_6 : Operation 137 [2/2] (2.32ns)   --->   "%cubieTemp_V_load_309 = load i3* %cubieTemp_V_addr_113, align 1" [Rubik_Cube_Layer_All/layerAll.cpp:613]   --->   Operation 137 'load' 'cubieTemp_V_load_309' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+
+State 7 <SV = 4> <Delay = 4.64>
+ST_7 : Operation 138 [1/2] (2.32ns)   --->   "%cubieTemp_V_load_308 = load i3* %cubieTemp_V_addr_112, align 4" [Rubik_Cube_Layer_All/layerAll.cpp:612]   --->   Operation 138 'load' 'cubieTemp_V_load_308' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_7 : Operation 139 [1/1] (2.32ns)   --->   "store i3 %cubieTemp_V_load_308, i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 4), align 4" [Rubik_Cube_Layer_All/layerAll.cpp:612]   --->   Operation 139 'store' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_7 : Operation 140 [1/2] (2.32ns)   --->   "%cubieTemp_V_load_309 = load i3* %cubieTemp_V_addr_113, align 1" [Rubik_Cube_Layer_All/layerAll.cpp:613]   --->   Operation 140 'load' 'cubieTemp_V_load_309' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_7 : Operation 141 [1/1] (2.32ns)   --->   "store i3 %cubieTemp_V_load_309, i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 5), align 1" [Rubik_Cube_Layer_All/layerAll.cpp:613]   --->   Operation 141 'store' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_7 : Operation 142 [2/2] (2.32ns)   --->   "%cubieTemp_V_load_310 = load i3* %cubieTemp_V_addr_114, align 8" [Rubik_Cube_Layer_All/layerAll.cpp:614]   --->   Operation 142 'load' 'cubieTemp_V_load_310' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_7 : Operation 143 [2/2] (2.32ns)   --->   "%cubieTemp_V_load_311 = load i3* %cubieTemp_V_addr_115, align 1" [Rubik_Cube_Layer_All/layerAll.cpp:615]   --->   Operation 143 'load' 'cubieTemp_V_load_311' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+
+State 8 <SV = 5> <Delay = 4.64>
+ST_8 : Operation 144 [1/2] (2.32ns)   --->   "%cubieTemp_V_load_310 = load i3* %cubieTemp_V_addr_114, align 8" [Rubik_Cube_Layer_All/layerAll.cpp:614]   --->   Operation 144 'load' 'cubieTemp_V_load_310' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_8 : Operation 145 [1/1] (2.32ns)   --->   "store i3 %cubieTemp_V_load_310, i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 6), align 2" [Rubik_Cube_Layer_All/layerAll.cpp:614]   --->   Operation 145 'store' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_8 : Operation 146 [1/2] (2.32ns)   --->   "%cubieTemp_V_load_311 = load i3* %cubieTemp_V_addr_115, align 1" [Rubik_Cube_Layer_All/layerAll.cpp:615]   --->   Operation 146 'load' 'cubieTemp_V_load_311' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_8 : Operation 147 [1/1] (2.32ns)   --->   "store i3 %cubieTemp_V_load_311, i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 7), align 1" [Rubik_Cube_Layer_All/layerAll.cpp:615]   --->   Operation 147 'store' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_8 : Operation 148 [2/2] (2.32ns)   --->   "%cubieTemp_V_load_312 = load i3* %cubieTemp_V_addr_116, align 2" [Rubik_Cube_Layer_All/layerAll.cpp:616]   --->   Operation 148 'load' 'cubieTemp_V_load_312' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_8 : Operation 149 [2/2] (2.32ns)   --->   "%cubieTemp_V_load_313 = load i3* %cubieTemp_V_addr_117, align 1" [Rubik_Cube_Layer_All/layerAll.cpp:618]   --->   Operation 149 'load' 'cubieTemp_V_load_313' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+
+State 9 <SV = 6> <Delay = 4.64>
+ST_9 : Operation 150 [1/2] (2.32ns)   --->   "%cubieTemp_V_load_312 = load i3* %cubieTemp_V_addr_116, align 2" [Rubik_Cube_Layer_All/layerAll.cpp:616]   --->   Operation 150 'load' 'cubieTemp_V_load_312' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_9 : Operation 151 [1/1] (2.32ns)   --->   "store i3 %cubieTemp_V_load_312, i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 8), align 8" [Rubik_Cube_Layer_All/layerAll.cpp:616]   --->   Operation 151 'store' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_9 : Operation 152 [1/2] (2.32ns)   --->   "%cubieTemp_V_load_313 = load i3* %cubieTemp_V_addr_117, align 1" [Rubik_Cube_Layer_All/layerAll.cpp:618]   --->   Operation 152 'load' 'cubieTemp_V_load_313' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_9 : Operation 153 [1/1] (2.32ns)   --->   "store i3 %cubieTemp_V_load_313, i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 9), align 1" [Rubik_Cube_Layer_All/layerAll.cpp:618]   --->   Operation 153 'store' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_9 : Operation 154 [2/2] (2.32ns)   --->   "%cubieTemp_V_load_314 = load i3* %cubieTemp_V_addr_118, align 1" [Rubik_Cube_Layer_All/layerAll.cpp:619]   --->   Operation 154 'load' 'cubieTemp_V_load_314' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_9 : Operation 155 [2/2] (2.32ns)   --->   "%cubieTemp_V_load_315 = load i3* %cubieTemp_V_addr_119, align 1" [Rubik_Cube_Layer_All/layerAll.cpp:620]   --->   Operation 155 'load' 'cubieTemp_V_load_315' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+
+State 10 <SV = 7> <Delay = 4.64>
+ST_10 : Operation 156 [1/2] (2.32ns)   --->   "%cubieTemp_V_load_314 = load i3* %cubieTemp_V_addr_118, align 1" [Rubik_Cube_Layer_All/layerAll.cpp:619]   --->   Operation 156 'load' 'cubieTemp_V_load_314' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_10 : Operation 157 [1/1] (2.32ns)   --->   "store i3 %cubieTemp_V_load_314, i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 10), align 2" [Rubik_Cube_Layer_All/layerAll.cpp:619]   --->   Operation 157 'store' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_10 : Operation 158 [1/2] (2.32ns)   --->   "%cubieTemp_V_load_315 = load i3* %cubieTemp_V_addr_119, align 1" [Rubik_Cube_Layer_All/layerAll.cpp:620]   --->   Operation 158 'load' 'cubieTemp_V_load_315' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_10 : Operation 159 [1/1] (2.32ns)   --->   "store i3 %cubieTemp_V_load_315, i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 11), align 1" [Rubik_Cube_Layer_All/layerAll.cpp:620]   --->   Operation 159 'store' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_10 : Operation 160 [2/2] (2.32ns)   --->   "%cubieTemp_V_load_316 = load i3* %cubieTemp_V_addr_120, align 1" [Rubik_Cube_Layer_All/layerAll.cpp:621]   --->   Operation 160 'load' 'cubieTemp_V_load_316' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_10 : Operation 161 [2/2] (2.32ns)   --->   "%cubieTemp_V_load_317 = load i3* %cubieTemp_V_addr_121, align 1" [Rubik_Cube_Layer_All/layerAll.cpp:622]   --->   Operation 161 'load' 'cubieTemp_V_load_317' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+
+State 11 <SV = 8> <Delay = 4.64>
+ST_11 : Operation 162 [1/2] (2.32ns)   --->   "%cubieTemp_V_load_316 = load i3* %cubieTemp_V_addr_120, align 1" [Rubik_Cube_Layer_All/layerAll.cpp:621]   --->   Operation 162 'load' 'cubieTemp_V_load_316' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_11 : Operation 163 [1/1] (2.32ns)   --->   "store i3 %cubieTemp_V_load_316, i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 12), align 4" [Rubik_Cube_Layer_All/layerAll.cpp:621]   --->   Operation 163 'store' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_11 : Operation 164 [1/2] (2.32ns)   --->   "%cubieTemp_V_load_317 = load i3* %cubieTemp_V_addr_121, align 1" [Rubik_Cube_Layer_All/layerAll.cpp:622]   --->   Operation 164 'load' 'cubieTemp_V_load_317' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_11 : Operation 165 [1/1] (2.32ns)   --->   "store i3 %cubieTemp_V_load_317, i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 13), align 1" [Rubik_Cube_Layer_All/layerAll.cpp:622]   --->   Operation 165 'store' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_11 : Operation 166 [2/2] (2.32ns)   --->   "%cubieTemp_V_load_318 = load i3* %cubieTemp_V_addr_122, align 1" [Rubik_Cube_Layer_All/layerAll.cpp:623]   --->   Operation 166 'load' 'cubieTemp_V_load_318' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_11 : Operation 167 [2/2] (2.32ns)   --->   "%cubieTemp_V_load_319 = load i3* %cubieTemp_V_addr_123, align 1" [Rubik_Cube_Layer_All/layerAll.cpp:624]   --->   Operation 167 'load' 'cubieTemp_V_load_319' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+
+State 12 <SV = 9> <Delay = 4.64>
+ST_12 : Operation 168 [1/2] (2.32ns)   --->   "%cubieTemp_V_load_318 = load i3* %cubieTemp_V_addr_122, align 1" [Rubik_Cube_Layer_All/layerAll.cpp:623]   --->   Operation 168 'load' 'cubieTemp_V_load_318' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_12 : Operation 169 [1/1] (2.32ns)   --->   "store i3 %cubieTemp_V_load_318, i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 14), align 2" [Rubik_Cube_Layer_All/layerAll.cpp:623]   --->   Operation 169 'store' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_12 : Operation 170 [1/2] (2.32ns)   --->   "%cubieTemp_V_load_319 = load i3* %cubieTemp_V_addr_123, align 1" [Rubik_Cube_Layer_All/layerAll.cpp:624]   --->   Operation 170 'load' 'cubieTemp_V_load_319' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_12 : Operation 171 [1/1] (2.32ns)   --->   "store i3 %cubieTemp_V_load_319, i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 15), align 1" [Rubik_Cube_Layer_All/layerAll.cpp:624]   --->   Operation 171 'store' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_12 : Operation 172 [2/2] (2.32ns)   --->   "%cubieTemp_V_load_320 = load i3* %cubieTemp_V_addr_124, align 1" [Rubik_Cube_Layer_All/layerAll.cpp:625]   --->   Operation 172 'load' 'cubieTemp_V_load_320' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_12 : Operation 173 [2/2] (2.32ns)   --->   "%cubieTemp_V_load_321 = load i3* %cubieTemp_V_addr_125, align 1" [Rubik_Cube_Layer_All/layerAll.cpp:626]   --->   Operation 173 'load' 'cubieTemp_V_load_321' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+
+State 13 <SV = 10> <Delay = 4.64>
+ST_13 : Operation 174 [1/2] (2.32ns)   --->   "%cubieTemp_V_load_320 = load i3* %cubieTemp_V_addr_124, align 1" [Rubik_Cube_Layer_All/layerAll.cpp:625]   --->   Operation 174 'load' 'cubieTemp_V_load_320' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_13 : Operation 175 [1/1] (2.32ns)   --->   "store i3 %cubieTemp_V_load_320, i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 16), align 16" [Rubik_Cube_Layer_All/layerAll.cpp:625]   --->   Operation 175 'store' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_13 : Operation 176 [1/2] (2.32ns)   --->   "%cubieTemp_V_load_321 = load i3* %cubieTemp_V_addr_125, align 1" [Rubik_Cube_Layer_All/layerAll.cpp:626]   --->   Operation 176 'load' 'cubieTemp_V_load_321' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_13 : Operation 177 [1/1] (2.32ns)   --->   "store i3 %cubieTemp_V_load_321, i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 17), align 1" [Rubik_Cube_Layer_All/layerAll.cpp:626]   --->   Operation 177 'store' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_13 : Operation 178 [2/2] (2.32ns)   --->   "%cubieTemp_V_load_322 = load i3* %cubieTemp_V_addr_126, align 4" [Rubik_Cube_Layer_All/layerAll.cpp:628]   --->   Operation 178 'load' 'cubieTemp_V_load_322' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_13 : Operation 179 [2/2] (2.32ns)   --->   "%cubieTemp_V_load_323 = load i3* %cubieTemp_V_addr_127, align 1" [Rubik_Cube_Layer_All/layerAll.cpp:629]   --->   Operation 179 'load' 'cubieTemp_V_load_323' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+
+State 14 <SV = 11> <Delay = 4.64>
+ST_14 : Operation 180 [1/2] (2.32ns)   --->   "%cubieTemp_V_load_322 = load i3* %cubieTemp_V_addr_126, align 4" [Rubik_Cube_Layer_All/layerAll.cpp:628]   --->   Operation 180 'load' 'cubieTemp_V_load_322' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_14 : Operation 181 [1/1] (2.32ns)   --->   "store i3 %cubieTemp_V_load_322, i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 18), align 2" [Rubik_Cube_Layer_All/layerAll.cpp:628]   --->   Operation 181 'store' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_14 : Operation 182 [1/2] (2.32ns)   --->   "%cubieTemp_V_load_323 = load i3* %cubieTemp_V_addr_127, align 1" [Rubik_Cube_Layer_All/layerAll.cpp:629]   --->   Operation 182 'load' 'cubieTemp_V_load_323' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_14 : Operation 183 [1/1] (2.32ns)   --->   "store i3 %cubieTemp_V_load_323, i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 19), align 1" [Rubik_Cube_Layer_All/layerAll.cpp:629]   --->   Operation 183 'store' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_14 : Operation 184 [2/2] (2.32ns)   --->   "%cubieTemp_V_load_324 = load i3* %cubieTemp_V_addr_128, align 2" [Rubik_Cube_Layer_All/layerAll.cpp:630]   --->   Operation 184 'load' 'cubieTemp_V_load_324' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_14 : Operation 185 [2/2] (2.32ns)   --->   "%cubieTemp_V_load_325 = load i3* %cubieTemp_V_addr_129, align 1" [Rubik_Cube_Layer_All/layerAll.cpp:631]   --->   Operation 185 'load' 'cubieTemp_V_load_325' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+
+State 15 <SV = 12> <Delay = 4.64>
+ST_15 : Operation 186 [1/2] (2.32ns)   --->   "%cubieTemp_V_load_324 = load i3* %cubieTemp_V_addr_128, align 2" [Rubik_Cube_Layer_All/layerAll.cpp:630]   --->   Operation 186 'load' 'cubieTemp_V_load_324' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_15 : Operation 187 [1/1] (2.32ns)   --->   "store i3 %cubieTemp_V_load_324, i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 20), align 4" [Rubik_Cube_Layer_All/layerAll.cpp:630]   --->   Operation 187 'store' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_15 : Operation 188 [1/2] (2.32ns)   --->   "%cubieTemp_V_load_325 = load i3* %cubieTemp_V_addr_129, align 1" [Rubik_Cube_Layer_All/layerAll.cpp:631]   --->   Operation 188 'load' 'cubieTemp_V_load_325' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_15 : Operation 189 [1/1] (2.32ns)   --->   "store i3 %cubieTemp_V_load_325, i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 21), align 1" [Rubik_Cube_Layer_All/layerAll.cpp:631]   --->   Operation 189 'store' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_15 : Operation 190 [2/2] (2.32ns)   --->   "%cubieTemp_V_load_326 = load i3* %cubieTemp_V_addr_130, align 4" [Rubik_Cube_Layer_All/layerAll.cpp:632]   --->   Operation 190 'load' 'cubieTemp_V_load_326' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_15 : Operation 191 [2/2] (2.32ns)   --->   "%cubieTemp_V_load_327 = load i3* %cubieTemp_V_addr_131, align 1" [Rubik_Cube_Layer_All/layerAll.cpp:633]   --->   Operation 191 'load' 'cubieTemp_V_load_327' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+
+State 16 <SV = 13> <Delay = 4.64>
+ST_16 : Operation 192 [1/2] (2.32ns)   --->   "%cubieTemp_V_load_326 = load i3* %cubieTemp_V_addr_130, align 4" [Rubik_Cube_Layer_All/layerAll.cpp:632]   --->   Operation 192 'load' 'cubieTemp_V_load_326' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_16 : Operation 193 [1/1] (2.32ns)   --->   "store i3 %cubieTemp_V_load_326, i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 22), align 2" [Rubik_Cube_Layer_All/layerAll.cpp:632]   --->   Operation 193 'store' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_16 : Operation 194 [1/2] (2.32ns)   --->   "%cubieTemp_V_load_327 = load i3* %cubieTemp_V_addr_131, align 1" [Rubik_Cube_Layer_All/layerAll.cpp:633]   --->   Operation 194 'load' 'cubieTemp_V_load_327' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_16 : Operation 195 [1/1] (2.32ns)   --->   "store i3 %cubieTemp_V_load_327, i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 23), align 1" [Rubik_Cube_Layer_All/layerAll.cpp:633]   --->   Operation 195 'store' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_16 : Operation 196 [2/2] (2.32ns)   --->   "%cubieTemp_V_load_328 = load i3* %cubieTemp_V_addr_132, align 2" [Rubik_Cube_Layer_All/layerAll.cpp:634]   --->   Operation 196 'load' 'cubieTemp_V_load_328' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_16 : Operation 197 [2/2] (2.32ns)   --->   "%cubieTemp_V_load_329 = load i3* %cubieTemp_V_addr_133, align 1" [Rubik_Cube_Layer_All/layerAll.cpp:635]   --->   Operation 197 'load' 'cubieTemp_V_load_329' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+
+State 17 <SV = 14> <Delay = 4.64>
+ST_17 : Operation 198 [1/2] (2.32ns)   --->   "%cubieTemp_V_load_328 = load i3* %cubieTemp_V_addr_132, align 2" [Rubik_Cube_Layer_All/layerAll.cpp:634]   --->   Operation 198 'load' 'cubieTemp_V_load_328' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_17 : Operation 199 [1/1] (2.32ns)   --->   "store i3 %cubieTemp_V_load_328, i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 24), align 8" [Rubik_Cube_Layer_All/layerAll.cpp:634]   --->   Operation 199 'store' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_17 : Operation 200 [1/2] (2.32ns)   --->   "%cubieTemp_V_load_329 = load i3* %cubieTemp_V_addr_133, align 1" [Rubik_Cube_Layer_All/layerAll.cpp:635]   --->   Operation 200 'load' 'cubieTemp_V_load_329' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_17 : Operation 201 [1/1] (2.32ns)   --->   "store i3 %cubieTemp_V_load_329, i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 25), align 1" [Rubik_Cube_Layer_All/layerAll.cpp:635]   --->   Operation 201 'store' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_17 : Operation 202 [2/2] (2.32ns)   --->   "%cubieTemp_V_load_330 = load i3* %cubieTemp_V_addr_134, align 4" [Rubik_Cube_Layer_All/layerAll.cpp:636]   --->   Operation 202 'load' 'cubieTemp_V_load_330' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_17 : Operation 203 [2/2] (2.32ns)   --->   "%cubieTemp_V_load_331 = load i3* %cubieTemp_V_addr_135, align 1" [Rubik_Cube_Layer_All/layerAll.cpp:638]   --->   Operation 203 'load' 'cubieTemp_V_load_331' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+
+State 18 <SV = 15> <Delay = 4.64>
+ST_18 : Operation 204 [1/2] (2.32ns)   --->   "%cubieTemp_V_load_330 = load i3* %cubieTemp_V_addr_134, align 4" [Rubik_Cube_Layer_All/layerAll.cpp:636]   --->   Operation 204 'load' 'cubieTemp_V_load_330' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_18 : Operation 205 [1/1] (2.32ns)   --->   "store i3 %cubieTemp_V_load_330, i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 26), align 2" [Rubik_Cube_Layer_All/layerAll.cpp:636]   --->   Operation 205 'store' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_18 : Operation 206 [1/2] (2.32ns)   --->   "%cubieTemp_V_load_331 = load i3* %cubieTemp_V_addr_135, align 1" [Rubik_Cube_Layer_All/layerAll.cpp:638]   --->   Operation 206 'load' 'cubieTemp_V_load_331' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_18 : Operation 207 [1/1] (2.32ns)   --->   "store i3 %cubieTemp_V_load_331, i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 27), align 1" [Rubik_Cube_Layer_All/layerAll.cpp:638]   --->   Operation 207 'store' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_18 : Operation 208 [2/2] (2.32ns)   --->   "%cubieTemp_V_load_332 = load i3* %cubieTemp_V_addr_136, align 1" [Rubik_Cube_Layer_All/layerAll.cpp:639]   --->   Operation 208 'load' 'cubieTemp_V_load_332' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_18 : Operation 209 [2/2] (2.32ns)   --->   "%cubieTemp_V_load_333 = load i3* %cubieTemp_V_addr_137, align 1" [Rubik_Cube_Layer_All/layerAll.cpp:640]   --->   Operation 209 'load' 'cubieTemp_V_load_333' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+
+State 19 <SV = 16> <Delay = 4.64>
+ST_19 : Operation 210 [1/2] (2.32ns)   --->   "%cubieTemp_V_load_332 = load i3* %cubieTemp_V_addr_136, align 1" [Rubik_Cube_Layer_All/layerAll.cpp:639]   --->   Operation 210 'load' 'cubieTemp_V_load_332' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_19 : Operation 211 [1/1] (2.32ns)   --->   "store i3 %cubieTemp_V_load_332, i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 28), align 4" [Rubik_Cube_Layer_All/layerAll.cpp:639]   --->   Operation 211 'store' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_19 : Operation 212 [1/2] (2.32ns)   --->   "%cubieTemp_V_load_333 = load i3* %cubieTemp_V_addr_137, align 1" [Rubik_Cube_Layer_All/layerAll.cpp:640]   --->   Operation 212 'load' 'cubieTemp_V_load_333' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_19 : Operation 213 [1/1] (2.32ns)   --->   "store i3 %cubieTemp_V_load_333, i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 29), align 1" [Rubik_Cube_Layer_All/layerAll.cpp:640]   --->   Operation 213 'store' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_19 : Operation 214 [2/2] (2.32ns)   --->   "%cubieTemp_V_load_334 = load i3* %cubieTemp_V_addr_138, align 1" [Rubik_Cube_Layer_All/layerAll.cpp:641]   --->   Operation 214 'load' 'cubieTemp_V_load_334' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_19 : Operation 215 [2/2] (2.32ns)   --->   "%cubieTemp_V_load_335 = load i3* %cubieTemp_V_addr_139, align 1" [Rubik_Cube_Layer_All/layerAll.cpp:642]   --->   Operation 215 'load' 'cubieTemp_V_load_335' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+
+State 20 <SV = 17> <Delay = 4.64>
+ST_20 : Operation 216 [1/2] (2.32ns)   --->   "%cubieTemp_V_load_334 = load i3* %cubieTemp_V_addr_138, align 1" [Rubik_Cube_Layer_All/layerAll.cpp:641]   --->   Operation 216 'load' 'cubieTemp_V_load_334' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_20 : Operation 217 [1/1] (2.32ns)   --->   "store i3 %cubieTemp_V_load_334, i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 30), align 2" [Rubik_Cube_Layer_All/layerAll.cpp:641]   --->   Operation 217 'store' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_20 : Operation 218 [1/2] (2.32ns)   --->   "%cubieTemp_V_load_335 = load i3* %cubieTemp_V_addr_139, align 1" [Rubik_Cube_Layer_All/layerAll.cpp:642]   --->   Operation 218 'load' 'cubieTemp_V_load_335' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_20 : Operation 219 [1/1] (2.32ns)   --->   "store i3 %cubieTemp_V_load_335, i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 31), align 1" [Rubik_Cube_Layer_All/layerAll.cpp:642]   --->   Operation 219 'store' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_20 : Operation 220 [2/2] (2.32ns)   --->   "%cubieTemp_V_load_336 = load i3* %cubieTemp_V_addr_140, align 1" [Rubik_Cube_Layer_All/layerAll.cpp:643]   --->   Operation 220 'load' 'cubieTemp_V_load_336' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_20 : Operation 221 [2/2] (2.32ns)   --->   "%cubieTemp_V_load_337 = load i3* %cubieTemp_V_addr_141, align 1" [Rubik_Cube_Layer_All/layerAll.cpp:644]   --->   Operation 221 'load' 'cubieTemp_V_load_337' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+
+State 21 <SV = 18> <Delay = 4.64>
+ST_21 : Operation 222 [1/2] (2.32ns)   --->   "%cubieTemp_V_load_336 = load i3* %cubieTemp_V_addr_140, align 1" [Rubik_Cube_Layer_All/layerAll.cpp:643]   --->   Operation 222 'load' 'cubieTemp_V_load_336' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_21 : Operation 223 [1/1] (2.32ns)   --->   "store i3 %cubieTemp_V_load_336, i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 32), align 16" [Rubik_Cube_Layer_All/layerAll.cpp:643]   --->   Operation 223 'store' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_21 : Operation 224 [1/2] (2.32ns)   --->   "%cubieTemp_V_load_337 = load i3* %cubieTemp_V_addr_141, align 1" [Rubik_Cube_Layer_All/layerAll.cpp:644]   --->   Operation 224 'load' 'cubieTemp_V_load_337' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_21 : Operation 225 [1/1] (2.32ns)   --->   "store i3 %cubieTemp_V_load_337, i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 33), align 1" [Rubik_Cube_Layer_All/layerAll.cpp:644]   --->   Operation 225 'store' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_21 : Operation 226 [2/2] (2.32ns)   --->   "%cubieTemp_V_load_338 = load i3* %cubieTemp_V_addr_142, align 1" [Rubik_Cube_Layer_All/layerAll.cpp:645]   --->   Operation 226 'load' 'cubieTemp_V_load_338' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_21 : Operation 227 [2/2] (2.32ns)   --->   "%cubieTemp_V_load_339 = load i3* %cubieTemp_V_addr_143, align 1" [Rubik_Cube_Layer_All/layerAll.cpp:646]   --->   Operation 227 'load' 'cubieTemp_V_load_339' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+
+State 22 <SV = 19> <Delay = 4.64>
+ST_22 : Operation 228 [1/2] (2.32ns)   --->   "%cubieTemp_V_load_338 = load i3* %cubieTemp_V_addr_142, align 1" [Rubik_Cube_Layer_All/layerAll.cpp:645]   --->   Operation 228 'load' 'cubieTemp_V_load_338' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_22 : Operation 229 [1/1] (2.32ns)   --->   "store i3 %cubieTemp_V_load_338, i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 34), align 2" [Rubik_Cube_Layer_All/layerAll.cpp:645]   --->   Operation 229 'store' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_22 : Operation 230 [1/2] (2.32ns)   --->   "%cubieTemp_V_load_339 = load i3* %cubieTemp_V_addr_143, align 1" [Rubik_Cube_Layer_All/layerAll.cpp:646]   --->   Operation 230 'load' 'cubieTemp_V_load_339' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_22 : Operation 231 [1/1] (2.32ns)   --->   "store i3 %cubieTemp_V_load_339, i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 35), align 1" [Rubik_Cube_Layer_All/layerAll.cpp:646]   --->   Operation 231 'store' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_22 : Operation 232 [2/2] (2.32ns)   --->   "%cubieTemp_V_load_340 = load i3* %cubieTemp_V_addr_144, align 1" [Rubik_Cube_Layer_All/layerAll.cpp:648]   --->   Operation 232 'load' 'cubieTemp_V_load_340' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_22 : Operation 233 [2/2] (2.32ns)   --->   "%cubieTemp_V_load_341 = load i3* %cubieTemp_V_addr_145, align 1" [Rubik_Cube_Layer_All/layerAll.cpp:649]   --->   Operation 233 'load' 'cubieTemp_V_load_341' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+
+State 23 <SV = 20> <Delay = 4.64>
+ST_23 : Operation 234 [1/2] (2.32ns)   --->   "%cubieTemp_V_load_340 = load i3* %cubieTemp_V_addr_144, align 1" [Rubik_Cube_Layer_All/layerAll.cpp:648]   --->   Operation 234 'load' 'cubieTemp_V_load_340' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_23 : Operation 235 [1/1] (2.32ns)   --->   "store i3 %cubieTemp_V_load_340, i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 36), align 4" [Rubik_Cube_Layer_All/layerAll.cpp:648]   --->   Operation 235 'store' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_23 : Operation 236 [1/2] (2.32ns)   --->   "%cubieTemp_V_load_341 = load i3* %cubieTemp_V_addr_145, align 1" [Rubik_Cube_Layer_All/layerAll.cpp:649]   --->   Operation 236 'load' 'cubieTemp_V_load_341' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_23 : Operation 237 [1/1] (2.32ns)   --->   "store i3 %cubieTemp_V_load_341, i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 37), align 1" [Rubik_Cube_Layer_All/layerAll.cpp:649]   --->   Operation 237 'store' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_23 : Operation 238 [2/2] (2.32ns)   --->   "%cubieTemp_V_load_342 = load i3* %cubieTemp_V_addr_146, align 1" [Rubik_Cube_Layer_All/layerAll.cpp:650]   --->   Operation 238 'load' 'cubieTemp_V_load_342' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_23 : Operation 239 [2/2] (2.32ns)   --->   "%cubieTemp_V_load_343 = load i3* %cubieTemp_V_addr_147, align 1" [Rubik_Cube_Layer_All/layerAll.cpp:651]   --->   Operation 239 'load' 'cubieTemp_V_load_343' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+
+State 24 <SV = 21> <Delay = 4.64>
+ST_24 : Operation 240 [1/2] (2.32ns)   --->   "%cubieTemp_V_load_342 = load i3* %cubieTemp_V_addr_146, align 1" [Rubik_Cube_Layer_All/layerAll.cpp:650]   --->   Operation 240 'load' 'cubieTemp_V_load_342' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_24 : Operation 241 [1/1] (2.32ns)   --->   "store i3 %cubieTemp_V_load_342, i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 38), align 2" [Rubik_Cube_Layer_All/layerAll.cpp:650]   --->   Operation 241 'store' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_24 : Operation 242 [1/2] (2.32ns)   --->   "%cubieTemp_V_load_343 = load i3* %cubieTemp_V_addr_147, align 1" [Rubik_Cube_Layer_All/layerAll.cpp:651]   --->   Operation 242 'load' 'cubieTemp_V_load_343' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_24 : Operation 243 [1/1] (2.32ns)   --->   "store i3 %cubieTemp_V_load_343, i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 39), align 1" [Rubik_Cube_Layer_All/layerAll.cpp:651]   --->   Operation 243 'store' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_24 : Operation 244 [2/2] (2.32ns)   --->   "%cubieTemp_V_load_344 = load i3* %cubieTemp_V_addr_148, align 1" [Rubik_Cube_Layer_All/layerAll.cpp:652]   --->   Operation 244 'load' 'cubieTemp_V_load_344' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_24 : Operation 245 [2/2] (2.32ns)   --->   "%cubieTemp_V_load_345 = load i3* %cubieTemp_V_addr_149, align 1" [Rubik_Cube_Layer_All/layerAll.cpp:653]   --->   Operation 245 'load' 'cubieTemp_V_load_345' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+
+State 25 <SV = 22> <Delay = 4.64>
+ST_25 : Operation 246 [1/2] (2.32ns)   --->   "%cubieTemp_V_load_344 = load i3* %cubieTemp_V_addr_148, align 1" [Rubik_Cube_Layer_All/layerAll.cpp:652]   --->   Operation 246 'load' 'cubieTemp_V_load_344' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_25 : Operation 247 [1/1] (2.32ns)   --->   "store i3 %cubieTemp_V_load_344, i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 40), align 8" [Rubik_Cube_Layer_All/layerAll.cpp:652]   --->   Operation 247 'store' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_25 : Operation 248 [1/2] (2.32ns)   --->   "%cubieTemp_V_load_345 = load i3* %cubieTemp_V_addr_149, align 1" [Rubik_Cube_Layer_All/layerAll.cpp:653]   --->   Operation 248 'load' 'cubieTemp_V_load_345' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_25 : Operation 249 [1/1] (2.32ns)   --->   "store i3 %cubieTemp_V_load_345, i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 41), align 1" [Rubik_Cube_Layer_All/layerAll.cpp:653]   --->   Operation 249 'store' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_25 : Operation 250 [2/2] (2.32ns)   --->   "%cubieTemp_V_load_346 = load i3* %cubieTemp_V_addr_150, align 1" [Rubik_Cube_Layer_All/layerAll.cpp:654]   --->   Operation 250 'load' 'cubieTemp_V_load_346' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_25 : Operation 251 [2/2] (2.32ns)   --->   "%cubieTemp_V_load_347 = load i3* %cubieTemp_V_addr_151, align 1" [Rubik_Cube_Layer_All/layerAll.cpp:655]   --->   Operation 251 'load' 'cubieTemp_V_load_347' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+
+State 26 <SV = 23> <Delay = 4.64>
+ST_26 : Operation 252 [1/2] (2.32ns)   --->   "%cubieTemp_V_load_346 = load i3* %cubieTemp_V_addr_150, align 1" [Rubik_Cube_Layer_All/layerAll.cpp:654]   --->   Operation 252 'load' 'cubieTemp_V_load_346' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_26 : Operation 253 [1/1] (2.32ns)   --->   "store i3 %cubieTemp_V_load_346, i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 42), align 2" [Rubik_Cube_Layer_All/layerAll.cpp:654]   --->   Operation 253 'store' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_26 : Operation 254 [1/2] (2.32ns)   --->   "%cubieTemp_V_load_347 = load i3* %cubieTemp_V_addr_151, align 1" [Rubik_Cube_Layer_All/layerAll.cpp:655]   --->   Operation 254 'load' 'cubieTemp_V_load_347' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_26 : Operation 255 [1/1] (2.32ns)   --->   "store i3 %cubieTemp_V_load_347, i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 43), align 1" [Rubik_Cube_Layer_All/layerAll.cpp:655]   --->   Operation 255 'store' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_26 : Operation 256 [2/2] (2.32ns)   --->   "%cubieTemp_V_load_348 = load i3* %cubieTemp_V_addr_152, align 1" [Rubik_Cube_Layer_All/layerAll.cpp:656]   --->   Operation 256 'load' 'cubieTemp_V_load_348' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_26 : Operation 257 [2/2] (2.32ns)   --->   "%cubieTemp_V_load_349 = load i3* %cubieTemp_V_addr_153, align 2" [Rubik_Cube_Layer_All/layerAll.cpp:658]   --->   Operation 257 'load' 'cubieTemp_V_load_349' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+
+State 27 <SV = 24> <Delay = 4.64>
+ST_27 : Operation 258 [1/2] (2.32ns)   --->   "%cubieTemp_V_load_348 = load i3* %cubieTemp_V_addr_152, align 1" [Rubik_Cube_Layer_All/layerAll.cpp:656]   --->   Operation 258 'load' 'cubieTemp_V_load_348' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_27 : Operation 259 [1/1] (2.32ns)   --->   "store i3 %cubieTemp_V_load_348, i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 44), align 4" [Rubik_Cube_Layer_All/layerAll.cpp:656]   --->   Operation 259 'store' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_27 : Operation 260 [1/2] (2.32ns)   --->   "%cubieTemp_V_load_349 = load i3* %cubieTemp_V_addr_153, align 2" [Rubik_Cube_Layer_All/layerAll.cpp:658]   --->   Operation 260 'load' 'cubieTemp_V_load_349' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_27 : Operation 261 [1/1] (2.32ns)   --->   "store i3 %cubieTemp_V_load_349, i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 45), align 1" [Rubik_Cube_Layer_All/layerAll.cpp:658]   --->   Operation 261 'store' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_27 : Operation 262 [2/2] (2.32ns)   --->   "%cubieTemp_V_load_350 = load i3* %cubieTemp_V_addr_154, align 1" [Rubik_Cube_Layer_All/layerAll.cpp:659]   --->   Operation 262 'load' 'cubieTemp_V_load_350' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_27 : Operation 263 [2/2] (2.32ns)   --->   "%cubieTemp_V_load_351 = load i3* %cubieTemp_V_addr_155, align 2" [Rubik_Cube_Layer_All/layerAll.cpp:660]   --->   Operation 263 'load' 'cubieTemp_V_load_351' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+
+State 28 <SV = 25> <Delay = 4.64>
+ST_28 : Operation 264 [1/2] (2.32ns)   --->   "%cubieTemp_V_load_350 = load i3* %cubieTemp_V_addr_154, align 1" [Rubik_Cube_Layer_All/layerAll.cpp:659]   --->   Operation 264 'load' 'cubieTemp_V_load_350' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_28 : Operation 265 [1/1] (2.32ns)   --->   "store i3 %cubieTemp_V_load_350, i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 46), align 2" [Rubik_Cube_Layer_All/layerAll.cpp:659]   --->   Operation 265 'store' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_28 : Operation 266 [1/2] (2.32ns)   --->   "%cubieTemp_V_load_351 = load i3* %cubieTemp_V_addr_155, align 2" [Rubik_Cube_Layer_All/layerAll.cpp:660]   --->   Operation 266 'load' 'cubieTemp_V_load_351' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_28 : Operation 267 [1/1] (2.32ns)   --->   "store i3 %cubieTemp_V_load_351, i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 47), align 1" [Rubik_Cube_Layer_All/layerAll.cpp:660]   --->   Operation 267 'store' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_28 : Operation 268 [2/2] (2.32ns)   --->   "%cubieTemp_V_load_352 = load i3* %cubieTemp_V_addr_156, align 1" [Rubik_Cube_Layer_All/layerAll.cpp:661]   --->   Operation 268 'load' 'cubieTemp_V_load_352' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_28 : Operation 269 [2/2] (2.32ns)   --->   "%cubieTemp_V_load_353 = load i3* %cubieTemp_V_addr_157, align 2" [Rubik_Cube_Layer_All/layerAll.cpp:662]   --->   Operation 269 'load' 'cubieTemp_V_load_353' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+
+State 29 <SV = 26> <Delay = 4.64>
+ST_29 : Operation 270 [1/2] (2.32ns)   --->   "%cubieTemp_V_load_352 = load i3* %cubieTemp_V_addr_156, align 1" [Rubik_Cube_Layer_All/layerAll.cpp:661]   --->   Operation 270 'load' 'cubieTemp_V_load_352' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_29 : Operation 271 [1/1] (2.32ns)   --->   "store i3 %cubieTemp_V_load_352, i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 48), align 16" [Rubik_Cube_Layer_All/layerAll.cpp:661]   --->   Operation 271 'store' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_29 : Operation 272 [1/2] (2.32ns)   --->   "%cubieTemp_V_load_353 = load i3* %cubieTemp_V_addr_157, align 2" [Rubik_Cube_Layer_All/layerAll.cpp:662]   --->   Operation 272 'load' 'cubieTemp_V_load_353' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_29 : Operation 273 [1/1] (2.32ns)   --->   "store i3 %cubieTemp_V_load_353, i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 49), align 1" [Rubik_Cube_Layer_All/layerAll.cpp:662]   --->   Operation 273 'store' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_29 : Operation 274 [2/2] (2.32ns)   --->   "%cubieTemp_V_load_354 = load i3* %cubieTemp_V_addr_158, align 1" [Rubik_Cube_Layer_All/layerAll.cpp:663]   --->   Operation 274 'load' 'cubieTemp_V_load_354' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_29 : Operation 275 [2/2] (2.32ns)   --->   "%cubieTemp_V_load_355 = load i3* %cubieTemp_V_addr_159, align 2" [Rubik_Cube_Layer_All/layerAll.cpp:664]   --->   Operation 275 'load' 'cubieTemp_V_load_355' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+
+State 30 <SV = 27> <Delay = 4.64>
+ST_30 : Operation 276 [1/2] (2.32ns)   --->   "%cubieTemp_V_load_354 = load i3* %cubieTemp_V_addr_158, align 1" [Rubik_Cube_Layer_All/layerAll.cpp:663]   --->   Operation 276 'load' 'cubieTemp_V_load_354' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_30 : Operation 277 [1/1] (2.32ns)   --->   "store i3 %cubieTemp_V_load_354, i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 50), align 2" [Rubik_Cube_Layer_All/layerAll.cpp:663]   --->   Operation 277 'store' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_30 : Operation 278 [1/2] (2.32ns)   --->   "%cubieTemp_V_load_355 = load i3* %cubieTemp_V_addr_159, align 2" [Rubik_Cube_Layer_All/layerAll.cpp:664]   --->   Operation 278 'load' 'cubieTemp_V_load_355' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_30 : Operation 279 [1/1] (2.32ns)   --->   "store i3 %cubieTemp_V_load_355, i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 51), align 1" [Rubik_Cube_Layer_All/layerAll.cpp:664]   --->   Operation 279 'store' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_30 : Operation 280 [2/2] (2.32ns)   --->   "%cubieTemp_V_load_356 = load i3* %cubieTemp_V_addr_160, align 1" [Rubik_Cube_Layer_All/layerAll.cpp:665]   --->   Operation 280 'load' 'cubieTemp_V_load_356' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_30 : Operation 281 [2/2] (2.32ns)   --->   "%cubieTemp_V_load_357 = load i3* %cubieTemp_V_addr_161, align 2" [Rubik_Cube_Layer_All/layerAll.cpp:666]   --->   Operation 281 'load' 'cubieTemp_V_load_357' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+
+State 31 <SV = 28> <Delay = 4.64>
+ST_31 : Operation 282 [1/2] (2.32ns)   --->   "%cubieTemp_V_load_356 = load i3* %cubieTemp_V_addr_160, align 1" [Rubik_Cube_Layer_All/layerAll.cpp:665]   --->   Operation 282 'load' 'cubieTemp_V_load_356' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_31 : Operation 283 [1/1] (2.32ns)   --->   "store i3 %cubieTemp_V_load_356, i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 52), align 4" [Rubik_Cube_Layer_All/layerAll.cpp:665]   --->   Operation 283 'store' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_31 : Operation 284 [1/2] (2.32ns)   --->   "%cubieTemp_V_load_357 = load i3* %cubieTemp_V_addr_161, align 2" [Rubik_Cube_Layer_All/layerAll.cpp:666]   --->   Operation 284 'load' 'cubieTemp_V_load_357' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_31 : Operation 285 [1/1] (2.32ns)   --->   "store i3 %cubieTemp_V_load_357, i3* getelementptr inbounds ([54 x i3]* @cubieColor_V, i64 0, i64 53), align 1" [Rubik_Cube_Layer_All/layerAll.cpp:666]   --->   Operation 285 'store' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_31 : Operation 286 [1/1] (0.00ns)   --->   "ret void" [Rubik_Cube_Layer_All/layerAll.cpp:667]   --->   Operation 286 'ret' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 12ns, clock uncertainty: 1.5ns.
+
+ <State 1>: 6.11ns
+The critical path consists of the following:
+	'load' operation ('t.V', Rubik_Cube_Layer_All/layerAll.cpp:586) on static variable 'moveCounter_V' [59]  (0 ns)
+	'add' operation ('moveCounter_V_assign', Rubik_Cube_Layer_All/layerAll.cpp:586) [60]  (1.92 ns)
+	'add' operation ('r.V', Rubik_Cube_Layer_All/layerAll.cpp:590) [63]  (1.92 ns)
+	'getelementptr' operation ('moves_V_addr', Rubik_Cube_Layer_All/layerAll.cpp:590) [65]  (0 ns)
+	'store' operation (Rubik_Cube_Layer_All/layerAll.cpp:590) of constant 12 on array 'moves_V' [66]  (2.28 ns)
+
+ <State 2>: 2.32ns
+The critical path consists of the following:
+	'load' operation ('cubieTemp_V_load', Rubik_Cube_Layer_All/layerAll.cpp:608) on array 'cubieTemp.V', Rubik_Cube_Layer_All/layerAll.cpp:597 [101]  (2.32 ns)
+
+ <State 3>: 4.19ns
+The critical path consists of the following:
+	'phi' operation ('j.V') with incoming values : ('j.V', Rubik_Cube_Layer_All/layerAll.cpp:602) [83]  (0 ns)
+	'add' operation ('tmp_13', Rubik_Cube_Layer_All/layerAll.cpp:604) [90]  (1.87 ns)
+	'getelementptr' operation ('cubieColor_V_addr', Rubik_Cube_Layer_All/layerAll.cpp:604) [92]  (0 ns)
+	'load' operation ('cubieColor_V_load', Rubik_Cube_Layer_All/layerAll.cpp:604) on array 'cubieColor_V' [94]  (2.32 ns)
+
+ <State 4>: 4.64ns
+The critical path consists of the following:
+	'load' operation ('cubieColor_V_load', Rubik_Cube_Layer_All/layerAll.cpp:604) on array 'cubieColor_V' [94]  (2.32 ns)
+	'store' operation (Rubik_Cube_Layer_All/layerAll.cpp:604) of variable 'cubieColor_V_load', Rubik_Cube_Layer_All/layerAll.cpp:604 on array 'cubieTemp.V', Rubik_Cube_Layer_All/layerAll.cpp:597 [95]  (2.32 ns)
+
+ <State 5>: 4.64ns
+The critical path consists of the following:
+	'load' operation ('cubieTemp_V_load', Rubik_Cube_Layer_All/layerAll.cpp:608) on array 'cubieTemp.V', Rubik_Cube_Layer_All/layerAll.cpp:597 [101]  (2.32 ns)
+	'store' operation (Rubik_Cube_Layer_All/layerAll.cpp:608) of variable 'cubieTemp_V_load', Rubik_Cube_Layer_All/layerAll.cpp:608 on array 'cubieColor_V' [102]  (2.32 ns)
+
+ <State 6>: 4.64ns
+The critical path consists of the following:
+	'load' operation ('cubieTemp_V_load_306', Rubik_Cube_Layer_All/layerAll.cpp:610) on array 'cubieTemp.V', Rubik_Cube_Layer_All/layerAll.cpp:597 [105]  (2.32 ns)
+	'store' operation (Rubik_Cube_Layer_All/layerAll.cpp:610) of variable 'cubieTemp_V_load_306', Rubik_Cube_Layer_All/layerAll.cpp:610 on array 'cubieColor_V' [106]  (2.32 ns)
+
+ <State 7>: 4.64ns
+The critical path consists of the following:
+	'load' operation ('cubieTemp_V_load_308', Rubik_Cube_Layer_All/layerAll.cpp:612) on array 'cubieTemp.V', Rubik_Cube_Layer_All/layerAll.cpp:597 [109]  (2.32 ns)
+	'store' operation (Rubik_Cube_Layer_All/layerAll.cpp:612) of variable 'cubieTemp_V_load_308', Rubik_Cube_Layer_All/layerAll.cpp:612 on array 'cubieColor_V' [110]  (2.32 ns)
+
+ <State 8>: 4.64ns
+The critical path consists of the following:
+	'load' operation ('cubieTemp_V_load_310', Rubik_Cube_Layer_All/layerAll.cpp:614) on array 'cubieTemp.V', Rubik_Cube_Layer_All/layerAll.cpp:597 [113]  (2.32 ns)
+	'store' operation (Rubik_Cube_Layer_All/layerAll.cpp:614) of variable 'cubieTemp_V_load_310', Rubik_Cube_Layer_All/layerAll.cpp:614 on array 'cubieColor_V' [114]  (2.32 ns)
+
+ <State 9>: 4.64ns
+The critical path consists of the following:
+	'load' operation ('cubieTemp_V_load_312', Rubik_Cube_Layer_All/layerAll.cpp:616) on array 'cubieTemp.V', Rubik_Cube_Layer_All/layerAll.cpp:597 [117]  (2.32 ns)
+	'store' operation (Rubik_Cube_Layer_All/layerAll.cpp:616) of variable 'cubieTemp_V_load_312', Rubik_Cube_Layer_All/layerAll.cpp:616 on array 'cubieColor_V' [118]  (2.32 ns)
+
+ <State 10>: 4.64ns
+The critical path consists of the following:
+	'load' operation ('cubieTemp_V_load_314', Rubik_Cube_Layer_All/layerAll.cpp:619) on array 'cubieTemp.V', Rubik_Cube_Layer_All/layerAll.cpp:597 [121]  (2.32 ns)
+	'store' operation (Rubik_Cube_Layer_All/layerAll.cpp:619) of variable 'cubieTemp_V_load_314', Rubik_Cube_Layer_All/layerAll.cpp:619 on array 'cubieColor_V' [122]  (2.32 ns)
+
+ <State 11>: 4.64ns
+The critical path consists of the following:
+	'load' operation ('cubieTemp_V_load_316', Rubik_Cube_Layer_All/layerAll.cpp:621) on array 'cubieTemp.V', Rubik_Cube_Layer_All/layerAll.cpp:597 [125]  (2.32 ns)
+	'store' operation (Rubik_Cube_Layer_All/layerAll.cpp:621) of variable 'cubieTemp_V_load_316', Rubik_Cube_Layer_All/layerAll.cpp:621 on array 'cubieColor_V' [126]  (2.32 ns)
+
+ <State 12>: 4.64ns
+The critical path consists of the following:
+	'load' operation ('cubieTemp_V_load_318', Rubik_Cube_Layer_All/layerAll.cpp:623) on array 'cubieTemp.V', Rubik_Cube_Layer_All/layerAll.cpp:597 [129]  (2.32 ns)
+	'store' operation (Rubik_Cube_Layer_All/layerAll.cpp:623) of variable 'cubieTemp_V_load_318', Rubik_Cube_Layer_All/layerAll.cpp:623 on array 'cubieColor_V' [130]  (2.32 ns)
+
+ <State 13>: 4.64ns
+The critical path consists of the following:
+	'load' operation ('cubieTemp_V_load_320', Rubik_Cube_Layer_All/layerAll.cpp:625) on array 'cubieTemp.V', Rubik_Cube_Layer_All/layerAll.cpp:597 [133]  (2.32 ns)
+	'store' operation (Rubik_Cube_Layer_All/layerAll.cpp:625) of variable 'cubieTemp_V_load_320', Rubik_Cube_Layer_All/layerAll.cpp:625 on array 'cubieColor_V' [134]  (2.32 ns)
+
+ <State 14>: 4.64ns
+The critical path consists of the following:
+	'load' operation ('cubieTemp_V_load_322', Rubik_Cube_Layer_All/layerAll.cpp:628) on array 'cubieTemp.V', Rubik_Cube_Layer_All/layerAll.cpp:597 [137]  (2.32 ns)
+	'store' operation (Rubik_Cube_Layer_All/layerAll.cpp:628) of variable 'cubieTemp_V_load_322', Rubik_Cube_Layer_All/layerAll.cpp:628 on array 'cubieColor_V' [138]  (2.32 ns)
+
+ <State 15>: 4.64ns
+The critical path consists of the following:
+	'load' operation ('cubieTemp_V_load_324', Rubik_Cube_Layer_All/layerAll.cpp:630) on array 'cubieTemp.V', Rubik_Cube_Layer_All/layerAll.cpp:597 [141]  (2.32 ns)
+	'store' operation (Rubik_Cube_Layer_All/layerAll.cpp:630) of variable 'cubieTemp_V_load_324', Rubik_Cube_Layer_All/layerAll.cpp:630 on array 'cubieColor_V' [142]  (2.32 ns)
+
+ <State 16>: 4.64ns
+The critical path consists of the following:
+	'load' operation ('cubieTemp_V_load_326', Rubik_Cube_Layer_All/layerAll.cpp:632) on array 'cubieTemp.V', Rubik_Cube_Layer_All/layerAll.cpp:597 [145]  (2.32 ns)
+	'store' operation (Rubik_Cube_Layer_All/layerAll.cpp:632) of variable 'cubieTemp_V_load_326', Rubik_Cube_Layer_All/layerAll.cpp:632 on array 'cubieColor_V' [146]  (2.32 ns)
+
+ <State 17>: 4.64ns
+The critical path consists of the following:
+	'load' operation ('cubieTemp_V_load_328', Rubik_Cube_Layer_All/layerAll.cpp:634) on array 'cubieTemp.V', Rubik_Cube_Layer_All/layerAll.cpp:597 [149]  (2.32 ns)
+	'store' operation (Rubik_Cube_Layer_All/layerAll.cpp:634) of variable 'cubieTemp_V_load_328', Rubik_Cube_Layer_All/layerAll.cpp:634 on array 'cubieColor_V' [150]  (2.32 ns)
+
+ <State 18>: 4.64ns
+The critical path consists of the following:
+	'load' operation ('cubieTemp_V_load_330', Rubik_Cube_Layer_All/layerAll.cpp:636) on array 'cubieTemp.V', Rubik_Cube_Layer_All/layerAll.cpp:597 [153]  (2.32 ns)
+	'store' operation (Rubik_Cube_Layer_All/layerAll.cpp:636) of variable 'cubieTemp_V_load_330', Rubik_Cube_Layer_All/layerAll.cpp:636 on array 'cubieColor_V' [154]  (2.32 ns)
+
+ <State 19>: 4.64ns
+The critical path consists of the following:
+	'load' operation ('cubieTemp_V_load_332', Rubik_Cube_Layer_All/layerAll.cpp:639) on array 'cubieTemp.V', Rubik_Cube_Layer_All/layerAll.cpp:597 [157]  (2.32 ns)
+	'store' operation (Rubik_Cube_Layer_All/layerAll.cpp:639) of variable 'cubieTemp_V_load_332', Rubik_Cube_Layer_All/layerAll.cpp:639 on array 'cubieColor_V' [158]  (2.32 ns)
+
+ <State 20>: 4.64ns
+The critical path consists of the following:
+	'load' operation ('cubieTemp_V_load_334', Rubik_Cube_Layer_All/layerAll.cpp:641) on array 'cubieTemp.V', Rubik_Cube_Layer_All/layerAll.cpp:597 [161]  (2.32 ns)
+	'store' operation (Rubik_Cube_Layer_All/layerAll.cpp:641) of variable 'cubieTemp_V_load_334', Rubik_Cube_Layer_All/layerAll.cpp:641 on array 'cubieColor_V' [162]  (2.32 ns)
+
+ <State 21>: 4.64ns
+The critical path consists of the following:
+	'load' operation ('cubieTemp_V_load_336', Rubik_Cube_Layer_All/layerAll.cpp:643) on array 'cubieTemp.V', Rubik_Cube_Layer_All/layerAll.cpp:597 [165]  (2.32 ns)
+	'store' operation (Rubik_Cube_Layer_All/layerAll.cpp:643) of variable 'cubieTemp_V_load_336', Rubik_Cube_Layer_All/layerAll.cpp:643 on array 'cubieColor_V' [166]  (2.32 ns)
+
+ <State 22>: 4.64ns
+The critical path consists of the following:
+	'load' operation ('cubieTemp_V_load_338', Rubik_Cube_Layer_All/layerAll.cpp:645) on array 'cubieTemp.V', Rubik_Cube_Layer_All/layerAll.cpp:597 [169]  (2.32 ns)
+	'store' operation (Rubik_Cube_Layer_All/layerAll.cpp:645) of variable 'cubieTemp_V_load_338', Rubik_Cube_Layer_All/layerAll.cpp:645 on array 'cubieColor_V' [170]  (2.32 ns)
+
+ <State 23>: 4.64ns
+The critical path consists of the following:
+	'load' operation ('cubieTemp_V_load_340', Rubik_Cube_Layer_All/layerAll.cpp:648) on array 'cubieTemp.V', Rubik_Cube_Layer_All/layerAll.cpp:597 [173]  (2.32 ns)
+	'store' operation (Rubik_Cube_Layer_All/layerAll.cpp:648) of variable 'cubieTemp_V_load_340', Rubik_Cube_Layer_All/layerAll.cpp:648 on array 'cubieColor_V' [174]  (2.32 ns)
+
+ <State 24>: 4.64ns
+The critical path consists of the following:
+	'load' operation ('cubieTemp_V_load_342', Rubik_Cube_Layer_All/layerAll.cpp:650) on array 'cubieTemp.V', Rubik_Cube_Layer_All/layerAll.cpp:597 [177]  (2.32 ns)
+	'store' operation (Rubik_Cube_Layer_All/layerAll.cpp:650) of variable 'cubieTemp_V_load_342', Rubik_Cube_Layer_All/layerAll.cpp:650 on array 'cubieColor_V' [178]  (2.32 ns)
+
+ <State 25>: 4.64ns
+The critical path consists of the following:
+	'load' operation ('cubieTemp_V_load_344', Rubik_Cube_Layer_All/layerAll.cpp:652) on array 'cubieTemp.V', Rubik_Cube_Layer_All/layerAll.cpp:597 [181]  (2.32 ns)
+	'store' operation (Rubik_Cube_Layer_All/layerAll.cpp:652) of variable 'cubieTemp_V_load_344', Rubik_Cube_Layer_All/layerAll.cpp:652 on array 'cubieColor_V' [182]  (2.32 ns)
+
+ <State 26>: 4.64ns
+The critical path consists of the following:
+	'load' operation ('cubieTemp_V_load_346', Rubik_Cube_Layer_All/layerAll.cpp:654) on array 'cubieTemp.V', Rubik_Cube_Layer_All/layerAll.cpp:597 [185]  (2.32 ns)
+	'store' operation (Rubik_Cube_Layer_All/layerAll.cpp:654) of variable 'cubieTemp_V_load_346', Rubik_Cube_Layer_All/layerAll.cpp:654 on array 'cubieColor_V' [186]  (2.32 ns)
+
+ <State 27>: 4.64ns
+The critical path consists of the following:
+	'load' operation ('cubieTemp_V_load_348', Rubik_Cube_Layer_All/layerAll.cpp:656) on array 'cubieTemp.V', Rubik_Cube_Layer_All/layerAll.cpp:597 [189]  (2.32 ns)
+	'store' operation (Rubik_Cube_Layer_All/layerAll.cpp:656) of variable 'cubieTemp_V_load_348', Rubik_Cube_Layer_All/layerAll.cpp:656 on array 'cubieColor_V' [190]  (2.32 ns)
+
+ <State 28>: 4.64ns
+The critical path consists of the following:
+	'load' operation ('cubieTemp_V_load_350', Rubik_Cube_Layer_All/layerAll.cpp:659) on array 'cubieTemp.V', Rubik_Cube_Layer_All/layerAll.cpp:597 [193]  (2.32 ns)
+	'store' operation (Rubik_Cube_Layer_All/layerAll.cpp:659) of variable 'cubieTemp_V_load_350', Rubik_Cube_Layer_All/layerAll.cpp:659 on array 'cubieColor_V' [194]  (2.32 ns)
+
+ <State 29>: 4.64ns
+The critical path consists of the following:
+	'load' operation ('cubieTemp_V_load_352', Rubik_Cube_Layer_All/layerAll.cpp:661) on array 'cubieTemp.V', Rubik_Cube_Layer_All/layerAll.cpp:597 [197]  (2.32 ns)
+	'store' operation (Rubik_Cube_Layer_All/layerAll.cpp:661) of variable 'cubieTemp_V_load_352', Rubik_Cube_Layer_All/layerAll.cpp:661 on array 'cubieColor_V' [198]  (2.32 ns)
+
+ <State 30>: 4.64ns
+The critical path consists of the following:
+	'load' operation ('cubieTemp_V_load_354', Rubik_Cube_Layer_All/layerAll.cpp:663) on array 'cubieTemp.V', Rubik_Cube_Layer_All/layerAll.cpp:597 [201]  (2.32 ns)
+	'store' operation (Rubik_Cube_Layer_All/layerAll.cpp:663) of variable 'cubieTemp_V_load_354', Rubik_Cube_Layer_All/layerAll.cpp:663 on array 'cubieColor_V' [202]  (2.32 ns)
+
+ <State 31>: 4.64ns
+The critical path consists of the following:
+	'load' operation ('cubieTemp_V_load_356', Rubik_Cube_Layer_All/layerAll.cpp:665) on array 'cubieTemp.V', Rubik_Cube_Layer_All/layerAll.cpp:597 [205]  (2.32 ns)
+	'store' operation (Rubik_Cube_Layer_All/layerAll.cpp:665) of variable 'cubieTemp_V_load_356', Rubik_Cube_Layer_All/layerAll.cpp:665 on array 'cubieColor_V' [206]  (2.32 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+	State 17
+	State 18
+	State 19
+	State 20
+	State 21
+	State 22
+	State 23
+	State 24
+	State 25
+	State 26
+	State 27
+	State 28
+	State 29
+	State 30
+	State 31
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

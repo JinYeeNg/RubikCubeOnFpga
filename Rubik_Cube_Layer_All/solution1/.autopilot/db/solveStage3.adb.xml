@@ -1,0 +1,410 @@
+<stg><name>solveStage3</name>
+
+
+<trans_list>
+
+<trans id="23" from="1" to="2">
+<condition id="8">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="24" from="2" to="3">
+<condition id="9">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="25" from="3" to="4">
+<condition id="10">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="26" from="4" to="5">
+<condition id="12">
+<or_exp><and_exp><literal name="tmp" val="1"/>
+</and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="27" from="4" to="7">
+<condition id="14">
+<or_exp><and_exp><literal name="tmp" val="0"/>
+</and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="28" from="5" to="6">
+<condition id="15">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="29" from="6" to="7">
+<condition id="17">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="30" from="7" to="8">
+<condition id="18">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+</trans_list>
+
+
+
+<state_list>
+
+<state id="1" st_id="1">
+
+<operation id="9" st_id="1" stage="2" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="0">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="8" bw="0" op_0_bw="0">
+<![CDATA[
+:2  call fastcc void @solveStage3a()
+
+]]></Node>
+<StgValue><ssdm name=""/></StgValue>
+</operation>
+</state>
+
+<state id="2" st_id="2">
+
+<operation id="10" st_id="2" stage="1" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="8" bw="0" op_0_bw="0">
+<![CDATA[
+:2  call fastcc void @solveStage3a()
+
+]]></Node>
+<StgValue><ssdm name=""/></StgValue>
+</operation>
+</state>
+
+<state id="3" st_id="3">
+
+<operation id="11" st_id="3" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="2">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="6" bw="3" op_0_bw="3" op_1_bw="3">
+<![CDATA[
+:0  %sC_V_read = call i3 @_ssdm_op_Read.ap_auto.i3(i3 %sC_V)
+
+]]></Node>
+<StgValue><ssdm name="sC_V_read"/></StgValue>
+</operation>
+
+<operation id="12" st_id="3" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="2">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="7" bw="3" op_0_bw="3" op_1_bw="3">
+<![CDATA[
+:1  %fC_V_read = call i3 @_ssdm_op_Read.ap_auto.i3(i3 %fC_V)
+
+]]></Node>
+<StgValue><ssdm name="fC_V_read"/></StgValue>
+</operation>
+
+<operation id="13" st_id="3" stage="2" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="2">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="9" bw="4" op_0_bw="4" op_1_bw="3" op_2_bw="3">
+<![CDATA[
+:3  %p_0 = call fastcc i4 @findEdge(i3 %fC_V_read, i3 %sC_V_read)
+
+]]></Node>
+<StgValue><ssdm name="p_0"/></StgValue>
+</operation>
+</state>
+
+<state id="4" st_id="4">
+
+<operation id="14" st_id="4" stage="1" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="3">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="9" bw="4" op_0_bw="4" op_1_bw="3" op_2_bw="3">
+<![CDATA[
+:3  %p_0 = call fastcc i4 @findEdge(i3 %fC_V_read, i3 %sC_V_read)
+
+]]></Node>
+<StgValue><ssdm name="p_0"/></StgValue>
+</operation>
+
+<operation id="15" st_id="4" stage="1" lat="1">
+<core>Cmp</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="3">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="10" bw="1" op_0_bw="4" op_1_bw="4">
+<![CDATA[
+:4  %tmp = icmp ugt i4 %p_0, 4
+
+]]></Node>
+<StgValue><ssdm name="tmp"/></StgValue>
+</operation>
+
+<operation id="16" st_id="4" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="3">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="11" bw="0" op_0_bw="1" op_1_bw="0" op_2_bw="0">
+<![CDATA[
+:5  br i1 %tmp, label %1, label %._crit_edge
+
+]]></Node>
+<StgValue><ssdm name=""/></StgValue>
+</operation>
+</state>
+
+<state id="5" st_id="5">
+
+<operation id="17" st_id="5" stage="2" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="4">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="13" bw="0" op_0_bw="0" op_1_bw="3" op_2_bw="3">
+<![CDATA[
+:0  call fastcc void @stage3Prepare(i3 %fC_V_read, i3 %sC_V_read)
+
+]]></Node>
+<StgValue><ssdm name=""/></StgValue>
+</operation>
+</state>
+
+<state id="6" st_id="6">
+
+<operation id="18" st_id="6" stage="1" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="5">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="13" bw="0" op_0_bw="0" op_1_bw="3" op_2_bw="3">
+<![CDATA[
+:0  call fastcc void @stage3Prepare(i3 %fC_V_read, i3 %sC_V_read)
+
+]]></Node>
+<StgValue><ssdm name=""/></StgValue>
+</operation>
+
+<operation id="19" st_id="6" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="5">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="14" bw="0" op_0_bw="0">
+<![CDATA[
+:1  br label %._crit_edge
+
+]]></Node>
+<StgValue><ssdm name=""/></StgValue>
+</operation>
+</state>
+
+<state id="7" st_id="7">
+
+<operation id="20" st_id="7" stage="2" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="6">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="16" bw="0" op_0_bw="0">
+<![CDATA[
+._crit_edge:0  call fastcc void @solveStage3a()
+
+]]></Node>
+<StgValue><ssdm name=""/></StgValue>
+</operation>
+</state>
+
+<state id="8" st_id="8">
+
+<operation id="21" st_id="8" stage="1" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="7">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="16" bw="0" op_0_bw="0">
+<![CDATA[
+._crit_edge:0  call fastcc void @solveStage3a()
+
+]]></Node>
+<StgValue><ssdm name=""/></StgValue>
+</operation>
+
+<operation id="22" st_id="8" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="7">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="17" bw="0">
+<![CDATA[
+._crit_edge:1  ret void
+
+]]></Node>
+<StgValue><ssdm name=""/></StgValue>
+</operation>
+</state>
+</state_list>
+
+
+<ports>
+<port id="31" name="fC_V" dir="0" iftype="0">
+<core>NULL</core><StgValue><ssdm name="fC_V"/></StgValue>
+</port>
+<port id="32" name="sC_V" dir="0" iftype="0">
+<core>NULL</core><StgValue><ssdm name="sC_V"/></StgValue>
+</port>
+<port id="33" name="moveCounter_V" dir="2" iftype="0">
+<core>NULL</core><StgValue><ssdm name="moveCounter_V"/></StgValue>
+</port>
+<port id="34" name="moves_V" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="moves_V"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="35" name="cubieColor_V" dir="2" iftype="1">
+<core>RAM</core><StgValue><ssdm name="cubieColor_V"/><MemPortTyVec>2 2 </MemPortTyVec>
+</StgValue>
+</port>
+</ports>
+
+
+<dataflows>
+<dataflow id="37" from="solveStage3a" to="StgValue_9" fromId="36" toId="9">
+</dataflow>
+<dataflow id="38" from="moveCounter_V" to="StgValue_9" fromId="33" toId="9">
+</dataflow>
+<dataflow id="39" from="moves_V" to="StgValue_9" fromId="34" toId="9">
+</dataflow>
+<dataflow id="40" from="cubieColor_V" to="StgValue_9" fromId="35" toId="9">
+</dataflow>
+<dataflow id="41" from="solveStage3a" to="StgValue_10" fromId="36" toId="10">
+</dataflow>
+<dataflow id="42" from="moveCounter_V" to="StgValue_10" fromId="33" toId="10">
+</dataflow>
+<dataflow id="43" from="moves_V" to="StgValue_10" fromId="34" toId="10">
+</dataflow>
+<dataflow id="44" from="cubieColor_V" to="StgValue_10" fromId="35" toId="10">
+</dataflow>
+<dataflow id="46" from="_ssdm_op_Read.ap_auto.i3" to="sC_V_read" fromId="45" toId="11">
+</dataflow>
+<dataflow id="47" from="sC_V" to="sC_V_read" fromId="32" toId="11">
+</dataflow>
+<dataflow id="48" from="_ssdm_op_Read.ap_auto.i3" to="fC_V_read" fromId="45" toId="12">
+</dataflow>
+<dataflow id="49" from="fC_V" to="fC_V_read" fromId="31" toId="12">
+</dataflow>
+<dataflow id="51" from="findEdge" to="p_0" fromId="50" toId="13">
+</dataflow>
+<dataflow id="52" from="fC_V_read" to="p_0" fromId="12" toId="13">
+</dataflow>
+<dataflow id="53" from="sC_V_read" to="p_0" fromId="11" toId="13">
+</dataflow>
+<dataflow id="54" from="cubieColor_V" to="p_0" fromId="35" toId="13">
+</dataflow>
+<dataflow id="55" from="findEdge" to="p_0" fromId="50" toId="14">
+</dataflow>
+<dataflow id="56" from="fC_V_read" to="p_0" fromId="12" toId="14">
+</dataflow>
+<dataflow id="57" from="sC_V_read" to="p_0" fromId="11" toId="14">
+</dataflow>
+<dataflow id="58" from="cubieColor_V" to="p_0" fromId="35" toId="14">
+</dataflow>
+<dataflow id="59" from="p_0" to="tmp" fromId="14" toId="15">
+</dataflow>
+<dataflow id="61" from="StgValue_60" to="tmp" fromId="60" toId="15">
+</dataflow>
+<dataflow id="62" from="tmp" to="StgValue_16" fromId="15" toId="16">
+</dataflow>
+<dataflow id="64" from="stage3Prepare" to="StgValue_17" fromId="63" toId="17">
+</dataflow>
+<dataflow id="65" from="fC_V_read" to="StgValue_17" fromId="12" toId="17">
+</dataflow>
+<dataflow id="66" from="sC_V_read" to="StgValue_17" fromId="11" toId="17">
+</dataflow>
+<dataflow id="67" from="cubieColor_V" to="StgValue_17" fromId="35" toId="17">
+</dataflow>
+<dataflow id="68" from="moveCounter_V" to="StgValue_17" fromId="33" toId="17">
+</dataflow>
+<dataflow id="69" from="moves_V" to="StgValue_17" fromId="34" toId="17">
+</dataflow>
+<dataflow id="70" from="stage3Prepare" to="StgValue_18" fromId="63" toId="18">
+</dataflow>
+<dataflow id="71" from="fC_V_read" to="StgValue_18" fromId="12" toId="18">
+</dataflow>
+<dataflow id="72" from="sC_V_read" to="StgValue_18" fromId="11" toId="18">
+</dataflow>
+<dataflow id="73" from="cubieColor_V" to="StgValue_18" fromId="35" toId="18">
+</dataflow>
+<dataflow id="74" from="moveCounter_V" to="StgValue_18" fromId="33" toId="18">
+</dataflow>
+<dataflow id="75" from="moves_V" to="StgValue_18" fromId="34" toId="18">
+</dataflow>
+<dataflow id="76" from="solveStage3a" to="StgValue_20" fromId="36" toId="20">
+</dataflow>
+<dataflow id="77" from="moveCounter_V" to="StgValue_20" fromId="33" toId="20">
+</dataflow>
+<dataflow id="78" from="moves_V" to="StgValue_20" fromId="34" toId="20">
+</dataflow>
+<dataflow id="79" from="cubieColor_V" to="StgValue_20" fromId="35" toId="20">
+</dataflow>
+<dataflow id="80" from="solveStage3a" to="StgValue_21" fromId="36" toId="21">
+</dataflow>
+<dataflow id="81" from="moveCounter_V" to="StgValue_21" fromId="33" toId="21">
+</dataflow>
+<dataflow id="82" from="moves_V" to="StgValue_21" fromId="34" toId="21">
+</dataflow>
+<dataflow id="83" from="cubieColor_V" to="StgValue_21" fromId="35" toId="21">
+</dataflow>
+<dataflow id="84" from="tmp" to="StgValue_4" fromId="15" toId="4">
+</dataflow>
+</dataflows>
+
+
+</stg>

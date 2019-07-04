@@ -1,0 +1,151 @@
+
+
+================================================================
+== Vivado HLS Report for 'convert_edge'
+================================================================
+* Date:           Thu Jul  4 02:06:59 2019
+
+* Version:        2018.2 (Build 2258646 on Thu Jun 14 20:25:20 MDT 2018)
+* Project:        kociembaHls
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|     3.377|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |    1|    2|    1|    2|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 3
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / (tmp) | (tmp_s) | (tmp_205) | (tmp_206) | (tmp_207) | (tmp_208) | (tmp_209) | (tmp_210) | (tmp_211) | (tmp_212) | (tmp_213)
+	3  / (!tmp & !tmp_s & !tmp_205 & !tmp_206 & !tmp_207 & !tmp_208 & !tmp_209 & !tmp_210 & !tmp_211 & !tmp_212 & !tmp_213)
+2 --> 
+	3  / true
+3 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 3.37>
+ST_1 : Operation 4 [1/1] (0.00ns)   --->   "%in_read = call i4 @_ssdm_op_Read.ap_auto.i4(i4 %in_r) nounwind"   --->   Operation 4 'read' 'in_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 5 [1/1] (1.30ns)   --->   "%tmp = icmp eq i4 %in_read, 0" [cubiecube.cpp:4]   --->   Operation 5 'icmp' 'tmp' <Predicate = true> <Delay = 1.30> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.30> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 6 [1/1] (2.07ns)   --->   "br i1 %tmp, label %._crit_edge, label %1" [cubiecube.cpp:4]   --->   Operation 6 'br' <Predicate = true> <Delay = 2.07>
+ST_1 : Operation 7 [1/1] (1.30ns)   --->   "%tmp_s = icmp eq i4 %in_read, 1" [cubiecube.cpp:6]   --->   Operation 7 'icmp' 'tmp_s' <Predicate = (!tmp)> <Delay = 1.30> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.30> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 8 [1/1] (2.07ns)   --->   "br i1 %tmp_s, label %._crit_edge, label %2" [cubiecube.cpp:6]   --->   Operation 8 'br' <Predicate = (!tmp)> <Delay = 2.07>
+ST_1 : Operation 9 [1/1] (1.30ns)   --->   "%tmp_205 = icmp eq i4 %in_read, 2" [cubiecube.cpp:8]   --->   Operation 9 'icmp' 'tmp_205' <Predicate = (!tmp & !tmp_s)> <Delay = 1.30> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.30> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 10 [1/1] (2.07ns)   --->   "br i1 %tmp_205, label %._crit_edge, label %3" [cubiecube.cpp:8]   --->   Operation 10 'br' <Predicate = (!tmp & !tmp_s)> <Delay = 2.07>
+ST_1 : Operation 11 [1/1] (1.30ns)   --->   "%tmp_206 = icmp eq i4 %in_read, 3" [cubiecube.cpp:10]   --->   Operation 11 'icmp' 'tmp_206' <Predicate = (!tmp & !tmp_s & !tmp_205)> <Delay = 1.30> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.30> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 12 [1/1] (2.07ns)   --->   "br i1 %tmp_206, label %._crit_edge, label %4" [cubiecube.cpp:10]   --->   Operation 12 'br' <Predicate = (!tmp & !tmp_s & !tmp_205)> <Delay = 2.07>
+ST_1 : Operation 13 [1/1] (1.30ns)   --->   "%tmp_207 = icmp eq i4 %in_read, 4" [cubiecube.cpp:12]   --->   Operation 13 'icmp' 'tmp_207' <Predicate = (!tmp & !tmp_s & !tmp_205 & !tmp_206)> <Delay = 1.30> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.30> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 14 [1/1] (2.07ns)   --->   "br i1 %tmp_207, label %._crit_edge, label %5" [cubiecube.cpp:12]   --->   Operation 14 'br' <Predicate = (!tmp & !tmp_s & !tmp_205 & !tmp_206)> <Delay = 2.07>
+ST_1 : Operation 15 [1/1] (1.30ns)   --->   "%tmp_208 = icmp eq i4 %in_read, 5" [cubiecube.cpp:14]   --->   Operation 15 'icmp' 'tmp_208' <Predicate = (!tmp & !tmp_s & !tmp_205 & !tmp_206 & !tmp_207)> <Delay = 1.30> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.30> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 16 [1/1] (2.07ns)   --->   "br i1 %tmp_208, label %._crit_edge, label %6" [cubiecube.cpp:14]   --->   Operation 16 'br' <Predicate = (!tmp & !tmp_s & !tmp_205 & !tmp_206 & !tmp_207)> <Delay = 2.07>
+ST_1 : Operation 17 [1/1] (1.30ns)   --->   "%tmp_209 = icmp eq i4 %in_read, 6" [cubiecube.cpp:16]   --->   Operation 17 'icmp' 'tmp_209' <Predicate = (!tmp & !tmp_s & !tmp_205 & !tmp_206 & !tmp_207 & !tmp_208)> <Delay = 1.30> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.30> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 18 [1/1] (2.07ns)   --->   "br i1 %tmp_209, label %._crit_edge, label %7" [cubiecube.cpp:16]   --->   Operation 18 'br' <Predicate = (!tmp & !tmp_s & !tmp_205 & !tmp_206 & !tmp_207 & !tmp_208)> <Delay = 2.07>
+ST_1 : Operation 19 [1/1] (1.30ns)   --->   "%tmp_210 = icmp eq i4 %in_read, 7" [cubiecube.cpp:18]   --->   Operation 19 'icmp' 'tmp_210' <Predicate = (!tmp & !tmp_s & !tmp_205 & !tmp_206 & !tmp_207 & !tmp_208 & !tmp_209)> <Delay = 1.30> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.30> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 20 [1/1] (2.07ns)   --->   "br i1 %tmp_210, label %._crit_edge, label %8" [cubiecube.cpp:18]   --->   Operation 20 'br' <Predicate = (!tmp & !tmp_s & !tmp_205 & !tmp_206 & !tmp_207 & !tmp_208 & !tmp_209)> <Delay = 2.07>
+ST_1 : Operation 21 [1/1] (1.30ns)   --->   "%tmp_211 = icmp eq i4 %in_read, -8" [cubiecube.cpp:20]   --->   Operation 21 'icmp' 'tmp_211' <Predicate = (!tmp & !tmp_s & !tmp_205 & !tmp_206 & !tmp_207 & !tmp_208 & !tmp_209 & !tmp_210)> <Delay = 1.30> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.30> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 22 [1/1] (2.07ns)   --->   "br i1 %tmp_211, label %._crit_edge, label %9" [cubiecube.cpp:20]   --->   Operation 22 'br' <Predicate = (!tmp & !tmp_s & !tmp_205 & !tmp_206 & !tmp_207 & !tmp_208 & !tmp_209 & !tmp_210)> <Delay = 2.07>
+ST_1 : Operation 23 [1/1] (1.30ns)   --->   "%tmp_212 = icmp eq i4 %in_read, -7" [cubiecube.cpp:22]   --->   Operation 23 'icmp' 'tmp_212' <Predicate = (!tmp & !tmp_s & !tmp_205 & !tmp_206 & !tmp_207 & !tmp_208 & !tmp_209 & !tmp_210 & !tmp_211)> <Delay = 1.30> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.30> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 24 [1/1] (2.07ns)   --->   "br i1 %tmp_212, label %._crit_edge, label %10" [cubiecube.cpp:22]   --->   Operation 24 'br' <Predicate = (!tmp & !tmp_s & !tmp_205 & !tmp_206 & !tmp_207 & !tmp_208 & !tmp_209 & !tmp_210 & !tmp_211)> <Delay = 2.07>
+ST_1 : Operation 25 [1/1] (1.30ns)   --->   "%tmp_213 = icmp eq i4 %in_read, -6" [cubiecube.cpp:24]   --->   Operation 25 'icmp' 'tmp_213' <Predicate = (!tmp & !tmp_s & !tmp_205 & !tmp_206 & !tmp_207 & !tmp_208 & !tmp_209 & !tmp_210 & !tmp_211 & !tmp_212)> <Delay = 1.30> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.30> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 26 [1/1] (2.07ns)   --->   "br i1 %tmp_213, label %._crit_edge, label %._crit_edge11" [cubiecube.cpp:24]   --->   Operation 26 'br' <Predicate = (!tmp & !tmp_s & !tmp_205 & !tmp_206 & !tmp_207 & !tmp_208 & !tmp_209 & !tmp_210 & !tmp_211 & !tmp_212)> <Delay = 2.07>
+
+State 2 <SV = 1> <Delay = 1.76>
+ST_2 : Operation 27 [1/1] (0.00ns)   --->   "%p_0 = phi i4 [ 0, %0 ], [ 1, %1 ], [ 2, %2 ], [ 3, %3 ], [ 4, %4 ], [ 5, %5 ], [ 6, %6 ], [ 7, %7 ], [ -8, %8 ], [ -7, %9 ], [ -6, %10 ]"   --->   Operation 27 'phi' 'p_0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 28 [1/1] (1.76ns)   --->   "br label %._crit_edge11" [cubiecube.cpp:29]   --->   Operation 28 'br' <Predicate = true> <Delay = 1.76>
+
+State 3 <SV = 2> <Delay = 0.00>
+ST_3 : Operation 29 [1/1] (0.00ns)   --->   "%merge = phi i4 [ %p_0, %._crit_edge ], [ -5, %10 ]"   --->   Operation 29 'phi' 'merge' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 30 [1/1] (0.00ns)   --->   "ret i4 %merge" [cubiecube.cpp:26]   --->   Operation 30 'ret' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ <State 1>: 3.38ns
+The critical path consists of the following:
+	wire read on port 'in_r' [2]  (0 ns)
+	'icmp' operation ('tmp_210', cubiecube.cpp:18) [24]  (1.3 ns)
+	multiplexor before 'phi' operation ('p_0') [36]  (2.08 ns)
+
+ <State 2>: 1.77ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('merge') [39]  (1.77 ns)
+
+ <State 3>: 0ns
+The critical path consists of the following:
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

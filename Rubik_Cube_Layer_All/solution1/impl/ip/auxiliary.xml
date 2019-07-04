@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xd:acceleratorMap xmlns:xd="http://www.xilinx.com/xidane" xd:functionName="solveCube" xd:componentRef="solveCube" xd:initiationInterval="x" xd:clockPeriod="12.000" xd:sequential="true" xd:hostMachine="64" xd:reset="control">
+  <xd:controlReg xd:name="control" xd:interfaceRef="s_axi_add_io" xd:busTypeRef="axilite" xd:type="generic_axi_lite" xd:offset="0x0"/>
+  <xd:arg xd:name="cubieColor_tb[][]" xd:originalName="cubieColor_tb" xd:direction="in" xd:interfaceRef="s_axi_add_io" xd:busTypeRef="axilite" xd:offset="0x40" xd:arraySize="54" xd:dataWidth="3"/>
+  <xd:arg xd:name="rMoves[]" xd:originalName="rMoves" xd:direction="out" xd:interfaceRef="s_axi_add_io" xd:busTypeRef="axilite" xd:offset="0x100" xd:arraySize="200" xd:dataWidth="4"/>
+  <xd:arg xd:name="*(order)" xd:originalName="order" xd:direction="out" xd:interfaceRef="s_axi_add_io" xd:busTypeRef="axilite" xd:offset="0x200" xd:statusOffset="0x204" xd:handshakeRef="ap_vld" xd:dataWidth="8"/>
+  <xd:latencyEstimates xd:best-case="undef" xd:worst-case="undef" xd:average-case="undef"/>
+  <xd:resourceEstimates xd:LUT="27346" xd:FF="2584" xd:BRAM="5" xd:DSP="0"/>
+</xd:acceleratorMap>

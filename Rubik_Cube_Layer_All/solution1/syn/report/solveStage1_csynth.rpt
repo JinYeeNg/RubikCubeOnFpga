@@ -1,0 +1,169 @@
+
+
+================================================================
+== Vivado HLS Report for 'solveStage1'
+================================================================
+* Date:           Fri Jan  4 20:12:40 2019
+
+* Version:        2018.2 (Build 2258646 on Thu Jun 14 20:25:20 MDT 2018)
+* Project:        Rubik_Cube_Layer_All
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  12.00|     7.586|        1.50|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+------+-----+------+---------+
+    |   Latency  |  Interval  | Pipeline|
+    | min |  max | min |  max |   Type  |
+    +-----+------+-----+------+---------+
+    |    4|  1343|    4|  1343|   none  |
+    +-----+------+-----+------+---------+
+
+    + Detail: 
+        * Instance: 
+        +--------------------+----------+-----+-----+-----+-----+---------+
+        |                    |          |  Latency  |  Interval | Pipeline|
+        |      Instance      |  Module  | min | max | min | max |   Type  |
+        +--------------------+----------+-----+-----+-----+-----+---------+
+        |grp_turnCube_fu_60  |turnCube  |  122|  132|  122|  132|   none  |
+        +--------------------+----------+-----+-----+-----+-----+---------+
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+-------+
+|       Name      | BRAM_18K| DSP48E|   FF   |  LUT  |
++-----------------+---------+-------+--------+-------+
+|DSP              |        -|      -|       -|      -|
+|Expression       |        -|      -|       0|     19|
+|FIFO             |        -|      -|       -|      -|
+|Instance         |        0|      -|      49|   1074|
+|Memory           |        -|      -|       -|      -|
+|Multiplexer      |        -|      -|       -|    535|
+|Register         |        -|      -|      89|      -|
++-----------------+---------+-------+--------+-------+
+|Total            |        0|      0|     138|   1628|
++-----------------+---------+-------+--------+-------+
+|Available        |      280|    220|  106400|  53200|
++-----------------+---------+-------+--------+-------+
+|Utilization (%)  |        0|      0|   ~0   |      3|
++-----------------+---------+-------+--------+-------+
+
++ Detail: 
+    * Instance: 
+    +--------------------+----------+---------+-------+----+------+
+    |      Instance      |  Module  | BRAM_18K| DSP48E| FF |  LUT |
+    +--------------------+----------+---------+-------+----+------+
+    |grp_turnCube_fu_60  |turnCube  |        0|      0|  49|  1074|
+    +--------------------+----------+---------+-------+----+------+
+    |Total               |          |        0|      0|  49|  1074|
+    +--------------------+----------+---------+-------+----+------+
+
+    * DSP48: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +----------------------------------+----------+-------+---+----+------------+------------+
+    |           Variable Name          | Operation| DSP48E| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +----------------------------------+----------+-------+---+----+------------+------------+
+    |ap_block_state32_on_subcall_done  |    and   |      0|  0|   2|           1|           1|
+    |ap_block_state43_on_subcall_done  |    and   |      0|  0|   2|           1|           1|
+    |ap_block_state85_on_subcall_done  |    and   |      0|  0|   2|           1|           1|
+    |ap_predicate_op137_call_state32   |    and   |      0|  0|   2|           1|           1|
+    |grp_fu_82_p2                      |   icmp   |      0|  0|   9|           3|           1|
+    |ap_block_state19_on_subcall_done  |    or    |      0|  0|   2|           1|           1|
+    +----------------------------------+----------+-------+---+----+------------+------------+
+    |Total                             |          |      0|  0|  19|           8|           6|
+    +----------------------------------+----------+-------+---+----+------------+------------+
+
+    * Multiplexer: 
+    +---------------------------+-----+-----------+-----+-----------+
+    |            Name           | LUT | Input Size| Bits| Total Bits|
+    +---------------------------+-----+-----------+-----+-----------+
+    |ap_NS_fsm                  |  377|         86|    1|         86|
+    |cubieColor_V_address0      |   27|          5|    6|         30|
+    |cubieColor_V_ce0           |   15|          3|    1|          3|
+    |cubieColor_V_ce1           |    9|          2|    1|          2|
+    |cubieColor_V_we0           |    9|          2|    1|          2|
+    |cubieColor_V_we1           |    9|          2|    1|          2|
+    |grp_turnCube_fu_60_turn_V  |   53|         12|    4|         48|
+    |moveCounter_V_o            |    9|          2|    8|         16|
+    |moveCounter_V_o_ap_vld     |    9|          2|    1|          2|
+    |moves_V_ce0                |    9|          2|    1|          2|
+    |moves_V_we0                |    9|          2|    1|          2|
+    +---------------------------+-----+-----------+-----+-----------+
+    |Total                      |  535|        120|   26|        195|
+    +---------------------------+-----+-----------+-----+-----------+
+
+    * Register: 
+    +---------------------------------+----+----+-----+-----------+
+    |               Name              | FF | LUT| Bits| Const Bits|
+    +---------------------------------+----+----+-----+-----------+
+    |ap_CS_fsm                        |  85|   0|   85|          0|
+    |grp_turnCube_fu_60_ap_start_reg  |   1|   0|    1|          0|
+    |tmp_51_reg_92                    |   1|   0|    1|          0|
+    |tmp_52_reg_100                   |   1|   0|    1|          0|
+    |tmp_s_reg_96                     |   1|   0|    1|          0|
+    +---------------------------------+----+----+-----+-----------+
+    |Total                            |  89|   0|   89|          0|
+    +---------------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++------------------------+-----+-----+------------+---------------+--------------+
+|        RTL Ports       | Dir | Bits|  Protocol  | Source Object |    C Type    |
++------------------------+-----+-----+------------+---------------+--------------+
+|ap_clk                  |  in |    1| ap_ctrl_hs |  solveStage1  | return value |
+|ap_rst                  |  in |    1| ap_ctrl_hs |  solveStage1  | return value |
+|ap_start                |  in |    1| ap_ctrl_hs |  solveStage1  | return value |
+|ap_done                 | out |    1| ap_ctrl_hs |  solveStage1  | return value |
+|ap_idle                 | out |    1| ap_ctrl_hs |  solveStage1  | return value |
+|ap_ready                | out |    1| ap_ctrl_hs |  solveStage1  | return value |
+|edgeNumber_V            |  in |    4|   ap_none  |  edgeNumber_V |    scalar    |
+|moveCounter_V_i         |  in |    8|   ap_ovld  | moveCounter_V |    pointer   |
+|moveCounter_V_o         | out |    8|   ap_ovld  | moveCounter_V |    pointer   |
+|moveCounter_V_o_ap_vld  | out |    1|   ap_ovld  | moveCounter_V |    pointer   |
+|moves_V_address0        | out |    8|  ap_memory |    moves_V    |     array    |
+|moves_V_ce0             | out |    1|  ap_memory |    moves_V    |     array    |
+|moves_V_we0             | out |    1|  ap_memory |    moves_V    |     array    |
+|moves_V_d0              | out |    4|  ap_memory |    moves_V    |     array    |
+|cubieColor_V_address0   | out |    6|  ap_memory |  cubieColor_V |     array    |
+|cubieColor_V_ce0        | out |    1|  ap_memory |  cubieColor_V |     array    |
+|cubieColor_V_we0        | out |    1|  ap_memory |  cubieColor_V |     array    |
+|cubieColor_V_d0         | out |    3|  ap_memory |  cubieColor_V |     array    |
+|cubieColor_V_q0         |  in |    3|  ap_memory |  cubieColor_V |     array    |
+|cubieColor_V_address1   | out |    6|  ap_memory |  cubieColor_V |     array    |
+|cubieColor_V_ce1        | out |    1|  ap_memory |  cubieColor_V |     array    |
+|cubieColor_V_we1        | out |    1|  ap_memory |  cubieColor_V |     array    |
+|cubieColor_V_d1         | out |    3|  ap_memory |  cubieColor_V |     array    |
++------------------------+-----+-----+------------+---------------+--------------+
+

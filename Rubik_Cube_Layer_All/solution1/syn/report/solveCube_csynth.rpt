@@ -1,0 +1,283 @@
+
+
+================================================================
+== Vivado HLS Report for 'solveCube'
+================================================================
+* Date:           Fri Jan  4 20:13:20 2019
+
+* Version:        2018.2 (Build 2258646 on Thu Jun 14 20:25:20 MDT 2018)
+* Project:        Rubik_Cube_Layer_All
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  12.00|     9.736|        1.50|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |    ?|    ?|    ?|    ?|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        +---------------------------------+----------------------+------+------+------+------+---------+
+        |                                 |                      |   Latency   |   Interval  | Pipeline|
+        |             Instance            |        Module        |  min |  max |  min |  max |   Type  |
+        +---------------------------------+----------------------+------+------+------+------+---------+
+        |grp_solveStage3_fu_242           |solveStage3           |     ?|     ?|     ?|     ?|   none  |
+        |grp_solveStage2_fu_262           |solveStage2           |     ?|     ?|     ?|     ?|   none  |
+        |grp_solveStage5b_fu_280          |solveStage5b          |  1517|  2124|  1517|  2124|   none  |
+        |grp_solveStage5a_fu_290          |solveStage5a          |  1634|  2231|  1634|  2231|   none  |
+        |grp_solveStage4a_fu_300          |solveStage4a          |    13|  3023|    13|  3023|   none  |
+        |grp_solveStage4b_fu_310          |solveStage4b          |     ?|     ?|     ?|     ?|   none  |
+        |grp_turnCube_fu_320              |turnCube              |   122|   132|   122|   132|   none  |
+        |grp_solveStage1_fu_332           |solveStage1           |     4|  1343|     4|  1343|   none  |
+        |grp_rotateCubeHorizontal_fu_343  |rotateCubeHorizontal  |   148|   148|   148|   148|   none  |
+        |grp_rotateCubeVertical_fu_353    |rotateCubeVertical    |   148|   148|   148|   148|   none  |
+        |grp_optimizeCube_fu_363          |optimizeCube          |     ?|     ?|     ?|     ?|   none  |
+        |grp_findEdge_fu_372              |findEdge              |    12|    12|    12|    12|   none  |
+        |grp_edgeCorrect_fu_385           |edgeCorrect           |    11|    11|    11|    11|   none  |
+        |grp_cornerCorrect_fu_400         |cornerCorrect         |     8|     8|     8|     8|   none  |
+        +---------------------------------+----------------------+------+------+------+------+---------+
+
+        * Loop: 
+        +-------------+-----+-----+-------------+-----------+-----------+------+----------+
+        |             |  Latency  |  Iteration  |  Initiation Interval  | Trip |          |
+        |  Loop Name  | min | max |   Latency   |  achieved |   target  | Count| Pipelined|
+        +-------------+-----+-----+-------------+-----------+-----------+------+----------+
+        |- Loop 1     |  120|  120|           20|          -|          -|     6|    no    |
+        | + Loop 1.1  |   18|   18|            2|          -|          -|     9|    no    |
+        |- Loop 2     |    ?|    ?|  693 ~ 6088 |          -|          -|     ?|    no    |
+        |- Loop 3     |    ?|    ?|            ?|          -|          -|     ?|    no    |
+        |- Loop 4     |    ?|    ?|            ?|          -|          -|     ?|    no    |
+        |- Loop 5     |    ?|    ?|            ?|          -|          -|     ?|    no    |
+        |- Loop 6     |    ?|    ?|  164 ~ 2293 |          -|          -|     ?|    no    |
+        |- Loop 7     |    ?|    ?| 1532 ~ 2178 |          -|          -|     ?|    no    |
+        |- Loop 8     |    ?|    ?|            2|          -|          -|     ?|    no    |
+        +-------------+-----+-----+-------------+-----------+-----------+------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+-------+
+|       Name      | BRAM_18K| DSP48E|   FF   |  LUT  |
++-----------------+---------+-------+--------+-------+
+|DSP              |        -|      -|       -|      -|
+|Expression       |        -|      -|       0|    163|
+|FIFO             |        -|      -|       -|      -|
+|Instance         |        4|      -|    2331|  25511|
+|Memory           |        1|      -|       8|     13|
+|Multiplexer      |        -|      -|       -|   1659|
+|Register         |        -|      -|     245|      -|
++-----------------+---------+-------+--------+-------+
+|Total            |        5|      0|    2584|  27346|
++-----------------+---------+-------+--------+-------+
+|Available        |      280|    220|  106400|  53200|
++-----------------+---------+-------+--------+-------+
+|Utilization (%)  |        1|      0|       2|     51|
++-----------------+---------+-------+--------+-------+
+
++ Detail: 
+    * Instance: 
+    +---------------------------------+------------------------+---------+-------+-----+------+
+    |             Instance            |         Module         | BRAM_18K| DSP48E|  FF |  LUT |
+    +---------------------------------+------------------------+---------+-------+-----+------+
+    |grp_cornerCorrect_fu_400         |cornerCorrect           |        0|      0|   28|   295|
+    |grp_edgeCorrect_fu_385           |edgeCorrect             |        0|      0|   37|   384|
+    |grp_findEdge_fu_372              |findEdge                |        0|      0|   53|   382|
+    |grp_optimizeCube_fu_363          |optimizeCube            |        0|      0|   73|   453|
+    |grp_rotateCubeHorizontal_fu_343  |rotateCubeHorizontal    |        0|      0|   65|   802|
+    |grp_rotateCubeVertical_fu_353    |rotateCubeVertical      |        0|      0|   65|   802|
+    |solveCube_add_io_s_axi_U         |solveCube_add_io_s_axi  |        4|      0|  210|   196|
+    |grp_solveStage1_fu_332           |solveStage1             |        0|      0|  138|  1628|
+    |grp_solveStage2_fu_262           |solveStage2             |        0|      0|  208|  2866|
+    |grp_solveStage3_fu_242           |solveStage3             |        0|      0|  542|  5646|
+    |grp_solveStage4a_fu_300          |solveStage4a            |        0|      0|  198|  2620|
+    |grp_solveStage4b_fu_310          |solveStage4b            |        0|      0|  204|  2606|
+    |grp_solveStage5a_fu_290          |solveStage5a            |        0|      0|  203|  2713|
+    |grp_solveStage5b_fu_280          |solveStage5b            |        0|      0|  258|  3044|
+    |grp_turnCube_fu_320              |turnCube                |        0|      0|   49|  1074|
+    +---------------------------------+------------------------+---------+-------+-----+------+
+    |Total                            |                        |        4|      0| 2331| 25511|
+    +---------------------------------+------------------------+---------+-------+-----+------+
+
+    * DSP48: 
+    N/A
+
+    * Memory: 
+    +----------------+----------------------+---------+---+----+------+-----+------+-------------+
+    |     Memory     |        Module        | BRAM_18K| FF| LUT| Words| Bits| Banks| W*Bits*Banks|
+    +----------------+----------------------+---------+---+----+------+-----+------+-------------+
+    |cubieColor_V_U  |solveCube_cubieCoeOg  |        1|  0|   0|    54|    3|     1|          162|
+    |moves_V_U       |solveCube_moves_V     |        0|  8|  13|   200|    4|     1|          800|
+    +----------------+----------------------+---------+---+----+------+-----+------+-------------+
+    |Total           |                      |        1|  8|  13|   254|    7|     2|          962|
+    +----------------+----------------------+---------+---+----+------+-----+------+-------------+
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +-----------------------------------+----------+-------+---+----+------------+------------+
+    |           Variable Name           | Operation| DSP48E| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +-----------------------------------+----------+-------+---+----+------------+------------+
+    |i_V_1_fu_548_p2                    |     +    |      0|  0|  15|           8|           1|
+    |i_V_fu_451_p2                      |     +    |      0|  0|  12|           3|           1|
+    |j_V_fu_491_p2                      |     +    |      0|  0|  13|           4|           1|
+    |tmp_7_fu_473_p2                    |     +    |      0|  0|  15|           7|           7|
+    |tmp_8_fu_501_p2                    |     +    |      0|  0|  15|           7|           7|
+    |ap_block_state104_on_subcall_done  |    and   |      0|  0|   2|           1|           1|
+    |ap_block_state124_on_subcall_done  |    and   |      0|  0|   2|           1|           1|
+    |ap_predicate_op373_call_state126   |    and   |      0|  0|   2|           1|           1|
+    |ap_predicate_op375_call_state126   |    and   |      0|  0|   2|           1|           1|
+    |or_cond5_fu_537_p2                 |    and   |      0|  0|   2|           1|           1|
+    |or_cond_fu_521_p2                  |    and   |      0|  0|   2|           1|           1|
+    |tmp2_fu_511_p2                     |    and   |      0|  0|   2|           1|           1|
+    |tmp3_fu_515_p2                     |    and   |      0|  0|   2|           1|           1|
+    |tmp4_fu_527_p2                     |    and   |      0|  0|   2|           1|           1|
+    |tmp5_fu_531_p2                     |    and   |      0|  0|   2|           1|           1|
+    |exitcond_fu_543_p2                 |   icmp   |      0|  0|  11|           8|           8|
+    |grp_fu_411_p2                      |   icmp   |      0|  0|   9|           3|           3|
+    |grp_fu_416_p2                      |   icmp   |      0|  0|   9|           3|           3|
+    |grp_fu_421_p2                      |   icmp   |      0|  0|   9|           3|           3|
+    |grp_fu_426_p2                      |   icmp   |      0|  0|   9|           3|           3|
+    |tmp_fu_445_p2                      |   icmp   |      0|  0|   9|           3|           3|
+    |tmp_s_fu_485_p2                    |   icmp   |      0|  0|   9|           4|           4|
+    |ap_block_state126_on_subcall_done  |    or    |      0|  0|   2|           1|           1|
+    |ap_block_state128_on_subcall_done  |    or    |      0|  0|   2|           1|           1|
+    |ap_predicate_op381_call_state128   |    or    |      0|  0|   2|           1|           1|
+    |ap_predicate_op383_call_state128   |    or    |      0|  0|   2|           1|           1|
+    +-----------------------------------+----------+-------+---+----+------------+------------+
+    |Total                              |          |      0|  0| 163|          70|          58|
+    +-----------------------------------+----------+-------+---+----+------------+------------+
+
+    * Multiplexer: 
+    +-----------------------------------+-----+-----------+-----+-----------+
+    |                Name               | LUT | Input Size| Bits| Total Bits|
+    +-----------------------------------+-----+-----------+-----+-----------+
+    |ap_NS_fsm                          |  641|        144|    1|        144|
+    |cubieColor_V_address0              |   97|         20|    6|        120|
+    |cubieColor_V_address1              |   93|         19|    6|        114|
+    |cubieColor_V_ce0                   |   62|         15|    1|         15|
+    |cubieColor_V_ce1                   |   62|         15|    1|         15|
+    |cubieColor_V_d0                    |   53|         12|    3|         36|
+    |cubieColor_V_d1                    |   50|         11|    3|         33|
+    |cubieColor_V_we0                   |   53|         12|    1|         12|
+    |cubieColor_V_we1                   |   50|         11|    1|         11|
+    |grp_cornerCorrect_fu_400_corner_V  |   27|          5|    3|         15|
+    |grp_edgeCorrect_fu_385_edge_V      |   44|          9|    4|         36|
+    |grp_findEdge_fu_372_sEC_V          |   27|          5|    3|         15|
+    |grp_solveStage2_fu_262_sC_V        |   21|          4|    3|         12|
+    |grp_solveStage2_fu_262_tC_V        |   21|          4|    3|         12|
+    |grp_solveStage3_fu_242_fC_V        |   27|          5|    3|         15|
+    |grp_solveStage3_fu_242_sC_V        |   27|          5|    3|         15|
+    |moveCounter_V                      |   50|         11|    8|         88|
+    |moves_V_address0                   |   56|         13|    8|        104|
+    |moves_V_ce0                        |   56|         13|    1|         13|
+    |moves_V_d0                         |   53|         12|    4|         48|
+    |moves_V_we0                        |   53|         12|    1|         12|
+    |p_2_reg_220                        |    9|          2|    4|          8|
+    |p_s_reg_209                        |    9|          2|    3|          6|
+    |reg_436                            |    9|          2|    3|          6|
+    |t_V_reg_231                        |    9|          2|    8|         16|
+    +-----------------------------------+-----+-----------+-----+-----------+
+    |Total                              | 1659|        365|   85|        921|
+    +-----------------------------------+-----+-----------+-----+-----------+
+
+    * Register: 
+    +----------------------------------------------+-----+----+-----+-----------+
+    |                     Name                     |  FF | LUT| Bits| Const Bits|
+    +----------------------------------------------+-----+----+-----+-----------+
+    |ap_CS_fsm                                     |  143|   0|  143|          0|
+    |grp_cornerCorrect_fu_400_ap_start_reg         |    1|   0|    1|          0|
+    |grp_edgeCorrect_fu_385_ap_start_reg           |    1|   0|    1|          0|
+    |grp_findEdge_fu_372_ap_start_reg              |    1|   0|    1|          0|
+    |grp_optimizeCube_fu_363_ap_start_reg          |    1|   0|    1|          0|
+    |grp_rotateCubeHorizontal_fu_343_ap_start_reg  |    1|   0|    1|          0|
+    |grp_rotateCubeVertical_fu_353_ap_start_reg    |    1|   0|    1|          0|
+    |grp_solveStage1_fu_332_ap_start_reg           |    1|   0|    1|          0|
+    |grp_solveStage2_fu_262_ap_start_reg           |    1|   0|    1|          0|
+    |grp_solveStage3_fu_242_ap_start_reg           |    1|   0|    1|          0|
+    |grp_solveStage4a_fu_300_ap_start_reg          |    1|   0|    1|          0|
+    |grp_solveStage4b_fu_310_ap_start_reg          |    1|   0|    1|          0|
+    |grp_solveStage5a_fu_290_ap_start_reg          |    1|   0|    1|          0|
+    |grp_solveStage5b_fu_280_ap_start_reg          |    1|   0|    1|          0|
+    |grp_turnCube_fu_320_ap_start_reg              |    1|   0|    1|          0|
+    |i_V_1_reg_720                                 |    8|   0|    8|          0|
+    |i_V_reg_562                                   |    3|   0|    3|          0|
+    |j_V_reg_575                                   |    4|   0|    4|          0|
+    |moveCounter_V                                 |    8|   0|    8|          0|
+    |op2_V_assign_reg_712                          |    8|   0|    8|          0|
+    |or_cond_reg_648                               |    1|   0|    1|          0|
+    |p_22_reg_665                                  |    1|   0|    1|          0|
+    |p_23_reg_669                                  |    1|   0|    1|          0|
+    |p_24_reg_673                                  |    1|   0|    1|          0|
+    |p_26_reg_693                                  |    1|   0|    1|          0|
+    |p_27_reg_689                                  |    1|   0|    1|          0|
+    |p_28_reg_677                                  |    1|   0|    1|          0|
+    |p_29_reg_681                                  |    1|   0|    1|          0|
+    |p_2_reg_220                                   |    4|   0|    4|          0|
+    |p_30_reg_685                                  |    1|   0|    1|          0|
+    |p_s_reg_209                                   |    3|   0|    3|          0|
+    |reg_431                                       |    4|   0|    4|          0|
+    |reg_436                                       |    3|   0|    3|          0|
+    |t_V_reg_231                                   |    8|   0|    8|          0|
+    |tmp_53_reg_638                                |    1|   0|    1|          0|
+    |tmp_54_reg_643                                |    1|   0|    1|          0|
+    |tmp_57_reg_652                                |    1|   0|    1|          0|
+    |tmp_58_reg_657                                |    1|   0|    1|          0|
+    |tmp_61_reg_725                                |    8|   0|   64|         56|
+    |tmp_7_reg_567                                 |    7|   0|    7|          0|
+    |tmp_8_cast_reg_580                            |    7|   0|   64|         57|
+    +----------------------------------------------+-----+----+-----+-----------+
+    |Total                                         |  245|   0|  358|        113|
+    +----------------------------------------------+-----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++----------------------+-----+-----+------------+--------------+--------------+
+|       RTL Ports      | Dir | Bits|  Protocol  | Source Object|    C Type    |
++----------------------+-----+-----+------------+--------------+--------------+
+|s_axi_add_io_AWVALID  |  in |    1|    s_axi   |    add_io    |    pointer   |
+|s_axi_add_io_AWREADY  | out |    1|    s_axi   |    add_io    |    pointer   |
+|s_axi_add_io_AWADDR   |  in |   10|    s_axi   |    add_io    |    pointer   |
+|s_axi_add_io_WVALID   |  in |    1|    s_axi   |    add_io    |    pointer   |
+|s_axi_add_io_WREADY   | out |    1|    s_axi   |    add_io    |    pointer   |
+|s_axi_add_io_WDATA    |  in |   32|    s_axi   |    add_io    |    pointer   |
+|s_axi_add_io_WSTRB    |  in |    4|    s_axi   |    add_io    |    pointer   |
+|s_axi_add_io_ARVALID  |  in |    1|    s_axi   |    add_io    |    pointer   |
+|s_axi_add_io_ARREADY  | out |    1|    s_axi   |    add_io    |    pointer   |
+|s_axi_add_io_ARADDR   |  in |   10|    s_axi   |    add_io    |    pointer   |
+|s_axi_add_io_RVALID   | out |    1|    s_axi   |    add_io    |    pointer   |
+|s_axi_add_io_RREADY   |  in |    1|    s_axi   |    add_io    |    pointer   |
+|s_axi_add_io_RDATA    | out |   32|    s_axi   |    add_io    |    pointer   |
+|s_axi_add_io_RRESP    | out |    2|    s_axi   |    add_io    |    pointer   |
+|s_axi_add_io_BVALID   | out |    1|    s_axi   |    add_io    |    pointer   |
+|s_axi_add_io_BREADY   |  in |    1|    s_axi   |    add_io    |    pointer   |
+|s_axi_add_io_BRESP    | out |    2|    s_axi   |    add_io    |    pointer   |
+|ap_clk                |  in |    1| ap_ctrl_hs |   solveCube  | return value |
+|ap_rst_n              |  in |    1| ap_ctrl_hs |   solveCube  | return value |
+|interrupt             | out |    1| ap_ctrl_hs |   solveCube  | return value |
++----------------------+-----+-----+------------+--------------+--------------+
+
