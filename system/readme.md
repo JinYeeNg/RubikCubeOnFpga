@@ -16,6 +16,11 @@ Follow instruction from the webpage to download mosquitto https://mosquitto.org/
 2. upload the whole __OpenMV__ folder from github into the OpenMV board.
 3. you may wish to change the wifi ssid and password in the __knn2.py__ of OpenMV, it is being located at the line 9 and 10 of the __knn2.py__
 
+# Calibration
+The performance of the solver will depend on the lightning condition and camera position, the easier way to calibrate the camera position is by using a solved cube and run the solver once.
+
+Check for the pieces that do not being identified correctly and adjust the camera position accordingly.
+
 # Operation
 ## Pynq Side
 1. Start up the PYNQ board
