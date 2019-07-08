@@ -1,4 +1,4 @@
-The operation of the system is still being influenced by the lightning condition. It may work the best under warm white lighting. Some further adjustment to the __knn.py__ in the OpenMV directory may be needed to make it more robust towards lighting condition.
+The operation of the system is still being influenced by the lighting condition. It works the best under warm white lighting. Some further adjustment to the __knn.py__ in the OpenMV directory may be needed to make it more robust towards lighting condition.
 
 # Initialisation
 
