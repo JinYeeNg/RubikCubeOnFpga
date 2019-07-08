@@ -1,0 +1,1196 @@
+
+
+================================================================
+== Vivado HLS Report for 'solution'
+================================================================
+* Date:           Sat Mar  9 22:55:17 2019
+
+* Version:        2018.2 (Build 2258646 on Thu Jun 14 20:25:20 MDT 2018)
+* Project:        kociemba
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  12.00|    10.500|        1.50|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |    ?|    ?|    ?|    ?|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +----------------+-----+-----+----------+-----------+-----------+-------+----------+
+        |                |  Latency  | Iteration|  Initiation Interval  |  Trip |          |
+        |    Loop Name   | min | max |  Latency |  achieved |   target  | Count | Pipelined|
+        +----------------+-----+-----+----------+-----------+-----------+-------+----------+
+        |- memset_count  |    5|    5|         1|          -|          -|      6|    no    |
+        |- Loop 2        |   60|   60|        10|          -|          -|      6|    no    |
+        |- Loop 3        |  162|  162|         3|          -|          -|     54|    no    |
+        |- Loop 4        |    2|   13|         2|          -|          -| 1 ~ 6 |    no    |
+        |- Loop 5        |    ?|    ?|         ?|          -|          -|      ?|    no    |
+        | + Loop 5.1     |    ?|    ?|         1|          -|          -|      ?|    no    |
+        +----------------+-----+-----+----------+-----------+-----------+-------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 58
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	2  / (!tmp_148)
+	3  / (tmp_148)
+3 --> 
+	4  / (!exitcond2)
+	58  / (exitcond2 & complete)
+	13  / (exitcond2 & !complete)
+4 --> 
+	5  / true
+5 --> 
+	6  / true
+6 --> 
+	7  / true
+7 --> 
+	8  / true
+8 --> 
+	9  / true
+9 --> 
+	10  / true
+10 --> 
+	11  / true
+11 --> 
+	12  / true
+12 --> 
+	3  / true
+13 --> 
+	14  / (!exitcond)
+	16  / (exitcond)
+14 --> 
+	15  / true
+15 --> 
+	13  / true
+16 --> 
+	17  / (tmp_176)
+	18  / (!tmp_176)
+17 --> 
+	16  / (tmp_184)
+	58  / (!tmp_184)
+18 --> 
+	19  / true
+19 --> 
+	20  / true
+20 --> 
+	21  / true
+21 --> 
+	22  / true
+22 --> 
+	23  / (tmp_185)
+	58  / (!tmp_185)
+23 --> 
+	24  / true
+24 --> 
+	25  / true
+25 --> 
+	26  / true
+26 --> 
+	27  / true
+27 --> 
+	28  / true
+28 --> 
+	29  / (!or_cond)
+	33  / (or_cond)
+29 --> 
+	30  / (icmp)
+	32  / (!icmp)
+30 --> 
+	31  / true
+31 --> 
+	31  / (!tmp_204 & !tmp_199 & or_cond1)
+	32  / (!tmp_204 & tmp_199) | (tmp_204 & !tmp_199) | (!tmp_199 & !or_cond1) | (tmp_199 & tmp_205)
+	58  / (tmp_204 & tmp_199 & !tmp_205)
+32 --> 
+	34  / (!busy_4)
+	56  / (busy_4)
+33 --> 
+	32  / true
+34 --> 
+	35  / true
+35 --> 
+	36  / true
+36 --> 
+	37  / true
+37 --> 
+	38  / true
+38 --> 
+	39  / true
+39 --> 
+	40  / true
+40 --> 
+	41  / true
+41 --> 
+	42  / true
+42 --> 
+	43  / true
+43 --> 
+	44  / true
+44 --> 
+	45  / true
+45 --> 
+	46  / true
+46 --> 
+	47  / true
+47 --> 
+	48  / true
+48 --> 
+	49  / true
+49 --> 
+	50  / true
+50 --> 
+	51  / true
+51 --> 
+	52  / true
+52 --> 
+	56  / (!tmp_227) | (tmp_229)
+	53  / (tmp_227 & !tmp_229)
+53 --> 
+	54  / (tmp_231)
+	56  / (!tmp_231)
+54 --> 
+	56  / (tmp_254)
+	55  / (!tmp_254 & !tmp_233)
+	57  / (!tmp_254 & tmp_233)
+55 --> 
+	56  / true
+56 --> 
+	57  / (!busy_4 & tmp_227 & !tmp_229 & tmp_231 & !tmp_254 & !or_cond2)
+	27  / (busy_4) | (!tmp_227) | (tmp_229) | (!tmp_231) | (tmp_254) | (or_cond2)
+57 --> 
+	58  / true
+58 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.76>
+ST_1 : Operation 59 [1/1] (1.00ns)   --->   "%Slice_Flip_Prun2_rea = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %Slice_Flip_Prun2)"   --->   Operation 59 'read' 'Slice_Flip_Prun2_rea' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 60 [1/1] (1.00ns)   --->   "%Slice_Twist_Prun2_re = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %Slice_Twist_Prun2)"   --->   Operation 60 'read' 'Slice_Twist_Prun2_re' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 61 [1/1] (1.00ns)   --->   "%Slice_URtoDF_Parity_41 = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %Slice_URtoDF_Parity_Prun2)"   --->   Operation 61 'read' 'Slice_URtoDF_Parity_41' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 62 [1/1] (1.00ns)   --->   "%Slice_URFtoDLF_Parit_1 = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %Slice_URFtoDLF_Parity_Prun2)"   --->   Operation 62 'read' 'Slice_URFtoDLF_Parit_1' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 63 [1/1] (1.00ns)   --->   "%MergeURtoULandUBtoDF_1 = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %MergeURtoULandUBtoDF2)"   --->   Operation 63 'read' 'MergeURtoULandUBtoDF_1' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 64 [1/1] (1.00ns)   --->   "%UBtoDF_Move2_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %UBtoDF_Move2)"   --->   Operation 64 'read' 'UBtoDF_Move2_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 65 [1/1] (1.00ns)   --->   "%URtoUL_Move2_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %URtoUL_Move2)"   --->   Operation 65 'read' 'URtoUL_Move2_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 66 [1/1] (1.00ns)   --->   "%URtoDF_Move2_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %URtoDF_Move2)"   --->   Operation 66 'read' 'URtoDF_Move2_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 67 [1/1] (1.00ns)   --->   "%URFtoDLF_Move2_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %URFtoDLF_Move2)"   --->   Operation 67 'read' 'URFtoDLF_Move2_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 68 [1/1] (1.00ns)   --->   "%FRtoBR_Move2_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %FRtoBR_Move2)"   --->   Operation 68 'read' 'FRtoBR_Move2_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 69 [1/1] (1.00ns)   --->   "%flipMove2_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %flipMove2)"   --->   Operation 69 'read' 'flipMove2_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 70 [1/1] (1.00ns)   --->   "%twistMove2_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %twistMove2)"   --->   Operation 70 'read' 'twistMove2_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 71 [1/1] (1.00ns)   --->   "%maxDepth_read = call i8 @_ssdm_op_Read.s_axilite.i8(i8 %maxDepth)"   --->   Operation 71 'read' 'maxDepth_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 72 [1/1] (0.00ns)   --->   "%Slice_Flip_Prun = call i31 @_ssdm_op_PartSelect.i31.i32.i32.i32(i32 %Slice_Flip_Prun2_rea, i32 1, i32 31)"   --->   Operation 72 'partselect' 'Slice_Flip_Prun' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 73 [1/1] (0.00ns)   --->   "%Slice_Twist_Prun = call i31 @_ssdm_op_PartSelect.i31.i32.i32.i32(i32 %Slice_Twist_Prun2_re, i32 1, i32 31)"   --->   Operation 73 'partselect' 'Slice_Twist_Prun' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 74 [1/1] (0.00ns)   --->   "%Slice_URtoDF_Parity_s = call i31 @_ssdm_op_PartSelect.i31.i32.i32.i32(i32 %Slice_URtoDF_Parity_41, i32 1, i32 31)"   --->   Operation 74 'partselect' 'Slice_URtoDF_Parity_s' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 75 [1/1] (0.00ns)   --->   "%Slice_URFtoDLF_Parit = call i31 @_ssdm_op_PartSelect.i31.i32.i32.i32(i32 %Slice_URFtoDLF_Parit_1, i32 1, i32 31)"   --->   Operation 75 'partselect' 'Slice_URFtoDLF_Parit' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 76 [1/1] (0.00ns)   --->   "%MergeURtoULandUBtoDF = call i31 @_ssdm_op_PartSelect.i31.i32.i32.i32(i32 %MergeURtoULandUBtoDF_1, i32 1, i32 31)"   --->   Operation 76 'partselect' 'MergeURtoULandUBtoDF' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 77 [1/1] (0.00ns)   --->   "%UBtoDF_Move = call i31 @_ssdm_op_PartSelect.i31.i32.i32.i32(i32 %UBtoDF_Move2_read, i32 1, i32 31)"   --->   Operation 77 'partselect' 'UBtoDF_Move' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 78 [1/1] (0.00ns)   --->   "%URtoUL_Move = call i31 @_ssdm_op_PartSelect.i31.i32.i32.i32(i32 %URtoUL_Move2_read, i32 1, i32 31)"   --->   Operation 78 'partselect' 'URtoUL_Move' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 79 [1/1] (0.00ns)   --->   "%URtoDF_Move = call i31 @_ssdm_op_PartSelect.i31.i32.i32.i32(i32 %URtoDF_Move2_read, i32 1, i32 31)"   --->   Operation 79 'partselect' 'URtoDF_Move' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 80 [1/1] (0.00ns)   --->   "%URFtoDLF_Move = call i31 @_ssdm_op_PartSelect.i31.i32.i32.i32(i32 %URFtoDLF_Move2_read, i32 1, i32 31)"   --->   Operation 80 'partselect' 'URFtoDLF_Move' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 81 [1/1] (0.00ns)   --->   "%FRtoBR_Move = call i31 @_ssdm_op_PartSelect.i31.i32.i32.i32(i32 %FRtoBR_Move2_read, i32 1, i32 31)"   --->   Operation 81 'partselect' 'FRtoBR_Move' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 82 [1/1] (0.00ns)   --->   "%tmp_247_cast = zext i31 %FRtoBR_Move to i33"   --->   Operation 82 'zext' 'tmp_247_cast' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 83 [1/1] (0.00ns)   --->   "%tmp_198 = call i31 @_ssdm_op_PartSelect.i31.i32.i32.i32(i32 %flipMove2_read, i32 1, i32 31)"   --->   Operation 83 'partselect' 'tmp_198' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 84 [1/1] (0.00ns)   --->   "%tmp_248_cast = zext i31 %tmp_198 to i33"   --->   Operation 84 'zext' 'tmp_248_cast' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 85 [1/1] (0.00ns)   --->   "%tmp_211 = call i31 @_ssdm_op_PartSelect.i31.i32.i32.i32(i32 %twistMove2_read, i32 1, i32 31)"   --->   Operation 85 'partselect' 'tmp_211' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 86 [1/1] (0.00ns)   --->   "%tmp_249_cast1 = zext i31 %tmp_211 to i33"   --->   Operation 86 'zext' 'tmp_249_cast1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 87 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i16* %CTRL_BUS), !map !92"   --->   Operation 87 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 88 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap([54 x i8]* %facelets) nounwind, !map !148"   --->   Operation 88 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 89 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i8 %maxDepth) nounwind, !map !154"   --->   Operation 89 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 90 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i1* %unsolvable) nounwind, !map !160"   --->   Operation 90 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 91 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i8* %encode_length) nounwind, !map !164"   --->   Operation 91 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 92 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap([30 x i8]* %encode_array) nounwind, !map !168"   --->   Operation 92 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 93 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecTopModule([9 x i8]* @solution_str) nounwind"   --->   Operation 93 'spectopmodule' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 94 [1/1] (0.00ns)   --->   "%count = alloca [6 x i32], align 16" [kociemba/search.c:157]   --->   Operation 94 'alloca' 'count' <Predicate = true> <Delay = 0.00> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 31> <RAM>
+ST_1 : Operation 95 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i1* %unsolvable, [10 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [9 x i8]* @p_str2, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [kociemba/search.c:122]   --->   Operation 95 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 96 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecMemCore([30 x i8]* %encode_array, [1 x i8]* @p_str59, [7 x i8]* @RAM_1P_str, [1 x i8]* @p_str59, i32 -1, [1 x i8]* @p_str59, [1 x i8]* @p_str59, [1 x i8]* @p_str59, [1 x i8]* @p_str59, [1 x i8]* @p_str59)"   --->   Operation 96 'specmemcore' 'empty' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 97 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface([30 x i8]* %encode_array, [10 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [9 x i8]* @p_str2, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind"   --->   Operation 97 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 98 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i8* %encode_length, [10 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [9 x i8]* @p_str2, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [kociemba/search.c:124]   --->   Operation 98 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 99 [1/1] (0.00ns)   --->   "%tmp = sext i8 %maxDepth_read to i32" [kociemba/search.c:125]   --->   Operation 99 'sext' 'tmp' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 100 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i8 %maxDepth, [10 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [9 x i8]* @p_str2, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [kociemba/search.c:125]   --->   Operation 100 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 101 [1/1] (0.00ns)   --->   "%empty_39 = call i32 (...)* @_ssdm_op_SpecMemCore([54 x i8]* %facelets, [1 x i8]* @p_str58, [7 x i8]* @RAM_1P_str, [1 x i8]* @p_str58, i32 -1, [1 x i8]* @p_str58, [1 x i8]* @p_str58, [1 x i8]* @p_str58, [1 x i8]* @p_str58, [1 x i8]* @p_str58)"   --->   Operation 101 'specmemcore' 'empty_39' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 102 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface([54 x i8]* %facelets, [10 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [9 x i8]* @p_str2, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind"   --->   Operation 102 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 103 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 0, [10 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [9 x i8]* @p_str2, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [kociemba/search.c:127]   --->   Operation 103 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 104 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i16* %CTRL_BUS, [6 x i8]* @p_str3, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 541283, [9 x i8]* @p_str2, [6 x i8]* @p_str4, [1 x i8]* @p_str1, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1)"   --->   Operation 104 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 105 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 %twistMove2, [10 x i8]* @mode, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 39366, [1 x i8]* @bundle, [6 x i8]* @p_str4, [1 x i8]* @p_str1, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1)"   --->   Operation 105 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 106 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 %flipMove2, [10 x i8]* @mode20, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 36864, [1 x i8]* @bundle21, [6 x i8]* @p_str4, [1 x i8]* @p_str1, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1)"   --->   Operation 106 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 107 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 %FRtoBR_Move2, [10 x i8]* @mode22, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 213840, [1 x i8]* @bundle23, [6 x i8]* @p_str4, [1 x i8]* @p_str1, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1)"   --->   Operation 107 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 108 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 %URFtoDLF_Move2, [10 x i8]* @mode24, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 362880, [1 x i8]* @bundle25, [6 x i8]* @p_str4, [1 x i8]* @p_str1, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1)"   --->   Operation 108 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 109 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 %URtoDF_Move2, [10 x i8]* @mode26, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 362880, [1 x i8]* @bundle27, [6 x i8]* @p_str4, [1 x i8]* @p_str1, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1)"   --->   Operation 109 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 110 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 %URtoUL_Move2, [10 x i8]* @mode28, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 23760, [1 x i8]* @bundle29, [6 x i8]* @p_str4, [1 x i8]* @p_str1, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1)"   --->   Operation 110 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 111 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 %UBtoDF_Move2, [10 x i8]* @mode30, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 23760, [1 x i8]* @bundle31, [6 x i8]* @p_str4, [1 x i8]* @p_str1, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1)"   --->   Operation 111 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 112 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 %MergeURtoULandUBtoDF2, [10 x i8]* @mode32, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 112896, [1 x i8]* @bundle33, [6 x i8]* @p_str4, [1 x i8]* @p_str1, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1)"   --->   Operation 112 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 113 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 %Slice_URFtoDLF_Parity_Prun2, [10 x i8]* @mode34, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 483840, [1 x i8]* @bundle35, [6 x i8]* @p_str4, [1 x i8]* @p_str1, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1)"   --->   Operation 113 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 114 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 %Slice_URtoDF_Parity_Prun2, [10 x i8]* @mode36, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 483840, [1 x i8]* @bundle37, [6 x i8]* @p_str4, [1 x i8]* @p_str1, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1)"   --->   Operation 114 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 115 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 %Slice_Twist_Prun2, [10 x i8]* @mode38, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 541283, [1 x i8]* @bundle39, [6 x i8]* @p_str4, [1 x i8]* @p_str1, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1)"   --->   Operation 115 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 116 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 %Slice_Flip_Prun2, [10 x i8]* @mode40, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 506880, [1 x i8]* @bundle41, [6 x i8]* @p_str4, [1 x i8]* @p_str1, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1)"   --->   Operation 116 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 117 [1/1] (1.00ns)   --->   "call void @_ssdm_op_Write.s_axilite.i1P(i1* %unsolvable, i1 false)" [kociemba/search.c:144]   --->   Operation 117 'write' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 118 [1/1] (1.00ns)   --->   "call void @_ssdm_op_Write.s_axilite.i8P(i8* %encode_length, i8 0)" [kociemba/search.c:145]   --->   Operation 118 'write' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 119 [1/1] (1.76ns)   --->   "br label %meminst"   --->   Operation 119 'br' <Predicate = true> <Delay = 1.76>
+
+State 2 <SV = 1> <Delay = 2.32>
+ST_2 : Operation 120 [1/1] (0.00ns)   --->   "%invdar = phi i3 [ 0, %0 ], [ %indvarinc, %meminst ]" [kociemba/search.c:157]   --->   Operation 120 'phi' 'invdar' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 121 [1/1] (1.65ns)   --->   "%indvarinc = add i3 %invdar, 1" [kociemba/search.c:157]   --->   Operation 121 'add' 'indvarinc' <Predicate = true> <Delay = 1.65> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 122 [1/1] (0.00ns)   --->   "%tmp_s = zext i3 %invdar to i64" [kociemba/search.c:157]   --->   Operation 122 'zext' 'tmp_s' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 123 [1/1] (0.00ns)   --->   "%count_addr = getelementptr [6 x i32]* %count, i64 0, i64 %tmp_s" [kociemba/search.c:157]   --->   Operation 123 'getelementptr' 'count_addr' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 124 [1/1] (2.32ns)   --->   "store i32 0, i32* %count_addr, align 4" [kociemba/search.c:157]   --->   Operation 124 'store' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 31> <RAM>
+ST_2 : Operation 125 [1/1] (1.13ns)   --->   "%tmp_148 = icmp eq i3 %invdar, -3" [kociemba/search.c:157]   --->   Operation 125 'icmp' 'tmp_148' <Predicate = true> <Delay = 1.13> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 126 [1/1] (0.00ns)   --->   "%empty_40 = call i32 (...)* @_ssdm_op_SpecLoopName([13 x i8]* @memset_count_str) nounwind"   --->   Operation 126 'specloopname' 'empty_40' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 127 [1/1] (0.00ns)   --->   "%empty_41 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 6, i64 6, i64 6) nounwind"   --->   Operation 127 'speclooptripcount' 'empty_41' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 128 [1/1] (0.00ns)   --->   "br i1 %tmp_148, label %.preheader35.preheader, label %meminst" [kociemba/search.c:157]   --->   Operation 128 'br' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 129 [1/1] (1.76ns)   --->   "br label %.preheader35" [kociemba/search.c:160]   --->   Operation 129 'br' <Predicate = (tmp_148)> <Delay = 1.76>
+
+State 3 <SV = 2> <Delay = 2.32>
+ST_3 : Operation 130 [1/1] (0.00ns)   --->   "%i = phi i3 [ %i_14, %_ifconv ], [ 0, %.preheader35.preheader ]"   --->   Operation 130 'phi' 'i' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 131 [1/1] (0.00ns)   --->   "%complete = phi i1 [ %complete_1, %_ifconv ], [ true, %.preheader35.preheader ]" [kociemba/search.c:161]   --->   Operation 131 'phi' 'complete' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 132 [1/1] (1.13ns)   --->   "%exitcond2 = icmp eq i3 %i, -2" [kociemba/search.c:160]   --->   Operation 132 'icmp' 'exitcond2' <Predicate = true> <Delay = 1.13> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 133 [1/1] (0.00ns)   --->   "%empty_42 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 6, i64 6, i64 6) nounwind"   --->   Operation 133 'speclooptripcount' 'empty_42' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 134 [1/1] (1.65ns)   --->   "%i_14 = add i3 %i, 1" [kociemba/search.c:160]   --->   Operation 134 'add' 'i_14' <Predicate = true> <Delay = 1.65> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 135 [1/1] (0.00ns)   --->   "br i1 %exitcond2, label %1, label %_ifconv" [kociemba/search.c:160]   --->   Operation 135 'br' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 136 [1/1] (0.00ns)   --->   "%tmp_149 = call i6 @_ssdm_op_BitConcatenate.i6.i3.i3(i3 %i, i3 %i)" [kociemba/search.c:161]   --->   Operation 136 'bitconcatenate' 'tmp_149' <Predicate = (!exitcond2)> <Delay = 0.00>
+ST_3 : Operation 137 [1/1] (0.00ns)   --->   "%tmp_150 = zext i6 %tmp_149 to i64" [kociemba/search.c:161]   --->   Operation 137 'zext' 'tmp_150' <Predicate = (!exitcond2)> <Delay = 0.00>
+ST_3 : Operation 138 [1/1] (0.00ns)   --->   "%facelets_addr = getelementptr [54 x i8]* %facelets, i64 0, i64 %tmp_150" [kociemba/search.c:161]   --->   Operation 138 'getelementptr' 'facelets_addr' <Predicate = (!exitcond2)> <Delay = 0.00>
+ST_3 : Operation 139 [2/2] (2.32ns)   --->   "%facelets_load = load i8* %facelets_addr, align 1" [kociemba/search.c:161]   --->   Operation 139 'load' 'facelets_load' <Predicate = (!exitcond2)> <Delay = 2.32> <Core = "RAM_1P">   --->   Core 42 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 8> <Depth = 54> <RAM>
+ST_3 : Operation 140 [1/1] (0.00ns)   --->   "br i1 %complete, label %._crit_edge16, label %.preheader3.preheader" [kociemba/search.c:173]   --->   Operation 140 'br' <Predicate = (exitcond2)> <Delay = 0.00>
+ST_3 : Operation 141 [1/1] (0.00ns)   --->   "%count_addr_1 = getelementptr inbounds [6 x i32]* %count, i64 0, i64 0" [kociemba/search.c:185]   --->   Operation 141 'getelementptr' 'count_addr_1' <Predicate = (exitcond2 & !complete)> <Delay = 0.00>
+ST_3 : Operation 142 [1/1] (0.00ns)   --->   "%count_addr_2 = getelementptr inbounds [6 x i32]* %count, i64 0, i64 1" [kociemba/search.c:188]   --->   Operation 142 'getelementptr' 'count_addr_2' <Predicate = (exitcond2 & !complete)> <Delay = 0.00>
+ST_3 : Operation 143 [1/1] (0.00ns)   --->   "%count_addr_3 = getelementptr inbounds [6 x i32]* %count, i64 0, i64 2" [kociemba/search.c:191]   --->   Operation 143 'getelementptr' 'count_addr_3' <Predicate = (exitcond2 & !complete)> <Delay = 0.00>
+ST_3 : Operation 144 [1/1] (0.00ns)   --->   "%count_addr_4 = getelementptr inbounds [6 x i32]* %count, i64 0, i64 3" [kociemba/search.c:194]   --->   Operation 144 'getelementptr' 'count_addr_4' <Predicate = (exitcond2 & !complete)> <Delay = 0.00>
+ST_3 : Operation 145 [1/1] (0.00ns)   --->   "%count_addr_5 = getelementptr inbounds [6 x i32]* %count, i64 0, i64 4" [kociemba/search.c:197]   --->   Operation 145 'getelementptr' 'count_addr_5' <Predicate = (exitcond2 & !complete)> <Delay = 0.00>
+ST_3 : Operation 146 [1/1] (0.00ns)   --->   "%count_addr_6 = getelementptr inbounds [6 x i32]* %count, i64 0, i64 5" [kociemba/search.c:200]   --->   Operation 146 'getelementptr' 'count_addr_6' <Predicate = (exitcond2 & !complete)> <Delay = 0.00>
+ST_3 : Operation 147 [1/1] (1.76ns)   --->   "br label %.preheader3" [kociemba/search.c:182]   --->   Operation 147 'br' <Predicate = (exitcond2 & !complete)> <Delay = 1.76>
+
+State 4 <SV = 3> <Delay = 4.14>
+ST_4 : Operation 148 [1/2] (2.32ns)   --->   "%facelets_load = load i8* %facelets_addr, align 1" [kociemba/search.c:161]   --->   Operation 148 'load' 'facelets_load' <Predicate = true> <Delay = 2.32> <Core = "RAM_1P">   --->   Core 42 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 8> <Depth = 54> <RAM>
+ST_4 : Operation 149 [1/1] (1.82ns)   --->   "%tmp_151 = add i6 %tmp_149, 1" [kociemba/search.c:161]   --->   Operation 149 'add' 'tmp_151' <Predicate = true> <Delay = 1.82> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 150 [1/1] (0.00ns)   --->   "%tmp_152 = zext i6 %tmp_151 to i64" [kociemba/search.c:161]   --->   Operation 150 'zext' 'tmp_152' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 151 [1/1] (0.00ns)   --->   "%facelets_addr_1 = getelementptr [54 x i8]* %facelets, i64 0, i64 %tmp_152" [kociemba/search.c:161]   --->   Operation 151 'getelementptr' 'facelets_addr_1' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 152 [2/2] (2.32ns)   --->   "%facelets_load_1 = load i8* %facelets_addr_1, align 1" [kociemba/search.c:161]   --->   Operation 152 'load' 'facelets_load_1' <Predicate = true> <Delay = 2.32> <Core = "RAM_1P">   --->   Core 42 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 8> <Depth = 54> <RAM>
+
+State 5 <SV = 4> <Delay = 4.14>
+ST_5 : Operation 153 [1/2] (2.32ns)   --->   "%facelets_load_1 = load i8* %facelets_addr_1, align 1" [kociemba/search.c:161]   --->   Operation 153 'load' 'facelets_load_1' <Predicate = true> <Delay = 2.32> <Core = "RAM_1P">   --->   Core 42 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 8> <Depth = 54> <RAM>
+ST_5 : Operation 154 [1/1] (1.55ns)   --->   "%tmp_153 = icmp eq i8 %facelets_load, %facelets_load_1" [kociemba/search.c:161]   --->   Operation 154 'icmp' 'tmp_153' <Predicate = true> <Delay = 1.55> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 155 [1/1] (1.82ns)   --->   "%tmp_154 = add i6 %tmp_149, 2" [kociemba/search.c:161]   --->   Operation 155 'add' 'tmp_154' <Predicate = true> <Delay = 1.82> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 156 [1/1] (0.00ns)   --->   "%tmp_155 = zext i6 %tmp_154 to i64" [kociemba/search.c:161]   --->   Operation 156 'zext' 'tmp_155' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 157 [1/1] (0.00ns)   --->   "%facelets_addr_2 = getelementptr [54 x i8]* %facelets, i64 0, i64 %tmp_155" [kociemba/search.c:161]   --->   Operation 157 'getelementptr' 'facelets_addr_2' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 158 [2/2] (2.32ns)   --->   "%facelets_load_2 = load i8* %facelets_addr_2, align 1" [kociemba/search.c:161]   --->   Operation 158 'load' 'facelets_load_2' <Predicate = true> <Delay = 2.32> <Core = "RAM_1P">   --->   Core 42 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 8> <Depth = 54> <RAM>
+
+State 6 <SV = 5> <Delay = 4.14>
+ST_6 : Operation 159 [1/2] (2.32ns)   --->   "%facelets_load_2 = load i8* %facelets_addr_2, align 1" [kociemba/search.c:161]   --->   Operation 159 'load' 'facelets_load_2' <Predicate = true> <Delay = 2.32> <Core = "RAM_1P">   --->   Core 42 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 8> <Depth = 54> <RAM>
+ST_6 : Operation 160 [1/1] (1.55ns)   --->   "%tmp_156 = icmp eq i8 %facelets_load, %facelets_load_2" [kociemba/search.c:161]   --->   Operation 160 'icmp' 'tmp_156' <Predicate = true> <Delay = 1.55> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 161 [1/1] (1.82ns)   --->   "%tmp_157 = add i6 %tmp_149, 3" [kociemba/search.c:161]   --->   Operation 161 'add' 'tmp_157' <Predicate = true> <Delay = 1.82> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 162 [1/1] (0.00ns)   --->   "%tmp_158 = zext i6 %tmp_157 to i64" [kociemba/search.c:161]   --->   Operation 162 'zext' 'tmp_158' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 163 [1/1] (0.00ns)   --->   "%facelets_addr_3 = getelementptr [54 x i8]* %facelets, i64 0, i64 %tmp_158" [kociemba/search.c:161]   --->   Operation 163 'getelementptr' 'facelets_addr_3' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 164 [2/2] (2.32ns)   --->   "%facelets_load_3 = load i8* %facelets_addr_3, align 1" [kociemba/search.c:161]   --->   Operation 164 'load' 'facelets_load_3' <Predicate = true> <Delay = 2.32> <Core = "RAM_1P">   --->   Core 42 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 8> <Depth = 54> <RAM>
+
+State 7 <SV = 6> <Delay = 4.14>
+ST_7 : Operation 165 [1/2] (2.32ns)   --->   "%facelets_load_3 = load i8* %facelets_addr_3, align 1" [kociemba/search.c:161]   --->   Operation 165 'load' 'facelets_load_3' <Predicate = true> <Delay = 2.32> <Core = "RAM_1P">   --->   Core 42 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 8> <Depth = 54> <RAM>
+ST_7 : Operation 166 [1/1] (1.55ns)   --->   "%tmp_159 = icmp eq i8 %facelets_load, %facelets_load_3" [kociemba/search.c:161]   --->   Operation 166 'icmp' 'tmp_159' <Predicate = true> <Delay = 1.55> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 167 [1/1] (1.82ns)   --->   "%tmp_160 = add i6 %tmp_149, 4" [kociemba/search.c:161]   --->   Operation 167 'add' 'tmp_160' <Predicate = true> <Delay = 1.82> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 168 [1/1] (0.00ns)   --->   "%tmp_161 = zext i6 %tmp_160 to i64" [kociemba/search.c:161]   --->   Operation 168 'zext' 'tmp_161' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 169 [1/1] (0.00ns)   --->   "%facelets_addr_5 = getelementptr [54 x i8]* %facelets, i64 0, i64 %tmp_161" [kociemba/search.c:161]   --->   Operation 169 'getelementptr' 'facelets_addr_5' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 170 [2/2] (2.32ns)   --->   "%facelets_load_5 = load i8* %facelets_addr_5, align 1" [kociemba/search.c:161]   --->   Operation 170 'load' 'facelets_load_5' <Predicate = true> <Delay = 2.32> <Core = "RAM_1P">   --->   Core 42 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 8> <Depth = 54> <RAM>
+
+State 8 <SV = 7> <Delay = 4.85>
+ST_8 : Operation 171 [1/2] (2.32ns)   --->   "%facelets_load_5 = load i8* %facelets_addr_5, align 1" [kociemba/search.c:161]   --->   Operation 171 'load' 'facelets_load_5' <Predicate = true> <Delay = 2.32> <Core = "RAM_1P">   --->   Core 42 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 8> <Depth = 54> <RAM>
+ST_8 : Operation 172 [1/1] (1.55ns)   --->   "%tmp_162 = icmp eq i8 %facelets_load, %facelets_load_5" [kociemba/search.c:161]   --->   Operation 172 'icmp' 'tmp_162' <Predicate = true> <Delay = 1.55> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 173 [1/1] (1.82ns)   --->   "%tmp_163 = add i6 %tmp_149, 5" [kociemba/search.c:161]   --->   Operation 173 'add' 'tmp_163' <Predicate = true> <Delay = 1.82> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 174 [1/1] (0.00ns)   --->   "%tmp_164 = zext i6 %tmp_163 to i64" [kociemba/search.c:161]   --->   Operation 174 'zext' 'tmp_164' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 175 [1/1] (0.00ns)   --->   "%facelets_addr_6 = getelementptr [54 x i8]* %facelets, i64 0, i64 %tmp_164" [kociemba/search.c:161]   --->   Operation 175 'getelementptr' 'facelets_addr_6' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 176 [2/2] (2.32ns)   --->   "%facelets_load_6 = load i8* %facelets_addr_6, align 1" [kociemba/search.c:161]   --->   Operation 176 'load' 'facelets_load_6' <Predicate = true> <Delay = 2.32> <Core = "RAM_1P">   --->   Core 42 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 8> <Depth = 54> <RAM>
+ST_8 : Operation 177 [1/1] (0.00ns) (grouped into LUT with out node tmp8)   --->   "%tmp9 = and i1 %tmp_153, %tmp_156" [kociemba/search.c:161]   --->   Operation 177 'and' 'tmp9' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 178 [1/1] (0.00ns) (grouped into LUT with out node tmp8)   --->   "%tmp10 = and i1 %tmp_159, %tmp_162" [kociemba/search.c:161]   --->   Operation 178 'and' 'tmp10' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 179 [1/1] (0.97ns) (out node of the LUT)   --->   "%tmp8 = and i1 %tmp10, %tmp9" [kociemba/search.c:161]   --->   Operation 179 'and' 'tmp8' <Predicate = true> <Delay = 0.97> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+
+State 9 <SV = 8> <Delay = 4.14>
+ST_9 : Operation 180 [1/2] (2.32ns)   --->   "%facelets_load_6 = load i8* %facelets_addr_6, align 1" [kociemba/search.c:161]   --->   Operation 180 'load' 'facelets_load_6' <Predicate = true> <Delay = 2.32> <Core = "RAM_1P">   --->   Core 42 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 8> <Depth = 54> <RAM>
+ST_9 : Operation 181 [1/1] (1.55ns)   --->   "%tmp_165 = icmp eq i8 %facelets_load, %facelets_load_6" [kociemba/search.c:161]   --->   Operation 181 'icmp' 'tmp_165' <Predicate = true> <Delay = 1.55> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 182 [1/1] (1.82ns)   --->   "%tmp_166 = add i6 %tmp_149, 6" [kociemba/search.c:161]   --->   Operation 182 'add' 'tmp_166' <Predicate = true> <Delay = 1.82> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 183 [1/1] (0.00ns)   --->   "%tmp_167 = zext i6 %tmp_166 to i64" [kociemba/search.c:161]   --->   Operation 183 'zext' 'tmp_167' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 184 [1/1] (0.00ns)   --->   "%facelets_addr_7 = getelementptr [54 x i8]* %facelets, i64 0, i64 %tmp_167" [kociemba/search.c:161]   --->   Operation 184 'getelementptr' 'facelets_addr_7' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 185 [2/2] (2.32ns)   --->   "%facelets_load_7 = load i8* %facelets_addr_7, align 1" [kociemba/search.c:161]   --->   Operation 185 'load' 'facelets_load_7' <Predicate = true> <Delay = 2.32> <Core = "RAM_1P">   --->   Core 42 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 8> <Depth = 54> <RAM>
+
+State 10 <SV = 9> <Delay = 4.14>
+ST_10 : Operation 186 [1/2] (2.32ns)   --->   "%facelets_load_7 = load i8* %facelets_addr_7, align 1" [kociemba/search.c:161]   --->   Operation 186 'load' 'facelets_load_7' <Predicate = true> <Delay = 2.32> <Core = "RAM_1P">   --->   Core 42 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 8> <Depth = 54> <RAM>
+ST_10 : Operation 187 [1/1] (1.55ns)   --->   "%tmp_168 = icmp eq i8 %facelets_load, %facelets_load_7" [kociemba/search.c:161]   --->   Operation 187 'icmp' 'tmp_168' <Predicate = true> <Delay = 1.55> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 188 [1/1] (1.82ns)   --->   "%tmp_169 = add i6 %tmp_149, 7" [kociemba/search.c:161]   --->   Operation 188 'add' 'tmp_169' <Predicate = true> <Delay = 1.82> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 189 [1/1] (0.00ns)   --->   "%tmp_170 = zext i6 %tmp_169 to i64" [kociemba/search.c:161]   --->   Operation 189 'zext' 'tmp_170' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 190 [1/1] (0.00ns)   --->   "%facelets_addr_8 = getelementptr [54 x i8]* %facelets, i64 0, i64 %tmp_170" [kociemba/search.c:161]   --->   Operation 190 'getelementptr' 'facelets_addr_8' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 191 [2/2] (2.32ns)   --->   "%facelets_load_8 = load i8* %facelets_addr_8, align 1" [kociemba/search.c:161]   --->   Operation 191 'load' 'facelets_load_8' <Predicate = true> <Delay = 2.32> <Core = "RAM_1P">   --->   Core 42 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 8> <Depth = 54> <RAM>
+
+State 11 <SV = 10> <Delay = 4.14>
+ST_11 : Operation 192 [1/2] (2.32ns)   --->   "%facelets_load_8 = load i8* %facelets_addr_8, align 1" [kociemba/search.c:161]   --->   Operation 192 'load' 'facelets_load_8' <Predicate = true> <Delay = 2.32> <Core = "RAM_1P">   --->   Core 42 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 8> <Depth = 54> <RAM>
+ST_11 : Operation 193 [1/1] (1.55ns)   --->   "%tmp_171 = icmp eq i8 %facelets_load, %facelets_load_8" [kociemba/search.c:161]   --->   Operation 193 'icmp' 'tmp_171' <Predicate = true> <Delay = 1.55> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 194 [1/1] (1.82ns)   --->   "%tmp_172 = add i6 %tmp_149, 8" [kociemba/search.c:161]   --->   Operation 194 'add' 'tmp_172' <Predicate = true> <Delay = 1.82> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 195 [1/1] (0.00ns)   --->   "%tmp_173 = zext i6 %tmp_172 to i64" [kociemba/search.c:161]   --->   Operation 195 'zext' 'tmp_173' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 196 [1/1] (0.00ns)   --->   "%facelets_addr_9 = getelementptr [54 x i8]* %facelets, i64 0, i64 %tmp_173" [kociemba/search.c:161]   --->   Operation 196 'getelementptr' 'facelets_addr_9' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 197 [2/2] (2.32ns)   --->   "%facelets_load_9 = load i8* %facelets_addr_9, align 1" [kociemba/search.c:161]   --->   Operation 197 'load' 'facelets_load_9' <Predicate = true> <Delay = 2.32> <Core = "RAM_1P">   --->   Core 42 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 8> <Depth = 54> <RAM>
+
+State 12 <SV = 11> <Delay = 4.85>
+ST_12 : Operation 198 [1/2] (2.32ns)   --->   "%facelets_load_9 = load i8* %facelets_addr_9, align 1" [kociemba/search.c:161]   --->   Operation 198 'load' 'facelets_load_9' <Predicate = true> <Delay = 2.32> <Core = "RAM_1P">   --->   Core 42 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 8> <Depth = 54> <RAM>
+ST_12 : Operation 199 [1/1] (1.55ns)   --->   "%tmp_174 = icmp eq i8 %facelets_load, %facelets_load_9" [kociemba/search.c:161]   --->   Operation 199 'icmp' 'tmp_174' <Predicate = true> <Delay = 1.55> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_12 : Operation 200 [1/1] (0.00ns) (grouped into LUT with out node complete_1)   --->   "%tmp12 = and i1 %tmp_165, %tmp_168" [kociemba/search.c:161]   --->   Operation 200 'and' 'tmp12' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_12 : Operation 201 [1/1] (0.00ns) (grouped into LUT with out node complete_1)   --->   "%tmp13 = and i1 %tmp_171, %tmp_174" [kociemba/search.c:161]   --->   Operation 201 'and' 'tmp13' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_12 : Operation 202 [1/1] (0.00ns) (grouped into LUT with out node complete_1)   --->   "%tmp11 = and i1 %tmp13, %tmp12" [kociemba/search.c:161]   --->   Operation 202 'and' 'tmp11' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_12 : Operation 203 [1/1] (0.00ns) (grouped into LUT with out node complete_1)   --->   "%tmp_17 = and i1 %tmp11, %tmp8" [kociemba/search.c:161]   --->   Operation 203 'and' 'tmp_17' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_12 : Operation 204 [1/1] (0.97ns) (out node of the LUT)   --->   "%complete_1 = and i1 %complete, %tmp_17" [kociemba/search.c:161]   --->   Operation 204 'and' 'complete_1' <Predicate = true> <Delay = 0.97> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_12 : Operation 205 [1/1] (0.00ns)   --->   "br label %.preheader35" [kociemba/search.c:160]   --->   Operation 205 'br' <Predicate = true> <Delay = 0.00>
+
+State 13 <SV = 3> <Delay = 2.32>
+ST_13 : Operation 206 [1/1] (0.00ns)   --->   "%i_1 = phi i6 [ %i_15, %._crit_edge17 ], [ 0, %.preheader3.preheader ]"   --->   Operation 206 'phi' 'i_1' <Predicate = true> <Delay = 0.00>
+ST_13 : Operation 207 [1/1] (1.42ns)   --->   "%exitcond = icmp eq i6 %i_1, -10" [kociemba/search.c:182]   --->   Operation 207 'icmp' 'exitcond' <Predicate = true> <Delay = 1.42> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_13 : Operation 208 [1/1] (0.00ns)   --->   "%empty_43 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 54, i64 54, i64 54) nounwind"   --->   Operation 208 'speclooptripcount' 'empty_43' <Predicate = true> <Delay = 0.00>
+ST_13 : Operation 209 [1/1] (1.82ns)   --->   "%i_15 = add i6 %i_1, 1" [kociemba/search.c:182]   --->   Operation 209 'add' 'i_15' <Predicate = true> <Delay = 1.82> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_13 : Operation 210 [1/1] (0.00ns)   --->   "br i1 %exitcond, label %.preheader.preheader, label %2" [kociemba/search.c:182]   --->   Operation 210 'br' <Predicate = true> <Delay = 0.00>
+ST_13 : Operation 211 [1/1] (0.00ns)   --->   "%tmp_175 = zext i6 %i_1 to i64" [kociemba/search.c:183]   --->   Operation 211 'zext' 'tmp_175' <Predicate = (!exitcond)> <Delay = 0.00>
+ST_13 : Operation 212 [1/1] (0.00ns)   --->   "%facelets_addr_4 = getelementptr [54 x i8]* %facelets, i64 0, i64 %tmp_175" [kociemba/search.c:183]   --->   Operation 212 'getelementptr' 'facelets_addr_4' <Predicate = (!exitcond)> <Delay = 0.00>
+ST_13 : Operation 213 [2/2] (2.32ns)   --->   "%facelets_load_4 = load i8* %facelets_addr_4, align 1" [kociemba/search.c:183]   --->   Operation 213 'load' 'facelets_load_4' <Predicate = (!exitcond)> <Delay = 2.32> <Core = "RAM_1P">   --->   Core 42 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 8> <Depth = 54> <RAM>
+ST_13 : Operation 214 [1/1] (1.76ns)   --->   "br label %.preheader" [kociemba/search.c:204]   --->   Operation 214 'br' <Predicate = (exitcond)> <Delay = 1.76>
+
+State 14 <SV = 4> <Delay = 3.62>
+ST_14 : Operation 215 [1/2] (2.32ns)   --->   "%facelets_load_4 = load i8* %facelets_addr_4, align 1" [kociemba/search.c:183]   --->   Operation 215 'load' 'facelets_load_4' <Predicate = true> <Delay = 2.32> <Core = "RAM_1P">   --->   Core 42 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 8> <Depth = 54> <RAM>
+ST_14 : Operation 216 [1/1] (1.30ns)   --->   "switch i8 %facelets_load_4, label %._crit_edge17 [
+    i8 85, label %3
+    i8 82, label %4
+    i8 70, label %5
+    i8 68, label %6
+    i8 76, label %7
+    i8 66, label %8
+  ]" [kociemba/search.c:183]   --->   Operation 216 'switch' <Predicate = true> <Delay = 1.30>
+ST_14 : Operation 217 [2/2] (2.32ns)   --->   "%count_load_5 = load i32* %count_addr_6, align 4" [kociemba/search.c:200]   --->   Operation 217 'load' 'count_load_5' <Predicate = (facelets_load_4 == 66)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 31> <RAM>
+ST_14 : Operation 218 [2/2] (2.32ns)   --->   "%count_load_4 = load i32* %count_addr_5, align 16" [kociemba/search.c:197]   --->   Operation 218 'load' 'count_load_4' <Predicate = (facelets_load_4 == 76)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 31> <RAM>
+ST_14 : Operation 219 [2/2] (2.32ns)   --->   "%count_load_3 = load i32* %count_addr_4, align 4" [kociemba/search.c:194]   --->   Operation 219 'load' 'count_load_3' <Predicate = (facelets_load_4 == 68)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 31> <RAM>
+ST_14 : Operation 220 [2/2] (2.32ns)   --->   "%count_load_2 = load i32* %count_addr_3, align 8" [kociemba/search.c:191]   --->   Operation 220 'load' 'count_load_2' <Predicate = (facelets_load_4 == 70)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 31> <RAM>
+ST_14 : Operation 221 [2/2] (2.32ns)   --->   "%count_load_1 = load i32* %count_addr_2, align 4" [kociemba/search.c:188]   --->   Operation 221 'load' 'count_load_1' <Predicate = (facelets_load_4 == 82)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 31> <RAM>
+ST_14 : Operation 222 [2/2] (2.32ns)   --->   "%count_load = load i32* %count_addr_1, align 16" [kociemba/search.c:185]   --->   Operation 222 'load' 'count_load' <Predicate = (facelets_load_4 == 85)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 31> <RAM>
+
+State 15 <SV = 5> <Delay = 7.19>
+ST_15 : Operation 223 [1/2] (2.32ns)   --->   "%count_load_5 = load i32* %count_addr_6, align 4" [kociemba/search.c:200]   --->   Operation 223 'load' 'count_load_5' <Predicate = (facelets_load_4 == 66)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 31> <RAM>
+ST_15 : Operation 224 [1/1] (2.55ns)   --->   "%tmp_182 = add nsw i32 %count_load_5, 1" [kociemba/search.c:200]   --->   Operation 224 'add' 'tmp_182' <Predicate = (facelets_load_4 == 66)> <Delay = 2.55> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_15 : Operation 225 [1/1] (2.32ns)   --->   "store i32 %tmp_182, i32* %count_addr_6, align 4" [kociemba/search.c:200]   --->   Operation 225 'store' <Predicate = (facelets_load_4 == 66)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 31> <RAM>
+ST_15 : Operation 226 [1/1] (0.00ns)   --->   "br label %._crit_edge17" [kociemba/search.c:201]   --->   Operation 226 'br' <Predicate = (facelets_load_4 == 66)> <Delay = 0.00>
+ST_15 : Operation 227 [1/2] (2.32ns)   --->   "%count_load_4 = load i32* %count_addr_5, align 16" [kociemba/search.c:197]   --->   Operation 227 'load' 'count_load_4' <Predicate = (facelets_load_4 == 76)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 31> <RAM>
+ST_15 : Operation 228 [1/1] (2.55ns)   --->   "%tmp_181 = add nsw i32 %count_load_4, 1" [kociemba/search.c:197]   --->   Operation 228 'add' 'tmp_181' <Predicate = (facelets_load_4 == 76)> <Delay = 2.55> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_15 : Operation 229 [1/1] (2.32ns)   --->   "store i32 %tmp_181, i32* %count_addr_5, align 16" [kociemba/search.c:197]   --->   Operation 229 'store' <Predicate = (facelets_load_4 == 76)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 31> <RAM>
+ST_15 : Operation 230 [1/1] (0.00ns)   --->   "br label %._crit_edge17" [kociemba/search.c:198]   --->   Operation 230 'br' <Predicate = (facelets_load_4 == 76)> <Delay = 0.00>
+ST_15 : Operation 231 [1/2] (2.32ns)   --->   "%count_load_3 = load i32* %count_addr_4, align 4" [kociemba/search.c:194]   --->   Operation 231 'load' 'count_load_3' <Predicate = (facelets_load_4 == 68)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 31> <RAM>
+ST_15 : Operation 232 [1/1] (2.55ns)   --->   "%tmp_180 = add nsw i32 %count_load_3, 1" [kociemba/search.c:194]   --->   Operation 232 'add' 'tmp_180' <Predicate = (facelets_load_4 == 68)> <Delay = 2.55> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_15 : Operation 233 [1/1] (2.32ns)   --->   "store i32 %tmp_180, i32* %count_addr_4, align 4" [kociemba/search.c:194]   --->   Operation 233 'store' <Predicate = (facelets_load_4 == 68)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 31> <RAM>
+ST_15 : Operation 234 [1/1] (0.00ns)   --->   "br label %._crit_edge17" [kociemba/search.c:195]   --->   Operation 234 'br' <Predicate = (facelets_load_4 == 68)> <Delay = 0.00>
+ST_15 : Operation 235 [1/2] (2.32ns)   --->   "%count_load_2 = load i32* %count_addr_3, align 8" [kociemba/search.c:191]   --->   Operation 235 'load' 'count_load_2' <Predicate = (facelets_load_4 == 70)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 31> <RAM>
+ST_15 : Operation 236 [1/1] (2.55ns)   --->   "%tmp_179 = add nsw i32 %count_load_2, 1" [kociemba/search.c:191]   --->   Operation 236 'add' 'tmp_179' <Predicate = (facelets_load_4 == 70)> <Delay = 2.55> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_15 : Operation 237 [1/1] (2.32ns)   --->   "store i32 %tmp_179, i32* %count_addr_3, align 8" [kociemba/search.c:191]   --->   Operation 237 'store' <Predicate = (facelets_load_4 == 70)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 31> <RAM>
+ST_15 : Operation 238 [1/1] (0.00ns)   --->   "br label %._crit_edge17" [kociemba/search.c:192]   --->   Operation 238 'br' <Predicate = (facelets_load_4 == 70)> <Delay = 0.00>
+ST_15 : Operation 239 [1/2] (2.32ns)   --->   "%count_load_1 = load i32* %count_addr_2, align 4" [kociemba/search.c:188]   --->   Operation 239 'load' 'count_load_1' <Predicate = (facelets_load_4 == 82)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 31> <RAM>
+ST_15 : Operation 240 [1/1] (2.55ns)   --->   "%tmp_178 = add nsw i32 %count_load_1, 1" [kociemba/search.c:188]   --->   Operation 240 'add' 'tmp_178' <Predicate = (facelets_load_4 == 82)> <Delay = 2.55> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_15 : Operation 241 [1/1] (2.32ns)   --->   "store i32 %tmp_178, i32* %count_addr_2, align 4" [kociemba/search.c:188]   --->   Operation 241 'store' <Predicate = (facelets_load_4 == 82)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 31> <RAM>
+ST_15 : Operation 242 [1/1] (0.00ns)   --->   "br label %._crit_edge17" [kociemba/search.c:189]   --->   Operation 242 'br' <Predicate = (facelets_load_4 == 82)> <Delay = 0.00>
+ST_15 : Operation 243 [1/2] (2.32ns)   --->   "%count_load = load i32* %count_addr_1, align 16" [kociemba/search.c:185]   --->   Operation 243 'load' 'count_load' <Predicate = (facelets_load_4 == 85)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 31> <RAM>
+ST_15 : Operation 244 [1/1] (2.55ns)   --->   "%tmp_177 = add nsw i32 %count_load, 1" [kociemba/search.c:185]   --->   Operation 244 'add' 'tmp_177' <Predicate = (facelets_load_4 == 85)> <Delay = 2.55> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_15 : Operation 245 [1/1] (2.32ns)   --->   "store i32 %tmp_177, i32* %count_addr_1, align 16" [kociemba/search.c:185]   --->   Operation 245 'store' <Predicate = (facelets_load_4 == 85)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 31> <RAM>
+ST_15 : Operation 246 [1/1] (0.00ns)   --->   "br label %._crit_edge17" [kociemba/search.c:186]   --->   Operation 246 'br' <Predicate = (facelets_load_4 == 85)> <Delay = 0.00>
+ST_15 : Operation 247 [1/1] (0.00ns)   --->   "br label %.preheader3" [kociemba/search.c:182]   --->   Operation 247 'br' <Predicate = true> <Delay = 0.00>
+
+State 16 <SV = 4> <Delay = 2.32>
+ST_16 : Operation 248 [1/1] (0.00ns)   --->   "%i_2 = phi i3 [ %i_5, %9 ], [ 0, %.preheader.preheader ]"   --->   Operation 248 'phi' 'i_2' <Predicate = true> <Delay = 0.00>
+ST_16 : Operation 249 [1/1] (1.13ns)   --->   "%tmp_176 = icmp ult i3 %i_2, -2" [kociemba/search.c:204]   --->   Operation 249 'icmp' 'tmp_176' <Predicate = true> <Delay = 1.13> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_16 : Operation 250 [1/1] (0.00ns)   --->   "%empty_44 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 1, i64 6, i64 3) nounwind"   --->   Operation 250 'speclooptripcount' 'empty_44' <Predicate = true> <Delay = 0.00>
+ST_16 : Operation 251 [1/1] (1.65ns)   --->   "%i_5 = add i3 %i_2, 1" [kociemba/search.c:204]   --->   Operation 251 'add' 'i_5' <Predicate = true> <Delay = 1.65> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_16 : Operation 252 [1/1] (0.00ns)   --->   "br i1 %tmp_176, label %9, label %11" [kociemba/search.c:204]   --->   Operation 252 'br' <Predicate = true> <Delay = 0.00>
+ST_16 : Operation 253 [1/1] (0.00ns)   --->   "%tmp_183 = zext i3 %i_2 to i64" [kociemba/search.c:205]   --->   Operation 253 'zext' 'tmp_183' <Predicate = (tmp_176)> <Delay = 0.00>
+ST_16 : Operation 254 [1/1] (0.00ns)   --->   "%count_addr_7 = getelementptr inbounds [6 x i32]* %count, i64 0, i64 %tmp_183" [kociemba/search.c:205]   --->   Operation 254 'getelementptr' 'count_addr_7' <Predicate = (tmp_176)> <Delay = 0.00>
+ST_16 : Operation 255 [2/2] (2.32ns)   --->   "%count_load_6 = load i32* %count_addr_7, align 4" [kociemba/search.c:205]   --->   Operation 255 'load' 'count_load_6' <Predicate = (tmp_176)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 31> <RAM>
+ST_16 : Operation 256 [2/2] (0.00ns)   --->   "call fastcc void @get_facecube_fromstr([54 x i8]* %facelets) nounwind" [kociemba/search.c:212]   --->   Operation 256 'call' <Predicate = (!tmp_176)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 17 <SV = 5> <Delay = 4.79>
+ST_17 : Operation 257 [1/2] (2.32ns)   --->   "%count_load_6 = load i32* %count_addr_7, align 4" [kociemba/search.c:205]   --->   Operation 257 'load' 'count_load_6' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 31> <RAM>
+ST_17 : Operation 258 [1/1] (2.47ns)   --->   "%tmp_184 = icmp eq i32 %count_load_6, 9" [kociemba/search.c:205]   --->   Operation 258 'icmp' 'tmp_184' <Predicate = true> <Delay = 2.47> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_17 : Operation 259 [1/1] (0.00ns)   --->   "br i1 %tmp_184, label %.preheader, label %10" [kociemba/search.c:205]   --->   Operation 259 'br' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 260 [1/1] (1.00ns)   --->   "call void @_ssdm_op_Write.s_axilite.i1P(i1* %unsolvable, i1 true)" [kociemba/search.c:208]   --->   Operation 260 'write' <Predicate = (!tmp_184)> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_17 : Operation 261 [1/1] (0.00ns)   --->   "br label %._crit_edge16" [kociemba/search.c:209]   --->   Operation 261 'br' <Predicate = (!tmp_184)> <Delay = 0.00>
+
+State 18 <SV = 5> <Delay = 0.00>
+ST_18 : Operation 262 [1/2] (0.00ns)   --->   "call fastcc void @get_facecube_fromstr([54 x i8]* %facelets) nounwind" [kociemba/search.c:212]   --->   Operation 262 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 19 <SV = 6> <Delay = 0.00>
+ST_19 : Operation 263 [2/2] (0.00ns)   --->   "call fastcc void @toCubieCube([54 x i3]* @res_f_0) nounwind" [kociemba/search.c:213]   --->   Operation 263 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 20 <SV = 7> <Delay = 0.00>
+ST_20 : Operation 264 [1/2] (0.00ns)   --->   "call fastcc void @toCubieCube([54 x i3]* @res_f_0) nounwind" [kociemba/search.c:213]   --->   Operation 264 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 21 <SV = 8> <Delay = 0.00>
+ST_21 : Operation 265 [2/2] (0.00ns)   --->   "%s = call fastcc i4 @verify([8 x i3]* @ccRet_cp_0, [8 x i2]* @ccRet_co_0, [12 x i4]* @ccRet_ep_0, [12 x i1]* @ccRet_eo_0) nounwind" [kociemba/search.c:214]   --->   Operation 265 'call' 's' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 22 <SV = 9> <Delay = 1.81>
+ST_22 : Operation 266 [1/2] (0.00ns)   --->   "%s = call fastcc i4 @verify([8 x i3]* @ccRet_cp_0, [8 x i2]* @ccRet_co_0, [12 x i4]* @ccRet_ep_0, [12 x i1]* @ccRet_eo_0) nounwind" [kociemba/search.c:214]   --->   Operation 266 'call' 's' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_22 : Operation 267 [1/1] (1.30ns)   --->   "%tmp_185 = icmp eq i4 %s, 0" [kociemba/search.c:214]   --->   Operation 267 'icmp' 'tmp_185' <Predicate = true> <Delay = 1.30> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_22 : Operation 268 [1/1] (0.00ns)   --->   "br i1 %tmp_185, label %13, label %12" [kociemba/search.c:214]   --->   Operation 268 'br' <Predicate = true> <Delay = 0.00>
+ST_22 : Operation 269 [1/1] (1.00ns)   --->   "call void @_ssdm_op_Write.s_axilite.i1P(i1* %unsolvable, i1 true)" [kociemba/search.c:217]   --->   Operation 269 'write' <Predicate = (!tmp_185)> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_22 : Operation 270 [1/1] (0.00ns)   --->   "br label %._crit_edge16" [kociemba/search.c:218]   --->   Operation 270 'br' <Predicate = (!tmp_185)> <Delay = 0.00>
+ST_22 : Operation 271 [1/1] (0.00ns)   --->   "%depthPhase1_1 = alloca i32"   --->   Operation 271 'alloca' 'depthPhase1_1' <Predicate = (tmp_185)> <Delay = 0.00>
+ST_22 : Operation 272 [1/1] (0.00ns)   --->   "%n_1 = alloca i32"   --->   Operation 272 'alloca' 'n_1' <Predicate = (tmp_185)> <Delay = 0.00>
+ST_22 : Operation 273 [1/1] (1.81ns)   --->   "store i32 0, i32* %n_1"   --->   Operation 273 'store' <Predicate = (tmp_185)> <Delay = 1.81>
+ST_22 : Operation 274 [1/1] (1.76ns)   --->   "store i32 1, i32* %depthPhase1_1"   --->   Operation 274 'store' <Predicate = (tmp_185)> <Delay = 1.76>
+
+State 23 <SV = 10> <Delay = 0.00>
+ST_23 : Operation 275 [2/2] (0.00ns)   --->   "call fastcc void @get_coordcube([8 x i3]* @ccRet_cp_0, [8 x i2]* @ccRet_co_0, [12 x i4]* @ccRet_ep_0, [12 x i1]* @ccRet_eo_0) nounwind" [kociemba/search.c:222]   --->   Operation 275 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 24 <SV = 11> <Delay = 0.00>
+ST_24 : Operation 276 [1/2] (0.00ns)   --->   "call fastcc void @get_coordcube([8 x i3]* @ccRet_cp_0, [8 x i2]* @ccRet_co_0, [12 x i4]* @ccRet_ep_0, [12 x i1]* @ccRet_eo_0) nounwind" [kociemba/search.c:222]   --->   Operation 276 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 25 <SV = 12> <Delay = 6.38>
+ST_25 : Operation 277 [1/1] (0.00ns)   --->   "%result_FRtoBR_0_load = load i16* @result_FRtoBR_0, align 2" [kociemba/search.c:229]   --->   Operation 277 'load' 'result_FRtoBR_0_load' <Predicate = true> <Delay = 0.00>
+ST_25 : Operation 278 [1/1] (0.00ns)   --->   "%tmp_187 = sext i16 %result_FRtoBR_0_load to i32" [kociemba/search.c:229]   --->   Operation 278 'sext' 'tmp_187' <Predicate = true> <Delay = 0.00>
+ST_25 : Operation 279 [1/1] (0.00ns)   --->   "%sext_cast = sext i16 %result_FRtoBR_0_load to i34" [kociemba/search.c:229]   --->   Operation 279 'sext' 'sext_cast' <Predicate = true> <Delay = 0.00>
+ST_25 : Operation 280 [1/1] (6.38ns)   --->   "%mul = mul i34 87382, %sext_cast" [kociemba/search.c:229]   --->   Operation 280 'mul' 'mul' <Predicate = true> <Delay = 6.38> <Core = "DSP48">   --->   Core 61 'DSP48' <Latency = 0> <II = 1> <Delay = 6.38> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_25 : Operation 281 [1/1] (0.00ns)   --->   "%tmp_215 = trunc i34 %mul to i33" [kociemba/search.c:229]   --->   Operation 281 'trunc' 'tmp_215' <Predicate = true> <Delay = 0.00>
+ST_25 : Operation 282 [1/1] (0.00ns)   --->   "%tmp_218 = call i1 @_ssdm_op_BitSelect.i1.i16.i32(i16 %result_FRtoBR_0_load, i32 15)" [kociemba/search.c:229]   --->   Operation 282 'bitselect' 'tmp_218' <Predicate = true> <Delay = 0.00>
+ST_25 : Operation 283 [1/1] (0.00ns)   --->   "%tmp_232 = call i13 @_ssdm_op_PartSelect.i13.i34.i32.i32(i34 %mul, i32 21, i32 33)" [kociemba/search.c:229]   --->   Operation 283 'partselect' 'tmp_232' <Predicate = true> <Delay = 0.00>
+ST_25 : Operation 284 [1/1] (2.32ns)   --->   "store i32 %tmp_187, i32* getelementptr inbounds ([31 x i32]* @search_FRtoBR_0, i64 0, i64 0), align 16" [kociemba/search.c:231]   --->   Operation 284 'store' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 31> <RAM>
+
+State 26 <SV = 13> <Delay = 7.34>
+ST_26 : Operation 285 [1/1] (2.32ns)   --->   "store i32 0, i32* getelementptr inbounds ([31 x i32]* @search_po_0, i64 0, i64 0), align 16" [kociemba/search.c:224]   --->   Operation 285 'store' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 31> <RAM>
+ST_26 : Operation 286 [1/1] (2.32ns)   --->   "store i32 0, i32* getelementptr inbounds ([31 x i32]* @search_ax_0, i64 0, i64 0), align 16" [kociemba/search.c:225]   --->   Operation 286 'store' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 31> <RAM>
+ST_26 : Operation 287 [1/1] (0.00ns)   --->   "%result_flip_0_load = load i16* @result_flip_0, align 2" [kociemba/search.c:226]   --->   Operation 287 'load' 'result_flip_0_load' <Predicate = true> <Delay = 0.00>
+ST_26 : Operation 288 [1/1] (2.32ns)   --->   "store i16 %result_flip_0_load, i16* getelementptr inbounds ([31 x i16]* @search_flip_0, i64 0, i64 0), align 16" [kociemba/search.c:226]   --->   Operation 288 'store' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 31> <RAM>
+ST_26 : Operation 289 [1/1] (0.00ns)   --->   "%result_twist_0_load = load i16* @result_twist_0, align 16" [kociemba/search.c:227]   --->   Operation 289 'load' 'result_twist_0_load' <Predicate = true> <Delay = 0.00>
+ST_26 : Operation 290 [1/1] (2.32ns)   --->   "store i16 %result_twist_0_load, i16* getelementptr inbounds ([31 x i16]* @search_twist_0, i64 0, i64 0), align 16" [kociemba/search.c:227]   --->   Operation 290 'store' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 31> <RAM>
+ST_26 : Operation 291 [1/1] (0.00ns)   --->   "%result_parity_0_load = load i16* @result_parity_0, align 4" [kociemba/search.c:228]   --->   Operation 291 'load' 'result_parity_0_load' <Predicate = true> <Delay = 0.00>
+ST_26 : Operation 292 [1/1] (0.00ns)   --->   "%tmp_186 = sext i16 %result_parity_0_load to i32" [kociemba/search.c:228]   --->   Operation 292 'sext' 'tmp_186' <Predicate = true> <Delay = 0.00>
+ST_26 : Operation 293 [1/1] (2.32ns)   --->   "store i32 %tmp_186, i32* getelementptr inbounds ([31 x i32]* @search_parity_0, i64 0, i64 0), align 16" [kociemba/search.c:228]   --->   Operation 293 'store' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 31> <RAM>
+ST_26 : Operation 294 [1/1] (2.59ns)   --->   "%neg_mul = sub i33 0, %tmp_215" [kociemba/search.c:229]   --->   Operation 294 'sub' 'neg_mul' <Predicate = (tmp_218)> <Delay = 2.59> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_26 : Operation 295 [1/1] (0.00ns) (grouped into LUT with out node neg_ti)   --->   "%tmp_222 = call i12 @_ssdm_op_PartSelect.i12.i33.i32.i32(i33 %neg_mul, i32 21, i32 32)" [kociemba/search.c:229]   --->   Operation 295 'partselect' 'tmp_222' <Predicate = (tmp_218)> <Delay = 0.00>
+ST_26 : Operation 296 [1/1] (0.00ns) (grouped into LUT with out node neg_ti)   --->   "%tmp_225 = sext i12 %tmp_222 to i16" [kociemba/search.c:229]   --->   Operation 296 'sext' 'tmp_225' <Predicate = (tmp_218)> <Delay = 0.00>
+ST_26 : Operation 297 [1/1] (0.00ns)   --->   "%tmp_238 = sext i13 %tmp_232 to i16" [kociemba/search.c:229]   --->   Operation 297 'sext' 'tmp_238' <Predicate = true> <Delay = 0.00>
+ST_26 : Operation 298 [1/1] (0.00ns) (grouped into LUT with out node neg_ti)   --->   "%tmp_239 = select i1 %tmp_218, i16 %tmp_225, i16 %tmp_238" [kociemba/search.c:229]   --->   Operation 298 'select' 'tmp_239' <Predicate = (tmp_218)> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.02> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_26 : Operation 299 [1/1] (1.67ns) (out node of the LUT)   --->   "%neg_ti = sub i16 0, %tmp_239" [kociemba/search.c:229]   --->   Operation 299 'sub' 'neg_ti' <Predicate = (tmp_218)> <Delay = 1.67> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_26 : Operation 300 [1/1] (0.75ns)   --->   "%tmp_188 = select i1 %tmp_218, i16 %neg_ti, i16 %tmp_238" [kociemba/search.c:229]   --->   Operation 300 'select' 'tmp_188' <Predicate = true> <Delay = 0.75> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.02> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_26 : Operation 301 [1/1] (2.32ns)   --->   "store i16 %tmp_188, i16* getelementptr inbounds ([31 x i16]* @search_slice_0, i64 0, i64 0), align 16" [kociemba/search.c:229]   --->   Operation 301 'store' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 31> <RAM>
+ST_26 : Operation 302 [1/1] (0.00ns)   --->   "%result_URFtoDLF_0_lo = load i16* @result_URFtoDLF_0, align 8" [kociemba/search.c:230]   --->   Operation 302 'load' 'result_URFtoDLF_0_lo' <Predicate = true> <Delay = 0.00>
+ST_26 : Operation 303 [1/1] (0.00ns)   --->   "%tmp_189 = sext i16 %result_URFtoDLF_0_lo to i32" [kociemba/search.c:230]   --->   Operation 303 'sext' 'tmp_189' <Predicate = true> <Delay = 0.00>
+ST_26 : Operation 304 [1/1] (2.32ns)   --->   "store i32 %tmp_189, i32* getelementptr inbounds ([31 x i32]* @search_URFtoDLF_0, i64 0, i64 0), align 16" [kociemba/search.c:230]   --->   Operation 304 'store' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 31> <RAM>
+ST_26 : Operation 305 [1/1] (0.00ns)   --->   "%result_URtoUL_0_load = load i16* @result_URtoUL_0, align 2" [kociemba/search.c:232]   --->   Operation 305 'load' 'result_URtoUL_0_load' <Predicate = true> <Delay = 0.00>
+ST_26 : Operation 306 [1/1] (0.00ns)   --->   "%tmp_190 = sext i16 %result_URtoUL_0_load to i32" [kociemba/search.c:232]   --->   Operation 306 'sext' 'tmp_190' <Predicate = true> <Delay = 0.00>
+ST_26 : Operation 307 [1/1] (2.32ns)   --->   "store i32 %tmp_190, i32* getelementptr inbounds ([31 x i32]* @search_URtoUL_0, i64 0, i64 0), align 16" [kociemba/search.c:232]   --->   Operation 307 'store' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 31> <RAM>
+ST_26 : Operation 308 [1/1] (0.00ns)   --->   "%result_UBtoDF_0_load = load i16* @result_UBtoDF_0, align 4" [kociemba/search.c:233]   --->   Operation 308 'load' 'result_UBtoDF_0_load' <Predicate = true> <Delay = 0.00>
+ST_26 : Operation 309 [1/1] (0.00ns)   --->   "%tmp_191 = sext i16 %result_UBtoDF_0_load to i32" [kociemba/search.c:233]   --->   Operation 309 'sext' 'tmp_191' <Predicate = true> <Delay = 0.00>
+ST_26 : Operation 310 [1/1] (2.32ns)   --->   "store i32 %tmp_191, i32* getelementptr inbounds ([31 x i32]* @search_UBtoDF_0, i64 0, i64 0), align 16" [kociemba/search.c:233]   --->   Operation 310 'store' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 31> <RAM>
+ST_26 : Operation 311 [1/1] (2.32ns)   --->   "store i6 1, i6* getelementptr inbounds ([31 x i6]* @search_minDistPhase1, i64 0, i64 1), align 1" [kociemba/search.c:235]   --->   Operation 311 'store' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 31> <RAM>
+ST_26 : Operation 312 [1/1] (1.76ns)   --->   "br label %14" [kociemba/search.c:244]   --->   Operation 312 'br' <Predicate = true> <Delay = 1.76>
+
+State 27 <SV = 14> <Delay = 4.87>
+ST_27 : Operation 313 [1/1] (0.00ns)   --->   "%n_1_load = load i32* %n_1" [kociemba/search.c:283]   --->   Operation 313 'load' 'n_1_load' <Predicate = true> <Delay = 0.00>
+ST_27 : Operation 314 [1/1] (2.55ns)   --->   "%n_3 = add nsw i32 %n_1_load, 1" [kociemba/search.c:246]   --->   Operation 314 'add' 'n_3' <Predicate = true> <Delay = 2.55> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_27 : Operation 315 [1/1] (0.00ns)   --->   "%tmp_193 = sext i32 %n_3 to i64" [kociemba/search.c:246]   --->   Operation 315 'sext' 'tmp_193' <Predicate = true> <Delay = 0.00>
+ST_27 : Operation 316 [1/1] (0.00ns)   --->   "%search_minDistPhase1_1 = getelementptr [31 x i6]* @search_minDistPhase1, i64 0, i64 %tmp_193" [kociemba/search.c:246]   --->   Operation 316 'getelementptr' 'search_minDistPhase1_1' <Predicate = true> <Delay = 0.00>
+ST_27 : Operation 317 [2/2] (2.32ns)   --->   "%search_minDistPhase1_2 = load i6* %search_minDistPhase1_1, align 1" [kociemba/search.c:246]   --->   Operation 317 'load' 'search_minDistPhase1_2' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 31> <RAM>
+
+State 28 <SV = 15> <Delay = 6.00>
+ST_28 : Operation 318 [1/1] (0.00ns)   --->   "%busy_1 = phi i1 [ false, %13 ], [ %busy_4, %.backedge ]"   --->   Operation 318 'phi' 'busy_1' <Predicate = true> <Delay = 0.00>
+ST_28 : Operation 319 [1/1] (0.00ns)   --->   "%depthPhase1_1_load = load i32* %depthPhase1_1" [kociemba/search.c:267]   --->   Operation 319 'load' 'depthPhase1_1_load' <Predicate = true> <Delay = 0.00>
+ST_28 : Operation 320 [1/1] (2.55ns)   --->   "%tmp_192 = sub nsw i32 %depthPhase1_1_load, %n_1_load" [kociemba/search.c:246]   --->   Operation 320 'sub' 'tmp_192' <Predicate = true> <Delay = 2.55> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_28 : Operation 321 [1/2] (2.32ns)   --->   "%search_minDistPhase1_2 = load i6* %search_minDistPhase1_1, align 1" [kociemba/search.c:246]   --->   Operation 321 'load' 'search_minDistPhase1_2' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 31> <RAM>
+ST_28 : Operation 322 [1/1] (0.00ns)   --->   "%extLd = sext i6 %search_minDistPhase1_2 to i32" [kociemba/search.c:246]   --->   Operation 322 'sext' 'extLd' <Predicate = true> <Delay = 0.00>
+ST_28 : Operation 323 [1/1] (2.47ns)   --->   "%tmp_194 = icmp sgt i32 %tmp_192, %extLd" [kociemba/search.c:246]   --->   Operation 323 'icmp' 'tmp_194' <Predicate = true> <Delay = 2.47> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_28 : Operation 324 [1/1] (0.00ns) (grouped into LUT with out node or_cond)   --->   "%tmp_195 = xor i1 %busy_1, true" [kociemba/search.c:246]   --->   Operation 324 'xor' 'tmp_195' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_28 : Operation 325 [1/1] (0.97ns) (out node of the LUT)   --->   "%or_cond = and i1 %tmp_194, %tmp_195" [kociemba/search.c:246]   --->   Operation 325 'and' 'or_cond' <Predicate = true> <Delay = 0.97> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_28 : Operation 326 [1/1] (0.00ns)   --->   "%tmp_196 = sext i32 %n_1_load to i64" [kociemba/search.c:248]   --->   Operation 326 'sext' 'tmp_196' <Predicate = true> <Delay = 0.00>
+ST_28 : Operation 327 [1/1] (0.00ns)   --->   "br i1 %or_cond, label %15, label %18" [kociemba/search.c:246]   --->   Operation 327 'br' <Predicate = true> <Delay = 0.00>
+ST_28 : Operation 328 [1/1] (0.00ns)   --->   "%search_po_0_addr = getelementptr [31 x i32]* @search_po_0, i64 0, i64 %tmp_196" [kociemba/search.c:253]   --->   Operation 328 'getelementptr' 'search_po_0_addr' <Predicate = (!or_cond)> <Delay = 0.00>
+ST_28 : Operation 329 [2/2] (2.32ns)   --->   "%search_po_0_load = load i32* %search_po_0_addr, align 4" [kociemba/search.c:253]   --->   Operation 329 'load' 'search_po_0_load' <Predicate = (!or_cond)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 31> <RAM>
+ST_28 : Operation 330 [1/1] (0.00ns)   --->   "%search_ax_0_addr = getelementptr [31 x i32]* @search_ax_0, i64 0, i64 %tmp_196" [kociemba/search.c:248]   --->   Operation 330 'getelementptr' 'search_ax_0_addr' <Predicate = (or_cond)> <Delay = 0.00>
+ST_28 : Operation 331 [2/2] (2.32ns)   --->   "%search_ax_0_load = load i32* %search_ax_0_addr, align 4" [kociemba/search.c:248]   --->   Operation 331 'load' 'search_ax_0_load' <Predicate = (or_cond)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 31> <RAM>
+
+State 29 <SV = 16> <Delay = 9.11>
+ST_29 : Operation 332 [1/2] (2.32ns)   --->   "%search_po_0_load = load i32* %search_po_0_addr, align 4" [kociemba/search.c:253]   --->   Operation 332 'load' 'search_po_0_load' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 31> <RAM>
+ST_29 : Operation 333 [1/1] (2.55ns)   --->   "%tmp_197 = add nsw i32 %search_po_0_load, 1" [kociemba/search.c:253]   --->   Operation 333 'add' 'tmp_197' <Predicate = true> <Delay = 2.55> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_29 : Operation 334 [1/1] (2.32ns)   --->   "store i32 %tmp_197, i32* %search_po_0_addr, align 4" [kociemba/search.c:253]   --->   Operation 334 'store' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 31> <RAM>
+ST_29 : Operation 335 [1/1] (0.00ns)   --->   "%tmp_243 = call i30 @_ssdm_op_PartSelect.i30.i32.i32.i32(i32 %tmp_197, i32 2, i32 31)" [kociemba/search.c:253]   --->   Operation 335 'partselect' 'tmp_243' <Predicate = true> <Delay = 0.00>
+ST_29 : Operation 336 [1/1] (2.46ns)   --->   "%icmp = icmp sgt i30 %tmp_243, 0" [kociemba/search.c:253]   --->   Operation 336 'icmp' 'icmp' <Predicate = true> <Delay = 2.46> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_29 : Operation 337 [1/1] (1.76ns)   --->   "br i1 %icmp, label %.critedge.preheader, label %._crit_edge20" [kociemba/search.c:253]   --->   Operation 337 'br' <Predicate = true> <Delay = 1.76>
+ST_29 : Operation 338 [1/1] (0.00ns)   --->   "%search_ax_0_addr_1 = getelementptr [31 x i32]* @search_ax_0, i64 0, i64 %tmp_196" [kociemba/search.c:255]   --->   Operation 338 'getelementptr' 'search_ax_0_addr_1' <Predicate = (icmp)> <Delay = 0.00>
+ST_29 : Operation 339 [1/1] (2.47ns)   --->   "%tmp_199 = icmp eq i32 %n_1_load, 0" [kociemba/search.c:283]   --->   Operation 339 'icmp' 'tmp_199' <Predicate = (icmp)> <Delay = 2.47> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_29 : Operation 340 [1/1] (2.55ns)   --->   "%n = add nsw i32 %n_1_load, -1" [kociemba/search.c:283]   --->   Operation 340 'add' 'n' <Predicate = (icmp)> <Delay = 2.55> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_29 : Operation 341 [1/1] (0.00ns)   --->   "%tmp_200 = sext i32 %n to i64" [kociemba/search.c:283]   --->   Operation 341 'sext' 'tmp_200' <Predicate = (icmp)> <Delay = 0.00>
+ST_29 : Operation 342 [1/1] (0.00ns)   --->   "%search_ax_0_addr_2 = getelementptr [31 x i32]* @search_ax_0, i64 0, i64 %tmp_200" [kociemba/search.c:283]   --->   Operation 342 'getelementptr' 'search_ax_0_addr_2' <Predicate = (icmp)> <Delay = 0.00>
+ST_29 : Operation 343 [2/2] (2.32ns)   --->   "%search_ax_0_load_1 = load i32* %search_ax_0_addr_2, align 4" [kociemba/search.c:283]   --->   Operation 343 'load' 'search_ax_0_load_1' <Predicate = (icmp)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 31> <RAM>
+ST_29 : Operation 344 [2/2] (2.32ns)   --->   "%search_ax_0_load_2 = load i32* %search_ax_0_addr_1, align 4" [kociemba/search.c:255]   --->   Operation 344 'load' 'search_ax_0_load_2' <Predicate = (icmp)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 31> <RAM>
+
+State 30 <SV = 17> <Delay = 4.87>
+ST_30 : Operation 345 [1/2] (2.32ns)   --->   "%search_ax_0_load_1 = load i32* %search_ax_0_addr_2, align 4" [kociemba/search.c:283]   --->   Operation 345 'load' 'search_ax_0_load_1' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 31> <RAM>
+ST_30 : Operation 346 [1/1] (2.55ns)   --->   "%tmp_201 = add nsw i32 %search_ax_0_load_1, -3" [kociemba/search.c:283]   --->   Operation 346 'add' 'tmp_201' <Predicate = true> <Delay = 2.55> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_30 : Operation 347 [1/2] (2.32ns)   --->   "%search_ax_0_load_2 = load i32* %search_ax_0_addr_1, align 4" [kociemba/search.c:255]   --->   Operation 347 'load' 'search_ax_0_load_2' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 31> <RAM>
+ST_30 : Operation 348 [1/1] (1.76ns)   --->   "br label %.critedge" [kociemba/search.c:255]   --->   Operation 348 'br' <Predicate = true> <Delay = 1.76>
+
+State 31 <SV = 18> <Delay = 6.00>
+ST_31 : Operation 349 [1/1] (0.00ns)   --->   "%tmp_202 = phi i32 [ %search_ax_0_load_2, %.critedge.preheader ], [ %tmp_203, %24 ]" [kociemba/search.c:255]   --->   Operation 349 'phi' 'tmp_202' <Predicate = true> <Delay = 0.00>
+ST_31 : Operation 350 [1/1] (2.55ns)   --->   "%tmp_203 = add nsw i32 %tmp_202, 1" [kociemba/search.c:255]   --->   Operation 350 'add' 'tmp_203' <Predicate = true> <Delay = 2.55> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_31 : Operation 351 [1/1] (2.47ns)   --->   "%tmp_204 = icmp sgt i32 %tmp_203, 5" [kociemba/search.c:255]   --->   Operation 351 'icmp' 'tmp_204' <Predicate = true> <Delay = 2.47> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_31 : Operation 352 [1/1] (0.00ns)   --->   "br i1 %tmp_204, label %19, label %23" [kociemba/search.c:255]   --->   Operation 352 'br' <Predicate = true> <Delay = 0.00>
+ST_31 : Operation 353 [1/1] (2.32ns)   --->   "store i32 1, i32* %search_po_0_addr, align 4" [kociemba/search.c:280]   --->   Operation 353 'store' <Predicate = (!tmp_204)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 31> <RAM>
+ST_31 : Operation 354 [1/1] (0.00ns)   --->   "br i1 %tmp_199, label %.loopexit, label %24" [kociemba/search.c:283]   --->   Operation 354 'br' <Predicate = (!tmp_204)> <Delay = 0.00>
+ST_31 : Operation 355 [1/1] (2.47ns)   --->   "%tmp_206 = icmp eq i32 %search_ax_0_load_1, %tmp_203" [kociemba/search.c:283]   --->   Operation 355 'icmp' 'tmp_206' <Predicate = (!tmp_204 & !tmp_199)> <Delay = 2.47> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_31 : Operation 356 [1/1] (2.47ns)   --->   "%tmp_207 = icmp eq i32 %tmp_201, %tmp_203" [kociemba/search.c:283]   --->   Operation 356 'icmp' 'tmp_207' <Predicate = (!tmp_204 & !tmp_199)> <Delay = 2.47> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_31 : Operation 357 [1/1] (0.97ns)   --->   "%or_cond1 = or i1 %tmp_206, %tmp_207" [kociemba/search.c:283]   --->   Operation 357 'or' 'or_cond1' <Predicate = (!tmp_204 & !tmp_199)> <Delay = 0.97> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_31 : Operation 358 [1/1] (0.00ns)   --->   "br i1 %or_cond1, label %.critedge, label %.loopexit" [kociemba/search.c:283]   --->   Operation 358 'br' <Predicate = (!tmp_204 & !tmp_199)> <Delay = 0.00>
+ST_31 : Operation 359 [1/1] (2.32ns)   --->   "store i32 %tmp_203, i32* %search_ax_0_addr_1, align 4" [kociemba/search.c:255]   --->   Operation 359 'store' <Predicate = (!tmp_204 & tmp_199) | (!tmp_204 & !or_cond1)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 31> <RAM>
+ST_31 : Operation 360 [1/1] (1.76ns)   --->   "br label %._crit_edge20"   --->   Operation 360 'br' <Predicate = (!tmp_204 & tmp_199) | (!tmp_204 & !or_cond1)> <Delay = 1.76>
+ST_31 : Operation 361 [1/1] (2.32ns)   --->   "store i32 %tmp_203, i32* %search_ax_0_addr_1, align 4" [kociemba/search.c:255]   --->   Operation 361 'store' <Predicate = (tmp_204)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 31> <RAM>
+ST_31 : Operation 362 [1/1] (0.00ns)   --->   "br i1 %tmp_199, label %20, label %.._crit_edge20_crit_edge" [kociemba/search.c:261]   --->   Operation 362 'br' <Predicate = (tmp_204)> <Delay = 0.00>
+ST_31 : Operation 363 [1/1] (1.81ns)   --->   "store i32 %n, i32* %n_1" [kociemba/search.c:274]   --->   Operation 363 'store' <Predicate = (tmp_204 & !tmp_199)> <Delay = 1.81>
+ST_31 : Operation 364 [1/1] (1.76ns)   --->   "br label %._crit_edge20" [kociemba/search.c:261]   --->   Operation 364 'br' <Predicate = (tmp_204 & !tmp_199)> <Delay = 1.76>
+ST_31 : Operation 365 [1/1] (2.47ns)   --->   "%tmp_205 = icmp slt i32 %depthPhase1_1_load, %tmp" [kociemba/search.c:262]   --->   Operation 365 'icmp' 'tmp_205' <Predicate = (tmp_204 & tmp_199)> <Delay = 2.47> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_31 : Operation 366 [1/1] (0.00ns)   --->   "br i1 %tmp_205, label %22, label %21" [kociemba/search.c:262]   --->   Operation 366 'br' <Predicate = (tmp_204 & tmp_199)> <Delay = 0.00>
+ST_31 : Operation 367 [1/1] (2.55ns)   --->   "%depthPhase1 = add nsw i32 %depthPhase1_1_load, 1" [kociemba/search.c:267]   --->   Operation 367 'add' 'depthPhase1' <Predicate = (tmp_204 & tmp_199 & tmp_205)> <Delay = 2.55> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_31 : Operation 368 [1/1] (1.81ns)   --->   "store i32 0, i32* %n_1"   --->   Operation 368 'store' <Predicate = (tmp_204 & tmp_199 & tmp_205)> <Delay = 1.81>
+ST_31 : Operation 369 [1/1] (1.76ns)   --->   "store i32 %depthPhase1, i32* %depthPhase1_1" [kociemba/search.c:267]   --->   Operation 369 'store' <Predicate = (tmp_204 & tmp_199 & tmp_205)> <Delay = 1.76>
+ST_31 : Operation 370 [1/1] (1.00ns)   --->   "call void @_ssdm_op_Write.s_axilite.i1P(i1* %unsolvable, i1 true)" [kociemba/search.c:264]   --->   Operation 370 'write' <Predicate = (tmp_204 & tmp_199 & !tmp_205)> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_31 : Operation 371 [1/1] (0.00ns)   --->   "br label %._crit_edge16" [kociemba/search.c:265]   --->   Operation 371 'br' <Predicate = (tmp_204 & tmp_199 & !tmp_205)> <Delay = 0.00>
+
+State 32 <SV = 19> <Delay = 2.32>
+ST_32 : Operation 372 [1/1] (2.32ns)   --->   "store i32 0, i32* getelementptr inbounds ([31 x i32]* @search_ax_0, i64 0, i64 0), align 16" [kociemba/search.c:268]   --->   Operation 372 'store' <Predicate = (!or_cond & icmp & tmp_204 & tmp_199)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 31> <RAM>
+ST_32 : Operation 373 [1/1] (2.32ns)   --->   "store i32 1, i32* getelementptr inbounds ([31 x i32]* @search_po_0, i64 0, i64 0), align 16" [kociemba/search.c:269]   --->   Operation 373 'store' <Predicate = (!or_cond & icmp & tmp_204 & tmp_199)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 31> <RAM>
+ST_32 : Operation 374 [1/1] (1.76ns)   --->   "br label %._crit_edge20" [kociemba/search.c:271]   --->   Operation 374 'br' <Predicate = (!or_cond & icmp & tmp_204 & tmp_199)> <Delay = 1.76>
+ST_32 : Operation 375 [1/1] (0.00ns)   --->   "%busy_4 = phi i1 [ false, %17 ], [ false, %22 ], [ false, %.loopexit ], [ false, %18 ], [ true, %.._crit_edge20_crit_edge ]"   --->   Operation 375 'phi' 'busy_4' <Predicate = true> <Delay = 0.00>
+ST_32 : Operation 376 [1/1] (0.00ns)   --->   "br i1 %busy_4, label %.backedge, label %25" [kociemba/search.c:286]   --->   Operation 376 'br' <Predicate = true> <Delay = 0.00>
+
+State 33 <SV = 16> <Delay = 5.77>
+ST_33 : Operation 377 [1/2] (2.32ns)   --->   "%search_ax_0_load = load i32* %search_ax_0_addr, align 4" [kociemba/search.c:248]   --->   Operation 377 'load' 'search_ax_0_load' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 31> <RAM>
+ST_33 : Operation 378 [1/1] (0.00ns)   --->   "%search_ax_0_addr_3 = getelementptr [31 x i32]* @search_ax_0, i64 0, i64 %tmp_193" [kociemba/search.c:249]   --->   Operation 378 'getelementptr' 'search_ax_0_addr_3' <Predicate = true> <Delay = 0.00>
+ST_33 : Operation 379 [1/1] (2.47ns)   --->   "%tmp_240 = icmp eq i32 %search_ax_0_load, 3" [kociemba/search.c:248]   --->   Operation 379 'icmp' 'tmp_240' <Predicate = true> <Delay = 2.47> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_33 : Operation 380 [1/1] (2.47ns)   --->   "%tmp_241 = icmp eq i32 %search_ax_0_load, 0" [kociemba/search.c:248]   --->   Operation 380 'icmp' 'tmp_241' <Predicate = true> <Delay = 2.47> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_33 : Operation 381 [1/1] (0.97ns)   --->   "%tmp_242 = or i1 %tmp_241, %tmp_240" [kociemba/search.c:248]   --->   Operation 381 'or' 'tmp_242' <Predicate = true> <Delay = 0.97> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_33 : Operation 382 [1/1] (0.00ns)   --->   "br i1 %tmp_242, label %._crit_edge18, label %16" [kociemba/search.c:248]   --->   Operation 382 'br' <Predicate = true> <Delay = 0.00>
+ST_33 : Operation 383 [1/1] (2.32ns)   --->   "store i32 0, i32* %search_ax_0_addr_3, align 4" [kociemba/search.c:251]   --->   Operation 383 'store' <Predicate = (!tmp_242)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 31> <RAM>
+ST_33 : Operation 384 [1/1] (0.00ns)   --->   "br label %17"   --->   Operation 384 'br' <Predicate = (!tmp_242)> <Delay = 0.00>
+ST_33 : Operation 385 [1/1] (2.32ns)   --->   "store i32 1, i32* %search_ax_0_addr_3, align 4" [kociemba/search.c:249]   --->   Operation 385 'store' <Predicate = (tmp_242)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 31> <RAM>
+ST_33 : Operation 386 [1/1] (0.00ns)   --->   "br label %17" [kociemba/search.c:249]   --->   Operation 386 'br' <Predicate = (tmp_242)> <Delay = 0.00>
+ST_33 : Operation 387 [1/1] (0.00ns)   --->   "%search_po_0_addr_1 = getelementptr [31 x i32]* @search_po_0, i64 0, i64 %tmp_193" [kociemba/search.c:252]   --->   Operation 387 'getelementptr' 'search_po_0_addr_1' <Predicate = true> <Delay = 0.00>
+ST_33 : Operation 388 [1/1] (2.32ns)   --->   "store i32 1, i32* %search_po_0_addr_1, align 4" [kociemba/search.c:252]   --->   Operation 388 'store' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 31> <RAM>
+ST_33 : Operation 389 [1/1] (1.81ns)   --->   "store i32 %n_3, i32* %n_1" [kociemba/search.c:249]   --->   Operation 389 'store' <Predicate = true> <Delay = 1.81>
+ST_33 : Operation 390 [1/1] (1.76ns)   --->   "br label %._crit_edge20" [kociemba/search.c:253]   --->   Operation 390 'br' <Predicate = true> <Delay = 1.76>
+
+State 34 <SV = 20> <Delay = 2.32>
+ST_34 : Operation 391 [1/1] (0.00ns)   --->   "%n_1_load_2 = load i32* %n_1" [kociemba/search.c:291]   --->   Operation 391 'load' 'n_1_load_2' <Predicate = true> <Delay = 0.00>
+ST_34 : Operation 392 [1/1] (0.00ns)   --->   "%tmp_208 = sext i32 %n_1_load_2 to i64" [kociemba/search.c:290]   --->   Operation 392 'sext' 'tmp_208' <Predicate = true> <Delay = 0.00>
+ST_34 : Operation 393 [1/1] (0.00ns)   --->   "%search_ax_0_addr_4 = getelementptr [31 x i32]* @search_ax_0, i64 0, i64 %tmp_208" [kociemba/search.c:290]   --->   Operation 393 'getelementptr' 'search_ax_0_addr_4' <Predicate = true> <Delay = 0.00>
+ST_34 : Operation 394 [2/2] (2.32ns)   --->   "%search_ax_0_load_3 = load i32* %search_ax_0_addr_4, align 4" [kociemba/search.c:290]   --->   Operation 394 'load' 'search_ax_0_load_3' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 31> <RAM>
+ST_34 : Operation 395 [1/1] (0.00ns)   --->   "%search_po_0_addr_2 = getelementptr [31 x i32]* @search_po_0, i64 0, i64 %tmp_208" [kociemba/search.c:290]   --->   Operation 395 'getelementptr' 'search_po_0_addr_2' <Predicate = true> <Delay = 0.00>
+ST_34 : Operation 396 [2/2] (2.32ns)   --->   "%search_po_0_load_1 = load i32* %search_po_0_addr_2, align 4" [kociemba/search.c:290]   --->   Operation 396 'load' 'search_po_0_load_1' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 31> <RAM>
+ST_34 : Operation 397 [1/1] (0.00ns)   --->   "%search_flip_0_addr = getelementptr [31 x i16]* @search_flip_0, i64 0, i64 %tmp_208" [kociemba/search.c:291]   --->   Operation 397 'getelementptr' 'search_flip_0_addr' <Predicate = true> <Delay = 0.00>
+ST_34 : Operation 398 [2/2] (2.32ns)   --->   "%search_flip_0_load = load i16* %search_flip_0_addr, align 2" [kociemba/search.c:291]   --->   Operation 398 'load' 'search_flip_0_load' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 31> <RAM>
+ST_34 : Operation 399 [1/1] (0.00ns)   --->   "%search_twist_0_addr = getelementptr [31 x i16]* @search_twist_0, i64 0, i64 %tmp_208" [kociemba/search.c:292]   --->   Operation 399 'getelementptr' 'search_twist_0_addr' <Predicate = true> <Delay = 0.00>
+ST_34 : Operation 400 [2/2] (2.32ns)   --->   "%search_twist_0_load = load i16* %search_twist_0_addr, align 2" [kociemba/search.c:292]   --->   Operation 400 'load' 'search_twist_0_load' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 31> <RAM>
+ST_34 : Operation 401 [1/1] (0.00ns)   --->   "%search_slice_0_addr = getelementptr [31 x i16]* @search_slice_0, i64 0, i64 %tmp_208" [kociemba/search.c:293]   --->   Operation 401 'getelementptr' 'search_slice_0_addr' <Predicate = true> <Delay = 0.00>
+ST_34 : Operation 402 [2/2] (2.32ns)   --->   "%search_slice_0_load = load i16* %search_slice_0_addr, align 2" [kociemba/search.c:293]   --->   Operation 402 'load' 'search_slice_0_load' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 31> <RAM>
+
+State 35 <SV = 21> <Delay = 9.24>
+ST_35 : Operation 403 [1/2] (2.32ns)   --->   "%search_ax_0_load_3 = load i32* %search_ax_0_addr_4, align 4" [kociemba/search.c:290]   --->   Operation 403 'load' 'search_ax_0_load_3' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 31> <RAM>
+ST_35 : Operation 404 [1/1] (0.00ns) (grouped into LUT with out node tmp_209)   --->   "%tmp_244 = shl i32 %search_ax_0_load_3, 2" [kociemba/search.c:290]   --->   Operation 404 'shl' 'tmp_244' <Predicate = true> <Delay = 0.00>
+ST_35 : Operation 405 [1/1] (2.55ns) (out node of the LUT)   --->   "%tmp_209 = sub i32 %tmp_244, %search_ax_0_load_3" [kociemba/search.c:290]   --->   Operation 405 'sub' 'tmp_209' <Predicate = true> <Delay = 2.55> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_35 : Operation 406 [1/2] (2.32ns)   --->   "%search_po_0_load_1 = load i32* %search_po_0_addr_2, align 4" [kociemba/search.c:290]   --->   Operation 406 'load' 'search_po_0_load_1' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 31> <RAM>
+ST_35 : Operation 407 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%tmp14 = add i32 -1, %tmp_209" [kociemba/search.c:290]   --->   Operation 407 'add' 'tmp14' <Predicate = true> <Delay = 0.00> <Core = "TAddSub">   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 2.18> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_35 : Operation 408 [1/1] (4.37ns) (root node of TernaryAdder)   --->   "%mv = add i32 %search_po_0_load_1, %tmp14" [kociemba/search.c:290]   --->   Operation 408 'add' 'mv' <Predicate = true> <Delay = 4.37> <Core = "TAddSub">   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 2.18> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_35 : Operation 409 [1/2] (2.32ns)   --->   "%search_flip_0_load = load i16* %search_flip_0_addr, align 2" [kociemba/search.c:291]   --->   Operation 409 'load' 'search_flip_0_load' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 31> <RAM>
+ST_35 : Operation 410 [1/2] (2.32ns)   --->   "%search_twist_0_load = load i16* %search_twist_0_addr, align 2" [kociemba/search.c:292]   --->   Operation 410 'load' 'search_twist_0_load' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 31> <RAM>
+ST_35 : Operation 411 [1/2] (2.32ns)   --->   "%search_slice_0_load = load i16* %search_slice_0_addr, align 2" [kociemba/search.c:293]   --->   Operation 411 'load' 'search_slice_0_load' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 31> <RAM>
+
+State 36 <SV = 22> <Delay = 8.93>
+ST_36 : Operation 412 [1/1] (0.00ns)   --->   "%p_shl = call i20 @_ssdm_op_BitConcatenate.i20.i16.i4(i16 %search_flip_0_load, i4 0)" [kociemba/search.c:291]   --->   Operation 412 'bitconcatenate' 'p_shl' <Predicate = true> <Delay = 0.00>
+ST_36 : Operation 413 [1/1] (0.00ns)   --->   "%p_shl26_cast = sext i20 %p_shl to i32" [kociemba/search.c:291]   --->   Operation 413 'sext' 'p_shl26_cast' <Predicate = true> <Delay = 0.00>
+ST_36 : Operation 414 [1/1] (0.00ns)   --->   "%p_shl8 = call i17 @_ssdm_op_BitConcatenate.i17.i16.i1(i16 %search_flip_0_load, i1 false)" [kociemba/search.c:291]   --->   Operation 414 'bitconcatenate' 'p_shl8' <Predicate = true> <Delay = 0.00>
+ST_36 : Operation 415 [1/1] (0.00ns)   --->   "%p_shl27_cast = sext i17 %p_shl8 to i32" [kociemba/search.c:291]   --->   Operation 415 'sext' 'p_shl27_cast' <Predicate = true> <Delay = 0.00>
+ST_36 : Operation 416 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%tmp15 = add i32 %mv, %p_shl27_cast" [kociemba/search.c:291]   --->   Operation 416 'add' 'tmp15' <Predicate = true> <Delay = 0.00> <Core = "TAddSub">   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 2.18> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_36 : Operation 417 [1/1] (4.37ns) (root node of TernaryAdder)   --->   "%tmp_210 = add nsw i32 %p_shl26_cast, %tmp15" [kociemba/search.c:291]   --->   Operation 417 'add' 'tmp_210' <Predicate = true> <Delay = 4.37> <Core = "TAddSub">   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 2.18> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_36 : Operation 418 [1/1] (0.00ns)   --->   "%tmp_211_cast = sext i32 %tmp_210 to i33" [kociemba/search.c:291]   --->   Operation 418 'sext' 'tmp_211_cast' <Predicate = true> <Delay = 0.00>
+ST_36 : Operation 419 [1/1] (2.55ns)   --->   "%flipMove24_sum = add i33 %tmp_248_cast, %tmp_211_cast" [kociemba/search.c:291]   --->   Operation 419 'add' 'flipMove24_sum' <Predicate = true> <Delay = 2.55> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_36 : Operation 420 [1/1] (0.00ns)   --->   "%flipMove24_sum_cast = sext i33 %flipMove24_sum to i64" [kociemba/search.c:291]   --->   Operation 420 'sext' 'flipMove24_sum_cast' <Predicate = true> <Delay = 0.00>
+ST_36 : Operation 421 [1/1] (0.00ns)   --->   "%CTRL_BUS_addr = getelementptr i16* %CTRL_BUS, i64 %flipMove24_sum_cast" [kociemba/search.c:291]   --->   Operation 421 'getelementptr' 'CTRL_BUS_addr' <Predicate = true> <Delay = 0.00>
+ST_36 : Operation 422 [1/1] (0.00ns)   --->   "%p_shl9 = call i20 @_ssdm_op_BitConcatenate.i20.i16.i4(i16 %search_twist_0_load, i4 0)" [kociemba/search.c:292]   --->   Operation 422 'bitconcatenate' 'p_shl9' <Predicate = true> <Delay = 0.00>
+ST_36 : Operation 423 [1/1] (0.00ns)   --->   "%p_shl28_cast = sext i20 %p_shl9 to i32" [kociemba/search.c:292]   --->   Operation 423 'sext' 'p_shl28_cast' <Predicate = true> <Delay = 0.00>
+ST_36 : Operation 424 [1/1] (0.00ns)   --->   "%p_shl10 = call i17 @_ssdm_op_BitConcatenate.i17.i16.i1(i16 %search_twist_0_load, i1 false)" [kociemba/search.c:292]   --->   Operation 424 'bitconcatenate' 'p_shl10' <Predicate = true> <Delay = 0.00>
+ST_36 : Operation 425 [1/1] (0.00ns)   --->   "%p_shl29_cast = sext i17 %p_shl10 to i32" [kociemba/search.c:292]   --->   Operation 425 'sext' 'p_shl29_cast' <Predicate = true> <Delay = 0.00>
+ST_36 : Operation 426 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%tmp16 = add i32 %mv, %p_shl29_cast" [kociemba/search.c:292]   --->   Operation 426 'add' 'tmp16' <Predicate = true> <Delay = 0.00> <Core = "TAddSub">   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 2.18> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_36 : Operation 427 [1/1] (4.37ns) (root node of TernaryAdder)   --->   "%tmp_214 = add nsw i32 %p_shl28_cast, %tmp16" [kociemba/search.c:292]   --->   Operation 427 'add' 'tmp_214' <Predicate = true> <Delay = 4.37> <Core = "TAddSub">   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 2.18> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_36 : Operation 428 [1/1] (0.00ns)   --->   "%tmp_215_cast = sext i32 %tmp_214 to i33" [kociemba/search.c:292]   --->   Operation 428 'sext' 'tmp_215_cast' <Predicate = true> <Delay = 0.00>
+ST_36 : Operation 429 [1/1] (2.55ns)   --->   "%twistMove22_sum = add i33 %tmp_249_cast1, %tmp_215_cast" [kociemba/search.c:292]   --->   Operation 429 'add' 'twistMove22_sum' <Predicate = true> <Delay = 2.55> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_36 : Operation 430 [1/1] (0.00ns)   --->   "%twistMove22_sum_cast = sext i33 %twistMove22_sum to i64" [kociemba/search.c:292]   --->   Operation 430 'sext' 'twistMove22_sum_cast' <Predicate = true> <Delay = 0.00>
+ST_36 : Operation 431 [1/1] (0.00ns)   --->   "%CTRL_BUS_addr_1 = getelementptr i16* %CTRL_BUS, i64 %twistMove22_sum_cast" [kociemba/search.c:292]   --->   Operation 431 'getelementptr' 'CTRL_BUS_addr_1' <Predicate = true> <Delay = 0.00>
+ST_36 : Operation 432 [1/1] (0.00ns)   --->   "%extLd34_cast_cast = sext i16 %search_slice_0_load to i26" [kociemba/search.c:293]   --->   Operation 432 'sext' 'extLd34_cast_cast' <Predicate = true> <Delay = 0.00>
+ST_36 : Operation 433 [1/1] (3.36ns)   --->   "%tmp_216 = mul i26 432, %extLd34_cast_cast" [kociemba/search.c:293]   --->   Operation 433 'mul' 'tmp_216' <Predicate = true> <Delay = 3.36> <Core = "DSP48">   --->   Core 61 'DSP48' <Latency = 0> <II = 1> <Delay = 6.38> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_36 : Operation 434 [1/1] (0.00ns)   --->   "%tmp_250_cast = sext i26 %tmp_216 to i32" [kociemba/search.c:293]   --->   Operation 434 'sext' 'tmp_250_cast' <Predicate = true> <Delay = 0.00>
+ST_36 : Operation 435 [1/1] (3.02ns)   --->   "%tmp_217 = add nsw i32 %tmp_250_cast, %mv" [kociemba/search.c:293]   --->   Operation 435 'add' 'tmp_217' <Predicate = true> <Delay = 3.02> <Core = "DSP48">   --->   Core 61 'DSP48' <Latency = 0> <II = 1> <Delay = 6.38> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_36 : Operation 436 [1/1] (0.00ns)   --->   "%tmp_218_cast = sext i32 %tmp_217 to i33" [kociemba/search.c:293]   --->   Operation 436 'sext' 'tmp_218_cast' <Predicate = true> <Delay = 0.00>
+ST_36 : Operation 437 [1/1] (2.55ns)   --->   "%FRtoBR_Move26_sum = add i33 %tmp_247_cast, %tmp_218_cast" [kociemba/search.c:293]   --->   Operation 437 'add' 'FRtoBR_Move26_sum' <Predicate = true> <Delay = 2.55> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_36 : Operation 438 [1/1] (0.00ns)   --->   "%FRtoBR_Move26_sum_ca = sext i33 %FRtoBR_Move26_sum to i64" [kociemba/search.c:293]   --->   Operation 438 'sext' 'FRtoBR_Move26_sum_ca' <Predicate = true> <Delay = 0.00>
+ST_36 : Operation 439 [1/1] (0.00ns)   --->   "%CTRL_BUS_addr_2 = getelementptr i16* %CTRL_BUS, i64 %FRtoBR_Move26_sum_ca" [kociemba/search.c:293]   --->   Operation 439 'getelementptr' 'CTRL_BUS_addr_2' <Predicate = true> <Delay = 0.00>
+
+State 37 <SV = 23> <Delay = 10.5>
+ST_37 : Operation 440 [7/7] (10.5ns)   --->   "%CTRL_BUS_load_req = call i1 @_ssdm_op_ReadReq.m_axi.i16P(i16* %CTRL_BUS_addr, i32 1)" [kociemba/search.c:291]   --->   Operation 440 'readreq' 'CTRL_BUS_load_req' <Predicate = true> <Delay = 10.5> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 38 <SV = 24> <Delay = 10.5>
+ST_38 : Operation 441 [6/7] (10.5ns)   --->   "%CTRL_BUS_load_req = call i1 @_ssdm_op_ReadReq.m_axi.i16P(i16* %CTRL_BUS_addr, i32 1)" [kociemba/search.c:291]   --->   Operation 441 'readreq' 'CTRL_BUS_load_req' <Predicate = true> <Delay = 10.5> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_38 : Operation 442 [7/7] (10.5ns)   --->   "%CTRL_BUS_load_1_req = call i1 @_ssdm_op_ReadReq.m_axi.i16P(i16* %CTRL_BUS_addr_1, i32 1)" [kociemba/search.c:292]   --->   Operation 442 'readreq' 'CTRL_BUS_load_1_req' <Predicate = true> <Delay = 10.5> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 39 <SV = 25> <Delay = 10.5>
+ST_39 : Operation 443 [5/7] (10.5ns)   --->   "%CTRL_BUS_load_req = call i1 @_ssdm_op_ReadReq.m_axi.i16P(i16* %CTRL_BUS_addr, i32 1)" [kociemba/search.c:291]   --->   Operation 443 'readreq' 'CTRL_BUS_load_req' <Predicate = true> <Delay = 10.5> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_39 : Operation 444 [6/7] (10.5ns)   --->   "%CTRL_BUS_load_1_req = call i1 @_ssdm_op_ReadReq.m_axi.i16P(i16* %CTRL_BUS_addr_1, i32 1)" [kociemba/search.c:292]   --->   Operation 444 'readreq' 'CTRL_BUS_load_1_req' <Predicate = true> <Delay = 10.5> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_39 : Operation 445 [7/7] (10.5ns)   --->   "%CTRL_BUS_load_2_req = call i1 @_ssdm_op_ReadReq.m_axi.i16P(i16* %CTRL_BUS_addr_2, i32 1)" [kociemba/search.c:293]   --->   Operation 445 'readreq' 'CTRL_BUS_load_2_req' <Predicate = true> <Delay = 10.5> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 40 <SV = 26> <Delay = 10.5>
+ST_40 : Operation 446 [4/7] (10.5ns)   --->   "%CTRL_BUS_load_req = call i1 @_ssdm_op_ReadReq.m_axi.i16P(i16* %CTRL_BUS_addr, i32 1)" [kociemba/search.c:291]   --->   Operation 446 'readreq' 'CTRL_BUS_load_req' <Predicate = true> <Delay = 10.5> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_40 : Operation 447 [5/7] (10.5ns)   --->   "%CTRL_BUS_load_1_req = call i1 @_ssdm_op_ReadReq.m_axi.i16P(i16* %CTRL_BUS_addr_1, i32 1)" [kociemba/search.c:292]   --->   Operation 447 'readreq' 'CTRL_BUS_load_1_req' <Predicate = true> <Delay = 10.5> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_40 : Operation 448 [6/7] (10.5ns)   --->   "%CTRL_BUS_load_2_req = call i1 @_ssdm_op_ReadReq.m_axi.i16P(i16* %CTRL_BUS_addr_2, i32 1)" [kociemba/search.c:293]   --->   Operation 448 'readreq' 'CTRL_BUS_load_2_req' <Predicate = true> <Delay = 10.5> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 41 <SV = 27> <Delay = 10.5>
+ST_41 : Operation 449 [3/7] (10.5ns)   --->   "%CTRL_BUS_load_req = call i1 @_ssdm_op_ReadReq.m_axi.i16P(i16* %CTRL_BUS_addr, i32 1)" [kociemba/search.c:291]   --->   Operation 449 'readreq' 'CTRL_BUS_load_req' <Predicate = true> <Delay = 10.5> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_41 : Operation 450 [4/7] (10.5ns)   --->   "%CTRL_BUS_load_1_req = call i1 @_ssdm_op_ReadReq.m_axi.i16P(i16* %CTRL_BUS_addr_1, i32 1)" [kociemba/search.c:292]   --->   Operation 450 'readreq' 'CTRL_BUS_load_1_req' <Predicate = true> <Delay = 10.5> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_41 : Operation 451 [5/7] (10.5ns)   --->   "%CTRL_BUS_load_2_req = call i1 @_ssdm_op_ReadReq.m_axi.i16P(i16* %CTRL_BUS_addr_2, i32 1)" [kociemba/search.c:293]   --->   Operation 451 'readreq' 'CTRL_BUS_load_2_req' <Predicate = true> <Delay = 10.5> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 42 <SV = 28> <Delay = 10.5>
+ST_42 : Operation 452 [2/7] (10.5ns)   --->   "%CTRL_BUS_load_req = call i1 @_ssdm_op_ReadReq.m_axi.i16P(i16* %CTRL_BUS_addr, i32 1)" [kociemba/search.c:291]   --->   Operation 452 'readreq' 'CTRL_BUS_load_req' <Predicate = true> <Delay = 10.5> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_42 : Operation 453 [3/7] (10.5ns)   --->   "%CTRL_BUS_load_1_req = call i1 @_ssdm_op_ReadReq.m_axi.i16P(i16* %CTRL_BUS_addr_1, i32 1)" [kociemba/search.c:292]   --->   Operation 453 'readreq' 'CTRL_BUS_load_1_req' <Predicate = true> <Delay = 10.5> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_42 : Operation 454 [4/7] (10.5ns)   --->   "%CTRL_BUS_load_2_req = call i1 @_ssdm_op_ReadReq.m_axi.i16P(i16* %CTRL_BUS_addr_2, i32 1)" [kociemba/search.c:293]   --->   Operation 454 'readreq' 'CTRL_BUS_load_2_req' <Predicate = true> <Delay = 10.5> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 43 <SV = 29> <Delay = 10.5>
+ST_43 : Operation 455 [1/7] (10.5ns)   --->   "%CTRL_BUS_load_req = call i1 @_ssdm_op_ReadReq.m_axi.i16P(i16* %CTRL_BUS_addr, i32 1)" [kociemba/search.c:291]   --->   Operation 455 'readreq' 'CTRL_BUS_load_req' <Predicate = true> <Delay = 10.5> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_43 : Operation 456 [2/7] (10.5ns)   --->   "%CTRL_BUS_load_1_req = call i1 @_ssdm_op_ReadReq.m_axi.i16P(i16* %CTRL_BUS_addr_1, i32 1)" [kociemba/search.c:292]   --->   Operation 456 'readreq' 'CTRL_BUS_load_1_req' <Predicate = true> <Delay = 10.5> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_43 : Operation 457 [3/7] (10.5ns)   --->   "%CTRL_BUS_load_2_req = call i1 @_ssdm_op_ReadReq.m_axi.i16P(i16* %CTRL_BUS_addr_2, i32 1)" [kociemba/search.c:293]   --->   Operation 457 'readreq' 'CTRL_BUS_load_2_req' <Predicate = true> <Delay = 10.5> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 44 <SV = 30> <Delay = 10.5>
+ST_44 : Operation 458 [1/1] (10.5ns)   --->   "%CTRL_BUS_addr_read = call i16 @_ssdm_op_Read.m_axi.i16P(i16* %CTRL_BUS_addr)" [kociemba/search.c:291]   --->   Operation 458 'read' 'CTRL_BUS_addr_read' <Predicate = true> <Delay = 10.5> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_44 : Operation 459 [1/7] (10.5ns)   --->   "%CTRL_BUS_load_1_req = call i1 @_ssdm_op_ReadReq.m_axi.i16P(i16* %CTRL_BUS_addr_1, i32 1)" [kociemba/search.c:292]   --->   Operation 459 'readreq' 'CTRL_BUS_load_1_req' <Predicate = true> <Delay = 10.5> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_44 : Operation 460 [2/7] (10.5ns)   --->   "%CTRL_BUS_load_2_req = call i1 @_ssdm_op_ReadReq.m_axi.i16P(i16* %CTRL_BUS_addr_2, i32 1)" [kociemba/search.c:293]   --->   Operation 460 'readreq' 'CTRL_BUS_load_2_req' <Predicate = true> <Delay = 10.5> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 45 <SV = 31> <Delay = 10.5>
+ST_45 : Operation 461 [1/1] (10.5ns)   --->   "%CTRL_BUS_addr_1_read = call i16 @_ssdm_op_Read.m_axi.i16P(i16* %CTRL_BUS_addr_1)" [kociemba/search.c:292]   --->   Operation 461 'read' 'CTRL_BUS_addr_1_read' <Predicate = true> <Delay = 10.5> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_45 : Operation 462 [1/7] (10.5ns)   --->   "%CTRL_BUS_load_2_req = call i1 @_ssdm_op_ReadReq.m_axi.i16P(i16* %CTRL_BUS_addr_2, i32 1)" [kociemba/search.c:293]   --->   Operation 462 'readreq' 'CTRL_BUS_load_2_req' <Predicate = true> <Delay = 10.5> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 46 <SV = 32> <Delay = 10.5>
+ST_46 : Operation 463 [1/1] (10.5ns)   --->   "%CTRL_BUS_addr_2_read = call i16 @_ssdm_op_Read.m_axi.i16P(i16* %CTRL_BUS_addr_2)" [kociemba/search.c:293]   --->   Operation 463 'read' 'CTRL_BUS_addr_2_read' <Predicate = true> <Delay = 10.5> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_46 : Operation 464 [1/1] (0.00ns)   --->   "%tmp_246 = call i1 @_ssdm_op_BitSelect.i1.i16.i32(i16 %CTRL_BUS_addr_2_read, i32 15)" [kociemba/search.c:293]   --->   Operation 464 'bitselect' 'tmp_246' <Predicate = true> <Delay = 0.00>
+
+State 47 <SV = 33> <Delay = 6.38>
+ST_47 : Operation 465 [1/1] (0.00ns)   --->   "%sext6_cast = sext i16 %CTRL_BUS_addr_2_read to i34" [kociemba/search.c:293]   --->   Operation 465 'sext' 'sext6_cast' <Predicate = true> <Delay = 0.00>
+ST_47 : Operation 466 [1/1] (6.38ns)   --->   "%mul1 = mul i34 87382, %sext6_cast" [kociemba/search.c:293]   --->   Operation 466 'mul' 'mul1' <Predicate = true> <Delay = 6.38> <Core = "DSP48">   --->   Core 61 'DSP48' <Latency = 0> <II = 1> <Delay = 6.38> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_47 : Operation 467 [1/1] (0.00ns)   --->   "%tmp_245 = trunc i34 %mul1 to i33" [kociemba/search.c:293]   --->   Operation 467 'trunc' 'tmp_245' <Predicate = (tmp_246)> <Delay = 0.00>
+ST_47 : Operation 468 [1/1] (0.00ns)   --->   "%tmp_249 = call i13 @_ssdm_op_PartSelect.i13.i34.i32.i32(i34 %mul1, i32 21, i32 33)" [kociemba/search.c:293]   --->   Operation 468 'partselect' 'tmp_249' <Predicate = true> <Delay = 0.00>
+
+State 48 <SV = 34> <Delay = 8.04>
+ST_48 : Operation 469 [1/1] (0.00ns)   --->   "%tmp_243_cast = sext i16 %CTRL_BUS_addr_read to i25" [kociemba/search.c:294]   --->   Operation 469 'sext' 'tmp_243_cast' <Predicate = true> <Delay = 0.00>
+ST_48 : Operation 470 [1/1] (2.55ns)   --->   "%tmp_212 = add nsw i32 1, %n_1_load_2" [kociemba/search.c:291]   --->   Operation 470 'add' 'tmp_212' <Predicate = true> <Delay = 2.55> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_48 : Operation 471 [1/1] (0.00ns)   --->   "%tmp_213 = sext i32 %tmp_212 to i64" [kociemba/search.c:291]   --->   Operation 471 'sext' 'tmp_213' <Predicate = true> <Delay = 0.00>
+ST_48 : Operation 472 [1/1] (0.00ns)   --->   "%search_flip_0_addr_1 = getelementptr [31 x i16]* @search_flip_0, i64 0, i64 %tmp_213" [kociemba/search.c:291]   --->   Operation 472 'getelementptr' 'search_flip_0_addr_1' <Predicate = true> <Delay = 0.00>
+ST_48 : Operation 473 [1/1] (2.32ns)   --->   "store i16 %CTRL_BUS_addr_read, i16* %search_flip_0_addr_1, align 2" [kociemba/search.c:291]   --->   Operation 473 'store' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 31> <RAM>
+ST_48 : Operation 474 [1/1] (0.00ns)   --->   "%tmp_249_cast = sext i16 %CTRL_BUS_addr_1_read to i25" [kociemba/search.c:294]   --->   Operation 474 'sext' 'tmp_249_cast' <Predicate = true> <Delay = 0.00>
+ST_48 : Operation 475 [1/1] (0.00ns)   --->   "%search_twist_0_addr_1 = getelementptr [31 x i16]* @search_twist_0, i64 0, i64 %tmp_213" [kociemba/search.c:292]   --->   Operation 475 'getelementptr' 'search_twist_0_addr_1' <Predicate = true> <Delay = 0.00>
+ST_48 : Operation 476 [1/1] (2.32ns)   --->   "store i16 %CTRL_BUS_addr_1_read, i16* %search_twist_0_addr_1, align 2" [kociemba/search.c:292]   --->   Operation 476 'store' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 31> <RAM>
+ST_48 : Operation 477 [1/1] (2.59ns)   --->   "%neg_mul1 = sub i33 0, %tmp_245" [kociemba/search.c:293]   --->   Operation 477 'sub' 'neg_mul1' <Predicate = (tmp_246)> <Delay = 2.59> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_48 : Operation 478 [1/1] (0.00ns) (grouped into LUT with out node neg_ti1)   --->   "%tmp_247 = call i12 @_ssdm_op_PartSelect.i12.i33.i32.i32(i33 %neg_mul1, i32 21, i32 32)" [kociemba/search.c:293]   --->   Operation 478 'partselect' 'tmp_247' <Predicate = (tmp_246)> <Delay = 0.00>
+ST_48 : Operation 479 [1/1] (0.00ns) (grouped into LUT with out node neg_ti1)   --->   "%tmp_248 = sext i12 %tmp_247 to i16" [kociemba/search.c:293]   --->   Operation 479 'sext' 'tmp_248' <Predicate = (tmp_246)> <Delay = 0.00>
+ST_48 : Operation 480 [1/1] (0.00ns)   --->   "%tmp_250 = sext i13 %tmp_249 to i16" [kociemba/search.c:293]   --->   Operation 480 'sext' 'tmp_250' <Predicate = true> <Delay = 0.00>
+ST_48 : Operation 481 [1/1] (0.00ns) (grouped into LUT with out node neg_ti1)   --->   "%tmp_251 = select i1 %tmp_246, i16 %tmp_248, i16 %tmp_250" [kociemba/search.c:293]   --->   Operation 481 'select' 'tmp_251' <Predicate = (tmp_246)> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.02> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_48 : Operation 482 [1/1] (1.67ns) (out node of the LUT)   --->   "%neg_ti1 = sub i16 0, %tmp_251" [kociemba/search.c:293]   --->   Operation 482 'sub' 'neg_ti1' <Predicate = (tmp_246)> <Delay = 1.67> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_48 : Operation 483 [1/1] (0.75ns)   --->   "%tmp_219 = select i1 %tmp_246, i16 %neg_ti1, i16 %tmp_250" [kociemba/search.c:293]   --->   Operation 483 'select' 'tmp_219' <Predicate = true> <Delay = 0.75> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.02> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_48 : Operation 484 [1/1] (0.00ns)   --->   "%tmp_254_cast = sext i16 %tmp_219 to i25" [kociemba/search.c:293]   --->   Operation 484 'sext' 'tmp_254_cast' <Predicate = true> <Delay = 0.00>
+ST_48 : Operation 485 [1/1] (0.00ns)   --->   "%search_slice_0_addr_1 = getelementptr [31 x i16]* @search_slice_0, i64 0, i64 %tmp_213" [kociemba/search.c:293]   --->   Operation 485 'getelementptr' 'search_slice_0_addr_1' <Predicate = true> <Delay = 0.00>
+ST_48 : Operation 486 [1/1] (2.32ns)   --->   "store i16 %tmp_219, i16* %search_slice_0_addr_1, align 2" [kociemba/search.c:293]   --->   Operation 486 'store' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 31> <RAM>
+ST_48 : Operation 487 [1/1] (3.36ns)   --->   "%tmp_220 = mul i25 495, %tmp_243_cast" [kociemba/search.c:294]   --->   Operation 487 'mul' 'tmp_220' <Predicate = true> <Delay = 3.36> <Core = "DSP48">   --->   Core 61 'DSP48' <Latency = 0> <II = 1> <Delay = 6.38> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_48 : Operation 488 [1/1] (3.02ns)   --->   "%tmp_221 = add i25 %tmp_254_cast, %tmp_220" [kociemba/search.c:294]   --->   Operation 488 'add' 'tmp_221' <Predicate = true> <Delay = 3.02> <Core = "DSP48">   --->   Core 61 'DSP48' <Latency = 0> <II = 1> <Delay = 6.38> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_48 : Operation 489 [1/1] (3.36ns)   --->   "%tmp_223 = mul i25 495, %tmp_249_cast" [kociemba/search.c:294]   --->   Operation 489 'mul' 'tmp_223' <Predicate = true> <Delay = 3.36> <Core = "DSP48">   --->   Core 61 'DSP48' <Latency = 0> <II = 1> <Delay = 6.38> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_48 : Operation 490 [1/1] (3.02ns)   --->   "%tmp_224 = add i25 %tmp_254_cast, %tmp_223" [kociemba/search.c:294]   --->   Operation 490 'add' 'tmp_224' <Predicate = true> <Delay = 3.02> <Core = "DSP48">   --->   Core 61 'DSP48' <Latency = 0> <II = 1> <Delay = 6.38> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_48 : Operation 491 [1/1] (0.00ns)   --->   "%search_minDistPhase1_3 = getelementptr [31 x i6]* @search_minDistPhase1, i64 0, i64 %tmp_213" [kociemba/search.c:294]   --->   Operation 491 'getelementptr' 'search_minDistPhase1_3' <Predicate = true> <Delay = 0.00>
+
+State 49 <SV = 35> <Delay = 9.05>
+ST_49 : Operation 492 [2/2] (9.05ns)   --->   "%tmp_252 = call fastcc i4 @getPruning.2(i16* %CTRL_BUS, i31 %Slice_Flip_Prun, i25 %tmp_221)" [kociemba/search.c:294]   --->   Operation 492 'call' 'tmp_252' <Predicate = true> <Delay = 9.05> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 50 <SV = 36> <Delay = 5.01>
+ST_50 : Operation 493 [1/2] (5.01ns)   --->   "%tmp_252 = call fastcc i4 @getPruning.2(i16* %CTRL_BUS, i31 %Slice_Flip_Prun, i25 %tmp_221)" [kociemba/search.c:294]   --->   Operation 493 'call' 'tmp_252' <Predicate = true> <Delay = 5.01> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 51 <SV = 37> <Delay = 9.05>
+ST_51 : Operation 494 [2/2] (9.05ns)   --->   "%tmp_253 = call fastcc i4 @getPruning.1(i16* %CTRL_BUS, i31 %Slice_Twist_Prun, i25 %tmp_224)" [kociemba/search.c:294]   --->   Operation 494 'call' 'tmp_253' <Predicate = true> <Delay = 9.05> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 52 <SV = 38> <Delay = 9.66>
+ST_52 : Operation 495 [1/2] (5.01ns)   --->   "%tmp_253 = call fastcc i4 @getPruning.1(i16* %CTRL_BUS, i31 %Slice_Twist_Prun, i25 %tmp_224)" [kociemba/search.c:294]   --->   Operation 495 'call' 'tmp_253' <Predicate = true> <Delay = 5.01> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_52 : Operation 496 [1/1] (1.30ns)   --->   "%tmp_226 = icmp ugt i4 %tmp_252, %tmp_253" [kociemba/search.c:294]   --->   Operation 496 'icmp' 'tmp_226' <Predicate = true> <Delay = 1.30> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_52 : Operation 497 [1/1] (1.02ns)   --->   "%p_in = select i1 %tmp_226, i4 %tmp_252, i4 %tmp_253" [kociemba/search.c:294]   --->   Operation 497 'select' 'p_in' <Predicate = true> <Delay = 1.02> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.02> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_52 : Operation 498 [1/1] (0.00ns)   --->   "%tmp_262_cast_cast = zext i4 %p_in to i6" [kociemba/search.c:294]   --->   Operation 498 'zext' 'tmp_262_cast_cast' <Predicate = true> <Delay = 0.00>
+ST_52 : Operation 499 [1/1] (2.32ns)   --->   "store i6 %tmp_262_cast_cast, i6* %search_minDistPhase1_3, align 1" [kociemba/search.c:294]   --->   Operation 499 'store' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 31> <RAM>
+ST_52 : Operation 500 [1/1] (1.30ns)   --->   "%tmp_227 = icmp eq i4 %p_in, 0" [kociemba/search.c:300]   --->   Operation 500 'icmp' 'tmp_227' <Predicate = true> <Delay = 1.30> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_52 : Operation 501 [1/1] (0.00ns)   --->   "br i1 %tmp_227, label %26, label %._crit_edge23" [kociemba/search.c:300]   --->   Operation 501 'br' <Predicate = true> <Delay = 0.00>
+ST_52 : Operation 502 [1/1] (0.00ns)   --->   "%depthPhase1_1_load_1 = load i32* %depthPhase1_1" [kociemba/search.c:300]   --->   Operation 502 'load' 'depthPhase1_1_load_1' <Predicate = (tmp_227)> <Delay = 0.00>
+ST_52 : Operation 503 [1/1] (2.55ns)   --->   "%tmp_228 = add nsw i32 %depthPhase1_1_load_1, -5" [kociemba/search.c:300]   --->   Operation 503 'add' 'tmp_228' <Predicate = (tmp_227)> <Delay = 2.55> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_52 : Operation 504 [1/1] (2.47ns)   --->   "%tmp_229 = icmp slt i32 %n_1_load_2, %tmp_228" [kociemba/search.c:300]   --->   Operation 504 'icmp' 'tmp_229' <Predicate = (tmp_227)> <Delay = 2.47> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_52 : Operation 505 [1/1] (0.00ns)   --->   "br i1 %tmp_229, label %._crit_edge23, label %27" [kociemba/search.c:300]   --->   Operation 505 'br' <Predicate = (tmp_227)> <Delay = 0.00>
+ST_52 : Operation 506 [1/1] (2.55ns)   --->   "%tmp_230 = add nsw i32 %depthPhase1_1_load_1, -1" [kociemba/search.c:302]   --->   Operation 506 'add' 'tmp_230' <Predicate = (tmp_227 & !tmp_229)> <Delay = 2.55> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_52 : Operation 507 [1/1] (2.47ns)   --->   "%tmp_231 = icmp eq i32 %n_1_load_2, %tmp_230" [kociemba/search.c:302]   --->   Operation 507 'icmp' 'tmp_231' <Predicate = (tmp_227 & !tmp_229)> <Delay = 2.47> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+
+State 53 <SV = 39> <Delay = 5.72>
+ST_53 : Operation 508 [1/1] (0.00ns)   --->   "%depthPhase1_1_load_2 = load i32* %depthPhase1_1" [kociemba/search.c:302]   --->   Operation 508 'load' 'depthPhase1_1_load_2' <Predicate = true> <Delay = 0.00>
+ST_53 : Operation 509 [1/1] (2.32ns)   --->   "store i6 10, i6* %search_minDistPhase1_3, align 1" [kociemba/search.c:301]   --->   Operation 509 'store' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 31> <RAM>
+ST_53 : Operation 510 [1/1] (0.00ns)   --->   "br i1 %tmp_231, label %28, label %._crit_edge25" [kociemba/search.c:302]   --->   Operation 510 'br' <Predicate = true> <Delay = 0.00>
+ST_53 : Operation 511 [2/2] (5.72ns)   --->   "%s_2 = call fastcc i32 @totalDepth([31 x i32]* @search_ax_0, [31 x i32]* @search_po_0, [31 x i32]* @search_parity_0, [31 x i32]* @search_URFtoDLF_0, [31 x i32]* @search_FRtoBR_0, [31 x i32]* @search_URtoUL_0, [31 x i32]* @search_UBtoDF_0, i32 %depthPhase1_1_load_2, i8 %maxDepth_read, i16* %CTRL_BUS, i31 %FRtoBR_Move, i31 %URFtoDLF_Move, i31 %URtoDF_Move, i31 %URtoUL_Move, i31 %UBtoDF_Move, i31 %MergeURtoULandUBtoDF, i31 %Slice_URFtoDLF_Parit, i31 %Slice_URtoDF_Parity_s)" [kociemba/search.c:302]   --->   Operation 511 'call' 's_2' <Predicate = (tmp_231)> <Delay = 5.72> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 54 <SV = 40> <Delay = 2.47>
+ST_54 : Operation 512 [1/1] (0.00ns)   --->   "%depthPhase1_1_load_3 = load i32* %depthPhase1_1"   --->   Operation 512 'load' 'depthPhase1_1_load_3' <Predicate = true> <Delay = 0.00>
+ST_54 : Operation 513 [1/2] (0.00ns)   --->   "%s_2 = call fastcc i32 @totalDepth([31 x i32]* @search_ax_0, [31 x i32]* @search_po_0, [31 x i32]* @search_parity_0, [31 x i32]* @search_URFtoDLF_0, [31 x i32]* @search_FRtoBR_0, [31 x i32]* @search_URtoUL_0, [31 x i32]* @search_UBtoDF_0, i32 %depthPhase1_1_load_2, i8 %maxDepth_read, i16* %CTRL_BUS, i31 %FRtoBR_Move, i31 %URFtoDLF_Move, i31 %URtoDF_Move, i31 %URtoUL_Move, i31 %UBtoDF_Move, i31 %MergeURtoULandUBtoDF, i31 %Slice_URFtoDLF_Parit, i31 %Slice_URtoDF_Parity_s)" [kociemba/search.c:302]   --->   Operation 513 'call' 's_2' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_54 : Operation 514 [1/1] (0.00ns)   --->   "%tmp_254 = call i1 @_ssdm_op_BitSelect.i1.i32.i32(i32 %s_2, i32 31)" [kociemba/search.c:302]   --->   Operation 514 'bitselect' 'tmp_254' <Predicate = true> <Delay = 0.00>
+ST_54 : Operation 515 [1/1] (0.00ns)   --->   "br i1 %tmp_254, label %._crit_edge25, label %29" [kociemba/search.c:302]   --->   Operation 515 'br' <Predicate = true> <Delay = 0.00>
+ST_54 : Operation 516 [1/1] (2.47ns)   --->   "%tmp_233 = icmp eq i32 %s_2, %depthPhase1_1_load_3" [kociemba/search.c:304]   --->   Operation 516 'icmp' 'tmp_233' <Predicate = (!tmp_254)> <Delay = 2.47> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_54 : Operation 517 [1/1] (0.00ns)   --->   "br i1 %tmp_233, label %._crit_edge27, label %30" [kociemba/search.c:304]   --->   Operation 517 'br' <Predicate = (!tmp_254)> <Delay = 0.00>
+
+State 55 <SV = 41> <Delay = 2.32>
+ST_55 : Operation 518 [2/2] (2.32ns)   --->   "%search_ax_0_load_4 = load i32* %search_ax_0_addr_4, align 4" [kociemba/search.c:304]   --->   Operation 518 'load' 'search_ax_0_load_4' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 31> <RAM>
+ST_55 : Operation 519 [1/1] (0.00ns)   --->   "%tmp_234 = sext i32 %depthPhase1_1_load_3 to i64" [kociemba/search.c:304]   --->   Operation 519 'sext' 'tmp_234' <Predicate = true> <Delay = 0.00>
+ST_55 : Operation 520 [1/1] (0.00ns)   --->   "%search_ax_0_addr_5 = getelementptr [31 x i32]* @search_ax_0, i64 0, i64 %tmp_234" [kociemba/search.c:304]   --->   Operation 520 'getelementptr' 'search_ax_0_addr_5' <Predicate = true> <Delay = 0.00>
+ST_55 : Operation 521 [2/2] (2.32ns)   --->   "%search_ax_0_load_5 = load i32* %search_ax_0_addr_5, align 4" [kociemba/search.c:304]   --->   Operation 521 'load' 'search_ax_0_load_5' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 31> <RAM>
+
+State 56 <SV = 42> <Delay = 8.32>
+ST_56 : Operation 522 [1/2] (2.32ns)   --->   "%search_ax_0_load_4 = load i32* %search_ax_0_addr_4, align 4" [kociemba/search.c:304]   --->   Operation 522 'load' 'search_ax_0_load_4' <Predicate = (!busy_4 & tmp_227 & !tmp_229 & tmp_231 & !tmp_254)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 31> <RAM>
+ST_56 : Operation 523 [1/2] (2.32ns)   --->   "%search_ax_0_load_5 = load i32* %search_ax_0_addr_5, align 4" [kociemba/search.c:304]   --->   Operation 523 'load' 'search_ax_0_load_5' <Predicate = (!busy_4 & tmp_227 & !tmp_229 & tmp_231 & !tmp_254)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 31> <RAM>
+ST_56 : Operation 524 [1/1] (2.47ns)   --->   "%tmp_235 = icmp eq i32 %search_ax_0_load_4, %search_ax_0_load_5" [kociemba/search.c:304]   --->   Operation 524 'icmp' 'tmp_235' <Predicate = (!busy_4 & tmp_227 & !tmp_229 & tmp_231 & !tmp_254)> <Delay = 2.47> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_56 : Operation 525 [1/1] (2.55ns)   --->   "%tmp_236 = add nsw i32 %search_ax_0_load_5, 3" [kociemba/search.c:304]   --->   Operation 525 'add' 'tmp_236' <Predicate = (!busy_4 & tmp_227 & !tmp_229 & tmp_231 & !tmp_254)> <Delay = 2.55> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_56 : Operation 526 [1/1] (2.47ns)   --->   "%tmp_237 = icmp eq i32 %search_ax_0_load_4, %tmp_236" [kociemba/search.c:304]   --->   Operation 526 'icmp' 'tmp_237' <Predicate = (!busy_4 & tmp_227 & !tmp_229 & tmp_231 & !tmp_254)> <Delay = 2.47> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_56 : Operation 527 [1/1] (0.97ns)   --->   "%or_cond2 = or i1 %tmp_235, %tmp_237" [kociemba/search.c:304]   --->   Operation 527 'or' 'or_cond2' <Predicate = (!busy_4 & tmp_227 & !tmp_229 & tmp_231 & !tmp_254)> <Delay = 0.97> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_56 : Operation 528 [1/1] (0.00ns)   --->   "br i1 %or_cond2, label %._crit_edge25, label %._crit_edge27" [kociemba/search.c:304]   --->   Operation 528 'br' <Predicate = (!busy_4 & tmp_227 & !tmp_229 & tmp_231 & !tmp_254)> <Delay = 0.00>
+ST_56 : Operation 529 [1/1] (0.00ns)   --->   "br label %._crit_edge23" [kociemba/search.c:317]   --->   Operation 529 'br' <Predicate = (!busy_4 & tmp_227 & !tmp_229 & !tmp_231) | (!busy_4 & tmp_227 & !tmp_229 & tmp_254) | (!busy_4 & tmp_227 & !tmp_229 & or_cond2)> <Delay = 0.00>
+ST_56 : Operation 530 [1/1] (0.00ns)   --->   "br label %.backedge" [kociemba/search.c:318]   --->   Operation 530 'br' <Predicate = (!busy_4 & !tmp_227) | (!busy_4 & tmp_229) | (!busy_4 & !tmp_231) | (!busy_4 & tmp_254) | (!busy_4 & or_cond2)> <Delay = 0.00>
+ST_56 : Operation 531 [1/1] (0.00ns)   --->   "br label %14"   --->   Operation 531 'br' <Predicate = (busy_4) | (!tmp_227) | (tmp_229) | (!tmp_231) | (tmp_254) | (or_cond2)> <Delay = 0.00>
+
+State 57 <SV = 43> <Delay = 1.00>
+ST_57 : Operation 532 [2/2] (0.00ns)   --->   "call fastcc void @solutionToString([31 x i32]* @search_ax_0, [31 x i32]* @search_po_0, i32 %s_2, [30 x i8]* %encode_array) nounwind" [kociemba/search.c:308]   --->   Operation 532 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_57 : Operation 533 [1/1] (0.00ns)   --->   "%tmp_255 = trunc i32 %s_2 to i8" [kociemba/search.c:311]   --->   Operation 533 'trunc' 'tmp_255' <Predicate = true> <Delay = 0.00>
+ST_57 : Operation 534 [1/1] (1.00ns)   --->   "call void @_ssdm_op_Write.s_axilite.i8P(i8* %encode_length, i8 %tmp_255)" [kociemba/search.c:311]   --->   Operation 534 'write' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+
+State 58 <SV = 44> <Delay = 0.00>
+ST_58 : Operation 535 [1/2] (0.00ns)   --->   "call fastcc void @solutionToString([31 x i32]* @search_ax_0, [31 x i32]* @search_po_0, i32 %s_2, [30 x i8]* %encode_array) nounwind" [kociemba/search.c:308]   --->   Operation 535 'call' <Predicate = (!complete & !tmp_176 & tmp_185 & or_cond) | (!complete & !tmp_176 & tmp_185 & !icmp) | (!complete & !tmp_176 & tmp_185 & !tmp_204) | (!complete & !tmp_176 & tmp_185 & !tmp_199) | (!complete & !tmp_176 & tmp_185 & tmp_205)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_58 : Operation 536 [1/1] (0.00ns)   --->   "br label %._crit_edge16" [kociemba/search.c:313]   --->   Operation 536 'br' <Predicate = (!complete & !tmp_176 & tmp_185 & or_cond) | (!complete & !tmp_176 & tmp_185 & !icmp) | (!complete & !tmp_176 & tmp_185 & !tmp_204) | (!complete & !tmp_176 & tmp_185 & !tmp_199) | (!complete & !tmp_176 & tmp_185 & tmp_205)> <Delay = 0.00>
+ST_58 : Operation 537 [1/1] (0.00ns)   --->   "ret void" [kociemba/search.c:320]   --->   Operation 537 'ret' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 12ns, clock uncertainty: 1.5ns.
+
+ <State 1>: 1.77ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('invdar', kociemba/search.c:157) with incoming values : ('indvarinc', kociemba/search.c:157) [114]  (1.77 ns)
+
+ <State 2>: 2.32ns
+The critical path consists of the following:
+	'phi' operation ('invdar', kociemba/search.c:157) with incoming values : ('indvarinc', kociemba/search.c:157) [114]  (0 ns)
+	'getelementptr' operation ('count_addr', kociemba/search.c:157) [117]  (0 ns)
+	'store' operation (kociemba/search.c:157) of constant 0 on array 'count', kociemba/search.c:157 [118]  (2.32 ns)
+
+ <State 3>: 2.32ns
+The critical path consists of the following:
+	'phi' operation ('i') with incoming values : ('i', kociemba/search.c:160) [126]  (0 ns)
+	'getelementptr' operation ('facelets_addr', kociemba/search.c:161) [135]  (0 ns)
+	'load' operation ('facelets_load', kociemba/search.c:161) on array 'facelets' [136]  (2.32 ns)
+
+ <State 4>: 4.15ns
+The critical path consists of the following:
+	'add' operation ('tmp_151', kociemba/search.c:161) [137]  (1.83 ns)
+	'getelementptr' operation ('facelets_addr_1', kociemba/search.c:161) [139]  (0 ns)
+	'load' operation ('facelets_load_1', kociemba/search.c:161) on array 'facelets' [140]  (2.32 ns)
+
+ <State 5>: 4.15ns
+The critical path consists of the following:
+	'add' operation ('tmp_154', kociemba/search.c:161) [142]  (1.83 ns)
+	'getelementptr' operation ('facelets_addr_2', kociemba/search.c:161) [144]  (0 ns)
+	'load' operation ('facelets_load_2', kociemba/search.c:161) on array 'facelets' [145]  (2.32 ns)
+
+ <State 6>: 4.15ns
+The critical path consists of the following:
+	'add' operation ('tmp_157', kociemba/search.c:161) [147]  (1.83 ns)
+	'getelementptr' operation ('facelets_addr_3', kociemba/search.c:161) [149]  (0 ns)
+	'load' operation ('facelets_load_3', kociemba/search.c:161) on array 'facelets' [150]  (2.32 ns)
+
+ <State 7>: 4.15ns
+The critical path consists of the following:
+	'add' operation ('tmp_160', kociemba/search.c:161) [152]  (1.83 ns)
+	'getelementptr' operation ('facelets_addr_5', kociemba/search.c:161) [154]  (0 ns)
+	'load' operation ('facelets_load_5', kociemba/search.c:161) on array 'facelets' [155]  (2.32 ns)
+
+ <State 8>: 4.85ns
+The critical path consists of the following:
+	'load' operation ('facelets_load_5', kociemba/search.c:161) on array 'facelets' [155]  (2.32 ns)
+	'icmp' operation ('tmp_162', kociemba/search.c:161) [156]  (1.55 ns)
+	'and' operation ('tmp10', kociemba/search.c:161) [178]  (0 ns)
+	'and' operation ('tmp8', kociemba/search.c:161) [179]  (0.978 ns)
+
+ <State 9>: 4.15ns
+The critical path consists of the following:
+	'add' operation ('tmp_166', kociemba/search.c:161) [162]  (1.83 ns)
+	'getelementptr' operation ('facelets_addr_7', kociemba/search.c:161) [164]  (0 ns)
+	'load' operation ('facelets_load_7', kociemba/search.c:161) on array 'facelets' [165]  (2.32 ns)
+
+ <State 10>: 4.15ns
+The critical path consists of the following:
+	'add' operation ('tmp_169', kociemba/search.c:161) [167]  (1.83 ns)
+	'getelementptr' operation ('facelets_addr_8', kociemba/search.c:161) [169]  (0 ns)
+	'load' operation ('facelets_load_8', kociemba/search.c:161) on array 'facelets' [170]  (2.32 ns)
+
+ <State 11>: 4.15ns
+The critical path consists of the following:
+	'add' operation ('tmp_172', kociemba/search.c:161) [172]  (1.83 ns)
+	'getelementptr' operation ('facelets_addr_9', kociemba/search.c:161) [174]  (0 ns)
+	'load' operation ('facelets_load_9', kociemba/search.c:161) on array 'facelets' [175]  (2.32 ns)
+
+ <State 12>: 4.85ns
+The critical path consists of the following:
+	'load' operation ('facelets_load_9', kociemba/search.c:161) on array 'facelets' [175]  (2.32 ns)
+	'icmp' operation ('tmp_174', kociemba/search.c:161) [176]  (1.55 ns)
+	'and' operation ('tmp13', kociemba/search.c:161) [181]  (0 ns)
+	'and' operation ('tmp11', kociemba/search.c:161) [182]  (0 ns)
+	'and' operation ('tmp_17', kociemba/search.c:161) [183]  (0 ns)
+	'and' operation ('complete_1', kociemba/search.c:161) [184]  (0.978 ns)
+
+ <State 13>: 2.32ns
+The critical path consists of the following:
+	'phi' operation ('i') with incoming values : ('i', kociemba/search.c:182) [197]  (0 ns)
+	'getelementptr' operation ('facelets_addr_4', kociemba/search.c:183) [204]  (0 ns)
+	'load' operation ('facelets_load_4', kociemba/search.c:183) on array 'facelets' [205]  (2.32 ns)
+
+ <State 14>: 3.62ns
+The critical path consists of the following:
+	'load' operation ('facelets_load_4', kociemba/search.c:183) on array 'facelets' [205]  (2.32 ns)
+
+ <State 15>: 7.2ns
+The critical path consists of the following:
+	'load' operation ('count_load_5', kociemba/search.c:200) on array 'count', kociemba/search.c:157 [208]  (2.32 ns)
+	'add' operation ('tmp_182', kociemba/search.c:200) [209]  (2.55 ns)
+	'store' operation (kociemba/search.c:200) of variable 'tmp_182', kociemba/search.c:200 on array 'count', kociemba/search.c:157 [210]  (2.32 ns)
+
+ <State 16>: 2.32ns
+The critical path consists of the following:
+	'phi' operation ('i') with incoming values : ('i', kociemba/search.c:204) [242]  (0 ns)
+	'getelementptr' operation ('count_addr_7', kociemba/search.c:205) [249]  (0 ns)
+	'load' operation ('count_load_6', kociemba/search.c:205) on array 'count', kociemba/search.c:157 [250]  (2.32 ns)
+
+ <State 17>: 4.79ns
+The critical path consists of the following:
+	'load' operation ('count_load_6', kociemba/search.c:205) on array 'count', kociemba/search.c:157 [250]  (2.32 ns)
+	'icmp' operation ('tmp_184', kociemba/search.c:205) [251]  (2.47 ns)
+
+ <State 18>: 0ns
+The critical path consists of the following:
+
+ <State 19>: 0ns
+The critical path consists of the following:
+
+ <State 20>: 0ns
+The critical path consists of the following:
+
+ <State 21>: 0ns
+The critical path consists of the following:
+
+ <State 22>: 1.81ns
+The critical path consists of the following:
+	'alloca' operation ('n') [267]  (0 ns)
+	'store' operation of constant 0 on local variable 'n' [304]  (1.81 ns)
+
+ <State 23>: 0ns
+The critical path consists of the following:
+
+ <State 24>: 0ns
+The critical path consists of the following:
+
+ <State 25>: 6.38ns
+The critical path consists of the following:
+	'load' operation ('result_FRtoBR_0_load', kociemba/search.c:229) on static variable 'result_FRtoBR_0' [278]  (0 ns)
+	'mul' operation ('mul', kociemba/search.c:229) [281]  (6.38 ns)
+
+ <State 26>: 7.35ns
+The critical path consists of the following:
+	'sub' operation ('neg_mul', kociemba/search.c:229) [283]  (2.59 ns)
+	'select' operation ('tmp_239', kociemba/search.c:229) [289]  (0 ns)
+	'sub' operation ('neg_ti', kociemba/search.c:229) [290]  (1.68 ns)
+	'select' operation ('tmp_188', kociemba/search.c:229) [291]  (0.754 ns)
+	'store' operation (kociemba/search.c:229) of variable 'tmp_188', kociemba/search.c:229 on array 'search_slice_0' [292]  (2.32 ns)
+
+ <State 27>: 4.87ns
+The critical path consists of the following:
+	'load' operation ('n_1_load', kociemba/search.c:283) on local variable 'n' [310]  (0 ns)
+	'add' operation ('n', kociemba/search.c:246) [312]  (2.55 ns)
+	'getelementptr' operation ('search_minDistPhase1_1', kociemba/search.c:246) [314]  (0 ns)
+	'load' operation ('search_minDistPhase1_2', kociemba/search.c:246) on array 'search_minDistPhase1' [315]  (2.32 ns)
+
+ <State 28>: 6ns
+The critical path consists of the following:
+	'load' operation ('depthPhase1_1_load', kociemba/search.c:267) on local variable 'depthPhase1' [309]  (0 ns)
+	'sub' operation ('tmp_192', kociemba/search.c:246) [311]  (2.55 ns)
+	'icmp' operation ('tmp_194', kociemba/search.c:246) [317]  (2.47 ns)
+	'and' operation ('or_cond', kociemba/search.c:246) [319]  (0.978 ns)
+
+ <State 29>: 9.11ns
+The critical path consists of the following:
+	'load' operation ('search_po_0_load', kociemba/search.c:253) on array 'search_po_0' [324]  (2.32 ns)
+	'add' operation ('tmp_197', kociemba/search.c:253) [325]  (2.55 ns)
+	'icmp' operation ('icmp', kociemba/search.c:253) [328]  (2.47 ns)
+	multiplexor before 'phi' operation ('busy_4') [395]  (1.77 ns)
+
+ <State 30>: 4.87ns
+The critical path consists of the following:
+	'load' operation ('search_ax_0_load_1', kociemba/search.c:283) on array 'search_ax_0' [336]  (2.32 ns)
+	'add' operation ('tmp_201', kociemba/search.c:283) [337]  (2.55 ns)
+
+ <State 31>: 6ns
+The critical path consists of the following:
+	'phi' operation ('tmp_202', kociemba/search.c:255) with incoming values : ('search_ax_0_load_2', kociemba/search.c:255) ('tmp_203', kociemba/search.c:255) [341]  (0 ns)
+	'add' operation ('tmp_203', kociemba/search.c:255) [342]  (2.55 ns)
+	'icmp' operation ('tmp_207', kociemba/search.c:283) [350]  (2.47 ns)
+	'or' operation ('or_cond1', kociemba/search.c:283) [351]  (0.978 ns)
+
+ <State 32>: 2.32ns
+The critical path consists of the following:
+	'store' operation (kociemba/search.c:268) of constant 0 on array 'search_ax_0' [367]  (2.32 ns)
+
+ <State 33>: 5.77ns
+The critical path consists of the following:
+	'load' operation ('search_ax_0_load', kociemba/search.c:248) on array 'search_ax_0' [377]  (2.32 ns)
+	'icmp' operation ('tmp_241', kociemba/search.c:248) [380]  (2.47 ns)
+	'or' operation ('tmp_242', kociemba/search.c:248) [381]  (0.978 ns)
+
+ <State 34>: 2.32ns
+The critical path consists of the following:
+	'load' operation ('n_1_load_2', kociemba/search.c:291) on local variable 'n' [398]  (0 ns)
+	'getelementptr' operation ('search_po_0_addr_2', kociemba/search.c:290) [404]  (0 ns)
+	'load' operation ('search_po_0_load_1', kociemba/search.c:290) on array 'search_po_0' [405]  (2.32 ns)
+
+ <State 35>: 9.25ns
+The critical path consists of the following:
+	'load' operation ('search_ax_0_load_3', kociemba/search.c:290) on array 'search_ax_0' [401]  (2.32 ns)
+	'sub' operation ('tmp_209', kociemba/search.c:290) [403]  (2.55 ns)
+	'add' operation ('tmp14', kociemba/search.c:290) [406]  (0 ns)
+	'add' operation ('mv', kociemba/search.c:290) [407]  (4.37 ns)
+
+ <State 36>: 8.93ns
+The critical path consists of the following:
+	'mul' operation ('tmp_216', kociemba/search.c:293) [447]  (3.36 ns)
+	'add' operation ('tmp_217', kociemba/search.c:293) [449]  (3.02 ns)
+	'add' operation ('FRtoBR_Move26_sum', kociemba/search.c:293) [451]  (2.55 ns)
+
+ <State 37>: 10.5ns
+The critical path consists of the following:
+	bus request on port 'CTRL_BUS' (kociemba/search.c:291) [420]  (10.5 ns)
+
+ <State 38>: 10.5ns
+The critical path consists of the following:
+	bus request on port 'CTRL_BUS' (kociemba/search.c:291) [420]  (10.5 ns)
+
+ <State 39>: 10.5ns
+The critical path consists of the following:
+	bus request on port 'CTRL_BUS' (kociemba/search.c:291) [420]  (10.5 ns)
+
+ <State 40>: 10.5ns
+The critical path consists of the following:
+	bus request on port 'CTRL_BUS' (kociemba/search.c:291) [420]  (10.5 ns)
+
+ <State 41>: 10.5ns
+The critical path consists of the following:
+	bus request on port 'CTRL_BUS' (kociemba/search.c:291) [420]  (10.5 ns)
+
+ <State 42>: 10.5ns
+The critical path consists of the following:
+	bus request on port 'CTRL_BUS' (kociemba/search.c:291) [420]  (10.5 ns)
+
+ <State 43>: 10.5ns
+The critical path consists of the following:
+	bus request on port 'CTRL_BUS' (kociemba/search.c:291) [420]  (10.5 ns)
+
+ <State 44>: 10.5ns
+The critical path consists of the following:
+	bus read on port 'CTRL_BUS' (kociemba/search.c:291) [421]  (10.5 ns)
+
+ <State 45>: 10.5ns
+The critical path consists of the following:
+	bus read on port 'CTRL_BUS' (kociemba/search.c:292) [440]  (10.5 ns)
+
+ <State 46>: 10.5ns
+The critical path consists of the following:
+	bus read on port 'CTRL_BUS' (kociemba/search.c:293) [455]  (10.5 ns)
+
+ <State 47>: 6.38ns
+The critical path consists of the following:
+	'mul' operation ('mul1', kociemba/search.c:293) [457]  (6.38 ns)
+
+ <State 48>: 8.05ns
+The critical path consists of the following:
+	'sub' operation ('neg_mul1', kociemba/search.c:293) [459]  (2.59 ns)
+	'select' operation ('tmp_251', kociemba/search.c:293) [465]  (0 ns)
+	'sub' operation ('neg_ti1', kociemba/search.c:293) [466]  (1.68 ns)
+	'select' operation ('tmp_219', kociemba/search.c:293) [467]  (0.754 ns)
+	'add' operation ('tmp_221', kociemba/search.c:294) [472]  (3.02 ns)
+
+ <State 49>: 9.06ns
+The critical path consists of the following:
+	'call' operation ('tmp_252', kociemba/search.c:294) to 'getPruning.2' [473]  (9.06 ns)
+
+ <State 50>: 5.01ns
+The critical path consists of the following:
+	'call' operation ('tmp_252', kociemba/search.c:294) to 'getPruning.2' [473]  (5.01 ns)
+
+ <State 51>: 9.06ns
+The critical path consists of the following:
+	'call' operation ('tmp_253', kociemba/search.c:294) to 'getPruning.1' [476]  (9.06 ns)
+
+ <State 52>: 9.66ns
+The critical path consists of the following:
+	'call' operation ('tmp_253', kociemba/search.c:294) to 'getPruning.1' [476]  (5.01 ns)
+	'icmp' operation ('tmp_226', kociemba/search.c:294) [477]  (1.3 ns)
+	'select' operation ('p_in', kociemba/search.c:294) [478]  (1.02 ns)
+	'store' operation (kociemba/search.c:294) of variable 'tmp_262_cast_cast', kociemba/search.c:294 on array 'search_minDistPhase1' [481]  (2.32 ns)
+
+ <State 53>: 5.72ns
+The critical path consists of the following:
+	'load' operation ('depthPhase1_1_load_2', kociemba/search.c:302) on local variable 'depthPhase1' [490]  (0 ns)
+	'call' operation ('s', kociemba/search.c:302) to 'totalDepth' [497]  (5.72 ns)
+
+ <State 54>: 2.47ns
+The critical path consists of the following:
+	'load' operation ('depthPhase1_1_load_3') on local variable 'depthPhase1' [496]  (0 ns)
+	'icmp' operation ('tmp_233', kociemba/search.c:304) [501]  (2.47 ns)
+
+ <State 55>: 2.32ns
+The critical path consists of the following:
+	'load' operation ('search_ax_0_load_4', kociemba/search.c:304) on array 'search_ax_0' [504]  (2.32 ns)
+
+ <State 56>: 8.33ns
+The critical path consists of the following:
+	'load' operation ('search_ax_0_load_5', kociemba/search.c:304) on array 'search_ax_0' [507]  (2.32 ns)
+	'add' operation ('tmp_236', kociemba/search.c:304) [509]  (2.55 ns)
+	'icmp' operation ('tmp_237', kociemba/search.c:304) [510]  (2.47 ns)
+	'or' operation ('or_cond2', kociemba/search.c:304) [511]  (0.978 ns)
+
+ <State 57>: 1ns
+The critical path consists of the following:
+	s_axi write on port 'encode_length' (kociemba/search.c:311) [516]  (1 ns)
+
+ <State 58>: 0ns
+The critical path consists of the following:
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+	State 17
+	State 18
+	State 19
+	State 20
+	State 21
+	State 22
+	State 23
+	State 24
+	State 25
+	State 26
+	State 27
+	State 28
+	State 29
+	State 30
+	State 31
+	State 32
+	State 33
+	State 34
+	State 35
+	State 36
+	State 37
+	State 38
+	State 39
+	State 40
+	State 41
+	State 42
+	State 43
+	State 44
+	State 45
+	State 46
+	State 47
+	State 48
+	State 49
+	State 50
+	State 51
+	State 52
+	State 53
+	State 54
+	State 55
+	State 56
+	State 57
+	State 58
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

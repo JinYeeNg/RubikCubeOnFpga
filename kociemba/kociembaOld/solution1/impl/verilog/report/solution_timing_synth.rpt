@@ -1,0 +1,112 @@
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
+| Date         : Sat Mar  9 23:31:32 2019
+| Host         : NGJINYEE running 64-bit major release  (build 9200)
+| Command      : report_timing -file ./report/solution_timing_synth.rpt
+| Design       : solution
+| Device       : 7z020-clg400
+| Speed File   : -1  PRODUCTION 1.11 2014-09-11
+------------------------------------------------------------------------------------
+
+Timing Report
+
+Slack (MET) :             0.189ns  (required time - arrival time)
+  Source:                 grp_totalDepth_fu_1004/depthPhase2_1_fu_142_reg[1]/C
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@6.000ns period=12.000ns})
+  Destination:            search_po_0_U/solution_search_prcU_ram_U/q0_reg[0]/D
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@6.000ns period=12.000ns})
+  Path Group:             ap_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            12.000ns  (ap_clk rise@12.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        11.804ns  (logic 5.032ns (42.630%)  route 6.772ns (57.370%))
+  Logic Levels:           20  (CARRY4=10 LUT2=3 LUT3=1 LUT6=5 RAMS32=1)
+  Clock Path Skew:        -0.049ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.924ns = ( 12.924 - 12.000 ) 
+    Source Clock Delay      (SCD):    0.973ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=8748, unset)         0.973     0.973    grp_totalDepth_fu_1004/ap_clk
+                         FDRE                                         r  grp_totalDepth_fu_1004/depthPhase2_1_fu_142_reg[1]/C
+  -------------------------------------------------------------------    -------------------
+                         FDRE (Prop_fdre_C_Q)         0.518     1.491 r  grp_totalDepth_fu_1004/depthPhase2_1_fu_142_reg[1]/Q
+                         net (fo=3, unplaced)         0.488     1.979    grp_totalDepth_fu_1004/depthPhase2_1_fu_142_reg_n_27_[1]
+                         LUT2 (Prop_lut2_I0_O)        0.295     2.274 r  grp_totalDepth_fu_1004/p_0_reg_794[3]_i_5/O
+                         net (fo=1, unplaced)         0.000     2.274    grp_totalDepth_fu_1004/p_0_reg_794[3]_i_5_n_27
+                         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.533     2.807 r  grp_totalDepth_fu_1004/p_0_reg_794_reg[3]_i_2/CO[3]
+                         net (fo=1, unplaced)         0.009     2.816    grp_totalDepth_fu_1004/p_0_reg_794_reg[3]_i_2_n_27
+                         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     2.933 r  grp_totalDepth_fu_1004/p_0_reg_794_reg[7]_i_2/CO[3]
+                         net (fo=1, unplaced)         0.000     2.933    grp_totalDepth_fu_1004/p_0_reg_794_reg[7]_i_2_n_27
+                         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     3.050 r  grp_totalDepth_fu_1004/p_0_reg_794_reg[11]_i_2/CO[3]
+                         net (fo=1, unplaced)         0.000     3.050    grp_totalDepth_fu_1004/p_0_reg_794_reg[11]_i_2_n_27
+                         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     3.167 r  grp_totalDepth_fu_1004/p_0_reg_794_reg[15]_i_2/CO[3]
+                         net (fo=1, unplaced)         0.000     3.167    grp_totalDepth_fu_1004/p_0_reg_794_reg[15]_i_2_n_27
+                         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     3.284 r  grp_totalDepth_fu_1004/p_0_reg_794_reg[19]_i_2/CO[3]
+                         net (fo=1, unplaced)         0.000     3.284    grp_totalDepth_fu_1004/p_0_reg_794_reg[19]_i_2_n_27
+                         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     3.401 r  grp_totalDepth_fu_1004/p_0_reg_794_reg[23]_i_2/CO[3]
+                         net (fo=1, unplaced)         0.000     3.401    grp_totalDepth_fu_1004/p_0_reg_794_reg[23]_i_2_n_27
+                         CARRY4 (Prop_carry4_CI_O[3])
+                                                      0.331     3.732 r  grp_totalDepth_fu_1004/p_0_reg_794_reg[27]_i_2/O[3]
+                         net (fo=3, unplaced)         0.636     4.368    grp_totalDepth_fu_1004/tmp_119_fu_2000_p2[27]
+                         LUT2 (Prop_lut2_I0_O)        0.307     4.675 r  grp_totalDepth_fu_1004/ap_CS_fsm[49]_i_40/O
+                         net (fo=1, unplaced)         0.000     4.675    grp_totalDepth_fu_1004/ap_CS_fsm[49]_i_40_n_27
+                         CARRY4 (Prop_carry4_S[3]_CO[3])
+                                                      0.376     5.051 r  grp_totalDepth_fu_1004/ap_CS_fsm_reg[49]_i_24/CO[3]
+                         net (fo=1, unplaced)         0.000     5.051    grp_totalDepth_fu_1004/ap_CS_fsm_reg[49]_i_24_n_27
+                         CARRY4 (Prop_carry4_CI_O[3])
+                                                      0.331     5.382 f  grp_totalDepth_fu_1004/ap_CS_fsm_reg[49]_i_23/O[3]
+                         net (fo=2, unplaced)         0.629     6.011    search_po_0_U/solution_search_prcU_ram_U/depthPhase2_1_fu_142_reg[30][27]
+                         LUT2 (Prop_lut2_I1_O)        0.302     6.313 r  search_po_0_U/solution_search_prcU_ram_U/ap_CS_fsm[49]_i_6/O
+                         net (fo=1, unplaced)         0.000     6.313    grp_totalDepth_fu_1004/search_minDistPhase2_U/totalDepth_searchocq_ram_U/depthPhase2_1_fu_142_reg[30][3]
+                         CARRY4 (Prop_carry4_DI[3]_CO[3])
+                                                      0.429     6.742 r  grp_totalDepth_fu_1004/search_minDistPhase2_U/totalDepth_searchocq_ram_U/ap_CS_fsm_reg[49]_i_2/CO[3]
+                         net (fo=8, unplaced)         0.956     7.698    grp_totalDepth_fu_1004/search_minDistPhase2_U/totalDepth_searchocq_ram_U/tmp_72_fu_1469_p2
+                         LUT3 (Prop_lut3_I1_O)        0.124     7.822 r  grp_totalDepth_fu_1004/search_minDistPhase2_U/totalDepth_searchocq_ram_U/n_1_fu_146[31]_i_3/O
+                         net (fo=34, unplaced)        0.522     8.344    grp_totalDepth_fu_1004/search_minDistPhase2_U/totalDepth_searchocq_ram_U/n_1_fu_146_reg[0]
+                         LUT6 (Prop_lut6_I0_O)        0.124     8.468 r  grp_totalDepth_fu_1004/search_minDistPhase2_U/totalDepth_searchocq_ram_U/ram_reg_0_15_0_0_i_47/O
+                         net (fo=6, unplaced)         0.481     8.949    grp_totalDepth_fu_1004/search_minDistPhase2_U/totalDepth_searchocq_ram_U/ram_reg_0_15_0_0_i_47_n_27
+                         LUT6 (Prop_lut6_I1_O)        0.124     9.073 r  grp_totalDepth_fu_1004/search_minDistPhase2_U/totalDepth_searchocq_ram_U/ram_reg_0_15_0_0_i_39/O
+                         net (fo=1, unplaced)         0.449     9.522    grp_totalDepth_fu_1004/search_minDistPhase2_U/totalDepth_searchocq_ram_U/ram_reg_0_15_0_0_i_39_n_27
+                         LUT6 (Prop_lut6_I4_O)        0.124     9.646 f  grp_totalDepth_fu_1004/search_minDistPhase2_U/totalDepth_searchocq_ram_U/ram_reg_0_15_0_0_i_19__0/O
+                         net (fo=1, unplaced)         0.449    10.095    grp_totalDepth_fu_1004/search_minDistPhase2_U/totalDepth_searchocq_ram_U/ram_reg_0_15_0_0_i_19__0_n_27
+                         LUT6 (Prop_lut6_I3_O)        0.124    10.219 r  grp_totalDepth_fu_1004/search_minDistPhase2_U/totalDepth_searchocq_ram_U/ram_reg_0_15_0_0_i_4__4/O
+                         net (fo=64, unplaced)        1.042    11.261    search_po_0_U/solution_search_prcU_ram_U/ram_reg_0_15_0_0/A1
+                         RAMS32 (Prop_rams32_ADR1_O)
+                                                      0.281    11.542 r  search_po_0_U/solution_search_prcU_ram_U/ram_reg_0_15_0_0/SP/O
+                         net (fo=1, unplaced)         1.111    12.653    search_po_0_U/solution_search_prcU_ram_U/ram_reg_0_15_0_0_n_27
+                         LUT6 (Prop_lut6_I4_O)        0.124    12.777 r  search_po_0_U/solution_search_prcU_ram_U/q0[0]_i_1/O
+                         net (fo=1, unplaced)         0.000    12.777    search_po_0_U/solution_search_prcU_ram_U/p_0_in[0]
+                         FDRE                                         r  search_po_0_U/solution_search_prcU_ram_U/q0_reg[0]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)    12.000    12.000 r  
+                                                      0.000    12.000 r  ap_clk (IN)
+                         net (fo=8748, unset)         0.924    12.924    search_po_0_U/solution_search_prcU_ram_U/ap_clk
+                         FDRE                                         r  search_po_0_U/solution_search_prcU_ram_U/q0_reg[0]/C
+                         clock pessimism              0.000    12.924    
+                         clock uncertainty           -0.035    12.889    
+                         FDRE (Setup_fdre_C_D)        0.077    12.966    search_po_0_U/solution_search_prcU_ram_U/q0_reg[0]
+  -------------------------------------------------------------------
+                         required time                         12.966    
+                         arrival time                         -12.777    
+  -------------------------------------------------------------------
+                         slack                                  0.189    
+
+
+
+

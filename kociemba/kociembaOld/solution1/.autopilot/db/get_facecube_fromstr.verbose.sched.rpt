@@ -1,0 +1,169 @@
+
+
+================================================================
+== Vivado HLS Report for 'get_facecube_fromstr'
+================================================================
+* Date:           Sat Mar  9 22:54:58 2019
+
+* Version:        2018.2 (Build 2258646 on Thu Jun 14 20:25:20 MDT 2018)
+* Project:        kociemba
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  12.00|     3.624|        1.50|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |  109|  109|  109|  109|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+        |          |  Latency  | Iteration|  Initiation Interval  | Trip |          |
+        | Loop Name| min | max |  Latency |  achieved |   target  | Count| Pipelined|
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+        |- Loop 1  |  108|  108|         2|          -|          -|    54|    no    |
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 3
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / (!exitcond)
+3 --> 
+	2  / true
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.76>
+ST_1 : Operation 4 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecMemCore([54 x i8]* %cubeString, [1 x i8]* @p_str58, [7 x i8]* @RAM_1P_str, [1 x i8]* @p_str58, i32 -1, [1 x i8]* @p_str58, [1 x i8]* @p_str58, [1 x i8]* @p_str58, [1 x i8]* @p_str58, [1 x i8]* @p_str58)"   --->   Operation 4 'specmemcore' 'empty' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 5 [1/1] (1.76ns)   --->   "br label %1" [kociemba/facecube.c:37]   --->   Operation 5 'br' <Predicate = true> <Delay = 1.76>
+
+State 2 <SV = 1> <Delay = 2.32>
+ST_2 : Operation 6 [1/1] (0.00ns)   --->   "%i = phi i6 [ 0, %0 ], [ %i_16, %._crit_edge ]"   --->   Operation 6 'phi' 'i' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 7 [1/1] (1.42ns)   --->   "%exitcond = icmp eq i6 %i, -10" [kociemba/facecube.c:37]   --->   Operation 7 'icmp' 'exitcond' <Predicate = true> <Delay = 1.42> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.42> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 8 [1/1] (0.00ns)   --->   "%empty_45 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 54, i64 54, i64 54)"   --->   Operation 8 'speclooptripcount' 'empty_45' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 9 [1/1] (1.82ns)   --->   "%i_16 = add i6 %i, 1" [kociemba/facecube.c:37]   --->   Operation 9 'add' 'i_16' <Predicate = true> <Delay = 1.82> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.82> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 10 [1/1] (0.00ns)   --->   "br i1 %exitcond, label %9, label %2" [kociemba/facecube.c:37]   --->   Operation 10 'br' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 11 [1/1] (0.00ns)   --->   "%tmp = zext i6 %i to i64" [kociemba/facecube.c:38]   --->   Operation 11 'zext' 'tmp' <Predicate = (!exitcond)> <Delay = 0.00>
+ST_2 : Operation 12 [1/1] (0.00ns)   --->   "%cubeString_addr = getelementptr [54 x i8]* %cubeString, i64 0, i64 %tmp" [kociemba/facecube.c:38]   --->   Operation 12 'getelementptr' 'cubeString_addr' <Predicate = (!exitcond)> <Delay = 0.00>
+ST_2 : Operation 13 [2/2] (2.32ns)   --->   "%cubeString_load = load i8* %cubeString_addr, align 1" [kociemba/facecube.c:38]   --->   Operation 13 'load' 'cubeString_load' <Predicate = (!exitcond)> <Delay = 2.32> <Core = "RAM_1P">   --->   Core 42 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 8> <Depth = 54> <RAM>
+ST_2 : Operation 14 [1/1] (0.00ns)   --->   "ret void"   --->   Operation 14 'ret' <Predicate = (exitcond)> <Delay = 0.00>
+
+State 3 <SV = 2> <Delay = 3.62>
+ST_3 : Operation 15 [1/2] (2.32ns)   --->   "%cubeString_load = load i8* %cubeString_addr, align 1" [kociemba/facecube.c:38]   --->   Operation 15 'load' 'cubeString_load' <Predicate = true> <Delay = 2.32> <Core = "RAM_1P">   --->   Core 42 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 8> <Depth = 54> <RAM>
+ST_3 : Operation 16 [1/1] (1.30ns)   --->   "switch i8 %cubeString_load, label %._crit_edge [
+    i8 85, label %3
+    i8 82, label %4
+    i8 70, label %5
+    i8 68, label %6
+    i8 76, label %7
+    i8 66, label %8
+  ]" [kociemba/facecube.c:38]   --->   Operation 16 'switch' <Predicate = true> <Delay = 1.30>
+ST_3 : Operation 17 [1/1] (0.00ns)   --->   "%res_f_0_addr_5 = getelementptr [54 x i3]* @res_f_0, i64 0, i64 %tmp" [kociemba/facecube.c:55]   --->   Operation 17 'getelementptr' 'res_f_0_addr_5' <Predicate = (cubeString_load == 66)> <Delay = 0.00>
+ST_3 : Operation 18 [1/1] (2.32ns)   --->   "store i3 -3, i3* %res_f_0_addr_5, align 1" [kociemba/facecube.c:55]   --->   Operation 18 'store' <Predicate = (cubeString_load == 66)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_3 : Operation 19 [1/1] (0.00ns)   --->   "br label %._crit_edge" [kociemba/facecube.c:56]   --->   Operation 19 'br' <Predicate = (cubeString_load == 66)> <Delay = 0.00>
+ST_3 : Operation 20 [1/1] (0.00ns)   --->   "%res_f_0_addr_4 = getelementptr [54 x i3]* @res_f_0, i64 0, i64 %tmp" [kociemba/facecube.c:52]   --->   Operation 20 'getelementptr' 'res_f_0_addr_4' <Predicate = (cubeString_load == 76)> <Delay = 0.00>
+ST_3 : Operation 21 [1/1] (2.32ns)   --->   "store i3 -4, i3* %res_f_0_addr_4, align 1" [kociemba/facecube.c:52]   --->   Operation 21 'store' <Predicate = (cubeString_load == 76)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_3 : Operation 22 [1/1] (0.00ns)   --->   "br label %._crit_edge" [kociemba/facecube.c:53]   --->   Operation 22 'br' <Predicate = (cubeString_load == 76)> <Delay = 0.00>
+ST_3 : Operation 23 [1/1] (0.00ns)   --->   "%res_f_0_addr_3 = getelementptr [54 x i3]* @res_f_0, i64 0, i64 %tmp" [kociemba/facecube.c:49]   --->   Operation 23 'getelementptr' 'res_f_0_addr_3' <Predicate = (cubeString_load == 68)> <Delay = 0.00>
+ST_3 : Operation 24 [1/1] (2.32ns)   --->   "store i3 3, i3* %res_f_0_addr_3, align 1" [kociemba/facecube.c:49]   --->   Operation 24 'store' <Predicate = (cubeString_load == 68)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_3 : Operation 25 [1/1] (0.00ns)   --->   "br label %._crit_edge" [kociemba/facecube.c:50]   --->   Operation 25 'br' <Predicate = (cubeString_load == 68)> <Delay = 0.00>
+ST_3 : Operation 26 [1/1] (0.00ns)   --->   "%res_f_0_addr_2 = getelementptr [54 x i3]* @res_f_0, i64 0, i64 %tmp" [kociemba/facecube.c:46]   --->   Operation 26 'getelementptr' 'res_f_0_addr_2' <Predicate = (cubeString_load == 70)> <Delay = 0.00>
+ST_3 : Operation 27 [1/1] (2.32ns)   --->   "store i3 2, i3* %res_f_0_addr_2, align 1" [kociemba/facecube.c:46]   --->   Operation 27 'store' <Predicate = (cubeString_load == 70)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_3 : Operation 28 [1/1] (0.00ns)   --->   "br label %._crit_edge" [kociemba/facecube.c:47]   --->   Operation 28 'br' <Predicate = (cubeString_load == 70)> <Delay = 0.00>
+ST_3 : Operation 29 [1/1] (0.00ns)   --->   "%res_f_0_addr_1 = getelementptr [54 x i3]* @res_f_0, i64 0, i64 %tmp" [kociemba/facecube.c:43]   --->   Operation 29 'getelementptr' 'res_f_0_addr_1' <Predicate = (cubeString_load == 82)> <Delay = 0.00>
+ST_3 : Operation 30 [1/1] (2.32ns)   --->   "store i3 1, i3* %res_f_0_addr_1, align 1" [kociemba/facecube.c:43]   --->   Operation 30 'store' <Predicate = (cubeString_load == 82)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_3 : Operation 31 [1/1] (0.00ns)   --->   "br label %._crit_edge" [kociemba/facecube.c:44]   --->   Operation 31 'br' <Predicate = (cubeString_load == 82)> <Delay = 0.00>
+ST_3 : Operation 32 [1/1] (0.00ns)   --->   "%res_f_0_addr = getelementptr [54 x i3]* @res_f_0, i64 0, i64 %tmp" [kociemba/facecube.c:40]   --->   Operation 32 'getelementptr' 'res_f_0_addr' <Predicate = (cubeString_load == 85)> <Delay = 0.00>
+ST_3 : Operation 33 [1/1] (2.32ns)   --->   "store i3 0, i3* %res_f_0_addr, align 1" [kociemba/facecube.c:40]   --->   Operation 33 'store' <Predicate = (cubeString_load == 85)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 3> <Depth = 54> <RAM>
+ST_3 : Operation 34 [1/1] (0.00ns)   --->   "br label %._crit_edge" [kociemba/facecube.c:41]   --->   Operation 34 'br' <Predicate = (cubeString_load == 85)> <Delay = 0.00>
+ST_3 : Operation 35 [1/1] (0.00ns)   --->   "br label %1" [kociemba/facecube.c:37]   --->   Operation 35 'br' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 12ns, clock uncertainty: 1.5ns.
+
+ <State 1>: 1.77ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('i') with incoming values : ('i', kociemba/facecube.c:37) [6]  (1.77 ns)
+
+ <State 2>: 2.32ns
+The critical path consists of the following:
+	'phi' operation ('i') with incoming values : ('i', kociemba/facecube.c:37) [6]  (0 ns)
+	'getelementptr' operation ('cubeString_addr', kociemba/facecube.c:38) [13]  (0 ns)
+	'load' operation ('cubeString_load', kociemba/facecube.c:38) on array 'cubeString' [14]  (2.32 ns)
+
+ <State 3>: 3.62ns
+The critical path consists of the following:
+	'load' operation ('cubeString_load', kociemba/facecube.c:38) on array 'cubeString' [14]  (2.32 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

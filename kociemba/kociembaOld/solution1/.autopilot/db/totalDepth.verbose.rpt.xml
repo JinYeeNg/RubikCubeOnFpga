@@ -1,0 +1,434 @@
+<profile>
+
+<section name = "Vivado HLS Report for 'totalDepth'" level="0">
+<item name = "Date">Sat Mar  9 22:55:37 2019
+</item>
+<item name = "Version">2018.2 (Build 2258646 on Thu Jun 14 20:25:20 MDT 2018)</item>
+<item name = "Project">kociemba</item>
+<item name = "Solution">solution1</item>
+<item name = "Product family">zynq</item>
+<item name = "Target device">xc7z020clg400-1</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing (ns)">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="4">Clock, Target, Estimated, Uncertainty</keys>
+<column name="ap_clk">12.00, 10.500, 1.50</column>
+</table>
+</item>
+</section>
+</item>
+<item name = "Latency (clock cycles)">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">, min, max, min, max, Type</keys>
+<column name="">?, ?, ?, ?, none</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="7">Instance, Module, min, max, min, max, Type</keys>
+<column name="grp_getPruning_fu_813">getPruning, 9, 9, 9, 9, none</column>
+<column name="grp_getPruning131416_fu_821">getPruning131416, 9, 9, 9, 9, none</column>
+<column name="grp_getPruning1314_fu_829">getPruning1314, 9, 9, 9, 9, none</column>
+<column name="grp_getPruning13_fu_837">getPruning13, 9, 9, 9, 9, none</column>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+<column name="- Loop 1">?, ?, 13, -, -, ?, no</column>
+<column name="- Loop 2">?, ?, 13, -, -, ?, no</column>
+<column name="- Loop 3">?, ?, ?, -, -, ?, no</column>
+<column name=" + Loop 3.1">?, ?, 1, -, -, ?, no</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Utilization Estimates" level="0">
+<item name = "Summary"><table name="" hasTotal="1">
+<keys size="5">Name, BRAM_18K, DSP48E, FF, LUT</keys>
+<column name="DSP">-, -, -, -</column>
+<column name="Expression">-, 3, 0, 2641</column>
+<column name="FIFO">-, -, -, -</column>
+<column name="Instance">-, -, 244, 1172</column>
+<column name="Memory">1, -, 33, 9</column>
+<column name="Multiplexer">-, -, -, 1299</column>
+<column name="Register">-, -, 1923, -</column>
+<specialColumn name="Available">280, 220, 106400, 53200</specialColumn>
+<specialColumn name="Utilization (%)">~0, 1, 2, 9</specialColumn>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="1">
+<keys size="6">Instance, Module, BRAM_18K, DSP48E, FF, LUT</keys>
+<column name="grp_getPruning_fu_813">getPruning, 0, 0, 61, 297</column>
+<column name="grp_getPruning13_fu_837">getPruning13, 0, 0, 61, 289</column>
+<column name="grp_getPruning1314_fu_829">getPruning1314, 0, 0, 61, 289</column>
+<column name="grp_getPruning131416_fu_821">getPruning131416, 0, 0, 61, 297</column>
+</table>
+</item>
+<item name = "DSP48"><table name="" hasTotal="0">
+<keys size="3">Instance, Module, Expression</keys>
+</table>
+</item>
+<item name = "Memory"><table name="" hasTotal="1">
+<keys size="9">Memory, Module, BRAM_18K, FF, LUT, Words, Bits, Banks, W*Bits*Banks</keys>
+<column name="parityMove1_U">totalDepth_paritymb6, 0, 1, 1, 36, 1, 1, 36</column>
+<column name="search_URtoDF_0_U">totalDepth_searchncg, 0, 32, 8, 31, 16, 1, 496</column>
+<column name="search_minDistPhase2_U">totalDepth_searchocq, 1, 0, 0, 31, 4, 1, 124</column>
+</table>
+</item>
+<item name = "FIFO"><table name="" hasTotal="1">
+<keys size="7">Name, BRAM_18K, FF, LUT, Depth, Bits, Size:D*B</keys>
+</table>
+</item>
+<item name = "Expression"><table name="" hasTotal="1">
+<keys size="7">Variable Name, Operation, DSP48E, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
+<column name="tmp_54_fu_1309_p2">*, 3, 0, 20, 32, 9</column>
+<column name="depthPhase2_fu_1623_p2">+, 0, 0, 39, 32, 1</column>
+<column name="i_8_fu_918_p2">+, 0, 0, 38, 31, 1</column>
+<column name="i_9_fu_1176_p2">+, 0, 0, 38, 31, 1</column>
+<column name="mv_1_fu_1206_p2">+, 0, 0, 32, 32, 32</column>
+<column name="mv_2_fu_1657_p2">+, 0, 0, 32, 32, 32</column>
+<column name="mv_fu_954_p2">+, 0, 0, 32, 32, 32</column>
+<column name="n_2_fu_1542_p2">+, 0, 0, 39, 32, 2</column>
+<column name="n_fu_1438_p2">+, 0, 0, 39, 32, 1</column>
+<column name="sum2_fu_1736_p2">+, 0, 0, 40, 33, 33</column>
+<column name="sum4_fu_1239_p2">+, 0, 0, 40, 33, 33</column>
+<column name="sum5_fu_991_p2">+, 0, 0, 40, 33, 33</column>
+<column name="sum6_fu_1281_p2">+, 0, 0, 40, 33, 33</column>
+<column name="sum7_fu_1694_p2">+, 0, 0, 40, 33, 33</column>
+<column name="sum8_fu_1326_p2">+, 0, 0, 40, 33, 33</column>
+<column name="sum9_fu_1830_p2">+, 0, 0, 40, 33, 33</column>
+<column name="sum_fu_1033_p2">+, 0, 0, 40, 33, 33</column>
+<column name="tmp10_fu_1815_p2">+, 0, 0, 32, 32, 32</column>
+<column name="tmp1_fu_948_p2">+, 0, 0, 32, 2, 32</column>
+<column name="tmp2_fu_976_p2">+, 0, 0, 32, 32, 32</column>
+<column name="tmp3_fu_1018_p2">+, 0, 0, 32, 32, 32</column>
+<column name="tmp4_fu_1200_p2">+, 0, 0, 32, 2, 32</column>
+<column name="tmp5_fu_1224_p2">+, 0, 0, 32, 32, 32</column>
+<column name="tmp6_fu_1266_p2">+, 0, 0, 32, 32, 32</column>
+<column name="tmp7_fu_1651_p2">+, 0, 0, 32, 2, 32</column>
+<column name="tmp8_fu_1679_p2">+, 0, 0, 32, 32, 32</column>
+<column name="tmp9_fu_1721_p2">+, 0, 0, 32, 32, 32</column>
+<column name="tmp_103_fu_1820_p2">+, 0, 0, 32, 32, 32</column>
+<column name="tmp_106_fu_1905_p2">+, 0, 0, 32, 22, 22</column>
+<column name="tmp_109_fu_1923_p2">+, 0, 0, 31, 24, 24</column>
+<column name="tmp_112_fu_1957_p2">+, 0, 0, 32, 22, 22</column>
+<column name="tmp_115_fu_1975_p2">+, 0, 0, 31, 24, 24</column>
+<column name="tmp_119_fu_2000_p2">+, 0, 0, 39, 32, 32</column>
+<column name="tmp_133_fu_1775_p2">+, 0, 0, 32, 7, 7</column>
+<column name="tmp_134_fu_1781_p2">+, 0, 0, 32, 7, 7</column>
+<column name="tmp_24_fu_981_p2">+, 0, 0, 32, 32, 32</column>
+<column name="tmp_29_fu_1023_p2">+, 0, 0, 32, 32, 32</column>
+<column name="tmp_31_fu_1072_p2">+, 0, 0, 32, 7, 7</column>
+<column name="tmp_32_fu_1078_p2">+, 0, 0, 32, 7, 7</column>
+<column name="tmp_36_fu_1132_p2">+, 0, 0, 38, 31, 31</column>
+<column name="tmp_40_fu_1146_p2">+, 0, 0, 39, 32, 32</column>
+<column name="tmp_47_fu_1229_p2">+, 0, 0, 32, 32, 32</column>
+<column name="tmp_51_fu_1271_p2">+, 0, 0, 32, 32, 32</column>
+<column name="tmp_55_fu_1314_p2">+, 0, 0, 39, 32, 32</column>
+<column name="tmp_59_fu_1374_p2">+, 0, 0, 38, 31, 31</column>
+<column name="tmp_62_fu_1387_p2">+, 0, 0, 39, 32, 32</column>
+<column name="tmp_67_fu_1420_p2">+, 0, 0, 39, 32, 1</column>
+<column name="tmp_69_fu_1454_p2">+, 0, 0, 32, 32, 32</column>
+<column name="tmp_75_fu_1491_p2">+, 0, 0, 39, 32, 2</column>
+<column name="tmp_77_fu_1514_p2">+, 0, 0, 39, 32, 1</column>
+<column name="tmp_81_fu_1553_p2">+, 0, 0, 39, 32, 3</column>
+<column name="tmp_83_fu_1559_p2">+, 0, 0, 39, 32, 1</column>
+<column name="tmp_92_fu_1684_p2">+, 0, 0, 32, 32, 32</column>
+<column name="tmp_95_fu_1849_p2">+, 0, 0, 39, 1, 32</column>
+<column name="tmp_97_fu_1726_p2">+, 0, 0, 32, 32, 32</column>
+<column name="tmp_105_fu_1896_p2">-, 0, 0, 32, 22, 22</column>
+<column name="tmp_111_fu_1951_p2">-, 0, 0, 32, 22, 22</column>
+<column name="tmp_23_fu_942_p2">-, 0, 0, 39, 32, 32</column>
+<column name="tmp_35_fu_1118_p2">-, 0, 0, 39, 32, 32</column>
+<column name="tmp_46_fu_1194_p2">-, 0, 0, 39, 32, 32</column>
+<column name="tmp_57_fu_1364_p2">-, 0, 0, 29, 22, 22</column>
+<column name="tmp_70_fu_1459_p2">-, 0, 0, 32, 32, 32</column>
+<column name="tmp_91_fu_1645_p2">-, 0, 0, 39, 32, 32</column>
+<column name="tmp_s_fu_881_p2">-, 0, 0, 39, 32, 32</column>
+<column name="ap_block_state68_on_subcall_done">and, 0, 0, 2, 1, 1</column>
+<column name="or_cond_fu_1481_p2">and, 0, 0, 2, 1, 1</column>
+<column name="grp_fu_855_p2">icmp, 0, 0, 18, 32, 2</column>
+<column name="grp_fu_861_p2">icmp, 0, 0, 18, 32, 1</column>
+<column name="icmp1_fu_1508_p2">icmp, 0, 0, 18, 30, 1</column>
+<column name="icmp_fu_1531_p2">icmp, 0, 0, 18, 30, 1</column>
+<column name="tmp_117_fu_1981_p2">icmp, 0, 0, 9, 4, 4</column>
+<column name="tmp_118_fu_1994_p2">icmp, 0, 0, 9, 4, 1</column>
+<column name="tmp_20_fu_887_p2">icmp, 0, 0, 18, 32, 4</column>
+<column name="tmp_21_fu_913_p2">icmp, 0, 0, 18, 32, 32</column>
+<column name="tmp_43_fu_1156_p2">icmp, 0, 0, 18, 32, 32</column>
+<column name="tmp_44_fu_1171_p2">icmp, 0, 0, 18, 32, 32</column>
+<column name="tmp_64_fu_1396_p2">icmp, 0, 0, 18, 32, 32</column>
+<column name="tmp_65_fu_1401_p2">icmp, 0, 0, 9, 4, 4</column>
+<column name="tmp_66_fu_1414_p2">icmp, 0, 0, 9, 4, 1</column>
+<column name="tmp_72_fu_1469_p2">icmp, 0, 0, 18, 32, 32</column>
+<column name="tmp_79_fu_1537_p2">icmp, 0, 0, 18, 32, 32</column>
+<column name="tmp_84_fu_1566_p2">icmp, 0, 0, 18, 32, 3</column>
+<column name="tmp_85_fu_1572_p2">icmp, 0, 0, 18, 32, 1</column>
+<column name="tmp_86_fu_1578_p2">icmp, 0, 0, 18, 32, 2</column>
+<column name="tmp_87_fu_1619_p2">icmp, 0, 0, 18, 32, 32</column>
+<column name="tmp_88_fu_1599_p2">icmp, 0, 0, 18, 32, 32</column>
+<column name="tmp_89_fu_1604_p2">icmp, 0, 0, 18, 32, 32</column>
+<column name="grp_fu_867_p2">or, 0, 0, 2, 1, 1</column>
+<column name="or_cond1_fu_1584_p2">or, 0, 0, 2, 1, 1</column>
+<column name="or_cond5_fu_1609_p2">or, 0, 0, 2, 1, 1</column>
+<column name="d1_1_v_fu_1406_p3">select, 0, 0, 4, 1, 4</column>
+<column name="maxDepthPhase2_fu_893_p3">select, 0, 0, 32, 1, 4</column>
+<column name="p_in_fu_1986_p3">select, 0, 0, 4, 1, 4</column>
+<column name="storemerge_cast_cast_fu_1590_p3">select, 0, 0, 2, 1, 1</column>
+<column name="tmp_73_fu_1475_p2">xor, 0, 0, 2, 1, 2</column>
+</table>
+</item>
+<item name = "Multiplexer"><table name="" hasTotal="1">
+<keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
+<column name="FRtoBR_Move2_blk_n_AR">9, 2, 1, 2</column>
+<column name="FRtoBR_Move2_blk_n_R">9, 2, 1, 2</column>
+<column name="ap_NS_fsm">313, 70, 1, 70</column>
+<column name="ap_phi_mux_busy_4_phi_fu_773_p12">9, 2, 1, 2</column>
+<column name="ap_return">9, 2, 32, 64</column>
+<column name="ap_sig_ioackin_m_axi_FRtoBR_Move2_ARREADY">9, 2, 1, 2</column>
+<column name="busy_1_reg_747">9, 2, 1, 2</column>
+<column name="depthPhase2_1_fu_142">9, 2, 32, 64</column>
+<column name="grp_fu_855_p0">15, 3, 32, 96</column>
+<column name="grp_fu_861_p0">15, 3, 32, 96</column>
+<column name="i_1_reg_736">9, 2, 31, 62</column>
+<column name="i_reg_725">9, 2, 31, 62</column>
+<column name="m_axi_FRtoBR_Move2_ARADDR">56, 13, 32, 416</column>
+<column name="m_axi_FRtoBR_Move2_ARBURST">27, 5, 2, 10</column>
+<column name="m_axi_FRtoBR_Move2_ARCACHE">27, 5, 4, 20</column>
+<column name="m_axi_FRtoBR_Move2_ARID">27, 5, 1, 5</column>
+<column name="m_axi_FRtoBR_Move2_ARLEN">33, 6, 32, 192</column>
+<column name="m_axi_FRtoBR_Move2_ARLOCK">27, 5, 2, 10</column>
+<column name="m_axi_FRtoBR_Move2_ARPROT">27, 5, 3, 15</column>
+<column name="m_axi_FRtoBR_Move2_ARQOS">27, 5, 4, 20</column>
+<column name="m_axi_FRtoBR_Move2_ARREGION">27, 5, 4, 20</column>
+<column name="m_axi_FRtoBR_Move2_ARSIZE">27, 5, 3, 15</column>
+<column name="m_axi_FRtoBR_Move2_ARUSER">27, 5, 1, 5</column>
+<column name="m_axi_FRtoBR_Move2_ARVALID">33, 6, 1, 6</column>
+<column name="m_axi_FRtoBR_Move2_RREADY">33, 6, 1, 6</column>
+<column name="n_1_fu_146">15, 3, 32, 96</column>
+<column name="p_0_reg_794">15, 3, 32, 96</column>
+<column name="parityMove1_address0">15, 3, 6, 18</column>
+<column name="search_0_FRtoBR_address0">33, 6, 5, 30</column>
+<column name="search_0_FRtoBR_d0">15, 3, 32, 96</column>
+<column name="search_0_UBtoDF_address0">21, 4, 5, 20</column>
+<column name="search_0_URFtoDLF_address0">33, 6, 5, 30</column>
+<column name="search_0_URFtoDLF_d0">15, 3, 32, 96</column>
+<column name="search_0_URtoUL_address0">21, 4, 5, 20</column>
+<column name="search_0_ax_address0">47, 10, 5, 50</column>
+<column name="search_0_ax_d0">21, 4, 32, 128</column>
+<column name="search_0_parity_address0">33, 6, 5, 30</column>
+<column name="search_0_parity_d0">15, 3, 32, 96</column>
+<column name="search_0_po_address0">50, 11, 5, 55</column>
+<column name="search_0_po_d0">38, 7, 32, 224</column>
+<column name="search_URtoDF_0_address0">21, 4, 5, 20</column>
+<column name="search_URtoDF_0_d0">15, 3, 16, 48</column>
+<column name="search_minDistPhase2_address0">15, 3, 5, 15</column>
+<column name="search_minDistPhase2_address1">15, 3, 5, 15</column>
+<column name="search_minDistPhase2_d1">15, 3, 4, 12</column>
+<column name="tmp_82_reg_758">9, 2, 32, 64</column>
+</table>
+</item>
+<item name = "Register"><table name="" hasTotal="1">
+<keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
+<column name="Slice_URtoDF_Parity_17_reg_2146">32, 0, 32, 0</column>
+<column name="Slice_URtoDF_Parity_19_reg_2168">16, 0, 16, 0</column>
+<column name="Slice_URtoDF_Parity_20_reg_2152">32, 0, 32, 0</column>
+<column name="Slice_URtoDF_Parity_22_reg_2173">16, 0, 16, 0</column>
+<column name="Slice_URtoDF_Parity_23_reg_2258">32, 0, 32, 0</column>
+<column name="Slice_URtoDF_Parity_25_reg_2270">16, 0, 16, 0</column>
+<column name="Slice_URtoDF_Parity_26_reg_2264">32, 0, 32, 0</column>
+<column name="Slice_URtoDF_Parity_28_reg_2275">16, 0, 16, 0</column>
+<column name="Slice_URtoDF_Parity_29_reg_2295">32, 0, 32, 0</column>
+<column name="Slice_URtoDF_Parity_31_reg_2301">16, 0, 16, 0</column>
+<column name="Slice_URtoDF_Parity_32_reg_2508">32, 0, 32, 0</column>
+<column name="Slice_URtoDF_Parity_34_reg_2537">16, 0, 16, 0</column>
+<column name="Slice_URtoDF_Parity_35_reg_2514">32, 0, 32, 0</column>
+<column name="Slice_URtoDF_Parity_37_reg_2544">16, 0, 16, 0</column>
+<column name="Slice_URtoDF_Parity_38_reg_2525">32, 0, 32, 0</column>
+<column name="Slice_URtoDF_Parity_40_reg_2550">16, 0, 16, 0</column>
+<column name="ap_CS_fsm">69, 0, 69, 0</column>
+<column name="ap_reg_ioackin_m_axi_FRtoBR_Move2_ARREADY">1, 0, 1, 0</column>
+<column name="ap_return_preg">32, 0, 32, 0</column>
+<column name="busy_1_reg_747">1, 0, 1, 0</column>
+<column name="busy_4_reg_767">1, 0, 1, 0</column>
+<column name="depthPhase2_1_fu_142">32, 0, 32, 0</column>
+<column name="depthPhase2_1_load_reg_2377">32, 0, 32, 0</column>
+<column name="grp_getPruning131416_fu_821_ap_start_reg">1, 0, 1, 0</column>
+<column name="grp_getPruning1314_fu_829_ap_start_reg">1, 0, 1, 0</column>
+<column name="grp_getPruning13_fu_837_ap_start_reg">1, 0, 1, 0</column>
+<column name="grp_getPruning_fu_813_ap_start_reg">1, 0, 1, 0</column>
+<column name="i_1_reg_736">31, 0, 31, 0</column>
+<column name="i_8_reg_2072">31, 0, 31, 0</column>
+<column name="i_9_reg_2215">31, 0, 31, 0</column>
+<column name="i_reg_725">31, 0, 31, 0</column>
+<column name="icmp1_reg_2406">1, 0, 1, 0</column>
+<column name="icmp_reg_2410">1, 0, 1, 0</column>
+<column name="maxDepthPhase2_reg_2050">32, 0, 32, 0</column>
+<column name="mv_1_reg_2242">32, 0, 32, 0</column>
+<column name="mv_2_reg_2476">32, 0, 32, 0</column>
+<column name="mv_reg_2120">32, 0, 32, 0</column>
+<column name="n_1_fu_146">32, 0, 32, 0</column>
+<column name="n_2_reg_2423">32, 0, 32, 0</column>
+<column name="n_reg_2349">32, 0, 32, 0</column>
+<column name="or_cond_reg_2383">1, 0, 1, 0</column>
+<column name="p_0_reg_794">32, 0, 32, 0</column>
+<column name="parityMove1_load_1_reg_2531">1, 0, 1, 0</column>
+<column name="parityMove1_load_reg_2163">1, 0, 1, 0</column>
+<column name="reg_873">32, 0, 32, 0</column>
+<column name="search_0_URtoUL_loa_1_reg_2280">32, 0, 32, 0</column>
+<column name="search_0_ax_addr_2_reg_2339">5, 0, 5, 0</column>
+<column name="search_0_ax_addr_3_reg_2372">5, 0, 5, 0</column>
+<column name="search_0_ax_load_2_reg_2387">32, 0, 32, 0</column>
+<column name="search_0_ax_load_3_reg_2433">32, 0, 32, 0</column>
+<column name="search_0_parity_loa_1_reg_2183">32, 0, 32, 0</column>
+<column name="search_0_po_addr_2_reg_2334">5, 0, 5, 0</column>
+<column name="search_0_po_addr_5_reg_2394">5, 0, 5, 0</column>
+<column name="search_0_po_addr_6_reg_2414">5, 0, 5, 0</column>
+<column name="sext2_cast_reg_2202">31, 0, 33, 2</column>
+<column name="sext3_cast_reg_2207">31, 0, 33, 2</column>
+<column name="sext4_cast_reg_2057">31, 0, 33, 2</column>
+<column name="sext9_cast_reg_2344">31, 0, 33, 2</column>
+<column name="sext_cast_reg_2063">31, 0, 33, 2</column>
+<column name="tmp_109_reg_2562">24, 0, 24, 0</column>
+<column name="tmp_115_reg_2567">24, 0, 24, 0</column>
+<column name="tmp_122_reg_2402">1, 0, 1, 0</column>
+<column name="tmp_130_reg_2493">7, 0, 7, 0</column>
+<column name="tmp_136_reg_2572">4, 0, 4, 0</column>
+<column name="tmp_22_reg_2078">31, 0, 64, 33</column>
+<column name="tmp_34_reg_2095">64, 0, 64, 0</column>
+<column name="tmp_40_reg_2188">32, 0, 32, 0</column>
+<column name="tmp_41_reg_2193">4, 0, 4, 0</column>
+<column name="tmp_45_reg_2221">31, 0, 64, 33</column>
+<column name="tmp_54_reg_2285">28, 0, 32, 4</column>
+<column name="tmp_56_reg_2136">7, 0, 7, 0</column>
+<column name="tmp_62_reg_2308">32, 0, 32, 0</column>
+<column name="tmp_71_reg_2354">64, 0, 64, 0</column>
+<column name="tmp_74_reg_2366">64, 0, 64, 0</column>
+<column name="tmp_79_reg_2419">1, 0, 1, 0</column>
+<column name="tmp_81_reg_2438">32, 0, 32, 0</column>
+<column name="tmp_82_reg_758">32, 0, 32, 0</column>
+<column name="tmp_84_reg_2448">1, 0, 1, 0</column>
+<column name="tmp_90_reg_2458">64, 0, 64, 0</column>
+<column name="tmp_93_reg_2178">31, 0, 31, 0</column>
+<column name="tmp_96_reg_2557">64, 0, 64, 0</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Interface" level="0">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">RTL Ports, Dir, Bits, Protocol, Source Object, C Type</keys>
+<column name="ap_clk">in, 1, ap_ctrl_hs, totalDepth, return value</column>
+<column name="ap_rst">in, 1, ap_ctrl_hs, totalDepth, return value</column>
+<column name="ap_start">in, 1, ap_ctrl_hs, totalDepth, return value</column>
+<column name="ap_done">out, 1, ap_ctrl_hs, totalDepth, return value</column>
+<column name="ap_idle">out, 1, ap_ctrl_hs, totalDepth, return value</column>
+<column name="ap_ready">out, 1, ap_ctrl_hs, totalDepth, return value</column>
+<column name="ap_return">out, 32, ap_ctrl_hs, totalDepth, return value</column>
+<column name="search_0_ax_address0">out, 5, ap_memory, search_0_ax, array</column>
+<column name="search_0_ax_ce0">out, 1, ap_memory, search_0_ax, array</column>
+<column name="search_0_ax_we0">out, 1, ap_memory, search_0_ax, array</column>
+<column name="search_0_ax_d0">out, 32, ap_memory, search_0_ax, array</column>
+<column name="search_0_ax_q0">in, 32, ap_memory, search_0_ax, array</column>
+<column name="search_0_po_address0">out, 5, ap_memory, search_0_po, array</column>
+<column name="search_0_po_ce0">out, 1, ap_memory, search_0_po, array</column>
+<column name="search_0_po_we0">out, 1, ap_memory, search_0_po, array</column>
+<column name="search_0_po_d0">out, 32, ap_memory, search_0_po, array</column>
+<column name="search_0_po_q0">in, 32, ap_memory, search_0_po, array</column>
+<column name="search_0_parity_address0">out, 5, ap_memory, search_0_parity, array</column>
+<column name="search_0_parity_ce0">out, 1, ap_memory, search_0_parity, array</column>
+<column name="search_0_parity_we0">out, 1, ap_memory, search_0_parity, array</column>
+<column name="search_0_parity_d0">out, 32, ap_memory, search_0_parity, array</column>
+<column name="search_0_parity_q0">in, 32, ap_memory, search_0_parity, array</column>
+<column name="search_0_URFtoDLF_address0">out, 5, ap_memory, search_0_URFtoDLF, array</column>
+<column name="search_0_URFtoDLF_ce0">out, 1, ap_memory, search_0_URFtoDLF, array</column>
+<column name="search_0_URFtoDLF_we0">out, 1, ap_memory, search_0_URFtoDLF, array</column>
+<column name="search_0_URFtoDLF_d0">out, 32, ap_memory, search_0_URFtoDLF, array</column>
+<column name="search_0_URFtoDLF_q0">in, 32, ap_memory, search_0_URFtoDLF, array</column>
+<column name="search_0_FRtoBR_address0">out, 5, ap_memory, search_0_FRtoBR, array</column>
+<column name="search_0_FRtoBR_ce0">out, 1, ap_memory, search_0_FRtoBR, array</column>
+<column name="search_0_FRtoBR_we0">out, 1, ap_memory, search_0_FRtoBR, array</column>
+<column name="search_0_FRtoBR_d0">out, 32, ap_memory, search_0_FRtoBR, array</column>
+<column name="search_0_FRtoBR_q0">in, 32, ap_memory, search_0_FRtoBR, array</column>
+<column name="search_0_URtoUL_address0">out, 5, ap_memory, search_0_URtoUL, array</column>
+<column name="search_0_URtoUL_ce0">out, 1, ap_memory, search_0_URtoUL, array</column>
+<column name="search_0_URtoUL_we0">out, 1, ap_memory, search_0_URtoUL, array</column>
+<column name="search_0_URtoUL_d0">out, 32, ap_memory, search_0_URtoUL, array</column>
+<column name="search_0_URtoUL_q0">in, 32, ap_memory, search_0_URtoUL, array</column>
+<column name="search_0_UBtoDF_address0">out, 5, ap_memory, search_0_UBtoDF, array</column>
+<column name="search_0_UBtoDF_ce0">out, 1, ap_memory, search_0_UBtoDF, array</column>
+<column name="search_0_UBtoDF_we0">out, 1, ap_memory, search_0_UBtoDF, array</column>
+<column name="search_0_UBtoDF_d0">out, 32, ap_memory, search_0_UBtoDF, array</column>
+<column name="search_0_UBtoDF_q0">in, 32, ap_memory, search_0_UBtoDF, array</column>
+<column name="depthPhase1">in, 32, ap_none, depthPhase1, scalar</column>
+<column name="maxDepth">in, 8, ap_none, maxDepth, scalar</column>
+<column name="m_axi_FRtoBR_Move2_AWVALID">out, 1, m_axi, FRtoBR_Move2, pointer</column>
+<column name="m_axi_FRtoBR_Move2_AWREADY">in, 1, m_axi, FRtoBR_Move2, pointer</column>
+<column name="m_axi_FRtoBR_Move2_AWADDR">out, 32, m_axi, FRtoBR_Move2, pointer</column>
+<column name="m_axi_FRtoBR_Move2_AWID">out, 1, m_axi, FRtoBR_Move2, pointer</column>
+<column name="m_axi_FRtoBR_Move2_AWLEN">out, 32, m_axi, FRtoBR_Move2, pointer</column>
+<column name="m_axi_FRtoBR_Move2_AWSIZE">out, 3, m_axi, FRtoBR_Move2, pointer</column>
+<column name="m_axi_FRtoBR_Move2_AWBURST">out, 2, m_axi, FRtoBR_Move2, pointer</column>
+<column name="m_axi_FRtoBR_Move2_AWLOCK">out, 2, m_axi, FRtoBR_Move2, pointer</column>
+<column name="m_axi_FRtoBR_Move2_AWCACHE">out, 4, m_axi, FRtoBR_Move2, pointer</column>
+<column name="m_axi_FRtoBR_Move2_AWPROT">out, 3, m_axi, FRtoBR_Move2, pointer</column>
+<column name="m_axi_FRtoBR_Move2_AWQOS">out, 4, m_axi, FRtoBR_Move2, pointer</column>
+<column name="m_axi_FRtoBR_Move2_AWREGION">out, 4, m_axi, FRtoBR_Move2, pointer</column>
+<column name="m_axi_FRtoBR_Move2_AWUSER">out, 1, m_axi, FRtoBR_Move2, pointer</column>
+<column name="m_axi_FRtoBR_Move2_WVALID">out, 1, m_axi, FRtoBR_Move2, pointer</column>
+<column name="m_axi_FRtoBR_Move2_WREADY">in, 1, m_axi, FRtoBR_Move2, pointer</column>
+<column name="m_axi_FRtoBR_Move2_WDATA">out, 16, m_axi, FRtoBR_Move2, pointer</column>
+<column name="m_axi_FRtoBR_Move2_WSTRB">out, 2, m_axi, FRtoBR_Move2, pointer</column>
+<column name="m_axi_FRtoBR_Move2_WLAST">out, 1, m_axi, FRtoBR_Move2, pointer</column>
+<column name="m_axi_FRtoBR_Move2_WID">out, 1, m_axi, FRtoBR_Move2, pointer</column>
+<column name="m_axi_FRtoBR_Move2_WUSER">out, 1, m_axi, FRtoBR_Move2, pointer</column>
+<column name="m_axi_FRtoBR_Move2_ARVALID">out, 1, m_axi, FRtoBR_Move2, pointer</column>
+<column name="m_axi_FRtoBR_Move2_ARREADY">in, 1, m_axi, FRtoBR_Move2, pointer</column>
+<column name="m_axi_FRtoBR_Move2_ARADDR">out, 32, m_axi, FRtoBR_Move2, pointer</column>
+<column name="m_axi_FRtoBR_Move2_ARID">out, 1, m_axi, FRtoBR_Move2, pointer</column>
+<column name="m_axi_FRtoBR_Move2_ARLEN">out, 32, m_axi, FRtoBR_Move2, pointer</column>
+<column name="m_axi_FRtoBR_Move2_ARSIZE">out, 3, m_axi, FRtoBR_Move2, pointer</column>
+<column name="m_axi_FRtoBR_Move2_ARBURST">out, 2, m_axi, FRtoBR_Move2, pointer</column>
+<column name="m_axi_FRtoBR_Move2_ARLOCK">out, 2, m_axi, FRtoBR_Move2, pointer</column>
+<column name="m_axi_FRtoBR_Move2_ARCACHE">out, 4, m_axi, FRtoBR_Move2, pointer</column>
+<column name="m_axi_FRtoBR_Move2_ARPROT">out, 3, m_axi, FRtoBR_Move2, pointer</column>
+<column name="m_axi_FRtoBR_Move2_ARQOS">out, 4, m_axi, FRtoBR_Move2, pointer</column>
+<column name="m_axi_FRtoBR_Move2_ARREGION">out, 4, m_axi, FRtoBR_Move2, pointer</column>
+<column name="m_axi_FRtoBR_Move2_ARUSER">out, 1, m_axi, FRtoBR_Move2, pointer</column>
+<column name="m_axi_FRtoBR_Move2_RVALID">in, 1, m_axi, FRtoBR_Move2, pointer</column>
+<column name="m_axi_FRtoBR_Move2_RREADY">out, 1, m_axi, FRtoBR_Move2, pointer</column>
+<column name="m_axi_FRtoBR_Move2_RDATA">in, 16, m_axi, FRtoBR_Move2, pointer</column>
+<column name="m_axi_FRtoBR_Move2_RLAST">in, 1, m_axi, FRtoBR_Move2, pointer</column>
+<column name="m_axi_FRtoBR_Move2_RID">in, 1, m_axi, FRtoBR_Move2, pointer</column>
+<column name="m_axi_FRtoBR_Move2_RUSER">in, 1, m_axi, FRtoBR_Move2, pointer</column>
+<column name="m_axi_FRtoBR_Move2_RRESP">in, 2, m_axi, FRtoBR_Move2, pointer</column>
+<column name="m_axi_FRtoBR_Move2_BVALID">in, 1, m_axi, FRtoBR_Move2, pointer</column>
+<column name="m_axi_FRtoBR_Move2_BREADY">out, 1, m_axi, FRtoBR_Move2, pointer</column>
+<column name="m_axi_FRtoBR_Move2_BRESP">in, 2, m_axi, FRtoBR_Move2, pointer</column>
+<column name="m_axi_FRtoBR_Move2_BID">in, 1, m_axi, FRtoBR_Move2, pointer</column>
+<column name="m_axi_FRtoBR_Move2_BUSER">in, 1, m_axi, FRtoBR_Move2, pointer</column>
+<column name="FRtoBR_Move2_offset">in, 31, ap_none, FRtoBR_Move2_offset, scalar</column>
+<column name="URFtoDLF_Move2_offset">in, 31, ap_none, URFtoDLF_Move2_offset, scalar</column>
+<column name="URtoDF_Move2_offset">in, 31, ap_none, URtoDF_Move2_offset, scalar</column>
+<column name="URtoUL_Move2_offset">in, 31, ap_none, URtoUL_Move2_offset, scalar</column>
+<column name="UBtoDF_Move2_offset">in, 31, ap_none, UBtoDF_Move2_offset, scalar</column>
+<column name="MergeURtoULandUBtoDF2_offset">in, 31, ap_none, MergeURtoULandUBtoDF2_offset, scalar</column>
+<column name="Slice_URFtoDLF_Parity_Prun2_offset">in, 31, ap_none, Slice_URFtoDLF_Parity_Prun2_offset, scalar</column>
+<column name="Slice_URtoDF_Parity_Prun2_offset">in, 31, ap_none, Slice_URtoDF_Parity_Prun2_offset, scalar</column>
+</table>
+</item>
+</section>
+</profile>

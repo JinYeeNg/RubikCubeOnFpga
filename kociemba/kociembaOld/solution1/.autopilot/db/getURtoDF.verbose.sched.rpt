@@ -1,0 +1,279 @@
+
+
+================================================================
+== Vivado HLS Report for 'getURtoDF'
+================================================================
+* Date:           Sat Mar  9 22:55:06 2019
+
+* Version:        2018.2 (Build 2258646 on Thu Jun 14 20:25:20 MDT 2018)
+* Project:        kociemba
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  12.00|     4.644|        1.50|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |    ?|    ?|    ?|    ?|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-----------------+-----+-----+----------+-----------+-----------+-------+----------+
+        |                 |  Latency  | Iteration|  Initiation Interval  |  Trip |          |
+        |    Loop Name    | min | max |  Latency |  achieved |   target  | Count | Pipelined|
+        +-----------------+-----+-----+----------+-----------+-----------+-------+----------+
+        |- memset_edge6   |    5|    5|         1|          -|          -|      6|    no    |
+        |- Loop 2         |   24|   24|         2|          -|          -|     12|    no    |
+        |- Loop 3         |    ?|    ?|         ?|          -|          -|      5|    no    |
+        | + Loop 3.1      |    ?|    ?|  6 ~ 14  |          -|          -|      ?|    no    |
+        |  ++ Loop 3.1.1  |    2|   10|         2|          -|          -| 1 ~ 5 |    no    |
+        +-----------------+-----+-----+----------+-----------+-----------+-------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 10
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	2  / (!tmp_s)
+	3  / (tmp_s)
+3 --> 
+	4  / (!exitcond)
+	5  / (exitcond)
+4 --> 
+	3  / true
+5 --> 
+	6  / (!tmp_253)
+6 --> 
+	7  / true
+7 --> 
+	8  / (!tmp_256)
+	5  / (tmp_256)
+8 --> 
+	9  / true
+9 --> 
+	10  / (!exitcond1)
+	6  / (exitcond1)
+10 --> 
+	9  / true
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.76>
+ST_1 : Operation 11 [1/1] (0.00ns)   --->   "%edge6 = alloca [6 x i4], align 1" [kociemba/cubiecube.c:490]   --->   Operation 11 'alloca' 'edge6' <Predicate = true> <Delay = 0.00> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 4> <Depth = 6> <RAM>
+ST_1 : Operation 12 [1/1] (1.76ns)   --->   "br label %meminst"   --->   Operation 12 'br' <Predicate = true> <Delay = 1.76>
+
+State 2 <SV = 1> <Delay = 2.32>
+ST_2 : Operation 13 [1/1] (0.00ns)   --->   "%invdar = phi i3 [ 0, %0 ], [ %indvarinc, %meminst ]" [kociemba/cubiecube.c:490]   --->   Operation 13 'phi' 'invdar' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 14 [1/1] (1.65ns)   --->   "%indvarinc = add i3 %invdar, 1" [kociemba/cubiecube.c:490]   --->   Operation 14 'add' 'indvarinc' <Predicate = true> <Delay = 1.65> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.65> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 15 [1/1] (0.00ns)   --->   "%tmp = zext i3 %invdar to i64" [kociemba/cubiecube.c:490]   --->   Operation 15 'zext' 'tmp' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 16 [1/1] (0.00ns)   --->   "%edge6_addr = getelementptr [6 x i4]* %edge6, i64 0, i64 %tmp" [kociemba/cubiecube.c:490]   --->   Operation 16 'getelementptr' 'edge6_addr' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 17 [1/1] (2.32ns)   --->   "store i4 0, i4* %edge6_addr, align 1" [kociemba/cubiecube.c:490]   --->   Operation 17 'store' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 4> <Depth = 6> <RAM>
+ST_2 : Operation 18 [1/1] (1.13ns)   --->   "%tmp_s = icmp eq i3 %invdar, -3" [kociemba/cubiecube.c:490]   --->   Operation 18 'icmp' 'tmp_s' <Predicate = true> <Delay = 1.13> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.13> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 19 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecLoopName([13 x i8]* @memset_edge6_str) nounwind"   --->   Operation 19 'specloopname' 'empty' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 20 [1/1] (0.00ns)   --->   "%empty_59 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 6, i64 6, i64 6)"   --->   Operation 20 'speclooptripcount' 'empty_59' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 21 [1/1] (0.00ns)   --->   "br i1 %tmp_s, label %.preheader2.preheader, label %meminst" [kociemba/cubiecube.c:490]   --->   Operation 21 'br' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 22 [1/1] (0.00ns)   --->   "%x = alloca i32"   --->   Operation 22 'alloca' 'x' <Predicate = (tmp_s)> <Delay = 0.00>
+ST_2 : Operation 23 [1/1] (1.76ns)   --->   "store i32 0, i32* %x"   --->   Operation 23 'store' <Predicate = (tmp_s)> <Delay = 1.76>
+ST_2 : Operation 24 [1/1] (1.76ns)   --->   "br label %.preheader2" [kociemba/cubiecube.c:492]   --->   Operation 24 'br' <Predicate = (tmp_s)> <Delay = 1.76>
+
+State 3 <SV = 2> <Delay = 2.32>
+ST_3 : Operation 25 [1/1] (0.00ns)   --->   "%j = phi i4 [ 0, %.preheader2.preheader ], [ %j_6, %.preheader2.backedge ]"   --->   Operation 25 'phi' 'j' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 26 [1/1] (1.30ns)   --->   "%exitcond = icmp eq i4 %j, -4" [kociemba/cubiecube.c:492]   --->   Operation 26 'icmp' 'exitcond' <Predicate = true> <Delay = 1.30> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.13> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 27 [1/1] (0.00ns)   --->   "%empty_60 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 12, i64 12, i64 12)"   --->   Operation 27 'speclooptripcount' 'empty_60' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 28 [1/1] (1.73ns)   --->   "%j_6 = add i4 %j, 1" [kociemba/cubiecube.c:492]   --->   Operation 28 'add' 'j_6' <Predicate = true> <Delay = 1.73> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.65> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 29 [1/1] (0.00ns)   --->   "br i1 %exitcond, label %.preheader1.preheader, label %1" [kociemba/cubiecube.c:492]   --->   Operation 29 'br' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 30 [1/1] (0.00ns)   --->   "%tmp_251 = zext i4 %j to i64" [kociemba/cubiecube.c:493]   --->   Operation 30 'zext' 'tmp_251' <Predicate = (!exitcond)> <Delay = 0.00>
+ST_3 : Operation 31 [1/1] (0.00ns)   --->   "%cubiecube_0_ep_addr = getelementptr [12 x i4]* %cubiecube_0_ep, i64 0, i64 %tmp_251" [kociemba/cubiecube.c:493]   --->   Operation 31 'getelementptr' 'cubiecube_0_ep_addr' <Predicate = (!exitcond)> <Delay = 0.00>
+ST_3 : Operation 32 [2/2] (2.32ns)   --->   "%cubiecube_0_ep_load = load i4* %cubiecube_0_ep_addr, align 1" [kociemba/cubiecube.c:493]   --->   Operation 32 'load' 'cubiecube_0_ep_load' <Predicate = (!exitcond)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 4> <Depth = 6> <RAM>
+ST_3 : Operation 33 [1/1] (0.00ns)   --->   "%edge6_addr_3 = getelementptr [6 x i4]* %edge6, i64 0, i64 0"   --->   Operation 33 'getelementptr' 'edge6_addr_3' <Predicate = (exitcond)> <Delay = 0.00>
+ST_3 : Operation 34 [1/1] (1.76ns)   --->   "br label %.preheader1" [kociemba/cubiecube.c:498]   --->   Operation 34 'br' <Predicate = (exitcond)> <Delay = 1.76>
+
+State 4 <SV = 3> <Delay = 4.64>
+ST_4 : Operation 35 [1/2] (2.32ns)   --->   "%cubiecube_0_ep_load = load i4* %cubiecube_0_ep_addr, align 1" [kociemba/cubiecube.c:493]   --->   Operation 35 'load' 'cubiecube_0_ep_load' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 4> <Depth = 6> <RAM>
+ST_4 : Operation 36 [1/1] (1.30ns)   --->   "%tmp_252 = icmp ult i4 %cubiecube_0_ep_load, 6" [kociemba/cubiecube.c:493]   --->   Operation 36 'icmp' 'tmp_252' <Predicate = true> <Delay = 1.30> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.13> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 37 [1/1] (0.00ns)   --->   "br i1 %tmp_252, label %2, label %.preheader2.backedge" [kociemba/cubiecube.c:493]   --->   Operation 37 'br' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 38 [1/1] (0.00ns)   --->   "%x_load = load i32* %x" [kociemba/cubiecube.c:494]   --->   Operation 38 'load' 'x_load' <Predicate = (tmp_252)> <Delay = 0.00>
+ST_4 : Operation 39 [1/1] (2.55ns)   --->   "%x_2 = add nsw i32 %x_load, 1" [kociemba/cubiecube.c:494]   --->   Operation 39 'add' 'x_2' <Predicate = (tmp_252)> <Delay = 2.55> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.65> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 40 [1/1] (0.00ns)   --->   "%tmp_254 = sext i32 %x_load to i64" [kociemba/cubiecube.c:495]   --->   Operation 40 'sext' 'tmp_254' <Predicate = (tmp_252)> <Delay = 0.00>
+ST_4 : Operation 41 [1/1] (0.00ns)   --->   "%edge6_addr_2 = getelementptr inbounds [6 x i4]* %edge6, i64 0, i64 %tmp_254" [kociemba/cubiecube.c:495]   --->   Operation 41 'getelementptr' 'edge6_addr_2' <Predicate = (tmp_252)> <Delay = 0.00>
+ST_4 : Operation 42 [1/1] (2.32ns)   --->   "store i4 %cubiecube_0_ep_load, i4* %edge6_addr_2, align 1" [kociemba/cubiecube.c:495]   --->   Operation 42 'store' <Predicate = (tmp_252)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 4> <Depth = 6> <RAM>
+ST_4 : Operation 43 [1/1] (1.76ns)   --->   "store i32 %x_2, i32* %x" [kociemba/cubiecube.c:495]   --->   Operation 43 'store' <Predicate = (tmp_252)> <Delay = 1.76>
+ST_4 : Operation 44 [1/1] (0.00ns)   --->   "br label %.preheader2.backedge" [kociemba/cubiecube.c:496]   --->   Operation 44 'br' <Predicate = (tmp_252)> <Delay = 0.00>
+ST_4 : Operation 45 [1/1] (0.00ns)   --->   "br label %.preheader2"   --->   Operation 45 'br' <Predicate = true> <Delay = 0.00>
+
+State 5 <SV = 3> <Delay = 1.13>
+ST_5 : Operation 46 [1/1] (0.00ns)   --->   "%r_assign = phi i3 [ %j_7, %6 ], [ -3, %.preheader1.preheader ]"   --->   Operation 46 'phi' 'r_assign' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 47 [1/1] (0.00ns)   --->   "%r_assign_cast3 = zext i3 %r_assign to i5" [kociemba/cubiecube.c:498]   --->   Operation 47 'zext' 'r_assign_cast3' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 48 [1/1] (1.13ns)   --->   "%tmp_253 = icmp eq i3 %r_assign, 0" [kociemba/cubiecube.c:498]   --->   Operation 48 'icmp' 'tmp_253' <Predicate = true> <Delay = 1.13> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.13> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 49 [1/1] (0.00ns)   --->   "%empty_61 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 5, i64 5, i64 5)"   --->   Operation 49 'speclooptripcount' 'empty_61' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 50 [1/1] (0.00ns)   --->   "br i1 %tmp_253, label %7, label %.preheader.preheader" [kociemba/cubiecube.c:498]   --->   Operation 50 'br' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 51 [1/1] (0.00ns)   --->   "%tmp_255 = zext i3 %r_assign to i64" [kociemba/cubiecube.c:502]   --->   Operation 51 'zext' 'tmp_255' <Predicate = (!tmp_253)> <Delay = 0.00>
+ST_5 : Operation 52 [1/1] (0.00ns)   --->   "%edge6_addr_1 = getelementptr inbounds [6 x i4]* %edge6, i64 0, i64 %tmp_255" [kociemba/cubiecube.c:502]   --->   Operation 52 'getelementptr' 'edge6_addr_1' <Predicate = (!tmp_253)> <Delay = 0.00>
+ST_5 : Operation 53 [1/1] (0.00ns)   --->   "br label %.preheader" [kociemba/cubiecube.c:502]   --->   Operation 53 'br' <Predicate = (!tmp_253)> <Delay = 0.00>
+ST_5 : Operation 54 [1/1] (0.00ns)   --->   "ret void"   --->   Operation 54 'ret' <Predicate = (tmp_253)> <Delay = 0.00>
+
+State 6 <SV = 4> <Delay = 2.32>
+ST_6 : Operation 55 [2/2] (2.32ns)   --->   "%edge6_load = load i4* %edge6_addr_1, align 1" [kociemba/cubiecube.c:502]   --->   Operation 55 'load' 'edge6_load' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 4> <Depth = 6> <RAM>
+
+State 7 <SV = 5> <Delay = 3.62>
+ST_7 : Operation 56 [1/2] (2.32ns)   --->   "%edge6_load = load i4* %edge6_addr_1, align 1" [kociemba/cubiecube.c:502]   --->   Operation 56 'load' 'edge6_load' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 4> <Depth = 6> <RAM>
+ST_7 : Operation 57 [1/1] (0.00ns)   --->   "%tmp_293_cast = zext i4 %edge6_load to i5" [kociemba/cubiecube.c:502]   --->   Operation 57 'zext' 'tmp_293_cast' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 58 [1/1] (1.30ns)   --->   "%tmp_256 = icmp eq i5 %tmp_293_cast, %r_assign_cast3" [kociemba/cubiecube.c:502]   --->   Operation 58 'icmp' 'tmp_256' <Predicate = true> <Delay = 1.30> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.13> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 59 [1/1] (0.00ns)   --->   "br i1 %tmp_256, label %6, label %3" [kociemba/cubiecube.c:502]   --->   Operation 59 'br' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 60 [2/2] (2.32ns)   --->   "%temp = load i4* %edge6_addr_3, align 1" [kociemba/cubiecube.c:185->kociemba/cubiecube.c:503]   --->   Operation 60 'load' 'temp' <Predicate = (!tmp_256)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 4> <Depth = 6> <RAM>
+ST_7 : Operation 61 [1/1] (1.65ns)   --->   "%j_7 = add i3 %r_assign, -1" [kociemba/cubiecube.c:498]   --->   Operation 61 'add' 'j_7' <Predicate = (tmp_256)> <Delay = 1.65> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.65> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 62 [1/1] (0.00ns)   --->   "br label %.preheader1" [kociemba/cubiecube.c:498]   --->   Operation 62 'br' <Predicate = (tmp_256)> <Delay = 0.00>
+
+State 8 <SV = 6> <Delay = 2.32>
+ST_8 : Operation 63 [1/2] (2.32ns)   --->   "%temp = load i4* %edge6_addr_3, align 1" [kociemba/cubiecube.c:185->kociemba/cubiecube.c:503]   --->   Operation 63 'load' 'temp' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 4> <Depth = 6> <RAM>
+ST_8 : Operation 64 [1/1] (1.76ns)   --->   "br label %4" [kociemba/cubiecube.c:186->kociemba/cubiecube.c:503]   --->   Operation 64 'br' <Predicate = true> <Delay = 1.76>
+
+State 9 <SV = 7> <Delay = 3.97>
+ST_9 : Operation 65 [1/1] (0.00ns)   --->   "%i_i = phi i3 [ 0, %3 ], [ %i, %5 ]"   --->   Operation 65 'phi' 'i_i' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 66 [1/1] (0.00ns)   --->   "%empty_62 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 1, i64 5, i64 0)"   --->   Operation 66 'speclooptripcount' 'empty_62' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 67 [1/1] (1.13ns)   --->   "%exitcond1 = icmp eq i3 %i_i, %r_assign" [kociemba/cubiecube.c:186->kociemba/cubiecube.c:503]   --->   Operation 67 'icmp' 'exitcond1' <Predicate = true> <Delay = 1.13> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.13> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 68 [1/1] (1.65ns)   --->   "%i = add i3 %i_i, 1" [kociemba/cubiecube.c:187->kociemba/cubiecube.c:503]   --->   Operation 68 'add' 'i' <Predicate = true> <Delay = 1.65> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.65> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 69 [1/1] (0.00ns)   --->   "br i1 %exitcond1, label %rotateLeft_edge.2.exit, label %5" [kociemba/cubiecube.c:186->kociemba/cubiecube.c:503]   --->   Operation 69 'br' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 70 [1/1] (0.00ns)   --->   "%tmp_i = zext i3 %i to i64" [kociemba/cubiecube.c:187->kociemba/cubiecube.c:503]   --->   Operation 70 'zext' 'tmp_i' <Predicate = (!exitcond1)> <Delay = 0.00>
+ST_9 : Operation 71 [1/1] (0.00ns)   --->   "%edge6_addr_4 = getelementptr [6 x i4]* %edge6, i64 0, i64 %tmp_i" [kociemba/cubiecube.c:187->kociemba/cubiecube.c:503]   --->   Operation 71 'getelementptr' 'edge6_addr_4' <Predicate = (!exitcond1)> <Delay = 0.00>
+ST_9 : Operation 72 [2/2] (2.32ns)   --->   "%edge6_load_2 = load i4* %edge6_addr_4, align 1" [kociemba/cubiecube.c:187->kociemba/cubiecube.c:503]   --->   Operation 72 'load' 'edge6_load_2' <Predicate = (!exitcond1)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 4> <Depth = 6> <RAM>
+ST_9 : Operation 73 [1/1] (2.32ns)   --->   "store i4 %temp, i4* %edge6_addr_1, align 1" [kociemba/cubiecube.c:188->kociemba/cubiecube.c:503]   --->   Operation 73 'store' <Predicate = (exitcond1)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 4> <Depth = 6> <RAM>
+ST_9 : Operation 74 [1/1] (0.00ns)   --->   "br label %.preheader" [kociemba/cubiecube.c:505]   --->   Operation 74 'br' <Predicate = (exitcond1)> <Delay = 0.00>
+
+State 10 <SV = 8> <Delay = 4.64>
+ST_10 : Operation 75 [1/2] (2.32ns)   --->   "%edge6_load_2 = load i4* %edge6_addr_4, align 1" [kociemba/cubiecube.c:187->kociemba/cubiecube.c:503]   --->   Operation 75 'load' 'edge6_load_2' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 4> <Depth = 6> <RAM>
+ST_10 : Operation 76 [1/1] (0.00ns)   --->   "%tmp_285_i = zext i3 %i_i to i64" [kociemba/cubiecube.c:187->kociemba/cubiecube.c:503]   --->   Operation 76 'zext' 'tmp_285_i' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 77 [1/1] (0.00ns)   --->   "%edge6_addr_5 = getelementptr [6 x i4]* %edge6, i64 0, i64 %tmp_285_i" [kociemba/cubiecube.c:187->kociemba/cubiecube.c:503]   --->   Operation 77 'getelementptr' 'edge6_addr_5' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 78 [1/1] (2.32ns)   --->   "store i4 %edge6_load_2, i4* %edge6_addr_5, align 1" [kociemba/cubiecube.c:187->kociemba/cubiecube.c:503]   --->   Operation 78 'store' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 4> <Depth = 6> <RAM>
+ST_10 : Operation 79 [1/1] (0.00ns)   --->   "br label %4" [kociemba/cubiecube.c:186->kociemba/cubiecube.c:503]   --->   Operation 79 'br' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 12ns, clock uncertainty: 1.5ns.
+
+ <State 1>: 1.77ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('invdar', kociemba/cubiecube.c:490) with incoming values : ('indvarinc', kociemba/cubiecube.c:490) [5]  (1.77 ns)
+
+ <State 2>: 2.32ns
+The critical path consists of the following:
+	'phi' operation ('invdar', kociemba/cubiecube.c:490) with incoming values : ('indvarinc', kociemba/cubiecube.c:490) [5]  (0 ns)
+	'getelementptr' operation ('edge6_addr', kociemba/cubiecube.c:490) [8]  (0 ns)
+	'store' operation (kociemba/cubiecube.c:490) of constant 0 on array 'edge6', kociemba/cubiecube.c:490 [9]  (2.32 ns)
+
+ <State 3>: 2.32ns
+The critical path consists of the following:
+	'phi' operation ('j') with incoming values : ('j', kociemba/cubiecube.c:492) [19]  (0 ns)
+	'getelementptr' operation ('cubiecube_0_ep_addr', kociemba/cubiecube.c:493) [26]  (0 ns)
+	'load' operation ('cubiecube_0_ep_load', kociemba/cubiecube.c:493) on array 'cubiecube_0_ep' [27]  (2.32 ns)
+
+ <State 4>: 4.64ns
+The critical path consists of the following:
+	'load' operation ('cubiecube_0_ep_load', kociemba/cubiecube.c:493) on array 'cubiecube_0_ep' [27]  (2.32 ns)
+	'store' operation (kociemba/cubiecube.c:495) of variable 'cubiecube_0_ep_load', kociemba/cubiecube.c:493 on array 'edge6', kociemba/cubiecube.c:490 [35]  (2.32 ns)
+
+ <State 5>: 1.13ns
+The critical path consists of the following:
+	'phi' operation ('j') with incoming values : ('j', kociemba/cubiecube.c:498) [44]  (0 ns)
+	'icmp' operation ('tmp_253', kociemba/cubiecube.c:498) [46]  (1.13 ns)
+
+ <State 6>: 2.32ns
+The critical path consists of the following:
+	'load' operation ('edge6_load', kociemba/cubiecube.c:502) on array 'edge6', kociemba/cubiecube.c:490 [54]  (2.32 ns)
+
+ <State 7>: 3.62ns
+The critical path consists of the following:
+	'load' operation ('edge6_load', kociemba/cubiecube.c:502) on array 'edge6', kociemba/cubiecube.c:490 [54]  (2.32 ns)
+	'icmp' operation ('tmp_256', kociemba/cubiecube.c:502) [56]  (1.3 ns)
+
+ <State 8>: 2.32ns
+The critical path consists of the following:
+	'load' operation ('temp', kociemba/cubiecube.c:185->kociemba/cubiecube.c:503) on array 'edge6', kociemba/cubiecube.c:490 [59]  (2.32 ns)
+
+ <State 9>: 3.97ns
+The critical path consists of the following:
+	'phi' operation ('i') with incoming values : ('i', kociemba/cubiecube.c:187->kociemba/cubiecube.c:503) [62]  (0 ns)
+	'add' operation ('i', kociemba/cubiecube.c:187->kociemba/cubiecube.c:503) [65]  (1.65 ns)
+	'getelementptr' operation ('edge6_addr_4', kociemba/cubiecube.c:187->kociemba/cubiecube.c:503) [69]  (0 ns)
+	'load' operation ('edge6_load_2', kociemba/cubiecube.c:187->kociemba/cubiecube.c:503) on array 'edge6', kociemba/cubiecube.c:490 [70]  (2.32 ns)
+
+ <State 10>: 4.64ns
+The critical path consists of the following:
+	'load' operation ('edge6_load_2', kociemba/cubiecube.c:187->kociemba/cubiecube.c:503) on array 'edge6', kociemba/cubiecube.c:490 [70]  (2.32 ns)
+	'store' operation (kociemba/cubiecube.c:187->kociemba/cubiecube.c:503) of variable 'edge6_load_2', kociemba/cubiecube.c:187->kociemba/cubiecube.c:503 on array 'edge6', kociemba/cubiecube.c:490 [73]  (2.32 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

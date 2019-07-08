@@ -1,0 +1,63 @@
+INFO: [SIM 2] *************** CSIM start ***************
+INFO: [SIM 4] CSIM will launch GCC as the compiler.
+   Compiling(apcc) ../../../solve.c in debug mode
+INFO: [HLS 200-10] Running 'C:/Xilinx/Vivado/2018.2/bin/unwrapped/win64.o/apcc.exe'
+INFO: [HLS 200-10] For user 'NG JIN YEE' on host 'ngjinyee' (Windows NT_amd64 version 6.2) on Sat Mar 09 22:31:24 +0000 2019
+INFO: [HLS 200-10] In directory 'C:/Users/jinyee/FYP/RubikCube/190309Kociemba/kociemba/solution1/csim/build'
+../../../solve.c:25:32: warning: braces around scalar initializer
+short URFtoDLF_Move[362880] = {{0}};
+                               ^~~
+../../../solve.c:26:30: warning: braces around scalar initializer
+short URtoDF_Move[362880] = {{0}};
+                             ^~~
+../../../solve.c:27:29: warning: braces around scalar initializer
+short URtoUL_Move[23760] = {{0}};
+                            ^~~
+../../../solve.c:28:29: warning: braces around scalar initializer
+short UBtoDF_Move[23760] = {{0}};
+                            ^~~
+../../../solve.c:29:39: warning: braces around scalar initializer
+short MergeURtoULandUBtoDF[112896] = {{0}};
+                                      ^~~
+5 warnings generated.
+../../../solve.c:25:32: warning: braces around scalar initializer
+short URFtoDLF_Move[362880] = {{0}};
+                               ^~~
+../../../solve.c:26:30: warning: braces around scalar initializer
+short URtoDF_Move[362880] = {{0}};
+                             ^~~
+../../../solve.c:27:29: warning: braces around scalar initializer
+short URtoUL_Move[23760] = {{0}};
+                            ^~~
+../../../solve.c:28:29: warning: braces around scalar initializer
+short UBtoDF_Move[23760] = {{0}};
+                            ^~~
+../../../solve.c:29:39: warning: braces around scalar initializer
+short MergeURtoULandUBtoDF[112896] = {{0}};
+                                      ^~~
+5 warnings generated.
+INFO: [APCC 202-3] Tmp directory is apcc_db
+INFO: [APCC 202-1] APCC is done.
+   Compiling(apcc) ../../../cubiecube.c in debug mode
+INFO: [HLS 200-10] Running 'C:/Xilinx/Vivado/2018.2/bin/unwrapped/win64.o/apcc.exe'
+INFO: [HLS 200-10] For user 'NG JIN YEE' on host 'ngjinyee' (Windows NT_amd64 version 6.2) on Sat Mar 09 22:31:47 +0000 2019
+INFO: [HLS 200-10] In directory 'C:/Users/jinyee/FYP/RubikCube/190309Kociemba/kociemba/solution1/csim/build'
+INFO: [APCC 202-3] Tmp directory is apcc_db
+INFO: [APCC 202-1] APCC is done.
+   Compiling(apcc) ../../../facecube.c in debug mode
+INFO: [HLS 200-10] Running 'C:/Xilinx/Vivado/2018.2/bin/unwrapped/win64.o/apcc.exe'
+INFO: [HLS 200-10] For user 'NG JIN YEE' on host 'ngjinyee' (Windows NT_amd64 version 6.2) on Sat Mar 09 22:32:02 +0000 2019
+INFO: [HLS 200-10] In directory 'C:/Users/jinyee/FYP/RubikCube/190309Kociemba/kociemba/solution1/csim/build'
+INFO: [APCC 202-3] Tmp directory is apcc_db
+INFO: [APCC 202-1] APCC is done.
+   Compiling(apcc) ../../../search.c in debug mode
+INFO: [HLS 200-10] Running 'C:/Xilinx/Vivado/2018.2/bin/unwrapped/win64.o/apcc.exe'
+INFO: [HLS 200-10] For user 'NG JIN YEE' on host 'ngjinyee' (Windows NT_amd64 version 6.2) on Sat Mar 09 22:32:12 +0000 2019
+INFO: [HLS 200-10] In directory 'C:/Users/jinyee/FYP/RubikCube/190309Kociemba/kociemba/solution1/csim/build'
+INFO: [APCC 202-3] Tmp directory is apcc_db
+INFO: [APCC 202-1] APCC is done.
+   Generating csim.exe
+19 
+D2 R' D' F2 B D R2 D2 R' F2 D' F2 U' B2 L2 U2 D R2 U 
+INFO: [SIM 1] CSim done with 0 errors.
+INFO: [SIM 3] *************** CSIM finish ***************

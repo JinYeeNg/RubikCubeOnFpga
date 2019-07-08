@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="search.h" path="C:\Users\jinyee\FYP\RubikCube\190309Kociemba\kociemba\search.h"/>
+    <originFiles name="search.c" path="C:\Users\jinyee\FYP\RubikCube\190309Kociemba\kociemba\search.c"/>
+    <originFiles name="facelet.h" path="C:\Users\jinyee\FYP\RubikCube\190309Kociemba\kociemba\facelet.h"/>
+    <originFiles name="facecube.h" path="C:\Users\jinyee\FYP\RubikCube\190309Kociemba\kociemba\facecube.h"/>
+    <originFiles name="facecube.c" path="C:\Users\jinyee\FYP\RubikCube\190309Kociemba\kociemba\facecube.c"/>
+    <originFiles name="edge.h" path="C:\Users\jinyee\FYP\RubikCube\190309Kociemba\kociemba\edge.h"/>
+    <originFiles name="cubiecube.h" path="C:\Users\jinyee\FYP\RubikCube\190309Kociemba\kociemba\cubiecube.h"/>
+    <originFiles name="cubiecube.c" path="C:\Users\jinyee\FYP\RubikCube\190309Kociemba\kociemba\cubiecube.c"/>
+    <originFiles name="corner.h" path="C:\Users\jinyee\FYP\RubikCube\190309Kociemba\kociemba\corner.h"/>
+    <originFiles name="coordcube.h" path="C:\Users\jinyee\FYP\RubikCube\190309Kociemba\kociemba\coordcube.h"/>
+    <originFiles name="color.h" path="C:\Users\jinyee\FYP\RubikCube\190309Kociemba\kociemba\color.h"/>
+  </source>
+  <testbench>
+    <originFiles name="solve.c" path="C:\Users\jinyee\FYP\RubikCube\190309Kociemba\kociemba\solve.c"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>

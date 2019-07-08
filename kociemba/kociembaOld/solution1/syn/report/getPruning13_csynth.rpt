@@ -1,0 +1,183 @@
+
+
+================================================================
+== Vivado HLS Report for 'getPruning13'
+================================================================
+* Date:           Sat Mar  9 22:55:36 2019
+
+* Version:        2018.2 (Build 2258646 on Thu Jun 14 20:25:20 MDT 2018)
+* Project:        kociemba
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  12.00|    10.500|        1.50|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |    9|    9|    9|    9|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+-------+
+|       Name      | BRAM_18K| DSP48E|   FF   |  LUT  |
++-----------------+---------+-------+--------+-------+
+|DSP              |        -|      -|       -|      -|
+|Expression       |        -|      -|       0|    212|
+|FIFO             |        -|      -|       -|      -|
+|Instance         |        -|      -|       -|      -|
+|Memory           |        -|      -|       -|      -|
+|Multiplexer      |        -|      -|       -|     77|
+|Register         |        -|      -|      61|      -|
++-----------------+---------+-------+--------+-------+
+|Total            |        0|      0|      61|    289|
++-----------------+---------+-------+--------+-------+
+|Available        |      280|    220|  106400|  53200|
++-----------------+---------+-------+--------+-------+
+|Utilization (%)  |        0|      0|   ~0   |   ~0  |
++-----------------+---------+-------+--------+-------+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * DSP48: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +-----------------------+----------+-------+---+----+------------+------------+
+    |     Variable Name     | Operation| DSP48E| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +-----------------------+----------+-------+---+----+------------+------------+
+    |sum_fu_172_p2          |     +    |      0|  0|  71|          64|          64|
+    |p_neg_fu_90_p2         |     -    |      0|  0|  31|           1|          24|
+    |p_neg_t_fu_114_p2      |     -    |      0|  0|  39|           1|          32|
+    |table_load5_fu_195_p2  |   lshr   |      0|  0|  35|          16|          16|
+    |ap_return              |  select  |      0|  0|   4|           1|           4|
+    |tmp_s_fu_138_p3        |  select  |      0|  0|  32|           1|          32|
+    +-----------------------+----------+-------+---+----+------------+------------+
+    |Total                  |          |      0|  0| 212|          84|         172|
+    +-----------------------+----------+-------+---+----+------------+------------+
+
+    * Multiplexer: 
+    +--------------------------------------+----+-----------+-----+-----------+
+    |                 Name                 | LUT| Input Size| Bits| Total Bits|
+    +--------------------------------------+----+-----------+-----+-----------+
+    |ap_NS_fsm                             |  50|         11|    1|         11|
+    |ap_sig_ioackin_m_axi_table_r_ARREADY  |   9|          2|    1|          2|
+    |table_r_blk_n_AR                      |   9|          2|    1|          2|
+    |table_r_blk_n_R                       |   9|          2|    1|          2|
+    +--------------------------------------+----+-----------+-----+-----------+
+    |Total                                 |  77|         17|    4|         17|
+    +--------------------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +--------------------------------------+----+----+-----+-----------+
+    |                 Name                 | FF | LUT| Bits| Const Bits|
+    +--------------------------------------+----+----+-----+-----------+
+    |ap_CS_fsm                             |  10|   0|   10|          0|
+    |ap_reg_ioackin_m_axi_table_r_ARREADY  |   1|   0|    1|          0|
+    |table_addr_read_reg_237               |  16|   0|   16|          0|
+    |table_addr_reg_231                    |  32|   0|   32|          0|
+    |tmp_304_reg_221                       |   1|   0|    1|          0|
+    |tmp_308_reg_226                       |   1|   0|    1|          0|
+    +--------------------------------------+----+----+-----+-----------+
+    |Total                                 |  61|   0|   61|          0|
+    +--------------------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++------------------------+-----+-----+------------+--------------+--------------+
+|        RTL Ports       | Dir | Bits|  Protocol  | Source Object|    C Type    |
++------------------------+-----+-----+------------+--------------+--------------+
+|ap_clk                  |  in |    1| ap_ctrl_hs | getPruning13 | return value |
+|ap_rst                  |  in |    1| ap_ctrl_hs | getPruning13 | return value |
+|ap_start                |  in |    1| ap_ctrl_hs | getPruning13 | return value |
+|ap_done                 | out |    1| ap_ctrl_hs | getPruning13 | return value |
+|ap_idle                 | out |    1| ap_ctrl_hs | getPruning13 | return value |
+|ap_ready                | out |    1| ap_ctrl_hs | getPruning13 | return value |
+|ap_return               | out |    4| ap_ctrl_hs | getPruning13 | return value |
+|m_axi_table_r_AWVALID   | out |    1|    m_axi   |    table_r   |    pointer   |
+|m_axi_table_r_AWREADY   |  in |    1|    m_axi   |    table_r   |    pointer   |
+|m_axi_table_r_AWADDR    | out |   32|    m_axi   |    table_r   |    pointer   |
+|m_axi_table_r_AWID      | out |    1|    m_axi   |    table_r   |    pointer   |
+|m_axi_table_r_AWLEN     | out |   32|    m_axi   |    table_r   |    pointer   |
+|m_axi_table_r_AWSIZE    | out |    3|    m_axi   |    table_r   |    pointer   |
+|m_axi_table_r_AWBURST   | out |    2|    m_axi   |    table_r   |    pointer   |
+|m_axi_table_r_AWLOCK    | out |    2|    m_axi   |    table_r   |    pointer   |
+|m_axi_table_r_AWCACHE   | out |    4|    m_axi   |    table_r   |    pointer   |
+|m_axi_table_r_AWPROT    | out |    3|    m_axi   |    table_r   |    pointer   |
+|m_axi_table_r_AWQOS     | out |    4|    m_axi   |    table_r   |    pointer   |
+|m_axi_table_r_AWREGION  | out |    4|    m_axi   |    table_r   |    pointer   |
+|m_axi_table_r_AWUSER    | out |    1|    m_axi   |    table_r   |    pointer   |
+|m_axi_table_r_WVALID    | out |    1|    m_axi   |    table_r   |    pointer   |
+|m_axi_table_r_WREADY    |  in |    1|    m_axi   |    table_r   |    pointer   |
+|m_axi_table_r_WDATA     | out |   16|    m_axi   |    table_r   |    pointer   |
+|m_axi_table_r_WSTRB     | out |    2|    m_axi   |    table_r   |    pointer   |
+|m_axi_table_r_WLAST     | out |    1|    m_axi   |    table_r   |    pointer   |
+|m_axi_table_r_WID       | out |    1|    m_axi   |    table_r   |    pointer   |
+|m_axi_table_r_WUSER     | out |    1|    m_axi   |    table_r   |    pointer   |
+|m_axi_table_r_ARVALID   | out |    1|    m_axi   |    table_r   |    pointer   |
+|m_axi_table_r_ARREADY   |  in |    1|    m_axi   |    table_r   |    pointer   |
+|m_axi_table_r_ARADDR    | out |   32|    m_axi   |    table_r   |    pointer   |
+|m_axi_table_r_ARID      | out |    1|    m_axi   |    table_r   |    pointer   |
+|m_axi_table_r_ARLEN     | out |   32|    m_axi   |    table_r   |    pointer   |
+|m_axi_table_r_ARSIZE    | out |    3|    m_axi   |    table_r   |    pointer   |
+|m_axi_table_r_ARBURST   | out |    2|    m_axi   |    table_r   |    pointer   |
+|m_axi_table_r_ARLOCK    | out |    2|    m_axi   |    table_r   |    pointer   |
+|m_axi_table_r_ARCACHE   | out |    4|    m_axi   |    table_r   |    pointer   |
+|m_axi_table_r_ARPROT    | out |    3|    m_axi   |    table_r   |    pointer   |
+|m_axi_table_r_ARQOS     | out |    4|    m_axi   |    table_r   |    pointer   |
+|m_axi_table_r_ARREGION  | out |    4|    m_axi   |    table_r   |    pointer   |
+|m_axi_table_r_ARUSER    | out |    1|    m_axi   |    table_r   |    pointer   |
+|m_axi_table_r_RVALID    |  in |    1|    m_axi   |    table_r   |    pointer   |
+|m_axi_table_r_RREADY    | out |    1|    m_axi   |    table_r   |    pointer   |
+|m_axi_table_r_RDATA     |  in |   16|    m_axi   |    table_r   |    pointer   |
+|m_axi_table_r_RLAST     |  in |    1|    m_axi   |    table_r   |    pointer   |
+|m_axi_table_r_RID       |  in |    1|    m_axi   |    table_r   |    pointer   |
+|m_axi_table_r_RUSER     |  in |    1|    m_axi   |    table_r   |    pointer   |
+|m_axi_table_r_RRESP     |  in |    2|    m_axi   |    table_r   |    pointer   |
+|m_axi_table_r_BVALID    |  in |    1|    m_axi   |    table_r   |    pointer   |
+|m_axi_table_r_BREADY    | out |    1|    m_axi   |    table_r   |    pointer   |
+|m_axi_table_r_BRESP     |  in |    2|    m_axi   |    table_r   |    pointer   |
+|m_axi_table_r_BID       |  in |    1|    m_axi   |    table_r   |    pointer   |
+|m_axi_table_r_BUSER     |  in |    1|    m_axi   |    table_r   |    pointer   |
+|table_offset            |  in |   31|   ap_none  | table_offset |    scalar    |
+|index                   |  in |   24|   ap_none  |     index    |    scalar    |
++------------------------+-----+-----+------------+--------------+--------------+
+
